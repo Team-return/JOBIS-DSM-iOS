@@ -13,7 +13,7 @@ struct NavigationBackButton: ViewModifier {
                     } label: {
                         Image("BackButton")
                             .font(.system(size: 24))
-                            .tint(.GrayScale.gray200)
+//                            .tint(.GrayScale.gray200)
                     }
                 }
             }
