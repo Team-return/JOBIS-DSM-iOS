@@ -1,0 +1,28 @@
+name: Move version to release branch
+
+on:
+  push:
+    tags:
+        - '*'
+
+jobs:
+  deploy:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: git merge to release
+        run: |
+          git config --global user.name 'xquare-admin'
+          git config --global user.email 'teamxquare@gmail.com'
+          git config pull.rebase false
+          git checkout -t origin/release
+          echo $(git merge -Xtheirs origin/develop)
+          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${{  github.ref_name }}" Application/SupportingFiles/Info.plist
+          /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${{  github.ref_name }}" Application/Widget/SupportingFiles/Info.plist
+          git add -A
+          git commit -m "🚀 :: Deploy version ${{  github.ref_name }} to testflight"
+          git push
