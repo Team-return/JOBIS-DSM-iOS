@@ -1,0 +1,509 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1665643D288F9D1E3C91397D /* ThirdPartyLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */; platformFilter = ios; };
+		3B664EC900C0DFDDF05C03BA /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A88CF4496620AE41DEA7C14 /* Service.framework */; platformFilter = ios; };
+		7EA3D706C4B341371F134975 /* Feature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE78250380CBD064C20F6B7 /* Feature.framework */; platformFilter = ios; };
+		E25E3526BFA4F13ED2F65CA4 /* Feature_Feature.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 6703989ED44BBFF89F62CF96 /* Feature_Feature.bundle */; platformFilter = ios; };
+		EFA6C6D5254B34A73D86D0E6 /* ThirdPartyLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F548A3E0214D3440EC179E6A /* Feature_Feature.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6703989ED44BBFF89F62CF96 /* Feature_Feature.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		97070EA7F04F66A54FD74979 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 14CB4D821C6A445E3919C493 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0B21CB23F93B2C4E00AC546;
+			remoteInfo = "JOBIS-DSM-IOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0359795C8130ACAE80B3506A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				EFA6C6D5254B34A73D86D0E6 /* ThirdPartyLib.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30223ACB38AA5A49D7926FAD /* Dependencies */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstSubfolderSpec = 16;
+			files = (
+				E25E3526BFA4F13ED2F65CA4 /* Feature_Feature.bundle in Dependencies */,
+			);
+			name = Dependencies;
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		485C2EFA13A5293C13353605 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		18990C5C70E8B0E6DD335315 /* JOBIS-DSM-IOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JOBIS-DSM-IOSTests-Info.plist"; sourceTree = "<group>"; };
+		2A88CF4496620AE41DEA7C14 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BE78250380CBD064C20F6B7 /* Feature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6703989ED44BBFF89F62CF96 /* Feature_Feature.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Feature_Feature.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEDB4C3D0995F7072992012 /* JOBIS_DSM_IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JOBIS_DSM_IOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B085656CC3CB3F86330EE628 /* JOBIS_DSM_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JOBIS_DSM_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B33BA5381E46CEC8F09F28F4 /* JOBIS-DSM-IOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JOBIS-DSM-IOS-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6A83A20C3AC64C19E11FA0ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EA3D706C4B341371F134975 /* Feature.framework in Frameworks */,
+				3B664EC900C0DFDDF05C03BA /* Service.framework in Frameworks */,
+				1665643D288F9D1E3C91397D /* ThirdPartyLib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F097EEC25C6E3891CC45B626 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		066A643AEFB5AC66D1ABFED5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6703989ED44BBFF89F62CF96 /* Feature_Feature.bundle */,
+				3BE78250380CBD064C20F6B7 /* Feature.framework */,
+				B085656CC3CB3F86330EE628 /* JOBIS_DSM_IOS.app */,
+				8FEDB4C3D0995F7072992012 /* JOBIS_DSM_IOSTests.xctest */,
+				2A88CF4496620AE41DEA7C14 /* Service.framework */,
+				4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F4956D6EFCCE80085F487D7 /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				B33BA5381E46CEC8F09F28F4 /* JOBIS-DSM-IOS-Info.plist */,
+				18990C5C70E8B0E6DD335315 /* JOBIS-DSM-IOSTests-Info.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		55CFFDB637B71097C800B1AD /* Derived */ = {
+			isa = PBXGroup;
+			children = (
+				4F4956D6EFCCE80085F487D7 /* InfoPlists */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+		57C2DD2D7D95752DD24A22D0 = {
+			isa = PBXGroup;
+			children = (
+				6985561D95C8C4209DB3788C /* Project */,
+				DBE3EFFE5AF5F59020EA5FA1 /* Frameworks */,
+				066A643AEFB5AC66D1ABFED5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6985561D95C8C4209DB3788C /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				55CFFDB637B71097C800B1AD /* Derived */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		DBE3EFFE5AF5F59020EA5FA1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		682B5713C666456CC80CB8D2 /* JOBIS-DSM-IOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 792429B3F09B1FB862404E3C /* Build configuration list for PBXNativeTarget "JOBIS-DSM-IOSTests" */;
+			buildPhases = (
+				774AC6CE0D4061D2E8DF7BA8 /* Sources */,
+				F8C6F6579404469DDA272EA2 /* Resources */,
+				485C2EFA13A5293C13353605 /* Embed Frameworks */,
+				F097EEC25C6E3891CC45B626 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F9B9872C508D46360F9AED70 /* PBXTargetDependency */,
+			);
+			name = "JOBIS-DSM-IOSTests";
+			productName = JOBIS_DSM_IOSTests;
+			productReference = 8FEDB4C3D0995F7072992012 /* JOBIS_DSM_IOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A0B21CB23F93B2C4E00AC546 /* JOBIS-DSM-IOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBC655DEFDE794F3D2466E74 /* Build configuration list for PBXNativeTarget "JOBIS-DSM-IOS" */;
+			buildPhases = (
+				2398ACAD477838CDACDD25F5 /* Sources */,
+				286209B46DD1607306112F7B /* Resources */,
+				0359795C8130ACAE80B3506A /* Embed Frameworks */,
+				6A83A20C3AC64C19E11FA0ED /* Frameworks */,
+				30223ACB38AA5A49D7926FAD /* Dependencies */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "JOBIS-DSM-IOS";
+			productName = JOBIS_DSM_IOS;
+			productReference = B085656CC3CB3F86330EE628 /* JOBIS_DSM_IOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14CB4D821C6A445E3919C493 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = baegteun;
+				TargetAttributes = {
+					682B5713C666456CC80CB8D2 = {
+						TestTargetID = A0B21CB23F93B2C4E00AC546;
+					};
+				};
+			};
+			buildConfigurationList = E19894986382787454817C2F /* Build configuration list for PBXProject "JOBIS-DSM-IOS" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 57C2DD2D7D95752DD24A22D0;
+			productRefGroup = 066A643AEFB5AC66D1ABFED5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A0B21CB23F93B2C4E00AC546 /* JOBIS-DSM-IOS */,
+				682B5713C666456CC80CB8D2 /* JOBIS-DSM-IOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		286209B46DD1607306112F7B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F548A3E0214D3440EC179E6A /* Feature_Feature.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8C6F6579404469DDA272EA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2398ACAD477838CDACDD25F5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		774AC6CE0D4061D2E8DF7BA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F9B9872C508D46360F9AED70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "JOBIS-DSM-IOS";
+			target = A0B21CB23F93B2C4E00AC546 /* JOBIS-DSM-IOS */;
+			targetProxy = 97070EA7F04F66A54FD74979 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10AE77FF0E7BCC5013EDF692 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Derived/InfoPlists/JOBIS-DSM-IOSTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "baegteun.JOBIS-DSM-IOSTests";
+				PRODUCT_NAME = JOBIS_DSM_IOSTests;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JOBIS_DSM_IOS.app/JOBIS_DSM_IOS";
+				TEST_TARGET_NAME = "JOBIS-DSM-IOS";
+			};
+			name = Debug;
+		};
+		1D28EB4A6ACC658D011F3E7D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6C3DB5B63C08E48D8FF2E1F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = "Derived/InfoPlists/JOBIS-DSM-IOSTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "baegteun.JOBIS-DSM-IOSTests";
+				PRODUCT_NAME = JOBIS_DSM_IOSTests;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JOBIS_DSM_IOS.app/JOBIS_DSM_IOS";
+				TEST_TARGET_NAME = "JOBIS-DSM-IOS";
+			};
+			name = Release;
+		};
+		9717A6A5CC91A610F877D5B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C2149E46061D9C7F7D6D6A4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/JOBIS-DSM-IOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "baegteun.JOBIS-DSM-IOS";
+				PRODUCT_NAME = JOBIS_DSM_IOS;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D40747EC9A6824EC01083273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/JOBIS-DSM-IOS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "baegteun.JOBIS-DSM-IOS";
+				PRODUCT_NAME = JOBIS_DSM_IOS;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		792429B3F09B1FB862404E3C /* Build configuration list for PBXNativeTarget "JOBIS-DSM-IOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10AE77FF0E7BCC5013EDF692 /* Debug */,
+				6C3DB5B63C08E48D8FF2E1F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E19894986382787454817C2F /* Build configuration list for PBXProject "JOBIS-DSM-IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D28EB4A6ACC658D011F3E7D /* Debug */,
+				9717A6A5CC91A610F877D5B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBC655DEFDE794F3D2466E74 /* Build configuration list for PBXNativeTarget "JOBIS-DSM-IOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D40747EC9A6824EC01083273 /* Debug */,
+				C2149E46061D9C7F7D6D6A4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14CB4D821C6A445E3919C493 /* Project object */;
+}
