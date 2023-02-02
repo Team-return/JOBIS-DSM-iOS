@@ -10,10 +10,10 @@
 		1665643D288F9D1E3C91397D /* ThirdPartyLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */; platformFilter = ios; };
 		3B664EC900C0DFDDF05C03BA /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A88CF4496620AE41DEA7C14 /* Service.framework */; platformFilter = ios; };
 		5F336B490BD3538FE13BCC7A /* JOBISApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D00F864AD498C77E794AC /* JOBISApp.swift */; };
-		7EA3D706C4B341371F134975 /* Feature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BE78250380CBD064C20F6B7 /* Feature.framework */; platformFilter = ios; };
-		E25E3526BFA4F13ED2F65CA4 /* Feature_Feature.bundle in Dependencies */ = {isa = PBXBuildFile; fileRef = 6703989ED44BBFF89F62CF96 /* Feature_Feature.bundle */; platformFilter = ios; };
+		5F742BE0D84054D3C33033CA /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		956240AE3556234AB7B25D22 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; };
+		D4AFE9047718F3D7DC1BE8BE /* BaseFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */; platformFilter = ios; };
 		EFA6C6D5254B34A73D86D0E6 /* ThirdPartyLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F548A3E0214D3440EC179E6A /* Feature_Feature.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6703989ED44BBFF89F62CF96 /* Feature_Feature.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,20 +33,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5F742BE0D84054D3C33033CA /* DesignSystem.framework in Embed Frameworks */,
 				EFA6C6D5254B34A73D86D0E6 /* ThirdPartyLib.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30223ACB38AA5A49D7926FAD /* Dependencies */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstSubfolderSpec = 16;
-			files = (
-				E25E3526BFA4F13ED2F65CA4 /* Feature_Feature.bundle in Dependencies */,
-			);
-			name = Dependencies;
-			runOnlyForDeploymentPostprocessing = 1;
 		};
 		485C2EFA13A5293C13353605 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -63,13 +54,13 @@
 /* Begin PBXFileReference section */
 		18990C5C70E8B0E6DD335315 /* JOBIS-DSM-IOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JOBIS-DSM-IOSTests-Info.plist"; sourceTree = "<group>"; };
 		2A88CF4496620AE41DEA7C14 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3BE78250380CBD064C20F6B7 /* Feature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Feature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6703989ED44BBFF89F62CF96 /* Feature_Feature.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Feature_Feature.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D00F864AD498C77E794AC /* JOBISApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISApp.swift; sourceTree = "<group>"; };
 		8FEDB4C3D0995F7072992012 /* JOBIS_DSM_IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JOBIS_DSM_IOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B085656CC3CB3F86330EE628 /* JOBIS_DSM_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JOBIS_DSM_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33BA5381E46CEC8F09F28F4 /* JOBIS-DSM-IOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JOBIS-DSM-IOS-Info.plist"; sourceTree = "<group>"; };
+		ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,7 +68,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7EA3D706C4B341371F134975 /* Feature.framework in Frameworks */,
+				D4AFE9047718F3D7DC1BE8BE /* BaseFeature.framework in Frameworks */,
+				956240AE3556234AB7B25D22 /* DesignSystem.framework in Frameworks */,
 				3B664EC900C0DFDDF05C03BA /* Service.framework in Frameworks */,
 				1665643D288F9D1E3C91397D /* ThirdPartyLib.framework in Frameworks */,
 			);
@@ -96,8 +88,8 @@
 		066A643AEFB5AC66D1ABFED5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6703989ED44BBFF89F62CF96 /* Feature_Feature.bundle */,
-				3BE78250380CBD064C20F6B7 /* Feature.framework */,
+				9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */,
+				ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */,
 				B085656CC3CB3F86330EE628 /* JOBIS_DSM_IOS.app */,
 				8FEDB4C3D0995F7072992012 /* JOBIS_DSM_IOSTests.xctest */,
 				2A88CF4496620AE41DEA7C14 /* Service.framework */,
@@ -194,7 +186,6 @@
 				286209B46DD1607306112F7B /* Resources */,
 				0359795C8130ACAE80B3506A /* Embed Frameworks */,
 				6A83A20C3AC64C19E11FA0ED /* Frameworks */,
-				30223ACB38AA5A49D7926FAD /* Dependencies */,
 			);
 			buildRules = (
 			);
@@ -242,7 +233,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F548A3E0214D3440EC179E6A /* Feature_Feature.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

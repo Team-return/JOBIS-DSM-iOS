@@ -8,13 +8,28 @@
          location = "group:App/JOBIS-DSM-IOS.xcodeproj">
       </FileRef>
       <FileRef
-         location = "group:Feature/Feature.xcodeproj">
-      </FileRef>
-      <FileRef
          location = "group:Service/Service.xcodeproj">
       </FileRef>
-      <FileRef
-         location = "group:ThirdPartyLib/ThirdPartyLib.xcodeproj">
-      </FileRef>
+      <Group
+         location = "group:Features"
+         name = "Features">
+         <FileRef
+            location = "group:BaseFeature/BaseFeature.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Modules"
+         name = "Modules">
+         <FileRef
+            location = "group:ThirdPartyLib/ThirdPartyLib.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:UsertInterfaces"
+         name = "UsertInterfaces">
+         <FileRef
+            location = "group:DesignSystem/DesignSystem.xcodeproj">
+         </FileRef>
+      </Group>
    </Group>
 </Workspace>

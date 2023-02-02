@@ -29,7 +29,7 @@ public extension TargetDependency {
         return .project(target: name, path: .relativeToModule(name))
     }
     static func service(name: String) -> Self {
-        return .project(target: name, path: .relativeToService(name))
+        return .project(target: name, path: .relativeToRoot("Projects/Service"))
     }
     static func feature(name: String) -> Self {
         return .project(target: name, path: .relativeToFeature(name))
