@@ -1,17 +1,18 @@
 import ProjectDescription
 import ProjectDescriptionHelpers
+import UtilityPlugin
 
 let project = Project.makeModule(
     name: "JOBIS-DSM-IOS",
     platform: .iOS,
     product: .app,
     dependencies: [
-        .project(target: "Feature", path: .relativeToRoot("Projects/Feature"))
+        .Project.Features.BaseFeature
     ],
     resources: ["Resources/**"],
     infoPlist: .extendingDefault(with: [
         "UIMainStoryboardFile": "",
         "UILaunchStoryboardName": "LaunchScreen",
-        "ENABLE_TESTS": .boolean(true),
+        "ENABLE_TESTS": .boolean(true)
     ])
 )
