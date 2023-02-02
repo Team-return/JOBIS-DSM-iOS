@@ -1,3 +1,4 @@
+// swiftlint:disable nesting
 import ProjectDescription
 
 public extension TargetDependency {

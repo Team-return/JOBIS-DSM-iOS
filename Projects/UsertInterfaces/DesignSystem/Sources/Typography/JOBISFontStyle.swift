@@ -34,7 +34,6 @@ public enum JOBISFontStyle: Hashable {
             }
         }
     }
-    
     public enum Body: CGFloat, JOBISFontable {
         case body1
         case body2
