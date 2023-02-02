@@ -17,53 +17,34 @@
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 public enum DesignSystemAsset {
-  public enum ErrorColor {
-    public static let errorDarken1 = DesignSystemColors(name: "Error Darken-1")
-    public static let errorDarken2 = DesignSystemColors(name: "Error Darken-2")
-    public static let errorLighten1 = DesignSystemColors(name: "Error Lighten-1")
-    public static let errorLighten2 = DesignSystemColors(name: "Error Lighten-2")
-    public static let error = DesignSystemColors(name: "Error")
-  }
-  public enum GrayColor {
-    public static let gray1 = DesignSystemColors(name: "Gray 1")
-    public static let gray10 = DesignSystemColors(name: "Gray 10")
-    public static let gray2 = DesignSystemColors(name: "Gray 2")
-    public static let gray3 = DesignSystemColors(name: "Gray 3")
-    public static let gray4 = DesignSystemColors(name: "Gray 4")
-    public static let gray5 = DesignSystemColors(name: "Gray 5")
-    public static let gray6 = DesignSystemColors(name: "Gray 6")
-    public static let gray7 = DesignSystemColors(name: "Gray 7")
-    public static let gray8 = DesignSystemColors(name: "Gray 8")
-    public static let gray9 = DesignSystemColors(name: "Gray 9")
+  public enum Error {
+    public static let red = DesignSystemColors(name: "Red")
   }
   public enum Icons {
     public static let dmsHorizontal = DesignSystemImages(name: "DMSHorizontal")
     public static let pencil = DesignSystemImages(name: "pencil")
   }
-  public enum PrimaryColor {
-    public static let darken1 = DesignSystemColors(name: "Darken-1")
-    public static let darken2 = DesignSystemColors(name: "Darken-2")
-    public static let lighten1 = DesignSystemColors(name: "Lighten-1")
-    public static let lighten2 = DesignSystemColors(name: "Lighten-2")
-    public static let primary = DesignSystemColors(name: "Primary")
+  public enum Main {
+    public static let blue = DesignSystemColors(name: "Blue")
+    public static let darkBlue = DesignSystemColors(name: "DarkBlue")
+    public static let lightBlue = DesignSystemColors(name: "LightBlue")
   }
-  public enum SystemColor {
-    public static let background = DesignSystemColors(name: "Background")
-    public static let errorContainer = DesignSystemColors(name: "Error Container")
-    public static let icon = DesignSystemColors(name: "Icon")
-    public static let line = DesignSystemColors(name: "Line")
-    public static let onBackgroundVariantEtc = DesignSystemColors(name: "On Background Variant Etc")
-    public static let onBackgroundVariantText = DesignSystemColors(name: "On Background Variant Text")
-    public static let onBackground = DesignSystemColors(name: "On Background")
-    public static let onErrorContainer = DesignSystemColors(name: "On Error Container")
-    public static let onError = DesignSystemColors(name: "On Error")
-    public static let onPrimaryContainer = DesignSystemColors(name: "On Primary Container")
-    public static let onPrimary = DesignSystemColors(name: "On Primary")
-    public static let onSurfaceVariantEtc = DesignSystemColors(name: "On Surface Variant Etc")
-    public static let onSurfaceVariantText = DesignSystemColors(name: "On Surface Variant Text")
-    public static let onSurface = DesignSystemColors(name: "On Surface")
-    public static let primaryContainer = DesignSystemColors(name: "Primary Container")
-    public static let surface = DesignSystemColors(name: "Surface")
+  public enum Sub {
+    public static let gray10 = DesignSystemColors(name: "Gray10")
+    public static let gray20 = DesignSystemColors(name: "Gray20")
+    public static let gray30 = DesignSystemColors(name: "Gray30")
+    public static let gray40 = DesignSystemColors(name: "Gray40")
+    public static let gray50 = DesignSystemColors(name: "Gray50")
+    public static let gray60 = DesignSystemColors(name: "Gray60")
+    public static let gray70 = DesignSystemColors(name: "Gray70")
+    public static let gray80 = DesignSystemColors(name: "Gray80")
+    public static let gray90 = DesignSystemColors(name: "Gray90")
+  }
+  public enum Success {
+    public static let green = DesignSystemColors(name: "Green")
+  }
+  public enum Warning {
+    public static let yellow = DesignSystemColors(name: "Yellow")
   }
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

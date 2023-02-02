@@ -1,15 +1,11 @@
 import SwiftUI
 
-public struct DMSFont: ViewModifier {
-    public var style: DMSFontStyle
+public struct JOBISFont: ViewModifier {
+    public var style: JOBISFontStyle
 
     public func body(content: Content) -> some View {
         switch style {
-        case let .headline(font):
-            return content
-                .font(.custom("NotoSansKR-\(font.weight.rawValue)", size: font.size))
-
-        case let .title(font):
+        case let .heading(font):
             return content
                 .font(.custom("NotoSansKR-\(font.weight.rawValue)", size: font.size))
 
@@ -25,14 +21,14 @@ public struct DMSFont: ViewModifier {
 }
 
 public extension View {
-    func dmsFont(_ style: DMSFontStyle) -> some View {
+    func JOBISFont(_ style: JOBISFontStyle) -> some View {
         self
-            .modifier(DMSFont(style: style))
+            .modifier(DesignSystem.JOBISFont(style: style))
     }
 
-    func dmsFont(_ style: DMSFontStyle, color: Color) -> some View {
+    func dmsFont(_ style: JOBISFontStyle, color: Color) -> some View {
         self
-            .dmsFont(style)
+            .JOBISFont(style)
             .foregroundColor(color)
     }
 }
