@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,12 +13,11 @@
 		2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */; };
 		424A71C0E40BD75F6485153D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451024361D40DACBAC0755DB /* Icons.xcassets */; };
 		61CD8D139D17DE6509B2EDDA /* TargetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2D3E3922EA7A793BA051A /* TargetTest.swift */; };
-		627ED4ABA2BD390414435253 /* JOBISSystemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284995B6DEA0C569C10F9A8 /* JOBISSystemColor.swift */; };
 		64AD7ACEF223BD702258A0AA /* JOBISFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92BAD2C6FEA79CD8E915DA /* JOBISFontStyle.swift */; };
 		6AD27D0E8CFEE3E6A2C7A39B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */; };
 		7089D63AB0947C7C2CC25EA6 /* Success.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F591B66F5E1AFDD478716659 /* Success.xcassets */; };
-		7F7EBFA4157034CD7A5A391F /* JOBISErrorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1988B65DFC624BFD5474EA3 /* JOBISErrorColor.swift */; };
-		8E3920CA10B4C8594D80A44D /* JOBISGrayScaleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A318C918BF5CD9AA6E5E67EB /* JOBISGrayScaleColor.swift */; };
+		7F7EBFA4157034CD7A5A391F /* JOBISMainColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1988B65DFC624BFD5474EA3 /* JOBISMainColor.swift */; };
+		8E3920CA10B4C8594D80A44D /* JOBISSubScaleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A318C918BF5CD9AA6E5E67EB /* JOBISSubScaleColor.swift */; };
 		8E991CDA697003176764E5B6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */; };
 		939DC5308AB7F13239332227 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */; };
 		940FE54052CE73BE5D36B0C2 /* Warning.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */; };
@@ -67,30 +66,29 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+DesignSystem.swift"; sourceTree = "<group>"; };
-		1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
-		3284995B6DEA0C569C10F9A8 /* JOBISSystemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISSystemColor.swift; sourceTree = "<group>"; };
-		40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		42EEE7AB9BF7182D7DBB37ED /* Error.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Error.xcassets; sourceTree = "<group>"; };
-		43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		451024361D40DACBAC0755DB /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		469F4B641DBB710B1B90BAD8 /* DesignSystemTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystemTests-Info.plist"; sourceTree = "<group>"; };
 		4CB962B07FF2D976A70F51C9 /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
-		55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC2D3E3922EA7A793BA051A /* TargetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTest.swift; sourceTree = "<group>"; };
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
-		A318C918BF5CD9AA6E5E67EB /* JOBISGrayScaleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISGrayScaleColor.swift; sourceTree = "<group>"; };
+		A318C918BF5CD9AA6E5E67EB /* JOBISSubScaleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISSubScaleColor.swift; sourceTree = "<group>"; };
 		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
-		B1988B65DFC624BFD5474EA3 /* JOBISErrorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISErrorColor.swift; sourceTree = "<group>"; };
+		B1988B65DFC624BFD5474EA3 /* JOBISMainColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISMainColor.swift; sourceTree = "<group>"; };
 		B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+DeisgnSystemsColor.swift"; sourceTree = "<group>"; };
 		B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Warning.xcassets; sourceTree = "<group>"; };
 		B86AB4A1013604E25D044C5B /* Sub.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sub.xcassets; sourceTree = "<group>"; };
 		BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+DesignSystem.swift"; sourceTree = "<group>"; };
 		D7556B85FA7DF3EDA818413C /* JOBISFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISFont.swift; sourceTree = "<group>"; };
 		ECAFBD3892447294C1342932 /* DesignSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		F591B66F5E1AFDD478716659 /* Success.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Success.xcassets; sourceTree = "<group>"; };
 		F7095E9EFBFBA3B112F974B7 /* JOBISPrimaryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISPrimaryColor.swift; sourceTree = "<group>"; };
 		FE92BAD2C6FEA79CD8E915DA /* JOBISFontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISFontStyle.swift; sourceTree = "<group>"; };
@@ -235,10 +233,9 @@
 			isa = PBXGroup;
 			children = (
 				B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */,
-				B1988B65DFC624BFD5474EA3 /* JOBISErrorColor.swift */,
-				A318C918BF5CD9AA6E5E67EB /* JOBISGrayScaleColor.swift */,
+				B1988B65DFC624BFD5474EA3 /* JOBISMainColor.swift */,
+				A318C918BF5CD9AA6E5E67EB /* JOBISSubScaleColor.swift */,
 				F7095E9EFBFBA3B112F974B7 /* JOBISPrimaryColor.swift */,
-				3284995B6DEA0C569C10F9A8 /* JOBISSystemColor.swift */,
 			);
 			path = Color;
 			sourceTree = "<group>";
@@ -278,6 +275,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDE90610E9DF3345CFC83326 /* Build configuration list for PBXNativeTarget "DesignSystem" */;
 			buildPhases = (
+				900D4F72298C2ACD0047FC1C /* SwiftLint */,
 				BA6DF36C53063F00B80115EA /* Sources */,
 				510D3A5EADC65A3BE366D353 /* Resources */,
 				49C4A8593835DDF36FBC2A05 /* Embed Frameworks */,
@@ -299,8 +297,6 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = team.return;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 5C0CBBA2BFE0CEE21375AF0A /* Build configuration list for PBXProject "DesignSystem" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -350,6 +346,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		900D4F72298C2ACD0047FC1C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA6DF36C53063F00B80115EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -359,10 +376,9 @@
 				F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */,
 				2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */,
 				979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */,
-				7F7EBFA4157034CD7A5A391F /* JOBISErrorColor.swift in Sources */,
-				8E3920CA10B4C8594D80A44D /* JOBISGrayScaleColor.swift in Sources */,
+				7F7EBFA4157034CD7A5A391F /* JOBISMainColor.swift in Sources */,
+				8E3920CA10B4C8594D80A44D /* JOBISSubScaleColor.swift in Sources */,
 				9B579CD7064912C15AD6653C /* JOBISPrimaryColor.swift in Sources */,
-				627ED4ABA2BD390414435253 /* JOBISSystemColor.swift in Sources */,
 				138C4ADF914BC7AF5B065FE5 /* JOBISFont.swift in Sources */,
 				64AD7ACEF223BD702258A0AA /* JOBISFontStyle.swift in Sources */,
 			);
