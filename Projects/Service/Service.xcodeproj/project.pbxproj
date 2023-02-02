@@ -193,7 +193,7 @@
 		2387D8980C051CCC13E9F55A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = baegteun;
+				ORGANIZATIONNAME = team.return;
 				TargetAttributes = {
 				};
 			};
@@ -280,7 +280,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = baegteun.Service;
+				PRODUCT_BUNDLE_IDENTIFIER = team.return.Service;
 				PRODUCT_NAME = Service;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -305,7 +305,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = baegteun.ServiceTests;
+				PRODUCT_BUNDLE_IDENTIFIER = team.return.ServiceTests;
 				PRODUCT_NAME = ServiceTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
@@ -393,7 +393,7 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = baegteun.Service;
+				PRODUCT_BUNDLE_IDENTIFIER = team.return.Service;
 				PRODUCT_NAME = Service;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -419,7 +419,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = baegteun.ServiceTests;
+				PRODUCT_BUNDLE_IDENTIFIER = team.return.ServiceTests;
 				PRODUCT_NAME = ServiceTests;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = NO;
