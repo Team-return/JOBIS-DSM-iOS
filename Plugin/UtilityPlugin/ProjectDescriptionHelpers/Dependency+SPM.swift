@@ -2,7 +2,7 @@
 import ProjectDescription
 
 public extension TargetDependency {
-    struct SPM {}
+    struct SPM { }
 }
 
 public extension TargetDependency.SPM {

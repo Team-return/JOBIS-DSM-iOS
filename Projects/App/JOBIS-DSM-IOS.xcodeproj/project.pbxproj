@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -182,7 +182,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC655DEFDE794F3D2466E74 /* Build configuration list for PBXNativeTarget "JOBIS-DSM-IOS" */;
 			buildPhases = (
-				900D4F71298C2A9E0047FC1C /* SwiftLint */,
 				2398ACAD477838CDACDD25F5 /* Sources */,
 				286209B46DD1607306112F7B /* Resources */,
 				0359795C8130ACAE80B3506A /* Embed Frameworks */,
@@ -245,27 +244,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		900D4F71298C2A9E0047FC1C /* SwiftLint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = SwiftLint;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2398ACAD477838CDACDD25F5 /* Sources */ = {
