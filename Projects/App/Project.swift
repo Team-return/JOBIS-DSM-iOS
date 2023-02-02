@@ -13,6 +13,6 @@ let project = Project.makeModule(
     infoPlist: .extendingDefault(with: [
         "UIMainStoryboardFile": "",
         "UILaunchStoryboardName": "LaunchScreen",
-        "ENABLE_TESTS": .boolean(true),
+        "ENABLE_TESTS": .boolean(true)
     ])
 )
