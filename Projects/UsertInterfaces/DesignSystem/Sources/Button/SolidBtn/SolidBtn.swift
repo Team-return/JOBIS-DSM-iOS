@@ -52,6 +52,7 @@ public struct SolidBtn: View {
         .buttonStyle(SolidBtnStyle(style: style, size: size))
     }
 }
+// swiftlint:disable line_length
 
 struct SolidDefaultBtn_Previews: PreviewProvider {
     static var previews: some View {
