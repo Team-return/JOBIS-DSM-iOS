@@ -4,7 +4,7 @@ import SwiftUI
 struct JOBISApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("hi")
+            TestView()
         }
     }
 }

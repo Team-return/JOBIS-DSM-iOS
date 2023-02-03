@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,7 @@
 		3B664EC900C0DFDDF05C03BA /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A88CF4496620AE41DEA7C14 /* Service.framework */; platformFilter = ios; };
 		5F336B490BD3538FE13BCC7A /* JOBISApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D00F864AD498C77E794AC /* JOBISApp.swift */; };
 		5F742BE0D84054D3C33033CA /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		900D4F89298CC6D20047FC1C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F88298CC6D20047FC1C /* TestView.swift */; };
 		956240AE3556234AB7B25D22 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; };
 		D4AFE9047718F3D7DC1BE8BE /* BaseFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */; platformFilter = ios; };
 		EFA6C6D5254B34A73D86D0E6 /* ThirdPartyLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -57,6 +58,7 @@
 		4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D00F864AD498C77E794AC /* JOBISApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISApp.swift; sourceTree = "<group>"; };
 		8FEDB4C3D0995F7072992012 /* JOBIS_DSM_IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JOBIS_DSM_IOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		900D4F88298CC6D20047FC1C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B085656CC3CB3F86330EE628 /* JOBIS_DSM_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JOBIS_DSM_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33BA5381E46CEC8F09F28F4 /* JOBIS-DSM-IOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JOBIS-DSM-IOS-Info.plist"; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		50569821F0CF18BFF623D693 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				900D4F85298CC6BE0047FC1C /* TestView */,
 				C1D3BC82CE89937B146B297A /* Application */,
 			);
 			path = Sources;
@@ -139,6 +142,14 @@
 				50569821F0CF18BFF623D693 /* Sources */,
 			);
 			name = Project;
+			sourceTree = "<group>";
+		};
+		900D4F85298CC6BE0047FC1C /* TestView */ = {
+			isa = PBXGroup;
+			children = (
+				900D4F88298CC6D20047FC1C /* TestView.swift */,
+			);
+			path = TestView;
 			sourceTree = "<group>";
 		};
 		C1D3BC82CE89937B146B297A /* Application */ = {
@@ -182,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC655DEFDE794F3D2466E74 /* Build configuration list for PBXNativeTarget "JOBIS-DSM-IOS" */;
 			buildPhases = (
+				900D4F76298C32540047FC1C /* SwiftLint Script */,
 				2398ACAD477838CDACDD25F5 /* Sources */,
 				286209B46DD1607306112F7B /* Resources */,
 				0359795C8130ACAE80B3506A /* Embed Frameworks */,
@@ -245,11 +257,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		900D4F76298C32540047FC1C /* SwiftLint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "SwiftLint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2398ACAD477838CDACDD25F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				900D4F89298CC6D20047FC1C /* TestView.swift in Sources */,
 				5F336B490BD3538FE13BCC7A /* JOBISApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
