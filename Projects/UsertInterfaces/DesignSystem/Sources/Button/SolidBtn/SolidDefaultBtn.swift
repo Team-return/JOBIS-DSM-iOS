@@ -33,7 +33,7 @@ public struct SolidBtnStyle: ButtonStyle {
     }
 }
 
-private struct ButtonStruct {
+public struct ButtonStruct {
     let minWidth: CGFloat
     let minHeight: CGFloat
     let hPadding: CGFloat
@@ -54,7 +54,7 @@ private struct ButtonStruct {
     }
 }
 
-private func buttonSize(size: SolidBtnStyle.Size) -> ButtonStruct {
+public func buttonSize(size: SolidBtnStyle.Size) -> ButtonStruct {
     switch size {
     case .small:
         return ButtonStruct(
@@ -100,7 +100,6 @@ extension SolidBtnStyle {
                 .frame(minWidth: buttonSize(size: size).minWidth, minHeight: buttonSize(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
-                .background(Color.Main.lightBlue)
                 .cornerRadius(buttonSize(size: size).cornerRadius)
         }
     }
@@ -114,17 +113,12 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-//                .padding(.vertical, 8.5)
-//                .padding(.horizontal, 16)
-//                .dmsFont(.etc(.button))
-//                .background(color)
-//                .foregroundColor(.GrayScale.gray1)
-//                .cornerRadius(5)
-//                .opacity(
-//                    isEnabled ?
-//                        configuration.isPressed ? 0.7 : 1.0 :
-//                        0.5
-//                )
+                .JOBISFont(buttonSize(size: size).font, color: .white)
+                .padding(.horizontal, buttonSize(size: size).hPadding)
+                .frame(minWidth: buttonSize(size: size).minWidth, minHeight: buttonSize(size: size).minHeight)
+                .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
+                            : Color.Sub.gray50)
+                .cornerRadius(buttonSize(size: size).cornerRadius)
         }
     }
 }
@@ -137,20 +131,12 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-//                .padding(.vertical, 14)
-//                .padding(.horizontal, 16)
-//                .dmsFont(.etc(.button))
-//                .background(.clear)
-//                .foregroundColor(color)
-//                .overlay {
-//                    RoundedRectangle(cornerRadius: 5)
-//                        .stroke(color, lineWidth: 1)
-//                }
-//                .opacity(
-//                    isEnabled ?
-//                        configuration.isPressed ? 0.7 : 1.0 :
-//                        0.5
-//                )
+                .JOBISFont(buttonSize(size: size).font, color: .white)
+                .padding(.horizontal, buttonSize(size: size).hPadding)
+                .frame(minWidth: buttonSize(size: size).minWidth, minHeight: buttonSize(size: size).minHeight)
+                .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
+                            : Color.Sub.gray50)
+                .cornerRadius(buttonSize(size: size).cornerRadius)
         }
     }
 }
@@ -162,20 +148,12 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-//                .padding(.vertical, 8.5)
-//                .padding(.horizontal, 16)
-//                .dmsFont(.etc(.button))
-//                .background(.clear)
-//                .foregroundColor(color)
-//                .overlay {
-//                    RoundedRectangle(cornerRadius: 5)
-//                        .stroke(color, lineWidth: 1)
-//                }
-//                .opacity(
-//                    isEnabled ?
-//                        configuration.isPressed ? 0.7 : 1.0 :
-//                        0.5
-//                )
+                .foregroundColor(.white)
+                .frame(width: 44, height: 44)
+                .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
+                            : Color.Sub.gray50)
+                .background(Color.Main.lightBlue)
+                .cornerRadius(3)
         }
     }
 }
@@ -188,14 +166,11 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-//                .dmsFont(
-//                    .etc(.button))
-//                .foregroundColor(color)
-//                .opacity(
-//                    isEnabled ?
-//                    configuration.isPressed ? 0.7 : 1.0 :
-//                        0.5
-//                )
+                .JOBISFont(buttonSize(size: size).font, color: .white)
+                .frame(width: buttonSize(size: size).minHeight, height: buttonSize(size: size).minHeight)
+                .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
+                            : Color.Sub.gray50)
+                .clipShape(Circle())
         }
     }
 }
