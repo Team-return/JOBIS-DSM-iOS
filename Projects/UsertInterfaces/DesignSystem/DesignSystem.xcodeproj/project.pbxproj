@@ -17,6 +17,8 @@
 		6AD27D0E8CFEE3E6A2C7A39B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */; };
 		7089D63AB0947C7C2CC25EA6 /* Success.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F591B66F5E1AFDD478716659 /* Success.xcassets */; };
 		8E991CDA697003176764E5B6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */; };
+		900D4F81298C379C0047FC1C /* SolidBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F80298C379C0047FC1C /* SolidBtn.swift */; };
+		900D4F84298C392E0047FC1C /* SolidDefaultBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F83298C392E0047FC1C /* SolidDefaultBtn.swift */; };
 		939DC5308AB7F13239332227 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */; };
 		940FE54052CE73BE5D36B0C2 /* Warning.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */; };
 		979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */; };
@@ -81,6 +83,8 @@
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC2D3E3922EA7A793BA051A /* TargetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTest.swift; sourceTree = "<group>"; };
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
+		900D4F80298C379C0047FC1C /* SolidBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidBtn.swift; sourceTree = "<group>"; };
+		900D4F83298C392E0047FC1C /* SolidDefaultBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidDefaultBtn.swift; sourceTree = "<group>"; };
 		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
 		B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+DeisgnSystemsColor.swift"; sourceTree = "<group>"; };
 		B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Warning.xcassets; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		0E1288659896D0CFF98DA5AA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				900D4F77298C34270047FC1C /* Button */,
 				EE53A850990E859B77A63149 /* Color */,
 				3685E88874D8B1F3BEE6A129 /* Typography */,
 			);
@@ -194,6 +199,55 @@
 				D5FD3537E28AE857DC09D214 /* Sources */,
 			);
 			path = Derived;
+			sourceTree = "<group>";
+		};
+		900D4F77298C34270047FC1C /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				900D4F7C298C34610047FC1C /* ShadowBtn */,
+				900D4F7B298C34580047FC1C /* GrayBtn */,
+				900D4F7A298C344C0047FC1C /* LightBtn */,
+				900D4F79298C34410047FC1C /* GhostBtn */,
+				900D4F78298C342C0047FC1C /* SolidBtn */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		900D4F78298C342C0047FC1C /* SolidBtn */ = {
+			isa = PBXGroup;
+			children = (
+				900D4F80298C379C0047FC1C /* SolidBtn.swift */,
+				900D4F83298C392E0047FC1C /* SolidDefaultBtn.swift */,
+			);
+			path = SolidBtn;
+			sourceTree = "<group>";
+		};
+		900D4F79298C34410047FC1C /* GhostBtn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GhostBtn;
+			sourceTree = "<group>";
+		};
+		900D4F7A298C344C0047FC1C /* LightBtn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LightBtn;
+			sourceTree = "<group>";
+		};
+		900D4F7B298C34580047FC1C /* GrayBtn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GrayBtn;
+			sourceTree = "<group>";
+		};
+		900D4F7C298C34610047FC1C /* ShadowBtn */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShadowBtn;
 			sourceTree = "<group>";
 		};
 		9C29548CCBEAF62FB7951500 /* Resources */ = {
@@ -374,12 +428,14 @@
 			files = (
 				ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */,
 				F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */,
+				900D4F81298C379C0047FC1C /* SolidBtn.swift in Sources */,
 				2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */,
 				979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */,
 				C391C552688F1F18236DEDE4 /* JOBISMainColor.swift in Sources */,
 				9B579CD7064912C15AD6653C /* JOBISPrimaryColor.swift in Sources */,
 				AE7AD50275FF534B440D1D50 /* JOBISSubScaleColor.swift in Sources */,
 				138C4ADF914BC7AF5B065FE5 /* JOBISFont.swift in Sources */,
+				900D4F84298C392E0047FC1C /* SolidDefaultBtn.swift in Sources */,
 				64AD7ACEF223BD702258A0AA /* JOBISFontStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

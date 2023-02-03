@@ -26,7 +26,7 @@ public extension View {
             .modifier(DesignSystem.JOBISFont(style: style))
     }
 
-    func dmsFont(_ style: JOBISFontStyle, color: Color) -> some View {
+    func JOBISFont(_ style: JOBISFontStyle, color: Color) -> some View {
         self
             .JOBISFont(style)
             .foregroundColor(color)
