@@ -60,7 +60,7 @@ struct GhostBtn_Previews: PreviewProvider {
             VStack(spacing: 20) {
                 VStack {
                     GhostBtn(text: "버튼", style: .defaultStyle, size: .small)
-                        .disabled(false)
+                        .disabled(true)
                     GhostBtn(text: "버튼", style: .defaultStyle, size: .medium)
                     GhostBtn(text: "버튼", style: .defaultStyle, size: .large)
                 }
@@ -85,6 +85,7 @@ struct GhostBtn_Previews: PreviewProvider {
                 .background(.white)
                 VStack {
                     GhostBtn(style: .icon2, size: .small, icon: Image(systemName: "pencil"))
+                        .disabled(true)
                     GhostBtn(style: .icon2, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
                 }
                 .padding(10)

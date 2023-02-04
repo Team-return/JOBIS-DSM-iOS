@@ -44,7 +44,7 @@ extension GhostBtnStyle {
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
                 .overlay(
                     RoundedRectangle(cornerRadius: fetchButtonInfo(size: size).cornerRadius)
-                        .stroke(isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
+                        .stroke(isEnabled ? Color.Main.lightBlue
                                 : Color.Sub.gray40, lineWidth: 1.5)
                 )
         }
@@ -68,7 +68,7 @@ extension GhostBtnStyle {
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
                 .overlay(
                     RoundedRectangle(cornerRadius: fetchButtonInfo(size: size).cornerRadius)
-                        .stroke(isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
+                        .stroke(isEnabled ? Color.Main.lightBlue
                                 : Color.Sub.gray40, lineWidth: 1.5)
                 )
         }
@@ -92,7 +92,7 @@ extension GhostBtnStyle {
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
                 .overlay(
                     RoundedRectangle(cornerRadius: fetchButtonInfo(size: size).cornerRadius)
-                        .stroke(isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
+                        .stroke(isEnabled ? Color.Main.lightBlue
                                 : Color.Sub.gray40, lineWidth: 1.5)
                 )
         }
@@ -114,7 +114,7 @@ extension GhostBtnStyle {
                 .cornerRadius(3)
                 .overlay(
                     RoundedRectangle(cornerRadius: 3)
-                        .stroke(isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
+                        .stroke(isEnabled ? Color.Main.lightBlue
                                 : Color.Sub.gray40, lineWidth: 1.5)
                 )
         }
@@ -129,11 +129,18 @@ extension GhostBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font, color: .white)
+                .JOBISFont(fetchButtonInfo(size: size).font,
+                           color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
+                           : Color.Sub.gray50)
+                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(width: fetchButtonInfo(size: size).minHeight, height: fetchButtonInfo(size: size).minHeight)
-                .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
-                            : Color.Sub.gray50)
+                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
                 .clipShape(Circle())
+                .overlay(
+                    Circle()
+                        .stroke(isEnabled ? Color.Main.lightBlue
+                                : Color.Sub.gray40, lineWidth: 1.5)
+                )
         }
     }
 }
