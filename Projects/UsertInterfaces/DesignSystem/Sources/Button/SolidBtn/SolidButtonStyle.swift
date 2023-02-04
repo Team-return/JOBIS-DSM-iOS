@@ -92,7 +92,6 @@ extension SolidBtnStyle {
                 .frame(width: 44, height: 44)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
-                .background(Color.Main.lightBlue)
                 .cornerRadius(3)
         }
     }
