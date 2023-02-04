@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct SolidBtn: View {
+public struct GhostBtn: View {
     var text: String
     var style: BtnStyle
     var action: () -> Void
@@ -49,44 +49,43 @@ public struct SolidBtn: View {
                 }
             }
         }
-        .buttonStyle(SolidBtnStyle(style: style, size: size))
+        .buttonStyle(GhostBtnStyle(style: style, size: size))
     }
 }
 // swiftlint:disable line_length
 
-struct SolidBtn_Previews: PreviewProvider {
-    private var isDisabled: Bool = false
+struct GhostBtn_Previews: PreviewProvider {
     static var previews: some View {
         ScrollView {
             VStack(spacing: 20) {
                 VStack {
-                    SolidBtn(text: "버튼", style: .defaultStyle, size: .small)
-//                        .disabled(true)
-                    SolidBtn(text: "버튼", style: .defaultStyle, size: .medium)
-                    SolidBtn(text: "버튼", style: .defaultStyle, size: .large)
+                    GhostBtn(text: "버튼", style: .defaultStyle, size: .small)
+                        .disabled(false)
+                    GhostBtn(text: "버튼", style: .defaultStyle, size: .medium)
+                    GhostBtn(text: "버튼", style: .defaultStyle, size: .large)
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    SolidBtn(text: "버튼", style: .lIcon, size: .medium, icon: Image(systemName: "pencil"))
-                    SolidBtn(text: "버튼", style: .lIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    GhostBtn(text: "버튼", style: .lIcon, size: .medium, icon: Image(systemName: "pencil"))
+                    GhostBtn(text: "버튼", style: .lIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    SolidBtn(text: "버튼", style: .rIcon, size: .medium, icon: Image(systemName: "pencil"))
-                    SolidBtn(text: "버튼", style: .rIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    GhostBtn(text: "버튼", style: .rIcon, size: .medium, icon: Image(systemName: "pencil"))
+                    GhostBtn(text: "버튼", style: .rIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    SolidBtn(style: .icon1, icon: Image(systemName: "pencil"))
+                    GhostBtn(style: .icon1, icon: Image(systemName: "pencil"))
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    SolidBtn(style: .icon2, size: .small, icon: Image(systemName: "pencil"))
-                    SolidBtn(style: .icon2, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    GhostBtn(style: .icon2, size: .small, icon: Image(systemName: "pencil"))
+                    GhostBtn(style: .icon2, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
                 }
                 .padding(10)
                 .background(.white)
