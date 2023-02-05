@@ -35,7 +35,7 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font, color: .white)
+                .JOBISFont(fetchButtonInfo(size: size).font, color: .Sub.gray10)
                 .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
@@ -53,7 +53,7 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font, color: .white)
+                .JOBISFont(fetchButtonInfo(size: size).font, color: .Sub.gray10)
                 .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
@@ -71,7 +71,7 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font, color: .white)
+                .JOBISFont(fetchButtonInfo(size: size).font, color: .Sub.gray10)
                 .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
@@ -88,7 +88,7 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .foregroundColor(.white)
+                .foregroundColor(.Sub.gray10)
                 .frame(width: 44, height: 44)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
@@ -105,7 +105,7 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font, color: .white)
+                .foregroundColor(.Sub.gray10)
                 .frame(width: fetchButtonInfo(size: size).minHeight, height: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
