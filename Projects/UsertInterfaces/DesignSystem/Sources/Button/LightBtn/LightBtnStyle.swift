@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct GhostBtnStyle: ButtonStyle {
+public struct LightBtnStyle: ButtonStyle {
     var style: BtnStyle
     var size: BtnSize
 
@@ -22,13 +22,13 @@ public struct GhostBtnStyle: ButtonStyle {
 
 // MARK: - Usage
 extension Button {
-    func ghostBtnStyle(_ style: BtnStyle, size: BtnSize) -> some View {
-        self.buttonStyle(GhostBtnStyle(style: style, size: size))
+    func lightBtnStyle(_ style: BtnStyle, size: BtnSize) -> some View {
+        self.buttonStyle(SolidBtnStyle(style: style, size: size))
     }
 }
 
 // MARK: - Default
-extension GhostBtnStyle {
+extension LightBtnStyle {
     struct DefaultButton: View {
         let configuration: ButtonStyle.Configuration
         let size: BtnSize
@@ -40,19 +40,14 @@ extension GhostBtnStyle {
                            : Color.Sub.gray50)
                 .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
-                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
+                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray30)
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
-                .overlay(
-                    RoundedRectangle(cornerRadius: fetchButtonInfo(size: size).cornerRadius)
-                        .stroke(isEnabled ? Color.Main.lightBlue
-                                : Color.Sub.gray40, lineWidth: 1.5)
-                )
         }
     }
 }
 
 // MARK: - L icon
-extension GhostBtnStyle {
+extension LightBtnStyle {
     struct LIconButton: View {
         let configuration: ButtonStyle.Configuration
         let size: BtnSize
@@ -64,19 +59,14 @@ extension GhostBtnStyle {
                            : Color.Sub.gray50)
                 .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
-                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
+                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray30)
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
-                .overlay(
-                    RoundedRectangle(cornerRadius: fetchButtonInfo(size: size).cornerRadius)
-                        .stroke(isEnabled ? Color.Main.lightBlue
-                                : Color.Sub.gray40, lineWidth: 1.5)
-                )
         }
     }
 }
 
 // MARK: - R icon
-extension GhostBtnStyle {
+extension LightBtnStyle {
     struct RIconButton: View {
         let configuration: ButtonStyle.Configuration
         let size: BtnSize
@@ -88,41 +78,30 @@ extension GhostBtnStyle {
                            : Color.Sub.gray50)
                 .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
-                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
+                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray30)
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
-                .overlay(
-                    RoundedRectangle(cornerRadius: fetchButtonInfo(size: size).cornerRadius)
-                        .stroke(isEnabled ? Color.Main.lightBlue
-                                : Color.Sub.gray40, lineWidth: 1.5)
-                )
         }
     }
 }
 
 // MARK: - Icon1
-extension GhostBtnStyle {
+extension LightBtnStyle {
     struct Icon1Button: View {
         let configuration: ButtonStyle.Configuration
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
                 .foregroundColor(isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
-                                 : Color.Sub.gray50)
+                      : Color.Sub.gray50)
                 .frame(width: 44, height: 44)
-                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
-                .background(Color.Main.lightBlue)
+                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray30)
                 .cornerRadius(3)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 3)
-                        .stroke(isEnabled ? Color.Main.lightBlue
-                                : Color.Sub.gray40, lineWidth: 1.5)
-                )
         }
     }
 }
 
 // MARK: - Icon2
-extension GhostBtnStyle {
+extension LightBtnStyle {
     struct Icon2Button: View {
         let configuration: ButtonStyle.Configuration
         let size: BtnSize
@@ -131,15 +110,9 @@ extension GhostBtnStyle {
             configuration.label
                 .foregroundColor(isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
                       : Color.Sub.gray50)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(width: fetchButtonInfo(size: size).minHeight, height: fetchButtonInfo(size: size).minHeight)
-                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
+                .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray30)
                 .clipShape(Circle())
-                .overlay(
-                    Circle()
-                        .stroke(isEnabled ? Color.Main.lightBlue
-                                : Color.Sub.gray40, lineWidth: 1.5)
-                )
         }
     }
 }

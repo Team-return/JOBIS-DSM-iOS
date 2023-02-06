@@ -2,13 +2,11 @@ import SwiftUI
 import DesignSystem
 
 struct TestView: View {
-    @Environment(\.isEnabled) private var isEnabled
     var body: some View {
         VStack {
             SolidBtn(text: "test", style: .defaultStyle) {
                 print("test...\n")
             }
-            .disabled(false)
         }
     }
 }

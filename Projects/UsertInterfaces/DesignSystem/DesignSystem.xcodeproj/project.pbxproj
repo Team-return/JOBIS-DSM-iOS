@@ -24,6 +24,8 @@
 		900D4F8F298EA7940047FC1C /* ButtonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F8E298EA7940047FC1C /* ButtonEnum.swift */; };
 		900D4F91298EA94B0047FC1C /* ButtonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F90298EA94B0047FC1C /* ButtonInfo.swift */; };
 		900D4F93298EA9500047FC1C /* ButtonFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F92298EA9500047FC1C /* ButtonFunc.swift */; };
+		900D4F982990BB230047FC1C /* LightBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F972990BB230047FC1C /* LightBtn.swift */; };
+		900D4F9A2990BB2A0047FC1C /* LightBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F992990BB2A0047FC1C /* LightBtnStyle.swift */; };
 		939DC5308AB7F13239332227 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */; };
 		940FE54052CE73BE5D36B0C2 /* Warning.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */; };
 		979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */; };
@@ -95,6 +97,8 @@
 		900D4F8E298EA7940047FC1C /* ButtonEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEnum.swift; sourceTree = "<group>"; };
 		900D4F90298EA94B0047FC1C /* ButtonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonInfo.swift; sourceTree = "<group>"; };
 		900D4F92298EA9500047FC1C /* ButtonFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFunc.swift; sourceTree = "<group>"; };
+		900D4F972990BB230047FC1C /* LightBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBtn.swift; sourceTree = "<group>"; };
+		900D4F992990BB2A0047FC1C /* LightBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBtnStyle.swift; sourceTree = "<group>"; };
 		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
 		B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+DeisgnSystemsColor.swift"; sourceTree = "<group>"; };
 		B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Warning.xcassets; sourceTree = "<group>"; };
@@ -247,6 +251,8 @@
 		900D4F7A298C344C0047FC1C /* LightBtn */ = {
 			isa = PBXGroup;
 			children = (
+				900D4F972990BB230047FC1C /* LightBtn.swift */,
+				900D4F992990BB2A0047FC1C /* LightBtnStyle.swift */,
 			);
 			path = LightBtn;
 			sourceTree = "<group>";
@@ -444,7 +450,9 @@
 				ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */,
 				900D4F91298EA94B0047FC1C /* ButtonInfo.swift in Sources */,
 				900D4F8B298EA6950047FC1C /* GhostBtn.swift in Sources */,
+				900D4F982990BB230047FC1C /* LightBtn.swift in Sources */,
 				900D4F93298EA9500047FC1C /* ButtonFunc.swift in Sources */,
+				900D4F9A2990BB2A0047FC1C /* LightBtnStyle.swift in Sources */,
 				900D4F8F298EA7940047FC1C /* ButtonEnum.swift in Sources */,
 				F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */,
 				900D4F81298C379C0047FC1C /* SolidBtn.swift in Sources */,
