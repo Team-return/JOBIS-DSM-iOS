@@ -12,7 +12,8 @@
 		5F336B490BD3538FE13BCC7A /* JOBISApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D00F864AD498C77E794AC /* JOBISApp.swift */; };
 		5F742BE0D84054D3C33033CA /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		900D4F89298CC6D20047FC1C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F88298CC6D20047FC1C /* TestView.swift */; };
-		900D4F9E2990E14A0047FC1C /* Appicon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900D4F9D2990E14A0047FC1C /* Appicon.xcassets */; };
+		900D4FA12990E49F0047FC1C /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 900D4F9F2990E49F0047FC1C /* appstore.png */; };
+		900D4FA22990E49F0047FC1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900D4FA02990E49F0047FC1C /* Assets.xcassets */; };
 		956240AE3556234AB7B25D22 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; };
 		D4AFE9047718F3D7DC1BE8BE /* BaseFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */; platformFilter = ios; };
 		EFA6C6D5254B34A73D86D0E6 /* ThirdPartyLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -60,7 +61,8 @@
 		678D00F864AD498C77E794AC /* JOBISApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISApp.swift; sourceTree = "<group>"; };
 		8FEDB4C3D0995F7072992012 /* JOBIS_DSM_IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JOBIS_DSM_IOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		900D4F88298CC6D20047FC1C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		900D4F9D2990E14A0047FC1C /* Appicon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Appicon.xcassets; sourceTree = "<group>"; };
+		900D4F9F2990E49F0047FC1C /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
+		900D4FA02990E49F0047FC1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B085656CC3CB3F86330EE628 /* JOBIS_DSM_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JOBIS_DSM_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33BA5381E46CEC8F09F28F4 /* JOBIS-DSM-IOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JOBIS-DSM-IOS-Info.plist"; sourceTree = "<group>"; };
@@ -158,7 +160,8 @@
 		900D4F9C2990E1260047FC1C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				900D4F9D2990E14A0047FC1C /* Appicon.xcassets */,
+				900D4F9F2990E49F0047FC1C /* appstore.png */,
+				900D4FA02990E49F0047FC1C /* Assets.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -256,7 +259,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				900D4F9E2990E14A0047FC1C /* Appicon.xcassets in Resources */,
+				900D4FA22990E49F0047FC1C /* Assets.xcassets in Resources */,
+				900D4FA12990E49F0047FC1C /* appstore.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
