@@ -12,7 +12,6 @@ public struct LightBtn: View {
     public init(
         text: String = "",
         style: BtnStyle = .defaultStyle,
-        color: Color = .Main.lightBlue,
         action: @escaping () -> Void = {},
         size: BtnSize = .medium,
         icon: Image = Image(systemName: "squareshape.fill"),
