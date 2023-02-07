@@ -3,46 +3,46 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03584140C6C0BF6E59DE0EA0 /* SolidBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63ECA6A7DBDAB87D8566D13 /* SolidBtn.swift */; };
 		09FD8598098CDFF49357A8EF /* Main.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CB962B07FF2D976A70F51C9 /* Main.xcassets */; };
 		138C4ADF914BC7AF5B065FE5 /* JOBISFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7556B85FA7DF3EDA818413C /* JOBISFont.swift */; };
 		1693C91DE32F1EE6203E674F /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */; };
+		213C957FCE71D819B142F13F /* LightBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D1F739FF87DC0BD8D8501 /* LightBtn.swift */; };
 		2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */; };
+		3E72C170E1B8A6207EFDF6EF /* SolidButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 907A9DD0E44C6843D4F276C8 /* SolidButtonStyle.swift */; };
 		424A71C0E40BD75F6485153D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451024361D40DACBAC0755DB /* Icons.xcassets */; };
+		441D2570C2F503C2EB17B8F3 /* ButtonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6C815A1358D724177DF1AD5 /* ButtonInfo.swift */; };
+		4931DE93652B91432546D09F /* LightBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE515B15345C2CCDF4C706C /* LightBtnStyle.swift */; };
+		4D10B545647212839D551BAD /* ShadowBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6B603F3439EA15490703AD /* ShadowBtn.swift */; };
+		5192EB9CA90EA553ACB8D9E0 /* ButtonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBB973611464BDD43A3546B /* ButtonEnum.swift */; };
+		5DB08B07613A59252F2F4E68 /* ButtonFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04B4BE8D90D502BF7EEDF8C /* ButtonFunc.swift */; };
 		61CD8D139D17DE6509B2EDDA /* TargetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC2D3E3922EA7A793BA051A /* TargetTest.swift */; };
 		64AD7ACEF223BD702258A0AA /* JOBISFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE92BAD2C6FEA79CD8E915DA /* JOBISFontStyle.swift */; };
 		6AD27D0E8CFEE3E6A2C7A39B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */; };
 		7089D63AB0947C7C2CC25EA6 /* Success.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F591B66F5E1AFDD478716659 /* Success.xcassets */; };
+		7EB23B309C5C9F085CE670C1 /* GhostBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3025C7BB442DC40EE965C /* GhostBtnStyle.swift */; };
 		8E991CDA697003176764E5B6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */; };
-		900D4F81298C379C0047FC1C /* SolidBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F80298C379C0047FC1C /* SolidBtn.swift */; };
-		900D4F84298C392E0047FC1C /* SolidButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F83298C392E0047FC1C /* SolidButtonStyle.swift */; };
-		900D4F8B298EA6950047FC1C /* GhostBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F8A298EA6950047FC1C /* GhostBtn.swift */; };
-		900D4F8D298EA70E0047FC1C /* GhostBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F8C298EA70E0047FC1C /* GhostBtnStyle.swift */; };
-		900D4F8F298EA7940047FC1C /* ButtonEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F8E298EA7940047FC1C /* ButtonEnum.swift */; };
-		900D4F91298EA94B0047FC1C /* ButtonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F90298EA94B0047FC1C /* ButtonInfo.swift */; };
-		900D4F93298EA9500047FC1C /* ButtonFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F92298EA9500047FC1C /* ButtonFunc.swift */; };
-		900D4F982990BB230047FC1C /* LightBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F972990BB230047FC1C /* LightBtn.swift */; };
-		900D4F9A2990BB2A0047FC1C /* LightBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F992990BB2A0047FC1C /* LightBtnStyle.swift */; };
-		900D4FA4299206CC0047FC1C /* GrayBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4FA3299206CC0047FC1C /* GrayBtn.swift */; };
-		900D4FA6299206D20047FC1C /* GrayBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4FA5299206D20047FC1C /* GrayBtnStyle.swift */; };
-		900D4FA829921DF70047FC1C /* ShadowBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4FA729921DF70047FC1C /* ShadowBtn.swift */; };
-		900D4FAA29921DFE0047FC1C /* ShadowBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4FA929921DFE0047FC1C /* ShadowBtnStyle.swift */; };
 		939DC5308AB7F13239332227 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */; };
 		940FE54052CE73BE5D36B0C2 /* Warning.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */; };
 		979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */; };
 		9B579CD7064912C15AD6653C /* JOBISPrimaryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7095E9EFBFBA3B112F974B7 /* JOBISPrimaryColor.swift */; };
+		9DDBEBBD1308DB2FA0935469 /* ShadowBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7702310300F797E68B748 /* ShadowBtnStyle.swift */; };
+		A84E2EEAB4D26C2EF79377AE /* GrayBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24347E4407F45630BD03E82 /* GrayBtnStyle.swift */; };
 		A85EE20F955DD0EFCE35E0B3 /* Sub.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B86AB4A1013604E25D044C5B /* Sub.xcassets */; };
 		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
 		AE7AD50275FF534B440D1D50 /* JOBISSubScaleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692493B30FCB1407CC79EB0A /* JOBISSubScaleColor.swift */; };
 		B4C9E6874B20759CB274C16E /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */; };
+		B8E5138688EE95AAA0E255C5 /* GrayBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0678EDAEEB4494FFEF143CC /* GrayBtn.swift */; };
 		C391C552688F1F18236DEDE4 /* JOBISMainColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FFB82C71C5483BBD8054FB /* JOBISMainColor.swift */; };
 		C438E92FA9121880084AE9AA /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */; platformFilter = ios; };
 		D97762A6EB883FCEC4123B75 /* Error.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EEE7AB9BF7182D7DBB37ED /* Error.xcassets */; };
 		E59535D14D623BE5C0094A0B /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */; };
 		F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */; };
+		F6805F5C6BB06F4C732246D3 /* GhostBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A8F0CBF73BCEAE419ED40 /* GhostBtn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,44 +79,44 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		01FFB82C71C5483BBD8054FB /* JOBISMainColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISMainColor.swift; sourceTree = "<group>"; };
 		1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+DesignSystem.swift"; sourceTree = "<group>"; };
-		1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
-		40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		42EEE7AB9BF7182D7DBB37ED /* Error.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Error.xcassets; sourceTree = "<group>"; };
-		43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		451024361D40DACBAC0755DB /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		469F4B641DBB710B1B90BAD8 /* DesignSystemTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystemTests-Info.plist"; sourceTree = "<group>"; };
 		4CB962B07FF2D976A70F51C9 /* Main.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Main.xcassets; sourceTree = "<group>"; };
-		55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		4E1D1F739FF87DC0BD8D8501 /* LightBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBtn.swift; sourceTree = "<group>"; };
+		55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		64F7702310300F797E68B748 /* ShadowBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowBtnStyle.swift; sourceTree = "<group>"; };
 		692493B30FCB1407CC79EB0A /* JOBISSubScaleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISSubScaleColor.swift; sourceTree = "<group>"; };
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC2D3E3922EA7A793BA051A /* TargetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTest.swift; sourceTree = "<group>"; };
+		6E6B603F3439EA15490703AD /* ShadowBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowBtn.swift; sourceTree = "<group>"; };
+		7DB3025C7BB442DC40EE965C /* GhostBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostBtnStyle.swift; sourceTree = "<group>"; };
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
-		900D4F80298C379C0047FC1C /* SolidBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidBtn.swift; sourceTree = "<group>"; };
-		900D4F83298C392E0047FC1C /* SolidButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButtonStyle.swift; sourceTree = "<group>"; };
-		900D4F8A298EA6950047FC1C /* GhostBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostBtn.swift; sourceTree = "<group>"; };
-		900D4F8C298EA70E0047FC1C /* GhostBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostBtnStyle.swift; sourceTree = "<group>"; };
-		900D4F8E298EA7940047FC1C /* ButtonEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEnum.swift; sourceTree = "<group>"; };
-		900D4F90298EA94B0047FC1C /* ButtonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonInfo.swift; sourceTree = "<group>"; };
-		900D4F92298EA9500047FC1C /* ButtonFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFunc.swift; sourceTree = "<group>"; };
-		900D4F972990BB230047FC1C /* LightBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBtn.swift; sourceTree = "<group>"; };
-		900D4F992990BB2A0047FC1C /* LightBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBtnStyle.swift; sourceTree = "<group>"; };
-		900D4FA3299206CC0047FC1C /* GrayBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBtn.swift; sourceTree = "<group>"; };
-		900D4FA5299206D20047FC1C /* GrayBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBtnStyle.swift; sourceTree = "<group>"; };
-		900D4FA729921DF70047FC1C /* ShadowBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowBtn.swift; sourceTree = "<group>"; };
-		900D4FA929921DFE0047FC1C /* ShadowBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowBtnStyle.swift; sourceTree = "<group>"; };
+		8FE515B15345C2CCDF4C706C /* LightBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBtnStyle.swift; sourceTree = "<group>"; };
+		907A9DD0E44C6843D4F276C8 /* SolidButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButtonStyle.swift; sourceTree = "<group>"; };
+		A0678EDAEEB4494FFEF143CC /* GrayBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBtn.swift; sourceTree = "<group>"; };
 		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
+		A6C815A1358D724177DF1AD5 /* ButtonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonInfo.swift; sourceTree = "<group>"; };
+		B47A8F0CBF73BCEAE419ED40 /* GhostBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostBtn.swift; sourceTree = "<group>"; };
 		B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+DeisgnSystemsColor.swift"; sourceTree = "<group>"; };
 		B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Warning.xcassets; sourceTree = "<group>"; };
 		B86AB4A1013604E25D044C5B /* Sub.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Sub.xcassets; sourceTree = "<group>"; };
 		BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+DesignSystem.swift"; sourceTree = "<group>"; };
+		C04B4BE8D90D502BF7EEDF8C /* ButtonFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFunc.swift; sourceTree = "<group>"; };
+		C63ECA6A7DBDAB87D8566D13 /* SolidBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidBtn.swift; sourceTree = "<group>"; };
+		D24347E4407F45630BD03E82 /* GrayBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBtnStyle.swift; sourceTree = "<group>"; };
 		D7556B85FA7DF3EDA818413C /* JOBISFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISFont.swift; sourceTree = "<group>"; };
 		ECAFBD3892447294C1342932 /* DesignSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		F591B66F5E1AFDD478716659 /* Success.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Success.xcassets; sourceTree = "<group>"; };
 		F7095E9EFBFBA3B112F974B7 /* JOBISPrimaryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISPrimaryColor.swift; sourceTree = "<group>"; };
+		FDBB973611464BDD43A3546B /* ButtonEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEnum.swift; sourceTree = "<group>"; };
 		FE92BAD2C6FEA79CD8E915DA /* JOBISFontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISFontStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +142,7 @@
 		0E1288659896D0CFF98DA5AA /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				900D4F77298C34270047FC1C /* Button */,
+				8BC136006E1D0234B84A94B8 /* Button */,
 				EE53A850990E859B77A63149 /* Color */,
 				3685E88874D8B1F3BEE6A129 /* Typography */,
 			);
@@ -223,62 +223,35 @@
 			path = Derived;
 			sourceTree = "<group>";
 		};
-		900D4F77298C34270047FC1C /* Button */ = {
+		8BC136006E1D0234B84A94B8 /* Button */ = {
 			isa = PBXGroup;
 			children = (
-				900D4F8E298EA7940047FC1C /* ButtonEnum.swift */,
-				900D4F90298EA94B0047FC1C /* ButtonInfo.swift */,
-				900D4F92298EA9500047FC1C /* ButtonFunc.swift */,
-				900D4F7C298C34610047FC1C /* ShadowBtn */,
-				900D4F7B298C34580047FC1C /* GrayBtn */,
-				900D4F7A298C344C0047FC1C /* LightBtn */,
-				900D4F79298C34410047FC1C /* GhostBtn */,
-				900D4F78298C342C0047FC1C /* SolidBtn */,
+				8BE63F3439A4BB74130C621C /* GhostBtn */,
+				EBDFFF6BE2097400B05C4DDA /* GrayBtn */,
+				EE209940AA7B1258B17B77CC /* LightBtn */,
+				90C0E350438A7E480E6C33E8 /* ShadowBtn */,
+				D893BA5DB4CEB056602AFC32 /* SolidBtn */,
+				FDBB973611464BDD43A3546B /* ButtonEnum.swift */,
+				C04B4BE8D90D502BF7EEDF8C /* ButtonFunc.swift */,
+				A6C815A1358D724177DF1AD5 /* ButtonInfo.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
 		};
-		900D4F78298C342C0047FC1C /* SolidBtn */ = {
+		8BE63F3439A4BB74130C621C /* GhostBtn */ = {
 			isa = PBXGroup;
 			children = (
-				900D4F80298C379C0047FC1C /* SolidBtn.swift */,
-				900D4F83298C392E0047FC1C /* SolidButtonStyle.swift */,
-			);
-			path = SolidBtn;
-			sourceTree = "<group>";
-		};
-		900D4F79298C34410047FC1C /* GhostBtn */ = {
-			isa = PBXGroup;
-			children = (
-				900D4F8A298EA6950047FC1C /* GhostBtn.swift */,
-				900D4F8C298EA70E0047FC1C /* GhostBtnStyle.swift */,
+				B47A8F0CBF73BCEAE419ED40 /* GhostBtn.swift */,
+				7DB3025C7BB442DC40EE965C /* GhostBtnStyle.swift */,
 			);
 			path = GhostBtn;
 			sourceTree = "<group>";
 		};
-		900D4F7A298C344C0047FC1C /* LightBtn */ = {
+		90C0E350438A7E480E6C33E8 /* ShadowBtn */ = {
 			isa = PBXGroup;
 			children = (
-				900D4F972990BB230047FC1C /* LightBtn.swift */,
-				900D4F992990BB2A0047FC1C /* LightBtnStyle.swift */,
-			);
-			path = LightBtn;
-			sourceTree = "<group>";
-		};
-		900D4F7B298C34580047FC1C /* GrayBtn */ = {
-			isa = PBXGroup;
-			children = (
-				900D4FA3299206CC0047FC1C /* GrayBtn.swift */,
-				900D4FA5299206D20047FC1C /* GrayBtnStyle.swift */,
-			);
-			path = GrayBtn;
-			sourceTree = "<group>";
-		};
-		900D4F7C298C34610047FC1C /* ShadowBtn */ = {
-			isa = PBXGroup;
-			children = (
-				900D4FA729921DF70047FC1C /* ShadowBtn.swift */,
-				900D4FA929921DFE0047FC1C /* ShadowBtnStyle.swift */,
+				6E6B603F3439EA15490703AD /* ShadowBtn.swift */,
+				64F7702310300F797E68B748 /* ShadowBtnStyle.swift */,
 			);
 			path = ShadowBtn;
 			sourceTree = "<group>";
@@ -307,6 +280,24 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
+		D893BA5DB4CEB056602AFC32 /* SolidBtn */ = {
+			isa = PBXGroup;
+			children = (
+				C63ECA6A7DBDAB87D8566D13 /* SolidBtn.swift */,
+				907A9DD0E44C6843D4F276C8 /* SolidButtonStyle.swift */,
+			);
+			path = SolidBtn;
+			sourceTree = "<group>";
+		};
+		EBDFFF6BE2097400B05C4DDA /* GrayBtn */ = {
+			isa = PBXGroup;
+			children = (
+				A0678EDAEEB4494FFEF143CC /* GrayBtn.swift */,
+				D24347E4407F45630BD03E82 /* GrayBtnStyle.swift */,
+			);
+			path = GrayBtn;
+			sourceTree = "<group>";
+		};
 		EC9821EEC8CC800276475F6C = {
 			isa = PBXGroup;
 			children = (
@@ -314,6 +305,15 @@
 				7D6BBD2B92079B70AB979221 /* Frameworks */,
 				82664F67710540CBDEBE5B11 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		EE209940AA7B1258B17B77CC /* LightBtn */ = {
+			isa = PBXGroup;
+			children = (
+				4E1D1F739FF87DC0BD8D8501 /* LightBtn.swift */,
+				8FE515B15345C2CCDF4C706C /* LightBtnStyle.swift */,
+			);
+			path = LightBtn;
 			sourceTree = "<group>";
 		};
 		EE53A850990E859B77A63149 /* Color */ = {
@@ -362,7 +362,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDE90610E9DF3345CFC83326 /* Build configuration list for PBXNativeTarget "DesignSystem" */;
 			buildPhases = (
-				900D4F73298C2C4D0047FC1C /* SwiftLint Script */,
 				BA6DF36C53063F00B80115EA /* Sources */,
 				510D3A5EADC65A3BE366D353 /* Resources */,
 				49C4A8593835DDF36FBC2A05 /* Embed Frameworks */,
@@ -384,6 +383,8 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = team.return;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 5C0CBBA2BFE0CEE21375AF0A /* Build configuration list for PBXProject "DesignSystem" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -433,53 +434,32 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		900D4F73298C2C4D0047FC1C /* SwiftLint Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "SwiftLint Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		BA6DF36C53063F00B80115EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */,
-				900D4F91298EA94B0047FC1C /* ButtonInfo.swift in Sources */,
-				900D4F8B298EA6950047FC1C /* GhostBtn.swift in Sources */,
-				900D4F982990BB230047FC1C /* LightBtn.swift in Sources */,
-				900D4F93298EA9500047FC1C /* ButtonFunc.swift in Sources */,
-				900D4F9A2990BB2A0047FC1C /* LightBtnStyle.swift in Sources */,
-				900D4F8F298EA7940047FC1C /* ButtonEnum.swift in Sources */,
-				900D4FA829921DF70047FC1C /* ShadowBtn.swift in Sources */,
-				900D4FA4299206CC0047FC1C /* GrayBtn.swift in Sources */,
 				F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */,
-				900D4F81298C379C0047FC1C /* SolidBtn.swift in Sources */,
 				2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */,
+				5192EB9CA90EA553ACB8D9E0 /* ButtonEnum.swift in Sources */,
+				5DB08B07613A59252F2F4E68 /* ButtonFunc.swift in Sources */,
+				441D2570C2F503C2EB17B8F3 /* ButtonInfo.swift in Sources */,
+				F6805F5C6BB06F4C732246D3 /* GhostBtn.swift in Sources */,
+				7EB23B309C5C9F085CE670C1 /* GhostBtnStyle.swift in Sources */,
+				B8E5138688EE95AAA0E255C5 /* GrayBtn.swift in Sources */,
+				A84E2EEAB4D26C2EF79377AE /* GrayBtnStyle.swift in Sources */,
+				213C957FCE71D819B142F13F /* LightBtn.swift in Sources */,
+				4931DE93652B91432546D09F /* LightBtnStyle.swift in Sources */,
+				4D10B545647212839D551BAD /* ShadowBtn.swift in Sources */,
+				9DDBEBBD1308DB2FA0935469 /* ShadowBtnStyle.swift in Sources */,
+				03584140C6C0BF6E59DE0EA0 /* SolidBtn.swift in Sources */,
+				3E72C170E1B8A6207EFDF6EF /* SolidButtonStyle.swift in Sources */,
 				979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */,
 				C391C552688F1F18236DEDE4 /* JOBISMainColor.swift in Sources */,
 				9B579CD7064912C15AD6653C /* JOBISPrimaryColor.swift in Sources */,
 				AE7AD50275FF534B440D1D50 /* JOBISSubScaleColor.swift in Sources */,
-				900D4F8D298EA70E0047FC1C /* GhostBtnStyle.swift in Sources */,
 				138C4ADF914BC7AF5B065FE5 /* JOBISFont.swift in Sources */,
-				900D4FAA29921DFE0047FC1C /* ShadowBtnStyle.swift in Sources */,
-				900D4FA6299206D20047FC1C /* GrayBtnStyle.swift in Sources */,
-				900D4F84298C392E0047FC1C /* SolidButtonStyle.swift in Sources */,
 				64AD7ACEF223BD702258A0AA /* JOBISFontStyle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
