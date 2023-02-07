@@ -3,11 +3,7 @@ import DesignSystem
 
 struct TestView: View {
     var body: some View {
-        VStack {
-            SolidBtn(text: "test", style: .defaultStyle) {
-                print("test...\n")
-            }
-        }
+        Text("Hello World")
     }
 }
 
