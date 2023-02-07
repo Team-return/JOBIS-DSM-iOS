@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,11 +11,13 @@
 		3B664EC900C0DFDDF05C03BA /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A88CF4496620AE41DEA7C14 /* Service.framework */; platformFilter = ios; };
 		5F336B490BD3538FE13BCC7A /* JOBISApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D00F864AD498C77E794AC /* JOBISApp.swift */; };
 		5F742BE0D84054D3C33033CA /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		900D4F89298CC6D20047FC1C /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4F88298CC6D20047FC1C /* TestView.swift */; };
-		900D4FA12990E49F0047FC1C /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 900D4F9F2990E49F0047FC1C /* appstore.png */; };
-		900D4FA22990E49F0047FC1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 900D4FA02990E49F0047FC1C /* Assets.xcassets */; };
+		8D44475E0C77F6C93F2675FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D0E7FACD30D036A443F170 /* Assets.xcassets */; };
+		91582C819C6E0A60BFBD3995 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28202076E643C445AD29DE06 /* TestView.swift */; };
 		956240AE3556234AB7B25D22 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; };
+		9D941A7508CAE5206F1DE541 /* TuistAssets+JOBISDSMIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4CECBE9B23C35BD3346C5 /* TuistAssets+JOBISDSMIOS.swift */; };
+		B0C1C93895BB8439C38EC3AC /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 77AECCAFFC56B8D4467D337C /* appstore.png */; };
 		D4AFE9047718F3D7DC1BE8BE /* BaseFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */; platformFilter = ios; };
+		E42F0EADA0D5BD87569B64F2 /* TuistBundle+JOBISDSMIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A49C7CEE751BF4064832A8 /* TuistBundle+JOBISDSMIOS.swift */; };
 		EFA6C6D5254B34A73D86D0E6 /* ThirdPartyLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -55,17 +57,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		02D4CECBE9B23C35BD3346C5 /* TuistAssets+JOBISDSMIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+JOBISDSMIOS.swift"; sourceTree = "<group>"; };
 		18990C5C70E8B0E6DD335315 /* JOBIS-DSM-IOSTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JOBIS-DSM-IOSTests-Info.plist"; sourceTree = "<group>"; };
+		28202076E643C445AD29DE06 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		2A88CF4496620AE41DEA7C14 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D00F864AD498C77E794AC /* JOBISApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISApp.swift; sourceTree = "<group>"; };
+		68D0E7FACD30D036A443F170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77AECCAFFC56B8D4467D337C /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
 		8FEDB4C3D0995F7072992012 /* JOBIS_DSM_IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JOBIS_DSM_IOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		900D4F88298CC6D20047FC1C /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
-		900D4F9F2990E49F0047FC1C /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
-		900D4FA02990E49F0047FC1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B085656CC3CB3F86330EE628 /* JOBIS_DSM_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JOBIS_DSM_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33BA5381E46CEC8F09F28F4 /* JOBIS-DSM-IOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JOBIS-DSM-IOS-Info.plist"; sourceTree = "<group>"; };
+		E5A49C7CEE751BF4064832A8 /* TuistBundle+JOBISDSMIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+JOBISDSMIOS.swift"; sourceTree = "<group>"; };
 		ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -104,6 +108,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		0BE3D3F8F9C1AC9FDC12302F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				02D4CECBE9B23C35BD3346C5 /* TuistAssets+JOBISDSMIOS.swift */,
+				E5A49C7CEE751BF4064832A8 /* TuistBundle+JOBISDSMIOS.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		4F4956D6EFCCE80085F487D7 /* InfoPlists */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,8 +129,8 @@
 		50569821F0CF18BFF623D693 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				900D4F85298CC6BE0047FC1C /* TestView */,
 				C1D3BC82CE89937B146B297A /* Application */,
+				58290FFFD51B43D818B66476 /* TestView */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -126,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				4F4956D6EFCCE80085F487D7 /* InfoPlists */,
+				0BE3D3F8F9C1AC9FDC12302F /* Sources */,
 			);
 			path = Derived;
 			sourceTree = "<group>";
@@ -139,31 +153,22 @@
 			);
 			sourceTree = "<group>";
 		};
-		6985561D95C8C4209DB3788C /* Project */ = {
+		58290FFFD51B43D818B66476 /* TestView */ = {
 			isa = PBXGroup;
 			children = (
-				55CFFDB637B71097C800B1AD /* Derived */,
-				900D4F9C2990E1260047FC1C /* Resources */,
-				50569821F0CF18BFF623D693 /* Sources */,
-			);
-			name = Project;
-			sourceTree = "<group>";
-		};
-		900D4F85298CC6BE0047FC1C /* TestView */ = {
-			isa = PBXGroup;
-			children = (
-				900D4F88298CC6D20047FC1C /* TestView.swift */,
+				28202076E643C445AD29DE06 /* TestView.swift */,
 			);
 			path = TestView;
 			sourceTree = "<group>";
 		};
-		900D4F9C2990E1260047FC1C /* Resources */ = {
+		6985561D95C8C4209DB3788C /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				900D4F9F2990E49F0047FC1C /* appstore.png */,
-				900D4FA02990E49F0047FC1C /* Assets.xcassets */,
+				55CFFDB637B71097C800B1AD /* Derived */,
+				D23430CD6C1F4C6C41BE5456 /* Resources */,
+				50569821F0CF18BFF623D693 /* Sources */,
 			);
-			path = Resources;
+			name = Project;
 			sourceTree = "<group>";
 		};
 		C1D3BC82CE89937B146B297A /* Application */ = {
@@ -172,6 +177,15 @@
 				678D00F864AD498C77E794AC /* JOBISApp.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		D23430CD6C1F4C6C41BE5456 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				77AECCAFFC56B8D4467D337C /* appstore.png */,
+				68D0E7FACD30D036A443F170 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		DBE3EFFE5AF5F59020EA5FA1 /* Frameworks */ = {
@@ -207,7 +221,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC655DEFDE794F3D2466E74 /* Build configuration list for PBXNativeTarget "JOBIS-DSM-IOS" */;
 			buildPhases = (
-				900D4F76298C32540047FC1C /* SwiftLint Script */,
 				2398ACAD477838CDACDD25F5 /* Sources */,
 				286209B46DD1607306112F7B /* Resources */,
 				0359795C8130ACAE80B3506A /* Embed Frameworks */,
@@ -259,8 +272,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				900D4FA22990E49F0047FC1C /* Assets.xcassets in Resources */,
-				900D4FA12990E49F0047FC1C /* appstore.png in Resources */,
+				8D44475E0C77F6C93F2675FA /* Assets.xcassets in Resources */,
+				B0C1C93895BB8439C38EC3AC /* appstore.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,34 +286,15 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		900D4F76298C32540047FC1C /* SwiftLint Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "SwiftLint Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		2398ACAD477838CDACDD25F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				900D4F89298CC6D20047FC1C /* TestView.swift in Sources */,
+				9D941A7508CAE5206F1DE541 /* TuistAssets+JOBISDSMIOS.swift in Sources */,
+				E42F0EADA0D5BD87569B64F2 /* TuistBundle+JOBISDSMIOS.swift in Sources */,
 				5F336B490BD3538FE13BCC7A /* JOBISApp.swift in Sources */,
+				91582C819C6E0A60BFBD3995 /* TestView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
