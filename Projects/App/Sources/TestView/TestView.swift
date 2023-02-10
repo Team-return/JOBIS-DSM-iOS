@@ -6,14 +6,18 @@ struct TestView: View {
     @State private var disabled: Bool = false
     var body: some View {
         VStack {
-            CheckBox(isOn: $bool)
-                .disabled(disabled)
             HStack {
-                Text("bool")
+                RadioBox(isOn: $bool)
+                    .disabled(disabled)
+                CheckBox(isOn: $bool)
+                    .disabled(disabled)
+            }
+            HStack {
+                Text(String(bool))
                     .onTapGesture {
                         bool.toggle()
                     }
-                Text("disabled")
+                Text(String(disabled))
                     .onTapGesture {
                         disabled.toggle()
                     }
