@@ -2,8 +2,23 @@ import SwiftUI
 import DesignSystem
 
 struct TestView: View {
+    @State private var bool: Bool = false
+    @State private var disabled: Bool = false
     var body: some View {
-        Text("Hello World")
+        VStack {
+            CheckBox(isOn: $bool)
+                .disabled(disabled)
+            HStack {
+                Text("bool")
+                    .onTapGesture {
+                        bool.toggle()
+                    }
+                Text("disabled")
+                    .onTapGesture {
+                        disabled.toggle()
+                    }
+            }
+        }
     }
 }
 
