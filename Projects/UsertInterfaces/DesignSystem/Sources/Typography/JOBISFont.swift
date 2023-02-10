@@ -8,7 +8,6 @@ public struct JOBISFont: ViewModifier {
         case let .heading(font):
             return content
                 .font(.custom("NotoSansKR-\(font.weight.rawValue)", size: font.size))
-
         case let .body(font):
             return content
                 .font(.custom("NotoSansKR-\(font.weight.rawValue)", size: font.size))
