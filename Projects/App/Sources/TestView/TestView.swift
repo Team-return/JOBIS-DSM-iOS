@@ -11,6 +11,8 @@ struct TestView: View {
                     .disabled(disabled)
                 CheckBox(isOn: $bool)
                     .disabled(disabled)
+                ToggleBtn(isOn: $bool)
+                    .disabled(disabled)
             }
             HStack {
                 Text(String(bool))

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -173,6 +173,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AAD510D6A096645A1B961388 /* Build configuration list for PBXNativeTarget "Service" */;
 			buildPhases = (
+				04A348D6539D34FAD6A1AE69 /* SwiftLint */,
 				90DCD84B70AC87F1B09042E8 /* Sources */,
 				5DB916BB3D046F2698257E14 /* Resources */,
 				5B36A939A245B5A27F657AD1 /* Embed Frameworks */,
@@ -194,6 +195,8 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = team.return;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = A210B9CE0F80C75DCB439AE9 /* Build configuration list for PBXProject "Service" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -230,6 +233,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		04A348D6539D34FAD6A1AE69 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../Scripts/SwiftLintRunScript.sh ";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		90DCD84B70AC87F1B09042E8 /* Sources */ = {
@@ -367,7 +392,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = JOBIS;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,7 +501,6 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = JOBIS;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
