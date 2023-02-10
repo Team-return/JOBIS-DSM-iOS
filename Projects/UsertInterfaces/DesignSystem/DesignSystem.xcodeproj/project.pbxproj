@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,6 @@
 		20FEABC3EE2C16227D0CB6FF /* JOBISIconColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CD8D4449AE72C94651AC2B /* JOBISIconColor.swift */; };
 		213C957FCE71D819B142F13F /* LightBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D1F739FF87DC0BD8D8501 /* LightBtn.swift */; };
 		239CFD5AAE6991DA13E62927 /* Image+DeisgnSystemsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF628615A4EB49AD3FDE8A /* Image+DeisgnSystemsImage.swift */; };
-		24C1CEC97842123644788FB2 /* ToggleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274FF2AF4D33276481359C1C /* ToggleBtn.swift */; };
 		2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */; };
 		2C508B54E7BFC9E7C606A86D /* RadioBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F971907B7D4F76B5DFAED81 /* RadioBox.swift */; };
 		302D22EDD98DE89F50C278C8 /* RadioBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125EC56CA5F15C313C727541 /* RadioBoxStyle.swift */; };
@@ -33,7 +32,6 @@
 		7EB23B309C5C9F085CE670C1 /* GhostBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3025C7BB442DC40EE965C /* GhostBtnStyle.swift */; };
 		8E991CDA697003176764E5B6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */; };
 		939DC5308AB7F13239332227 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */; };
-		93AA61CFDD42FC93B41B815D /* ToggleBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7079DEA0668E6B419420A920 /* ToggleBtnStyle.swift */; };
 		940FE54052CE73BE5D36B0C2 /* Warning.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */; };
 		979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */; };
 		9B579CD7064912C15AD6653C /* JOBISPrimaryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7095E9EFBFBA3B112F974B7 /* JOBISPrimaryColor.swift */; };
@@ -48,8 +46,10 @@
 		B9D70064C722F71A2FFAF2BB /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28187B7CC5F98D23DDE0DC1A /* CheckBox.swift */; };
 		C391C552688F1F18236DEDE4 /* JOBISMainColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FFB82C71C5483BBD8054FB /* JOBISMainColor.swift */; };
 		C438E92FA9121880084AE9AA /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */; platformFilter = ios; };
+		C49879AC499FC8460A55376C /* ToggleBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3172127A04E37498744F736 /* ToggleBtn.swift */; };
 		D97762A6EB883FCEC4123B75 /* Error.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EEE7AB9BF7182D7DBB37ED /* Error.xcassets */; };
 		E59535D14D623BE5C0094A0B /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */; };
+		E67F21384EC4F53DEE2B91F5 /* ToggleBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30AA4BB87F9881E25C8A4CB7 /* ToggleBtnStyle.swift */; };
 		F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */; };
 		F6805F5C6BB06F4C732246D3 /* GhostBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47A8F0CBF73BCEAE419ED40 /* GhostBtn.swift */; };
 /* End PBXBuildFile section */
@@ -88,17 +88,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		01FFB82C71C5483BBD8054FB /* JOBISMainColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISMainColor.swift; sourceTree = "<group>"; };
 		125EC56CA5F15C313C727541 /* RadioBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioBoxStyle.swift; sourceTree = "<group>"; };
 		1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+DesignSystem.swift"; sourceTree = "<group>"; };
-		1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
-		274FF2AF4D33276481359C1C /* ToggleBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleBtn.swift; sourceTree = "<group>"; };
+		1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
 		28187B7CC5F98D23DDE0DC1A /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		28CF628615A4EB49AD3FDE8A /* Image+DeisgnSystemsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+DeisgnSystemsImage.swift"; sourceTree = "<group>"; };
-		40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		30AA4BB87F9881E25C8A4CB7 /* ToggleBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleBtnStyle.swift; sourceTree = "<group>"; };
+		40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
 		42EEE7AB9BF7182D7DBB37ED /* Error.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Error.xcassets; sourceTree = "<group>"; };
-		43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		451024361D40DACBAC0755DB /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		469F4B641DBB710B1B90BAD8 /* DesignSystemTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystemTests-Info.plist"; sourceTree = "<group>"; };
 		48897DCAA975B8EC80493E04 /* JOBISImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISImage.swift; sourceTree = "<group>"; };
@@ -107,13 +107,12 @@
 		4E1D1F739FF87DC0BD8D8501 /* LightBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBtn.swift; sourceTree = "<group>"; };
 		4F971907B7D4F76B5DFAED81 /* RadioBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioBox.swift; sourceTree = "<group>"; };
 		51CD8D4449AE72C94651AC2B /* JOBISIconColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISIconColor.swift; sourceTree = "<group>"; };
-		55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
 		64F7702310300F797E68B748 /* ShadowBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowBtnStyle.swift; sourceTree = "<group>"; };
 		692493B30FCB1407CC79EB0A /* JOBISSubScaleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISSubScaleColor.swift; sourceTree = "<group>"; };
 		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6AC2D3E3922EA7A793BA051A /* TargetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTest.swift; sourceTree = "<group>"; };
 		6E6B603F3439EA15490703AD /* ShadowBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowBtn.swift; sourceTree = "<group>"; };
-		7079DEA0668E6B419420A920 /* ToggleBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleBtnStyle.swift; sourceTree = "<group>"; };
 		7DB3025C7BB442DC40EE965C /* GhostBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GhostBtnStyle.swift; sourceTree = "<group>"; };
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
 		8FE515B15345C2CCDF4C706C /* LightBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBtnStyle.swift; sourceTree = "<group>"; };
@@ -129,9 +128,10 @@
 		C04B4BE8D90D502BF7EEDF8C /* ButtonFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonFunc.swift; sourceTree = "<group>"; };
 		C63ECA6A7DBDAB87D8566D13 /* SolidBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidBtn.swift; sourceTree = "<group>"; };
 		D24347E4407F45630BD03E82 /* GrayBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBtnStyle.swift; sourceTree = "<group>"; };
+		D3172127A04E37498744F736 /* ToggleBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleBtn.swift; sourceTree = "<group>"; };
 		D7556B85FA7DF3EDA818413C /* JOBISFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISFont.swift; sourceTree = "<group>"; };
 		ECAFBD3892447294C1342932 /* DesignSystemTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesignSystemTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
 		F591B66F5E1AFDD478716659 /* Success.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Success.xcassets; sourceTree = "<group>"; };
 		F7095E9EFBFBA3B112F974B7 /* JOBISPrimaryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISPrimaryColor.swift; sourceTree = "<group>"; };
 		FDBB973611464BDD43A3546B /* ButtonEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEnum.swift; sourceTree = "<group>"; };
@@ -203,15 +203,6 @@
 				FE92BAD2C6FEA79CD8E915DA /* JOBISFontStyle.swift */,
 			);
 			path = Typography;
-			sourceTree = "<group>";
-		};
-		3B28D4A7C820CCF0323B16B0 /* Toggle */ = {
-			isa = PBXGroup;
-			children = (
-				274FF2AF4D33276481359C1C /* ToggleBtn.swift */,
-				7079DEA0668E6B419420A920 /* ToggleBtnStyle.swift */,
-			);
-			path = Toggle;
 			sourceTree = "<group>";
 		};
 		3D56AC3DF263FFE10ECDAF91 /* Image */ = {
@@ -339,9 +330,9 @@
 		DAEC92958EAC28B150BB2D12 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				3B28D4A7C820CCF0323B16B0 /* Toggle */,
 				DA4C260F3014DF01DA5170C7 /* CheckBox */,
 				F33AC7A805E57289A9798D20 /* RadioBox */,
+				EC99067EAA61E35824991E2A /* Toggle */,
 			);
 			path = Input;
 			sourceTree = "<group>";
@@ -362,6 +353,15 @@
 				7D6BBD2B92079B70AB979221 /* Frameworks */,
 				82664F67710540CBDEBE5B11 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		EC99067EAA61E35824991E2A /* Toggle */ = {
+			isa = PBXGroup;
+			children = (
+				D3172127A04E37498744F736 /* ToggleBtn.swift */,
+				30AA4BB87F9881E25C8A4CB7 /* ToggleBtnStyle.swift */,
+			);
+			path = Toggle;
 			sourceTree = "<group>";
 		};
 		EE209940AA7B1258B17B77CC /* LightBtn */ = {
@@ -429,6 +429,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDE90610E9DF3345CFC83326 /* Build configuration list for PBXNativeTarget "DesignSystem" */;
 			buildPhases = (
+				A34E196D6FA16859DB7CDDE9 /* SwiftLint */,
 				BA6DF36C53063F00B80115EA /* Sources */,
 				510D3A5EADC65A3BE366D353 /* Resources */,
 				49C4A8593835DDF36FBC2A05 /* Embed Frameworks */,
@@ -450,6 +451,8 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = team.return;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 5C0CBBA2BFE0CEE21375AF0A /* Build configuration list for PBXProject "DesignSystem" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -499,6 +502,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A34E196D6FA16859DB7CDDE9 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../../Scripts/SwiftLintRunScript.sh ";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA6DF36C53063F00B80115EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -531,8 +556,8 @@
 				B1BFE92BC9ADC4DD1F12C2FB /* CheckBoxStyle.swift in Sources */,
 				2C508B54E7BFC9E7C606A86D /* RadioBox.swift in Sources */,
 				302D22EDD98DE89F50C278C8 /* RadioBoxStyle.swift in Sources */,
-				24C1CEC97842123644788FB2 /* ToggleBtn.swift in Sources */,
-				93AA61CFDD42FC93B41B815D /* ToggleBtnStyle.swift in Sources */,
+				C49879AC499FC8460A55376C /* ToggleBtn.swift in Sources */,
+				E67F21384EC4F53DEE2B91F5 /* ToggleBtnStyle.swift in Sources */,
 				138C4ADF914BC7AF5B065FE5 /* JOBISFont.swift in Sources */,
 				64AD7ACEF223BD702258A0AA /* JOBISFontStyle.swift in Sources */,
 			);

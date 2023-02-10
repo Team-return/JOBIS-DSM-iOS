@@ -193,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC655DEFDE794F3D2466E74 /* Build configuration list for PBXNativeTarget "JOBIS-DSM-IOS" */;
 			buildPhases = (
+				27AE7A11E4FC213083EC1131 /* SwiftLint */,
 				2398ACAD477838CDACDD25F5 /* Sources */,
 				286209B46DD1607306112F7B /* Resources */,
 				0359795C8130ACAE80B3506A /* Embed Frameworks */,
@@ -255,6 +256,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27AE7A11E4FC213083EC1131 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../Scripts/SwiftLintRunScript.sh ";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2398ACAD477838CDACDD25F5 /* Sources */ = {
