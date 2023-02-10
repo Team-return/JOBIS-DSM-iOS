@@ -18,7 +18,6 @@ public struct CheckboxStyle: ToggleStyle {
         .border(configuration.isOn ? Color.clear : isEnabled ? Color.Sub.gray40
                 : Color.Sub.gray50, width: 1.5)
         .cornerRadius(2)
-        .frame(width: 44, height: 44)
         .onTapGesture {
             withAnimation(.easeIn(duration: 0.1)) {
                 configuration.isOn.toggle()

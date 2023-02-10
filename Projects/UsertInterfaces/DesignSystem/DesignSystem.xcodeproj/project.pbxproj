@@ -29,6 +29,8 @@
 		8E991CDA697003176764E5B6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */; };
 		900D4FBB299235710047FC1C /* JOBISImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4FBA299235710047FC1C /* JOBISImage.swift */; };
 		900D4FBD299237D20047FC1C /* Image+DeisgnSystemsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 900D4FBC299237D20047FC1C /* Image+DeisgnSystemsImage.swift */; };
+		90E763E3299688A700C4736A /* RadioBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E763E2299688A700C4736A /* RadioBox.swift */; };
+		90E763E5299688AD00C4736A /* RadioBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90E763E4299688AD00C4736A /* RadioBoxStyle.swift */; };
 		939DC5308AB7F13239332227 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */; };
 		940FE54052CE73BE5D36B0C2 /* Warning.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C6DD8D4237C520C8288FF4 /* Warning.xcassets */; };
 		979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */; };
@@ -110,6 +112,8 @@
 		900D4FBA299235710047FC1C /* JOBISImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISImage.swift; sourceTree = "<group>"; };
 		900D4FBC299237D20047FC1C /* Image+DeisgnSystemsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+DeisgnSystemsImage.swift"; sourceTree = "<group>"; };
 		907A9DD0E44C6843D4F276C8 /* SolidButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButtonStyle.swift; sourceTree = "<group>"; };
+		90E763E2299688A700C4736A /* RadioBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioBox.swift; sourceTree = "<group>"; };
+		90E763E4299688AD00C4736A /* RadioBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioBoxStyle.swift; sourceTree = "<group>"; };
 		A0678EDAEEB4494FFEF143CC /* GrayBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrayBtn.swift; sourceTree = "<group>"; };
 		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
 		A6C815A1358D724177DF1AD5 /* ButtonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonInfo.swift; sourceTree = "<group>"; };
@@ -277,6 +281,15 @@
 			path = ShadowBtn;
 			sourceTree = "<group>";
 		};
+		90E763E12996889C00C4736A /* RadioBox */ = {
+			isa = PBXGroup;
+			children = (
+				90E763E2299688A700C4736A /* RadioBox.swift */,
+				90E763E4299688AD00C4736A /* RadioBoxStyle.swift */,
+			);
+			path = RadioBox;
+			sourceTree = "<group>";
+		};
 		9C29548CCBEAF62FB7951500 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +335,7 @@
 		DAEC92958EAC28B150BB2D12 /* Input */ = {
 			isa = PBXGroup;
 			children = (
+				90E763E12996889C00C4736A /* RadioBox */,
 				DA4C260F3014DF01DA5170C7 /* CheckBox */,
 			);
 			path = Input;
@@ -503,10 +517,12 @@
 				2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */,
 				5192EB9CA90EA553ACB8D9E0 /* ButtonEnum.swift in Sources */,
 				5DB08B07613A59252F2F4E68 /* ButtonFunc.swift in Sources */,
+				90E763E5299688AD00C4736A /* RadioBoxStyle.swift in Sources */,
 				900D4FBB299235710047FC1C /* JOBISImage.swift in Sources */,
 				441D2570C2F503C2EB17B8F3 /* ButtonInfo.swift in Sources */,
 				F6805F5C6BB06F4C732246D3 /* GhostBtn.swift in Sources */,
 				7EB23B309C5C9F085CE670C1 /* GhostBtnStyle.swift in Sources */,
+				90E763E3299688A700C4736A /* RadioBox.swift in Sources */,
 				B8E5138688EE95AAA0E255C5 /* GrayBtn.swift in Sources */,
 				A84E2EEAB4D26C2EF79377AE /* GrayBtnStyle.swift in Sources */,
 				213C957FCE71D819B142F13F /* LightBtn.swift in Sources */,
