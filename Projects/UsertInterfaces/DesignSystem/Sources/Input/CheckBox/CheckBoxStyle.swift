@@ -12,7 +12,9 @@ public struct CheckboxStyle: ToggleStyle {
                 .opacity(configuration.isOn ? 1.0 : 0)
         }
         .frame(width: 20, height: 20)
-        .background(configuration.isOn ? (isEnabled ? Color.Icon.input : .Sub.gray50) : (isEnabled ? .clear : .Sub.gray40))
+        .background(configuration.isOn ?
+                    (isEnabled ? Color.Icon.input : .Sub.gray50) :
+                        (isEnabled ? .clear : .Sub.gray40))
         .border(configuration.isOn ? Color.clear : isEnabled ? Color.Sub.gray40
                 : Color.Sub.gray50, width: 1.5)
         .cornerRadius(2)
