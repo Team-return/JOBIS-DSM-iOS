@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,11 +11,12 @@
 		3B664EC900C0DFDDF05C03BA /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A88CF4496620AE41DEA7C14 /* Service.framework */; platformFilter = ios; };
 		5F336B490BD3538FE13BCC7A /* JOBISApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D00F864AD498C77E794AC /* JOBISApp.swift */; };
 		5F742BE0D84054D3C33033CA /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		8D44475E0C77F6C93F2675FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D0E7FACD30D036A443F170 /* Assets.xcassets */; };
+		904A152A2992B81C00A0F624 /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 904A15272992B81C00A0F624 /* appstore.png */; };
+		904A152B2992B81C00A0F624 /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 904A15282992B81C00A0F624 /* playstore.png */; };
+		904A152C2992B81C00A0F624 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 904A15292992B81C00A0F624 /* Assets.xcassets */; };
 		91582C819C6E0A60BFBD3995 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28202076E643C445AD29DE06 /* TestView.swift */; };
 		956240AE3556234AB7B25D22 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED607431B0D57F0A3103FFE0 /* DesignSystem.framework */; platformFilter = ios; };
 		9D941A7508CAE5206F1DE541 /* TuistAssets+JOBISDSMIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D4CECBE9B23C35BD3346C5 /* TuistAssets+JOBISDSMIOS.swift */; };
-		B0C1C93895BB8439C38EC3AC /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 77AECCAFFC56B8D4467D337C /* appstore.png */; };
 		D4AFE9047718F3D7DC1BE8BE /* BaseFeature.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */; platformFilter = ios; };
 		E42F0EADA0D5BD87569B64F2 /* TuistBundle+JOBISDSMIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A49C7CEE751BF4064832A8 /* TuistBundle+JOBISDSMIOS.swift */; };
 		EFA6C6D5254B34A73D86D0E6 /* ThirdPartyLib.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -63,9 +64,10 @@
 		2A88CF4496620AE41DEA7C14 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D937C06A30F9BF21A030DCA /* ThirdPartyLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ThirdPartyLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D00F864AD498C77E794AC /* JOBISApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISApp.swift; sourceTree = "<group>"; };
-		68D0E7FACD30D036A443F170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		77AECCAFFC56B8D4467D337C /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
 		8FEDB4C3D0995F7072992012 /* JOBIS_DSM_IOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JOBIS_DSM_IOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		904A15272992B81C00A0F624 /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = appstore.png; path = "../../../../../../../Downloads/AppIcons 4/appstore.png"; sourceTree = "<group>"; };
+		904A15282992B81C00A0F624 /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = playstore.png; path = "../../../../../../../Downloads/AppIcons 4/playstore.png"; sourceTree = "<group>"; };
+		904A15292992B81C00A0F624 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../../../../Downloads/AppIcons 4/Assets.xcassets"; sourceTree = "<group>"; };
 		9E1D9D7C24D1190C9247EA43 /* BaseFeature.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseFeature.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B085656CC3CB3F86330EE628 /* JOBIS_DSM_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JOBIS_DSM_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B33BA5381E46CEC8F09F28F4 /* JOBIS-DSM-IOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "JOBIS-DSM-IOS-Info.plist"; sourceTree = "<group>"; };
@@ -182,8 +184,9 @@
 		D23430CD6C1F4C6C41BE5456 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				77AECCAFFC56B8D4467D337C /* appstore.png */,
-				68D0E7FACD30D036A443F170 /* Assets.xcassets */,
+				904A15272992B81C00A0F624 /* appstore.png */,
+				904A15292992B81C00A0F624 /* Assets.xcassets */,
+				904A15282992B81C00A0F624 /* playstore.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -272,8 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D44475E0C77F6C93F2675FA /* Assets.xcassets in Resources */,
-				B0C1C93895BB8439C38EC3AC /* appstore.png in Resources */,
+				904A152A2992B81C00A0F624 /* appstore.png in Resources */,
+				904A152C2992B81C00A0F624 /* Assets.xcassets in Resources */,
+				904A152B2992B81C00A0F624 /* playstore.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +400,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = JOBIS;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -474,6 +479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = JOBIS;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
