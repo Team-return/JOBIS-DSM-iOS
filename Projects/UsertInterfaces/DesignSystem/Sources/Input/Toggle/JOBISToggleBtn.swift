@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct ToggleBtn: View {
+public struct JOBISToggleBtn: View {
     @Binding var isOn: Bool
 
     @Environment(\.isEnabled) private var isEnabled: Bool
@@ -12,7 +12,7 @@ public struct ToggleBtn: View {
     public var body: some View {
         Toggle("", isOn: $isOn)
             .labelsHidden()
-            .toggleStyle(ToggleBtnStyle())
+            .toggleStyle(JOBISToggleBtnStyle())
     }
 }
 
@@ -20,13 +20,13 @@ struct ToggleBtn_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             VStack {
-                ToggleBtn(isOn: .constant(false))
+                JOBISToggleBtn(isOn: .constant(false))
                     .disabled(true)
-                ToggleBtn(isOn: .constant(false))
+                JOBISToggleBtn(isOn: .constant(false))
                     .disabled(false)
-                ToggleBtn(isOn: .constant(true))
+                JOBISToggleBtn(isOn: .constant(true))
                     .disabled(true)
-                ToggleBtn(isOn: .constant(true))
+                JOBISToggleBtn(isOn: .constant(true))
                     .disabled(false)
             }
             .padding(10)
