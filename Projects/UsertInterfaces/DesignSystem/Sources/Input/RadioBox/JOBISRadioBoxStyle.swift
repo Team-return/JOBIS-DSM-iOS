@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct RadioBoxStyle: ToggleStyle {
+public struct JOBISRadioBoxStyle: ToggleStyle {
     @Environment(\.isEnabled) var isEnabled: Bool
 
     public func makeBody(configuration: Self.Configuration) -> some View {
