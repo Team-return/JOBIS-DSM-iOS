@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct CheckBox: View {
+public struct JOBISToggleBtn: View {
     @Binding var isOn: Bool
 
     @Environment(\.isEnabled) private var isEnabled: Bool
@@ -12,21 +12,21 @@ public struct CheckBox: View {
     public var body: some View {
         Toggle("", isOn: $isOn)
             .labelsHidden()
-            .toggleStyle(CheckboxStyle())
+            .toggleStyle(JOBISToggleBtnStyle())
     }
 }
 
-struct CheckBox_Previews: PreviewProvider {
+struct ToggleBtn_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             VStack {
-                CheckBox(isOn: .constant(false))
+                JOBISToggleBtn(isOn: .constant(false))
                     .disabled(true)
-                CheckBox(isOn: .constant(false))
+                JOBISToggleBtn(isOn: .constant(false))
                     .disabled(false)
-                CheckBox(isOn: .constant(true))
+                JOBISToggleBtn(isOn: .constant(true))
                     .disabled(true)
-                CheckBox(isOn: .constant(true))
+                JOBISToggleBtn(isOn: .constant(true))
                     .disabled(false)
             }
             .padding(10)

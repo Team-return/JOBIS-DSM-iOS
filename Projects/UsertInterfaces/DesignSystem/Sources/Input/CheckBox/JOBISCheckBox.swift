@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct RadioBox: View {
+public struct JOBISCheckBox: View {
     @Binding var isOn: Bool
 
     @Environment(\.isEnabled) private var isEnabled: Bool
@@ -12,22 +12,23 @@ public struct RadioBox: View {
     public var body: some View {
         Toggle("", isOn: $isOn)
             .labelsHidden()
-            .toggleStyle(RadioBoxStyle())
+            .toggleStyle(JOBISCheckboxStyle())
     }
 }
 
-struct RadioBox_Previews: PreviewProvider {
+struct JOBISCheckBox_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             VStack {
-                RadioBox(isOn: .constant(false))
+                JOBISCheckBox(isOn: .constant(false))
                     .disabled(true)
-                RadioBox(isOn: .constant(false))
+                JOBISCheckBox(isOn: .constant(false))
                     .disabled(false)
-                RadioBox(isOn: .constant(true))
+                JOBISCheckBox(isOn: .constant(true))
                     .disabled(true)
-                RadioBox(isOn: .constant(true))
-                    .disabled(false)            }
+                JOBISCheckBox(isOn: .constant(true))
+                    .disabled(false)
+            }
             .padding(10)
         }
     }

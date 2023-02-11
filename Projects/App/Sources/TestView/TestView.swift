@@ -7,11 +7,11 @@ struct TestView: View {
     var body: some View {
         VStack {
             HStack {
-                RadioBox(isOn: $bool)
+                JOBISRadioBox(isOn: $bool)
                     .disabled(disabled)
-                CheckBox(isOn: $bool)
+                JOBISCheckBox(isOn: $bool)
                     .disabled(disabled)
-                ToggleBtn(isOn: $bool)
+                JOBISToggleBtn(isOn: $bool)
                     .disabled(disabled)
             }
             HStack {

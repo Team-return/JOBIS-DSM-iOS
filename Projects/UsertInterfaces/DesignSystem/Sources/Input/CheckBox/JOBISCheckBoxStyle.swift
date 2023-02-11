@@ -1,6 +1,6 @@
 import SwiftUI
 
-public struct CheckboxStyle: ToggleStyle {
+public struct JOBISCheckboxStyle: ToggleStyle {
     @Environment(\.isEnabled) var isEnabled: Bool
 
     public func makeBody(configuration: Self.Configuration) -> some View {
