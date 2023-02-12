@@ -293,13 +293,13 @@
 			path = DropDown;
 			sourceTree = "<group>";
 		};
-		903F56DF299767B1003193BA /* Textfield */ = {
+		903F56DF299767B1003193BA /* TextField */ = {
 			isa = PBXGroup;
 			children = (
 				903F56E12997693C003193BA /* JOBISTextField.swift */,
 				903F56E329976C0B003193BA /* SecureJOBISTextField.swift */,
 			);
-			path = Textfield;
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		90C0E350438A7E480E6C33E8 /* ShadowBtn */ = {
@@ -356,7 +356,7 @@
 		DAEC92958EAC28B150BB2D12 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				903F56DF299767B1003193BA /* Textfield */,
+				903F56DF299767B1003193BA /* TextField */,
 				903F56DA2996B70A003193BA /* DropDown */,
 				DA4C260F3014DF01DA5170C7 /* CheckBox */,
 				F33AC7A805E57289A9798D20 /* RadioBox */,

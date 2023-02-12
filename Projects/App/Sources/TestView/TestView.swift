@@ -15,7 +15,7 @@ struct TestView: View {
                 JOBISToggleBtn(isOn: $bool)
                     .disabled(disabled)
             }
-            JOBISTextField("testTF", text: $string, isError: false, errorMessage: "error") {}
+            JOBISTextField("testTF", text: $string, isError: bool, errorMessage: "에러 입니다.") {}
                 .disabled(disabled)
                 .padding(.horizontal, 16)
             TextField("hello", text: $string)
