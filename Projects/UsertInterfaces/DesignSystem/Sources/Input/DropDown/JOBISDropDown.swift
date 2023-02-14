@@ -5,11 +5,13 @@ public struct JOBISDropDown: View {
     var selections: [String]
     @Binding var selectingValue: String
     @Environment(\.isEnabled) private var isEnabled: Bool
-    init(
-        selections: [String]
-    ) {
-        self.selections = selections
-    }
+//    init(
+//        selections: [String],
+//        selectingValue: String
+//    ) {
+//        self.selections = selections
+//        self.selectingValue = selectingValue
+//    }
     public var body: some View {
         VStack(spacing: 5) {
             HStack {
@@ -78,7 +80,7 @@ struct JOBISDropDown_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             VStack {
-                JOBISDropDown(selections: <#T##[String]#>)
+                JOBISDropDown(selections: [], selectingValue: .constant(""))
             }
             .padding(10)
         }
