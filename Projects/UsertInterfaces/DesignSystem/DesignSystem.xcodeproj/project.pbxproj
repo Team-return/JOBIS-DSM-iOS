@@ -32,7 +32,6 @@
 		7EB23B309C5C9F085CE670C1 /* GhostBtnStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DB3025C7BB442DC40EE965C /* GhostBtnStyle.swift */; };
 		8E991CDA697003176764E5B6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */; };
 		903F56DC2996B71A003193BA /* JOBISDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F56DB2996B71A003193BA /* JOBISDropDown.swift */; };
-		903F56DE2996B721003193BA /* JOBISDropDownStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F56DD2996B721003193BA /* JOBISDropDownStyle.swift */; };
 		903F56E22997693C003193BA /* JOBISTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F56E12997693C003193BA /* JOBISTextField.swift */; };
 		903F56E429976C0B003193BA /* SecureJOBISTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F56E329976C0B003193BA /* SecureJOBISTextField.swift */; };
 		939DC5308AB7F13239332227 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */; };
@@ -121,7 +120,6 @@
 		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
 		8FE515B15345C2CCDF4C706C /* LightBtnStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightBtnStyle.swift; sourceTree = "<group>"; };
 		903F56DB2996B71A003193BA /* JOBISDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISDropDown.swift; sourceTree = "<group>"; };
-		903F56DD2996B721003193BA /* JOBISDropDownStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISDropDownStyle.swift; sourceTree = "<group>"; };
 		903F56E12997693C003193BA /* JOBISTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JOBISTextField.swift; sourceTree = "<group>"; };
 		903F56E329976C0B003193BA /* SecureJOBISTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureJOBISTextField.swift; sourceTree = "<group>"; };
 		907A9DD0E44C6843D4F276C8 /* SolidButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidButtonStyle.swift; sourceTree = "<group>"; };
@@ -288,7 +286,6 @@
 			isa = PBXGroup;
 			children = (
 				903F56DB2996B71A003193BA /* JOBISDropDown.swift */,
-				903F56DD2996B721003193BA /* JOBISDropDownStyle.swift */,
 			);
 			path = DropDown;
 			sourceTree = "<group>";
@@ -574,7 +571,6 @@
 				3E72C170E1B8A6207EFDF6EF /* SolidButtonStyle.swift in Sources */,
 				979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */,
 				20FEABC3EE2C16227D0CB6FF /* JOBISIconColor.swift in Sources */,
-				903F56DE2996B721003193BA /* JOBISDropDownStyle.swift in Sources */,
 				C391C552688F1F18236DEDE4 /* JOBISMainColor.swift in Sources */,
 				9B579CD7064912C15AD6653C /* JOBISPrimaryColor.swift in Sources */,
 				AE7AD50275FF534B440D1D50 /* JOBISSubScaleColor.swift in Sources */,

@@ -5,6 +5,7 @@ struct TestView: View {
     @State private var bool: Bool = false
     @State private var disabled: Bool = false
     @State private var string: String = ""
+    @State private var select: String = ""
     var body: some View {
         VStack {
             HStack {
@@ -18,8 +19,6 @@ struct TestView: View {
             JOBISTextField("testTF", text: $string, isError: bool, errorMessage: "에러 입니다.") {}
                 .disabled(disabled)
                 .padding(.horizontal, 16)
-            TextField("hello", text: $string)
-                .padding(.horizontal, 16)
             HStack {
                 Text(String(bool))
                     .onTapGesture {
@@ -30,6 +29,8 @@ struct TestView: View {
                         disabled.toggle()
                     }
             }
+            JOBISDropDown(selections: [
+            ], selectingValue: <#T##String#>)
         }
     }
 }
