@@ -15,6 +15,7 @@ public struct JOBISCheckboxStyle: ToggleStyle {
         .background(configuration.isOn ?
                     (isEnabled ? Color.Icon.input : .Sub.gray50) :
                         (isEnabled ? .clear : .Sub.gray40))
+        .cornerRadius(2)
         .border(configuration.isOn ? Color.clear : isEnabled ? Color.Sub.gray40
                 : Color.Sub.gray50, width: 1.5)
         .cornerRadius(2)
