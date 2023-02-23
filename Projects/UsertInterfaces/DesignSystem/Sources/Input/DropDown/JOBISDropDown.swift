@@ -6,6 +6,11 @@ public struct JOBISDropDown: View {
     public var titleValue: String
     public var selections: [String]
     @Environment(\.isEnabled) private var isEnabled: Bool
+    private func isOpenToggle() {
+        if isEnabled {
+            self.isOpen.toggle()
+        }
+    }
     public init(
         selectedValue: Binding<String>,
         titleValue: String,
@@ -19,13 +24,15 @@ public struct JOBISDropDown: View {
         VStack(spacing: 5) {
             HStack {
                 Text(selectedValue)
-                    .JOBISFont(.body(.body1), color: .Sub.gray90)
+                    .JOBISFont(.body(.body1),
+                               color: isEnabled ? .Sub.gray90 : .Sub.gray50)
                     .padding(.leading, 16)
                 Spacer()
                 Image(systemName: isOpen ?
                       "chevron.up" :
                         "chevron.down")
                 .resizable()
+                .foregroundColor(isEnabled ? .Sub.gray90 : .Sub.gray50)
                 .frame(width: 13, height: 7)
                 .padding(.trailing, 14)
             }
@@ -38,9 +45,9 @@ public struct JOBISDropDown: View {
                         lineWidth: 1
                     )
             )
-            .background(Color.Sub.gray10)
+            .background(isEnabled ? Color.Sub.gray10 : .Sub.gray40)
             .onTapGesture {
-                isOpen.toggle()
+                isOpenToggle()
             }
             .overlay(alignment: .top) {
                 if isOpen {
@@ -56,8 +63,10 @@ public struct JOBISDropDown: View {
                             }
                             .background(Color.Sub.gray10)
                             .onTapGesture {
-                                self.isOpen.toggle()
-                                self.selectedValue = value
+                                if isEnabled {
+                                    self.isOpenToggle()
+                                    self.selectedValue = value
+                                }
                             }
                             Rectangle()
                                 .frame(width: 147, height: 1)
@@ -76,10 +85,15 @@ public struct JOBISDropDown: View {
                 }
             }
         }
-        .animation(.easeIn(duration: 0.1), value: isOpen)
         .onAppear {
             selectedValue = titleValue
         }
+        .onChange(of: isEnabled) { newValue in
+            if newValue == false {
+                isOpen = false
+            }
+        }
+        .animation(.easeIn(duration: 0.1), value: isOpen)
     }
 }
 

@@ -42,7 +42,7 @@ public struct JOBISTextField: View {
         }
         .padding(.vertical, 8)
         .padding(.horizontal, 16)
-        .overlay(
+        .overlay (
             RoundedRectangle(cornerRadius: 3)
                 .strokeBorder(
                     isEnabled ?

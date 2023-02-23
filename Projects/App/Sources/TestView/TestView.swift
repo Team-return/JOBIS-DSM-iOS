@@ -43,6 +43,7 @@ struct TestView: View {
                     "SATURDAY",
                     "SUNDAY"
                 ])
+            .disabled(disabled)
         }
     }
 }
