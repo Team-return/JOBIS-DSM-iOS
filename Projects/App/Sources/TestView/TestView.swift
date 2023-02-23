@@ -9,12 +9,14 @@ struct TestView: View {
     var body: some View {
         VStack {
             HStack {
-                JOBISRadioBox(isOn: $bool)
-                    .disabled(disabled)
-                JOBISCheckBox(isOn: $bool)
-                    .disabled(disabled)
-                JOBISToggleBtn(isOn: $bool)
-                    .disabled(disabled)
+                Group {
+                    JOBISRadioBox(isOn: $bool)
+                        .disabled(disabled)
+                    JOBISCheckBox(isOn: $bool)
+                        .disabled(disabled)
+                    JOBISToggleBtn(isOn: $bool)
+                        .disabled(disabled)
+                }
             }
             JOBISTextField("testTF", text: $string, isError: bool, errorMessage: "에러 입니다.") {}
                 .disabled(disabled)
@@ -29,8 +31,18 @@ struct TestView: View {
                         disabled.toggle()
                     }
             }
-//            JOBISDropDown(selections: [
-//            ], selectingValue: "")
+            JOBISDropDown(
+                selectedValue: $select,
+                titleValue: "Weekday",
+                selections: [
+                    "MONDAY",
+                    "TUESDAY",
+                    "WEDNESDAY",
+                    "THURSDAY",
+                    "FRIDAY",
+                    "SATURDAY",
+                    "SUNDAY"
+                ])
         }
     }
 }

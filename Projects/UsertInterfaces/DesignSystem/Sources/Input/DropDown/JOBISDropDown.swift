@@ -2,20 +2,23 @@ import SwiftUI
 
 public struct JOBISDropDown: View {
     @State private var isOpen: Bool = false
-    var selections: [String]
-    @Binding var selectingValue: String
+    @Binding public var selectedValue: String
+    public var titleValue: String
+    public var selections: [String]
     @Environment(\.isEnabled) private var isEnabled: Bool
-//    init(
-//        selections: [String],
-//        selectingValue: String
-//    ) {
-//        self.selections = selections
-//        self.selectingValue = selectingValue
-//    }
+    public init(
+        selectedValue: Binding<String>,
+        titleValue: String,
+        selections: [String]
+    ) {
+        _selectedValue = selectedValue
+        self.titleValue = titleValue
+        self.selections = selections
+    }
     public var body: some View {
         VStack(spacing: 5) {
             HStack {
-                Text(selectingValue)
+                Text(selectedValue)
                     .JOBISFont(.body(.body1), color: .Sub.gray90)
                     .padding(.leading, 16)
                 Spacer()
@@ -45,7 +48,8 @@ public struct JOBISDropDown: View {
                         ForEach(selections, id: \.self) { value in
                             HStack {
                                 Text(value)
-                                    .JOBISFont(.body(.body3), color: .Sub.gray60)
+                                    .JOBISFont(.body(.body3),
+                                               color: .Sub.gray60)
                                     .padding(.vertical, 14)
                                     .padding(.leading, 16)
                                 Spacer()
@@ -53,7 +57,7 @@ public struct JOBISDropDown: View {
                             .background(Color.Sub.gray10)
                             .onTapGesture {
                                 self.isOpen.toggle()
-                                selectingValue = value
+                                self.selectedValue = value
                             }
                             Rectangle()
                                 .frame(width: 147, height: 1)
@@ -73,6 +77,9 @@ public struct JOBISDropDown: View {
             }
         }
         .animation(.easeIn(duration: 0.1), value: isOpen)
+        .onAppear {
+            selectedValue = titleValue
+        }
     }
 }
 
@@ -80,7 +87,16 @@ struct JOBISDropDown_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             VStack {
-                JOBISDropDown(selections: [], selectingValue: .constant(""))
+                JOBISDropDown(
+                    selectedValue: .constant("title"),
+                    titleValue: "전공동아리",
+                    selections: [
+                        "DMS",
+                        "Kodomo",
+                        "正",
+                        "그램",
+                        "시나브로"
+                    ])
             }
             .padding(10)
         }
