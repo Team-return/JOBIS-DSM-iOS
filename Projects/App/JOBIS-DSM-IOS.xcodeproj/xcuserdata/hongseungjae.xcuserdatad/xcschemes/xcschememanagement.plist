@@ -4,12 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>JOBIS-DSM-IOS.xcscheme_^#shared#^_</key>
+		<key>JOBIS-DSM-iOS-DEV.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>7</integer>
+		</dict>
+		<key>JOBIS-DSM-iOS-PROD.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>JOBIS-DSM-iOS-STAGE.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>9</integer>
+		</dict>
+		<key>JOBIS-DSM-iOS.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<true/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 	</dict>
 </dict>
