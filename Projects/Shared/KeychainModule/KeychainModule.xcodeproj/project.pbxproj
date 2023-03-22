@@ -7,42 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		030D102F40C654D9533D1D9F /* CwlMachBadInstructionHandler.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCD0CE891E46A27DFE5F504 /* CwlMachBadInstructionHandler.framework */; platformFilter = ios; };
-		0A643E78A953AD99DA5B828C /* QuickObjCRuntime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE4F80C7CA59F93BB24A524D /* QuickObjCRuntime.framework */; platformFilter = ios; };
-		0C534758F0FDF6687F9C96D3 /* TargetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C4B4E5BBAFDCD33B727412 /* TargetTest.swift */; };
-		152198D1D9533E125B2869B7 /* CwlPosixPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B224DF43CB8EC382A963EACF /* CwlPosixPreconditionTesting.framework */; platformFilter = ios; };
 		15884F790A9D39022C7E27D3 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF05608489C39C10851EB9B2 /* Keychain.swift */; };
 		228DA7AA5C345212712CD100 /* KeychainFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57C5C6966701775BE47F180C /* KeychainFake.swift */; };
-		7B64B10B9DB302323D43828F /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6BBDA947CA73D33F3D69694 /* Nimble.framework */; platformFilter = ios; };
-		A77FFF45290930037860F41F /* CwlPreconditionTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63D0C46CF78244544CDEEFB6 /* CwlPreconditionTesting.framework */; platformFilter = ios; };
-		B61E4C5BF5C7939CF7D40C4F /* CwlCatchExceptionSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91DD16C74E2C56D8B19B7E9D /* CwlCatchExceptionSupport.framework */; platformFilter = ios; };
 		BA6A91D15E48E3C6C5850956 /* KeychainImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12174100E55F751A6811DF4B /* KeychainImpl.swift */; };
-		CC7F10F55694C8309E61B570 /* KeychainModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E793E0AD5E4ACF48AE596A6 /* KeychainModule.framework */; platformFilter = ios; };
-		F4F8C364F255834B462B81BD /* CwlCatchException.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827548811657651DBC0EDC90 /* CwlCatchException.framework */; platformFilter = ios; };
-		FBABEDD43197A7D47FC75D8D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 701D4F3B03C786C02673FB2E /* Quick.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		1A438DCF033AD11B3D20D7C5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D83EDDE73D1B806CAE96F3FF /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CE7A646E916F534C7ECFBD2C;
-			remoteInfo = KeychainModule;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		3CDE724FCB9FB3E56BBF9335 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8544E853A9A338DC873B98EF /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -56,43 +26,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0E5FD9F50E7A232A5F8A4145 /* KeychainModuleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "KeychainModuleTests-Info.plist"; sourceTree = "<group>"; };
 		12174100E55F751A6811DF4B /* KeychainImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainImpl.swift; sourceTree = "<group>"; };
 		4E793E0AD5E4ACF48AE596A6 /* KeychainModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57C5C6966701775BE47F180C /* KeychainFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainFake.swift; sourceTree = "<group>"; };
-		63D0C46CF78244544CDEEFB6 /* CwlPreconditionTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlPreconditionTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		687C24927569F5A003CEC9A6 /* KeychainModule-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "KeychainModule-Info.plist"; sourceTree = "<group>"; };
-		701D4F3B03C786C02673FB2E /* Quick.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Quick.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		827548811657651DBC0EDC90 /* CwlCatchException.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchException.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87D08B5AFCB59C2151B8B82C /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
-		91DD16C74E2C56D8B19B7E9D /* CwlCatchExceptionSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlCatchExceptionSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B224DF43CB8EC382A963EACF /* CwlPosixPreconditionTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlPosixPreconditionTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0C4B4E5BBAFDCD33B727412 /* TargetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTest.swift; sourceTree = "<group>"; };
+		9987A6FA941E05EABDBAAEC2 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		CF05608489C39C10851EB9B2 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		DCCD0CE891E46A27DFE5F504 /* CwlMachBadInstructionHandler.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CwlMachBadInstructionHandler.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5B84352491D36F927FD2170 /* KeychainModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeychainModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E6BBDA947CA73D33F3D69694 /* Nimble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nimble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E78EB15E6FD142BE726AE04B /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
-		EE4F80C7CA59F93BB24A524D /* QuickObjCRuntime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuickObjCRuntime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7D2F0402CFB49062E6CD4EE8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B61E4C5BF5C7939CF7D40C4F /* CwlCatchExceptionSupport.framework in Frameworks */,
-				F4F8C364F255834B462B81BD /* CwlCatchException.framework in Frameworks */,
-				030D102F40C654D9533D1D9F /* CwlMachBadInstructionHandler.framework in Frameworks */,
-				152198D1D9533E125B2869B7 /* CwlPosixPreconditionTesting.framework in Frameworks */,
-				A77FFF45290930037860F41F /* CwlPreconditionTesting.framework in Frameworks */,
-				CC7F10F55694C8309E61B570 /* KeychainModule.framework in Frameworks */,
-				7B64B10B9DB302323D43828F /* Nimble.framework in Frameworks */,
-				0A643E78A953AD99DA5B828C /* QuickObjCRuntime.framework in Frameworks */,
-				FBABEDD43197A7D47FC75D8D /* Quick.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C65671E755330D2480E6F696 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,7 +52,6 @@
 			children = (
 				CC198F23AF338352745F296F /* Derived */,
 				6031DAE81D13366F8078DBFC /* Sources */,
-				A2CF1BDD0F2DEE507B8A0DBE /* Tests */,
 				D9ADCE549389117226A6162F /* XCConfig */,
 			);
 			name = Project;
@@ -129,6 +72,7 @@
 			children = (
 				E78EB15E6FD142BE726AE04B /* DEV.xcconfig */,
 				87D08B5AFCB59C2151B8B82C /* PROD.xcconfig */,
+				9987A6FA941E05EABDBAAEC2 /* STAGE.xcconfig */,
 			);
 			path = KeychainModule;
 			sourceTree = "<group>";
@@ -144,32 +88,14 @@
 			isa = PBXGroup;
 			children = (
 				687C24927569F5A003CEC9A6 /* KeychainModule-Info.plist */,
-				0E5FD9F50E7A232A5F8A4145 /* KeychainModuleTests-Info.plist */,
 			);
 			path = InfoPlists;
-			sourceTree = "<group>";
-		};
-		A2CF1BDD0F2DEE507B8A0DBE /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				C0C4B4E5BBAFDCD33B727412 /* TargetTest.swift */,
-			);
-			path = Tests;
 			sourceTree = "<group>";
 		};
 		BB559E70C6EC336AE66DE25C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				827548811657651DBC0EDC90 /* CwlCatchException.framework */,
-				91DD16C74E2C56D8B19B7E9D /* CwlCatchExceptionSupport.framework */,
-				DCCD0CE891E46A27DFE5F504 /* CwlMachBadInstructionHandler.framework */,
-				B224DF43CB8EC382A963EACF /* CwlPosixPreconditionTesting.framework */,
-				63D0C46CF78244544CDEEFB6 /* CwlPreconditionTesting.framework */,
 				4E793E0AD5E4ACF48AE596A6 /* KeychainModule.framework */,
-				E5B84352491D36F927FD2170 /* KeychainModuleTests.xctest */,
-				E6BBDA947CA73D33F3D69694 /* Nimble.framework */,
-				701D4F3B03C786C02673FB2E /* Quick.framework */,
-				EE4F80C7CA59F93BB24A524D /* QuickObjCRuntime.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -203,25 +129,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		73721133BCE170E2D7BF894C /* KeychainModuleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7173330C214F9931049C8466 /* Build configuration list for PBXNativeTarget "KeychainModuleTests" */;
-			buildPhases = (
-				7C8196EE3843284DEC6521AC /* Sources */,
-				778BCAEEE0B1D7D867B69D09 /* Resources */,
-				3CDE724FCB9FB3E56BBF9335 /* Embed Frameworks */,
-				7D2F0402CFB49062E6CD4EE8 /* Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				92FD16D00125D6C7D61CC168 /* PBXTargetDependency */,
-			);
-			name = KeychainModuleTests;
-			productName = KeychainModuleTests;
-			productReference = E5B84352491D36F927FD2170 /* KeychainModuleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		CE7A646E916F534C7ECFBD2C /* KeychainModule */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B34F73D90FA21BEF6CEB9DB /* Build configuration list for PBXNativeTarget "KeychainModule" */;
@@ -247,7 +154,7 @@
 		D83EDDE73D1B806CAE96F3FF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				ORGANIZATIONNAME = com.team.aliens;
+				ORGANIZATIONNAME = "Team-Return";
 				TargetAttributes = {
 				};
 			};
@@ -265,20 +172,12 @@
 			projectRoot = "";
 			targets = (
 				CE7A646E916F534C7ECFBD2C /* KeychainModule */,
-				73721133BCE170E2D7BF894C /* KeychainModuleTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		347AD1339A6BD40EBA4F839F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		778BCAEEE0B1D7D867B69D09 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,24 +219,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C8196EE3843284DEC6521AC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0C534758F0FDF6687F9C96D3 /* TargetTest.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		92FD16D00125D6C7D61CC168 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = KeychainModule;
-			target = CE7A646E916F534C7ECFBD2C /* KeychainModule */;
-			targetProxy = 1A438DCF033AD11B3D20D7C5 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0444C180996FC893E7CD7E40 /* PROD */ = {
@@ -351,14 +233,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Derived/InfoPlists/KeychainModule-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = com.team.aliens.KeychainModule;
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.KeychainModule";
 				PRODUCT_NAME = KeychainModule;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -372,37 +253,69 @@
 			};
 			name = PROD;
 		};
-		17EF778F6BF87ED8217EAE1B /* DEV */ = {
+		1DE00A5FE98593092B26E3E1 /* STAGE */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9987A6FA941E05EABDBAAEC2 /* STAGE.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Derived/InfoPlists/KeychainModuleTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
 					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
 				);
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.team.aliens.KeychainModuleTests;
-				PRODUCT_NAME = KeychainModuleTests;
-				SDKROOT = iphoneos;
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_COMPILATION_MODE = singlefile;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited) -all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
-			name = DEV;
+			name = STAGE;
 		};
 		36ABD931DAF255560F4B30E1 /* DEV */ = {
 			isa = XCBuildConfiguration;
@@ -439,9 +352,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -460,40 +376,42 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited) -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = DEV;
 		};
-		BECD41018A193BBFD085F090 /* PROD */ = {
+		B5F9F70A309CBB2A560446C0 /* STAGE */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				INFOPLIST_FILE = "Derived/InfoPlists/KeychainModuleTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/KeychainModule-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				OTHER_CFLAGS = (
-					"$(inherited)",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
-				OTHER_SWIFT_FLAGS = (
-					"$(inherited)",
-					"-Xcc",
-					"-fmodule-map-file=$(SRCROOT)/../../../Tuist/Dependencies/SwiftPackageManager/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include/CwlCatchExceptionSupport.modulemap",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.team.aliens.KeychainModuleTests;
-				PRODUCT_NAME = KeychainModuleTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.KeychainModule";
+				PRODUCT_NAME = KeychainModule;
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
-			name = PROD;
+			name = STAGE;
 		};
 		DFCF32C647C8B6FB37B3199E /* DEV */ = {
 			isa = XCBuildConfiguration;
@@ -506,14 +424,13 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Derived/InfoPlists/KeychainModule-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				PRODUCT_BUNDLE_IDENTIFIER = com.team.aliens.KeychainModule;
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.KeychainModule";
 				PRODUCT_NAME = KeychainModule;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -563,9 +480,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -577,6 +497,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited) -all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -590,6 +511,7 @@
 			buildConfigurations = (
 				36ABD931DAF255560F4B30E1 /* DEV */,
 				F27F1C13DF79B1930758C75F /* PROD */,
+				1DE00A5FE98593092B26E3E1 /* STAGE */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = PROD;
@@ -599,15 +521,7 @@
 			buildConfigurations = (
 				DFCF32C647C8B6FB37B3199E /* DEV */,
 				0444C180996FC893E7CD7E40 /* PROD */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = PROD;
-		};
-		7173330C214F9931049C8466 /* Build configuration list for PBXNativeTarget "KeychainModuleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				17EF778F6BF87ED8217EAE1B /* DEV */,
-				BECD41018A193BBFD085F090 /* PROD */,
+				B5F9F70A309CBB2A560446C0 /* STAGE */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = PROD;

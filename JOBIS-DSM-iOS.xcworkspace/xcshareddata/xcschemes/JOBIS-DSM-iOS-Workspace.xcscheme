@@ -98,6 +98,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE7A646E916F534C7ECFBD2C"
+               BuildableName = "KeychainModule.framework"
+               BlueprintName = "KeychainModule"
+               ReferencedContainer = "container:Projects/Shared/KeychainModule/KeychainModule.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "9F88FAC8F2190CDF2A0E4DAC"
                BuildableName = "libMainTabFeature.a"
                BlueprintName = "MainTabFeature"

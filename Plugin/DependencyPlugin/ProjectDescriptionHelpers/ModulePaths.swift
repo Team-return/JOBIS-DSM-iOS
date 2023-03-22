@@ -24,7 +24,7 @@ public extension ModulePaths {
 public extension ModulePaths {
     enum Domain: String {
         case BaseDomain
-        case UserDomain
+        case AuthDomain
 
         func targetName(type: MicroTargetType) -> String {
             "\(self.rawValue)\(type.rawValue)"
@@ -35,6 +35,7 @@ public extension ModulePaths {
 public extension ModulePaths {
     enum Core: String {
         case DesignSystem
+        case JwtStore
 
         func targetName(type: MicroTargetType) -> String {
             "\(self.rawValue)\(type.rawValue)"

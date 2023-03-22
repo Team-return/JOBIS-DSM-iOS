@@ -9,30 +9,20 @@
 /* Begin PBXBuildFile section */
 		052D2D4CB8E609C4C266E9D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B206AFDC64DE7BFA4653A3 /* LaunchScreen.storyboard */; };
 		154E409A3D9FE69701E5D01E /* libSplashFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A532FFDE4CBC72FC99AD55C7 /* libSplashFeature.a */; platformFilter = ios; };
-		33BE9049900487EEB7488789 /* AppComponent+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = D461CDD54029FBD66869D1E6 /* AppComponent+Auth.swift */; };
+		21A5EAE3E16BD260B1657867 /* KeychainModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B44509A6838E98564EE2A0C /* KeychainModule.framework */; platformFilter = ios; };
 		3BB761FF09C3335DA385F536 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A438D6CF9D5D802772036E3B /* Assets.xcassets */; };
 		5007B22E3B92F2E5EDAF94BF /* libRootFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A72554F9632BA3739352EDE /* libRootFeature.a */; platformFilter = ios; };
 		5B7C30DA6DE303E704725D00 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069344106BC8FE9363AA40E0 /* UtilityModule.framework */; platformFilter = ios; };
-		67A6135A7778613D49D70EB7 /* AppComponent+StudyRooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = C917BD9340E32227D8260423 /* AppComponent+StudyRooms.swift */; };
-		74B054DB8D5CA83FC98E6CEB /* AppComponent+Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BDF1EE68AA6B576FC5834D /* AppComponent+Points.swift */; };
 		7E4FEE2E7BF97BC56DC48677 /* DMSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BC70D3F5915DE89E227156 /* DMSApp.swift */; };
-		81854BC486082B271C72EDF7 /* AppComponent+Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94427FECFB4EBFB328CF2A7 /* AppComponent+Files.swift */; };
 		8C0CCC6B9E7EEB78CD8555F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1E082C2417FA069C53E /* AppDelegate.swift */; };
-		8C34E7742AC6ACDEEB9607EB /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1653CDE7DC1D34682D46A44 /* NeedleGenerated.swift */; };
 		8FD7DC0B2C322A9B3F7216DF /* libMainTabFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D709BBD38D81152403749B5C /* libMainTabFeature.a */; platformFilter = ios; };
 		9227056807CBDE9CBFAEC009 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31EE34E7976BF448188BEBC8 /* DesignSystem.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9F1BE8F10CEEF3452ADD8813 /* AppComponent+Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378DE9CA40493EFB812B4FA6 /* AppComponent+Meal.swift */; };
+		9BFD1D9DF185FE7230C8C295 /* KeychainModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B44509A6838E98564EE2A0C /* KeychainModule.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A7C6776D68C9138A29D15352 /* GlobalThirdPartyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E073D5C3E807399C2389D0 /* GlobalThirdPartyLibrary.framework */; platformFilter = ios; };
 		A8188FF373FE958C59AF6093 /* TuistBundle+JOBISDSMIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4B3C9770370952336C33C /* TuistBundle+JOBISDSMIOS.swift */; };
 		B00500912D70D265D291910D /* GlobalThirdPartyLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31E073D5C3E807399C2389D0 /* GlobalThirdPartyLibrary.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B59ED885CC8A8B7C33779469 /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA8E833AA6740D47437201B /* libBaseFeature.a */; platformFilter = ios; };
-		C0A24269F3C629DC35EFA0D7 /* AppComponent+Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5645530D25C0E19B8541809F /* AppComponent+Users.swift */; };
-		C27F48146EDCC01976A31523 /* AppComponent+Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB0ED5203F15476CDF4437 /* AppComponent+Notice.swift */; };
 		C7756DE115B384A64AAAAEA4 /* TuistAssets+JOBISDSMIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D84EDAC2FE9AF4EF5FF71 /* TuistAssets+JOBISDSMIOS.swift */; };
-		C9D93F9DA45AA443879E0B07 /* AppComponent+Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = E778722446B590A2DF0AC058 /* AppComponent+Students.swift */; };
-		D2F456B5EDF98690FB745A74 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9582C212D7EDA3F5D4DF0A1 /* AppComponent.swift */; };
-		E16684F56380CE0E9637F6FB /* AppComponent+School.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F9EA956DCD30BFEB722BA9 /* AppComponent+School.swift */; };
-		EC255351319CF1E8A2B911B9 /* AppComponent+Remains.swift in Sources */ = {isa = PBXBuildFile; fileRef = E253166D59BBA8574E1F009B /* AppComponent+Remains.swift */; };
 		FF30274212491EAB74405C0F /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31EE34E7976BF448188BEBC8 /* DesignSystem.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
@@ -45,6 +35,7 @@
 			files = (
 				9227056807CBDE9CBFAEC009 /* DesignSystem.framework in Embed Frameworks */,
 				B00500912D70D265D291910D /* GlobalThirdPartyLibrary.framework in Embed Frameworks */,
+				9BFD1D9DF185FE7230C8C295 /* KeychainModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,33 +46,22 @@
 		069344106BC8FE9363AA40E0 /* UtilityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA8E833AA6740D47437201B /* libBaseFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1719D1E082C2417FA069C53E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		24F9EA956DCD30BFEB722BA9 /* AppComponent+School.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+School.swift"; sourceTree = "<group>"; };
+		1B44509A6838E98564EE2A0C /* KeychainModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2082B1D0DAEA01C6C146EE91 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		31E073D5C3E807399C2389D0 /* GlobalThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31EE34E7976BF448188BEBC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		336116310082D8F7B24A5051 /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
-		36BB0ED5203F15476CDF4437 /* AppComponent+Notice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+Notice.swift"; sourceTree = "<group>"; };
-		378DE9CA40493EFB812B4FA6 /* AppComponent+Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+Meal.swift"; sourceTree = "<group>"; };
 		37BC70D3F5915DE89E227156 /* DMSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSApp.swift; sourceTree = "<group>"; };
 		4A72554F9632BA3739352EDE /* libRootFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRootFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5645530D25C0E19B8541809F /* AppComponent+Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+Users.swift"; sourceTree = "<group>"; };
-		5ECDB51734D955F4F4F5FEB6 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		71F567AD9057B520B0B3B4A9 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		805CB56FEFC1DAF7A1F990E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		901D84EDAC2FE9AF4EF5FF71 /* TuistAssets+JOBISDSMIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+JOBISDSMIOS.swift"; sourceTree = "<group>"; };
+		A062F93111805B7FB48BAC4E /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
 		A438D6CF9D5D802772036E3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A532FFDE4CBC72FC99AD55C7 /* libSplashFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSplashFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		A9582C212D7EDA3F5D4DF0A1 /* AppComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponent.swift; sourceTree = "<group>"; };
-		B6BDF1EE68AA6B576FC5834D /* AppComponent+Points.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+Points.swift"; sourceTree = "<group>"; };
 		B8A4B3C9770370952336C33C /* TuistBundle+JOBISDSMIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+JOBISDSMIOS.swift"; sourceTree = "<group>"; };
 		C5904B3946CD03DD12C39B67 /* JOBIS_DSM_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JOBIS_DSM_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C917BD9340E32227D8260423 /* AppComponent+StudyRooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+StudyRooms.swift"; sourceTree = "<group>"; };
-		D1653CDE7DC1D34682D46A44 /* NeedleGenerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
-		D461CDD54029FBD66869D1E6 /* AppComponent+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+Auth.swift"; sourceTree = "<group>"; };
 		D5B206AFDC64DE7BFA4653A3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D709BBD38D81152403749B5C /* libMainTabFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMainTabFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		E253166D59BBA8574E1F009B /* AppComponent+Remains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+Remains.swift"; sourceTree = "<group>"; };
-		E63BD9C681322A4FE2B21FFA /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
-		E778722446B590A2DF0AC058 /* AppComponent+Students.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+Students.swift"; sourceTree = "<group>"; };
-		F94427FECFB4EBFB328CF2A7 /* AppComponent+Files.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppComponent+Files.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +72,7 @@
 				B59ED885CC8A8B7C33779469 /* libBaseFeature.a in Frameworks */,
 				FF30274212491EAB74405C0F /* DesignSystem.framework in Frameworks */,
 				A7C6776D68C9138A29D15352 /* GlobalThirdPartyLibrary.framework in Frameworks */,
+				21A5EAE3E16BD260B1657867 /* KeychainModule.framework in Frameworks */,
 				8FD7DC0B2C322A9B3F7216DF /* libMainTabFeature.a in Frameworks */,
 				5007B22E3B92F2E5EDAF94BF /* libRootFeature.a in Frameworks */,
 				154E409A3D9FE69701E5D01E /* libSplashFeature.a in Frameworks */,
@@ -102,14 +83,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		02656261A8AD580D6274A3B2 /* Users */ = {
-			isa = PBXGroup;
-			children = (
-				5645530D25C0E19B8541809F /* AppComponent+Users.swift */,
-			);
-			path = Users;
-			sourceTree = "<group>";
-		};
 		0503CDBD96962D07869E3AFF /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,21 +91,11 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		088B6A051469548E2E57A546 /* Meal */ = {
-			isa = PBXGroup;
-			children = (
-				378DE9CA40493EFB812B4FA6 /* AppComponent+Meal.swift */,
-			);
-			path = Meal;
-			sourceTree = "<group>";
-		};
 		1C1A2988089D5E65DF336BA4 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				AC20D6B2F1F977EC8E805402 /* DI */,
 				1719D1E082C2417FA069C53E /* AppDelegate.swift */,
 				37BC70D3F5915DE89E227156 /* DMSApp.swift */,
-				D1653CDE7DC1D34682D46A44 /* NeedleGenerated.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -143,6 +106,7 @@
 				31EE34E7976BF448188BEBC8 /* DesignSystem.framework */,
 				31E073D5C3E807399C2389D0 /* GlobalThirdPartyLibrary.framework */,
 				C5904B3946CD03DD12C39B67 /* JOBIS_DSM_iOS.app */,
+				1B44509A6838E98564EE2A0C /* KeychainModule.framework */,
 				0EA8E833AA6740D47437201B /* libBaseFeature.a */,
 				D709BBD38D81152403749B5C /* libMainTabFeature.a */,
 				4A72554F9632BA3739352EDE /* libRootFeature.a */,
@@ -150,14 +114,6 @@
 				069344106BC8FE9363AA40E0 /* UtilityModule.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		377B61C98EE6A278DBB0A800 /* Students */ = {
-			isa = PBXGroup;
-			children = (
-				E778722446B590A2DF0AC058 /* AppComponent+Students.swift */,
-			);
-			path = Students;
 			sourceTree = "<group>";
 		};
 		40C7FB292F2DC9D5BE07241B /* Frameworks */ = {
@@ -175,16 +131,6 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		49AECE52204486B74F09B2DB /* App */ = {
-			isa = PBXGroup;
-			children = (
-				336116310082D8F7B24A5051 /* DEV.xcconfig */,
-				5ECDB51734D955F4F4F5FEB6 /* PROD.xcconfig */,
-				E63BD9C681322A4FE2B21FFA /* STAGE.xcconfig */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
 		4ED5E0C4293D2588D3687299 /* Project */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,14 +143,6 @@
 			name = Project;
 			sourceTree = "<group>";
 		};
-		6B7F06306E8313DD0BD5C341 /* Remains */ = {
-			isa = PBXGroup;
-			children = (
-				E253166D59BBA8574E1F009B /* AppComponent+Remains.swift */,
-			);
-			path = Remains;
-			sourceTree = "<group>";
-		};
 		73035AD12952768A2EB6D34D /* Derived */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,54 +151,14 @@
 			path = Derived;
 			sourceTree = "<group>";
 		};
-		7FD103712265454626613664 /* Auth */ = {
+		7D9592600B99FC4E2F479E19 /* JOBIS-DSM-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D461CDD54029FBD66869D1E6 /* AppComponent+Auth.swift */,
+				A062F93111805B7FB48BAC4E /* DEV.xcconfig */,
+				71F567AD9057B520B0B3B4A9 /* PROD.xcconfig */,
+				2082B1D0DAEA01C6C146EE91 /* STAGE.xcconfig */,
 			);
-			path = Auth;
-			sourceTree = "<group>";
-		};
-		84B1FF002C0FE49B7A8B76C1 /* Files */ = {
-			isa = PBXGroup;
-			children = (
-				F94427FECFB4EBFB328CF2A7 /* AppComponent+Files.swift */,
-			);
-			path = Files;
-			sourceTree = "<group>";
-		};
-		A0B749860687E56824EAE6E3 /* Notice */ = {
-			isa = PBXGroup;
-			children = (
-				36BB0ED5203F15476CDF4437 /* AppComponent+Notice.swift */,
-			);
-			path = Notice;
-			sourceTree = "<group>";
-		};
-		AAB0EA7A6EC4A45B5CF20F8E /* StudyRooms */ = {
-			isa = PBXGroup;
-			children = (
-				C917BD9340E32227D8260423 /* AppComponent+StudyRooms.swift */,
-			);
-			path = StudyRooms;
-			sourceTree = "<group>";
-		};
-		AC20D6B2F1F977EC8E805402 /* DI */ = {
-			isa = PBXGroup;
-			children = (
-				7FD103712265454626613664 /* Auth */,
-				84B1FF002C0FE49B7A8B76C1 /* Files */,
-				088B6A051469548E2E57A546 /* Meal */,
-				A0B749860687E56824EAE6E3 /* Notice */,
-				D8D9FB413A330C36423F6A30 /* Points */,
-				6B7F06306E8313DD0BD5C341 /* Remains */,
-				D0B8AFA7FF96CDCE9DC3DD2E /* School */,
-				377B61C98EE6A278DBB0A800 /* Students */,
-				AAB0EA7A6EC4A45B5CF20F8E /* StudyRooms */,
-				02656261A8AD580D6274A3B2 /* Users */,
-				A9582C212D7EDA3F5D4DF0A1 /* AppComponent.swift */,
-			);
-			path = DI;
+			path = "JOBIS-DSM-iOS";
 			sourceTree = "<group>";
 		};
 		C0413C062572E16FE1567EEB = {
@@ -281,14 +179,6 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		D0B8AFA7FF96CDCE9DC3DD2E /* School */ = {
-			isa = PBXGroup;
-			children = (
-				24F9EA956DCD30BFEB722BA9 /* AppComponent+School.swift */,
-			);
-			path = School;
-			sourceTree = "<group>";
-		};
 		D43173C05BB8035F2AF8E9C2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,18 +188,10 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		D8D9FB413A330C36423F6A30 /* Points */ = {
-			isa = PBXGroup;
-			children = (
-				B6BDF1EE68AA6B576FC5834D /* AppComponent+Points.swift */,
-			);
-			path = Points;
-			sourceTree = "<group>";
-		};
 		FD955104CF3CD4A6273539A5 /* XCConfig */ = {
 			isa = PBXGroup;
 			children = (
-				49AECE52204486B74F09B2DB /* App */,
+				7D9592600B99FC4E2F479E19 /* JOBIS-DSM-iOS */,
 			);
 			name = XCConfig;
 			path = ../../XCConfig;
@@ -407,19 +289,7 @@
 				C7756DE115B384A64AAAAEA4 /* TuistAssets+JOBISDSMIOS.swift in Sources */,
 				A8188FF373FE958C59AF6093 /* TuistBundle+JOBISDSMIOS.swift in Sources */,
 				8C0CCC6B9E7EEB78CD8555F3 /* AppDelegate.swift in Sources */,
-				D2F456B5EDF98690FB745A74 /* AppComponent.swift in Sources */,
-				33BE9049900487EEB7488789 /* AppComponent+Auth.swift in Sources */,
-				81854BC486082B271C72EDF7 /* AppComponent+Files.swift in Sources */,
-				9F1BE8F10CEEF3452ADD8813 /* AppComponent+Meal.swift in Sources */,
-				C27F48146EDCC01976A31523 /* AppComponent+Notice.swift in Sources */,
-				74B054DB8D5CA83FC98E6CEB /* AppComponent+Points.swift in Sources */,
-				EC255351319CF1E8A2B911B9 /* AppComponent+Remains.swift in Sources */,
-				E16684F56380CE0E9637F6FB /* AppComponent+School.swift in Sources */,
-				C9D93F9DA45AA443879E0B07 /* AppComponent+Students.swift in Sources */,
-				67A6135A7778613D49D70EB7 /* AppComponent+StudyRooms.swift in Sources */,
-				C0A24269F3C629DC35EFA0D7 /* AppComponent+Users.swift in Sources */,
 				7E4FEE2E7BF97BC56DC48677 /* DMSApp.swift in Sources */,
-				8C34E7742AC6ACDEEB9607EB /* NeedleGenerated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +345,7 @@
 		};
 		364F1FF6504C133D818DE9F1 /* PROD */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5ECDB51734D955F4F4F5FEB6 /* PROD.xcconfig */;
+			baseConfigurationReference = 71F567AD9057B520B0B3B4A9 /* PROD.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -529,7 +399,7 @@
 		};
 		44DFDF837FDE916CC2FE9AF8 /* STAGE */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E63BD9C681322A4FE2B21FFA /* STAGE.xcconfig */;
+			baseConfigurationReference = 2082B1D0DAEA01C6C146EE91 /* STAGE.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
@@ -589,7 +459,7 @@
 		};
 		477B74492027DDFA76498E4C /* DEV */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 336116310082D8F7B24A5051 /* DEV.xcconfig */;
+			baseConfigurationReference = A062F93111805B7FB48BAC4E /* DEV.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;

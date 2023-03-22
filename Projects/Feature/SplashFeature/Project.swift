@@ -5,7 +5,7 @@ import DependencyPlugin
 let project = Project.makeModule(
     name: ModulePaths.Feature.SplashFeature.rawValue,
     product: .staticLibrary,
-    targets: [.unitTest],
+    targets: [.interface, .unitTest],
     internalDependencies: [
         .Feature.BaseFeature
     ]

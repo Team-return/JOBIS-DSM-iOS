@@ -30,16 +30,6 @@
       codeCoverageEnabled = "YES"
       onlyGenerateCoverageForSpecifiedTargets = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "73721133BCE170E2D7BF894C"
-               BuildableName = "KeychainModuleTests.xctest"
-               BlueprintName = "KeychainModuleTests"
-               ReferencedContainer = "container:KeychainModule.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <CodeCoverageTargets>
          <BuildableReference

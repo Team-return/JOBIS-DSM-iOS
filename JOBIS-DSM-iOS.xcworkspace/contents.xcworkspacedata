@@ -37,6 +37,9 @@
             location = "group:GlobalThirdPartyLibrary/GlobalThirdPartyLibrary.xcodeproj">
          </FileRef>
          <FileRef
+            location = "group:KeychainModule/KeychainModule.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:UtilityModule/UtilityModule.xcodeproj">
          </FileRef>
       </Group>

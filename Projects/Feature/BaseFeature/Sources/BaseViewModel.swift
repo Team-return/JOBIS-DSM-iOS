@@ -1,5 +1,4 @@
 import Combine
-import ErrorModule
 
 open class BaseViewModel: ObservableObject {
     @Published public var isErrorOcuured = false

@@ -32,12 +32,20 @@ public extension TargetDependency.Domain {
         target: ModulePaths.Domain.BaseDomain.targetName(type: .sources),
         path: .relativeToDomain(ModulePaths.Domain.BaseDomain.rawValue)
     )
+    static let AuthDomain = TargetDependency.project(
+        target: ModulePaths.Domain.AuthDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.AuthDomain.rawValue)
+    )
 }
 
 public extension TargetDependency.Core {
     static let DesignSystem = TargetDependency.project(
         target: ModulePaths.Core.DesignSystem.targetName(type: .sources),
         path: .relativeToCore(ModulePaths.Core.DesignSystem.rawValue)
+    )
+    static let JwtStoreInterface = TargetDependency.project(
+        target: ModulePaths.Core.JwtStore.targetName(type: .sources),
+        path: .relativeToCore(ModulePaths.Core.JwtStore.rawValue)
     )
 }
 
