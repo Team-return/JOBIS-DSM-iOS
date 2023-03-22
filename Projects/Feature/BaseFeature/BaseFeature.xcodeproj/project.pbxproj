@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01D7D44EB4495D3CA3AB7AC8 /* RootPresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C79DC2583D03AEA26E3A55 /* RootPresentationMode.swift */; };
-		0AA3400955C1A2ACE1277C75 /* ErrorModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C804E19B78B08739B178F2E3 /* ErrorModule.framework */; platformFilter = ios; };
 		16E6245051164D99F1346648 /* TabbarHidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E848F9F7A364461177AE90 /* TabbarHidden.swift */; };
 		499C2A658CDBBDEC20937B92 /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 644401D31E6181BC47FE4196 /* libBaseFeature.a */; platformFilter = ios; };
 		5092C8661C578A8EA12A6928 /* DMSSelectionTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA64E4584C279438C3B1557 /* DMSSelectionTab.swift */; };
@@ -84,7 +83,6 @@
 		A0E848F9F7A364461177AE90 /* TabbarHidden.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarHidden.swift; sourceTree = "<group>"; };
 		AECB024DE7C6FD36024DACCE /* UtilityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7D78ED15DFB8504E4A3CEE6 /* TargetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTest.swift; sourceTree = "<group>"; };
-		C804E19B78B08739B178F2E3 /* ErrorModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ErrorModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEF30E4615ADE0283E7CE2E5 /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		D3B9FC3823CBD13413A91BDC /* GlobalThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8C79DC2583D03AEA26E3A55 /* RootPresentationMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootPresentationMode.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 			files = (
 				499C2A658CDBBDEC20937B92 /* libBaseFeature.a in Frameworks */,
 				BDE8494260E2D955676CB2F7 /* DesignSystem.framework in Frameworks */,
-				0AA3400955C1A2ACE1277C75 /* ErrorModule.framework in Frameworks */,
 				E27EE1E2ED71D18D897329A3 /* GlobalThirdPartyLibrary.framework in Frameworks */,
 				D1974C290B47832C8A1DABAB /* UtilityModule.framework in Frameworks */,
 			);
@@ -140,7 +137,6 @@
 			children = (
 				7C26367EBA15DA87947EA486 /* BaseFeatureTests.xctest */,
 				4CF84D2AA289E6D0A5941994 /* DesignSystem.framework */,
-				C804E19B78B08739B178F2E3 /* ErrorModule.framework */,
 				D3B9FC3823CBD13413A91BDC /* GlobalThirdPartyLibrary.framework */,
 				644401D31E6181BC47FE4196 /* libBaseFeature.a */,
 				AECB024DE7C6FD36024DACCE /* UtilityModule.framework */,
@@ -314,6 +310,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		896EE40B2CC01F26BFD04F51 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -332,6 +329,7 @@
 		};
 		C6C94B7F165DBD70D8AA45EE /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

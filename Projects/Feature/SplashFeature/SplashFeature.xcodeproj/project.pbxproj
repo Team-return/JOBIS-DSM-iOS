@@ -13,7 +13,6 @@
 		0DBD53C3850966BDA96C536C /* libSplashFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FB5386D70BEE897C668C0 /* libSplashFeature.a */; platformFilter = ios; };
 		42B98A0D82AAE55AAE1E38C1 /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8C151BEFABEFD262100A9F /* libBaseFeature.a */; platformFilter = ios; };
 		4D05B082028190D2440C4987 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1E1185A2482A08999A491 /* UtilityModule.framework */; platformFilter = ios; };
-		73EDE4BE4E874611E90C36F6 /* ErrorModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8141547A2259A365226F093F /* ErrorModule.framework */; platformFilter = ios; };
 		7780BC043D42C261A3473D62 /* SplashComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3F4F4A75A97CE313508142 /* SplashComponent.swift */; };
 		8DE1B6A257F53B6FD818B1C2 /* TargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76792A301BD8D1F9F04D15 /* TargetTests.swift */; };
 		C461147611BE31C94214B458 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9799DB55E47E0465DCCC1EB0 /* SplashView.swift */; };
@@ -75,7 +74,6 @@
 		5AE1E1185A2482A08999A491 /* UtilityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE664234B8254F8803B0AEC /* GlobalThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8C151BEFABEFD262100A9F /* libBaseFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		8141547A2259A365226F093F /* ErrorModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ErrorModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9799DB55E47E0465DCCC1EB0 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		CA64442FEC0ADB5CB5FB12E8 /* SplashFeatureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SplashFeatureTests-Info.plist"; sourceTree = "<group>"; };
 		F40E93918CBE5CE2DCF36DA5 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
@@ -95,7 +93,6 @@
 			files = (
 				42B98A0D82AAE55AAE1E38C1 /* libBaseFeature.a in Frameworks */,
 				F3B24ABF6F6245DDB0BE7581 /* DesignSystem.framework in Frameworks */,
-				73EDE4BE4E874611E90C36F6 /* ErrorModule.framework in Frameworks */,
 				0136F49F38B99F7EB8AE6F3C /* GlobalThirdPartyLibrary.framework in Frameworks */,
 				0DBD53C3850966BDA96C536C /* libSplashFeature.a in Frameworks */,
 				4D05B082028190D2440C4987 /* UtilityModule.framework in Frameworks */,
@@ -127,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				260868B512E4E5113D021914 /* DesignSystem.framework */,
-				8141547A2259A365226F093F /* ErrorModule.framework */,
 				5DE664234B8254F8803B0AEC /* GlobalThirdPartyLibrary.framework */,
 				5F8C151BEFABEFD262100A9F /* libBaseFeature.a */,
 				121FB5386D70BEE897C668C0 /* libSplashFeature.a */,
@@ -291,6 +287,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		10A7C3177EBA44DF904E02D1 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -309,6 +306,7 @@
 		};
 		7E69A115A30EDAD19C01E83D /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);

@@ -34,9 +34,6 @@
          location = "group:Shared"
          name = "Shared">
          <FileRef
-            location = "group:ErrorModule/ErrorModule.xcodeproj">
-         </FileRef>
-         <FileRef
             location = "group:GlobalThirdPartyLibrary/GlobalThirdPartyLibrary.xcodeproj">
          </FileRef>
          <FileRef

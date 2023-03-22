@@ -8,6 +8,5 @@ let project = Project.makeModule(
     targets: [.unitTest],
     internalDependencies: [
         .Shared.GlobalThirdPartyLibrary,
-        .Shared.ErrorModule
     ]
 )

@@ -46,7 +46,6 @@ public extension ModulePaths {
     enum Shared: String {
         case UtilityModule
         case GlobalThirdPartyLibrary
-        case ErrorModule
         case KeychainModule
 
         func targetName(type: MicroTargetType) -> String {

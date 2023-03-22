@@ -70,20 +70,6 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "587C7D87144FBBDF8049FED5"
-               BuildableName = "ErrorModule.framework"
-               BlueprintName = "ErrorModule"
-               ReferencedContainer = "container:Projects/Shared/ErrorModule/ErrorModule.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
                BlueprintIdentifier = "E7219A64E70DCA7A233E1E7E"
                BuildableName = "GlobalThirdPartyLibrary.framework"
                BlueprintName = "GlobalThirdPartyLibrary"
@@ -276,47 +262,4 @@
          </TestableReference>
       </Testables>
    </TestAction>
-   <LaunchAction
-      buildConfiguration = "DEV"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      launchStyle = "0"
-      useCustomWorkingDirectory = "NO"
-      ignoresPersistentStateOnLaunch = "NO"
-      debugDocumentVersioning = "YES"
-      debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D3E314B387FD8B34A15E37AD"
-            BuildableName = "libBaseFeature.a"
-            BlueprintName = "BaseFeature"
-            ReferencedContainer = "container:Projects/Feature/BaseFeature/BaseFeature.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-   </LaunchAction>
-   <ProfileAction
-      buildConfiguration = "PROD"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      savedToolIdentifier = ""
-      useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D3E314B387FD8B34A15E37AD"
-            BuildableName = "libBaseFeature.a"
-            BlueprintName = "BaseFeature"
-            ReferencedContainer = "container:Projects/Feature/BaseFeature/BaseFeature.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-   </ProfileAction>
-   <AnalyzeAction
-      buildConfiguration = "DEV">
-   </AnalyzeAction>
-   <ArchiveAction
-      buildConfiguration = "PROD"
-      revealArchiveInOrganizer = "YES">
-   </ArchiveAction>
 </Scheme>

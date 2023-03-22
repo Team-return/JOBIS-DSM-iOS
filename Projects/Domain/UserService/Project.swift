@@ -9,8 +9,6 @@ let project = Project.makeModule(
     internalDependencies: [
         .Shared.GlobalThirdPartyLibrary,
         .Shared.KeychainModule,
-        .Shared.ErrorModule,
-//        .Project.Service.DataMappingModule,
 
         .SPM.Moya,
         .SPM.CombineMoya

@@ -13,7 +13,6 @@
 		48BA7E50C005F48A1A174821 /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D28D30E041DE42D4D23D443B /* libBaseFeature.a */; platformFilter = ios; };
 		582B10A861739152167E03B7 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBECDB922895C4849972062B /* UtilityModule.framework */; platformFilter = ios; };
 		5BB35C687297C70D8350DB83 /* GlobalThirdPartyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166134A53F9AF245419487FC /* GlobalThirdPartyLibrary.framework */; platformFilter = ios; };
-		6631BEE95EF722CA3B303468 /* ErrorModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFAC18F3E6FE97B31A87C09E /* ErrorModule.framework */; platformFilter = ios; };
 		7A2AA10D298C08B3C3BD053C /* libMainTabFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B87DC1CCA3645A00392EA97 /* libMainTabFeature.a */; platformFilter = ios; };
 		D3C2ED92595A0AB55EE5270B /* libBaseFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = D28D30E041DE42D4D23D443B /* libBaseFeature.a */; platformFilter = ios; };
 		F1D8AC8B8EA754E7D070755E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A69B694F344C48110AB55 /* MainTabView.swift */; };
@@ -73,7 +72,6 @@
 		87674745029314D44C8B6C74 /* MainTabFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTabFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1AB0AFEBFFA30F2BEE5B16B /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
 		BBECDB922895C4849972062B /* UtilityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BFAC18F3E6FE97B31A87C09E /* ErrorModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ErrorModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28D30E041DE42D4D23D443B /* libBaseFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E196801A30899B177B6CDF19 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C0F30B59ED493DE2160C7E /* MainTabFeatureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MainTabFeatureTests-Info.plist"; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			files = (
 				48BA7E50C005F48A1A174821 /* libBaseFeature.a in Frameworks */,
 				22F3A2B31DABC4A56B220D12 /* DesignSystem.framework in Frameworks */,
-				6631BEE95EF722CA3B303468 /* ErrorModule.framework in Frameworks */,
 				5BB35C687297C70D8350DB83 /* GlobalThirdPartyLibrary.framework in Frameworks */,
 				7A2AA10D298C08B3C3BD053C /* libMainTabFeature.a in Frameworks */,
 				582B10A861739152167E03B7 /* UtilityModule.framework in Frameworks */,
@@ -123,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				E196801A30899B177B6CDF19 /* DesignSystem.framework */,
-				BFAC18F3E6FE97B31A87C09E /* ErrorModule.framework */,
 				166134A53F9AF245419487FC /* GlobalThirdPartyLibrary.framework */,
 				D28D30E041DE42D4D23D443B /* libBaseFeature.a */,
 				3B87DC1CCA3645A00392EA97 /* libMainTabFeature.a */,
@@ -288,6 +284,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		24CB74330A1427D66D99E526 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -306,6 +303,7 @@
 		};
 		5D3B3FEE796E7A8E4066C25F /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
