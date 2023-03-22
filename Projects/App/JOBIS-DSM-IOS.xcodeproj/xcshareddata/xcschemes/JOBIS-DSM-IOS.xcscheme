@@ -14,48 +14,27 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A0B21CB23F93B2C4E00AC546"
-               BuildableName = "JOBIS_DSM_IOS.app"
-               BlueprintName = "JOBIS-DSM-IOS"
-               ReferencedContainer = "container:JOBIS-DSM-IOS.xcodeproj">
+               BlueprintIdentifier = "137D31D99A6E317E7D741D3E"
+               BuildableName = "JOBIS_DSM_iOS.app"
+               BlueprintName = "JOBIS-DSM-iOS"
+               ReferencedContainer = "container:JOBIS-DSM-iOS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "DEV"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES">
+      disableMainThreadChecker = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "682B5713C666456CC80CB8D2"
-               BuildableName = "JOBIS_DSM_IOSTests.xctest"
-               BlueprintName = "JOBIS-DSM-IOSTests"
-               ReferencedContainer = "container:JOBIS-DSM-IOS.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <CodeCoverageTargets>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0B21CB23F93B2C4E00AC546"
-            BuildableName = "JOBIS_DSM_IOS.app"
-            BlueprintName = "JOBIS-DSM-IOS"
-            ReferencedContainer = "container:JOBIS-DSM-IOS.xcodeproj">
-         </BuildableReference>
-      </CodeCoverageTargets>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "DEV"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      disablePerformanceAntipatternChecker = "YES"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -66,15 +45,15 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0B21CB23F93B2C4E00AC546"
-            BuildableName = "JOBIS_DSM_IOS.app"
-            BlueprintName = "JOBIS-DSM-IOS"
-            ReferencedContainer = "container:JOBIS-DSM-IOS.xcodeproj">
+            BlueprintIdentifier = "137D31D99A6E317E7D741D3E"
+            BuildableName = "JOBIS_DSM_iOS.app"
+            BlueprintName = "JOBIS-DSM-iOS"
+            ReferencedContainer = "container:JOBIS-DSM-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "PROD"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
@@ -83,18 +62,18 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A0B21CB23F93B2C4E00AC546"
-            BuildableName = "JOBIS_DSM_IOS.app"
-            BlueprintName = "JOBIS-DSM-IOS"
-            ReferencedContainer = "container:JOBIS-DSM-IOS.xcodeproj">
+            BlueprintIdentifier = "137D31D99A6E317E7D741D3E"
+            BuildableName = "JOBIS_DSM_iOS.app"
+            BlueprintName = "JOBIS-DSM-iOS"
+            ReferencedContainer = "container:JOBIS-DSM-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
-      buildConfiguration = "Debug">
+      buildConfiguration = "DEV">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "PROD"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

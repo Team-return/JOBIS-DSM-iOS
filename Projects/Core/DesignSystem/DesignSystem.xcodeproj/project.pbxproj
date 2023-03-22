@@ -1,0 +1,1237 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		019FE195842C2918F025D156 /* DMSActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFE61B53080411EEC801A0E /* DMSActionSheet.swift */; };
+		0AB49F5A8FA04474A7B3B964 /* DMSButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B013D9B80F78658313E5162E /* DMSButtonStyle.swift */; };
+		0EAAD8D14D1858777D2C1DFE /* DMSFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED335711EF65A203A8AC277 /* DMSFloatingTextField.swift */; };
+		1194CAF2EB88EF962598A137 /* SystemColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D57176B54799FA17A75522B /* SystemColor.xcassets */; };
+		1693C91DE32F1EE6203E674F /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */; };
+		1A2D0EBF4EC4DAD25D210D12 /* FontPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD8EA9472FA55C533AA33A3 /* FontPlaygroundView.swift */; };
+		1B2AB5EE0FEC8CFF92B8C2B4 /* View+if.swift in Sources */ = {isa = PBXBuildFile; fileRef = C375454077FC3A9A88C6D218 /* View+if.swift */; };
+		1D38EFE64DC5D26964F25AE8 /* DmsToastStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC4FD01608CE100F10CC138D /* DmsToastStyle.swift */; };
+		1E83D1945C7BDC3D6405EEA2 /* DMSPassCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407352D356EB071A084D41B /* DMSPassCodeView.swift */; };
+		235A62691AD56EA39D3FE2B5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0201DA367B13AC0DB9942477 /* ImagePicker.swift */; };
+		25FE6A9B51F683298F9DE86F /* GrayColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1F6B9965FC3614E9F7EBE4A /* GrayColor.xcassets */; };
+		2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */; };
+		2E3356729EE051AC96ECAA37 /* TextFieldPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543215984EF187F35CFA8DC4 /* TextFieldPlaygroundView.swift */; };
+		2FB0792F5F8CA00C2A0477F7 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3092649F7D400803F7CED9D9 /* ButtonPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24396469820E519B7F0847F6 /* ButtonPlaygroundView.swift */; };
+		31B9B76BB584691E67CEC2F9 /* UIStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DBA3ACB805563403A9151E2 /* UIStateModel.swift */; };
+		3D39B473885031062CF27F8F /* DMSFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B3A2C8D3F1A6626E8042843 /* DMSFontStyle.swift */; };
+		424A71C0E40BD75F6485153D /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 451024361D40DACBAC0755DB /* Icons.xcassets */; };
+		429D6E5954343C7B5F35C754 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F96042A1DE7785CB726321 /* AppDelegate.swift */; };
+		445A18A6446C3CA9F759ADDC /* DMSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE41C8326F1A71E888E26310 /* DMSShadow.swift */; };
+		4D4CC8F8102EC144BC0FE7E8 /* DesignSystemPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FA27CE9E2F499A3C2C37AE /* DesignSystemPlaygroundView.swift */; };
+		4F923303B1DAE6601DFD739E /* ColorPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C787DD694CA10AF41202E26 /* ColorPlaygroundView.swift */; };
+		4FEDC9FAEAB2C013A58119C2 /* DMSWideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FDBCFE88766D433C7F7223B /* DMSWideButton.swift */; };
+		51415DA75EA65D41CF5E0DEF /* DMSWideButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C52F951765DBD01FDAB2008 /* DMSWideButtonStyle.swift */; };
+		57B13E4617C0005D26ACF0BC /* TuistBundle+DesignSystemDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4042D30A4B6B8CAC47FDB4E /* TuistBundle+DesignSystemDemoApp.swift */; };
+		5A1B315CC9BA3F93966D85E5 /* View+navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E02BEDF3145A93B9885EE88 /* View+navigate.swift */; };
+		639C4645BA737511EA1D101D /* DMSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A291294DAC9C473AEE13D08 /* DMSButton.swift */; };
+		63D46299B04AE68F415D0534 /* DMSBottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40375207E9D25B05B62748 /* DMSBottomSheet.swift */; };
+		6531518D0868B116A6F1EA27 /* DMSHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88976F09DE4FD40F869C4238 /* DMSHeaderView.swift */; };
+		66D8DE76A65FD8B2E452DB58 /* PrimaryColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE558B95571E261CD928C8D7 /* PrimaryColor.xcassets */; };
+		672AE5CB80DB0685AB612C57 /* View+dmsBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 695797C87630311BBAC99F1F /* View+dmsBackButton.swift */; };
+		686D7B3A3AB664BDE477AB00 /* DMSFormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94B5AE87BBCB48D0EB2977A /* DMSFormTextField.swift */; };
+		6AD27D0E8CFEE3E6A2C7A39B /* NotoSansKR-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */; };
+		6C02D14791C9E78594D7B156 /* SwitchPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF385D526878C56F95F04E5 /* SwitchPlaygroundView.swift */; };
+		6C62C44EDAD6A606D4489982 /* DmsToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F746EEFEEA47848323E0EBC /* DmsToast.swift */; };
+		6CC85A2898EA43CD5DA7BA4A /* DMSPrimaryColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475639468B0F74192A5E2142 /* DMSPrimaryColor.swift */; };
+		7184EE42F61B89E3CDC2E70A /* View+dmsBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE64A55EC9A8EFD22311B17 /* View+dmsBackground.swift */; };
+		79A4C067F55F7D7E03CF4E83 /* ToastPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C59D54D5CDE40A461B217 /* ToastPlaygroundView.swift */; };
+		7C22E1A0EC3E6150C3D1770A /* SecureDMSFloatingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0AB2D56D31CFFC04596A8 /* SecureDMSFloatingTextField.swift */; };
+		84089F58A3F4D38B4782CA0A /* DMSFormTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52803E1BABC0E8BE36B50467 /* DMSFormTextEditor.swift */; };
+		8E991CDA697003176764E5B6 /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */; };
+		939DC5308AB7F13239332227 /* NotoSansKR-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */; };
+		979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */; };
+		9947E09E43F3C18E72E57A48 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */; platformFilter = ios; };
+		9F100D36E444C04C3FB7054B /* RadiobuttonPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E225384436CC0B171D77719B /* RadiobuttonPlaygroundView.swift */; };
+		9F365AD225030F36E5DBCDDD /* View+cornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD73BF44F30FFAFF4B9D6FBE /* View+cornerRadius.swift */; };
+		A1E9AF17A0ED7E2C2427DFC7 /* CarouselCanvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6490257D9374E925C4944C07 /* CarouselCanvas.swift */; };
+		A51CC548A5CCB211168E4B95 /* DMSProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C822B8883B733E3DE332C44 /* DMSProgress.swift */; };
+		A7210BE95B2E36F85DEDEF88 /* DMSFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE18BEF5C9AD5BC7117088D /* DMSFont.swift */; };
+		A7DF48B425969133B4065B97 /* DMSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1520B094A7CB25B46CF2093E /* DMSImage.swift */; };
+		AB0F61B6C6200F018B0A9D0E /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD0DCF5FE32663DAB3C9186 /* Carousel.swift */; };
+		ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */; };
+		AFD107F9074410F7A710884B /* DMSShadowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B256B72E210BCC586A6655 /* DMSShadowStyle.swift */; };
+		B4C9E6874B20759CB274C16E /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */; };
+		BB00D6641F545E038D391554 /* ErrorColor.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E03786ECE2446CD5D90469B4 /* ErrorColor.xcassets */; };
+		BFC8945927A4E370305ADFA2 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145962DCFA33B0E57571C894 /* CameraPicker.swift */; };
+		CAE182043A39C82D2B8D56DD /* DMSSystemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED8C207A36FB0A862E37FD /* DMSSystemColor.swift */; };
+		CB4752A89AE0A93A19755953 /* DMSCheckBoxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6197CE88607F9DF264B884C /* DMSCheckBoxStyle.swift */; };
+		CC579D2105A78955AF6ED899 /* View+shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F516F7177C715F4FB43331BB /* View+shadow.swift */; };
+		DA1ADDCACDEA1EE97C7EC522 /* DMSSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B22563FD60EC798FE1C4DB /* DMSSwitch.swift */; };
+		DA80030F3C88A6A95C6ABA73 /* DMSRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B8555CD7EC33B5C8220E7 /* DMSRadioButton.swift */; };
+		DBC803996B59488933711DD5 /* DMSErrorColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E2DD3C8EB5A394BF000DB5 /* DMSErrorColor.swift */; };
+		E35E3C3A27628E73531B9122 /* DMSWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBB39CE053D1F8FD3BC780C /* DMSWebView.swift */; };
+		E38A9A30A8A988E2764BA0CF /* DMSGrayScaleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F933934C2B6017D4F82210C /* DMSGrayScaleColor.swift */; };
+		E44719AC6B7ED4E8E0B7C17C /* CheckboxPlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E339DA815DC3DCE6D643EC8 /* CheckboxPlaygroundView.swift */; };
+		E536E36B317BA4E9C7E72514 /* DMSCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0296AE2C836E20458C549F54 /* DMSCheckBox.swift */; };
+		E59535D14D623BE5C0094A0B /* NotoSansKR-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */; };
+		F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */; };
+		F9E40820863763A405FADC24 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6850D3C2D0211A8161346A9 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84C56B6C8AAB955F778B97E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F639F9585E77B0BBBB642E14 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83C9B5D1938C22907FF6E247;
+			remoteInfo = DesignSystem;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		49C4A8593835DDF36FBC2A05 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEED17D5CA197A98721FD64C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2FB0792F5F8CA00C2A0477F7 /* DesignSystem.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
+		0201DA367B13AC0DB9942477 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0296AE2C836E20458C549F54 /* DMSCheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSCheckBox.swift; sourceTree = "<group>"; };
+		0E339DA815DC3DCE6D643EC8 /* CheckboxPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxPlaygroundView.swift; sourceTree = "<group>"; };
+		0F933934C2B6017D4F82210C /* DMSGrayScaleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSGrayScaleColor.swift; sourceTree = "<group>"; };
+		145962DCFA33B0E57571C894 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistFonts+DesignSystem.swift"; sourceTree = "<group>"; };
+		1520B094A7CB25B46CF2093E /* DMSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSImage.swift; sourceTree = "<group>"; };
+		1A291294DAC9C473AEE13D08 /* DMSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSButton.swift; sourceTree = "<group>"; };
+		1CA11073843FE4E5B67AAAE0 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
+		1D57176B54799FA17A75522B /* SystemColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SystemColor.xcassets; sourceTree = "<group>"; };
+		1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Thin.otf"; sourceTree = "<group>"; };
+		24396469820E519B7F0847F6 /* ButtonPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonPlaygroundView.swift; sourceTree = "<group>"; };
+		25B256B72E210BCC586A6655 /* DMSShadowStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSShadowStyle.swift; sourceTree = "<group>"; };
+		309B8555CD7EC33B5C8220E7 /* DMSRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSRadioButton.swift; sourceTree = "<group>"; };
+		3C52F951765DBD01FDAB2008 /* DMSWideButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSWideButtonStyle.swift; sourceTree = "<group>"; };
+		3CBB39CE053D1F8FD3BC780C /* DMSWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSWebView.swift; sourceTree = "<group>"; };
+		3F746EEFEEA47848323E0EBC /* DmsToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DmsToast.swift; sourceTree = "<group>"; };
+		408A47139F010D995564D9D7 /* DesignSystemDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignSystemDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Black.otf"; sourceTree = "<group>"; };
+		43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
+		451024361D40DACBAC0755DB /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		475639468B0F74192A5E2142 /* DMSPrimaryColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSPrimaryColor.swift; sourceTree = "<group>"; };
+		4AD8EA9472FA55C533AA33A3 /* FontPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontPlaygroundView.swift; sourceTree = "<group>"; };
+		4FA0AB2D56D31CFFC04596A8 /* SecureDMSFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDMSFloatingTextField.swift; sourceTree = "<group>"; };
+		4FFE61B53080411EEC801A0E /* DMSActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSActionSheet.swift; sourceTree = "<group>"; };
+		51FA27CE9E2F499A3C2C37AE /* DesignSystemPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystemPlaygroundView.swift; sourceTree = "<group>"; };
+		52803E1BABC0E8BE36B50467 /* DMSFormTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSFormTextEditor.swift; sourceTree = "<group>"; };
+		543215984EF187F35CFA8DC4 /* TextFieldPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldPlaygroundView.swift; sourceTree = "<group>"; };
+		55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Light.otf"; sourceTree = "<group>"; };
+		56ED8C207A36FB0A862E37FD /* DMSSystemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSSystemColor.swift; sourceTree = "<group>"; };
+		5B3A2C8D3F1A6626E8042843 /* DMSFontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSFontStyle.swift; sourceTree = "<group>"; };
+		5CD0DCF5FE32663DAB3C9186 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		5E02BEDF3145A93B9885EE88 /* View+navigate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+navigate.swift"; sourceTree = "<group>"; };
+		6407352D356EB071A084D41B /* DMSPassCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSPassCodeView.swift; sourceTree = "<group>"; };
+		6490257D9374E925C4944C07 /* CarouselCanvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselCanvas.swift; sourceTree = "<group>"; };
+		662C9D98FF67E20EFC95A1E9 /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
+		695797C87630311BBAC99F1F /* View+dmsBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+dmsBackButton.swift"; sourceTree = "<group>"; };
+		69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C787DD694CA10AF41202E26 /* ColorPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPlaygroundView.swift; sourceTree = "<group>"; };
+		6C822B8883B733E3DE332C44 /* DMSProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSProgress.swift; sourceTree = "<group>"; };
+		6FF385D526878C56F95F04E5 /* SwitchPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchPlaygroundView.swift; sourceTree = "<group>"; };
+		7DBA3ACB805563403A9151E2 /* UIStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateModel.swift; sourceTree = "<group>"; };
+		88976F09DE4FD40F869C4238 /* DMSHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSHeaderView.swift; sourceTree = "<group>"; };
+		8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystem-Info.plist"; sourceTree = "<group>"; };
+		9D4C59D54D5CDE40A461B217 /* ToastPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastPlaygroundView.swift; sourceTree = "<group>"; };
+		9FDBCFE88766D433C7F7223B /* DMSWideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSWideButton.swift; sourceTree = "<group>"; };
+		A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+DesignSystem.swift"; sourceTree = "<group>"; };
+		A8631F72BB16A3A9A9FDB973 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		ACE64A55EC9A8EFD22311B17 /* View+dmsBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+dmsBackground.swift"; sourceTree = "<group>"; };
+		AD73BF44F30FFAFF4B9D6FBE /* View+cornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+cornerRadius.swift"; sourceTree = "<group>"; };
+		B013D9B80F78658313E5162E /* DMSButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSButtonStyle.swift; sourceTree = "<group>"; };
+		B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+DeisgnSystemsColor.swift"; sourceTree = "<group>"; };
+		B9F96042A1DE7785CB726321 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+DesignSystem.swift"; sourceTree = "<group>"; };
+		C375454077FC3A9A88C6D218 /* View+if.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+if.swift"; sourceTree = "<group>"; };
+		C6850D3C2D0211A8161346A9 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C87E21AD945E76CCE514F25F /* DesignSystemDemoApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "DesignSystemDemoApp-Info.plist"; sourceTree = "<group>"; };
+		CE41C8326F1A71E888E26310 /* DMSShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSShadow.swift; sourceTree = "<group>"; };
+		CED335711EF65A203A8AC277 /* DMSFloatingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSFloatingTextField.swift; sourceTree = "<group>"; };
+		D94B5AE87BBCB48D0EB2977A /* DMSFormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSFormTextField.swift; sourceTree = "<group>"; };
+		DEE18BEF5C9AD5BC7117088D /* DMSFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSFont.swift; sourceTree = "<group>"; };
+		E03786ECE2446CD5D90469B4 /* ErrorColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ErrorColor.xcassets; sourceTree = "<group>"; };
+		E1E2DD3C8EB5A394BF000DB5 /* DMSErrorColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSErrorColor.swift; sourceTree = "<group>"; };
+		E225384436CC0B171D77719B /* RadiobuttonPlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiobuttonPlaygroundView.swift; sourceTree = "<group>"; };
+		EC4FD01608CE100F10CC138D /* DmsToastStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DmsToastStyle.swift; sourceTree = "<group>"; };
+		EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		F1F6B9965FC3614E9F7EBE4A /* GrayColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = GrayColor.xcassets; sourceTree = "<group>"; };
+		F3B22563FD60EC798FE1C4DB /* DMSSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSSwitch.swift; sourceTree = "<group>"; };
+		F4042D30A4B6B8CAC47FDB4E /* TuistBundle+DesignSystemDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistBundle+DesignSystemDemoApp.swift"; sourceTree = "<group>"; };
+		F516F7177C715F4FB43331BB /* View+shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+shadow.swift"; sourceTree = "<group>"; };
+		F6197CE88607F9DF264B884C /* DMSCheckBoxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSCheckBoxStyle.swift; sourceTree = "<group>"; };
+		FE40375207E9D25B05B62748 /* DMSBottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSBottomSheet.swift; sourceTree = "<group>"; };
+		FE558B95571E261CD928C8D7 /* PrimaryColor.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = PrimaryColor.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		21D2E38EFDFDB350406F7982 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		86EBF2D86C41219B058896EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9947E09E43F3C18E72E57A48 /* DesignSystem.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00CE2D46E5CB04B3A00800CD /* ActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				4FFE61B53080411EEC801A0E /* DMSActionSheet.swift */,
+			);
+			path = ActionSheet;
+			sourceTree = "<group>";
+		};
+		0CC0A03EA9AB12FB8D831C00 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				662C9D98FF67E20EFC95A1E9 /* DEV.xcconfig */,
+				A8631F72BB16A3A9A9FDB973 /* PROD.xcconfig */,
+				1CA11073843FE4E5B67AAAE0 /* STAGE.xcconfig */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		0DD0FDF34D014951CD654860 /* CameraPicker */ = {
+			isa = PBXGroup;
+			children = (
+				145962DCFA33B0E57571C894 /* CameraPicker.swift */,
+			);
+			path = CameraPicker;
+			sourceTree = "<group>";
+		};
+		0E1288659896D0CFF98DA5AA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				00CE2D46E5CB04B3A00800CD /* ActionSheet */,
+				FCA895632DF0C97289D93A38 /* BottomSheet */,
+				8BC136006E1D0234B84A94B8 /* Button */,
+				0DD0FDF34D014951CD654860 /* CameraPicker */,
+				9F313CAEFF4A2F605005000C /* Carousel */,
+				266A6E62DE9519CAC213C34A /* CheckBox */,
+				EE53A850990E859B77A63149 /* Color */,
+				1D7DAFC035EC8A7E2AAE52AE /* Component */,
+				6E8811CAF322979EB7C42E15 /* Extensions */,
+				3D56AC3DF263FFE10ECDAF91 /* Image */,
+				714CF8856CF522AB54502A53 /* ImagePicker */,
+				B9FFBC790F1CBEB5DA44F640 /* PassCode */,
+				82B66B950BAFA80DE31817DF /* Playground */,
+				4F5CF71F9A15D81DBE308906 /* Progress */,
+				F2324B201001623BA26AE243 /* RadioButton */,
+				BE7C0179A5ED60B26136A612 /* Shadow */,
+				F18D260680B20B5EA97D4E36 /* Switch */,
+				F9E8E6CAFD528DBE7A3EA0F0 /* TextField */,
+				CA7FD31B81030BC1A9A40F5D /* Toast */,
+				3685E88874D8B1F3BEE6A129 /* Typography */,
+				94A761D54ACE3445EEA9992B /* WebView */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		1872FABE24BC00783AFB1F71 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				52803E1BABC0E8BE36B50467 /* DMSFormTextEditor.swift */,
+				D94B5AE87BBCB48D0EB2977A /* DMSFormTextField.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		191A630E1AD9933D6084DE5E /* XCConfig */ = {
+			isa = PBXGroup;
+			children = (
+				0CC0A03EA9AB12FB8D831C00 /* DesignSystem */,
+			);
+			name = XCConfig;
+			path = ../../../XCConfig;
+			sourceTree = "<group>";
+		};
+		1AC66E6767016E7C72081D81 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				6D84EDF79992DCC1DFBCA2F8 /* NotoSansKR */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		1D7DAFC035EC8A7E2AAE52AE /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B83A34AE27A7E6AE7AB2E001 /* Common */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		266A6E62DE9519CAC213C34A /* CheckBox */ = {
+			isa = PBXGroup;
+			children = (
+				0296AE2C836E20458C549F54 /* DMSCheckBox.swift */,
+				F6197CE88607F9DF264B884C /* DMSCheckBoxStyle.swift */,
+			);
+			path = CheckBox;
+			sourceTree = "<group>";
+		};
+		2BB59E843B58BD9FFF395FEA /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				F7475433CC63995A20B82710 /* Demo */,
+				8753C5EB21B15584438290E8 /* Derived */,
+				9C29548CCBEAF62FB7951500 /* Resources */,
+				0E1288659896D0CFF98DA5AA /* Sources */,
+				191A630E1AD9933D6084DE5E /* XCConfig */,
+			);
+			name = Project;
+			sourceTree = "<group>";
+		};
+		315AC7997D346FEE3B3059F5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				24396469820E519B7F0847F6 /* ButtonPlaygroundView.swift */,
+				0E339DA815DC3DCE6D643EC8 /* CheckboxPlaygroundView.swift */,
+				6C787DD694CA10AF41202E26 /* ColorPlaygroundView.swift */,
+				4AD8EA9472FA55C533AA33A3 /* FontPlaygroundView.swift */,
+				E225384436CC0B171D77719B /* RadiobuttonPlaygroundView.swift */,
+				6FF385D526878C56F95F04E5 /* SwitchPlaygroundView.swift */,
+				543215984EF187F35CFA8DC4 /* TextFieldPlaygroundView.swift */,
+				9D4C59D54D5CDE40A461B217 /* ToastPlaygroundView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3685E88874D8B1F3BEE6A129 /* Typography */ = {
+			isa = PBXGroup;
+			children = (
+				DEE18BEF5C9AD5BC7117088D /* DMSFont.swift */,
+				5B3A2C8D3F1A6626E8042843 /* DMSFontStyle.swift */,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		3D56AC3DF263FFE10ECDAF91 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				1520B094A7CB25B46CF2093E /* DMSImage.swift */,
+			);
+			path = Image;
+			sourceTree = "<group>";
+		};
+		4ADBA9F6ACEAD35BBF3AEE75 /* Floating */ = {
+			isa = PBXGroup;
+			children = (
+				CED335711EF65A203A8AC277 /* DMSFloatingTextField.swift */,
+				4FA0AB2D56D31CFFC04596A8 /* SecureDMSFloatingTextField.swift */,
+			);
+			path = Floating;
+			sourceTree = "<group>";
+		};
+		4F5CF71F9A15D81DBE308906 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				6C822B8883B733E3DE332C44 /* DMSProgress.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		62C43922BC81F9CE25FE3A14 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6850D3C2D0211A8161346A9 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6D84EDF79992DCC1DFBCA2F8 /* NotoSansKR */ = {
+			isa = PBXGroup;
+			children = (
+				40E4F7AACB1024D20E1DFD64 /* NotoSansKR-Black.otf */,
+				43C7061290585D446DC32698 /* NotoSansKR-Bold.otf */,
+				55DCF66A2FA2770F4B98C238 /* NotoSansKR-Light.otf */,
+				EDD907A850368D6B3960F9DC /* NotoSansKR-Medium.otf */,
+				018DFBE846512C0E763228FC /* NotoSansKR-Regular.otf */,
+				1ECD1ECE3A602F820C6E339A /* NotoSansKR-Thin.otf */,
+			);
+			path = NotoSansKR;
+			sourceTree = "<group>";
+		};
+		6E8811CAF322979EB7C42E15 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD73BF44F30FFAFF4B9D6FBE /* View+cornerRadius.swift */,
+				695797C87630311BBAC99F1F /* View+dmsBackButton.swift */,
+				ACE64A55EC9A8EFD22311B17 /* View+dmsBackground.swift */,
+				C375454077FC3A9A88C6D218 /* View+if.swift */,
+				5E02BEDF3145A93B9885EE88 /* View+navigate.swift */,
+				F516F7177C715F4FB43331BB /* View+shadow.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		714CF8856CF522AB54502A53 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				0201DA367B13AC0DB9942477 /* ImagePicker.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		7D6BBD2B92079B70AB979221 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		82664F67710540CBDEBE5B11 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */,
+				408A47139F010D995564D9D7 /* DesignSystemDemoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		82B66B950BAFA80DE31817DF /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				315AC7997D346FEE3B3059F5 /* Views */,
+				51FA27CE9E2F499A3C2C37AE /* DesignSystemPlaygroundView.swift */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
+		};
+		8753C5EB21B15584438290E8 /* Derived */ = {
+			isa = PBXGroup;
+			children = (
+				F2F0D6EECE384EBEC3AFDEB4 /* InfoPlists */,
+				D5FD3537E28AE857DC09D214 /* Sources */,
+			);
+			path = Derived;
+			sourceTree = "<group>";
+		};
+		8BC136006E1D0234B84A94B8 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				FF49C99F5A1C716227A5803D /* Default */,
+				CEB7075A3EEC2F31C5BE4689 /* Wide */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		94A761D54ACE3445EEA9992B /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				3CBB39CE053D1F8FD3BC780C /* DMSWebView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
+		9C29548CCBEAF62FB7951500 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1AC66E6767016E7C72081D81 /* Fonts */,
+				E03786ECE2446CD5D90469B4 /* ErrorColor.xcassets */,
+				F1F6B9965FC3614E9F7EBE4A /* GrayColor.xcassets */,
+				451024361D40DACBAC0755DB /* Icons.xcassets */,
+				FE558B95571E261CD928C8D7 /* PrimaryColor.xcassets */,
+				1D57176B54799FA17A75522B /* SystemColor.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9F313CAEFF4A2F605005000C /* Carousel */ = {
+			isa = PBXGroup;
+			children = (
+				5CD0DCF5FE32663DAB3C9186 /* Carousel.swift */,
+				6490257D9374E925C4944C07 /* CarouselCanvas.swift */,
+				7DBA3ACB805563403A9151E2 /* UIStateModel.swift */,
+			);
+			path = Carousel;
+			sourceTree = "<group>";
+		};
+		B83A34AE27A7E6AE7AB2E001 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				88976F09DE4FD40F869C4238 /* DMSHeaderView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B9FFBC790F1CBEB5DA44F640 /* PassCode */ = {
+			isa = PBXGroup;
+			children = (
+				6407352D356EB071A084D41B /* DMSPassCodeView.swift */,
+			);
+			path = PassCode;
+			sourceTree = "<group>";
+		};
+		BE7C0179A5ED60B26136A612 /* Shadow */ = {
+			isa = PBXGroup;
+			children = (
+				CE41C8326F1A71E888E26310 /* DMSShadow.swift */,
+				25B256B72E210BCC586A6655 /* DMSShadowStyle.swift */,
+			);
+			path = Shadow;
+			sourceTree = "<group>";
+		};
+		CA7FD31B81030BC1A9A40F5D /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				3F746EEFEEA47848323E0EBC /* DmsToast.swift */,
+				EC4FD01608CE100F10CC138D /* DmsToastStyle.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		CEB7075A3EEC2F31C5BE4689 /* Wide */ = {
+			isa = PBXGroup;
+			children = (
+				9FDBCFE88766D433C7F7223B /* DMSWideButton.swift */,
+				3C52F951765DBD01FDAB2008 /* DMSWideButtonStyle.swift */,
+			);
+			path = Wide;
+			sourceTree = "<group>";
+		};
+		D5FD3537E28AE857DC09D214 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				A5263BC75B281154AC0B5A7B /* TuistAssets+DesignSystem.swift */,
+				BE4AD9735556ECA8C8008FEC /* TuistBundle+DesignSystem.swift */,
+				F4042D30A4B6B8CAC47FDB4E /* TuistBundle+DesignSystemDemoApp.swift */,
+				1489E7809DA4DADA471C2CDC /* TuistFonts+DesignSystem.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EC9821EEC8CC800276475F6C = {
+			isa = PBXGroup;
+			children = (
+				2BB59E843B58BD9FFF395FEA /* Project */,
+				7D6BBD2B92079B70AB979221 /* Frameworks */,
+				82664F67710540CBDEBE5B11 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE53A850990E859B77A63149 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				B6F9700EAF275A31097D098E /* Color+DeisgnSystemsColor.swift */,
+				E1E2DD3C8EB5A394BF000DB5 /* DMSErrorColor.swift */,
+				0F933934C2B6017D4F82210C /* DMSGrayScaleColor.swift */,
+				475639468B0F74192A5E2142 /* DMSPrimaryColor.swift */,
+				56ED8C207A36FB0A862E37FD /* DMSSystemColor.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		F18D260680B20B5EA97D4E36 /* Switch */ = {
+			isa = PBXGroup;
+			children = (
+				F3B22563FD60EC798FE1C4DB /* DMSSwitch.swift */,
+			);
+			path = Switch;
+			sourceTree = "<group>";
+		};
+		F2324B201001623BA26AE243 /* RadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				309B8555CD7EC33B5C8220E7 /* DMSRadioButton.swift */,
+			);
+			path = RadioButton;
+			sourceTree = "<group>";
+		};
+		F2F0D6EECE384EBEC3AFDEB4 /* InfoPlists */ = {
+			isa = PBXGroup;
+			children = (
+				8937FA9427EEA938B58C5B3E /* DesignSystem-Info.plist */,
+				C87E21AD945E76CCE514F25F /* DesignSystemDemoApp-Info.plist */,
+			);
+			path = InfoPlists;
+			sourceTree = "<group>";
+		};
+		F6D13D2802A85DEC548F2E50 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B9F96042A1DE7785CB726321 /* AppDelegate.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F7475433CC63995A20B82710 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				62C43922BC81F9CE25FE3A14 /* Resources */,
+				F6D13D2802A85DEC548F2E50 /* Sources */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		F9E8E6CAFD528DBE7A3EA0F0 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				4ADBA9F6ACEAD35BBF3AEE75 /* Floating */,
+				1872FABE24BC00783AFB1F71 /* Form */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		FCA895632DF0C97289D93A38 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				FE40375207E9D25B05B62748 /* DMSBottomSheet.swift */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		FF49C99F5A1C716227A5803D /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				1A291294DAC9C473AEE13D08 /* DMSButton.swift */,
+				B013D9B80F78658313E5162E /* DMSButtonStyle.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83C9B5D1938C22907FF6E247 /* DesignSystem */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDE90610E9DF3345CFC83326 /* Build configuration list for PBXNativeTarget "DesignSystem" */;
+			buildPhases = (
+				A34E196D6FA16859DB7CDDE9 /* SwiftLint */,
+				BA6DF36C53063F00B80115EA /* Sources */,
+				510D3A5EADC65A3BE366D353 /* Resources */,
+				49C4A8593835DDF36FBC2A05 /* Embed Frameworks */,
+				21D2E38EFDFDB350406F7982 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DesignSystem;
+			productName = DesignSystem;
+			productReference = 69B7BBEAD5472C7195924AC8 /* DesignSystem.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9F69C27BE85E3028D236EFFD /* DesignSystemDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 33DBF4656F340FE51718ED18 /* Build configuration list for PBXNativeTarget "DesignSystemDemoApp" */;
+			buildPhases = (
+				65D81C42BBC2644165B9A06A /* SwiftLint */,
+				BB6A87B19B67F205ABF578D5 /* Sources */,
+				BB14C83BB6757E0857D057D8 /* Resources */,
+				FEED17D5CA197A98721FD64C /* Embed Frameworks */,
+				86EBF2D86C41219B058896EC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A2195CA2E76566D6D90CDB18 /* PBXTargetDependency */,
+			);
+			name = DesignSystemDemoApp;
+			productName = DesignSystemDemoApp;
+			productReference = 408A47139F010D995564D9D7 /* DesignSystemDemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F639F9585E77B0BBBB642E14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Team-Return";
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 5C0CBBA2BFE0CEE21375AF0A /* Build configuration list for PBXProject "DesignSystem" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = EC9821EEC8CC800276475F6C;
+			productRefGroup = 82664F67710540CBDEBE5B11 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83C9B5D1938C22907FF6E247 /* DesignSystem */,
+				9F69C27BE85E3028D236EFFD /* DesignSystemDemoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		510D3A5EADC65A3BE366D353 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB00D6641F545E038D391554 /* ErrorColor.xcassets in Resources */,
+				939DC5308AB7F13239332227 /* NotoSansKR-Black.otf in Resources */,
+				B4C9E6874B20759CB274C16E /* NotoSansKR-Bold.otf in Resources */,
+				6AD27D0E8CFEE3E6A2C7A39B /* NotoSansKR-Light.otf in Resources */,
+				8E991CDA697003176764E5B6 /* NotoSansKR-Medium.otf in Resources */,
+				1693C91DE32F1EE6203E674F /* NotoSansKR-Regular.otf in Resources */,
+				E59535D14D623BE5C0094A0B /* NotoSansKR-Thin.otf in Resources */,
+				25FE6A9B51F683298F9DE86F /* GrayColor.xcassets in Resources */,
+				424A71C0E40BD75F6485153D /* Icons.xcassets in Resources */,
+				66D8DE76A65FD8B2E452DB58 /* PrimaryColor.xcassets in Resources */,
+				1194CAF2EB88EF962598A137 /* SystemColor.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB14C83BB6757E0857D057D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9E40820863763A405FADC24 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		65D81C42BBC2644165B9A06A /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../../Scripts/SwiftLintRunScript.sh ";
+		};
+		A34E196D6FA16859DB7CDDE9 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../../Scripts/SwiftLintRunScript.sh ";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA6DF36C53063F00B80115EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABB14811E13F7B1ECCF8B086 /* TuistAssets+DesignSystem.swift in Sources */,
+				F6018B5F7748E322214C52D6 /* TuistBundle+DesignSystem.swift in Sources */,
+				2C2A6F1B0843699ACFE53D23 /* TuistFonts+DesignSystem.swift in Sources */,
+				019FE195842C2918F025D156 /* DMSActionSheet.swift in Sources */,
+				63D46299B04AE68F415D0534 /* DMSBottomSheet.swift in Sources */,
+				639C4645BA737511EA1D101D /* DMSButton.swift in Sources */,
+				0AB49F5A8FA04474A7B3B964 /* DMSButtonStyle.swift in Sources */,
+				4FEDC9FAEAB2C013A58119C2 /* DMSWideButton.swift in Sources */,
+				51415DA75EA65D41CF5E0DEF /* DMSWideButtonStyle.swift in Sources */,
+				BFC8945927A4E370305ADFA2 /* CameraPicker.swift in Sources */,
+				AB0F61B6C6200F018B0A9D0E /* Carousel.swift in Sources */,
+				A1E9AF17A0ED7E2C2427DFC7 /* CarouselCanvas.swift in Sources */,
+				31B9B76BB584691E67CEC2F9 /* UIStateModel.swift in Sources */,
+				E536E36B317BA4E9C7E72514 /* DMSCheckBox.swift in Sources */,
+				CB4752A89AE0A93A19755953 /* DMSCheckBoxStyle.swift in Sources */,
+				979ACAD54FF463EF378B578F /* Color+DeisgnSystemsColor.swift in Sources */,
+				DBC803996B59488933711DD5 /* DMSErrorColor.swift in Sources */,
+				E38A9A30A8A988E2764BA0CF /* DMSGrayScaleColor.swift in Sources */,
+				6CC85A2898EA43CD5DA7BA4A /* DMSPrimaryColor.swift in Sources */,
+				CAE182043A39C82D2B8D56DD /* DMSSystemColor.swift in Sources */,
+				6531518D0868B116A6F1EA27 /* DMSHeaderView.swift in Sources */,
+				9F365AD225030F36E5DBCDDD /* View+cornerRadius.swift in Sources */,
+				672AE5CB80DB0685AB612C57 /* View+dmsBackButton.swift in Sources */,
+				7184EE42F61B89E3CDC2E70A /* View+dmsBackground.swift in Sources */,
+				1B2AB5EE0FEC8CFF92B8C2B4 /* View+if.swift in Sources */,
+				5A1B315CC9BA3F93966D85E5 /* View+navigate.swift in Sources */,
+				CC579D2105A78955AF6ED899 /* View+shadow.swift in Sources */,
+				A7DF48B425969133B4065B97 /* DMSImage.swift in Sources */,
+				235A62691AD56EA39D3FE2B5 /* ImagePicker.swift in Sources */,
+				1E83D1945C7BDC3D6405EEA2 /* DMSPassCodeView.swift in Sources */,
+				4D4CC8F8102EC144BC0FE7E8 /* DesignSystemPlaygroundView.swift in Sources */,
+				3092649F7D400803F7CED9D9 /* ButtonPlaygroundView.swift in Sources */,
+				E44719AC6B7ED4E8E0B7C17C /* CheckboxPlaygroundView.swift in Sources */,
+				4F923303B1DAE6601DFD739E /* ColorPlaygroundView.swift in Sources */,
+				1A2D0EBF4EC4DAD25D210D12 /* FontPlaygroundView.swift in Sources */,
+				9F100D36E444C04C3FB7054B /* RadiobuttonPlaygroundView.swift in Sources */,
+				6C02D14791C9E78594D7B156 /* SwitchPlaygroundView.swift in Sources */,
+				2E3356729EE051AC96ECAA37 /* TextFieldPlaygroundView.swift in Sources */,
+				79A4C067F55F7D7E03CF4E83 /* ToastPlaygroundView.swift in Sources */,
+				A51CC548A5CCB211168E4B95 /* DMSProgress.swift in Sources */,
+				DA80030F3C88A6A95C6ABA73 /* DMSRadioButton.swift in Sources */,
+				445A18A6446C3CA9F759ADDC /* DMSShadow.swift in Sources */,
+				AFD107F9074410F7A710884B /* DMSShadowStyle.swift in Sources */,
+				DA1ADDCACDEA1EE97C7EC522 /* DMSSwitch.swift in Sources */,
+				0EAAD8D14D1858777D2C1DFE /* DMSFloatingTextField.swift in Sources */,
+				7C22E1A0EC3E6150C3D1770A /* SecureDMSFloatingTextField.swift in Sources */,
+				84089F58A3F4D38B4782CA0A /* DMSFormTextEditor.swift in Sources */,
+				686D7B3A3AB664BDE477AB00 /* DMSFormTextField.swift in Sources */,
+				6C62C44EDAD6A606D4489982 /* DmsToast.swift in Sources */,
+				1D38EFE64DC5D26964F25AE8 /* DmsToastStyle.swift in Sources */,
+				A7210BE95B2E36F85DEDEF88 /* DMSFont.swift in Sources */,
+				3D39B473885031062CF27F8F /* DMSFontStyle.swift in Sources */,
+				E35E3C3A27628E73531B9122 /* DMSWebView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB6A87B19B67F205ABF578D5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				429D6E5954343C7B5F35C754 /* AppDelegate.swift in Sources */,
+				57B13E4617C0005D26ACF0BC /* TuistBundle+DesignSystemDemoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A2195CA2E76566D6D90CDB18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DesignSystem;
+			target = 83C9B5D1938C22907FF6E247 /* DesignSystem */;
+			targetProxy = 84C56B6C8AAB955F778B97E6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1B3AB4F9ED65E89F333AE5F3 /* DEV */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/DesignSystemDemoApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.DesignSystemDemoApp";
+				PRODUCT_NAME = DesignSystemDemoApp;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = DEV;
+		};
+		36303DCAFD770CB8C91D2562 /* DEV */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/DesignSystem-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.DesignSystem";
+				PRODUCT_NAME = DesignSystem;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = DEV;
+		};
+		706D09F5B26F57FFC60DE343 /* STAGE */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CA11073843FE4E5B67AAAE0 /* STAGE.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited) -all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = STAGE;
+		};
+		88DD2B88976271C0FFA96FA0 /* DEV */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 662C9D98FF67E20EFC95A1E9 /* DEV.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited) -all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = DEV;
+		};
+		8955B1A31D2162E694CBAA2C /* PROD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/DesignSystem-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.DesignSystem";
+				PRODUCT_NAME = DesignSystem;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = PROD;
+		};
+		D6655FAB84242D4ACA266124 /* STAGE */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/DesignSystem-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.DesignSystem";
+				PRODUCT_NAME = DesignSystem;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = STAGE;
+		};
+		DC48D2D462B002B692B8A674 /* PROD */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8631F72BB16A3A9A9FDB973 /* PROD.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited) -all_load";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = PROD;
+		};
+		DCD7197FD9687C5E7824B9D6 /* STAGE */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/DesignSystemDemoApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.DesignSystemDemoApp";
+				PRODUCT_NAME = DesignSystemDemoApp;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = STAGE;
+		};
+		E2974356B51A1A1DC5BD8740 /* PROD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Derived/InfoPlists/DesignSystemDemoApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.DesignSystemDemoApp";
+				PRODUCT_NAME = DesignSystemDemoApp;
+				SDKROOT = iphoneos;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = PROD;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		33DBF4656F340FE51718ED18 /* Build configuration list for PBXNativeTarget "DesignSystemDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B3AB4F9ED65E89F333AE5F3 /* DEV */,
+				E2974356B51A1A1DC5BD8740 /* PROD */,
+				DCD7197FD9687C5E7824B9D6 /* STAGE */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = PROD;
+		};
+		5C0CBBA2BFE0CEE21375AF0A /* Build configuration list for PBXProject "DesignSystem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88DD2B88976271C0FFA96FA0 /* DEV */,
+				DC48D2D462B002B692B8A674 /* PROD */,
+				706D09F5B26F57FFC60DE343 /* STAGE */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = PROD;
+		};
+		FDE90610E9DF3345CFC83326 /* Build configuration list for PBXNativeTarget "DesignSystem" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36303DCAFD770CB8C91D2562 /* DEV */,
+				8955B1A31D2162E694CBAA2C /* PROD */,
+				D6655FAB84242D4ACA266124 /* STAGE */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = PROD;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F639F9585E77B0BBBB642E14 /* Project object */;
+}
