@@ -5,30 +5,42 @@
       location = "group:Projects"
       name = "Projects">
       <FileRef
-         location = "group:App/JOBIS-DSM-IOS.xcodeproj">
-      </FileRef>
-      <FileRef
-         location = "group:Service/Service.xcodeproj">
+         location = "group:App/JOBIS-DSM-iOS.xcodeproj">
       </FileRef>
       <Group
-         location = "group:Features"
-         name = "Features">
+         location = "group:Core"
+         name = "Core">
+         <FileRef
+            location = "group:DesignSystem/DesignSystem.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Feature"
+         name = "Feature">
          <FileRef
             location = "group:BaseFeature/BaseFeature.xcodeproj">
          </FileRef>
-      </Group>
-      <Group
-         location = "group:Modules"
-         name = "Modules">
          <FileRef
-            location = "group:ThirdPartyLib/ThirdPartyLib.xcodeproj">
+            location = "group:MainTabFeature/MainTabFeature.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:RootFeature/RootFeature.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:SplashFeature/SplashFeature.xcodeproj">
          </FileRef>
       </Group>
       <Group
-         location = "group:UsertInterfaces"
-         name = "UsertInterfaces">
+         location = "group:Shared"
+         name = "Shared">
          <FileRef
-            location = "group:DesignSystem/DesignSystem.xcodeproj">
+            location = "group:ErrorModule/ErrorModule.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:GlobalThirdPartyLibrary/GlobalThirdPartyLibrary.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:UtilityModule/UtilityModule.xcodeproj">
          </FileRef>
       </Group>
    </Group>

@@ -1,7 +1,8 @@
 import ProjectDescription
+import EnvironmentPlugin
 
 let workspace = Workspace(
-    name: "JOBIS-DSM-iOS",
+    name: env.name,
     projects: [
         "Projects/App"
     ]
