@@ -9,16 +9,26 @@
 /* Begin PBXBuildFile section */
 		0492A24C3B5989351D8271B8 /* MainTabComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BAC650CFF838816994D3E4 /* MainTabComponent.swift */; };
 		22F3A2B31DABC4A56B220D12 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E196801A30899B177B6CDF19 /* DesignSystem.framework */; platformFilter = ios; };
+		3798A9A77EC4898A9C6C5C4D /* MainTabFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29F9AFBCF7026C146132F61 /* MainTabFeatureInterface.framework */; platformFilter = ios; };
 		3B753B3C77DC28FBF3A97D36 /* TargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9986A5B8856D9676589FF /* TargetTests.swift */; };
 		48BA7E50C005F48A1A174821 /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D28D30E041DE42D4D23D443B /* libBaseFeature.a */; platformFilter = ios; };
 		582B10A861739152167E03B7 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBECDB922895C4849972062B /* UtilityModule.framework */; platformFilter = ios; };
 		5BB35C687297C70D8350DB83 /* GlobalThirdPartyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166134A53F9AF245419487FC /* GlobalThirdPartyLibrary.framework */; platformFilter = ios; };
+		6EF5C6F00AD615D1BAEB3A26 /* MainTabFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29F9AFBCF7026C146132F61 /* MainTabFeatureInterface.framework */; platformFilter = ios; };
 		7A2AA10D298C08B3C3BD053C /* libMainTabFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B87DC1CCA3645A00392EA97 /* libMainTabFeature.a */; platformFilter = ios; };
+		CA7FA76B918FA1A7E319C4F1 /* SignupFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1EC33594EF58DAD6988C9 /* SignupFactory.swift */; };
 		D3C2ED92595A0AB55EE5270B /* libBaseFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = D28D30E041DE42D4D23D443B /* libBaseFeature.a */; platformFilter = ios; };
 		F1D8AC8B8EA754E7D070755E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A69B694F344C48110AB55 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0C36DF4EDD9D98285940997C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EB80C0903799D76F810FB1EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 76AF1EBAB00F5F5BAD0D35EE;
+			remoteInfo = MainTabFeatureInterface;
+		};
 		24691AC96457E64913ABA066 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EB80C0903799D76F810FB1EE /* Project object */;
@@ -49,6 +59,16 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EA7AA3105A1935CA0072EA0 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E7CB7377BD09A778955D7049 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -66,12 +86,15 @@
 		14F9986A5B8856D9676589FF /* TargetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTests.swift; sourceTree = "<group>"; };
 		166134A53F9AF245419487FC /* GlobalThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B278ABB5F11ADB357A2A20C /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
+		1FD1EC33594EF58DAD6988C9 /* SignupFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFactory.swift; sourceTree = "<group>"; };
 		3B87DC1CCA3645A00392EA97 /* libMainTabFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMainTabFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		427A69B694F344C48110AB55 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		6CF6A327B18F2F16B1BB9AE5 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		87674745029314D44C8B6C74 /* MainTabFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTabFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88C90947C6AB3D6DF95F1679 /* MainTabFeatureInterface-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MainTabFeatureInterface-Info.plist"; sourceTree = "<group>"; };
 		A1AB0AFEBFFA30F2BEE5B16B /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
 		BBECDB922895C4849972062B /* UtilityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C29F9AFBCF7026C146132F61 /* MainTabFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainTabFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28D30E041DE42D4D23D443B /* libBaseFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E196801A30899B177B6CDF19 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C0F30B59ED493DE2160C7E /* MainTabFeatureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MainTabFeatureTests-Info.plist"; sourceTree = "<group>"; };
@@ -79,6 +102,14 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		36EC641E50A36140B4C5F72D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3798A9A77EC4898A9C6C5C4D /* MainTabFeatureInterface.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFB35498C080C5956391F671 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -93,6 +124,7 @@
 				22F3A2B31DABC4A56B220D12 /* DesignSystem.framework in Frameworks */,
 				5BB35C687297C70D8350DB83 /* GlobalThirdPartyLibrary.framework in Frameworks */,
 				7A2AA10D298C08B3C3BD053C /* libMainTabFeature.a in Frameworks */,
+				6EF5C6F00AD615D1BAEB3A26 /* MainTabFeatureInterface.framework in Frameworks */,
 				582B10A861739152167E03B7 /* UtilityModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -123,10 +155,19 @@
 				166134A53F9AF245419487FC /* GlobalThirdPartyLibrary.framework */,
 				D28D30E041DE42D4D23D443B /* libBaseFeature.a */,
 				3B87DC1CCA3645A00392EA97 /* libMainTabFeature.a */,
+				C29F9AFBCF7026C146132F61 /* MainTabFeatureInterface.framework */,
 				87674745029314D44C8B6C74 /* MainTabFeatureTests.xctest */,
 				BBECDB922895C4849972062B /* UtilityModule.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3E4C8C8B8BE475C6AA4B276C /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				1FD1EC33594EF58DAD6988C9 /* SignupFactory.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 		430B981AFD22C2089EEECD5D /* Derived */ = {
@@ -140,6 +181,7 @@
 		434EEA7DFAE149024309625A /* InfoPlists */ = {
 			isa = PBXGroup;
 			children = (
+				88C90947C6AB3D6DF95F1679 /* MainTabFeatureInterface-Info.plist */,
 				F4C0F30B59ED493DE2160C7E /* MainTabFeatureTests-Info.plist */,
 			);
 			path = InfoPlists;
@@ -157,6 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				430B981AFD22C2089EEECD5D /* Derived */,
+				3E4C8C8B8BE475C6AA4B276C /* Interface */,
 				F0696C48EBC95B5147A25ECB /* Sources */,
 				7BFB968627BFBB0AF87836E9 /* Tests */,
 				2E9E20C527CC13665D36D7BF /* XCConfig */,
@@ -195,6 +238,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		76AF1EBAB00F5F5BAD0D35EE /* MainTabFeatureInterface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE984AC3D343B95FFB75FA1E /* Build configuration list for PBXNativeTarget "MainTabFeatureInterface" */;
+			buildPhases = (
+				C00DD26D107D3773C0EC98F4 /* SwiftLint */,
+				C7A316B7EC57E97FBFC2AB4B /* Sources */,
+				93ACC672EC09055346CF269D /* Resources */,
+				8EA7AA3105A1935CA0072EA0 /* Embed Frameworks */,
+				BFB35498C080C5956391F671 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MainTabFeatureInterface;
+			productName = MainTabFeatureInterface;
+			productReference = C29F9AFBCF7026C146132F61 /* MainTabFeatureInterface.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		9F88FAC8F2190CDF2A0E4DAC /* MainTabFeature */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 52788DF389B34F6850B0B9E4 /* Build configuration list for PBXNativeTarget "MainTabFeature" */;
@@ -209,6 +271,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				1AAB65F29D2D127DFDE3B443 /* PBXTargetDependency */,
 			);
 			name = MainTabFeature;
 			productName = MainTabFeature;
@@ -258,6 +321,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				76AF1EBAB00F5F5BAD0D35EE /* MainTabFeatureInterface */,
 				9F88FAC8F2190CDF2A0E4DAC /* MainTabFeature */,
 				C1D63E7FEA5A6000D0C19961 /* MainTabFeatureTests */,
 			);
@@ -273,6 +337,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7F047ECE404D9A3AB800017B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93ACC672EC09055346CF269D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -320,6 +391,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SRCROOT\"/../../../Scripts/SwiftLintRunScript.sh ";
 		};
+		C00DD26D107D3773C0EC98F4 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../../Scripts/SwiftLintRunScript.sh ";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -340,9 +430,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C7A316B7EC57E97FBFC2AB4B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA7FA76B918FA1A7E319C4F1 /* SignupFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		1AAB65F29D2D127DFDE3B443 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MainTabFeatureInterface;
+			target = 76AF1EBAB00F5F5BAD0D35EE /* MainTabFeatureInterface */;
+			targetProxy = 0C36DF4EDD9D98285940997C /* PBXContainerItemProxy */;
+		};
 		51686BF05D4E39FC27E38AE3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MainTabFeature;
@@ -435,6 +539,38 @@
 			};
 			name = STAGE;
 		};
+		4AD1C4B2F050B4159AAA10A6 /* STAGE */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/MainTabFeatureInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.MainTabFeatureInterface";
+				PRODUCT_NAME = MainTabFeatureInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = STAGE;
+		};
 		74DCDF65895473E63965C41E /* STAGE */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -476,6 +612,37 @@
 			};
 			name = PROD;
 		};
+		A2930F3B4DBAF499ABB33161 /* PROD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/MainTabFeatureInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.MainTabFeatureInterface";
+				PRODUCT_NAME = MainTabFeatureInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = PROD;
+		};
 		A62C59FDFE755AEA05D0774C /* DEV */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -496,6 +663,38 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = DEV;
+		};
+		AE3975B5AAC9348A2AFE4FB8 /* DEV */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/MainTabFeatureInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.MainTabFeatureInterface";
+				PRODUCT_NAME = MainTabFeatureInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = DEV;
 		};
@@ -691,6 +890,16 @@
 				A62C59FDFE755AEA05D0774C /* DEV */,
 				C79A3F3913CB4343A70D4CAD /* PROD */,
 				74DCDF65895473E63965C41E /* STAGE */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = PROD;
+		};
+		FE984AC3D343B95FFB75FA1E /* Build configuration list for PBXNativeTarget "MainTabFeatureInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE3975B5AAC9348A2AFE4FB8 /* DEV */,
+				A2930F3B4DBAF499ABB33161 /* PROD */,
+				4AD1C4B2F050B4159AAA10A6 /* STAGE */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = PROD;

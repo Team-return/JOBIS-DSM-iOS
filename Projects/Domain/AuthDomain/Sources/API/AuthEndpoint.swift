@@ -7,7 +7,7 @@ enum AuthEndpoint {
     case refresh
 }
 
-extension AuthEndpoint: DotoriEndpoint {
+extension AuthEndpoint: JobisEndpoint {
     typealias ErrorType = AuthDomainError
 
     var route: Route {

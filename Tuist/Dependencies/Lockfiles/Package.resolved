@@ -1,15 +1,6 @@
 {
   "pins" : [
     {
-      "identity" : "alamofire",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Alamofire/Alamofire.git",
-      "state" : {
-        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
-        "version" : "5.6.4"
-      }
-    },
-    {
       "identity" : "cwlcatchexception",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/mattgallagher/CwlCatchException.git",
@@ -28,21 +19,21 @@
       }
     },
     {
+      "identity" : "emdpoint",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GSM-MSG/Emdpoint.git",
+      "state" : {
+        "revision" : "fa104cdbd91338541c11bd3bddba63c3fbd933f1",
+        "version" : "3.2.2"
+      }
+    },
+    {
       "identity" : "kingfisher",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
       "state" : {
         "revision" : "af4be924ad984cf4d16f4ae4df424e79a443d435",
         "version" : "7.6.2"
-      }
-    },
-    {
-      "identity" : "moya",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Team-Return/Moya.git",
-      "state" : {
-        "branch" : "master",
-        "revision" : "2e3b61e71ab1e0a02997eaf260d8439134280364"
       }
     },
     {
@@ -70,24 +61,6 @@
       "state" : {
         "revision" : "f9d519828bb03dfc8125467d8f7b93131951124c",
         "version" : "5.0.1"
-      }
-    },
-    {
-      "identity" : "reactiveswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
-      "state" : {
-        "revision" : "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
-        "version" : "6.7.0"
-      }
-    },
-    {
-      "identity" : "rxswift",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ReactiveX/RxSwift.git",
-      "state" : {
-        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
-        "version" : "6.5.0"
       }
     },
     {

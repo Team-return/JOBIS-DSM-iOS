@@ -38,7 +38,12 @@ let targets: [Target] = [
         scripts: scripts,
         dependencies: [
             .Feature.RootFeature,
-            .Shared.KeychainModule
+            .Shared.KeychainModule,
+            .Feature.RootFeature,
+            .Feature.SigninFeature,
+            .Feature.SignupFeature,
+            .Domain.AuthDomain,
+            .Core.JwtStore
         ],
         settings: .settings(base: env.baseSetting)
     )

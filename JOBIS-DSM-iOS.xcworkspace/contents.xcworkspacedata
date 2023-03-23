@@ -13,6 +13,19 @@
          <FileRef
             location = "group:DesignSystem/DesignSystem.xcodeproj">
          </FileRef>
+         <FileRef
+            location = "group:JwtStore/JwtStore.xcodeproj">
+         </FileRef>
+      </Group>
+      <Group
+         location = "group:Domain"
+         name = "Domain">
+         <FileRef
+            location = "group:AuthDomain/AuthDomain.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:BaseDomain/BaseDomain.xcodeproj">
+         </FileRef>
       </Group>
       <Group
          location = "group:Feature"
@@ -25,6 +38,12 @@
          </FileRef>
          <FileRef
             location = "group:RootFeature/RootFeature.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:SigninFeature/SigninFeature.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:SignupFeature/SignupFeature.xcodeproj">
          </FileRef>
          <FileRef
             location = "group:SplashFeature/SplashFeature.xcodeproj">
@@ -42,6 +61,29 @@
          <FileRef
             location = "group:UtilityModule/UtilityModule.xcodeproj">
          </FileRef>
+      </Group>
+   </Group>
+   <Group
+      location = "group:Tuist"
+      name = "Tuist">
+      <Group
+         location = "group:Dependencies"
+         name = "Dependencies">
+         <Group
+            location = "group:SwiftPackageManager"
+            name = "SwiftPackageManager">
+            <Group
+               location = "group:.build"
+               name = ".build">
+               <Group
+                  location = "group:checkouts"
+                  name = "checkouts">
+                  <FileRef
+                     location = "group:Emdpoint/Emdpoint.xcodeproj">
+                  </FileRef>
+               </Group>
+            </Group>
+         </Group>
       </Group>
    </Group>
 </Workspace>

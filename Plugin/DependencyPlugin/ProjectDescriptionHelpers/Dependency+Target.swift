@@ -17,13 +17,41 @@ public extension TargetDependency.Feature {
         target: ModulePaths.Feature.MainTabFeature.targetName(type: .sources),
         path: .relativeToFeature(ModulePaths.Feature.MainTabFeature.rawValue)
     )
+    static let MainTabFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.MainTabFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.MainTabFeature.rawValue)
+    )
     static let SplashFeature = TargetDependency.project(
         target: ModulePaths.Feature.SplashFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.SplashFeature.rawValue)
+    )
+    static let SplashFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.SplashFeature.targetName(type: .interface),
         path: .relativeToFeature(ModulePaths.Feature.SplashFeature.rawValue)
     )
     static let RootFeature = TargetDependency.project(
         target: ModulePaths.Feature.RootFeature.targetName(type: .sources),
         path: .relativeToFeature(ModulePaths.Feature.RootFeature.rawValue)
+    )
+    static let RootFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.RootFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.RootFeature.rawValue)
+    )
+    static let SignupFeature = TargetDependency.project(
+        target: ModulePaths.Feature.SignupFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.SignupFeature.rawValue)
+    )
+    static let SignupFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.SignupFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.SignupFeature.rawValue)
+    )
+    static let SigninFeature = TargetDependency.project(
+        target: ModulePaths.Feature.SigninFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.SigninFeature.rawValue)
+    )
+    static let SigninFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.SigninFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.SigninFeature.rawValue)
     )
 }
 
@@ -36,6 +64,14 @@ public extension TargetDependency.Domain {
         target: ModulePaths.Domain.AuthDomain.targetName(type: .sources),
         path: .relativeToDomain(ModulePaths.Domain.AuthDomain.rawValue)
     )
+    static let AuthDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.AuthDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.AuthDomain.rawValue)
+    )
+    static let AuthDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.AuthDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.AuthDomain.rawValue)
+    )
 }
 
 public extension TargetDependency.Core {
@@ -43,7 +79,15 @@ public extension TargetDependency.Core {
         target: ModulePaths.Core.DesignSystem.targetName(type: .sources),
         path: .relativeToCore(ModulePaths.Core.DesignSystem.rawValue)
     )
+    static let JwtStoreTesting = TargetDependency.project(
+        target: ModulePaths.Core.JwtStore.targetName(type: .testing),
+        path: .relativeToCore(ModulePaths.Core.JwtStore.rawValue)
+    )
     static let JwtStoreInterface = TargetDependency.project(
+        target: ModulePaths.Core.JwtStore.targetName(type: .interface),
+        path: .relativeToCore(ModulePaths.Core.JwtStore.rawValue)
+    )
+    static let JwtStore = TargetDependency.project(
         target: ModulePaths.Core.JwtStore.targetName(type: .sources),
         path: .relativeToCore(ModulePaths.Core.JwtStore.rawValue)
     )

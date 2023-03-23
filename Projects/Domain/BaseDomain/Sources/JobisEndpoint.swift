@@ -1,12 +1,12 @@
 import Emdpoint
 import Foundation
 
-public protocol DotoriEndpoint: EndpointType, JwtAuthorizable {
+public protocol JobisEndpoint: EndpointType, JwtAuthorizable {
     associatedtype ErrorType: Error
     var errorMapper: [Int: ErrorType]? { get }
 }
 
-extension DotoriEndpoint {
+extension JobisEndpoint {
     public var baseURL: URL {
         URL(
             string: Bundle.module.object(forInfoDictionaryKey: "BASE_URL") as? String ?? ""

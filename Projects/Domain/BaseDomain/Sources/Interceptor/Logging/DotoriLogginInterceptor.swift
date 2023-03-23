@@ -3,7 +3,7 @@ import Emdpoint
 
 #if DEV || STAGE
 // swiftlint: disable line_length
-public struct DotoriLoggingInterceptor: InterceptorType {
+public struct JobisLoggingInterceptor: InterceptorType {
     public init() {}
     public func willRequest(_ request: URLRequest, endpoint: EndpointType) {
         let url = request.description

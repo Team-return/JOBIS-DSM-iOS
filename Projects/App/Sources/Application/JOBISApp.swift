@@ -3,7 +3,7 @@ import BaseFeature
 import KeychainModule
 
 @main
-struct DMSApp: App {
+struct JOBISApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var appState = AppState(sceneFlow: .splash, features: .init())
     private let keychain: any Keychain

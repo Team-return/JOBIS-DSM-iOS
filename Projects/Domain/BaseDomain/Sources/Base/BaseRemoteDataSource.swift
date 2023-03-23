@@ -1,10 +1,10 @@
 import Combine
-import DateUtility
 import Emdpoint
 import Foundation
 import JwtStoreInterface
+import UtilityModule
 
-open class BaseRemoteDataSource<Endpoint: DotoriEndpoint> {
+open class BaseRemoteDataSource<Endpoint: JobisEndpoint> {
     private let jwtStore: any JwtStore
     private let client: EmdpointClient<Endpoint>
     private let decoder: JSONDecoder
@@ -18,7 +18,7 @@ open class BaseRemoteDataSource<Endpoint: DotoriEndpoint> {
         self.jwtStore = jwtStore
         #if DEV || STAGE
         self.client = EmdpointClient(
-            interceptors: [JwtInterceptor(jwtStore: jwtStore), DotoriLoggingInterceptor()]
+            interceptors: [JwtInterceptor(jwtStore: jwtStore), JobisLoggingInterceptor()]
         )
         #else
         self.client = EmdpointClient(
@@ -82,7 +82,7 @@ private extension BaseRemoteDataSource {
 
     func checkTokenIsExpired() -> Bool {
         let expired = jwtStore.load(property: .accessExpiresAt)
-            .toDateWithCustomFormat("yyyy-MM-dd'T'HH:mm:ss")
+            .toJOBISDate()
         return Date() > expired
     }
 

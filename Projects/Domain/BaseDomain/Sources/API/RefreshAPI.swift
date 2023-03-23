@@ -4,7 +4,7 @@ enum RefreshEndpoint {
     case refresh
 }
 
-extension RefreshEndpoint: DotoriEndpoint {
+extension RefreshEndpoint: JobisEndpoint {
     typealias ErrorType = RefreshError
 
     var route: Route {

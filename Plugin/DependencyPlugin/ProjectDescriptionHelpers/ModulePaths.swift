@@ -14,6 +14,8 @@ public extension ModulePaths {
         case MainTabFeature
         case RootFeature
         case SplashFeature
+        case SignupFeature
+        case SigninFeature
 
         func targetName(type: MicroTargetType) -> String {
             "\(self.rawValue)\(type.rawValue)"

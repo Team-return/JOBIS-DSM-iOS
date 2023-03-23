@@ -8,17 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		0D4743394F8386FB83315537 /* libBaseFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = F8500C85040FE8B461EE3E58 /* libBaseFeature.a */; platformFilter = ios; };
+		1576E2BAFE3A60EE5132F770 /* MainTabFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C5C3A0E68CBECB064B5D58 /* MainTabFeatureInterface.framework */; platformFilter = ios; };
+		1D887197E3BFFA0084373075 /* RootFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9A61630C385F0EE4E42AB8 /* RootFeatureInterface.framework */; platformFilter = ios; };
 		230D4CC733DE6706DBF7E19F /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F8500C85040FE8B461EE3E58 /* libBaseFeature.a */; platformFilter = ios; };
 		307552D6A6E937100E220D4E /* libMainTabFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = 826FFC85D2774AD43D0FD440 /* libMainTabFeature.a */; platformFilter = ios; };
 		37D96EE852360168261560B1 /* libRootFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F6B002D219BC55BC8A7CE6 /* libRootFeature.a */; platformFilter = ios; };
+		3D9F8CD7876ECA454F767699 /* RootFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9A61630C385F0EE4E42AB8 /* RootFeatureInterface.framework */; platformFilter = ios; };
 		4A7B8208C364511BAA5687E1 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE07B1F79E7B7890C8AE57ED /* RootView.swift */; };
 		4CC2407013B23CC8397C1388 /* libSplashFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C61DCCEF82803E34D23C79A /* libSplashFeature.a */; platformFilter = ios; };
 		563B39CA9CEAD7DFC1EB8E21 /* TargetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159D3D715B6145CEC047088F /* TargetTest.swift */; };
 		5A5FB7D36941E73D6B62A5B8 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28E78710304EC3978B1F3DD3 /* UtilityModule.framework */; platformFilter = ios; };
+		5DF3597FAEB2E8E13CEA632A /* RenewalPasswordFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF973F2B7176B075EDAE1697 /* RenewalPasswordFactory.swift */; };
 		61A6F0C77A956AC44EF3F0AE /* GlobalThirdPartyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5D84046AD213B9AF1F307B2 /* GlobalThirdPartyLibrary.framework */; platformFilter = ios; };
 		67638D5E147D757AD5A12AA0 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57D4B61A8E6AE85AE4D11C8B /* RootComponent.swift */; };
 		6BB1ABFF836D912AA2DACC06 /* libSplashFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = 8C61DCCEF82803E34D23C79A /* libSplashFeature.a */; platformFilter = ios; };
 		AD373AC4E1CAFBBFB0635C86 /* libMainTabFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 826FFC85D2774AD43D0FD440 /* libMainTabFeature.a */; platformFilter = ios; };
+		E4682B4B20A139AB001D256F /* SplashFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A9025103505C5E2BE5DBC6C /* SplashFeatureInterface.framework */; platformFilter = ios; };
 		EC2DC7FF051AAE8123E9CF0E /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E636C2DE3CE7BFEA245BCC4 /* DesignSystem.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
@@ -29,6 +34,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 0EBDBDC43A21880F12EBCE9E;
 			remoteInfo = RootFeature;
+		};
+		95F43E3495D0DAEB864B916C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E24AE4A89230BDE7BCBA0E4C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 00E9CA43B16B199C0DB61155;
+			remoteInfo = RootFeatureInterface;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -65,22 +77,37 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CC6786600137B97C3379B614 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		00F6B002D219BC55BC8A7CE6 /* libRootFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRootFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		09C5C3A0E68CBECB064B5D58 /* MainTabFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainTabFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A9A61630C385F0EE4E42AB8 /* RootFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RootFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		159D3D715B6145CEC047088F /* TargetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTest.swift; sourceTree = "<group>"; };
 		28E78710304EC3978B1F3DD3 /* UtilityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36EB6645EFA059FB10246872 /* RootFeatureInterface-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RootFeatureInterface-Info.plist"; sourceTree = "<group>"; };
 		40405A0D687D5C2D513622C0 /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
 		4E636C2DE3CE7BFEA245BCC4 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		57D4B61A8E6AE85AE4D11C8B /* RootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComponent.swift; sourceTree = "<group>"; };
 		826FFC85D2774AD43D0FD440 /* libMainTabFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMainTabFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C61DCCEF82803E34D23C79A /* libSplashFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSplashFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A9025103505C5E2BE5DBC6C /* SplashFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SplashFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3CFEA1F596677AE2E0077CD /* RootFeatureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "RootFeatureTests-Info.plist"; sourceTree = "<group>"; };
 		A5D84046AD213B9AF1F307B2 /* GlobalThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E647216E364BC0100DBA6F /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		C48618B5E4CEE76FFB782DC2 /* RootFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RootFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE07B1F79E7B7890C8AE57ED /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		EF973F2B7176B075EDAE1697 /* RenewalPasswordFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RenewalPasswordFactory.swift; sourceTree = "<group>"; };
 		F144F6D9F09B64E096B1F03E /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		F8500C85040FE8B461EE3E58 /* libBaseFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,9 +121,19 @@
 				EC2DC7FF051AAE8123E9CF0E /* DesignSystem.framework in Frameworks */,
 				61A6F0C77A956AC44EF3F0AE /* GlobalThirdPartyLibrary.framework in Frameworks */,
 				AD373AC4E1CAFBBFB0635C86 /* libMainTabFeature.a in Frameworks */,
+				1576E2BAFE3A60EE5132F770 /* MainTabFeatureInterface.framework in Frameworks */,
 				37D96EE852360168261560B1 /* libRootFeature.a in Frameworks */,
+				3D9F8CD7876ECA454F767699 /* RootFeatureInterface.framework in Frameworks */,
 				4CC2407013B23CC8397C1388 /* libSplashFeature.a in Frameworks */,
+				E4682B4B20A139AB001D256F /* SplashFeatureInterface.framework in Frameworks */,
 				5A5FB7D36941E73D6B62A5B8 /* UtilityModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		47B4AB96193E70A39980501C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,12 +141,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D887197E3BFFA0084373075 /* RootFeatureInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BD7EE559B087E3DB350AFA7 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				EF973F2B7176B075EDAE1697 /* RenewalPasswordFactory.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
 		2A683A55E02F161F654A5F7A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,7 +165,10 @@
 				826FFC85D2774AD43D0FD440 /* libMainTabFeature.a */,
 				00F6B002D219BC55BC8A7CE6 /* libRootFeature.a */,
 				8C61DCCEF82803E34D23C79A /* libSplashFeature.a */,
+				09C5C3A0E68CBECB064B5D58 /* MainTabFeatureInterface.framework */,
+				0A9A61630C385F0EE4E42AB8 /* RootFeatureInterface.framework */,
 				C48618B5E4CEE76FFB782DC2 /* RootFeatureTests.xctest */,
+				9A9025103505C5E2BE5DBC6C /* SplashFeatureInterface.framework */,
 				28E78710304EC3978B1F3DD3 /* UtilityModule.framework */,
 			);
 			name = Products;
@@ -146,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				B2E1D8174625B2D769A59DE1 /* Derived */,
+				1BD7EE559B087E3DB350AFA7 /* Interface */,
 				A4DA8866E1F6DE16B776E201 /* Sources */,
 				34D64BF3FC238CAD8C2328A5 /* Tests */,
 				C90711434AE8EAF10DE56821 /* XCConfig */,
@@ -182,6 +232,7 @@
 		EC6B20F5EBAB6A303DB768A8 /* InfoPlists */ = {
 			isa = PBXGroup;
 			children = (
+				36EB6645EFA059FB10246872 /* RootFeatureInterface-Info.plist */,
 				A3CFEA1F596677AE2E0077CD /* RootFeatureTests-Info.plist */,
 			);
 			path = InfoPlists;
@@ -207,6 +258,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		00E9CA43B16B199C0DB61155 /* RootFeatureInterface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4083392BB57D378861F3D3F5 /* Build configuration list for PBXNativeTarget "RootFeatureInterface" */;
+			buildPhases = (
+				D563B70604E41F2AC0FACCF4 /* SwiftLint */,
+				FB38F3368DB16A2E323AA069 /* Sources */,
+				67C46D6ECD9817A25FC87C1E /* Resources */,
+				CC6786600137B97C3379B614 /* Embed Frameworks */,
+				47B4AB96193E70A39980501C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RootFeatureInterface;
+			productName = RootFeatureInterface;
+			productReference = 0A9A61630C385F0EE4E42AB8 /* RootFeatureInterface.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		0EBDBDC43A21880F12EBCE9E /* RootFeature */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A14F4430C17425558B0DE89 /* Build configuration list for PBXNativeTarget "RootFeature" */;
@@ -221,6 +291,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C5AE0339FD8DCD3958086DE5 /* PBXTargetDependency */,
 			);
 			name = RootFeature;
 			productName = RootFeature;
@@ -270,6 +341,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				00E9CA43B16B199C0DB61155 /* RootFeatureInterface */,
 				0EBDBDC43A21880F12EBCE9E /* RootFeature */,
 				A3CF7C1E2BF14E793472B5CC /* RootFeatureTests */,
 			);
@@ -277,6 +349,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		67C46D6ECD9817A25FC87C1E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7583BF3FB4C412C4C3A1A58A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,6 +411,25 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$SRCROOT\"/../../../Scripts/SwiftLintRunScript.sh ";
 		};
+		D563B70604E41F2AC0FACCF4 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../../Scripts/SwiftLintRunScript.sh ";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -352,6 +450,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FB38F3368DB16A2E323AA069 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DF3597FAEB2E8E13CEA632A /* RenewalPasswordFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -360,6 +466,12 @@
 			name = RootFeature;
 			target = 0EBDBDC43A21880F12EBCE9E /* RootFeature */;
 			targetProxy = 80FEFB5DC7929C0F3023EC57 /* PBXContainerItemProxy */;
+		};
+		C5AE0339FD8DCD3958086DE5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RootFeatureInterface;
+			target = 00E9CA43B16B199C0DB61155 /* RootFeatureInterface */;
+			targetProxy = 95F43E3495D0DAEB864B916C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -386,6 +498,70 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = STAGE;
+		};
+		17B2083E81C05346C4C9E1A8 /* STAGE */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/RootFeatureInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.RootFeatureInterface";
+				PRODUCT_NAME = RootFeatureInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = STAGE;
+		};
+		70A2BAFB7AE0701FE5E4FEB3 /* DEV */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/RootFeatureInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.RootFeatureInterface";
+				PRODUCT_NAME = RootFeatureInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = DEV;
 		};
 		89A35AAACDC3492487AF5EDC /* DEV */ = {
 			isa = XCBuildConfiguration;
@@ -466,6 +642,37 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = PROD;
+		};
+		B1677D9F071868BBFA7DD227 /* PROD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/RootFeatureInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.RootFeatureInterface";
+				PRODUCT_NAME = RootFeatureInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = PROD;
 		};
@@ -683,6 +890,16 @@
 				CF5FB032697AC314AE47D112 /* DEV */,
 				D8DD042617FBF22D900AD54E /* PROD */,
 				D0470A02377CAEAF8AD5F4F6 /* STAGE */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = PROD;
+		};
+		4083392BB57D378861F3D3F5 /* Build configuration list for PBXNativeTarget "RootFeatureInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70A2BAFB7AE0701FE5E4FEB3 /* DEV */,
+				B1677D9F071868BBFA7DD227 /* PROD */,
+				17B2083E81C05346C4C9E1A8 /* STAGE */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = PROD;
