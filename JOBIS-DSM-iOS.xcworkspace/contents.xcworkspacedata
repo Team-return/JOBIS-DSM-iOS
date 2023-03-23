@@ -81,6 +81,9 @@
                   <FileRef
                      location = "group:Emdpoint/Emdpoint.xcodeproj">
                   </FileRef>
+                  <FileRef
+                     location = "group:needle/NeedleFoundation.xcodeproj">
+                  </FileRef>
                </Group>
             </Group>
          </Group>

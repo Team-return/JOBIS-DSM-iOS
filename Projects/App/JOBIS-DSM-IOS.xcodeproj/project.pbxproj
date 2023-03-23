@@ -21,6 +21,7 @@
 		5B7C30DA6DE303E704725D00 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069344106BC8FE9363AA40E0 /* UtilityModule.framework */; platformFilter = ios; };
 		6272744E52238E086879DCF8 /* MainTabFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E6509BC7365EBF16D8057D /* MainTabFeatureInterface.framework */; platformFilter = ios; };
 		700581F2BF09F65900FCC87E /* RootFeatureInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF7FDB77E1BC9F4B5313C3D2 /* RootFeatureInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7100BB283DEBE2213B3B27C5 /* NeedleFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3EED2C3BBD7A0C0E1D534 /* NeedleFoundation.framework */; platformFilter = ios; };
 		71553DEDC1B918CFA60AC505 /* JwtStoreInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7CE051BFF0C6E58E3FB51 /* JwtStoreInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		773593382B75147C9CFF04EE /* SignupFeatureInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 852AE81747253AEB11DFD0AB /* SignupFeatureInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8C0CCC6B9E7EEB78CD8555F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1E082C2417FA069C53E /* AppDelegate.swift */; };
@@ -73,6 +74,7 @@
 /* Begin PBXFileReference section */
 		069344106BC8FE9363AA40E0 /* UtilityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA8E833AA6740D47437201B /* libBaseFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		15A3EED2C3BBD7A0C0E1D534 /* NeedleFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NeedleFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1719D1E082C2417FA069C53E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B44509A6838E98564EE2A0C /* KeychainModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KeychainModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2082B1D0DAEA01C6C146EE91 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				21A5EAE3E16BD260B1657867 /* KeychainModule.framework in Frameworks */,
 				8FD7DC0B2C322A9B3F7216DF /* libMainTabFeature.a in Frameworks */,
 				6272744E52238E086879DCF8 /* MainTabFeatureInterface.framework in Frameworks */,
+				7100BB283DEBE2213B3B27C5 /* NeedleFoundation.framework in Frameworks */,
 				5007B22E3B92F2E5EDAF94BF /* libRootFeature.a in Frameworks */,
 				BA265ECAC273916FC65BC250 /* RootFeatureInterface.framework in Frameworks */,
 				506A2B9EB040B0DE609FEF55 /* libSigninFeature.a in Frameworks */,
@@ -171,6 +174,7 @@
 				6E4689257831F53020201CE3 /* libSignupFeature.a */,
 				A532FFDE4CBC72FC99AD55C7 /* libSplashFeature.a */,
 				91E6509BC7365EBF16D8057D /* MainTabFeatureInterface.framework */,
+				15A3EED2C3BBD7A0C0E1D534 /* NeedleFoundation.framework */,
 				CF7FDB77E1BC9F4B5313C3D2 /* RootFeatureInterface.framework */,
 				30727C713E5767B4361EA43C /* SigninFeatureInterface.framework */,
 				852AE81747253AEB11DFD0AB /* SignupFeatureInterface.framework */,
@@ -269,6 +273,7 @@
 			buildConfigurationList = 82268000D35C8F88C44F437A /* Build configuration list for PBXNativeTarget "JOBIS-DSM-iOS" */;
 			buildPhases = (
 				A4DA0F68AC3C457F7682AC9C /* SwiftLint */,
+				474724072DAFDCFD1B0BA6C4 /* Needle */,
 				9748DF6C47BFE3CE20D1261C /* Sources */,
 				10870604BC7FD8CA4A67EBCF /* Resources */,
 				98287B35D0AF6A050F5F92EF /* Embed Frameworks */,
@@ -324,6 +329,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		474724072DAFDCFD1B0BA6C4 /* Needle */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Needle;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../Scripts/NeedleRunScript.sh ";
+		};
 		A4DA0F68AC3C457F7682AC9C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;

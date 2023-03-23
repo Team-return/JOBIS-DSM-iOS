@@ -1,6 +1,7 @@
 import SwiftUI
 import BaseFeature
 import KeychainModule
+import NeedleFoundation
 
 @main
 struct JOBISApp: App {

@@ -308,6 +308,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B7D668D851D7D81DA02681CC"
+               BuildableName = "NeedleFoundation.framework"
+               BlueprintName = "NeedleFoundation"
+               ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/needle/NeedleFoundation.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EBDBDC43A21880F12EBCE9E"
                BuildableName = "libRootFeature.a"
                BlueprintName = "RootFeature"
