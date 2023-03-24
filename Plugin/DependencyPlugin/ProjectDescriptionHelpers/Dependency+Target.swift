@@ -9,6 +9,30 @@ public extension TargetDependency {
 }
 
 public extension TargetDependency.Feature {
+    static let MyPageFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.MyPageFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.MyPageFeature.rawValue)
+    )
+    static let MyPageFeature = TargetDependency.project(
+        target: ModulePaths.Feature.MyPageFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.MyPageFeature.rawValue)
+    )
+    static let HomeFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.HomeFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.HomeFeature.rawValue)
+    )
+    static let HomeFeature = TargetDependency.project(
+        target: ModulePaths.Feature.HomeFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.HomeFeature.rawValue)
+    )
+    static let MenuFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.MenuFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.MenuFeature.rawValue)
+    )
+    static let MenuFeature = TargetDependency.project(
+        target: ModulePaths.Feature.MenuFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.MenuFeature.rawValue)
+    )
     static let BaseFeature = TargetDependency.project(
         target: ModulePaths.Feature.BaseFeature.targetName(type: .sources),
         path: .relativeToFeature(ModulePaths.Feature.BaseFeature.rawValue)

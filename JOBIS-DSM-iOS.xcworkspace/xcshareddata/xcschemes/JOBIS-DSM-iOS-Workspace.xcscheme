@@ -182,6 +182,48 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DA63F18E567CF83B0B9CA9F6"
+               BuildableName = "libHomeFeature.a"
+               BlueprintName = "HomeFeature"
+               ReferencedContainer = "container:Projects/Feature/HomeFeature/HomeFeature.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "854D3E4EFF471C42EE44119B"
+               BuildableName = "HomeFeatureInterface.framework"
+               BlueprintName = "HomeFeatureInterface"
+               ReferencedContainer = "container:Projects/Feature/HomeFeature/HomeFeature.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "24DBE55391BEB954D6333D1C"
+               BuildableName = "HomeFeatureTests.xctest"
+               BlueprintName = "HomeFeatureTests"
+               ReferencedContainer = "container:Projects/Feature/HomeFeature/HomeFeature.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "137D31D99A6E317E7D741D3E"
                BuildableName = "JOBIS_DSM_iOS.app"
                BlueprintName = "JOBIS-DSM-iOS"
@@ -266,6 +308,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B3B395FD6136F57D630138BD"
+               BuildableName = "Kingfisher.framework"
+               BlueprintName = "Kingfisher"
+               ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/Kingfisher/Kingfisher.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "9F88FAC8F2190CDF2A0E4DAC"
                BuildableName = "libMainTabFeature.a"
                BlueprintName = "MainTabFeature"
@@ -298,6 +354,90 @@
                BuildableName = "MainTabFeatureTests.xctest"
                BlueprintName = "MainTabFeatureTests"
                ReferencedContainer = "container:Projects/Feature/MainTabFeature/MainTabFeature.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F16DCE56070780B53DA65BED"
+               BuildableName = "libMenuFeature.a"
+               BlueprintName = "MenuFeature"
+               ReferencedContainer = "container:Projects/Feature/MenuFeature/MenuFeature.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D479B43824C8209DD9FDF601"
+               BuildableName = "MenuFeatureInterface.framework"
+               BlueprintName = "MenuFeatureInterface"
+               ReferencedContainer = "container:Projects/Feature/MenuFeature/MenuFeature.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FAFB6D07C1AD659F64AABEDC"
+               BuildableName = "MenuFeatureTests.xctest"
+               BlueprintName = "MenuFeatureTests"
+               ReferencedContainer = "container:Projects/Feature/MenuFeature/MenuFeature.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "165FF0485069FAD6E30D1EF1"
+               BuildableName = "libMyPageFeature.a"
+               BlueprintName = "MyPageFeature"
+               ReferencedContainer = "container:Projects/Feature/MyPageFeature/MyPageFeature.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "309D06068DD1002D94B61781"
+               BuildableName = "MyPageFeatureInterface.framework"
+               BlueprintName = "MyPageFeatureInterface"
+               ReferencedContainer = "container:Projects/Feature/MyPageFeature/MyPageFeature.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B87CB66F4B5D7AC2214F49C7"
+               BuildableName = "MyPageFeatureTests.xctest"
+               BlueprintName = "MyPageFeatureTests"
+               ReferencedContainer = "container:Projects/Feature/MyPageFeature/MyPageFeature.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -490,6 +630,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "589345361EDD5EBC786D0C14"
+               BuildableName = "Swinject.framework"
+               BlueprintName = "Swinject"
+               ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/Swinject/Swinject.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "F3D897169E0D3FA7D46393B9"
                BuildableName = "UtilityModule.framework"
                BlueprintName = "UtilityModule"
@@ -552,6 +706,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "24DBE55391BEB954D6333D1C"
+               BuildableName = "HomeFeatureTests.xctest"
+               BlueprintName = "HomeFeatureTests"
+               ReferencedContainer = "container:Projects/Feature/HomeFeature/HomeFeature.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "647FCC96F9422392E641E988"
                BuildableName = "JwtStoreTests.xctest"
                BlueprintName = "JwtStoreTests"
@@ -566,6 +730,26 @@
                BuildableName = "MainTabFeatureTests.xctest"
                BlueprintName = "MainTabFeatureTests"
                ReferencedContainer = "container:Projects/Feature/MainTabFeature/MainTabFeature.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FAFB6D07C1AD659F64AABEDC"
+               BuildableName = "MenuFeatureTests.xctest"
+               BlueprintName = "MenuFeatureTests"
+               ReferencedContainer = "container:Projects/Feature/MenuFeature/MenuFeature.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B87CB66F4B5D7AC2214F49C7"
+               BuildableName = "MyPageFeatureTests.xctest"
+               BlueprintName = "MyPageFeatureTests"
+               ReferencedContainer = "container:Projects/Feature/MyPageFeature/MyPageFeature.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference

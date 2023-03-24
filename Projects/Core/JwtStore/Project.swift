@@ -5,5 +5,8 @@ import DependencyPlugin
 let project = Project.makeModule(
     name: ModulePaths.Core.JwtStore.rawValue,
     product: .staticLibrary,
-    targets: [.interface, .testing, .unitTest]
+    targets: [.interface, .testing, .unitTest],
+    externalDependencies: [
+        .SPM.Swinject
+    ]
 )

@@ -1,6 +1,6 @@
-import Moordinator
-import UIKit
+import SwiftUI
 
 public protocol SignupFactory {
-    func makeViewController(router: any Router) -> UIViewController
+    associatedtype SomeView: View
+    func makeView() -> SomeView
 }

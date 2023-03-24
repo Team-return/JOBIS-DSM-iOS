@@ -1,5 +1,6 @@
-import UIKit
+import SwiftUI
 
 public protocol SigninFactory {
-    func makeMoordinator() -> Moordinator
+    associatedtype SomeView: View
+    func makeView() -> SomeView
 }

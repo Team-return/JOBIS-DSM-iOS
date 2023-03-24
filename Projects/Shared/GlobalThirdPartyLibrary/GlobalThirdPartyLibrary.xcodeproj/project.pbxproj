@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		12CB7C6707AE329AA3E71EC3 /* ThirdPartyLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC46DD836A458F68CED8273 /* ThirdPartyLibrary.swift */; };
+		94B5488E67A9FD7BF4B5BB43 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16E920C2B558AF27B53040D /* Kingfisher.framework */; platformFilter = ios; };
+		B03FA9AC37865C85B158ACA0 /* NeedleFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC539C58410B8E382ACA432 /* NeedleFoundation.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +27,12 @@
 
 /* Begin PBXFileReference section */
 		2AC46DD836A458F68CED8273 /* ThirdPartyLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPartyLibrary.swift; sourceTree = "<group>"; };
+		3EC539C58410B8E382ACA432 /* NeedleFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NeedleFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45DE71EA17AB682744B29FAD /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		7FD97725B36EAEAE7FE8BD5D /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
 		960AF8F65D40B232B2033C36 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		991500DE485E0FB5A3B53697 /* GlobalThirdPartyLibrary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GlobalThirdPartyLibrary-Info.plist"; sourceTree = "<group>"; };
+		B16E920C2B558AF27B53040D /* Kingfisher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Kingfisher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBE97BAA2C9F84404C4911BD /* GlobalThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -37,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94B5488E67A9FD7BF4B5BB43 /* Kingfisher.framework in Frameworks */,
+				B03FA9AC37865C85B158ACA0 /* NeedleFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				DBE97BAA2C9F84404C4911BD /* GlobalThirdPartyLibrary.framework */,
+				B16E920C2B558AF27B53040D /* Kingfisher.framework */,
+				3EC539C58410B8E382ACA432 /* NeedleFoundation.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";

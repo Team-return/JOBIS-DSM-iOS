@@ -3,21 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0136F49F38B99F7EB8AE6F3C /* GlobalThirdPartyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DE664234B8254F8803B0AEC /* GlobalThirdPartyLibrary.framework */; platformFilter = ios; };
-		08117A3B96EE12A0758AB107 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40E93918CBE5CE2DCF36DA5 /* SplashViewModel.swift */; };
 		0848590AECFD20A1CD97D973 /* libBaseFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = 5F8C151BEFABEFD262100A9F /* libBaseFeature.a */; platformFilter = ios; };
-		0A4ED6B0B1148EE7632A3C4C /* SignupFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF6A87568CC19FD75E0F63B /* SignupFactory.swift */; };
 		0DBD53C3850966BDA96C536C /* libSplashFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 121FB5386D70BEE897C668C0 /* libSplashFeature.a */; platformFilter = ios; };
 		42B98A0D82AAE55AAE1E38C1 /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8C151BEFABEFD262100A9F /* libBaseFeature.a */; platformFilter = ios; };
 		4D05B082028190D2440C4987 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1E1185A2482A08999A491 /* UtilityModule.framework */; platformFilter = ios; };
-		7780BC043D42C261A3473D62 /* SplashComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3F4F4A75A97CE313508142 /* SplashComponent.swift */; };
 		8DE1B6A257F53B6FD818B1C2 /* TargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76792A301BD8D1F9F04D15 /* TargetTests.swift */; };
+		9010939129CD2E89004D2003 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010938829CD2DCC004D2003 /* SplashViewModel.swift */; };
+		9010939229CD2E89004D2003 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010938729CD2DCC004D2003 /* SplashView.swift */; };
+		9010939329CD2E89004D2003 /* SplashComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9010938629CD2DCC004D2003 /* SplashComponent.swift */; };
+		9010939429CD2E92004D2003 /* SplashFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14971762E8B05E4D3B7BC002 /* SplashFactory.swift */; };
 		AAE86F8308718F97CEADD5E1 /* SplashFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7653584BAD81B72F4454519 /* SplashFeatureInterface.framework */; platformFilter = ios; };
-		C461147611BE31C94214B458 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9799DB55E47E0465DCCC1EB0 /* SplashView.swift */; };
 		EE119E0636DADC4DB1E12EB3 /* SplashFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7653584BAD81B72F4454519 /* SplashFeatureInterface.framework */; platformFilter = ios; };
 		F3B24ABF6F6245DDB0BE7581 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260868B512E4E5113D021914 /* DesignSystem.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
@@ -86,20 +86,20 @@
 		01E3336E6F1446486DC96970 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		0A76792A301BD8D1F9F04D15 /* TargetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTests.swift; sourceTree = "<group>"; };
 		121FB5386D70BEE897C668C0 /* libSplashFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSplashFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		14971762E8B05E4D3B7BC002 /* SplashFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFactory.swift; sourceTree = "<group>"; };
 		25528336503CF04F62856CFC /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		260868B512E4E5113D021914 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436EA41EEAA19282912B1564 /* SplashFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4999665B7AF5738E5AEFD9FA /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
-		4EF6A87568CC19FD75E0F63B /* SignupFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFactory.swift; sourceTree = "<group>"; };
-		5A3F4F4A75A97CE313508142 /* SplashComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashComponent.swift; sourceTree = "<group>"; };
 		5AE1E1185A2482A08999A491 /* UtilityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DE664234B8254F8803B0AEC /* GlobalThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8C151BEFABEFD262100A9F /* libBaseFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9799DB55E47E0465DCCC1EB0 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		9010938629CD2DCC004D2003 /* SplashComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashComponent.swift; sourceTree = "<group>"; };
+		9010938729CD2DCC004D2003 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		9010938829CD2DCC004D2003 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		9B8FB4D50B7B3E317F9805EB /* SplashFeatureInterface-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SplashFeatureInterface-Info.plist"; sourceTree = "<group>"; };
 		C7653584BAD81B72F4454519 /* SplashFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SplashFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA64442FEC0ADB5CB5FB12E8 /* SplashFeatureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SplashFeatureTests-Info.plist"; sourceTree = "<group>"; };
-		F40E93918CBE5CE2DCF36DA5 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,7 @@
 		23762B11E57D1DF2899F66E5 /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				4EF6A87568CC19FD75E0F63B /* SignupFactory.swift */,
+				14971762E8B05E4D3B7BC002 /* SplashFactory.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -213,9 +213,9 @@
 		EC1E1E4779BC3A155D105B55 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5A3F4F4A75A97CE313508142 /* SplashComponent.swift */,
-				9799DB55E47E0465DCCC1EB0 /* SplashView.swift */,
-				F40E93918CBE5CE2DCF36DA5 /* SplashViewModel.swift */,
+				9010938629CD2DCC004D2003 /* SplashComponent.swift */,
+				9010938729CD2DCC004D2003 /* SplashView.swift */,
+				9010938829CD2DCC004D2003 /* SplashViewModel.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -308,8 +308,6 @@
 			isa = PBXProject;
 			attributes = {
 				ORGANIZATIONNAME = "Team-Return";
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = EDAA5C526BA4C433E0610152 /* Build configuration list for PBXProject "SplashFeature" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -420,9 +418,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7780BC043D42C261A3473D62 /* SplashComponent.swift in Sources */,
-				C461147611BE31C94214B458 /* SplashView.swift in Sources */,
-				08117A3B96EE12A0758AB107 /* SplashViewModel.swift in Sources */,
+				9010939129CD2E89004D2003 /* SplashViewModel.swift in Sources */,
+				9010939429CD2E92004D2003 /* SplashFactory.swift in Sources */,
+				9010939329CD2E89004D2003 /* SplashComponent.swift in Sources */,
+				9010939229CD2E89004D2003 /* SplashView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,7 +429,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A4ED6B0B1148EE7632A3C4C /* SignupFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +556,7 @@
 		62C42232AA2FABEADF395069 /* DEV */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/SplashFeatureTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -613,6 +612,7 @@
 		68732624CB21620890E25356 /* STAGE */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/SplashFeatureTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -636,6 +636,7 @@
 		7D038D3521B6FF57FBEB5CA4 /* PROD */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Derived/InfoPlists/SplashFeatureTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;

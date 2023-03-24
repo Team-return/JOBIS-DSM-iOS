@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0492A24C3B5989351D8271B8 /* MainTabComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BAC650CFF838816994D3E4 /* MainTabComponent.swift */; };
+		0D9A23CC5FEBA06D5CF8F0D5 /* MainTabFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801CC648EF392128F4E2F769 /* MainTabFactory.swift */; };
 		22F3A2B31DABC4A56B220D12 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E196801A30899B177B6CDF19 /* DesignSystem.framework */; platformFilter = ios; };
+		29FF96BA57A10CD98DD12224 /* libMenuFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D78265675E1BF751DA8733DE /* libMenuFeature.a */; platformFilter = ios; };
+		309F601F2FF3C51E03F884B3 /* HomeFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8ED7C938358A2B1F9AB7705 /* HomeFeatureInterface.framework */; platformFilter = ios; };
+		372E9A33821F2FE21A608676 /* MyPageFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09C19C44B2AB18CD5BC56D94 /* MyPageFeatureInterface.framework */; platformFilter = ios; };
 		3798A9A77EC4898A9C6C5C4D /* MainTabFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29F9AFBCF7026C146132F61 /* MainTabFeatureInterface.framework */; platformFilter = ios; };
 		3B753B3C77DC28FBF3A97D36 /* TargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F9986A5B8856D9676589FF /* TargetTests.swift */; };
 		48BA7E50C005F48A1A174821 /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D28D30E041DE42D4D23D443B /* libBaseFeature.a */; platformFilter = ios; };
+		5594BFE7180206382CD3F4B0 /* MainTabFeatureComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491EBB424DF143612440D0CD /* MainTabFeatureComponent.swift */; };
+		581EDE097676FD845C54C70D /* libMenuFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = D78265675E1BF751DA8733DE /* libMenuFeature.a */; platformFilter = ios; };
 		582B10A861739152167E03B7 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBECDB922895C4849972062B /* UtilityModule.framework */; platformFilter = ios; };
 		5BB35C687297C70D8350DB83 /* GlobalThirdPartyLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 166134A53F9AF245419487FC /* GlobalThirdPartyLibrary.framework */; platformFilter = ios; };
 		6EF5C6F00AD615D1BAEB3A26 /* MainTabFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C29F9AFBCF7026C146132F61 /* MainTabFeatureInterface.framework */; platformFilter = ios; };
+		7108CCC3D730BA22998581A9 /* libHomeFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = 27E1C833ED056E10B8A43DD7 /* libHomeFeature.a */; platformFilter = ios; };
 		7A2AA10D298C08B3C3BD053C /* libMainTabFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B87DC1CCA3645A00392EA97 /* libMainTabFeature.a */; platformFilter = ios; };
-		CA7FA76B918FA1A7E319C4F1 /* SignupFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD1EC33594EF58DAD6988C9 /* SignupFactory.swift */; };
+		9444661F9552223345E97C8B /* MainTabFeatureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13CC4EE945444C6BBE8A009A /* MainTabFeatureViewModel.swift */; };
+		9D8977B2DD948D542DC2DCBD /* MainTabFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1610E7EF48955038073D4D1F /* MainTabFeatureView.swift */; };
+		A2FBD77B1D0BB6856E663D3A /* libMyPageFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = ADC25BF8C61CDEDE8E43E1D3 /* libMyPageFeature.a */; platformFilter = ios; };
+		AC01F1770AADD4EE81BF11D2 /* libMyPageFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADC25BF8C61CDEDE8E43E1D3 /* libMyPageFeature.a */; platformFilter = ios; };
 		D3C2ED92595A0AB55EE5270B /* libBaseFeature.a in Dependencies */ = {isa = PBXBuildFile; fileRef = D28D30E041DE42D4D23D443B /* libBaseFeature.a */; platformFilter = ios; };
-		F1D8AC8B8EA754E7D070755E /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427A69B694F344C48110AB55 /* MainTabView.swift */; };
+		D891EF27E631433218BCD00B /* libHomeFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 27E1C833ED056E10B8A43DD7 /* libHomeFeature.a */; platformFilter = ios; };
+		F7A4A05602C57194F57EB304 /* MenuFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EB4B908EB2A15F543C887A7 /* MenuFeatureInterface.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +55,9 @@
 			dstSubfolderSpec = 16;
 			files = (
 				D3C2ED92595A0AB55EE5270B /* libBaseFeature.a in Dependencies */,
+				7108CCC3D730BA22998581A9 /* libHomeFeature.a in Dependencies */,
+				581EDE097676FD845C54C70D /* libMenuFeature.a in Dependencies */,
+				A2FBD77B1D0BB6856E663D3A /* libMyPageFeature.a in Dependencies */,
 			);
 			name = Dependencies;
 			runOnlyForDeploymentPostprocessing = 1;
@@ -82,21 +95,28 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		09BAC650CFF838816994D3E4 /* MainTabComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabComponent.swift; sourceTree = "<group>"; };
+		09C19C44B2AB18CD5BC56D94 /* MyPageFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MyPageFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EB4B908EB2A15F543C887A7 /* MenuFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MenuFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13CC4EE945444C6BBE8A009A /* MainTabFeatureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabFeatureViewModel.swift; sourceTree = "<group>"; };
 		14F9986A5B8856D9676589FF /* TargetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTests.swift; sourceTree = "<group>"; };
+		1610E7EF48955038073D4D1F /* MainTabFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabFeatureView.swift; sourceTree = "<group>"; };
 		166134A53F9AF245419487FC /* GlobalThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B278ABB5F11ADB357A2A20C /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
-		1FD1EC33594EF58DAD6988C9 /* SignupFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupFactory.swift; sourceTree = "<group>"; };
+		27E1C833ED056E10B8A43DD7 /* libHomeFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHomeFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B87DC1CCA3645A00392EA97 /* libMainTabFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMainTabFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		427A69B694F344C48110AB55 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		491EBB424DF143612440D0CD /* MainTabFeatureComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabFeatureComponent.swift; sourceTree = "<group>"; };
 		6CF6A327B18F2F16B1BB9AE5 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
+		801CC648EF392128F4E2F769 /* MainTabFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabFactory.swift; sourceTree = "<group>"; };
 		87674745029314D44C8B6C74 /* MainTabFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTabFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		88C90947C6AB3D6DF95F1679 /* MainTabFeatureInterface-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MainTabFeatureInterface-Info.plist"; sourceTree = "<group>"; };
 		A1AB0AFEBFFA30F2BEE5B16B /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
+		ADC25BF8C61CDEDE8E43E1D3 /* libMyPageFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMyPageFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBECDB922895C4849972062B /* UtilityModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UtilityModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29F9AFBCF7026C146132F61 /* MainTabFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainTabFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28D30E041DE42D4D23D443B /* libBaseFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D78265675E1BF751DA8733DE /* libMenuFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMenuFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E196801A30899B177B6CDF19 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8ED7C938358A2B1F9AB7705 /* HomeFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HomeFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C0F30B59ED493DE2160C7E /* MainTabFeatureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MainTabFeatureTests-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,8 +143,14 @@
 				48BA7E50C005F48A1A174821 /* libBaseFeature.a in Frameworks */,
 				22F3A2B31DABC4A56B220D12 /* DesignSystem.framework in Frameworks */,
 				5BB35C687297C70D8350DB83 /* GlobalThirdPartyLibrary.framework in Frameworks */,
+				D891EF27E631433218BCD00B /* libHomeFeature.a in Frameworks */,
+				309F601F2FF3C51E03F884B3 /* HomeFeatureInterface.framework in Frameworks */,
 				7A2AA10D298C08B3C3BD053C /* libMainTabFeature.a in Frameworks */,
 				6EF5C6F00AD615D1BAEB3A26 /* MainTabFeatureInterface.framework in Frameworks */,
+				29FF96BA57A10CD98DD12224 /* libMenuFeature.a in Frameworks */,
+				F7A4A05602C57194F57EB304 /* MenuFeatureInterface.framework in Frameworks */,
+				AC01F1770AADD4EE81BF11D2 /* libMyPageFeature.a in Frameworks */,
+				372E9A33821F2FE21A608676 /* MyPageFeatureInterface.framework in Frameworks */,
 				582B10A861739152167E03B7 /* UtilityModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,10 +179,16 @@
 			children = (
 				E196801A30899B177B6CDF19 /* DesignSystem.framework */,
 				166134A53F9AF245419487FC /* GlobalThirdPartyLibrary.framework */,
+				E8ED7C938358A2B1F9AB7705 /* HomeFeatureInterface.framework */,
 				D28D30E041DE42D4D23D443B /* libBaseFeature.a */,
+				27E1C833ED056E10B8A43DD7 /* libHomeFeature.a */,
 				3B87DC1CCA3645A00392EA97 /* libMainTabFeature.a */,
+				D78265675E1BF751DA8733DE /* libMenuFeature.a */,
+				ADC25BF8C61CDEDE8E43E1D3 /* libMyPageFeature.a */,
 				C29F9AFBCF7026C146132F61 /* MainTabFeatureInterface.framework */,
 				87674745029314D44C8B6C74 /* MainTabFeatureTests.xctest */,
+				0EB4B908EB2A15F543C887A7 /* MenuFeatureInterface.framework */,
+				09C19C44B2AB18CD5BC56D94 /* MyPageFeatureInterface.framework */,
 				BBECDB922895C4849972062B /* UtilityModule.framework */,
 			);
 			name = Products;
@@ -165,7 +197,7 @@
 		3E4C8C8B8BE475C6AA4B276C /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				1FD1EC33594EF58DAD6988C9 /* SignupFactory.swift */,
+				801CC648EF392128F4E2F769 /* MainTabFactory.swift */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -220,8 +252,9 @@
 		F0696C48EBC95B5147A25ECB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				09BAC650CFF838816994D3E4 /* MainTabComponent.swift */,
-				427A69B694F344C48110AB55 /* MainTabView.swift */,
+				491EBB424DF143612440D0CD /* MainTabFeatureComponent.swift */,
+				1610E7EF48955038073D4D1F /* MainTabFeatureView.swift */,
+				13CC4EE945444C6BBE8A009A /* MainTabFeatureViewModel.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -417,8 +450,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0492A24C3B5989351D8271B8 /* MainTabComponent.swift in Sources */,
-				F1D8AC8B8EA754E7D070755E /* MainTabView.swift in Sources */,
+				5594BFE7180206382CD3F4B0 /* MainTabFeatureComponent.swift in Sources */,
+				9D8977B2DD948D542DC2DCBD /* MainTabFeatureView.swift in Sources */,
+				9444661F9552223345E97C8B /* MainTabFeatureViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +468,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA7FA76B918FA1A7E319C4F1 /* SignupFactory.swift in Sources */,
+				0D9A23CC5FEBA06D5CF8F0D5 /* MainTabFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

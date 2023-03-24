@@ -1,17 +1,10 @@
 import SwiftUI
 import NeedleFoundation
-import DomainModule
 
-public protocol SplashDependency: Dependency {
-    var reissueTokenUseCase: any ReissueTokenUseCase { get }
-}
+public protocol SplashDependency: Dependency {}
 
-public final class SplashComponent: Component<SplashDependency> {
+public final class SplashComponent: Component<SplashDependency>, SplashFactory {
     public func makeView() -> some View {
-        SplashView(
-            viewModel: .init(
-                reissueTokenUseCase: dependency.reissueTokenUseCase
-            )
-        )
+        Text("Text")
     }
 }

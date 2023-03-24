@@ -10,6 +10,9 @@ public enum ModulePaths {
 
 public extension ModulePaths {
     enum Feature: String {
+        case MyPageFeature
+        case HomeFeature
+        case MenuFeature
         case BaseFeature
         case MainTabFeature
         case RootFeature

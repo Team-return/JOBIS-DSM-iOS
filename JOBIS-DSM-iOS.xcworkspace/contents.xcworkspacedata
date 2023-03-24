@@ -34,7 +34,16 @@
             location = "group:BaseFeature/BaseFeature.xcodeproj">
          </FileRef>
          <FileRef
+            location = "group:HomeFeature/HomeFeature.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:MainTabFeature/MainTabFeature.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:MenuFeature/MenuFeature.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:MyPageFeature/MyPageFeature.xcodeproj">
          </FileRef>
          <FileRef
             location = "group:RootFeature/RootFeature.xcodeproj">
@@ -80,6 +89,12 @@
                   name = "checkouts">
                   <FileRef
                      location = "group:Emdpoint/Emdpoint.xcodeproj">
+                  </FileRef>
+                  <FileRef
+                     location = "group:Kingfisher/Kingfisher.xcodeproj">
+                  </FileRef>
+                  <FileRef
+                     location = "group:Swinject/Swinject.xcodeproj">
                   </FileRef>
                   <FileRef
                      location = "group:needle/NeedleFoundation.xcodeproj">
