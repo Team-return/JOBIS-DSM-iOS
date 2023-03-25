@@ -19,7 +19,7 @@ import SplashFeatureInterface
 import SwiftUI
 
 // swiftlint:disable unused_declaration
-private let needleDependenciesHash: String? = nil
+private let needleDependenciesHash : String? = nil
 
 // MARK: - Traversal Helpers
 
@@ -34,7 +34,7 @@ private func parent1(_ component: NeedleFoundation.Scope) -> NeedleFoundation.Sc
 private class SplashDependencye0cb7136f2ec3edfd60aProvider: SplashDependency {
 
 
-    init() { 
+    init() {
 
     }
 }

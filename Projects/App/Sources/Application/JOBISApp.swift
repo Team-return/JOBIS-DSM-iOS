@@ -6,7 +6,7 @@ import NeedleFoundation
 @main
 struct JOBISApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @StateObject var appState = AppState(sceneFlow: .splash, features: .init())
+    @StateObject var appState = AppState(sceneFlow: .splash)
     private let keychain: any Keychain
 
     init() {

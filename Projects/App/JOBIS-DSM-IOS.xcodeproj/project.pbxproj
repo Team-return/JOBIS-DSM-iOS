@@ -32,6 +32,7 @@
 		773593382B75147C9CFF04EE /* SignupFeatureInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 852AE81747253AEB11DFD0AB /* SignupFeatureInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7CD09DC38BA2A65D09296EA9 /* libMyPageFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1766071F1890918FC0E7A730 /* libMyPageFeature.a */; platformFilter = ios; };
 		8C0CCC6B9E7EEB78CD8555F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1719D1E082C2417FA069C53E /* AppDelegate.swift */; };
+		8C34E7742AC6ACDEEB9607EB /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1653CDE7DC1D34682D46A44 /* NeedleGenerated.swift */; };
 		8E98A199A4AFE050ED25834B /* MenuFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A3172F3380DC396A86035D6 /* MenuFeatureInterface.framework */; platformFilter = ios; };
 		8FD7DC0B2C322A9B3F7216DF /* libMainTabFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D709BBD38D81152403749B5C /* libMainTabFeature.a */; platformFilter = ios; };
 		9227056807CBDE9CBFAEC009 /* DesignSystem.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31EE34E7976BF448188BEBC8 /* DesignSystem.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -124,6 +125,7 @@
 		BCA983B7671593840CA60ABE /* SplashFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SplashFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5904B3946CD03DD12C39B67 /* JOBIS_DSM_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JOBIS_DSM_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF7FDB77E1BC9F4B5313C3D2 /* RootFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RootFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D1653CDE7DC1D34682D46A44 /* NeedleGenerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 		D5B206AFDC64DE7BFA4653A3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D709BBD38D81152403749B5C /* libMainTabFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMainTabFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB31325323F4AFB1A15F16BC /* libJwtStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJwtStore.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 				AC20D6B2F1F977EC8E805402 /* DI */,
 				1719D1E082C2417FA069C53E /* AppDelegate.swift */,
 				AAE1B719CF4E49143E0520B2 /* JOBISApp.swift */,
+				D1653CDE7DC1D34682D46A44 /* NeedleGenerated.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				8C0CCC6B9E7EEB78CD8555F3 /* AppDelegate.swift in Sources */,
 				D2F456B5EDF98690FB745A74 /* AppComponent.swift in Sources */,
 				4AFB216411B018B6CDDFD650 /* JOBISApp.swift in Sources */,
+				8C34E7742AC6ACDEEB9607EB /* NeedleGenerated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

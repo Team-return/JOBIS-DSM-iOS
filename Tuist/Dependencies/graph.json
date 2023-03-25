@@ -1,1330 +1,8 @@
 {
   "externalProjects" : [
-    "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle",
+    "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting",
     {
-      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle",
-      "options" : {
-        "automaticSchemesOptions" : {
-          "disabled" : {
-
-          }
-        },
-        "disableShowEnvironmentVarsInScriptPhases" : false,
-        "disableBundleAccessors" : false,
-        "disableSynthesizedResourceAccessors" : true,
-        "textSettings" : {
-
-        }
-      },
-      "additionalFiles" : [
-
-      ],
-      "targets" : [
-        {
-          "scripts" : [
-
-          ],
-          "deploymentTarget" : {
-            "iOS" : {
-              "_0" : "11.0",
-              "_1" : 3
-            }
-          },
-          "prune" : false,
-          "bundleId" : "NeedleFoundation",
-          "copyFiles" : [
-
-          ],
-          "launchArguments" : [
-
-          ],
-          "dependencies" : [
-
-          ],
-          "additionalFiles" : [
-
-          ],
-          "name" : "NeedleFoundation",
-          "settings" : {
-            "base" : {
-              "GCC_PREPROCESSOR_DEFINITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE=1"
-                  ]
-                }
-              },
-              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE"
-                  ]
-                }
-              },
-              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "ALWAYS_SEARCH_USER_PATHS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "GCC_NO_COMMON_BLOCKS" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "FRAMEWORK_SEARCH_PATHS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
-                  ]
-                }
-              },
-              "USE_HEADERMAP" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "SWIFT_SUPPRESS_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "CLANG_ENABLE_OBJC_WEAK" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "ENABLE_STRICT_OBJC_MSGSEND" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              }
-            },
-            "configurations" : [
-              {
-                "name" : "STAGE",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "DEV",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "PROD",
-                "variant" : "release"
-              },
-              {
-                "settings" : {
-
-                }
-              }
-            ],
-            "defaultSettings" : {
-              "recommended" : {
-                "excluding" : [
-
-                ]
-              }
-            }
-          },
-          "coreDataModels" : [
-
-          ],
-          "platform" : "ios",
-          "environment" : {
-
-          },
-          "sources" : [
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Pluginized\/PluginizedComponent.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Pluginized\/Internal\/PluginExtensionProviderRegistry.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Pluginized\/NonCoreComponent.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Component.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Pluginized\/PluginizedScopeLifecycle.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Internal\/DependencyProviderRegistry.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Bootstrap.swift"
-            }
-          ],
-          "resources" : [
-
-          ],
-          "product" : "staticFramework",
-          "buildRules" : [
-
-          ],
-          "playgrounds" : [
-
-          ],
-          "productName" : "NeedleFoundation",
-          "filesGroup" : {
-            "group" : {
-              "name" : "Project"
-            }
-          },
-          "rawScriptBuildPhases" : [
-
-          ],
-          "infoPlist" : {
-            "extendingDefault" : {
-              "with" : {
-
-              }
-            }
-          }
-        },
-        {
-          "scripts" : [
-
-          ],
-          "deploymentTarget" : {
-            "iOS" : {
-              "_0" : "11.0",
-              "_1" : 3
-            }
-          },
-          "prune" : false,
-          "bundleId" : "NeedleFoundationTest",
-          "copyFiles" : [
-
-          ],
-          "launchArguments" : [
-
-          ],
-          "dependencies" : [
-            {
-              "target" : {
-                "name" : "NeedleFoundation"
-              }
-            }
-          ],
-          "additionalFiles" : [
-
-          ],
-          "name" : "NeedleFoundationTest",
-          "settings" : {
-            "base" : {
-              "ALWAYS_SEARCH_USER_PATHS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "GCC_PREPROCESSOR_DEFINITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE=1"
-                  ]
-                }
-              },
-              "FRAMEWORK_SEARCH_PATHS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
-                  ]
-                }
-              },
-              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "GCC_NO_COMMON_BLOCKS" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "USE_HEADERMAP" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE"
-                  ]
-                }
-              },
-              "SWIFT_SUPPRESS_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "CLANG_ENABLE_OBJC_WEAK" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "ENABLE_STRICT_OBJC_MSGSEND" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              }
-            },
-            "configurations" : [
-              {
-                "name" : "DEV",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "PROD",
-                "variant" : "release"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "STAGE",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              }
-            ],
-            "defaultSettings" : {
-              "recommended" : {
-                "excluding" : [
-
-                ]
-              }
-            }
-          },
-          "coreDataModels" : [
-
-          ],
-          "platform" : "ios",
-          "environment" : {
-
-          },
-          "sources" : [
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundationTest\/MockComponentPathBuilder.swift"
-            }
-          ],
-          "resources" : [
-
-          ],
-          "product" : "staticFramework",
-          "buildRules" : [
-
-          ],
-          "playgrounds" : [
-
-          ],
-          "productName" : "NeedleFoundationTest",
-          "filesGroup" : {
-            "group" : {
-              "name" : "Project"
-            }
-          },
-          "rawScriptBuildPhases" : [
-
-          ],
-          "infoPlist" : {
-            "extendingDefault" : {
-              "with" : {
-
-              }
-            }
-          }
-        }
-      ],
-      "settings" : {
-        "base" : {
-          "SWIFT_VERSION" : {
-            "string" : {
-              "_0" : "5.0.0"
-            }
-          }
-        },
-        "configurations" : [
-          {
-            "name" : "STAGE",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "DEV",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "PROD",
-            "variant" : "release"
-          },
-          {
-            "settings" : {
-
-            }
-          }
-        ],
-        "defaultSettings" : {
-          "recommended" : {
-            "excluding" : [
-
-            ]
-          }
-        }
-      },
-      "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle",
-      "isExternal" : true,
-      "filesGroup" : {
-        "group" : {
-          "name" : "Project"
-        }
-      },
-      "packages" : [
-
-      ],
-      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/NeedleFoundation.xcodeproj",
-      "resourceSynthesizers" : [
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Strings"
-            }
-          },
-          "parser" : "strings",
-          "extensions" : [
-            "strings",
-            "stringsdict"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Assets"
-            }
-          },
-          "parser" : "assets",
-          "extensions" : [
-            "xcassets"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Plists"
-            }
-          },
-          "parser" : "plists",
-          "extensions" : [
-            "plist"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Fonts"
-            }
-          },
-          "parser" : "fonts",
-          "extensions" : [
-            "ttf",
-            "otf",
-            "ttc"
-          ]
-        }
-      ],
-      "lastUpgradeCheck" : "99.9.9",
-      "schemes" : [
-
-      ],
-      "name" : "NeedleFoundation"
-    },
-    "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher",
-    {
-      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher",
-      "options" : {
-        "automaticSchemesOptions" : {
-          "disabled" : {
-
-          }
-        },
-        "disableShowEnvironmentVarsInScriptPhases" : false,
-        "disableBundleAccessors" : false,
-        "disableSynthesizedResourceAccessors" : true,
-        "textSettings" : {
-
-        }
-      },
-      "additionalFiles" : [
-
-      ],
-      "targets" : [
-        {
-          "scripts" : [
-
-          ],
-          "deploymentTarget" : {
-            "iOS" : {
-              "_0" : "12.0",
-              "_1" : 3
-            }
-          },
-          "prune" : false,
-          "bundleId" : "Kingfisher",
-          "copyFiles" : [
-
-          ],
-          "launchArguments" : [
-
-          ],
-          "dependencies" : [
-
-          ],
-          "additionalFiles" : [
-
-          ],
-          "name" : "Kingfisher",
-          "settings" : {
-            "base" : {
-              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE"
-                  ]
-                }
-              },
-              "ALWAYS_SEARCH_USER_PATHS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "FRAMEWORK_SEARCH_PATHS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
-                  ]
-                }
-              },
-              "ENABLE_STRICT_OBJC_MSGSEND" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "GCC_NO_COMMON_BLOCKS" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "USE_HEADERMAP" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "SWIFT_SUPPRESS_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "CLANG_ENABLE_OBJC_WEAK" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "GCC_PREPROCESSOR_DEFINITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE=1"
-                  ]
-                }
-              }
-            },
-            "configurations" : [
-              {
-                "name" : "PROD",
-                "variant" : "release"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "DEV",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "STAGE",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              }
-            ],
-            "defaultSettings" : {
-              "recommended" : {
-                "excluding" : [
-
-                ]
-              }
-            }
-          },
-          "coreDataModels" : [
-
-          ],
-          "platform" : "ios",
-          "environment" : {
-
-          },
-          "sources" : [
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageProcessor.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/ImageSource\/Resource.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFImage.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/Runtime.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/ImageSource\/Source.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/DiskStorage.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/ImageSource\/ImageDataProvider.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/NSTextAttachment+Kingfisher.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/ImageContext.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/SessionDataTask.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/String+MD5.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImageDownloaderDelegate.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/AuthenticationChallengeResponsable.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Views\/AnimatedImageView.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/Placeholder.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/ExtensionHelpers.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageFormat.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImageModifier.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KF.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/CallbackQueue.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/Storage.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Views\/Indicator.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImagePrefetcher.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFImageRenderer.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/Delegate.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/RequestModifier.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFImageOptions.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KingfisherOptionsInfo.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/WKInterfaceImage+Kingfisher.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImageDownloader.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImageDataProcessor.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/Filter.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/FormatIndicatedCacheSerializer.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageProgressive.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFAnimatedImage.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/ImageView+Kingfisher.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KingfisherManager.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageDrawing.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/UIButton+Kingfisher.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/Result.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/CPListItem+Kingfisher.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFImageProtocol.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/SessionDelegate.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/CacheSerializer.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/SizeExtensions.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/TVMonogramView+Kingfisher.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/GIFAnimatedImage.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/ImageSource\/AVAssetImageDataProvider.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/ImageBinder.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/RetryStrategy.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/GraphicsContext.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KingfisherError.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/ImageCache.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KFOptionsSetter.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/Box.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/RedirectHandler.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/MemoryStorage.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/Kingfisher.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageTransition.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/NSButton+Kingfisher.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/Image.swift"
-            }
-          ],
-          "resources" : [
-
-          ],
-          "product" : "staticFramework",
-          "buildRules" : [
-
-          ],
-          "playgrounds" : [
-
-          ],
-          "productName" : "Kingfisher",
-          "filesGroup" : {
-            "group" : {
-              "name" : "Project"
-            }
-          },
-          "rawScriptBuildPhases" : [
-
-          ],
-          "infoPlist" : {
-            "extendingDefault" : {
-              "with" : {
-
-              }
-            }
-          }
-        }
-      ],
-      "settings" : {
-        "base" : {
-
-        },
-        "configurations" : [
-          {
-            "name" : "PROD",
-            "variant" : "release"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "DEV",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "STAGE",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          }
-        ],
-        "defaultSettings" : {
-          "recommended" : {
-            "excluding" : [
-
-            ]
-          }
-        }
-      },
-      "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher",
-      "isExternal" : true,
-      "filesGroup" : {
-        "group" : {
-          "name" : "Project"
-        }
-      },
-      "packages" : [
-
-      ],
-      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Kingfisher.xcodeproj",
-      "resourceSynthesizers" : [
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Strings"
-            }
-          },
-          "parser" : "strings",
-          "extensions" : [
-            "stringsdict",
-            "strings"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Assets"
-            }
-          },
-          "parser" : "assets",
-          "extensions" : [
-            "xcassets"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Plists"
-            }
-          },
-          "parser" : "plists",
-          "extensions" : [
-            "plist"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Fonts"
-            }
-          },
-          "parser" : "fonts",
-          "extensions" : [
-            "ttf",
-            "otf",
-            "ttc"
-          ]
-        }
-      ],
-      "lastUpgradeCheck" : "99.9.9",
-      "schemes" : [
-
-      ],
-      "name" : "Kingfisher"
-    },
-    "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject",
-    {
-      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject",
-      "options" : {
-        "automaticSchemesOptions" : {
-          "disabled" : {
-
-          }
-        },
-        "disableShowEnvironmentVarsInScriptPhases" : false,
-        "disableBundleAccessors" : false,
-        "disableSynthesizedResourceAccessors" : true,
-        "textSettings" : {
-
-        }
-      },
-      "additionalFiles" : [
-
-      ],
-      "targets" : [
-        {
-          "scripts" : [
-
-          ],
-          "deploymentTarget" : {
-            "iOS" : {
-              "_0" : "11.0",
-              "_1" : 3
-            }
-          },
-          "prune" : false,
-          "bundleId" : "Swinject",
-          "copyFiles" : [
-
-          ],
-          "launchArguments" : [
-
-          ],
-          "dependencies" : [
-
-          ],
-          "additionalFiles" : [
-
-          ],
-          "name" : "Swinject",
-          "settings" : {
-            "base" : {
-              "ALWAYS_SEARCH_USER_PATHS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "ENABLE_STRICT_OBJC_MSGSEND" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE"
-                  ]
-                }
-              },
-              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "FRAMEWORK_SEARCH_PATHS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
-                  ]
-                }
-              },
-              "GCC_NO_COMMON_BLOCKS" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "USE_HEADERMAP" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "SWIFT_SUPPRESS_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "CLANG_ENABLE_OBJC_WEAK" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "GCC_PREPROCESSOR_DEFINITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE=1"
-                  ]
-                }
-              }
-            },
-            "configurations" : [
-              {
-                "name" : "PROD",
-                "variant" : "release"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "DEV",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "STAGE",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              }
-            ],
-            "defaultSettings" : {
-              "recommended" : {
-                "excluding" : [
-
-                ]
-              }
-            }
-          },
-          "coreDataModels" : [
-
-          ],
-          "platform" : "ios",
-          "environment" : {
-
-          },
-          "sources" : [
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ServiceEntry.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/InstanceStorage.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ServiceKey.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ServiceEntry.TypeForwarding.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Container.TypeForwarding.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/InstanceWrapper.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/FunctionType.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ObjectScope.Standard.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Container.Logging.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Assembler.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/DebugHelper.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ObjectScope.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Resolver.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/RecursiveLock.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Behavior.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Assembly.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/UnavailableItems.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Container.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Container.Arguments.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/GraphIdentifier.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/_Resolver.swift"
-            }
-          ],
-          "resources" : [
-
-          ],
-          "product" : "framework",
-          "buildRules" : [
-
-          ],
-          "playgrounds" : [
-
-          ],
-          "productName" : "Swinject",
-          "filesGroup" : {
-            "group" : {
-              "name" : "Project"
-            }
-          },
-          "rawScriptBuildPhases" : [
-
-          ],
-          "infoPlist" : {
-            "extendingDefault" : {
-              "with" : {
-
-              }
-            }
-          }
-        }
-      ],
-      "settings" : {
-        "base" : {
-
-        },
-        "configurations" : [
-          {
-            "name" : "PROD",
-            "variant" : "release"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "DEV",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "STAGE",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          }
-        ],
-        "defaultSettings" : {
-          "recommended" : {
-            "excluding" : [
-
-            ]
-          }
-        }
-      },
-      "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject",
-      "isExternal" : true,
-      "filesGroup" : {
-        "group" : {
-          "name" : "Project"
-        }
-      },
-      "packages" : [
-
-      ],
-      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Swinject.xcodeproj",
-      "resourceSynthesizers" : [
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Strings"
-            }
-          },
-          "parser" : "strings",
-          "extensions" : [
-            "stringsdict",
-            "strings"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Assets"
-            }
-          },
-          "parser" : "assets",
-          "extensions" : [
-            "xcassets"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Plists"
-            }
-          },
-          "parser" : "plists",
-          "extensions" : [
-            "plist"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Fonts"
-            }
-          },
-          "parser" : "fonts",
-          "extensions" : [
-            "ttc",
-            "otf",
-            "ttf"
-          ]
-        }
-      ],
-      "lastUpgradeCheck" : "99.9.9",
-      "schemes" : [
-
-      ],
-      "name" : "Swinject"
-    },
-    "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting",
-    {
-      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting",
+      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting",
       "options" : {
         "automaticSchemesOptions" : {
           "disabled" : {
@@ -1369,7 +47,7 @@
             {
               "project" : {
                 "target" : "CwlCatchException",
-                "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException"
+                "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException"
               }
             }
           ],
@@ -1454,8 +132,8 @@
             },
             "configurations" : [
               {
-                "name" : "PROD",
-                "variant" : "release"
+                "name" : "STAGE",
+                "variant" : "debug"
               },
               {
                 "settings" : {
@@ -1463,8 +141,8 @@
                 }
               },
               {
-                "name" : "STAGE",
-                "variant" : "debug"
+                "name" : "PROD",
+                "variant" : "release"
               },
               {
                 "settings" : {
@@ -1498,13 +176,13 @@
           },
           "sources" : [
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlPreconditionTesting\/CwlBadInstructionException.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlPreconditionTesting\/CwlDarwinDefinitions.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlPreconditionTesting\/CwlDarwinDefinitions.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlPreconditionTesting\/CwlBadInstructionException.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlPreconditionTesting\/CwlCatchBadInstruction.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlPreconditionTesting\/CwlCatchBadInstruction.swift"
             }
           ],
           "resources" : [
@@ -1561,9 +239,12 @@
           "name" : "CwlPosixPreconditionTesting",
           "settings" : {
             "base" : {
-              "ENABLE_STRICT_OBJC_MSGSEND" : {
-                "string" : {
-                  "_0" : "NO"
+              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE"
+                  ]
                 }
               },
               "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
@@ -1576,6 +257,11 @@
                   "_0" : "YES"
                 }
               },
+              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
               "FRAMEWORK_SEARCH_PATHS" : {
                 "array" : {
                   "_0" : [
@@ -1584,9 +270,9 @@
                   ]
                 }
               },
-              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
+              "GCC_NO_COMMON_BLOCKS" : {
                 "string" : {
-                  "_0" : "YES"
+                  "_0" : "NO"
                 }
               },
               "USE_HEADERMAP" : {
@@ -1594,16 +280,11 @@
                   "_0" : "NO"
                 }
               },
-              "GCC_NO_COMMON_BLOCKS" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
+              "GCC_PREPROCESSOR_DEFINITIONS" : {
                 "array" : {
                   "_0" : [
                     "$(inherited)",
-                    "SWIFT_PACKAGE"
+                    "SWIFT_PACKAGE=1"
                   ]
                 }
               },
@@ -1617,18 +298,15 @@
                   "_0" : "NO"
                 }
               },
-              "GCC_PREPROCESSOR_DEFINITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE=1"
-                  ]
+              "ENABLE_STRICT_OBJC_MSGSEND" : {
+                "string" : {
+                  "_0" : "NO"
                 }
               }
             },
             "configurations" : [
               {
-                "name" : "DEV",
+                "name" : "STAGE",
                 "variant" : "debug"
               },
               {
@@ -1646,7 +324,7 @@
                 }
               },
               {
-                "name" : "STAGE",
+                "name" : "DEV",
                 "variant" : "debug"
               },
               {
@@ -1672,7 +350,7 @@
           },
           "sources" : [
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlPosixPreconditionTesting\/CwlCatchBadInstructionPosix.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlPosixPreconditionTesting\/CwlCatchBadInstructionPosix.swift"
             }
           ],
           "resources" : [
@@ -1848,10 +526,10 @@
           },
           "sources" : [
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlMachBadInstructionHandler\/mach_excServer.c"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlMachBadInstructionHandler\/mach_excServer.c"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlMachBadInstructionHandler\/CwlMachBadInstructionHandler.m"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlMachBadInstructionHandler\/CwlMachBadInstructionHandler.m"
             }
           ],
           "resources" : [
@@ -1867,7 +545,7 @@
           "productName" : "CwlMachBadInstructionHandler",
           "headers" : {
             "public" : [
-              "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlMachBadInstructionHandler\/include\/CwlMachBadInstructionHandler.h"
+              "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/Sources\/CwlMachBadInstructionHandler\/include\/CwlMachBadInstructionHandler.h"
             ],
             "private" : [
 
@@ -1899,6 +577,15 @@
         },
         "configurations" : [
           {
+            "name" : "STAGE",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
             "name" : "PROD",
             "variant" : "release"
           },
@@ -1915,9 +602,490 @@
             "settings" : {
 
             }
+          }
+        ],
+        "defaultSettings" : {
+          "recommended" : {
+            "excluding" : [
+
+            ]
+          }
+        }
+      },
+      "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting",
+      "isExternal" : true,
+      "filesGroup" : {
+        "group" : {
+          "name" : "Project"
+        }
+      },
+      "packages" : [
+
+      ],
+      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/CwlPreconditionTesting.xcodeproj",
+      "resourceSynthesizers" : [
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Strings"
+            }
+          },
+          "parser" : "strings",
+          "extensions" : [
+            "stringsdict",
+            "strings"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Assets"
+            }
+          },
+          "parser" : "assets",
+          "extensions" : [
+            "xcassets"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Plists"
+            }
+          },
+          "parser" : "plists",
+          "extensions" : [
+            "plist"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Fonts"
+            }
+          },
+          "parser" : "fonts",
+          "extensions" : [
+            "ttc",
+            "ttf",
+            "otf"
+          ]
+        }
+      ],
+      "lastUpgradeCheck" : "99.9.9",
+      "schemes" : [
+
+      ],
+      "name" : "CwlPreconditionTesting"
+    },
+    "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle",
+    {
+      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle",
+      "options" : {
+        "automaticSchemesOptions" : {
+          "disabled" : {
+
+          }
+        },
+        "disableShowEnvironmentVarsInScriptPhases" : false,
+        "disableBundleAccessors" : false,
+        "disableSynthesizedResourceAccessors" : true,
+        "textSettings" : {
+
+        }
+      },
+      "additionalFiles" : [
+
+      ],
+      "targets" : [
+        {
+          "scripts" : [
+
+          ],
+          "deploymentTarget" : {
+            "iOS" : {
+              "_0" : "11.0",
+              "_1" : 3
+            }
+          },
+          "prune" : false,
+          "bundleId" : "NeedleFoundation",
+          "copyFiles" : [
+
+          ],
+          "launchArguments" : [
+
+          ],
+          "dependencies" : [
+
+          ],
+          "additionalFiles" : [
+
+          ],
+          "name" : "NeedleFoundation",
+          "settings" : {
+            "base" : {
+              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE"
+                  ]
+                }
+              },
+              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ENABLE_STRICT_OBJC_MSGSEND" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "ALWAYS_SEARCH_USER_PATHS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "USE_HEADERMAP" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_NO_COMMON_BLOCKS" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "FRAMEWORK_SEARCH_PATHS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
+                  ]
+                }
+              },
+              "SWIFT_SUPPRESS_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "CLANG_ENABLE_OBJC_WEAK" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_PREPROCESSOR_DEFINITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE=1"
+                  ]
+                }
+              }
+            },
+            "configurations" : [
+              {
+                "name" : "PROD",
+                "variant" : "release"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "STAGE",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "DEV",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              }
+            ],
+            "defaultSettings" : {
+              "recommended" : {
+                "excluding" : [
+
+                ]
+              }
+            }
+          },
+          "coreDataModels" : [
+
+          ],
+          "platform" : "ios",
+          "environment" : {
+
+          },
+          "sources" : [
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Component.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Pluginized\/PluginizedComponent.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Internal\/DependencyProviderRegistry.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Bootstrap.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Pluginized\/Internal\/PluginExtensionProviderRegistry.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Pluginized\/PluginizedScopeLifecycle.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundation\/Pluginized\/NonCoreComponent.swift"
+            }
+          ],
+          "resources" : [
+
+          ],
+          "product" : "staticFramework",
+          "buildRules" : [
+
+          ],
+          "playgrounds" : [
+
+          ],
+          "productName" : "NeedleFoundation",
+          "filesGroup" : {
+            "group" : {
+              "name" : "Project"
+            }
+          },
+          "rawScriptBuildPhases" : [
+
+          ],
+          "infoPlist" : {
+            "extendingDefault" : {
+              "with" : {
+
+              }
+            }
+          }
+        },
+        {
+          "scripts" : [
+
+          ],
+          "deploymentTarget" : {
+            "iOS" : {
+              "_0" : "11.0",
+              "_1" : 3
+            }
+          },
+          "prune" : false,
+          "bundleId" : "NeedleFoundationTest",
+          "copyFiles" : [
+
+          ],
+          "launchArguments" : [
+
+          ],
+          "dependencies" : [
+            {
+              "target" : {
+                "name" : "NeedleFoundation"
+              }
+            }
+          ],
+          "additionalFiles" : [
+
+          ],
+          "name" : "NeedleFoundationTest",
+          "settings" : {
+            "base" : {
+              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE"
+                  ]
+                }
+              },
+              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_PREPROCESSOR_DEFINITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE=1"
+                  ]
+                }
+              },
+              "FRAMEWORK_SEARCH_PATHS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
+                  ]
+                }
+              },
+              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "USE_HEADERMAP" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_NO_COMMON_BLOCKS" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ENABLE_STRICT_OBJC_MSGSEND" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "SWIFT_SUPPRESS_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "CLANG_ENABLE_OBJC_WEAK" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ALWAYS_SEARCH_USER_PATHS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              }
+            },
+            "configurations" : [
+              {
+                "name" : "STAGE",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "PROD",
+                "variant" : "release"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "DEV",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              }
+            ],
+            "defaultSettings" : {
+              "recommended" : {
+                "excluding" : [
+
+                ]
+              }
+            }
+          },
+          "coreDataModels" : [
+
+          ],
+          "platform" : "ios",
+          "environment" : {
+
+          },
+          "sources" : [
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/Sources\/NeedleFoundationTest\/MockComponentPathBuilder.swift"
+            }
+          ],
+          "resources" : [
+
+          ],
+          "product" : "staticFramework",
+          "buildRules" : [
+
+          ],
+          "playgrounds" : [
+
+          ],
+          "productName" : "NeedleFoundationTest",
+          "filesGroup" : {
+            "group" : {
+              "name" : "Project"
+            }
+          },
+          "rawScriptBuildPhases" : [
+
+          ],
+          "infoPlist" : {
+            "extendingDefault" : {
+              "with" : {
+
+              }
+            }
+          }
+        }
+      ],
+      "settings" : {
+        "base" : {
+          "SWIFT_VERSION" : {
+            "string" : {
+              "_0" : "5.0.0"
+            }
+          }
+        },
+        "configurations" : [
+          {
+            "name" : "PROD",
+            "variant" : "release"
+          },
+          {
+            "settings" : {
+
+            }
           },
           {
             "name" : "STAGE",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
+            "name" : "DEV",
             "variant" : "debug"
           },
           {
@@ -1934,7 +1102,7 @@
           }
         }
       },
-      "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting",
+      "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle",
       "isExternal" : true,
       "filesGroup" : {
         "group" : {
@@ -1944,7 +1112,7 @@
       "packages" : [
 
       ],
-      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting\/CwlPreconditionTesting.xcodeproj",
+      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle\/NeedleFoundation.xcodeproj",
       "resourceSynthesizers" : [
         {
           "template" : {
@@ -1988,8 +1156,8 @@
           },
           "parser" : "fonts",
           "extensions" : [
-            "ttf",
             "otf",
+            "ttf",
             "ttc"
           ]
         }
@@ -1998,11 +1166,11 @@
       "schemes" : [
 
       ],
-      "name" : "CwlPreconditionTesting"
+      "name" : "NeedleFoundation"
     },
-    "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble",
+    "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble",
     {
-      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble",
+      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble",
       "options" : {
         "automaticSchemesOptions" : {
           "disabled" : {
@@ -2042,19 +1210,19 @@
             {
               "project" : {
                 "target" : "CwlPreconditionTesting",
-                "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
+                "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
               }
             },
             {
               "project" : {
                 "target" : "CwlMachBadInstructionHandler",
-                "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
+                "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
               }
             },
             {
               "project" : {
                 "target" : "CwlPosixPreconditionTesting",
-                "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
+                "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
               }
             }
           ],
@@ -2097,14 +1265,14 @@
                   "_0" : "NO"
                 }
               },
-              "ALWAYS_SEARCH_USER_PATHS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
               "GCC_NO_COMMON_BLOCKS" : {
                 "string" : {
                   "_0" : "NO"
+                }
+              },
+              "ALWAYS_SEARCH_USER_PATHS" : {
+                "string" : {
+                  "_0" : "YES"
                 }
               },
               "HEADER_SEARCH_PATHS" : {
@@ -2144,15 +1312,6 @@
             },
             "configurations" : [
               {
-                "name" : "DEV",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
                 "name" : "STAGE",
                 "variant" : "debug"
               },
@@ -2164,6 +1323,15 @@
               {
                 "name" : "PROD",
                 "variant" : "release"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "DEV",
+                "variant" : "debug"
               },
               {
                 "settings" : {
@@ -2188,166 +1356,166 @@
           },
           "sources" : [
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/NimbleXCTestHandler.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Equal+Tuple.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeLogical.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/NonObjectiveC\/ExceptionCapture.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/AllPass.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeResult.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeWithin.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/PostNotification.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ElementsEqual.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeginWithPrefix.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeNil.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/FailureMessage.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Expectation.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/ExpectationMessage.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeGreaterThan.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Expression.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Equal.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeLogical.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/NMBExpectation.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/AssertionRecorder.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/SatisfyAllOf.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/RaisesException.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeIdenticalTo.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeginWith.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeginWithPrefix.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeWithin.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/NonObjectiveC\/ExceptionCapture.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeGreaterThanOrEqualTo.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Equal+Tuple.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/AllPass.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeEmpty.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/DSL.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/AssertionRecorder.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/HaveCount.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/ExpectationMessage.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/NimbleEnvironment.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/FailureMessage.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/AdapterProtocols.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Match.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/DispatchTimeInterval.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/NimbleEnvironment.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/NMBExpectation.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ContainElementSatisfying.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeAKindOf.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/DispatchTimeInterval.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Equal.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/HaveCount.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/Errors.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/EndWith.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/MatchError.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeginWith.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeNil.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Contain.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeIdenticalTo.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeGreaterThanOrEqualTo.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ElementsEqual.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Expression.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Match.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Async.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/Stringers.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Predicate.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeGreaterThan.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/MatcherProtocols.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/SourceLocation.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeResult.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeEmpty.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeAKindOf.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ThrowError.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeLessThan.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ThrowAssertion.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/Await.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeVoid.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ThrowAssertion.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Expectation.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeAnInstanceOf.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/NimbleXCTestHandler.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/Errors.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Contain.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/SourceLocation.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/MatcherProtocols.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/RaisesException.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Async.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/PostNotification.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ToSucceed.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ToSucceed.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeLessThanOrEqual.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/AdapterProtocols.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeCloseTo.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/AssertionDispatcher.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/DSL+Wait.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeLessThanOrEqual.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/EndWith.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/SatisfyAnyOf.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/Predicate.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/DSL.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/Await.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/MatchError.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeAnInstanceOf.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeCloseTo.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeLessThan.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/BeVoid.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/SatisfyAllOf.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ThrowError.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/ContainElementSatisfying.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Utils\/Stringers.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Adapters\/AssertionDispatcher.swift"
             },
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/DSL+Wait.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Sources\/Nimble\/Matchers\/SatisfyAnyOf.swift"
             }
           ],
           "resources" : [
@@ -2388,572 +1556,6 @@
         },
         "configurations" : [
           {
-            "name" : "DEV",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "STAGE",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "PROD",
-            "variant" : "release"
-          },
-          {
-            "settings" : {
-
-            }
-          }
-        ],
-        "defaultSettings" : {
-          "recommended" : {
-            "excluding" : [
-
-            ]
-          }
-        }
-      },
-      "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble",
-      "isExternal" : true,
-      "filesGroup" : {
-        "group" : {
-          "name" : "Project"
-        }
-      },
-      "packages" : [
-
-      ],
-      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Nimble.xcodeproj",
-      "resourceSynthesizers" : [
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Strings"
-            }
-          },
-          "parser" : "strings",
-          "extensions" : [
-            "strings",
-            "stringsdict"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Assets"
-            }
-          },
-          "parser" : "assets",
-          "extensions" : [
-            "xcassets"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Plists"
-            }
-          },
-          "parser" : "plists",
-          "extensions" : [
-            "plist"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Fonts"
-            }
-          },
-          "parser" : "fonts",
-          "extensions" : [
-            "otf",
-            "ttf",
-            "ttc"
-          ]
-        }
-      ],
-      "lastUpgradeCheck" : "99.9.9",
-      "schemes" : [
-
-      ],
-      "name" : "Nimble"
-    },
-    "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick",
-    {
-      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick",
-      "options" : {
-        "automaticSchemesOptions" : {
-          "disabled" : {
-
-          }
-        },
-        "disableShowEnvironmentVarsInScriptPhases" : false,
-        "disableBundleAccessors" : false,
-        "disableSynthesizedResourceAccessors" : true,
-        "textSettings" : {
-
-        }
-      },
-      "additionalFiles" : [
-
-      ],
-      "targets" : [
-        {
-          "scripts" : [
-
-          ],
-          "deploymentTarget" : {
-            "iOS" : {
-              "_0" : "11.0",
-              "_1" : 3
-            }
-          },
-          "prune" : false,
-          "bundleId" : "QuickObjCRuntime",
-          "copyFiles" : [
-
-          ],
-          "launchArguments" : [
-
-          ],
-          "dependencies" : [
-
-          ],
-          "additionalFiles" : [
-
-          ],
-          "name" : "QuickObjCRuntime",
-          "settings" : {
-            "base" : {
-              "SWIFT_SUPPRESS_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE"
-                  ]
-                }
-              },
-              "ENABLE_STRICT_OBJC_MSGSEND" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "USE_HEADERMAP" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "ALWAYS_SEARCH_USER_PATHS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "GCC_NO_COMMON_BLOCKS" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "HEADER_SEARCH_PATHS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "$(SRCROOT)\/Sources\/QuickObjCRuntime\/include"
-                  ]
-                }
-              },
-              "GCC_PREPROCESSOR_DEFINITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE=1"
-                  ]
-                }
-              },
-              "FRAMEWORK_SEARCH_PATHS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
-                  ]
-                }
-              },
-              "CLANG_ENABLE_OBJC_WEAK" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              }
-            },
-            "configurations" : [
-              {
-                "name" : "STAGE",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "PROD",
-                "variant" : "release"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "DEV",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              }
-            ],
-            "defaultSettings" : {
-              "recommended" : {
-                "excluding" : [
-
-                ]
-              }
-            }
-          },
-          "coreDataModels" : [
-
-          ],
-          "platform" : "ios",
-          "environment" : {
-
-          },
-          "sources" : [
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/QuickObjCRuntime\/QuickSpecBase.m"
-            }
-          ],
-          "resources" : [
-
-          ],
-          "product" : "staticFramework",
-          "buildRules" : [
-
-          ],
-          "playgrounds" : [
-
-          ],
-          "productName" : "QuickObjCRuntime",
-          "headers" : {
-            "public" : [
-              "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/QuickObjCRuntime\/include\/QuickSpecBase.h",
-              "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/QuickObjCRuntime\/include\/QuickObjCRuntime.h"
-            ],
-            "private" : [
-
-            ],
-            "project" : [
-
-            ]
-          },
-          "filesGroup" : {
-            "group" : {
-              "name" : "Project"
-            }
-          },
-          "infoPlist" : {
-            "extendingDefault" : {
-              "with" : {
-
-              }
-            }
-          },
-          "rawScriptBuildPhases" : [
-
-          ]
-        },
-        {
-          "scripts" : [
-
-          ],
-          "deploymentTarget" : {
-            "iOS" : {
-              "_0" : "11.0",
-              "_1" : 3
-            }
-          },
-          "prune" : false,
-          "bundleId" : "Quick",
-          "copyFiles" : [
-
-          ],
-          "launchArguments" : [
-
-          ],
-          "dependencies" : [
-            {
-              "target" : {
-                "name" : "QuickObjCRuntime"
-              }
-            }
-          ],
-          "additionalFiles" : [
-
-          ],
-          "name" : "Quick",
-          "settings" : {
-            "base" : {
-              "SWIFT_SUPPRESS_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE"
-                  ]
-                }
-              },
-              "ENABLE_TESTING_SEARCH_PATHS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "ENABLE_STRICT_OBJC_MSGSEND" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "USE_HEADERMAP" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "GCC_NO_COMMON_BLOCKS" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "ALWAYS_SEARCH_USER_PATHS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "GCC_PREPROCESSOR_DEFINITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE=1"
-                  ]
-                }
-              },
-              "FRAMEWORK_SEARCH_PATHS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
-                  ]
-                }
-              },
-              "CLANG_ENABLE_OBJC_WEAK" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              }
-            },
-            "configurations" : [
-              {
-                "name" : "PROD",
-                "variant" : "release"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "DEV",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "STAGE",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              }
-            ],
-            "defaultSettings" : {
-              "recommended" : {
-                "excluding" : [
-
-                ]
-              }
-            }
-          },
-          "coreDataModels" : [
-
-          ],
-          "platform" : "ios",
-          "environment" : {
-
-          },
-          "sources" : [
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Hooks\/ExampleHooks.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Filter.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/ExampleGroup.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickSelectedTestSuiteBuilder.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/ExampleMetadata.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/World.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickMain.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/URL+FileName.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/String+C99ExtendedIdentifier.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Hooks\/Closures.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Example.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Configuration\/QuickConfiguration.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickSpec.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Configuration\/QCKConfiguration.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickTestObservation.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Hooks\/HooksPhase.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/DSL\/DSL.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/ErrorUtility.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickTestSuite.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Callsite.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/DSL\/World+DSL.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Behavior.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Hooks\/SuiteHooks.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/NSBundle+CurrentTestBundle.swift"
-            }
-          ],
-          "resources" : [
-
-          ],
-          "product" : "staticFramework",
-          "buildRules" : [
-
-          ],
-          "playgrounds" : [
-
-          ],
-          "productName" : "Quick",
-          "filesGroup" : {
-            "group" : {
-              "name" : "Project"
-            }
-          },
-          "rawScriptBuildPhases" : [
-
-          ],
-          "infoPlist" : {
-            "extendingDefault" : {
-              "with" : {
-
-              }
-            }
-          }
-        }
-      ],
-      "settings" : {
-        "base" : {
-          "SWIFT_VERSION" : {
-            "string" : {
-              "_0" : "5.0.0"
-            }
-          }
-        },
-        "configurations" : [
-          {
             "name" : "STAGE",
             "variant" : "debug"
           },
@@ -2989,7 +1591,7 @@
           }
         }
       },
-      "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick",
+      "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble",
       "isExternal" : true,
       "filesGroup" : {
         "group" : {
@@ -2999,336 +1601,7 @@
       "packages" : [
 
       ],
-      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Quick.xcodeproj",
-      "resourceSynthesizers" : [
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Strings"
-            }
-          },
-          "parser" : "strings",
-          "extensions" : [
-            "strings",
-            "stringsdict"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Assets"
-            }
-          },
-          "parser" : "assets",
-          "extensions" : [
-            "xcassets"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Plists"
-            }
-          },
-          "parser" : "plists",
-          "extensions" : [
-            "plist"
-          ]
-        },
-        {
-          "template" : {
-            "defaultTemplate" : {
-              "_0" : "Fonts"
-            }
-          },
-          "parser" : "fonts",
-          "extensions" : [
-            "ttf",
-            "otf",
-            "ttc"
-          ]
-        }
-      ],
-      "lastUpgradeCheck" : "99.9.9",
-      "schemes" : [
-
-      ],
-      "name" : "Quick"
-    },
-    "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint",
-    {
-      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint",
-      "options" : {
-        "automaticSchemesOptions" : {
-          "disabled" : {
-
-          }
-        },
-        "disableShowEnvironmentVarsInScriptPhases" : false,
-        "disableBundleAccessors" : false,
-        "disableSynthesizedResourceAccessors" : true,
-        "textSettings" : {
-
-        }
-      },
-      "additionalFiles" : [
-
-      ],
-      "targets" : [
-        {
-          "scripts" : [
-
-          ],
-          "deploymentTarget" : {
-            "iOS" : {
-              "_0" : "13.0",
-              "_1" : 3
-            }
-          },
-          "prune" : false,
-          "bundleId" : "Emdpoint",
-          "copyFiles" : [
-
-          ],
-          "launchArguments" : [
-
-          ],
-          "dependencies" : [
-
-          ],
-          "additionalFiles" : [
-
-          ],
-          "name" : "Emdpoint",
-          "settings" : {
-            "base" : {
-              "GCC_PREPROCESSOR_DEFINITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE=1"
-                  ]
-                }
-              },
-              "ENABLE_STRICT_OBJC_MSGSEND" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "SWIFT_PACKAGE"
-                  ]
-                }
-              },
-              "FRAMEWORK_SEARCH_PATHS" : {
-                "array" : {
-                  "_0" : [
-                    "$(inherited)",
-                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
-                  ]
-                }
-              },
-              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "GCC_NO_COMMON_BLOCKS" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "USE_HEADERMAP" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "SWIFT_SUPPRESS_WARNINGS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              },
-              "CLANG_ENABLE_OBJC_WEAK" : {
-                "string" : {
-                  "_0" : "NO"
-                }
-              },
-              "ALWAYS_SEARCH_USER_PATHS" : {
-                "string" : {
-                  "_0" : "YES"
-                }
-              }
-            },
-            "configurations" : [
-              {
-                "name" : "STAGE",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "PROD",
-                "variant" : "release"
-              },
-              {
-                "settings" : {
-
-                }
-              },
-              {
-                "name" : "DEV",
-                "variant" : "debug"
-              },
-              {
-                "settings" : {
-
-                }
-              }
-            ],
-            "defaultSettings" : {
-              "recommended" : {
-                "excluding" : [
-
-                ]
-              }
-            }
-          },
-          "coreDataModels" : [
-
-          ],
-          "platform" : "ios",
-          "environment" : {
-
-          },
-          "sources" : [
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EndpointType\/Route.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/DataResponse.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EmdpointClientProtocol.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EndpointType\/HTTPTask.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EndpointType\/EndpointType.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EndpointType\/MultipartFormData.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Encoding\/JSONParameterEncoder.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Interceptor\/InterceptorType.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Encoding\/URLQueryEncoder.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Encoding\/ParameterEncodable.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EmdpointClient.swift"
-            },
-            {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Error\/EmdpointError.swift"
-            }
-          ],
-          "resources" : [
-
-          ],
-          "product" : "staticFramework",
-          "buildRules" : [
-
-          ],
-          "playgrounds" : [
-
-          ],
-          "productName" : "Emdpoint",
-          "filesGroup" : {
-            "group" : {
-              "name" : "Project"
-            }
-          },
-          "rawScriptBuildPhases" : [
-
-          ],
-          "infoPlist" : {
-            "extendingDefault" : {
-              "with" : {
-
-              }
-            }
-          }
-        }
-      ],
-      "settings" : {
-        "base" : {
-
-        },
-        "configurations" : [
-          {
-            "name" : "STAGE",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "PROD",
-            "variant" : "release"
-          },
-          {
-            "settings" : {
-
-            }
-          },
-          {
-            "name" : "DEV",
-            "variant" : "debug"
-          },
-          {
-            "settings" : {
-
-            }
-          }
-        ],
-        "defaultSettings" : {
-          "recommended" : {
-            "excluding" : [
-
-            ]
-          }
-        }
-      },
-      "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint",
-      "isExternal" : true,
-      "filesGroup" : {
-        "group" : {
-          "name" : "Project"
-        }
-      },
-      "packages" : [
-
-      ],
-      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Emdpoint.xcodeproj",
+      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble\/Nimble.xcodeproj",
       "resourceSynthesizers" : [
         {
           "template" : {
@@ -3373,6 +1646,482 @@
           "parser" : "fonts",
           "extensions" : [
             "ttc",
+            "ttf",
+            "otf"
+          ]
+        }
+      ],
+      "lastUpgradeCheck" : "99.9.9",
+      "schemes" : [
+
+      ],
+      "name" : "Nimble"
+    },
+    "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher",
+    {
+      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher",
+      "options" : {
+        "automaticSchemesOptions" : {
+          "disabled" : {
+
+          }
+        },
+        "disableShowEnvironmentVarsInScriptPhases" : false,
+        "disableBundleAccessors" : false,
+        "disableSynthesizedResourceAccessors" : true,
+        "textSettings" : {
+
+        }
+      },
+      "additionalFiles" : [
+
+      ],
+      "targets" : [
+        {
+          "scripts" : [
+
+          ],
+          "deploymentTarget" : {
+            "iOS" : {
+              "_0" : "12.0",
+              "_1" : 3
+            }
+          },
+          "prune" : false,
+          "bundleId" : "Kingfisher",
+          "copyFiles" : [
+
+          ],
+          "launchArguments" : [
+
+          ],
+          "dependencies" : [
+
+          ],
+          "additionalFiles" : [
+
+          ],
+          "name" : "Kingfisher",
+          "settings" : {
+            "base" : {
+              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE"
+                  ]
+                }
+              },
+              "ENABLE_STRICT_OBJC_MSGSEND" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "FRAMEWORK_SEARCH_PATHS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
+                  ]
+                }
+              },
+              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "USE_HEADERMAP" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_NO_COMMON_BLOCKS" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ALWAYS_SEARCH_USER_PATHS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "SWIFT_SUPPRESS_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "CLANG_ENABLE_OBJC_WEAK" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_PREPROCESSOR_DEFINITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE=1"
+                  ]
+                }
+              }
+            },
+            "configurations" : [
+              {
+                "name" : "PROD",
+                "variant" : "release"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "STAGE",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "DEV",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              }
+            ],
+            "defaultSettings" : {
+              "recommended" : {
+                "excluding" : [
+
+                ]
+              }
+            }
+          },
+          "coreDataModels" : [
+
+          ],
+          "platform" : "ios",
+          "environment" : {
+
+          },
+          "sources" : [
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/ImageSource\/Resource.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/NSTextAttachment+Kingfisher.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/Kingfisher.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/TVMonogramView+Kingfisher.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KF.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/CallbackQueue.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KingfisherManager.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImageDownloaderDelegate.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/SizeExtensions.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/ImageCache.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KFOptionsSetter.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/Result.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/ExtensionHelpers.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageProcessor.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/ImageContext.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/Filter.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/GIFAnimatedImage.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/GraphicsContext.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/CacheSerializer.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/WKInterfaceImage+Kingfisher.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Views\/Indicator.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/RedirectHandler.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/Box.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/RetryStrategy.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/DiskStorage.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/RequestModifier.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KingfisherError.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/Runtime.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageProgressive.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/KingfisherOptionsInfo.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFImage.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImageModifier.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/NSButton+Kingfisher.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImageDownloader.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageDrawing.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/ImageView+Kingfisher.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/SessionDelegate.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFImageProtocol.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/ImageSource\/AVAssetImageDataProvider.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/ImageSource\/ImageDataProvider.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/String+MD5.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Views\/AnimatedImageView.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/Placeholder.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/SessionDataTask.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/AuthenticationChallengeResponsable.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFAnimatedImage.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/MemoryStorage.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/General\/ImageSource\/Source.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageTransition.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/Image.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/FormatIndicatedCacheSerializer.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/CPListItem+Kingfisher.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Image\/ImageFormat.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/ImageBinder.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFImageRenderer.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImageDataProcessor.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Networking\/ImagePrefetcher.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/SwiftUI\/KFImageOptions.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Extensions\/UIButton+Kingfisher.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Cache\/Storage.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Sources\/Utility\/Delegate.swift"
+            }
+          ],
+          "resources" : [
+
+          ],
+          "product" : "staticFramework",
+          "buildRules" : [
+
+          ],
+          "playgrounds" : [
+
+          ],
+          "productName" : "Kingfisher",
+          "filesGroup" : {
+            "group" : {
+              "name" : "Project"
+            }
+          },
+          "rawScriptBuildPhases" : [
+
+          ],
+          "infoPlist" : {
+            "extendingDefault" : {
+              "with" : {
+
+              }
+            }
+          }
+        }
+      ],
+      "settings" : {
+        "base" : {
+
+        },
+        "configurations" : [
+          {
+            "name" : "STAGE",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
+            "name" : "PROD",
+            "variant" : "release"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
+            "name" : "DEV",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          }
+        ],
+        "defaultSettings" : {
+          "recommended" : {
+            "excluding" : [
+
+            ]
+          }
+        }
+      },
+      "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher",
+      "isExternal" : true,
+      "filesGroup" : {
+        "group" : {
+          "name" : "Project"
+        }
+      },
+      "packages" : [
+
+      ],
+      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher\/Kingfisher.xcodeproj",
+      "resourceSynthesizers" : [
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Strings"
+            }
+          },
+          "parser" : "strings",
+          "extensions" : [
+            "stringsdict",
+            "strings"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Assets"
+            }
+          },
+          "parser" : "assets",
+          "extensions" : [
+            "xcassets"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Plists"
+            }
+          },
+          "parser" : "plists",
+          "extensions" : [
+            "plist"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Fonts"
+            }
+          },
+          "parser" : "fonts",
+          "extensions" : [
+            "ttc",
             "otf",
             "ttf"
           ]
@@ -3382,11 +2131,11 @@
       "schemes" : [
 
       ],
-      "name" : "Emdpoint"
+      "name" : "Kingfisher"
     },
-    "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException",
+    "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException",
     {
-      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException",
+      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException",
       "options" : {
         "automaticSchemesOptions" : {
           "disabled" : {
@@ -3554,7 +2303,7 @@
           },
           "sources" : [
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException\/Sources\/CwlCatchException\/CwlCatchException.swift"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException\/Sources\/CwlCatchException\/CwlCatchException.swift"
             }
           ],
           "resources" : [
@@ -3735,7 +2484,7 @@
           },
           "sources" : [
             {
-              "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException\/Sources\/CwlCatchExceptionSupport\/CwlCatchException.m"
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException\/Sources\/CwlCatchExceptionSupport\/CwlCatchException.m"
             }
           ],
           "resources" : [
@@ -3807,7 +2556,7 @@
           }
         }
       },
-      "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException",
+      "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException",
       "isExternal" : true,
       "filesGroup" : {
         "group" : {
@@ -3817,7 +2566,692 @@
       "packages" : [
 
       ],
-      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException\/CwlCatchException.xcodeproj",
+      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException\/CwlCatchException.xcodeproj",
+      "resourceSynthesizers" : [
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Strings"
+            }
+          },
+          "parser" : "strings",
+          "extensions" : [
+            "stringsdict",
+            "strings"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Assets"
+            }
+          },
+          "parser" : "assets",
+          "extensions" : [
+            "xcassets"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Plists"
+            }
+          },
+          "parser" : "plists",
+          "extensions" : [
+            "plist"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Fonts"
+            }
+          },
+          "parser" : "fonts",
+          "extensions" : [
+            "ttc",
+            "ttf",
+            "otf"
+          ]
+        }
+      ],
+      "lastUpgradeCheck" : "99.9.9",
+      "schemes" : [
+
+      ],
+      "name" : "CwlCatchException"
+    },
+    "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint",
+    {
+      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint",
+      "options" : {
+        "automaticSchemesOptions" : {
+          "disabled" : {
+
+          }
+        },
+        "disableShowEnvironmentVarsInScriptPhases" : false,
+        "disableBundleAccessors" : false,
+        "disableSynthesizedResourceAccessors" : true,
+        "textSettings" : {
+
+        }
+      },
+      "additionalFiles" : [
+
+      ],
+      "targets" : [
+        {
+          "scripts" : [
+
+          ],
+          "deploymentTarget" : {
+            "iOS" : {
+              "_0" : "13.0",
+              "_1" : 3
+            }
+          },
+          "prune" : false,
+          "bundleId" : "Emdpoint",
+          "copyFiles" : [
+
+          ],
+          "launchArguments" : [
+
+          ],
+          "dependencies" : [
+
+          ],
+          "additionalFiles" : [
+
+          ],
+          "name" : "Emdpoint",
+          "settings" : {
+            "base" : {
+              "GCC_PREPROCESSOR_DEFINITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE=1"
+                  ]
+                }
+              },
+              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE"
+                  ]
+                }
+              },
+              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "FRAMEWORK_SEARCH_PATHS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
+                  ]
+                }
+              },
+              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "GCC_NO_COMMON_BLOCKS" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "USE_HEADERMAP" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ALWAYS_SEARCH_USER_PATHS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "SWIFT_SUPPRESS_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "CLANG_ENABLE_OBJC_WEAK" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ENABLE_STRICT_OBJC_MSGSEND" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              }
+            },
+            "configurations" : [
+              {
+                "name" : "STAGE",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "PROD",
+                "variant" : "release"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "DEV",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              }
+            ],
+            "defaultSettings" : {
+              "recommended" : {
+                "excluding" : [
+
+                ]
+              }
+            }
+          },
+          "coreDataModels" : [
+
+          ],
+          "platform" : "ios",
+          "environment" : {
+
+          },
+          "sources" : [
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Interceptor\/InterceptorType.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Encoding\/ParameterEncodable.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/DataResponse.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EndpointType\/Route.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Error\/EmdpointError.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EndpointType\/MultipartFormData.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EmdpointClientProtocol.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EmdpointClient.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Encoding\/JSONParameterEncoder.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EndpointType\/EndpointType.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/EndpointType\/HTTPTask.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Sources\/Emdpoint\/Encoding\/URLQueryEncoder.swift"
+            }
+          ],
+          "resources" : [
+
+          ],
+          "product" : "staticFramework",
+          "buildRules" : [
+
+          ],
+          "playgrounds" : [
+
+          ],
+          "productName" : "Emdpoint",
+          "filesGroup" : {
+            "group" : {
+              "name" : "Project"
+            }
+          },
+          "rawScriptBuildPhases" : [
+
+          ],
+          "infoPlist" : {
+            "extendingDefault" : {
+              "with" : {
+
+              }
+            }
+          }
+        }
+      ],
+      "settings" : {
+        "base" : {
+
+        },
+        "configurations" : [
+          {
+            "name" : "STAGE",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
+            "name" : "PROD",
+            "variant" : "release"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
+            "name" : "DEV",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          }
+        ],
+        "defaultSettings" : {
+          "recommended" : {
+            "excluding" : [
+
+            ]
+          }
+        }
+      },
+      "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint",
+      "isExternal" : true,
+      "filesGroup" : {
+        "group" : {
+          "name" : "Project"
+        }
+      },
+      "packages" : [
+
+      ],
+      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint\/Emdpoint.xcodeproj",
+      "resourceSynthesizers" : [
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Strings"
+            }
+          },
+          "parser" : "strings",
+          "extensions" : [
+            "strings",
+            "stringsdict"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Assets"
+            }
+          },
+          "parser" : "assets",
+          "extensions" : [
+            "xcassets"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Plists"
+            }
+          },
+          "parser" : "plists",
+          "extensions" : [
+            "plist"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Fonts"
+            }
+          },
+          "parser" : "fonts",
+          "extensions" : [
+            "otf",
+            "ttc",
+            "ttf"
+          ]
+        }
+      ],
+      "lastUpgradeCheck" : "99.9.9",
+      "schemes" : [
+
+      ],
+      "name" : "Emdpoint"
+    },
+    "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject",
+    {
+      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject",
+      "options" : {
+        "automaticSchemesOptions" : {
+          "disabled" : {
+
+          }
+        },
+        "disableShowEnvironmentVarsInScriptPhases" : false,
+        "disableBundleAccessors" : false,
+        "disableSynthesizedResourceAccessors" : true,
+        "textSettings" : {
+
+        }
+      },
+      "additionalFiles" : [
+
+      ],
+      "targets" : [
+        {
+          "scripts" : [
+
+          ],
+          "deploymentTarget" : {
+            "iOS" : {
+              "_0" : "11.0",
+              "_1" : 3
+            }
+          },
+          "prune" : false,
+          "bundleId" : "Swinject",
+          "copyFiles" : [
+
+          ],
+          "launchArguments" : [
+
+          ],
+          "dependencies" : [
+
+          ],
+          "additionalFiles" : [
+
+          ],
+          "name" : "Swinject",
+          "settings" : {
+            "base" : {
+              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE"
+                  ]
+                }
+              },
+              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ALWAYS_SEARCH_USER_PATHS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "FRAMEWORK_SEARCH_PATHS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
+                  ]
+                }
+              },
+              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "USE_HEADERMAP" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_NO_COMMON_BLOCKS" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_PREPROCESSOR_DEFINITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE=1"
+                  ]
+                }
+              },
+              "SWIFT_SUPPRESS_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "CLANG_ENABLE_OBJC_WEAK" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ENABLE_STRICT_OBJC_MSGSEND" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              }
+            },
+            "configurations" : [
+              {
+                "name" : "STAGE",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "PROD",
+                "variant" : "release"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "DEV",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              }
+            ],
+            "defaultSettings" : {
+              "recommended" : {
+                "excluding" : [
+
+                ]
+              }
+            }
+          },
+          "coreDataModels" : [
+
+          ],
+          "platform" : "ios",
+          "environment" : {
+
+          },
+          "sources" : [
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/UnavailableItems.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/FunctionType.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Behavior.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ServiceEntry.TypeForwarding.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Container.Logging.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ObjectScope.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/GraphIdentifier.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/RecursiveLock.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Container.Arguments.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ServiceEntry.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ObjectScope.Standard.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/InstanceStorage.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Container.TypeForwarding.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/ServiceKey.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/DebugHelper.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Resolver.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/_Resolver.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/InstanceWrapper.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Container.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Assembler.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Sources\/Assembly.swift"
+            }
+          ],
+          "resources" : [
+
+          ],
+          "product" : "framework",
+          "buildRules" : [
+
+          ],
+          "playgrounds" : [
+
+          ],
+          "productName" : "Swinject",
+          "filesGroup" : {
+            "group" : {
+              "name" : "Project"
+            }
+          },
+          "rawScriptBuildPhases" : [
+
+          ],
+          "infoPlist" : {
+            "extendingDefault" : {
+              "with" : {
+
+              }
+            }
+          }
+        }
+      ],
+      "settings" : {
+        "base" : {
+
+        },
+        "configurations" : [
+          {
+            "name" : "STAGE",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
+            "name" : "PROD",
+            "variant" : "release"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
+            "name" : "DEV",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          }
+        ],
+        "defaultSettings" : {
+          "recommended" : {
+            "excluding" : [
+
+            ]
+          }
+        }
+      },
+      "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject",
+      "isExternal" : true,
+      "filesGroup" : {
+        "group" : {
+          "name" : "Project"
+        }
+      },
+      "packages" : [
+
+      ],
+      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject\/Swinject.xcodeproj",
       "resourceSynthesizers" : [
         {
           "template" : {
@@ -3862,8 +3296,8 @@
           "parser" : "fonts",
           "extensions" : [
             "ttc",
-            "ttf",
-            "otf"
+            "otf",
+            "ttf"
           ]
         }
       ],
@@ -3871,41 +3305,591 @@
       "schemes" : [
 
       ],
-      "name" : "CwlCatchException"
+      "name" : "Swinject"
+    },
+    "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick",
+    {
+      "sourceRootPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick",
+      "options" : {
+        "automaticSchemesOptions" : {
+          "disabled" : {
+
+          }
+        },
+        "disableShowEnvironmentVarsInScriptPhases" : false,
+        "disableBundleAccessors" : false,
+        "disableSynthesizedResourceAccessors" : true,
+        "textSettings" : {
+
+        }
+      },
+      "additionalFiles" : [
+
+      ],
+      "targets" : [
+        {
+          "scripts" : [
+
+          ],
+          "deploymentTarget" : {
+            "iOS" : {
+              "_0" : "11.0",
+              "_1" : 3
+            }
+          },
+          "prune" : false,
+          "bundleId" : "QuickObjCRuntime",
+          "copyFiles" : [
+
+          ],
+          "launchArguments" : [
+
+          ],
+          "dependencies" : [
+
+          ],
+          "additionalFiles" : [
+
+          ],
+          "name" : "QuickObjCRuntime",
+          "settings" : {
+            "base" : {
+              "SWIFT_SUPPRESS_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE"
+                  ]
+                }
+              },
+              "ENABLE_STRICT_OBJC_MSGSEND" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "USE_HEADERMAP" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_NO_COMMON_BLOCKS" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ALWAYS_SEARCH_USER_PATHS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "HEADER_SEARCH_PATHS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "$(SRCROOT)\/Sources\/QuickObjCRuntime\/include"
+                  ]
+                }
+              },
+              "GCC_PREPROCESSOR_DEFINITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE=1"
+                  ]
+                }
+              },
+              "FRAMEWORK_SEARCH_PATHS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
+                  ]
+                }
+              },
+              "CLANG_ENABLE_OBJC_WEAK" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              }
+            },
+            "configurations" : [
+              {
+                "name" : "STAGE",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "PROD",
+                "variant" : "release"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "DEV",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              }
+            ],
+            "defaultSettings" : {
+              "recommended" : {
+                "excluding" : [
+
+                ]
+              }
+            }
+          },
+          "coreDataModels" : [
+
+          ],
+          "platform" : "ios",
+          "environment" : {
+
+          },
+          "sources" : [
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/QuickObjCRuntime\/QuickSpecBase.m"
+            }
+          ],
+          "resources" : [
+
+          ],
+          "product" : "staticFramework",
+          "buildRules" : [
+
+          ],
+          "playgrounds" : [
+
+          ],
+          "productName" : "QuickObjCRuntime",
+          "headers" : {
+            "public" : [
+              "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/QuickObjCRuntime\/include\/QuickSpecBase.h",
+              "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/QuickObjCRuntime\/include\/QuickObjCRuntime.h"
+            ],
+            "private" : [
+
+            ],
+            "project" : [
+
+            ]
+          },
+          "filesGroup" : {
+            "group" : {
+              "name" : "Project"
+            }
+          },
+          "infoPlist" : {
+            "extendingDefault" : {
+              "with" : {
+
+              }
+            }
+          },
+          "rawScriptBuildPhases" : [
+
+          ]
+        },
+        {
+          "scripts" : [
+
+          ],
+          "deploymentTarget" : {
+            "iOS" : {
+              "_0" : "11.0",
+              "_1" : 3
+            }
+          },
+          "prune" : false,
+          "bundleId" : "Quick",
+          "copyFiles" : [
+
+          ],
+          "launchArguments" : [
+
+          ],
+          "dependencies" : [
+            {
+              "target" : {
+                "name" : "QuickObjCRuntime"
+              }
+            }
+          ],
+          "additionalFiles" : [
+
+          ],
+          "name" : "Quick",
+          "settings" : {
+            "base" : {
+              "SWIFT_SUPPRESS_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "SWIFT_ACTIVE_COMPILATION_CONDITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE"
+                  ]
+                }
+              },
+              "ENABLE_TESTING_SEARCH_PATHS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "ENABLE_STRICT_OBJC_MSGSEND" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "USE_HEADERMAP" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "ALWAYS_SEARCH_USER_PATHS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              },
+              "GCC_NO_COMMON_BLOCKS" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_PREPROCESSOR_DEFINITIONS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "SWIFT_PACKAGE=1"
+                  ]
+                }
+              },
+              "FRAMEWORK_SEARCH_PATHS" : {
+                "array" : {
+                  "_0" : [
+                    "$(inherited)",
+                    "$(PLATFORM_DIR)\/Developer\/Library\/Frameworks"
+                  ]
+                }
+              },
+              "CLANG_ENABLE_OBJC_WEAK" : {
+                "string" : {
+                  "_0" : "NO"
+                }
+              },
+              "GCC_WARN_INHIBIT_ALL_WARNINGS" : {
+                "string" : {
+                  "_0" : "YES"
+                }
+              }
+            },
+            "configurations" : [
+              {
+                "name" : "STAGE",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "PROD",
+                "variant" : "release"
+              },
+              {
+                "settings" : {
+
+                }
+              },
+              {
+                "name" : "DEV",
+                "variant" : "debug"
+              },
+              {
+                "settings" : {
+
+                }
+              }
+            ],
+            "defaultSettings" : {
+              "recommended" : {
+                "excluding" : [
+
+                ]
+              }
+            }
+          },
+          "coreDataModels" : [
+
+          ],
+          "platform" : "ios",
+          "environment" : {
+
+          },
+          "sources" : [
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Filter.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Behavior.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Hooks\/HooksPhase.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Configuration\/QCKConfiguration.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/DSL\/World+DSL.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/String+C99ExtendedIdentifier.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/ExampleGroup.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Hooks\/Closures.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/ErrorUtility.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Example.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickSpec.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickSelectedTestSuiteBuilder.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/DSL\/DSL.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Configuration\/QuickConfiguration.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/ExampleMetadata.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Callsite.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickTestSuite.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickTestObservation.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Hooks\/SuiteHooks.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/QuickMain.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/World.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/Hooks\/ExampleHooks.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/URL+FileName.swift"
+            },
+            {
+              "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Sources\/Quick\/NSBundle+CurrentTestBundle.swift"
+            }
+          ],
+          "resources" : [
+
+          ],
+          "product" : "staticFramework",
+          "buildRules" : [
+
+          ],
+          "playgrounds" : [
+
+          ],
+          "productName" : "Quick",
+          "filesGroup" : {
+            "group" : {
+              "name" : "Project"
+            }
+          },
+          "rawScriptBuildPhases" : [
+
+          ],
+          "infoPlist" : {
+            "extendingDefault" : {
+              "with" : {
+
+              }
+            }
+          }
+        }
+      ],
+      "settings" : {
+        "base" : {
+          "SWIFT_VERSION" : {
+            "string" : {
+              "_0" : "5.0.0"
+            }
+          }
+        },
+        "configurations" : [
+          {
+            "name" : "STAGE",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
+            "name" : "PROD",
+            "variant" : "release"
+          },
+          {
+            "settings" : {
+
+            }
+          },
+          {
+            "name" : "DEV",
+            "variant" : "debug"
+          },
+          {
+            "settings" : {
+
+            }
+          }
+        ],
+        "defaultSettings" : {
+          "recommended" : {
+            "excluding" : [
+
+            ]
+          }
+        }
+      },
+      "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick",
+      "isExternal" : true,
+      "filesGroup" : {
+        "group" : {
+          "name" : "Project"
+        }
+      },
+      "packages" : [
+
+      ],
+      "xcodeProjPath" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick\/Quick.xcodeproj",
+      "resourceSynthesizers" : [
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Strings"
+            }
+          },
+          "parser" : "strings",
+          "extensions" : [
+            "stringsdict",
+            "strings"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Assets"
+            }
+          },
+          "parser" : "assets",
+          "extensions" : [
+            "xcassets"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Plists"
+            }
+          },
+          "parser" : "plists",
+          "extensions" : [
+            "plist"
+          ]
+        },
+        {
+          "template" : {
+            "defaultTemplate" : {
+              "_0" : "Fonts"
+            }
+          },
+          "parser" : "fonts",
+          "extensions" : [
+            "otf",
+            "ttc",
+            "ttf"
+          ]
+        }
+      ],
+      "lastUpgradeCheck" : "99.9.9",
+      "schemes" : [
+
+      ],
+      "name" : "Quick"
     }
   ],
   "externalDependencies" : [
     "ios",
     {
-      "Nimble" : [
-        {
-          "project" : {
-            "target" : "Nimble",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble"
-          }
-        }
-      ],
       "NeedleFoundation" : [
         {
           "project" : {
             "target" : "NeedleFoundation",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle"
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle"
           }
         }
       ],
-      "NeedleFoundationTest" : [
+      "Nimble" : [
         {
           "project" : {
-            "target" : "NeedleFoundationTest",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle"
-          }
-        }
-      ],
-      "CwlPosixPreconditionTesting" : [
-        {
-          "project" : {
-            "target" : "CwlPosixPreconditionTesting",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
+            "target" : "Nimble",
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Nimble"
           }
         }
       ],
@@ -3913,15 +3897,23 @@
         {
           "project" : {
             "target" : "Swinject",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject"
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject"
           }
         }
       ],
-      "Swinject-Dynamic" : [
+      "CwlPosixPreconditionTesting" : [
         {
           "project" : {
-            "target" : "Swinject",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject"
+            "target" : "CwlPosixPreconditionTesting",
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
+          }
+        }
+      ],
+      "NeedleFoundationTest" : [
+        {
+          "project" : {
+            "target" : "NeedleFoundationTest",
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/needle"
           }
         }
       ],
@@ -3929,13 +3921,21 @@
         {
           "project" : {
             "target" : "CwlPreconditionTesting",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
           }
         },
         {
           "project" : {
             "target" : "CwlMachBadInstructionHandler",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlPreconditionTesting"
+          }
+        }
+      ],
+      "Swinject-Dynamic" : [
+        {
+          "project" : {
+            "target" : "Swinject",
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Swinject"
           }
         }
       ],
@@ -3943,7 +3943,7 @@
         {
           "project" : {
             "target" : "Kingfisher",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher"
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Kingfisher"
           }
         }
       ],
@@ -3951,7 +3951,7 @@
         {
           "project" : {
             "target" : "Emdpoint",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint"
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Emdpoint"
           }
         }
       ],
@@ -3959,7 +3959,7 @@
         {
           "project" : {
             "target" : "Quick",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick"
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/Quick"
           }
         }
       ],
@@ -3967,7 +3967,7 @@
         {
           "project" : {
             "target" : "CwlCatchException",
-            "path" : "\/Users\/hongseungjae\/Desktop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException"
+            "path" : "\/Users\/hongseungjae\/Desktop\/Develop\/iOS\/github\/JOBIS-DSM-iOS\/Tuist\/Dependencies\/SwiftPackageManager\/.build\/checkouts\/CwlCatchException"
           }
         }
       ]
