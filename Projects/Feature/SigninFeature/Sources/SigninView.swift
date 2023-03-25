@@ -1,11 +1,11 @@
 import DesignSystem
 import SwiftUI
 
-struct MainTabFeatureView: View {
-    @StateObject var viewModel: MainTabFeatureViewModel
+struct SigninView: View {
+    @StateObject var viewModel: SigninViewModel
 
     init(
-        viewModel: MainTabFeatureViewModel
+        viewModel: SigninViewModel
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }

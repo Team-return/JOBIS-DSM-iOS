@@ -1,11 +1,11 @@
 import DesignSystem
 import SwiftUI
 
-struct MenuFeatureView: View {
-    @StateObject var viewModel: MenuFeatureViewModel
+struct MenuView: View {
+    @StateObject var viewModel: MenuViewModel
 
     init(
-        viewModel: MenuFeatureViewModel
+        viewModel: MenuViewModel
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
