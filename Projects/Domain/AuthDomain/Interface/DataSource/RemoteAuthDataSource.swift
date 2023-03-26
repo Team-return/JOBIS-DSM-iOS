@@ -1,6 +1,7 @@
 import Combine
 import Foundation
+import BaseDomain
 
 public protocol RemoteAuthDataSource {
-    func signin(req: SigninRequestDTO) -> AnyPublisher<Void, AuthDomainError>
+    func sendAuthCode(req: SendAuthCodeRequestDTO) -> AnyPublisher<Void, AuthDomainError>
 }

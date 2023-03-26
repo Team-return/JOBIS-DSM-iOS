@@ -1,5 +1,6 @@
 import Combine
+import BaseDomain
 
-public protocol SigninUseCase {
-    func execute(req: SigninRequestDTO) -> AnyPublisher<Void, AuthDomainError>
+public protocol SendAuthCodeUseCase {
+    func execute(req: SendAuthCodeRequestDTO) -> AnyPublisher<Void, AuthDomainError>
 }

@@ -7,6 +7,23 @@
       {
         "basedOn" : null,
         "packageRef" : {
+          "identity" : "alamofire",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/Alamofire/Alamofire.git",
+          "name" : "Alamofire"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
+            "version" : "5.6.4"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "Alamofire"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
           "identity" : "cwlcatchexception",
           "kind" : "remoteSourceControl",
           "location" : "https://github.com/mattgallagher/CwlCatchException.git",
@@ -41,23 +58,6 @@
       {
         "basedOn" : null,
         "packageRef" : {
-          "identity" : "emdpoint",
-          "kind" : "remoteSourceControl",
-          "location" : "https://github.com/GSM-MSG/Emdpoint.git",
-          "name" : "Emdpoint"
-        },
-        "state" : {
-          "checkoutState" : {
-            "revision" : "fa104cdbd91338541c11bd3bddba63c3fbd933f1",
-            "version" : "3.2.2"
-          },
-          "name" : "sourceControlCheckout"
-        },
-        "subpath" : "Emdpoint"
-      },
-      {
-        "basedOn" : null,
-        "packageRef" : {
           "identity" : "kingfisher",
           "kind" : "remoteSourceControl",
           "location" : "https://github.com/onevcat/Kingfisher.git",
@@ -71,6 +71,23 @@
           "name" : "sourceControlCheckout"
         },
         "subpath" : "Kingfisher"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "moya",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/team-aliens/Moya.git",
+          "name" : "Moya"
+        },
+        "state" : {
+          "checkoutState" : {
+            "branch" : "master",
+            "revision" : "2e3b61e71ab1e0a02997eaf260d8439134280364"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "Moya"
       },
       {
         "basedOn" : null,
@@ -122,6 +139,40 @@
           "name" : "sourceControlCheckout"
         },
         "subpath" : "Quick"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "reactiveswift",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
+          "name" : "ReactiveSwift"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
+            "version" : "6.7.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "ReactiveSwift"
+      },
+      {
+        "basedOn" : null,
+        "packageRef" : {
+          "identity" : "rxswift",
+          "kind" : "remoteSourceControl",
+          "location" : "https://github.com/ReactiveX/RxSwift.git",
+          "name" : "RxSwift"
+        },
+        "state" : {
+          "checkoutState" : {
+            "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
+            "version" : "6.5.0"
+          },
+          "name" : "sourceControlCheckout"
+        },
+        "subpath" : "RxSwift"
       },
       {
         "basedOn" : null,

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		052D2D4CB8E609C4C266E9D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5B206AFDC64DE7BFA4653A3 /* LaunchScreen.storyboard */; };
+		0D50D963C086A1A64E712F5A /* UserDomainInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A47CA579322F8EEDB52EE1A /* UserDomainInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		154E409A3D9FE69701E5D01E /* libSplashFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A532FFDE4CBC72FC99AD55C7 /* libSplashFeature.a */; platformFilter = ios; };
 		1801B7C7B28FAE28A494FD5C /* SplashFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA983B7671593840CA60ABE /* SplashFeatureInterface.framework */; platformFilter = ios; };
 		2175FB6D408F4EFF69B808D0 /* libSignupFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4689257831F53020201CE3 /* libSignupFeature.a */; platformFilter = ios; };
@@ -23,7 +24,9 @@
 		506A2B9EB040B0DE609FEF55 /* libSigninFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A59052C9E46A9B6D11292FD1 /* libSigninFeature.a */; platformFilter = ios; };
 		5495B97105DE5DA9E817EBF4 /* libMenuFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3666B0EEFF2744330A3058F2 /* libMenuFeature.a */; platformFilter = ios; };
 		5B7C30DA6DE303E704725D00 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069344106BC8FE9363AA40E0 /* UtilityModule.framework */; platformFilter = ios; };
+		5DF9B34F3F3E00930278C0AA /* UserDomainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A47CA579322F8EEDB52EE1A /* UserDomainInterface.framework */; platformFilter = ios; };
 		6272744E52238E086879DCF8 /* MainTabFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91E6509BC7365EBF16D8057D /* MainTabFeatureInterface.framework */; platformFilter = ios; };
+		666D5891AA766B3D939A75E4 /* libUserDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 92DE5B7EE60BFB12CB13B7AF /* libUserDomain.a */; platformFilter = ios; };
 		700581F2BF09F65900FCC87E /* RootFeatureInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CF7FDB77E1BC9F4B5313C3D2 /* RootFeatureInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7100BB283DEBE2213B3B27C5 /* NeedleFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15A3EED2C3BBD7A0C0E1D534 /* NeedleFoundation.framework */; platformFilter = ios; };
 		71553DEDC1B918CFA60AC505 /* JwtStoreInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7CE051BFF0C6E58E3FB51 /* JwtStoreInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -82,6 +85,7 @@
 				773593382B75147C9CFF04EE /* SignupFeatureInterface.framework in Embed Frameworks */,
 				A9191997BFF9D7CC130A941F /* SplashFeatureInterface.framework in Embed Frameworks */,
 				A38FC9013A2E2DC98D318BF1 /* Swinject.framework in Embed Frameworks */,
+				0D50D963C086A1A64E712F5A /* UserDomainInterface.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +109,7 @@
 		42E7EF7675710285CB03F1C3 /* libHomeFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHomeFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A72554F9632BA3739352EDE /* libRootFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRootFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3172F3380DC396A86035D6 /* MenuFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MenuFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A47CA579322F8EEDB52EE1A /* UserDomainInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UserDomainInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DACA2763573219B1AF2268E /* libAuthDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAuthDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E4689257831F53020201CE3 /* libSignupFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSignupFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F567AD9057B520B0B3B4A9 /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
@@ -115,6 +120,7 @@
 		8F50CD8B1070D066A761B797 /* Swinject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Swinject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		901D84EDAC2FE9AF4EF5FF71 /* TuistAssets+JOBISDSMIOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TuistAssets+JOBISDSMIOS.swift"; sourceTree = "<group>"; };
 		91E6509BC7365EBF16D8057D /* MainTabFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MainTabFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92DE5B7EE60BFB12CB13B7AF /* libUserDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUserDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A062F93111805B7FB48BAC4E /* DEV.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = DEV.xcconfig; sourceTree = "<group>"; };
 		A438D6CF9D5D802772036E3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A532FFDE4CBC72FC99AD55C7 /* libSplashFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSplashFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,6 +170,8 @@
 				154E409A3D9FE69701E5D01E /* libSplashFeature.a in Frameworks */,
 				1801B7C7B28FAE28A494FD5C /* SplashFeatureInterface.framework in Frameworks */,
 				73980137CD16F5825D3A0E70 /* Swinject.framework in Frameworks */,
+				666D5891AA766B3D939A75E4 /* libUserDomain.a in Frameworks */,
+				5DF9B34F3F3E00930278C0AA /* UserDomainInterface.framework in Frameworks */,
 				5B7C30DA6DE303E704725D00 /* UtilityModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,6 +220,7 @@
 				A59052C9E46A9B6D11292FD1 /* libSigninFeature.a */,
 				6E4689257831F53020201CE3 /* libSignupFeature.a */,
 				A532FFDE4CBC72FC99AD55C7 /* libSplashFeature.a */,
+				92DE5B7EE60BFB12CB13B7AF /* libUserDomain.a */,
 				91E6509BC7365EBF16D8057D /* MainTabFeatureInterface.framework */,
 				5A3172F3380DC396A86035D6 /* MenuFeatureInterface.framework */,
 				4129B583FB26881B1E953135 /* MyPageFeatureInterface.framework */,
@@ -221,6 +230,7 @@
 				852AE81747253AEB11DFD0AB /* SignupFeatureInterface.framework */,
 				BCA983B7671593840CA60ABE /* SplashFeatureInterface.framework */,
 				8F50CD8B1070D066A761B797 /* Swinject.framework */,
+				5A47CA579322F8EEDB52EE1A /* UserDomainInterface.framework */,
 				069344106BC8FE9363AA40E0 /* UtilityModule.framework */,
 			);
 			name = Products;

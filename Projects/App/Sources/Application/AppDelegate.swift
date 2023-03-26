@@ -1,7 +1,7 @@
 import Foundation
+import KeychainModule
 import UIKit
 import WatchConnectivity
-import KeychainModule
 
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var session: WCSession!

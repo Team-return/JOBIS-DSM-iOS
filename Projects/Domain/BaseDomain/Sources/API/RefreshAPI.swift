@@ -1,29 +1,52 @@
-import Emdpoint
+import Moya
+import UserDomainInterface
 
-enum RefreshEndpoint {
-    case refresh
+public enum RefreshAPI {
+    case reissueToken
 }
 
-extension RefreshEndpoint: JobisEndpoint {
-    typealias ErrorType = RefreshError
+extension RefreshAPI: JobisAPI {
+    public typealias ErrorType = RefreshError
 
-    var route: Route {
-        .patch("/auth")
+    public var domain: JobisDomain {
+        .user
     }
 
-    var task: HTTPTask {
-        .requestPlain
+    public var urlPath: String {
+        switch self {
+        case .reissueToken:
+            return "/reissue"
+        }
     }
 
-    var jwtTokenType: JwtTokenType {
-        .refreshToken
+    public var method: Moya.Method {
+        switch self {
+        case .reissueToken:
+            return .put
+        }
     }
 
-    var errorMapper: [Int: ErrorType]? {
-        [
-            400: .invalidToken,
-            401: .expiredToken,
-            500: .unknown
-        ]
+    public var task: Moya.Task {
+        switch self {
+        default:
+            return .requestPlain
+        }
+    }
+
+    public var jwtTokenType: JwtTokenType {
+        switch self {
+        case .reissueToken:
+            return .refreshToken
+        }
+    }
+
+    public var errorMap: [Int: ErrorType] {
+        switch self {
+        case .reissueToken:
+            return [
+                401: .unauthorized,
+                404: .unauthorized
+            ]
+        }
     }
 }

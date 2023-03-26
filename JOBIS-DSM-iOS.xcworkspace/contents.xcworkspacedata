@@ -26,6 +26,9 @@
          <FileRef
             location = "group:BaseDomain/BaseDomain.xcodeproj">
          </FileRef>
+         <FileRef
+            location = "group:UserDomain/UserDomain.xcodeproj">
+         </FileRef>
       </Group>
       <Group
          location = "group:Feature"
@@ -88,10 +91,13 @@
                   location = "group:checkouts"
                   name = "checkouts">
                   <FileRef
-                     location = "group:Emdpoint/Emdpoint.xcodeproj">
+                     location = "group:Alamofire/Alamofire.xcodeproj">
                   </FileRef>
                   <FileRef
                      location = "group:Kingfisher/Kingfisher.xcodeproj">
+                  </FileRef>
+                  <FileRef
+                     location = "group:Moya/Moya.xcodeproj">
                   </FileRef>
                   <FileRef
                      location = "group:Swinject/Swinject.xcodeproj">

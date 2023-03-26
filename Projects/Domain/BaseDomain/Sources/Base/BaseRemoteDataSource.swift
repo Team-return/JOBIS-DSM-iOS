@@ -1,100 +1,85 @@
 import Combine
-import Emdpoint
+import CombineMoya
 import Foundation
-import JwtStoreInterface
+import KeychainModule
+import Moya
 import UtilityModule
 
-open class BaseRemoteDataSource<Endpoint: JobisEndpoint> {
-    private let jwtStore: any JwtStore
-    private let client: EmdpointClient<Endpoint>
-    private let decoder: JSONDecoder
+open class BaseRemoteDataSource<API: JobisAPI> {
+    private let keychain: any Keychain
+    private let provider: MoyaProvider<API>
+    private let decoder = JSONDecoder()
     private let maxRetryCount = 2
 
     public init(
-        jwtStore: any JwtStore,
-        client: EmdpointClient<Endpoint>? = nil,
-        decoder: JSONDecoder = JSONDecoder()
+        keychain: any Keychain,
+        provider: MoyaProvider<API>? = nil
     ) {
-        self.jwtStore = jwtStore
+        self.keychain = keychain
+
         #if DEV || STAGE
-        self.client = EmdpointClient(
-            interceptors: [JwtInterceptor(jwtStore: jwtStore), JobisLoggingInterceptor()]
-        )
+        self.provider = provider ?? MoyaProvider(plugins: [JwtPlugin(keychain: keychain), CustomLoggingPlugin()])
         #else
-        self.client = EmdpointClient(
-            interceptors: [JwtInterceptor(jwtStore: jwtStore)]
-        )
+        self.provider = provider ?? MoyaProvider(plugins: [JwtPlugin(keychain: keychain)])
         #endif
-        self.decoder = decoder
     }
 
-    public func request<T: Decodable>(_ endpoint: Endpoint, dto: T.Type) -> AnyPublisher<T, Error> {
-        requestPublisher(endpoint)
+    public func request<T: Decodable>(_ api: API, dto: T.Type) -> AnyPublisher<T, Error> {
+        requestPublisher(api)
             .map(\.data)
             .decode(type: dto, decoder: decoder)
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
     }
 
-    public func request(_ endpoint: Endpoint) -> AnyPublisher<Void, Error> {
-        requestPublisher(endpoint)
+    public func request(_ api: API) -> AnyPublisher<Void, Error> {
+        requestPublisher(api)
             .map { _ in return }
             .eraseToAnyPublisher()
     }
 
-    private func requestPublisher(_ endpoint: Endpoint) -> AnyPublisher<DataResponse, Error> {
-        return checkIsEndpointNeedsAuthorization(endpoint) ?
-        authorizedRequest(endpoint) :
-        defaultRequest(endpoint)
+    private func requestPublisher(_ api: API) -> AnyPublisher<Response, Error> {
+        return checkIsApiNeedsAuthorization(api) ?
+            authorizedRequest(api) :
+            defaultRequest(api)
     }
 }
 
 private extension BaseRemoteDataSource {
-    func defaultRequest(_ endpoint: Endpoint) -> AnyPublisher<DataResponse, Error> {
-        client.requestPublisher(endpoint)
+    func defaultRequest(_ api: API) -> AnyPublisher<Response, Error> {
+        provider.requestPublisher(api, callbackQueue: .main)
             .retry(maxRetryCount)
-            .timeout(45, scheduler: RunLoop.main)
-            .mapError {
-                if case let .underlying(err) = $0,
-                   let emdpointError = err as? EmdpointError,
-                   case let .statusCode(response) = emdpointError,
-                   let httpResponse = response.response as? HTTPURLResponse {
-                    return endpoint.errorMapper?[httpResponse.statusCode] ?? $0 as Error
-                }
-                return $0 as Error
-            }
+            .timeout(45, scheduler: DispatchQueue.main)
+            .mapError { api.errorMap[$0.response?.statusCode ?? 0] ?? $0 as Error }
             .eraseToAnyPublisher()
     }
 
-    func authorizedRequest(_ endpoint: Endpoint) -> AnyPublisher<DataResponse, Error> {
+    func authorizedRequest(_ api: API) -> AnyPublisher<Response, Error> {
         if checkTokenIsExpired() {
-            return reissueToken()
+            return tokenReissue()
                 .retry(maxRetryCount)
-                .flatMap { self.defaultRequest(endpoint) }
-                .mapError { $0 as Error }
+                .flatMap { self.defaultRequest(api) }
                 .eraseToAnyPublisher()
         } else {
-            return defaultRequest(endpoint)
+            return defaultRequest(api)
                 .retry(maxRetryCount)
                 .eraseToAnyPublisher()
         }
     }
 
+    func checkIsApiNeedsAuthorization(_ api: API) -> Bool {
+        api.jwtTokenType == .accessToken
+    }
+
     func checkTokenIsExpired() -> Bool {
-        let expired = jwtStore.load(property: .accessExpiresAt)
-            .toJOBISDate()
+        let expired = keychain.load(type: .accessExpiredAt).toJOBISDate()
+        print(Date(), expired)
         return Date() > expired
     }
 
-    func checkIsEndpointNeedsAuthorization(_ endpoint: Endpoint) -> Bool {
-        endpoint.jwtTokenType == .accessToken
-    }
-
-    func reissueToken() -> AnyPublisher<Void, Error> {
-        let client = EmdpointClient<RefreshEndpoint>(
-            interceptors: [JwtInterceptor(jwtStore: jwtStore)]
-        )
-        return client.requestPublisher(.refresh)
+    func tokenReissue() -> AnyPublisher<Void, Error> {
+        let provider = MoyaProvider<RefreshAPI>(plugins: [JwtPlugin(keychain: keychain)])
+        return provider.requestPublisher(.reissueToken)
             .map { _ in }
             .mapError { $0 as Error }
             .eraseToAnyPublisher()

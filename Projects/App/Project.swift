@@ -42,6 +42,7 @@ let targets: [Target] = [
             .Feature.RootFeature,
             .Feature.SigninFeature,
             .Feature.SignupFeature,
+            .Domain.UserDomain,
             .Domain.AuthDomain,
             .Core.JwtStore,
             .SPM.Needle

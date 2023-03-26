@@ -14,6 +14,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2A717419231F3C0B8A3E0F06"
+               BuildableName = "Alamofire.framework"
+               BlueprintName = "Alamofire"
+               ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/Alamofire/Alamofire.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "0479C65E4B35F4E753A824B9"
                BuildableName = "libAuthDomain.a"
                BlueprintName = "AuthDomain"
@@ -126,6 +140,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B380ABDE7CD6BADA20CCE0CB"
+               BuildableName = "CombineMoya.framework"
+               BlueprintName = "CombineMoya"
+               ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/Moya/Moya.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "83C9B5D1938C22907FF6E247"
                BuildableName = "DesignSystem.framework"
                BlueprintName = "DesignSystem"
@@ -144,20 +172,6 @@
                BuildableName = "DesignSystemDemoApp.app"
                BlueprintName = "DesignSystemDemoApp"
                ReferencedContainer = "container:Projects/Core/DesignSystem/DesignSystem.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F125E477ADC574C948D487A9"
-               BuildableName = "Emdpoint.framework"
-               BlueprintName = "Emdpoint"
-               ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/Emdpoint/Emdpoint.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -406,6 +420,20 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A4DFF0D3EE507E4032CBEC48"
+               BuildableName = "Moya.framework"
+               BlueprintName = "Moya"
+               ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/Moya/Moya.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "165FF0485069FAD6E30D1EF1"
                BuildableName = "libMyPageFeature.a"
                BlueprintName = "MyPageFeature"
@@ -644,6 +672,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E3E925C148004FE21FC54B5F"
+               BuildableName = "libUserDomain.a"
+               BlueprintName = "UserDomain"
+               ReferencedContainer = "container:Projects/Domain/UserDomain/UserDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7DEB33D202D797D39AEDC9F1"
+               BuildableName = "UserDomainInterface.framework"
+               BlueprintName = "UserDomainInterface"
+               ReferencedContainer = "container:Projects/Domain/UserDomain/UserDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BC0DAF2A47E641E75E1C6033"
+               BuildableName = "UserDomainTesting.framework"
+               BlueprintName = "UserDomainTesting"
+               ReferencedContainer = "container:Projects/Domain/UserDomain/UserDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A6EB25A625ACF66B2A27BAC9"
+               BuildableName = "UserDomainTests.xctest"
+               BlueprintName = "UserDomainTests"
+               ReferencedContainer = "container:Projects/Domain/UserDomain/UserDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "F3D897169E0D3FA7D46393B9"
                BuildableName = "UtilityModule.framework"
                BlueprintName = "UtilityModule"
@@ -796,6 +880,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A6EB25A625ACF66B2A27BAC9"
+               BuildableName = "UserDomainTests.xctest"
+               BlueprintName = "UserDomainTests"
+               ReferencedContainer = "container:Projects/Domain/UserDomain/UserDomain.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC3454CECFB302116426799E"
                BuildableName = "UtilityModuleTests.xctest"
                BlueprintName = "UtilityModuleTests"
@@ -817,10 +911,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0479C65E4B35F4E753A824B9"
-            BuildableName = "libAuthDomain.a"
-            BlueprintName = "AuthDomain"
-            ReferencedContainer = "container:Projects/Domain/AuthDomain/AuthDomain.xcodeproj">
+            BlueprintIdentifier = "2A717419231F3C0B8A3E0F06"
+            BuildableName = "Alamofire.framework"
+            BlueprintName = "Alamofire"
+            ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/Alamofire/Alamofire.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </LaunchAction>
@@ -833,10 +927,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0479C65E4B35F4E753A824B9"
-            BuildableName = "libAuthDomain.a"
-            BlueprintName = "AuthDomain"
-            ReferencedContainer = "container:Projects/Domain/AuthDomain/AuthDomain.xcodeproj">
+            BlueprintIdentifier = "2A717419231F3C0B8A3E0F06"
+            BuildableName = "Alamofire.framework"
+            BlueprintName = "Alamofire"
+            ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/Alamofire/Alamofire.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
