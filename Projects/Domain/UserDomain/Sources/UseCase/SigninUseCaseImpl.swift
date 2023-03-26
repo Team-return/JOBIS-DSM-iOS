@@ -8,7 +8,7 @@ struct SigninUseCaseImpl: SigninUseCase {
         self.authRepository = authRepository
     }
 
-    func execute(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error> {
+    public func execute(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error> {
         authRepository.signin(req: req)
     }
 }

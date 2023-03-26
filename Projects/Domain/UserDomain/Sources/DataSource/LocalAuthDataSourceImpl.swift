@@ -9,7 +9,7 @@ struct LocalAuthDataSourceImpl: LocalAuthDataSource {
         self.jwtStore = jwtStore
     }
 
-    func loadJwtToken() -> JwtTokenEntity {
+    public func loadJwtToken() -> JwtTokenEntity {
         JwtTokenEntity(
             accessToken: jwtStore.load(property: .accessToken),
             refreshToken: jwtStore.load(property: .refreshToken),

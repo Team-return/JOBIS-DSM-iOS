@@ -14,11 +14,11 @@ struct AuthRepositoryImpl: AuthRepository {
         self.localAuthDataSource = localAuthDataSource
     }
 
-    func signin(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error> {
+    public func signin(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error> {
         remoteAuthDataSource.signin(req: req)
     }
 
-    func loadJwtToken() -> JwtTokenEntity {
+    public func loadJwtToken() -> JwtTokenEntity {
         localAuthDataSource.loadJwtToken()
     }
 }

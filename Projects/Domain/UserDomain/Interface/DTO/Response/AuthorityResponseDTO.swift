@@ -1,6 +1,6 @@
 import Foundation
 
-public struct AuthorityDTO: Decodable {
+public struct AuthorityResponseDTO: Decodable {
     public let authority: AuthorityType
 
     public init(authority: AuthorityType) {
@@ -8,7 +8,7 @@ public struct AuthorityDTO: Decodable {
     }
 }
 
-public extension AuthorityDTO {
+public extension AuthorityResponseDTO {
     func toDomain() -> AuthorityEntity {
         AuthorityEntity(authority: authority)
     }

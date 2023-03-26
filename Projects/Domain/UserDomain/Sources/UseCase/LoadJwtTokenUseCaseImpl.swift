@@ -8,7 +8,7 @@ struct LoadJwtTokenUseCaseImpl: LoadJwtTokenUseCase {
         self.authRepository = authRepository
     }
 
-    func execute() -> JwtTokenEntity {
+    public func execute() -> JwtTokenEntity {
         authRepository.loadJwtToken()
     }
 }
