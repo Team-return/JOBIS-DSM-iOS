@@ -1,4 +1,4 @@
-import AuthDomainInterface
+import UserDomainInterface
 import BaseDomain
 import Combine
 
@@ -14,7 +14,7 @@ struct AuthRepositoryImpl: AuthRepository {
         self.localAuthDataSource = localAuthDataSource
     }
 
-    func signin(req: SigninRequestDTO) -> AnyPublisher<Void, JobisError> {
+    func signin(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error> {
         remoteAuthDataSource.signin(req: req)
     }
 

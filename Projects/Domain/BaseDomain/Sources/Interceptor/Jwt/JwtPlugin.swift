@@ -47,14 +47,14 @@ private extension JwtPlugin {
         case .refreshToken:
             return keychain.load(type: .refreshToken)
 
-        case .accessExpiredAt:
-            return keychain.load(type: .accessExpiredAt)
+        case .accessExpiresAt:
+            return keychain.load(type: .accessExpiresAt)
         }
     }
 
     func saveToken(token: TokenDTO) {
         keychain.save(type: .accessToken, value: token.accessToken)
         keychain.save(type: .refreshToken, value: token.refreshToken)
-        keychain.save(type: .accessExpiredAt, value: token.accessExpiredAt)
+        keychain.save(type: .accessExpiresAt, value: token.accessExpiresAt)
     }
 }

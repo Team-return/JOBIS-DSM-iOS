@@ -10,7 +10,7 @@ struct AuthRepositoryImpl: AuthRepository {
         self.remoteAuthDataSource = remoteAuthDataSource
     }
 
-    public func sendAuthCode(req: SendAuthCodeRequestDTO) -> AnyPublisher<Void, AuthDomainError> {
+    public func sendAuthCode(req: SendAuthCodeRequestDTO) -> AnyPublisher<Void, Error> {
         remoteAuthDataSource.sendAuthCode(req: req)
     }
 }

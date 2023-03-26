@@ -1,4 +1,4 @@
-import AuthDomainInterface
+import UserDomainInterface
 import Combine
 import JwtStoreInterface
 

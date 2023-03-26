@@ -1,4 +1,4 @@
-import AuthDomainInterface
+import UserDomainInterface
 import Combine
 
 struct SigninUseCaseImpl: SigninUseCase {
@@ -8,7 +8,7 @@ struct SigninUseCaseImpl: SigninUseCase {
         self.authRepository = authRepository
     }
 
-    func execute(req: SigninRequestDTO) -> AnyPublisher<Void, AuthDomainError> {
+    func execute(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error> {
         authRepository.signin(req: req)
     }
 }
