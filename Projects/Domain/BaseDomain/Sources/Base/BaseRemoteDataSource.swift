@@ -18,7 +18,7 @@ open class BaseRemoteDataSource<API: JobisAPI> {
         self.keychain = keychain
 
         #if DEV || STAGE
-        self.provider = provider ?? MoyaProvider(plugins: [JwtPlugin(keychain: keychain), CustomLoggingPlugin()])
+        self.provider = provider ?? MoyaProvider(plugins: [JwtPlugin(keychain: keychain), MoyaLogginPlugin()])
         #else
         self.provider = provider ?? MoyaProvider(plugins: [JwtPlugin(keychain: keychain)])
         #endif
@@ -72,7 +72,7 @@ private extension BaseRemoteDataSource {
     }
 
     func checkTokenIsExpired() -> Bool {
-        let expired = keychain.load(type: .accessExpiredAt).toJOBISDate()
+        let expired = keychain.load(type: .accessExpiresAt).toJOBISDate()
         print(Date(), expired)
         return Date() > expired
     }

@@ -80,6 +80,66 @@ public extension TargetDependency.Feature {
 }
 
 public extension TargetDependency.Domain {
+    static let ApplicationDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.ApplicationDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.ApplicationDomain.rawValue)
+    )
+    static let ApplicationDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.ApplicationDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.ApplicationDomain.rawValue)
+    )
+    static let ApplicationDomain = TargetDependency.project(
+        target: ModulePaths.Domain.ApplicationDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.ApplicationDomain.rawValue)
+    )
+    static let CodeDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.CodeDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.CodeDomain.rawValue)
+    )
+    static let CodeDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.CodeDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.CodeDomain.rawValue)
+    )
+    static let CodeDomain = TargetDependency.project(
+        target: ModulePaths.Domain.CodeDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.CodeDomain.rawValue)
+    )
+    static let StudentsDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.StudentsDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.StudentsDomain.rawValue)
+    )
+    static let StudentsDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.StudentsDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.StudentsDomain.rawValue)
+    )
+    static let StudentsDomain = TargetDependency.project(
+        target: ModulePaths.Domain.StudentsDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.StudentsDomain.rawValue)
+    )
+    static let CompaniesDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.CompaniesDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.CompaniesDomain.rawValue)
+    )
+    static let CompaniesDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.CompaniesDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.CompaniesDomain.rawValue)
+    )
+    static let CompaniesDomain = TargetDependency.project(
+        target: ModulePaths.Domain.CompaniesDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.CompaniesDomain.rawValue)
+    )
+    static let RecruitmentsDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.RecruitmentsDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.RecruitmentsDomain.rawValue)
+    )
+    static let RecruitmentsDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.RecruitmentsDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.RecruitmentsDomain.rawValue)
+    )
+    static let RecruitmentsDomain = TargetDependency.project(
+        target: ModulePaths.Domain.RecruitmentsDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.RecruitmentsDomain.rawValue)
+    )
     static let UserDomainTesting = TargetDependency.project(
         target: ModulePaths.Domain.UserDomain.targetName(type: .testing),
         path: .relativeToDomain(ModulePaths.Domain.UserDomain.rawValue)

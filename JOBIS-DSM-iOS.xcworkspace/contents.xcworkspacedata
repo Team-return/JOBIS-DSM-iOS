@@ -21,10 +21,25 @@
          location = "group:Domain"
          name = "Domain">
          <FileRef
+            location = "group:ApplicationDomain/ApplicationDomain.xcodeproj">
+         </FileRef>
+         <FileRef
             location = "group:AuthDomain/AuthDomain.xcodeproj">
          </FileRef>
          <FileRef
             location = "group:BaseDomain/BaseDomain.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:CodeDomain/CodeDomain.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:CompaniesDomain/CompaniesDomain.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:RecruitmentsDomain/RecruitmentsDomain.xcodeproj">
+         </FileRef>
+         <FileRef
+            location = "group:StudentsDomain/StudentsDomain.xcodeproj">
          </FileRef>
          <FileRef
             location = "group:UserDomain/UserDomain.xcodeproj">

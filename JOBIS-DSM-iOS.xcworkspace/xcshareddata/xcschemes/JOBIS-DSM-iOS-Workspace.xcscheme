@@ -28,6 +28,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EB799760D108C48B54DCB281"
+               BuildableName = "libApplicationDomain.a"
+               BlueprintName = "ApplicationDomain"
+               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B76CE62F959CB7A418B7B568"
+               BuildableName = "ApplicationDomainInterface.framework"
+               BlueprintName = "ApplicationDomainInterface"
+               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D5FEA492CDA43A2BEF413B0A"
+               BuildableName = "ApplicationDomainTesting.framework"
+               BlueprintName = "ApplicationDomainTesting"
+               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "914415232933F36C9C1B5241"
+               BuildableName = "ApplicationDomainTests.xctest"
+               BlueprintName = "ApplicationDomainTests"
+               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "0479C65E4B35F4E753A824B9"
                BuildableName = "libAuthDomain.a"
                BlueprintName = "AuthDomain"
@@ -140,10 +196,122 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FC3FF33821AC14402FB14E59"
+               BuildableName = "libCodeDomain.a"
+               BlueprintName = "CodeDomain"
+               ReferencedContainer = "container:Projects/Domain/CodeDomain/CodeDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "840AD2082D1C6A1C054C8FD9"
+               BuildableName = "CodeDomainInterface.framework"
+               BlueprintName = "CodeDomainInterface"
+               ReferencedContainer = "container:Projects/Domain/CodeDomain/CodeDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BD1CE06E2EE146362DCDFA0B"
+               BuildableName = "CodeDomainTesting.framework"
+               BlueprintName = "CodeDomainTesting"
+               ReferencedContainer = "container:Projects/Domain/CodeDomain/CodeDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E00D3D5D4C37FBAEBEDD439D"
+               BuildableName = "CodeDomainTests.xctest"
+               BlueprintName = "CodeDomainTests"
+               ReferencedContainer = "container:Projects/Domain/CodeDomain/CodeDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "B380ABDE7CD6BADA20CCE0CB"
                BuildableName = "CombineMoya.framework"
                BlueprintName = "CombineMoya"
                ReferencedContainer = "container:Tuist/Dependencies/SwiftPackageManager/.build/checkouts/Moya/Moya.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "D1273F260375F2BC212B1FFE"
+               BuildableName = "libCompaniesDomain.a"
+               BlueprintName = "CompaniesDomain"
+               ReferencedContainer = "container:Projects/Domain/CompaniesDomain/CompaniesDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1D2AAE6E26115895EDEE4CA8"
+               BuildableName = "CompaniesDomainInterface.framework"
+               BlueprintName = "CompaniesDomainInterface"
+               ReferencedContainer = "container:Projects/Domain/CompaniesDomain/CompaniesDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "666E5FFF227EBE523C631110"
+               BuildableName = "CompaniesDomainTesting.framework"
+               BlueprintName = "CompaniesDomainTesting"
+               ReferencedContainer = "container:Projects/Domain/CompaniesDomain/CompaniesDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8E1FC6A55B8506979D1DFD83"
+               BuildableName = "CompaniesDomainTests.xctest"
+               BlueprintName = "CompaniesDomainTests"
+               ReferencedContainer = "container:Projects/Domain/CompaniesDomain/CompaniesDomain.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -490,6 +658,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "6EC97053307ABB923806DA37"
+               BuildableName = "libRecruitmentsDomain.a"
+               BlueprintName = "RecruitmentsDomain"
+               ReferencedContainer = "container:Projects/Domain/RecruitmentsDomain/RecruitmentsDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1CC5798D2FF26B2A0168ED5B"
+               BuildableName = "RecruitmentsDomainInterface.framework"
+               BlueprintName = "RecruitmentsDomainInterface"
+               ReferencedContainer = "container:Projects/Domain/RecruitmentsDomain/RecruitmentsDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3292BB671DF77A61D168CFE5"
+               BuildableName = "RecruitmentsDomainTesting.framework"
+               BlueprintName = "RecruitmentsDomainTesting"
+               ReferencedContainer = "container:Projects/Domain/RecruitmentsDomain/RecruitmentsDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2C31514E1C0660E7B5E52607"
+               BuildableName = "RecruitmentsDomainTests.xctest"
+               BlueprintName = "RecruitmentsDomainTests"
+               ReferencedContainer = "container:Projects/Domain/RecruitmentsDomain/RecruitmentsDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "0EBDBDC43A21880F12EBCE9E"
                BuildableName = "libRootFeature.a"
                BlueprintName = "RootFeature"
@@ -658,6 +882,62 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE19811FFB390FF6606444F5"
+               BuildableName = "libStudentsDomain.a"
+               BlueprintName = "StudentsDomain"
+               ReferencedContainer = "container:Projects/Domain/StudentsDomain/StudentsDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B0D4757562C41A98233F3F8A"
+               BuildableName = "StudentsDomainInterface.framework"
+               BlueprintName = "StudentsDomainInterface"
+               ReferencedContainer = "container:Projects/Domain/StudentsDomain/StudentsDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "13BFD5A1DB64C97188BAF31E"
+               BuildableName = "StudentsDomainTesting.framework"
+               BlueprintName = "StudentsDomainTesting"
+               ReferencedContainer = "container:Projects/Domain/StudentsDomain/StudentsDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1F0A4A4CFD8654591D854939"
+               BuildableName = "StudentsDomainTests.xctest"
+               BlueprintName = "StudentsDomainTests"
+               ReferencedContainer = "container:Projects/Domain/StudentsDomain/StudentsDomain.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "589345361EDD5EBC786D0C14"
                BuildableName = "Swinject.framework"
                BlueprintName = "Swinject"
@@ -760,6 +1040,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "914415232933F36C9C1B5241"
+               BuildableName = "ApplicationDomainTests.xctest"
+               BlueprintName = "ApplicationDomainTests"
+               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "92D89059A9988A659FDC727D"
                BuildableName = "AuthDomainTests.xctest"
                BlueprintName = "AuthDomainTests"
@@ -784,6 +1074,26 @@
                BuildableName = "BaseFeatureTests.xctest"
                BlueprintName = "BaseFeatureTests"
                ReferencedContainer = "container:Projects/Feature/BaseFeature/BaseFeature.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E00D3D5D4C37FBAEBEDD439D"
+               BuildableName = "CodeDomainTests.xctest"
+               BlueprintName = "CodeDomainTests"
+               ReferencedContainer = "container:Projects/Domain/CodeDomain/CodeDomain.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8E1FC6A55B8506979D1DFD83"
+               BuildableName = "CompaniesDomainTests.xctest"
+               BlueprintName = "CompaniesDomainTests"
+               ReferencedContainer = "container:Projects/Domain/CompaniesDomain/CompaniesDomain.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -840,6 +1150,16 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2C31514E1C0660E7B5E52607"
+               BuildableName = "RecruitmentsDomainTests.xctest"
+               BlueprintName = "RecruitmentsDomainTests"
+               ReferencedContainer = "container:Projects/Domain/RecruitmentsDomain/RecruitmentsDomain.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "A3CF7C1E2BF14E793472B5CC"
                BuildableName = "RootFeatureTests.xctest"
                BlueprintName = "RootFeatureTests"
@@ -874,6 +1194,16 @@
                BuildableName = "SplashFeatureTests.xctest"
                BlueprintName = "SplashFeatureTests"
                ReferencedContainer = "container:Projects/Feature/SplashFeature/SplashFeature.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "1F0A4A4CFD8654591D854939"
+               BuildableName = "StudentsDomainTests.xctest"
+               BlueprintName = "StudentsDomainTests"
+               ReferencedContainer = "container:Projects/Domain/StudentsDomain/StudentsDomain.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference

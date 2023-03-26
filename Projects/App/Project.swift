@@ -45,7 +45,14 @@ let targets: [Target] = [
             .Domain.UserDomain,
             .Domain.AuthDomain,
             .Core.JwtStore,
-            .SPM.Needle
+            .SPM.Needle,
+            
+            //띄우기 용
+            .Domain.RecruitmentsDomain,
+            .Domain.ApplicationDomain,
+            .Domain.CodeDomain,
+            .Domain.CompaniesDomain,
+            .Domain.StudentsDomain
         ],
         settings: .settings(base: env.baseSetting)
     )
