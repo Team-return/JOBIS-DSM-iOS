@@ -80,17 +80,17 @@ public extension TargetDependency.Feature {
 }
 
 public extension TargetDependency.Domain {
-    static let ApplicationDomainTesting = TargetDependency.project(
-        target: ModulePaths.Domain.ApplicationDomain.targetName(type: .testing),
-        path: .relativeToDomain(ModulePaths.Domain.ApplicationDomain.rawValue)
+    static let ApplicationsDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.ApplicationsDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.ApplicationsDomain.rawValue)
     )
-    static let ApplicationDomainInterface = TargetDependency.project(
-        target: ModulePaths.Domain.ApplicationDomain.targetName(type: .interface),
-        path: .relativeToDomain(ModulePaths.Domain.ApplicationDomain.rawValue)
+    static let ApplicationsDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.ApplicationsDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.ApplicationsDomain.rawValue)
     )
-    static let ApplicationDomain = TargetDependency.project(
-        target: ModulePaths.Domain.ApplicationDomain.targetName(type: .sources),
-        path: .relativeToDomain(ModulePaths.Domain.ApplicationDomain.rawValue)
+    static let ApplicationsDomain = TargetDependency.project(
+        target: ModulePaths.Domain.ApplicationsDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.ApplicationsDomain.rawValue)
     )
     static let CodeDomainTesting = TargetDependency.project(
         target: ModulePaths.Domain.CodeDomain.targetName(type: .testing),

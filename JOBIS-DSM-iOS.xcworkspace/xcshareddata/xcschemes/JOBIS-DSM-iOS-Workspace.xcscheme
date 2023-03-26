@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB799760D108C48B54DCB281"
-               BuildableName = "libApplicationDomain.a"
-               BlueprintName = "ApplicationDomain"
-               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+               BlueprintIdentifier = "AF829179D04CBE373D8B7912"
+               BuildableName = "libApplicationsDomain.a"
+               BlueprintName = "ApplicationsDomain"
+               ReferencedContainer = "container:Projects/Domain/ApplicationsDomain/ApplicationsDomain.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -42,10 +42,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B76CE62F959CB7A418B7B568"
-               BuildableName = "ApplicationDomainInterface.framework"
-               BlueprintName = "ApplicationDomainInterface"
-               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+               BlueprintIdentifier = "BC7256DAC3BC3AD86747080C"
+               BuildableName = "ApplicationsDomainInterface.framework"
+               BlueprintName = "ApplicationsDomainInterface"
+               ReferencedContainer = "container:Projects/Domain/ApplicationsDomain/ApplicationsDomain.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -56,10 +56,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D5FEA492CDA43A2BEF413B0A"
-               BuildableName = "ApplicationDomainTesting.framework"
-               BlueprintName = "ApplicationDomainTesting"
-               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+               BlueprintIdentifier = "CB4CCDE93E7C8E74B873565C"
+               BuildableName = "ApplicationsDomainTesting.framework"
+               BlueprintName = "ApplicationsDomainTesting"
+               ReferencedContainer = "container:Projects/Domain/ApplicationsDomain/ApplicationsDomain.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -70,10 +70,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "914415232933F36C9C1B5241"
-               BuildableName = "ApplicationDomainTests.xctest"
-               BlueprintName = "ApplicationDomainTests"
-               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+               BlueprintIdentifier = "835FFB65A73CBE566C4182B1"
+               BuildableName = "ApplicationsDomainTests.xctest"
+               BlueprintName = "ApplicationsDomainTests"
+               ReferencedContainer = "container:Projects/Domain/ApplicationsDomain/ApplicationsDomain.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -1040,10 +1040,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "914415232933F36C9C1B5241"
-               BuildableName = "ApplicationDomainTests.xctest"
-               BlueprintName = "ApplicationDomainTests"
-               ReferencedContainer = "container:Projects/Domain/ApplicationDomain/ApplicationDomain.xcodeproj">
+               BlueprintIdentifier = "835FFB65A73CBE566C4182B1"
+               BuildableName = "ApplicationsDomainTests.xctest"
+               BlueprintName = "ApplicationsDomainTests"
+               ReferencedContainer = "container:Projects/Domain/ApplicationsDomain/ApplicationsDomain.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference

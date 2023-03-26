@@ -11,7 +11,6 @@
 		099022EBEAC865DCAC235031 /* libStudentsDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B74BECF615B1526F7FE55DB0 /* libStudentsDomain.a */; platformFilter = ios; };
 		0C282D3750702E16FD84CC12 /* CodeDomainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9116D7802F2A201F3156B8A8 /* CodeDomainInterface.framework */; platformFilter = ios; };
 		0D50D963C086A1A64E712F5A /* UserDomainInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5A47CA579322F8EEDB52EE1A /* UserDomainInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		13A13F1B289DBBE4AD39B4F1 /* libApplicationDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8539001B37FC0048E3E7B0 /* libApplicationDomain.a */; platformFilter = ios; };
 		154E409A3D9FE69701E5D01E /* libSplashFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A532FFDE4CBC72FC99AD55C7 /* libSplashFeature.a */; platformFilter = ios; };
 		1801B7C7B28FAE28A494FD5C /* SplashFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCA983B7671593840CA60ABE /* SplashFeatureInterface.framework */; platformFilter = ios; };
 		2175FB6D408F4EFF69B808D0 /* libSignupFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4689257831F53020201CE3 /* libSignupFeature.a */; platformFilter = ios; };
@@ -24,8 +23,10 @@
 		48C5452ABFF712794939371D /* StudentsDomainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5E3E9A7C117F931C7F0613 /* StudentsDomainInterface.framework */; platformFilter = ios; };
 		4AFB216411B018B6CDDFD650 /* JOBISApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE1B719CF4E49143E0520B2 /* JOBISApp.swift */; };
 		4C47734EA38BE68E202553C9 /* MyPageFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4129B583FB26881B1E953135 /* MyPageFeatureInterface.framework */; platformFilter = ios; };
+		4FB4B628018AB84001F12B38 /* libApplicationsDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB19E15998565E3E19317DB1 /* libApplicationsDomain.a */; platformFilter = ios; };
 		5007B22E3B92F2E5EDAF94BF /* libRootFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A72554F9632BA3739352EDE /* libRootFeature.a */; platformFilter = ios; };
 		506A2B9EB040B0DE609FEF55 /* libSigninFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A59052C9E46A9B6D11292FD1 /* libSigninFeature.a */; platformFilter = ios; };
+		538CB76F301231DE9ACE631C /* ApplicationsDomainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7A4FCD49AB7008507CA0BE2 /* ApplicationsDomainInterface.framework */; platformFilter = ios; };
 		5495B97105DE5DA9E817EBF4 /* libMenuFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3666B0EEFF2744330A3058F2 /* libMenuFeature.a */; platformFilter = ios; };
 		5B7C30DA6DE303E704725D00 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 069344106BC8FE9363AA40E0 /* UtilityModule.framework */; platformFilter = ios; };
 		5DF9B34F3F3E00930278C0AA /* UserDomainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A47CA579322F8EEDB52EE1A /* UserDomainInterface.framework */; platformFilter = ios; };
@@ -58,13 +59,13 @@
 		A992913C32CA629456D82679 /* BaseDomain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = ED4C20B6DC117C87AADABFCE /* BaseDomain.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B00500912D70D265D291910D /* GlobalThirdPartyLibrary.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 31E073D5C3E807399C2389D0 /* GlobalThirdPartyLibrary.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B59ED885CC8A8B7C33779469 /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA8E833AA6740D47437201B /* libBaseFeature.a */; platformFilter = ios; };
-		B6F0C49CA17A301281774D77 /* ApplicationDomainInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D9FCBEE3E9F006B41077B274 /* ApplicationDomainInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA265ECAC273916FC65BC250 /* RootFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF7FDB77E1BC9F4B5313C3D2 /* RootFeatureInterface.framework */; platformFilter = ios; };
 		BFD6D0A44A61DC8B86DB172B /* HomeFeatureInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 73F5C511407521BB84AEDB2D /* HomeFeatureInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C04D5F25CCD9245F6D9CA344 /* libRecruitmentsDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A12CA8520F00C75EB1236853 /* libRecruitmentsDomain.a */; platformFilter = ios; };
 		C2BB4A0221D54CD04D4E757E /* libCompaniesDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39E0E49F1327EF5643E2B398 /* libCompaniesDomain.a */; platformFilter = ios; };
 		C7756DE115B384A64AAAAEA4 /* TuistAssets+JOBISDSMIOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 901D84EDAC2FE9AF4EF5FF71 /* TuistAssets+JOBISDSMIOS.swift */; };
 		D2F456B5EDF98690FB745A74 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9582C212D7EDA3F5D4DF0A1 /* AppComponent.swift */; };
+		D430211136EAFCA389A0C88A /* ApplicationsDomainInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F7A4FCD49AB7008507CA0BE2 /* ApplicationsDomainInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D4D97D617C6764C4C433219E /* JwtStoreInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79F7CE051BFF0C6E58E3FB51 /* JwtStoreInterface.framework */; platformFilter = ios; };
 		D8FE808ACA9DA1775F646A96 /* libJwtStore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB31325323F4AFB1A15F16BC /* libJwtStore.a */; platformFilter = ios; };
 		DB32DDD234F3C53AED6B7E24 /* libHomeFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E7EF7675710285CB03F1C3 /* libHomeFeature.a */; platformFilter = ios; };
@@ -73,7 +74,6 @@
 		EBEB977A8988D84C7C1BD479 /* StudentsDomainInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5E3E9A7C117F931C7F0613 /* StudentsDomainInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EDD0B372E38390FEC4513FA7 /* SignupFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 852AE81747253AEB11DFD0AB /* SignupFeatureInterface.framework */; platformFilter = ios; };
 		F4A7B6F76E3A39CA2CE790F0 /* CompaniesDomainInterface.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07B6ED6BC6EF952500525E66 /* CompaniesDomainInterface.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FDE147986A9CF37996A5E823 /* ApplicationDomainInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9FCBEE3E9F006B41077B274 /* ApplicationDomainInterface.framework */; platformFilter = ios; };
 		FDF2417A10762AE68867B534 /* libAuthDomain.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DACA2763573219B1AF2268E /* libAuthDomain.a */; platformFilter = ios; };
 		FF30274212491EAB74405C0F /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31EE34E7976BF448188BEBC8 /* DesignSystem.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
@@ -85,7 +85,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B6F0C49CA17A301281774D77 /* ApplicationDomainInterface.framework in Embed Frameworks */,
+				D430211136EAFCA389A0C88A /* ApplicationsDomainInterface.framework in Embed Frameworks */,
 				9675AF183F6819D09260326D /* AuthDomainInterface.framework in Embed Frameworks */,
 				A992913C32CA629456D82679 /* BaseDomain.framework in Embed Frameworks */,
 				983D8537ACC05E33A90AAAE5 /* CodeDomainInterface.framework in Embed Frameworks */,
@@ -162,10 +162,10 @@
 		D1653CDE7DC1D34682D46A44 /* NeedleGenerated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
 		D5B206AFDC64DE7BFA4653A3 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D709BBD38D81152403749B5C /* libMainTabFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libMainTabFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9FCBEE3E9F006B41077B274 /* ApplicationDomainInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationDomainInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB31325323F4AFB1A15F16BC /* libJwtStore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJwtStore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4C20B6DC117C87AADABFCE /* BaseDomain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BaseDomain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB8539001B37FC0048E3E7B0 /* libApplicationDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApplicationDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A4FCD49AB7008507CA0BE2 /* ApplicationsDomainInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ApplicationsDomainInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB19E15998565E3E19317DB1 /* libApplicationsDomain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApplicationsDomain.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +173,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13A13F1B289DBBE4AD39B4F1 /* libApplicationDomain.a in Frameworks */,
-				FDE147986A9CF37996A5E823 /* ApplicationDomainInterface.framework in Frameworks */,
+				4FB4B628018AB84001F12B38 /* libApplicationsDomain.a in Frameworks */,
+				538CB76F301231DE9ACE631C /* ApplicationsDomainInterface.framework in Frameworks */,
 				FDF2417A10762AE68867B534 /* libAuthDomain.a in Frameworks */,
 				991AA914189E802B33DCF041 /* AuthDomainInterface.framework in Frameworks */,
 				3A000165C89910DD14F86318 /* BaseDomain.framework in Frameworks */,
@@ -241,7 +241,7 @@
 		3055EBAEB707D567537A9B9B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D9FCBEE3E9F006B41077B274 /* ApplicationDomainInterface.framework */,
+				F7A4FCD49AB7008507CA0BE2 /* ApplicationsDomainInterface.framework */,
 				3C443011D36712C098F0E0C8 /* AuthDomainInterface.framework */,
 				ED4C20B6DC117C87AADABFCE /* BaseDomain.framework */,
 				9116D7802F2A201F3156B8A8 /* CodeDomainInterface.framework */,
@@ -252,7 +252,7 @@
 				C5904B3946CD03DD12C39B67 /* JOBIS_DSM_iOS.app */,
 				79F7CE051BFF0C6E58E3FB51 /* JwtStoreInterface.framework */,
 				1B44509A6838E98564EE2A0C /* KeychainModule.framework */,
-				FB8539001B37FC0048E3E7B0 /* libApplicationDomain.a */,
+				FB19E15998565E3E19317DB1 /* libApplicationsDomain.a */,
 				5DACA2763573219B1AF2268E /* libAuthDomain.a */,
 				0EA8E833AA6740D47437201B /* libBaseFeature.a */,
 				608CAE8416BC8B0138D5570D /* libCodeDomain.a */,
