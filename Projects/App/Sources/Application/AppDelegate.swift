@@ -1,5 +1,5 @@
 import Foundation
-import KeychainModule
+import JwtStoreInterface
 import UIKit
 import WatchConnectivity
 

@@ -1,4 +1,5 @@
 import Foundation
+import JwtStoreInterface
 
 public struct KeychainImpl: Keychain {
     public init() {}

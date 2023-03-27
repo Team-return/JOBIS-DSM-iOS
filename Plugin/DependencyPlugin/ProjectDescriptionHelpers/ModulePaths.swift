@@ -58,7 +58,6 @@ public extension ModulePaths {
     enum Shared: String {
         case UtilityModule
         case GlobalThirdPartyLibrary
-        case KeychainModule
 
         func targetName(type: MicroTargetType) -> String {
             "\(self.rawValue)\(type.rawValue)"

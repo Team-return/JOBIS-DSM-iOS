@@ -1,6 +1,7 @@
 import SwiftUI
 import BaseFeature
-import KeychainModule
+import JwtStoreInterface
+import JwtStore
 import NeedleFoundation
 
 @main

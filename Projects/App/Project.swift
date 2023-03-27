@@ -38,16 +38,17 @@ let targets: [Target] = [
         scripts: scripts,
         dependencies: [
             .Feature.RootFeature,
-            .Shared.KeychainModule,
+            .Core.JwtStore,
+            .Core.JwtStoreInterface,
             .Feature.RootFeature,
             .Feature.SigninFeature,
             .Feature.SignupFeature,
+            .Feature.SplashFeature,
             .Domain.UserDomain,
             .Domain.AuthDomain,
-            .Core.JwtStore,
             .SPM.Needle,
-            
-            //띄우기 용
+
+            // 띄우기 용
             .Domain.RecruitmentsDomain,
             .Domain.ApplicationsDomain,
             .Domain.CodeDomain,

@@ -198,8 +198,4 @@ public extension TargetDependency.Shared {
         target: ModulePaths.Shared.GlobalThirdPartyLibrary.targetName(type: .sources),
         path: .relativeToShared(ModulePaths.Shared.GlobalThirdPartyLibrary.rawValue)
     )
-    static let KeychainModule = TargetDependency.project(
-        target: ModulePaths.Shared.KeychainModule.targetName(type: .sources),
-        path: .relativeToShared(ModulePaths.Shared.KeychainModule.rawValue)
-    )
 }

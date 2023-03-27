@@ -1,5 +1,5 @@
 import Moya
-import KeychainModule
+import JwtStoreInterface
 import Foundation
 
 public struct JwtPlugin: PluginType {
