@@ -3,7 +3,7 @@ name: CI
 on:
   pull_request:
     branches:
-      - develop
+      - main
 
 env:
   CACHED_DEPENDENCY_PATHS: ${{ github.workspace }}/Tuist/Dependencies
