@@ -1,6 +1,5 @@
 import Moya
 import ApplicationsDomainInterface
-import AuthDomainInterface
 import BaseDomain
 
 public enum ApplicationsAPI {
