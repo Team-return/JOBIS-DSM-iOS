@@ -2,9 +2,9 @@ import ApplicationsDomainInterface
 import Combine
 
 public struct FetchApplicationUseCaseImpl: FetchApplicationUseCase {
-    private let applicationRepository: any ApplicationRepository
+    private let applicationRepository: any ApplicationsRepository
 
-    public init(applicationRepository: any ApplicationRepository) {
+    public init(applicationRepository: any ApplicationsRepository) {
         self.applicationRepository = applicationRepository
     }
 

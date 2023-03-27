@@ -1,10 +1,10 @@
 import CodeDomainInterface
 import Combine
 
-struct CodeRepositoryImpl: CodeRepository {
+public struct CodeRepositoryImpl: CodeRepository {
     private let remoteCodeDataSource: any RemoteCodeDataSource
 
-    init(
+    public init(
         remoteCodeDataSource: any RemoteCodeDataSource
     ) {
         self.remoteCodeDataSource = remoteCodeDataSource

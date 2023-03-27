@@ -6,7 +6,7 @@ public struct SignupRequestDto: Encodable {
     public let name: String
     public let gender: GenderType
     public let classRoom, number: Int
-    
+
     enum CodingKeys: String, CodingKey {
         case email
         case phoneNumber = "phone_number"

@@ -1,10 +1,10 @@
 import ApplicationsDomainInterface
 import Combine
 
-struct ApplicationRepositoryImpl: ApplicationRepository {
+public struct ApplicationsRepositoryImpl: ApplicationsRepository {
     private let remoteApplicationsDataSource: any RemoteApplicationsDataSource
 
-    init(
+    public init(
         remoteApplicationsDataSource: any RemoteApplicationsDataSource
     ) {
         self.remoteApplicationsDataSource = remoteApplicationsDataSource

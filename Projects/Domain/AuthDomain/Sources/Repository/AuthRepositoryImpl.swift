@@ -1,10 +1,10 @@
 import AuthDomainInterface
 import Combine
 
-struct AuthRepositoryImpl: AuthRepository {
+public struct AuthRepositoryImpl: AuthRepository {
     private let remoteAuthDataSource: any RemoteAuthDataSource
 
-    init(
+    public init(
         remoteAuthDataSource: any RemoteAuthDataSource
     ) {
         self.remoteAuthDataSource = remoteAuthDataSource
