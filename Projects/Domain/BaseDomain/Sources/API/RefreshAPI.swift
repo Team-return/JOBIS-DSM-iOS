@@ -19,14 +19,14 @@ extension RefreshAPI: JobisAPI {
         }
     }
 
-    public var method: Moya.Method {
+    public var method: Method {
         switch self {
         case .reissueToken:
             return .put
         }
     }
 
-    public var task: Moya.Task {
+    public var task: Task {
         switch self {
         default:
             return .requestPlain

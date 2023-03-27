@@ -23,14 +23,14 @@ extension RecruitmentsAPI: JobisAPI {
         }
     }
 
-    public var method: Moya.Method {
+    public var method: Method {
         switch self {
         case .fetchRecruitmentList, .fetchRecruitmentDetail:
             return .get
         }
     }
 
-    public var task: Moya.Task {
+    public var task: Task {
         switch self {
         case .fetchRecruitmentList:
             return .requestPlain

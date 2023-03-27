@@ -21,7 +21,7 @@ extension AuthAPI: JobisAPI {
         }
     }
 
-    public var method: Moya.Method {
+    public var method: Method {
         switch self {
         case .sendAuthCode:
             return .post
@@ -30,7 +30,7 @@ extension AuthAPI: JobisAPI {
         }
     }
 
-    public var task: Moya.Task {
+    public var task: Task {
         switch self {
         case let .sendAuthCode(req):
             return .requestJSONEncodable(req)

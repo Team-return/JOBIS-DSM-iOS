@@ -1,40 +1,42 @@
 import Moya
-import AuthDomainInterface
+import StudentsDomainInterface
 import BaseDomain
 
-public enum AuthAPI {
-    case verifyAuthCode
-    case sendAuthCode(SendAuthCodeRequestDTO)
+public enum StudentsAPI {
+    case signup
+    case renewalPassword(RenewalPasswordRequestDTO)
 }
 
-extension AuthAPI: JobisAPI {
-    public typealias ErrorType = AuthDomainError
+extension StudentsAPI: JobisAPI {
+    public typealias ErrorType = StudentsDomainError
 
     public var domain: JobisDomain {
-        .auth
+        .students
     }
 
     public var urlPath: String {
         switch self {
-        case .sendAuthCode, .verifyAuthCode:
-            return "/code"
+        case .signup:
+            return "/"
+        case .renewalPassword:
+            return "/password"
         }
     }
 
-    public var method: Moya.Method {
+    public var method: Method {
         switch self {
         case .sendAuthCode:
             return .post
-        case .verifyAuthCode:
+        case .signup:
             return .patch
         }
     }
 
-    public var task: Moya.Task {
+    public var task: Task {
         switch self {
         case let .sendAuthCode(req):
             return .requestJSONEncodable(req)
-        case .verifyAuthCode:
+        case .signup:
             return .requestPlain
         }
     }
@@ -48,7 +50,7 @@ extension AuthAPI: JobisAPI {
 
     public var errorMap: [Int: ErrorType] {
         switch self {
-        case .verifyAuthCode:
+        case .signup:
             return [
                 400: .badRequest,
                 401: .unauthorized,

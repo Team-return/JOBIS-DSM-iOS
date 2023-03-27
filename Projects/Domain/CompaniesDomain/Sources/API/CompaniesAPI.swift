@@ -23,14 +23,14 @@ extension CompaniesAPI: JobisAPI {
         }
     }
 
-    public var method: Moya.Method {
+    public var method: Method {
         switch self {
         case .fetchStudentCompanyList, .fetchCompanyInfoDetail:
             return .get
         }
     }
 
-    public var task: Moya.Task {
+    public var task: Task {
         .requestPlain
     }
 

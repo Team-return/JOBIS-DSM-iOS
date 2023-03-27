@@ -24,7 +24,7 @@ extension UsersAPI: JobisAPI {
         }
     }
 
-    public var method: Moya.Method {
+    public var method: Method {
         switch self {
         case .signin:
             return .post
@@ -34,7 +34,7 @@ extension UsersAPI: JobisAPI {
         }
     }
 
-    public var task: Moya.Task {
+    public var task: Task {
         switch self {
         case let .signin(req):
             return .requestJSONEncodable(req)

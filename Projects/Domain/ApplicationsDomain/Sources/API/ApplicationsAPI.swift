@@ -26,7 +26,7 @@ extension ApplicationsAPI: JobisAPI {
         }
     }
 
-    public var method: Moya.Method {
+    public var method: Method {
         switch self {
         case .applyCompany:
             return .post
@@ -37,7 +37,7 @@ extension ApplicationsAPI: JobisAPI {
         }
     }
 
-    public var task: Moya.Task {
+    public var task: Task {
         switch self {
         case let .applyCompany(_, req):
             return .requestJSONEncodable(req)

@@ -1,6 +1,6 @@
 import Foundation
 
-public enum AuthDomainError: Error {
+public enum StudentsDomainError: Error {
     case badRequest
     case unauthorized
     case forbidden
@@ -8,7 +8,7 @@ public enum AuthDomainError: Error {
     case conflict
 }
 
-extension AuthDomainError: LocalizedError {
+extension StudentsDomainError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .badRequest:
