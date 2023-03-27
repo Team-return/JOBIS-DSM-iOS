@@ -10,11 +10,11 @@ struct CodeRepositoryImpl: CodeRepository {
         self.remoteCodeDataSource = remoteCodeDataSource
     }
 
-    public func fetchJobCode() -> AnyPublisher<CodeDomainInterface.JobCodeEntity, Error> {
+    public func fetchJobCode() -> AnyPublisher<JobCodeEntity, Error> {
         remoteCodeDataSource.fetchJobCode()
     }
-    
-    public func fetchTechCode(keyword: String) -> AnyPublisher<CodeDomainInterface.TechCodeEntity, Error> {
-        remoteCodeDataSource.fetchTechCode(keyword: key)
+
+    public func fetchTechCode(keyword: String) -> AnyPublisher<TechCodeEntity, Error> {
+        remoteCodeDataSource.fetchTechCode(keyword: keyword)
     }
 }

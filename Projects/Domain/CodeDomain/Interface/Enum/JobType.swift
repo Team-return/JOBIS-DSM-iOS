@@ -1,5 +1,7 @@
+import Foundation
+
 // swiftlint:disable identifier_name
-public enum JobType: String, Codable {
+public enum JobType: String, Decodable {
     case web = "WEB"
     case app = "APP"
     case empedded = "EMBEDDED"

@@ -3,7 +3,7 @@ import StudentsDomainInterface
 import BaseDomain
 
 public enum StudentsAPI {
-    case signup
+    case signup(SignupRequestDto)
     case renewalPassword(RenewalPasswordRequestDTO)
 }
 
@@ -25,27 +25,24 @@ extension StudentsAPI: JobisAPI {
 
     public var method: Method {
         switch self {
-        case .sendAuthCode:
-            return .post
         case .signup:
+            return .post
+        case .renewalPassword:
             return .patch
         }
     }
 
     public var task: Task {
         switch self {
-        case let .sendAuthCode(req):
+        case let .signup(req):
             return .requestJSONEncodable(req)
-        case .signup:
-            return .requestPlain
+        case let .renewalPassword(req):
+            return .requestJSONEncodable(req)
         }
     }
 
     public var jwtTokenType: JwtTokenType {
-        switch self {
-        default:
-            return .none
-        }
+        .none
     }
 
     public var errorMap: [Int: ErrorType] {
@@ -53,16 +50,12 @@ extension StudentsAPI: JobisAPI {
         case .signup:
             return [
                 400: .badRequest,
-                401: .unauthorized,
-                403: .forbidden,
-                404: .notFound,
                 409: .conflict
             ]
-        case .sendAuthCode:
+        case .renewalPassword:
             return [
                 400: .badRequest,
                 401: .unauthorized,
-                403: .forbidden,
                 404: .notFound,
                 409: .conflict
             ]
