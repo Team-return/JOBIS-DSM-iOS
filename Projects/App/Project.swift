@@ -13,9 +13,9 @@ let configurations: [Configuration] = isCI ?
   .release(name: .prod)
 ] :
 [
-  .debug(name: .dev, xcconfig: .relativeToXCConfig(type: .dev, name: "App")),
-  .debug(name: .stage, xcconfig: .relativeToXCConfig(type: .stage, name: "App")),
-  .release(name: .prod, xcconfig: .relativeToXCConfig(type: .prod, name: "App"))
+    .debug(name: .dev, xcconfig: .relativeToXCConfig(type: .dev, name: env.name)),
+  .debug(name: .stage, xcconfig: .relativeToXCConfig(type: .stage, name: env.name)),
+  .release(name: .prod, xcconfig: .relativeToXCConfig(type: .prod, name: env.name))
 ]
 
 let settings: Settings =
@@ -23,7 +23,7 @@ let settings: Settings =
               configurations: configurations,
               defaultSettings: .recommended)
 
-let scripts: [TargetScript] = isCI ? [] : [.swiftLint]
+let scripts: [TargetScript] = isCI ? [] : [.swiftLint, .needle]
 
 let targets: [Target] = [
     .init(
@@ -38,6 +38,21 @@ let targets: [Target] = [
         scripts: scripts,
         dependencies: [
             .Feature.RootFeature,
+            .Shared.KeychainModule,
+            .Feature.RootFeature,
+            .Feature.SigninFeature,
+            .Feature.SignupFeature,
+            .Domain.UserDomain,
+            .Domain.AuthDomain,
+            .Core.JwtStore,
+            .SPM.Needle,
+            
+            //띄우기 용
+            .Domain.RecruitmentsDomain,
+            .Domain.ApplicationsDomain,
+            .Domain.CodeDomain,
+            .Domain.CompaniesDomain,
+            .Domain.StudentsDomain
         ],
         settings: .settings(base: env.baseSetting)
     )

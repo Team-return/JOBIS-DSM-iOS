@@ -1,5 +1,4 @@
 import Combine
-import ErrorModule
 
 open class BaseViewModel: ObservableObject {
     @Published public var isErrorOcuured = false
@@ -11,16 +10,16 @@ open class BaseViewModel: ObservableObject {
     public init() {}
 
     public func addCancellable<T>(
-        _ publisher: AnyPublisher<T, DmsError>,
+        _ publisher: AnyPublisher<T, Error>,
         onReceiveValue: @escaping (T) -> Void,
-        onReceiveError: ((DmsError) -> Void)? = nil
+        onReceiveError: ((Error) -> Void)? = nil
     ) {
         isLoading = true
         publisher
             .sink(receiveCompletion: { [weak self] completion in
                 if case let .failure(error) = completion {
                     if let onReceiveError {
-                        onReceiveError(error.asDMSError)
+                        onReceiveError(error)
                     }
 
                     self?.errorMessage = error.localizedDescription

@@ -2,11 +2,9 @@ import Foundation
 import UtilityModule
 
 public final class AppState: ObservableObject {
-    public init(sceneFlow: SceneFlow, features: DmsFeatures) {
+    public init(sceneFlow: SceneFlow) {
         self.sceneFlow = sceneFlow
-        self.features = features
     }
 
     @Published public var sceneFlow: SceneFlow
-    @Published public var features: DmsFeatures
 }

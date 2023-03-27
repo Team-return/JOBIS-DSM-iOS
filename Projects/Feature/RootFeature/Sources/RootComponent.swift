@@ -1,22 +1,11 @@
-import BaseFeature
-import NeedleFoundation
 import SwiftUI
-import SigninFeature
-import MainTabFeature
-import SplashFeature
+import RootFeatureInterface
+import NeedleFoundation
 
-public protocol RootDependency: Dependency {
-    var signinComponent: SigninComponent { get }
-    var mainTabComponent: MainTabComponent { get }
-    var splashComponent: SplashComponent { get }
-}
+public protocol RootDependency: Dependency {}
 
-public final class RootComponent: Component<RootDependency> {
+public final class RootComponent: Component<RootDependency>, RootFactory {
     public func makeView() -> some View {
-        RootView(
-            signinComponent: self.dependency.signinComponent,
-            mainTabComponent: self.dependency.mainTabComponent,
-            splashComponent: self.dependency.splashComponent
-        )
+        Text("Text")
     }
 }

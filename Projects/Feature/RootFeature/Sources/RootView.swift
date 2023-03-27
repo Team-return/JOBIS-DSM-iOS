@@ -1,43 +1,16 @@
-import BaseFeature
+import DesignSystem
 import SwiftUI
-import SigninFeature
-import MainTabFeature
-import SplashFeature
 
 struct RootView: View {
-    @EnvironmentObject var appState: AppState
+    @StateObject var viewModel: RootViewModel
 
-    private let signinComponent: SigninComponent
-    private let mainTabComponent: MainTabComponent
-    private let splashComponent: SplashComponent
-
-    public init(
-        signinComponent: SigninComponent,
-        mainTabComponent: MainTabComponent,
-        splashComponent: SplashComponent
+    init(
+        viewModel: RootViewModel
     ) {
-        self.signinComponent = signinComponent
-        self.mainTabComponent = mainTabComponent
-        self.splashComponent = splashComponent
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
-        ZStack {
-            switch appState.sceneFlow {
-            case .auth:
-                signinComponent.makeView()
-                    .environmentObject(appState)
-
-            case .main:
-                mainTabComponent.makeView()
-                    .environmentObject(appState)
-
-            case .splash:
-                splashComponent.makeView()
-                    .environmentObject(appState)
-            }
-        }
-        .animation(.easeInOut, value: appState.sceneFlow)
-        .transition(.opacity.animation(.easeInOut))
+        Text("Text")
     }
 }

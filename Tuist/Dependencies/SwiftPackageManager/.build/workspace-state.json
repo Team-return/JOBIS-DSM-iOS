@@ -77,7 +77,7 @@
         "packageRef" : {
           "identity" : "moya",
           "kind" : "remoteSourceControl",
-          "location" : "https://github.com/Team-Return/Moya.git",
+          "location" : "https://github.com/team-aliens/Moya.git",
           "name" : "Moya"
         },
         "state" : {

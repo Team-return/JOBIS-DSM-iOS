@@ -36,7 +36,7 @@ extension AppDelegate: WCSessionDelegate {
 
         let message: [String: Any] = [
             "accessToken": keychain.load(type: .accessToken),
-            "accessExpiredAt": keychain.load(type: .accessExpiredAt)
+            "accessExpiredAt": keychain.load(type: .accessExpiresAt)
         ]
         replyHandler(message)
     }
@@ -52,7 +52,7 @@ extension AppDelegate: WCSessionDelegate {
 
         let message: [String: Any] = [
             "accessToken": keychain.load(type: .accessToken),
-            "accessExpiredAt": keychain.load(type: .accessExpiredAt)
+            "accessExpiredAt": keychain.load(type: .accessExpiresAt)
         ]
         sendMessage(message: message) { _ in } error: { error in
             print(error.localizedDescription)

@@ -4,13 +4,18 @@ import DependencyPlugin
 
 let project = Project.makeModule(
     name: ModulePaths.Domain.BaseDomain.rawValue,
-    product: .staticLibrary,
+    product: .framework,
     targets: [.unitTest],
-    internalDependencies: [
-        .Shared.GlobalThirdPartyLibrary,
-        .Shared.KeychainModule,
-
+    externalDependencies: [
         .SPM.Moya,
         .SPM.CombineMoya
+    ],
+    internalDependencies: [
+        .Core.JwtStoreInterface,
+        .Shared.GlobalThirdPartyLibrary,
+        .Shared.UtilityModule
+    ],
+    additionalPlistRows: [
+        "BASE_URL": .string("$(BASE_URL)")
     ]
 )

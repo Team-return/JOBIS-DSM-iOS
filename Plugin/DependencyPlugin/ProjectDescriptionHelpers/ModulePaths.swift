@@ -10,10 +10,15 @@ public enum ModulePaths {
 
 public extension ModulePaths {
     enum Feature: String {
+        case MyPageFeature
+        case HomeFeature
+        case MenuFeature
         case BaseFeature
         case MainTabFeature
         case RootFeature
         case SplashFeature
+        case SignupFeature
+        case SigninFeature
 
         func targetName(type: MicroTargetType) -> String {
             "\(self.rawValue)\(type.rawValue)"
@@ -23,8 +28,14 @@ public extension ModulePaths {
 
 public extension ModulePaths {
     enum Domain: String {
-        case BaseDomain
+        case ApplicationsDomain
+        case CodeDomain
+        case StudentsDomain
+        case CompaniesDomain
+        case RecruitmentsDomain
         case UserDomain
+        case BaseDomain
+        case AuthDomain
 
         func targetName(type: MicroTargetType) -> String {
             "\(self.rawValue)\(type.rawValue)"
@@ -35,6 +46,7 @@ public extension ModulePaths {
 public extension ModulePaths {
     enum Core: String {
         case DesignSystem
+        case JwtStore
 
         func targetName(type: MicroTargetType) -> String {
             "\(self.rawValue)\(type.rawValue)"

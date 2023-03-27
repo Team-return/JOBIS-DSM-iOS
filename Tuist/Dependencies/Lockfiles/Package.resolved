@@ -39,7 +39,7 @@
     {
       "identity" : "moya",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Team-Return/Moya.git",
+      "location" : "https://github.com/team-aliens/Moya.git",
       "state" : {
         "branch" : "master",
         "revision" : "2e3b61e71ab1e0a02997eaf260d8439134280364"

@@ -1,4 +1,0 @@
-#include "../Shared.xcconfig"
-BASE_URL = http:/$()/3.39.136.247:8080
-BUNDLE_VERSION = 1
-BUNDLE_VERSION_STRING = 1

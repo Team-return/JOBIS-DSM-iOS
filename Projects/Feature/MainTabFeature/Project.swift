@@ -5,8 +5,11 @@ import DependencyPlugin
 let project = Project.makeModule(
     name: ModulePaths.Feature.MainTabFeature.rawValue,
     product: .staticLibrary,
-    targets: [.unitTest],
+    targets: [.interface, .unitTest],
     internalDependencies: [
-        .Feature.BaseFeature
+        .Feature.BaseFeature,
+        .Feature.HomeFeature,
+        .Feature.MenuFeature,
+        .Feature.MyPageFeature
     ]
 )

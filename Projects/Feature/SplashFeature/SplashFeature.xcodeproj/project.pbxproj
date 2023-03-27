@@ -14,8 +14,11 @@
 		42B98A0D82AAE55AAE1E38C1 /* libBaseFeature.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8C151BEFABEFD262100A9F /* libBaseFeature.a */; platformFilter = ios; };
 		4D05B082028190D2440C4987 /* UtilityModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AE1E1185A2482A08999A491 /* UtilityModule.framework */; platformFilter = ios; };
 		7780BC043D42C261A3473D62 /* SplashComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3F4F4A75A97CE313508142 /* SplashComponent.swift */; };
+		7D021F7CC78079A63E625E7B /* SplashFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14971762E8B05E4D3B7BC002 /* SplashFactory.swift */; };
 		8DE1B6A257F53B6FD818B1C2 /* TargetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A76792A301BD8D1F9F04D15 /* TargetTests.swift */; };
+		AAE86F8308718F97CEADD5E1 /* SplashFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7653584BAD81B72F4454519 /* SplashFeatureInterface.framework */; platformFilter = ios; };
 		C461147611BE31C94214B458 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9799DB55E47E0465DCCC1EB0 /* SplashView.swift */; };
+		EE119E0636DADC4DB1E12EB3 /* SplashFeatureInterface.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7653584BAD81B72F4454519 /* SplashFeatureInterface.framework */; platformFilter = ios; };
 		F3B24ABF6F6245DDB0BE7581 /* DesignSystem.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 260868B512E4E5113D021914 /* DesignSystem.framework */; platformFilter = ios; };
 /* End PBXBuildFile section */
 
@@ -26,6 +29,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = DA38CA6F5F8CBA6D764F94BF;
 			remoteInfo = SplashFeature;
+		};
+		19E2115163F3EE95E0598158 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A130A94B0D673C97DEEFDE0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6C2D2783C91E04F25135D220;
+			remoteInfo = SplashFeatureInterface;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -41,6 +51,16 @@
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 		D1BFB3BB8DC485C038BC6C35 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2E20F6D3D6ADEBAAAD1CF8C /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
@@ -66,6 +86,7 @@
 		01E3336E6F1446486DC96970 /* STAGE.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = STAGE.xcconfig; sourceTree = "<group>"; };
 		0A76792A301BD8D1F9F04D15 /* TargetTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetTests.swift; sourceTree = "<group>"; };
 		121FB5386D70BEE897C668C0 /* libSplashFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSplashFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		14971762E8B05E4D3B7BC002 /* SplashFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFactory.swift; sourceTree = "<group>"; };
 		25528336503CF04F62856CFC /* PROD.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PROD.xcconfig; sourceTree = "<group>"; };
 		260868B512E4E5113D021914 /* DesignSystem.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DesignSystem.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436EA41EEAA19282912B1564 /* SplashFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplashFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +96,8 @@
 		5DE664234B8254F8803B0AEC /* GlobalThirdPartyLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GlobalThirdPartyLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F8C151BEFABEFD262100A9F /* libBaseFeature.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBaseFeature.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9799DB55E47E0465DCCC1EB0 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		9B8FB4D50B7B3E317F9805EB /* SplashFeatureInterface-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SplashFeatureInterface-Info.plist"; sourceTree = "<group>"; };
+		C7653584BAD81B72F4454519 /* SplashFeatureInterface.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SplashFeatureInterface.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA64442FEC0ADB5CB5FB12E8 /* SplashFeatureTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SplashFeatureTests-Info.plist"; sourceTree = "<group>"; };
 		F40E93918CBE5CE2DCF36DA5 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE119E0636DADC4DB1E12EB3 /* SplashFeatureInterface.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,7 +119,15 @@
 				F3B24ABF6F6245DDB0BE7581 /* DesignSystem.framework in Frameworks */,
 				0136F49F38B99F7EB8AE6F3C /* GlobalThirdPartyLibrary.framework in Frameworks */,
 				0DBD53C3850966BDA96C536C /* libSplashFeature.a in Frameworks */,
+				AAE86F8308718F97CEADD5E1 /* SplashFeatureInterface.framework in Frameworks */,
 				4D05B082028190D2440C4987 /* UtilityModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82B5347357FA03A14273ED90 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +152,14 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		23762B11E57D1DF2899F66E5 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				14971762E8B05E4D3B7BC002 /* SplashFactory.swift */,
+			);
+			path = Interface;
+			sourceTree = "<group>";
+		};
 		534982C89F7CECFC459595FD /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +167,7 @@
 				5DE664234B8254F8803B0AEC /* GlobalThirdPartyLibrary.framework */,
 				5F8C151BEFABEFD262100A9F /* libBaseFeature.a */,
 				121FB5386D70BEE897C668C0 /* libSplashFeature.a */,
+				C7653584BAD81B72F4454519 /* SplashFeatureInterface.framework */,
 				436EA41EEAA19282912B1564 /* SplashFeatureTests.xctest */,
 				5AE1E1185A2482A08999A491 /* UtilityModule.framework */,
 			);
@@ -154,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				AC5AA26C4EBAFA3D809F3100 /* Derived */,
+				23762B11E57D1DF2899F66E5 /* Interface */,
 				EC1E1E4779BC3A155D105B55 /* Sources */,
 				159705F28FC1BA4F68C5053E /* Tests */,
 				87261196B264C510782FC96C /* XCConfig */,
@@ -181,6 +223,7 @@
 		F740E3F9E19DB5E5FE2FFA90 /* InfoPlists */ = {
 			isa = PBXGroup;
 			children = (
+				9B8FB4D50B7B3E317F9805EB /* SplashFeatureInterface-Info.plist */,
 				CA64442FEC0ADB5CB5FB12E8 /* SplashFeatureTests-Info.plist */,
 			);
 			path = InfoPlists;
@@ -198,6 +241,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6C2D2783C91E04F25135D220 /* SplashFeatureInterface */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 485BE768BA9E2B7D288D245B /* Build configuration list for PBXNativeTarget "SplashFeatureInterface" */;
+			buildPhases = (
+				0B5B96B054E6CEEB518B75FD /* SwiftLint */,
+				333944AFBC8E76BF2A4123C5 /* Sources */,
+				D1457859C2D2DE42108E5624 /* Resources */,
+				D2E20F6D3D6ADEBAAAD1CF8C /* Embed Frameworks */,
+				82B5347357FA03A14273ED90 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SplashFeatureInterface;
+			productName = SplashFeatureInterface;
+			productReference = C7653584BAD81B72F4454519 /* SplashFeatureInterface.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		DA38CA6F5F8CBA6D764F94BF /* SplashFeature */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 14A050BC47631E8E92C6EA43 /* Build configuration list for PBXNativeTarget "SplashFeature" */;
@@ -212,6 +274,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E58A4FE04C77E8DF1519FCB1 /* PBXTargetDependency */,
 			);
 			name = SplashFeature;
 			productName = SplashFeature;
@@ -261,6 +324,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				6C2D2783C91E04F25135D220 /* SplashFeatureInterface */,
 				DA38CA6F5F8CBA6D764F94BF /* SplashFeature */,
 				DF7BF6B7EC5E7E023DBF039F /* SplashFeatureTests */,
 			);
@@ -269,6 +333,13 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		900E6C12ACB18953DE6812CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D1457859C2D2DE42108E5624 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -285,6 +356,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0B5B96B054E6CEEB518B75FD /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$SRCROOT\"/../../../Scripts/SwiftLintRunScript.sh ";
+		};
 		10A7C3177EBA44DF904E02D1 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -336,6 +426,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		333944AFBC8E76BF2A4123C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D021F7CC78079A63E625E7B /* SplashFactory.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C74116CF026E34AFD069A66D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -353,9 +451,46 @@
 			target = DA38CA6F5F8CBA6D764F94BF /* SplashFeature */;
 			targetProxy = 07F8438504086CEF13207E87 /* PBXContainerItemProxy */;
 		};
+		E58A4FE04C77E8DF1519FCB1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SplashFeatureInterface;
+			target = 6C2D2783C91E04F25135D220 /* SplashFeatureInterface */;
+			targetProxy = 19E2115163F3EE95E0598158 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		1AD43D5EE7E1EF5DD1859987 /* PROD */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/SplashFeatureInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.SplashFeatureInterface";
+				PRODUCT_NAME = SplashFeatureInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = PROD;
+		};
 		277B7AFB649C5EB6ACDA69BB /* DEV */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4999665B7AF5738E5AEFD9FA /* DEV.xcconfig */;
@@ -440,6 +575,38 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = DEV;
+		};
+		65830096EFED8A232B6512A3 /* DEV */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/SplashFeatureInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.SplashFeatureInterface";
+				PRODUCT_NAME = SplashFeatureInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = DEV;
 		};
@@ -666,6 +833,38 @@
 			};
 			name = STAGE;
 		};
+		E2E3332B64D77B4F6FBFA892 /* STAGE */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Derived/InfoPlists/SplashFeatureInterface-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Team-Return.SplashFeatureInterface";
+				PRODUCT_NAME = SplashFeatureInterface;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = singlefile;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = STAGE;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -685,6 +884,16 @@
 				62C42232AA2FABEADF395069 /* DEV */,
 				7D038D3521B6FF57FBEB5CA4 /* PROD */,
 				68732624CB21620890E25356 /* STAGE */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = PROD;
+		};
+		485BE768BA9E2B7D288D245B /* Build configuration list for PBXNativeTarget "SplashFeatureInterface" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65830096EFED8A232B6512A3 /* DEV */,
+				1AD43D5EE7E1EF5DD1859987 /* PROD */,
+				E2E3332B64D77B4F6FBFA892 /* STAGE */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = PROD;

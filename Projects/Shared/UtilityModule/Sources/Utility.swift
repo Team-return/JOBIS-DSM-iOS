@@ -1,21 +1,21 @@
 import Foundation
 
 public extension String {
-    func toDMSDate() -> Date {
+    func toJOBISDate() -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         formatter.locale = Locale(identifier: "ko_kr")
         return formatter.date(from: self) ?? .init()
     }
 
-    func toSmallDMSDate() -> Date {
+    func toSmallJOBISDate() -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.locale = Locale(identifier: "ko_kr")
         return formatter.date(from: self) ?? .init()
     }
 
-    func toDMSTime() -> Date {
+    func toJOBISTime() -> Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm:ss"
         formatter.locale = Locale(identifier: "ko_kr")
@@ -24,28 +24,28 @@ public extension String {
 }
 
 public extension Date {
-    func toDMSDateString() -> String {
+    func toJOBISDateString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         formatter.locale = Locale(identifier: "ko_kr")
         return formatter.string(from: self)
     }
 
-    func toSmallDMSTimeString() -> String {
+    func toSmallJOBISTimeString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         formatter.locale = Locale(identifier: "ko_kr")
         return formatter.string(from: self)
     }
 
-    func toSmallDMSDateString() -> String {
+    func toSmallJOBISDateString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         formatter.locale = Locale(identifier: "ko_kr")
         return formatter.string(from: self)
     }
 
-    func toHourAndMinuteDSMDateString() -> String {
+    func toHourAndMinuteJOBISDateString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm"
         formatter.locale = Locale(identifier: "ko_kr")
