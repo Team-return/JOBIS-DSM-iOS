@@ -13,8 +13,8 @@ struct CodeRepositoryImpl: CodeRepository {
     public func fetchJobCode() -> AnyPublisher<CodeDomainInterface.JobCodeEntity, Error> {
         remoteCodeDataSource.fetchJobCode()
     }
-
+    
     public func fetchTechCode(keyword: String) -> AnyPublisher<CodeDomainInterface.TechCodeEntity, Error> {
-        remoteCodeDataSource.fetchTechCode(keyword: keyword)
+        remoteCodeDataSource.fetchTechCode(keyword: key)
     }
 }

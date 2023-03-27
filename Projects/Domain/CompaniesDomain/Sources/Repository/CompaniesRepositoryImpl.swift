@@ -13,7 +13,7 @@ struct CompaniesRepositoryImpl: CompaniesRepository {
     func fetchStudentCompanyList() -> AnyPublisher<StudentCompanyEntity, Error> {
         remoteCompaniesDataSource.fetchStudentCompanyList()
     }
-
+    
     func fetchCompanyInfoDetail(id: String) -> AnyPublisher<CompanyInfoDetailEntity, Error> {
         remoteCompaniesDataSource.fetchCompanyInfoDetail(id: id)
     }
