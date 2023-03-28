@@ -1,6 +1,6 @@
 import XCTest
 
-final class ApplicationDomainTests: XCTestCase {
+final class ApplicationsDomainTests: XCTestCase {
     override func setUpWithError() throws {}
 
     override func tearDownWithError() throws {}

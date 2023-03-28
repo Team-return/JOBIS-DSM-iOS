@@ -1,6 +1,6 @@
 import NeedleFoundation
 import SwiftUI
-import KeychainModule
+import JwtStoreInterface
 import RootFeature
 import SigninFeature
 import SignupFeature

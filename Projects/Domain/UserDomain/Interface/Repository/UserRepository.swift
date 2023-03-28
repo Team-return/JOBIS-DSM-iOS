@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-public protocol AuthRepository {
+public protocol UserRepository {
     func signin(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error>
-    func loadJwtToken() -> JwtTokenEntity
+    func reissueToken() -> AnyPublisher<Void, Error>
 }

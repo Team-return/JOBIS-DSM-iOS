@@ -1,14 +1,14 @@
 import UserDomainInterface
 import Combine
 
-struct LoadJwtTokenUseCaseImpl: LoadJwtTokenUseCase {
-    private let authRepository: any AuthRepository
+public struct LoadJwtTokenUseCaseImpl: LoadJwtTokenUseCase {
+    private let localUserRepository: any LocalUserRepository
 
-    init(authRepository: any AuthRepository) {
-        self.authRepository = authRepository
+    public init(localUserRepository: any LocalUserRepository) {
+        self.localUserRepository = localUserRepository
     }
 
     public func execute() -> JwtTokenEntity {
-        authRepository.loadJwtToken()
+        localUserRepository.loadJwtToken()
     }
 }

@@ -1,20 +1,20 @@
 import CompaniesDomainInterface
 import Combine
 
-struct CompaniesRepositoryImpl: CompaniesRepository {
+public struct CompaniesRepositoryImpl: CompaniesRepository {
     private let remoteCompaniesDataSource: any RemoteCompaniesDataSource
 
-    init(
+    public init(
         remoteCompaniesDataSource: any RemoteCompaniesDataSource
     ) {
         self.remoteCompaniesDataSource = remoteCompaniesDataSource
     }
 
-    func fetchStudentCompanyList() -> AnyPublisher<StudentCompanyEntity, Error> {
+    public func fetchStudentCompanyList() -> AnyPublisher<StudentCompanyEntity, Error> {
         remoteCompaniesDataSource.fetchStudentCompanyList()
     }
-    
-    func fetchCompanyInfoDetail(id: String) -> AnyPublisher<CompanyInfoDetailEntity, Error> {
+
+    public func fetchCompanyInfoDetail(id: String) -> AnyPublisher<CompanyInfoDetailEntity, Error> {
         remoteCompaniesDataSource.fetchCompanyInfoDetail(id: id)
     }
 }

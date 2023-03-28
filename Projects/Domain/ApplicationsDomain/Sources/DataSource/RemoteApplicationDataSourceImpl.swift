@@ -2,7 +2,7 @@ import ApplicationsDomainInterface
 import BaseDomain
 import Combine
 
-public final class RemoteApplicationDataSourceImpl: BaseRemoteDataSource<ApplicationsAPI>,
+public final class RemoteApplicationsDataSourceImpl: BaseRemoteDataSource<ApplicationsAPI>,
                                                         RemoteApplicationsDataSource {
     public func applyCompany(id: String, req: ApplyCompanyRequestDTO) -> AnyPublisher<Void, Error> {
         request(.applyCompany(id: id, req))

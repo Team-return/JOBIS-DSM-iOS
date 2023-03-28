@@ -2,9 +2,9 @@ import Combine
 import ApplicationsDomainInterface
 
 public struct CancelApplyUseCaseImpl: CancelApplyUseCase {
-    private let applicationRepository: any ApplicationRepository
+    private let applicationRepository: any ApplicationsRepository
 
-    public init(applicationRepository: any ApplicationRepository) {
+    public init(applicationRepository: any ApplicationsRepository) {
         self.applicationRepository = applicationRepository
     }
 

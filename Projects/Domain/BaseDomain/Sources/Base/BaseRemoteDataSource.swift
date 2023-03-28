@@ -1,7 +1,7 @@
 import Combine
 import CombineMoya
 import Foundation
-import KeychainModule
+import JwtStoreInterface
 import Moya
 import UtilityModule
 

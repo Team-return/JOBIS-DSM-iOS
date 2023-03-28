@@ -2,7 +2,7 @@ import RecruitmentsDomainInterface
 import BaseDomain
 import Combine
 
-final class RemoteAuthDataSourceImpl: BaseRemoteDataSource<RecruitmentsAPI>,
+public final class RemoteRecruitmentsDataSourceImpl: BaseRemoteDataSource<RecruitmentsAPI>,
                                              RemoteRecruitmentsDataSource {
     public func fetchRecruitmentDetail(id: String) -> AnyPublisher<RecruitmentDetailEntity, Error> {
         request(.fetchRecruitmentDetail(id: id), dto: RecruitmentDetailResponseDTO.self)

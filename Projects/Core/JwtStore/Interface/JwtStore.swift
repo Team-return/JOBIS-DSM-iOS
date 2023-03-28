@@ -1,11 +1,11 @@
-public enum JwtStoreProperties: String {
+public enum KeychainType: String {
     case accessToken = "ACCESS-TOKEN"
     case refreshToken = "REFRESH-TOKEN"
-    case accessExpiresAt = "ACCESS-EXPIRES-AT"
+    case accessExpiresAt = "ACCESS-EXPIRED-AT"
 }
 
-public protocol JwtStore {
-    func save(property: JwtStoreProperties, value: String)
-    func load(property: JwtStoreProperties) -> String
-    func delete(property: JwtStoreProperties)
+public protocol Keychain {
+    func save(type: KeychainType, value: String)
+    func load(type: KeychainType) -> String
+    func delete(type: KeychainType)
 }

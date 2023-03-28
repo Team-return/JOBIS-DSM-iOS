@@ -1,7 +1,7 @@
 import RecruitmentsDomainInterface
 import Combine
 
-struct RecruitmentsRepositoryImpl: RecruitmentsRepository {
+public struct RecruitmentsRepositoryImpl: RecruitmentsRepository {
     private let remoteRecruitmentsDataSource: any RemoteRecruitmentsDataSource
 
     public init(remoteRecruitmentsDataSource: any RemoteRecruitmentsDataSource) {
@@ -12,7 +12,7 @@ struct RecruitmentsRepositoryImpl: RecruitmentsRepository {
         remoteRecruitmentsDataSource.fetchRecruitmentDetail(id: id)
     }
 
-    func fetchRecruitmentList(page: Int) -> AnyPublisher<RecruitmentListEntity, Error> {
+    public func fetchRecruitmentList(page: Int) -> AnyPublisher<RecruitmentListEntity, Error> {
         remoteRecruitmentsDataSource.fetchRecruitmentList(page: page)
     }
 }
