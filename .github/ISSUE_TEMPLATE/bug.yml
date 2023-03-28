@@ -1,5 +1,5 @@
 name: "Bug"
-description: "버그가 생겼어요 😠"
+description: "버그가 생겼어요 🐛"
 labels: 버그
 body:
   - type: textarea
@@ -16,10 +16,10 @@ body:
       description: |
         어떤상황에서 생기는 버그인지 간단하게 설명해주세요.
       placeholder: |
-        1. Go to '...'
-        2. Click on '....'
-        3. Scroll down to '....'
-        4. See error
+        1. '...'로 들어간다
+        2. '....'를 클릭한다
+        3. '....'를 스크롤한다
+        4. 에러발생!
 
   - type: textarea
     attributes:
