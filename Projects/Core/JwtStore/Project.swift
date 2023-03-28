@@ -7,6 +7,6 @@ let project = Project.makeModule(
     product: .staticLibrary,
     targets: [.interface, .testing, .unitTest],
     externalDependencies: [
-        .SPM.Swinject
+        .SPM.Moya
     ]
 )

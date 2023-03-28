@@ -40,7 +40,6 @@ let targets: [Target] = [
             .Feature.RootFeature,
             .Core.JwtStore,
             .Core.JwtStoreInterface,
-            .Feature.RootFeature,
             .Feature.SigninFeature,
             .Feature.SignupFeature,
             .Feature.SplashFeature,

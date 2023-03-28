@@ -1,5 +1,4 @@
 import Moya
-import UserDomainInterface
 
 public enum RefreshAPI {
     case reissueToken

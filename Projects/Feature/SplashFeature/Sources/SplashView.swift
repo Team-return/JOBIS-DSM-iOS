@@ -1,8 +1,10 @@
 import DesignSystem
 import SwiftUI
+import BaseFeature
 
 struct SplashView: View {
     @StateObject var viewModel: SplashViewModel
+    @EnvironmentObject var appState: AppState
 
     init(
         viewModel: SplashViewModel
@@ -11,6 +13,13 @@ struct SplashView: View {
     }
 
     var body: some View {
-        Text("Text")
+        VStack {}
+            .onAppear {
+                viewModel.onAppear {
+                    appState.sceneFlow = .main
+                } onError: { _ in
+                    appState.sceneFlow = .auth
+                }
+            }
     }
 }
