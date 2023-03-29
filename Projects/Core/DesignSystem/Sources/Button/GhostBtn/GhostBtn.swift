@@ -10,11 +10,11 @@ public struct GhostBtn: View {
     var iconHeight: CGFloat
 
     public init(
-        text: String = "",
+        text: String,
         style: BtnStyle = .defaultStyle,
-        action: @escaping () -> Void = {},
+        action: @escaping () -> Void,
         size: BtnSize = .medium,
-        icon: Image = Image(systemName: "squareshape.fill"),
+        icon: Image = Image(""),
         iconWidth: CGFloat = 20,
         iconHeight: CGFloat = 20
     ) {
@@ -58,34 +58,32 @@ struct GhostBtn_Previews: PreviewProvider {
         ScrollView {
             VStack(spacing: 20) {
                 VStack {
-                    GhostBtn(text: "버튼", style: .defaultStyle, size: .small)
-                        .disabled(true)
-                    GhostBtn(text: "버튼", style: .defaultStyle, size: .medium)
-                    GhostBtn(text: "버튼", style: .defaultStyle, size: .large)
+                    GhostBtn(text: "버튼", style: .defaultStyle, action: {}, size: .small)
+                    GhostBtn(text: "버튼", style: .defaultStyle, action: {}, size: .medium)
+                    GhostBtn(text: "버튼", style: .defaultStyle, action: {}, size: .large)
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    GhostBtn(text: "버튼", style: .lIcon, size: .medium, icon: Image(systemName: "pencil"))
-                    GhostBtn(text: "버튼", style: .lIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    GhostBtn(text: "버튼", style: .lIcon, action: {}, size: .medium, icon: Image(systemName: "pencil"))
+                    GhostBtn(text: "버튼", style: .lIcon, action: {}, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    GhostBtn(text: "버튼", style: .rIcon, size: .medium, icon: Image(systemName: "pencil"))
-                    GhostBtn(text: "버튼", style: .rIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    GhostBtn(text: "버튼", style: .rIcon, action: {}, size: .medium, icon: Image(systemName: "pencil"))
+                    GhostBtn(text: "버튼", style: .rIcon, action: {}, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    GhostBtn(style: .icon1, icon: Image(systemName: "pencil"))
+                    GhostBtn(text: "버튼", style: .icon1, action: {}, icon: Image(systemName: "pencil"))
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    GhostBtn(style: .icon2, size: .small, icon: Image(systemName: "pencil"))
-                        .disabled(true)
-                    GhostBtn(style: .icon2, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    GhostBtn(text: "버튼", style: .icon2, action: {}, size: .small, icon: Image(systemName: "pencil"))
+                    GhostBtn(text: "버튼", style: .icon2, action: {}, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
                 }
                 .padding(10)
                 .background(.white)
