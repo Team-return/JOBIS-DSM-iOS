@@ -11,6 +11,6 @@ struct MainTabView: View {
     }
 
     var body: some View {
-        Text("Text")
+        Text("MainTab")
     }
 }

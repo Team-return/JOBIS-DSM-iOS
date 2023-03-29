@@ -11,6 +11,6 @@ struct MenuView: View {
     }
 
     var body: some View {
-        Text("Text")
+        Text("Menu")
     }
 }

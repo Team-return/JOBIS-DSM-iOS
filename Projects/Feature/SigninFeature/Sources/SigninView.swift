@@ -11,6 +11,6 @@ struct SigninView: View {
     }
 
     var body: some View {
-        Text("Text")
+        Text("Signin")
     }
 }
