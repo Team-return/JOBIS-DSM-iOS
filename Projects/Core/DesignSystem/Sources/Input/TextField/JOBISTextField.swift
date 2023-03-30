@@ -9,8 +9,8 @@ public struct JOBISTextField: View {
     var onCommit: () -> Void
     @FocusState var isFocused: Bool
 
-    var textfieldType: TextfieldType
-    var textfieldOutlinedType: TextfieldOutlinedType
+    var textfieldType: TextFieldType
+    var textfieldOutlinedType: TextFieldOutlinedType
     var bottomMessage: String
     var topMessage: String
     @State private var isPWSecure = true
@@ -20,8 +20,8 @@ public struct JOBISTextField: View {
         text: Binding<String>,
         isError: Bool,
         errorMessage: String,
-        textfieldType: TextfieldType = .none,
-        textfieldOutlinedType: TextfieldOutlinedType,
+        textfieldType: TextFieldType = .none,
+        textfieldOutlinedType: TextFieldOutlinedType,
         bottomMessage: String = "",
         topMessage: String = "",
         onCommit: @escaping () -> Void = {}
