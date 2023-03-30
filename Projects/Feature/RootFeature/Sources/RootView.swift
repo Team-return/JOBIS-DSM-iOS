@@ -3,7 +3,7 @@ import SwiftUI
 
 struct RootView: View {
     @StateObject var viewModel: RootViewModel
-    
+
     init(
         viewModel: RootViewModel
     ) {
