@@ -1,6 +1,6 @@
 import Foundation
 
-public enum TextFieldOutlinedType {
+public enum TFOutlinedType {
     case outlined
     case bottomlined
 }

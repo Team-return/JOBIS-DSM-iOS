@@ -9,8 +9,8 @@ public struct JOBISTextField: View {
     var onCommit: () -> Void
     @FocusState var isFocused: Bool
 
-    var textfieldType: TextFieldType
-    var textfieldOutlinedType: TextFieldOutlinedType
+    var inputType: TFInputType
+    var outlinedType: TFOutlinedType
     var bottomMessage: String
     var topMessage: String
     @State private var isPWSecure = true
@@ -20,8 +20,8 @@ public struct JOBISTextField: View {
         text: Binding<String>,
         isError: Bool,
         errorMessage: String,
-        textfieldType: TextFieldType = .none,
-        textfieldOutlinedType: TextFieldOutlinedType,
+        inputType: TFInputType = .none,
+        outlinedType: TFOutlinedType,
         bottomMessage: String = "",
         topMessage: String = "",
         onCommit: @escaping () -> Void = {}
@@ -30,8 +30,8 @@ public struct JOBISTextField: View {
         _text = text
         self.isError = isError
         self.errorMessage = errorMessage
-        self.textfieldType = textfieldType
-        self.textfieldOutlinedType = textfieldOutlinedType
+        self.inputType = inputType
+        self.outlinedType = outlinedType
         self.bottomMessage = bottomMessage
         self.topMessage = topMessage
         self.onCommit = onCommit
@@ -54,7 +54,7 @@ public struct JOBISTextField: View {
         .padding(.vertical, 8)
         .padding(.horizontal, 16)
         .overlay(alignment: .bottom) {
-            if textfieldOutlinedType == .outlined {
+            if outlinedType == .outlined {
                 RoundedRectangle(cornerRadius: 3)
                     .strokeBorder(
                         isError && isEnabled ? Color.State.error : isFocused ? .Sub.gray60 : .Sub.gray40,
@@ -67,7 +67,7 @@ public struct JOBISTextField: View {
             }
         }
         .background(
-            textfieldOutlinedType == .outlined ?
+            outlinedType == .outlined ?
             isEnabled ?
             Color.Sub.gray10 : .Sub.gray30 : .clear
         )
@@ -97,7 +97,7 @@ public struct JOBISTextField: View {
     @ViewBuilder
     func jobisTextfield() -> some View {
         Group {
-            if textfieldType == .password && isPWSecure {
+            if inputType == .password && isPWSecure {
                 SecureField("", text: $text)
             } else {
                 TextField("", text: $text)
@@ -111,7 +111,7 @@ public struct JOBISTextField: View {
 
     @ViewBuilder
     func textFieldIcon() -> some View {
-        switch textfieldType {
+        switch inputType {
         case .none:
             EmptyView()
         case .password:
@@ -144,8 +144,8 @@ struct JOBISTextField_Previews: PreviewProvider {
                 text: .constant(""),
                 isError: false,
                 errorMessage: "errorMessage",
-                textfieldType: .none,
-                textfieldOutlinedType: .bottomlined,
+                inputType: .none,
+                outlinedType: .bottomlined,
                 bottomMessage: "BottomMessage",
                 topMessage: "TopMessage",
                 onCommit: {
@@ -158,8 +158,8 @@ struct JOBISTextField_Previews: PreviewProvider {
                 text: .constant("gtw030488"),
                 isError: true,
                 errorMessage: "비밀번호를 다시 입력해주세요.",
-                textfieldType: .password,
-                textfieldOutlinedType: .bottomlined,
+                inputType: .password,
+                outlinedType: .bottomlined,
                 bottomMessage: "@#$%@#$^ <- 이거 다들어가게 넣여용 ^^",
                 topMessage: "비밀번호",
                 onCommit: {
@@ -172,8 +172,8 @@ struct JOBISTextField_Previews: PreviewProvider {
                 text: .constant(""),
                 isError: false,
                 errorMessage: "errorMessage",
-                textfieldType: .password,
-                textfieldOutlinedType: .outlined,
+                inputType: .password,
+                outlinedType: .outlined,
                 bottomMessage: "BottomMessage",
                 topMessage: "TopMessage",
                 onCommit: {
@@ -186,8 +186,8 @@ struct JOBISTextField_Previews: PreviewProvider {
                 text: .constant("gtw030488"),
                 isError: true,
                 errorMessage: "비밀번호를 다시 입력해주세요.",
-                textfieldType: .password,
-                textfieldOutlinedType: .outlined,
+                inputType: .password,
+                outlinedType: .outlined,
                 bottomMessage: "@#$%@#$^ <- 이거 다들어가게 넣여용 ^^",
                 topMessage: "비밀번호",
                 onCommit: {

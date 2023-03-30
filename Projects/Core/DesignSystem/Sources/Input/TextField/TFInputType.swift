@@ -1,6 +1,6 @@
 import Foundation
 
-public enum TextFieldType {
+public enum TFInputType {
     case none
     case password
     case search
