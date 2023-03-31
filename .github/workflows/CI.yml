@@ -66,7 +66,7 @@ jobs:
       run: tuist fetch
 
     - name: build tuist
-      run: TUIST_CI=1 tuist build
+      run: tuist build
 
   test:
     name: 🧪 Test
@@ -93,4 +93,4 @@ jobs:
       run: tuist fetch
 
     - name: test tuist
-      run: TUIST_CI=1 tuist test
+      run: tuist test
