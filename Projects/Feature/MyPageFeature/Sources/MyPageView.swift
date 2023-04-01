@@ -11,6 +11,6 @@ struct MyPageView: View {
     }
 
     var body: some View {
-        Text("Text")
+        Text("MyPage")
     }
 }

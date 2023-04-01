@@ -2,9 +2,9 @@ import SwiftUI
 
 public struct JOBISDropDown: View {
     @State private var isOpen: Bool = false
-    @Binding public var selectedValue: String
-    public var titleValue: String
-    public var selections: [String]
+    @Binding var selectedValue: String?
+    var title: String
+    var selections: [String]
     @Environment(\.isEnabled) private var isEnabled: Bool
     private func isOpenToggle() {
         if isEnabled {
@@ -12,34 +12,33 @@ public struct JOBISDropDown: View {
         }
     }
     public init(
-        selectedValue: Binding<String>,
-        titleValue: String,
+        selectedValue: Binding<String?>,
+        title: String,
         selections: [String]
     ) {
         _selectedValue = selectedValue
-        self.titleValue = titleValue
+        self.title = title
         self.selections = selections
     }
     public var body: some View {
         VStack(spacing: 5) {
             HStack {
-                Text(selectedValue)
-                    .JOBISFont(.body(.body1),
-                               color: isEnabled ? .Sub.gray90 : .Sub.gray50)
+                Text(selectedValue ?? title)
+                    .JOBISFont(.etc(.caption),
+                               color: isEnabled ? .Sub.gray80 : .Sub.gray50)
                     .padding(.leading, 16)
                 Spacer()
                 Image(systemName: isOpen ?
                       "chevron.up" :
                         "chevron.down")
                 .resizable()
-                .foregroundColor(isEnabled ? .Sub.gray90 : .Sub.gray50)
+                .foregroundColor(isEnabled ? .Sub.gray80 : .Sub.gray50)
                 .frame(width: 13, height: 7)
                 .padding(.trailing, 14)
             }
-            .frame(width: 167)
-            .padding(.vertical, 11)
+            .frame(width: 116, height: 35)
             .overlay(
-                RoundedRectangle(cornerRadius: 3)
+                RoundedRectangle(cornerRadius: 30)
                     .strokeBorder(
                         Color.Sub.gray40,
                         lineWidth: 1
@@ -49,16 +48,17 @@ public struct JOBISDropDown: View {
             .onTapGesture {
                 isOpenToggle()
             }
+            .cornerRadius(30)
             .overlay(alignment: .top) {
                 if isOpen {
                     VStack(spacing: 0) {
                         ForEach(selections, id: \.self) { value in
                             HStack {
                                 Text(value)
-                                    .JOBISFont(.body(.body3),
-                                               color: .Sub.gray60)
-                                    .padding(.vertical, 14)
-                                    .padding(.leading, 16)
+                                    .JOBISFont(.etc(.caption),
+                                               color: .Sub.gray80)
+                                    .padding(.vertical, 7)
+                                    .padding(.leading, 15)
                                 Spacer()
                             }
                             .background(Color.Sub.gray10)
@@ -69,24 +69,25 @@ public struct JOBISDropDown: View {
                                 }
                             }
                             Rectangle()
-                                .frame(width: 147, height: 1)
+                                .frame(width: 96, height: 1)
                                 .foregroundColor(.Sub.gray40)
                         }
                     }
-                    .frame(width: 167)
+                    .frame(width: 116)
+                    .cornerRadius(15)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 3)
+                        RoundedRectangle(cornerRadius: 15)
                             .strokeBorder(
                                 Color.Sub.gray40,
                                 lineWidth: 1
                             )
                     )
-                    .offset(y: 48)
+                    .offset(y: 40)
                 }
             }
         }
         .onAppear {
-            selectedValue = titleValue
+            selectedValue = title
         }
         .onChange(of: isEnabled) { newValue in
             if newValue == false {
@@ -99,11 +100,11 @@ public struct JOBISDropDown: View {
 
 struct JOBISDropDown_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
+        ZStack {
             VStack {
                 JOBISDropDown(
-                    selectedValue: .constant("title"),
-                    titleValue: "전공동아리",
+                    selectedValue: .constant(nil),
+                    title: "전공동아리",
                     selections: [
                         "DMS",
                         "Kodomo",
