@@ -34,7 +34,7 @@ public struct JOBISDropDown: View {
                 .resizable()
                 .foregroundColor(isEnabled ? .Sub.gray80 : .Sub.gray50)
                 .frame(width: 13, height: 7)
-                .padding(.trailing, 14)
+                .padding(.trailing, 15)
             }
             .frame(width: 116, height: 35)
             .overlay(
@@ -51,29 +51,38 @@ public struct JOBISDropDown: View {
             .cornerRadius(30)
             .overlay(alignment: .top) {
                 if isOpen {
-                    VStack(spacing: 0) {
-                        ForEach(selections, id: \.self) { value in
-                            HStack {
-                                Text(value)
-                                    .JOBISFont(.etc(.caption),
-                                               color: .Sub.gray80)
-                                    .padding(.vertical, 7)
-                                    .padding(.leading, 15)
-                                Spacer()
-                            }
-                            .background(Color.Sub.gray10)
-                            .onTapGesture {
-                                if isEnabled {
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            ForEach(selections, id: \.self) { value in
+                                HStack {
+                                    Text(value)
+                                        .JOBISFont(.etc(.caption),
+                                                   color: .Sub.gray80)
+                                        .padding(.vertical, 7)
+                                        .padding(.leading, 15)
+                                    Spacer()
+                                }
+                                .background(Color.Sub.gray10)
+                                .onTapGesture {
                                     self.isOpenToggle()
-                                    self.selectedValue = value
+                                    if isEnabled {
+                                        self.selectedValue = value
+                                    }
+                                }
+                                if value != selections.last {
+                                    Rectangle()
+                                        .frame(width: 96, height: 1)
+                                        .foregroundColor(.Sub.gray40)
+                                        
                                 }
                             }
-                            Rectangle()
-                                .frame(width: 96, height: 1)
-                                .foregroundColor(.Sub.gray40)
                         }
                     }
-                    .frame(width: 116)
+                    .padding(.vertical, 3)
+                    .frame(
+                        width: 116,
+                        height: selections.count < 5 ? 29 * CGFloat(selections.count) : 135
+                    )
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
@@ -83,6 +92,7 @@ public struct JOBISDropDown: View {
                             )
                     )
                     .offset(y: 40)
+                    .scrollDisabled(selections.count < 5)
                 }
             }
         }
@@ -108,6 +118,12 @@ struct JOBISDropDown_Previews: PreviewProvider {
                     selections: [
                         "DMS",
                         "Kodomo",
+                        "正",
+                        "그램",
+                        "正",
+                        "그램",
+                        "正",
+                        "그램",
                         "正",
                         "그램",
                         "시나브로"
