@@ -1,5 +1,4 @@
 import SwiftUI
-import UserDomainInterface
 import HomeFeatureInterface
 import NeedleFoundation
 
