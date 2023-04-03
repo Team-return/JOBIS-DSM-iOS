@@ -74,6 +74,14 @@ public struct JOBISTextField: View {
         .focused($isFocused)
         .onSubmit(onCommit)
         .overlay(alignment: .topLeading) {
+            Text(topMessage)
+                .JOBISFont(
+                    .body(.body4),
+                    color: isEnabled ? isError ? .State.error : .Sub.gray60 : .Sub.gray50
+                )
+                .offset(y: -18)
+        }
+        .overlay(alignment: .topLeading) {
             Text(isError ? errorMessage : bottomMessage)
                 .JOBISFont(
                     .etc(.caption),
@@ -81,14 +89,6 @@ public struct JOBISTextField: View {
                 )
                 .opacity(isEnabled ? 1 : 0)
                 .offset(y: 40)
-        }
-        .overlay(alignment: .topLeading) {
-            Text(topMessage)
-                .JOBISFont(
-                    .etc(.caption),
-                    color: isEnabled ? isError ? .State.error : .Sub.gray60 : .Sub.gray50
-                )
-                .offset(y: -18)
         }
         .animation(.easeIn(duration: 0.3), value: isError)
         .animation(.easeIn(duration: 0.3), value: isFocused)
