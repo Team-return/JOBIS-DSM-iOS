@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "bug-fill 1.png",
+      "filename" : "Group 511.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -17,5 +17,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }
