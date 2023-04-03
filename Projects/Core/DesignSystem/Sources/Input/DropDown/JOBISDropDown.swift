@@ -126,8 +126,7 @@ struct JOBISDropDown_Previews: PreviewProvider {
                         "正",
                         "DMS",
                         "Kodomo",
-                        "正",
-                        
+                        "正",  
                         "그램"
                     ],
                     width: 110
