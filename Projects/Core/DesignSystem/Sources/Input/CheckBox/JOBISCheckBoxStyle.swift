@@ -6,14 +6,13 @@ public struct JOBISCheckboxStyle: ToggleStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
 
         return ZStack {
-            Image.CheckBox.checkMark
-                .resizable()
+            DMSImage(.checkBoxIcon)
                 .frame(width: 11, height: 8)
                 .opacity(configuration.isOn ? 1.0 : 0)
         }
         .frame(width: 20, height: 20)
         .background(configuration.isOn ?
-                    (isEnabled ? Color.Icon.input : .Sub.gray50) :
+                    (isEnabled ? Color.input : .Sub.gray50) :
                         (isEnabled ? .clear : .Sub.gray40))
         .cornerRadius(2)
         .border(configuration.isOn ? Color.clear : isEnabled ? Color.Sub.gray40
