@@ -1,3 +1,6 @@
+included:
+  - "JOBIS-DSM-iOS"
+
 excluded:
   - "**/*/NeedleGenerated.swift"
   - "Tuist"

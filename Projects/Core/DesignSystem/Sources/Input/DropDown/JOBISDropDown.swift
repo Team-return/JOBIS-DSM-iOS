@@ -5,6 +5,7 @@ public struct JOBISDropDown: View {
     @Binding var selectedValue: String?
     var title: String
     var selections: [String]
+    var width: CGFloat
     @Environment(\.isEnabled) private var isEnabled: Bool
     private func isOpenToggle() {
         if isEnabled {
@@ -14,11 +15,13 @@ public struct JOBISDropDown: View {
     public init(
         selectedValue: Binding<String?>,
         title: String,
-        selections: [String]
+        selections: [String],
+        width: CGFloat = 90
     ) {
         _selectedValue = selectedValue
         self.title = title
         self.selections = selections
+        self.width = width
     }
     public var body: some View {
         VStack(spacing: 5) {
@@ -27,6 +30,7 @@ public struct JOBISDropDown: View {
                     .JOBISFont(.etc(.caption),
                                color: isEnabled ? .Sub.gray80 : .Sub.gray50)
                     .padding(.leading, 16)
+                    .lineLimit(1)
                 Spacer()
                 Image(systemName: isOpen ?
                       "chevron.up" :
@@ -34,9 +38,9 @@ public struct JOBISDropDown: View {
                 .resizable()
                 .foregroundColor(isEnabled ? .Sub.gray80 : .Sub.gray50)
                 .frame(width: 13, height: 7)
-                .padding(.trailing, 14)
+                .padding(.trailing, 15)
             }
-            .frame(width: 116, height: 35)
+            .frame(width: width, height: 30)
             .overlay(
                 RoundedRectangle(cornerRadius: 30)
                     .strokeBorder(
@@ -51,29 +55,36 @@ public struct JOBISDropDown: View {
             .cornerRadius(30)
             .overlay(alignment: .top) {
                 if isOpen {
-                    VStack(spacing: 0) {
-                        ForEach(selections, id: \.self) { value in
-                            HStack {
-                                Text(value)
-                                    .JOBISFont(.etc(.caption),
-                                               color: .Sub.gray80)
-                                    .padding(.vertical, 7)
-                                    .padding(.leading, 15)
-                                Spacer()
-                            }
-                            .background(Color.Sub.gray10)
-                            .onTapGesture {
-                                if isEnabled {
+                    ScrollView {
+                        VStack(spacing: 0) {
+                            ForEach(selections, id: \.self) { value in
+                                HStack {
+                                    Text(value)
+                                        .JOBISFont(.etc(.caption),
+                                                   color: .Sub.gray80)
+                                        .padding(.vertical, 7)
+                                        .padding(.leading, 15)
+                                    Spacer()
+                                }
+                                .background(Color.Sub.gray10)
+                                .onTapGesture {
                                     self.isOpenToggle()
-                                    self.selectedValue = value
+                                    if isEnabled {
+                                        self.selectedValue = value
+                                    }
+                                }
+                                if value != selections.last {
+                                    Rectangle()
+                                        .frame(width: width - 20, height: 1)
+                                        .foregroundColor(.Sub.gray40)
                                 }
                             }
-                            Rectangle()
-                                .frame(width: 96, height: 1)
-                                .foregroundColor(.Sub.gray40)
                         }
                     }
-                    .frame(width: 116)
+                    .frame(
+                        width: width,
+                        height: selections.count < 5 ? 29 * CGFloat(selections.count) : 135
+                    )
                     .cornerRadius(15)
                     .overlay(
                         RoundedRectangle(cornerRadius: 15)
@@ -82,7 +93,8 @@ public struct JOBISDropDown: View {
                                 lineWidth: 1
                             )
                     )
-                    .offset(y: 40)
+                    .offset(y: 37)
+                    .scrollDisabled(selections.count < 5)
                 }
             }
         }
@@ -101,7 +113,7 @@ public struct JOBISDropDown: View {
 struct JOBISDropDown_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            VStack {
+            HStack {
                 JOBISDropDown(
                     selectedValue: .constant(nil),
                     title: "전공동아리",
@@ -109,9 +121,38 @@ struct JOBISDropDown_Previews: PreviewProvider {
                         "DMS",
                         "Kodomo",
                         "正",
-                        "그램",
-                        "시나브로"
-                    ])
+                        "DMS",
+                        "Kodomo",
+                        "正",
+                        "DMS",
+                        "Kodomo",
+                        "正",
+                        "그램"
+                    ],
+                    width: 110
+                )
+                HStack {
+                    JOBISDropDown(
+                        selectedValue: .constant(nil),
+                        title: "학년",
+                        selections: [
+                            "1",
+                            "2",
+                            "3"
+                        ]
+                    )
+                    JOBISDropDown(
+                        selectedValue: .constant(nil),
+                        title: "반",
+                        selections: [
+                            "1",
+                            "2",
+                            "3",
+                            "4"
+                        ]
+                    )
+                }
+                .padding(10)
             }
             .padding(10)
         }

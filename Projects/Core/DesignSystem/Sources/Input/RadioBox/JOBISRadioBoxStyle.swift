@@ -7,14 +7,14 @@ public struct JOBISRadioBoxStyle: ToggleStyle {
 
         return ZStack {
             Circle()
-                .foregroundColor(isEnabled ? .Icon.input : .Sub.gray50)
+                .foregroundColor(isEnabled ? .input : .Sub.gray50)
                 .frame(width: 10, height: 10)
                 .opacity(configuration.isOn ? 1.0 : 0)
                 .padding(3)
                 .overlay(
                     Circle()
                         .stroke(configuration.isOn ?
-                                (isEnabled ? .Icon.input : Color.Sub.gray50) :
+                                (isEnabled ? .input : Color.Sub.gray50) :
                                     (isEnabled ? .Sub.gray40 : .Sub.gray50), lineWidth: 1.5)
                 )
         }
