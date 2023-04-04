@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "box-arrow-right 1.png",
+      "filename" : "box-arrow-right 1.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -17,5 +17,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

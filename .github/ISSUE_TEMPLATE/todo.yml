@@ -7,7 +7,7 @@ body:
       description: |
         [개요] 할일에 관한 설명을 간단하게 작성해주세요.
       placeholder: |
-        [ ] 똥싸기
+        - [ ] 똥싸기
   - type: textarea
     attributes:
       label: Additional
