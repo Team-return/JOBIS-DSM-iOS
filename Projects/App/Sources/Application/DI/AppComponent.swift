@@ -3,6 +3,8 @@ import SwiftUI
 import JwtStoreInterface
 import RootFeature
 import AuthFeature
+import SigninFeature
+import SignupFeature
 import MainTabFeature
 import HomeFeature
 import MyPageFeature
@@ -35,6 +37,12 @@ public final class AppComponent: BootstrapComponent {
 
 // MARK: - Auth
 public extension AppComponent {
+    var signinComponent: SigninComponent {
+        SigninComponent(parent: self)
+    }
+    var signupComponent: SignupComponent {
+        SignupComponent(parent: self)
+    }
     var authComponent: AuthComponent {
         AuthComponent(parent: self)
     }

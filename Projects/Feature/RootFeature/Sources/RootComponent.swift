@@ -1,4 +1,4 @@
-import BaseFeature
+import RootFeatureInterface
 import NeedleFoundation
 import SwiftUI
 import AuthFeature
@@ -11,7 +11,7 @@ public protocol RootDependency: Dependency {
     var splashComponent: SplashComponent { get }
 }
 
-public final class RootComponent: Component<RootDependency> {
+public final class RootComponent: Component<RootDependency>, RootFactory {
     public func makeView() -> some View {
         RootView(
             authComponent: self.dependency.authComponent,
