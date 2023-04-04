@@ -27,7 +27,7 @@ struct SigninView: View {
                 )
                 .onTapGesture {
                     withAnimation(.spring(
-                        response: 0.4,
+                        response: 0.5,
                         dampingFraction: 0.6,
                         blendDuration: 0.0
                     )) {
@@ -69,7 +69,7 @@ struct SigninView: View {
             VStack(spacing: 15) {
                 VStack {
                     JOBISTextField(
-                        placeholder: "@dms.hs.kr이 포함되어야합니다.",
+                        placeholder: "@dsm.hs.kr이 포함되어야합니다.",
                         text: $email,
                         isError: viewModel.isErrorOcuured,
                         errorMessage: viewModel.errorMessage,
