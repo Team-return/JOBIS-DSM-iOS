@@ -6,7 +6,7 @@ public struct JOBISCheckboxStyle: ToggleStyle {
     public func makeBody(configuration: Self.Configuration) -> some View {
 
         return ZStack {
-            DMSImage(.checkBoxIcon)
+            JOBISImage(.checkBoxIcon)
                 .frame(width: 11, height: 8)
                 .opacity(configuration.isOn ? 1.0 : 0)
         }

@@ -51,6 +51,8 @@ public enum JOBISFontStyle: Hashable {
 
     public enum Etc: CGFloat, JOBISFontable {
         case caption = 12
+        case authTitle = 35
+        case authSubTitle = 15
     }
 }
 
@@ -90,6 +92,10 @@ public extension JOBISFontStyle.Etc {
     var weight: JOBISFontWeight {
         switch self {
         case .caption:
+            return .regular
+        case .authTitle:
+            return .medium
+        case .authSubTitle:
             return .regular
         }
     }

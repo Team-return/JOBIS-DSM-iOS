@@ -13,13 +13,13 @@ struct SplashView: View {
     }
 
     var body: some View {
-        VStack {}
-            .onAppear {
-                viewModel.onAppear {
-                    appState.sceneFlow = .main
-                } onError: { _ in
-                    appState.sceneFlow = .auth
-                }
+        ZStack {}
+        .onAppear {
+            viewModel.onAppear {
+                appState.sceneFlow = .main
+            } onError: { _ in
+                appState.sceneFlow = .auth
             }
+        }
     }
 }

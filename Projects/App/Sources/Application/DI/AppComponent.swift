@@ -2,6 +2,7 @@ import NeedleFoundation
 import SwiftUI
 import JwtStoreInterface
 import RootFeature
+import AuthFeature
 import SigninFeature
 import SignupFeature
 import MainTabFeature
@@ -41,6 +42,9 @@ public extension AppComponent {
     }
     var signupComponent: SignupComponent {
         SignupComponent(parent: self)
+    }
+    var authComponent: AuthComponent {
+        AuthComponent(parent: self)
     }
     var splashComponent: SplashComponent {
         SplashComponent(parent: self)
