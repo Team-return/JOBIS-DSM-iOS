@@ -1,14 +1,24 @@
 import DesignSystem
 import SwiftUI
+import SigninFeature
+import SignupFeature
 
 struct AuthView: View {
     @StateObject var viewModel: AuthViewModel
     @State private var isAppear: Bool = false
+    @Namespace var signinAnimation
+    @Namespace var signupAnimation
+    private let signinComponent: SigninComponent
+    private let signupComponent: SignupComponent
 
-    init(
-        viewModel: AuthViewModel
+    public init(
+        viewModel: AuthViewModel,
+        signinComponent: SigninComponent,
+        signupComponent: SignupComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.signinComponent = signinComponent
+        self.signupComponent = signupComponent
     }
 
     var body: some View {
@@ -23,6 +33,11 @@ struct AuthView: View {
                 SigninImage(.splashIcon)
                     .frame(width: 145, height: 215)
                     .padding(.top, isAppear ? 100 : 0)
+                    .animation(.spring(
+                        response: 0.6,
+                        dampingFraction: 0.5,
+                        blendDuration: 0.0
+                    ), value: isAppear)
 
                 HStack {
                     SigninImage(.technyFeed)
@@ -34,25 +49,37 @@ struct AuthView: View {
                         .offset(x: 76, y: 63)
                 }
                 .opacity(isAppear ? 1 : 0)
+                .animation(.spring(
+                    response: 0.6,
+                    dampingFraction: 0.5,
+                    blendDuration: 0.0
+                ), value: isAppear)
 
                 Spacer()
             }
 
             authNavigation()
                 .offset(y: isAppear ? 0 : 250)
+                .animation(.spring(
+                    response: 0.6,
+                    dampingFraction: 1,
+                    blendDuration: 0.0
+                ), value: isAppear)
         }
         .edgesIgnoringSafeArea(.all)
+        .overlay {
+            if viewModel.isPresentedSignin {
+                signinComponent.makeView(
+                    signinAnimation: signinAnimation,
+                    isPresented: $viewModel.isPresentedSignin
+                )
+            } else {
+                EmptyView()
+            }
+        }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-                withAnimation(
-                    .spring(
-                        response: 0.6,
-                        dampingFraction: 0.5,
-                        blendDuration: 0.0
-                    )
-                ) {
-                    self.isAppear = true
-                }
+                self.isAppear = true
             }
         }
     }
@@ -72,7 +99,7 @@ struct AuthView: View {
             SolidBtn(
                 text: "로그인",
                 action: {
-
+                    viewModel.isPresentedSignin.toggle()
                 },
                 size: .large
             )
@@ -80,7 +107,7 @@ struct AuthView: View {
             GhostBtn(
                 text: "회원가입",
                 action: {
-
+                    viewModel.isPresentedSignup.toggle()
                 },
                 size: .large
             )
