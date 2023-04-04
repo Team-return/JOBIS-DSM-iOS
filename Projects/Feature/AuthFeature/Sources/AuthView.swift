@@ -47,6 +47,12 @@ struct AuthView: View {
                     SigninImage(.technyLaptop)
                         .frame(width: 199, height: 144)
                         .offset(x: 76, y: 63)
+                        .matchedGeometryEffect(id: "TechnyLaptop", in: signinAnimation)
+                        .animation(.spring(
+                            response: 0.6,
+                            dampingFraction: 0.8,
+                            blendDuration: 0.0
+                        ), value: isAppear)
                 }
                 .opacity(isAppear ? 1 : 0)
                 .animation(.spring(
@@ -63,6 +69,12 @@ struct AuthView: View {
                 .animation(.spring(
                     response: 0.6,
                     dampingFraction: 1,
+                    blendDuration: 0.0
+                ), value: isAppear)
+                .matchedGeometryEffect(id: "AuthNavigation", in: signinAnimation)
+                .animation(.spring(
+                    response: 0.6,
+                    dampingFraction: 0.8,
                     blendDuration: 0.0
                 ), value: isAppear)
         }
@@ -99,15 +111,22 @@ struct AuthView: View {
             SolidBtn(
                 text: "로그인",
                 action: {
-                    viewModel.isPresentedSignin.toggle()
+                    withAnimation(.spring(
+                        response: 0.4,
+                        dampingFraction: 0.6,
+                        blendDuration: 0.0
+                    )) {
+                        viewModel.isPresentedSignin.toggle()
+                    }
                 },
                 size: .large
             )
+            .matchedGeometryEffect(id: "SigninButton", in: signinAnimation)
 
             GhostBtn(
                 text: "회원가입",
                 action: {
-                    viewModel.isPresentedSignup.toggle()
+                    print("회원가입")
                 },
                 size: .large
             )
