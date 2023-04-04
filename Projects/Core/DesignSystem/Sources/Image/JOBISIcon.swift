@@ -7,7 +7,7 @@ fileprivate extension DesignSystemImages {
     }
 }
 
-public struct DMSImage: View {
+public struct JOBISImage: View {
     public enum Image {
         case chevronBarDown
         case chevronDown
@@ -46,12 +46,12 @@ public struct DMSImage: View {
     }
 
     public var body: some View {
-        dmsImageToImage()
+        jobisImageToImage()
             .resizable()
             .renderingMode(renderingMode)
     }
 
-    private func dmsImageToImage() -> SwiftUI.Image {
+    private func jobisImageToImage() -> SwiftUI.Image {
         switch image {
         case .chevronBarDown:
             return DesignSystemAsset.Icons.chevronBarDown.suiImage
