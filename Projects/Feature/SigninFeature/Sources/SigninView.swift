@@ -11,6 +11,13 @@ struct SigninView: View {
     }
 
     var body: some View {
-        Text("Signin")
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [.Main.darkBlue, .Main.lightBlue, .Main.lightBlue]),
+                           startPoint: .top, endPoint: .bottom)
+            VStack {
+                Text("signin")
+            }
+        }
+        .edgesIgnoringSafeArea(.all)
     }
 }

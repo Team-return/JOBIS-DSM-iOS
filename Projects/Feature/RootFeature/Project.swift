@@ -9,6 +9,7 @@ let project = Project.makeModule(
     internalDependencies: [
         .Feature.BaseFeature,
         .Feature.SplashFeature,
-        .Feature.MainTabFeature
+        .Feature.MainTabFeature,
+        .Feature.AuthFeature
     ]
 )

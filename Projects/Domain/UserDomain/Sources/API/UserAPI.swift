@@ -20,7 +20,7 @@ extension UsersAPI: JobisAPI {
             return "/login"
 
         case .reissueToken:
-            return "reissue"
+            return "/reissue"
         }
     }
 

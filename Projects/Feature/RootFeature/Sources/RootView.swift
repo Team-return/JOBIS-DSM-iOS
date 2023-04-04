@@ -1,6 +1,6 @@
 import BaseFeature
 import SwiftUI
-import SigninFeature
+import AuthFeature
 import MainTabFeature
 import SplashFeature
 
@@ -9,25 +9,27 @@ import DesignSystem
 struct RootView: View {
     @EnvironmentObject var appState: AppState
 
-    private let signinComponent: SigninComponent
+    private let authComponent: AuthComponent
     private let mainTabComponent: MainTabComponent
     private let splashComponent: SplashComponent
 
     public init(
-        signinComponent: SigninComponent,
+        authComponent: AuthComponent,
         mainTabComponent: MainTabComponent,
         splashComponent: SplashComponent
     ) {
-        self.signinComponent = signinComponent
+        self.authComponent = authComponent
         self.mainTabComponent = mainTabComponent
         self.splashComponent = splashComponent
     }
 
     var body: some View {
         ZStack {
+            LinearGradient(gradient: Gradient(colors: [.Main.darkBlue, .Main.lightBlue, .Main.lightBlue]),
+                           startPoint: .top, endPoint: .bottom)
             switch appState.sceneFlow {
             case .auth:
-                signinComponent.makeView()
+                authComponent.makeView()
                     .environmentObject(appState)
 
             case .main:
@@ -39,6 +41,7 @@ struct RootView: View {
                     .environmentObject(appState)
             }
         }
+        .ignoresSafeArea()
         .animation(.easeInOut, value: appState.sceneFlow)
         .transition(.opacity.animation(.easeInOut))
     }
