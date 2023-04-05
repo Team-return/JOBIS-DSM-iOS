@@ -105,7 +105,11 @@ struct AuthView: View {
             SolidBtn(
                 text: "로그인",
                 action: {
-                    withAnimation {
+                    withAnimation(.spring(
+                        response: 0.6,
+                        dampingFraction: 0.7,
+                        blendDuration: 0.0
+                    )) {
                         viewModel.isPresentedSignin.toggle()
                     }
                 },

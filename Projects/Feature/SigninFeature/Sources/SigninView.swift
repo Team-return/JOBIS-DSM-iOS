@@ -61,7 +61,6 @@ struct SigninView: View {
                 }
 
                 authNavigation(height: (proxy.size.height / 4) * 3)
-                    .matchedGeometryEffect(id: "AuthNavigation", in: signinAnimation)
             }
             .edgesIgnoringSafeArea(.all)
         }
@@ -134,7 +133,7 @@ struct SigninView: View {
                 .matchedGeometryEffect(id: "SigninButton", in: signinAnimation)
                 .padding(.bottom, 45)
             }
-            .frame(maxHeight: height)
+            .frame(maxHeight: isPresented ? height : 0)
             .background(
                 Rectangle()
                     .fill(Color.Sub.gray10)
@@ -143,7 +142,9 @@ struct SigninView: View {
                         response: 0.75,
                         dampingFraction: 0.8,
                         blendDuration: 0.0),
-                               value: isPresented)
+                               value: isPresented
+                    )
+                    .matchedGeometryEffect(id: "AuthNavigation", in: signinAnimation)
             )
         }
     }
