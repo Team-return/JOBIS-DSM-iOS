@@ -42,7 +42,7 @@ let targets: [Target] = [
             .Core.JwtStoreInterface,
             .Feature.AuthFeature,
             .Feature.SplashFeature,
-            .Domain.UserDomain,
+            .Domain.UsersDomain,
             .Domain.AuthDomain,
             .SPM.Needle,
 

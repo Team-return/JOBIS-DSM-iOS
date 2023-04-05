@@ -1,6 +1,6 @@
 import Combine
 import Foundation
 
-public protocol LocalUserRepository {
+public protocol LocalUsersRepository {
     func loadJwtToken() -> JwtTokenEntity
 }

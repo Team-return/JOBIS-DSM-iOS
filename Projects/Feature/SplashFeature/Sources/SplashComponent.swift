@@ -1,7 +1,7 @@
 import SwiftUI
 import NeedleFoundation
 import SplashFeatureInterface
-import UserDomainInterface
+import UsersDomainInterface
 
 public protocol SplashDependency: Dependency {
     var reissueTokenUseCase: any ReissueTokenUseCase { get }

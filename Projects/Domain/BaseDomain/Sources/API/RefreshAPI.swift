@@ -8,7 +8,7 @@ extension RefreshAPI: JobisAPI {
     public typealias ErrorType = RefreshError
 
     public var domain: JobisDomain {
-        .user
+        .users
     }
 
     public var urlPath: String {

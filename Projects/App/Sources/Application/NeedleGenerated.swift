@@ -6,7 +6,6 @@ import AuthDomain
 import AuthDomainInterface
 import AuthFeature
 import AuthFeatureInterface
-import BaseFeature
 import CodeDomain
 import CodeDomainInterface
 import CompaniesDomain
@@ -34,8 +33,8 @@ import SplashFeatureInterface
 import StudentsDomain
 import StudentsDomainInterface
 import SwiftUI
-import UserDomain
-import UserDomainInterface
+import UsersDomain
+import UsersDomainInterface
 
 // swiftlint:disable unused_declaration
 private let needleDependenciesHash : String? = nil
@@ -183,13 +182,6 @@ extension AppComponent: Registration {
         localTable["codeRepository-any CodeRepository"] = { [unowned self] in self.codeRepository as Any }
         localTable["fetchJobCodeUseCase-any FetchJobCodeUseCase"] = { [unowned self] in self.fetchJobCodeUseCase as Any }
         localTable["fetchTechCodeUseCase-any FetchTechCodeUseCase"] = { [unowned self] in self.fetchTechCodeUseCase as Any }
-        localTable["localUserDataSource-any LocalUserDataSource"] = { [unowned self] in self.localUserDataSource as Any }
-        localTable["remoteUserDataSource-any RemoteUserDataSource"] = { [unowned self] in self.remoteUserDataSource as Any }
-        localTable["localUserRepository-any LocalUserRepository"] = { [unowned self] in self.localUserRepository as Any }
-        localTable["userRepository-any UserRepository"] = { [unowned self] in self.userRepository as Any }
-        localTable["loadJwtTokenUseCase-any LoadJwtTokenUseCase"] = { [unowned self] in self.loadJwtTokenUseCase as Any }
-        localTable["reissueTokenUseCase-any ReissueTokenUseCase"] = { [unowned self] in self.reissueTokenUseCase as Any }
-        localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
         localTable["signinComponent-SigninComponent"] = { [unowned self] in self.signinComponent as Any }
         localTable["signupComponent-SignupComponent"] = { [unowned self] in self.signupComponent as Any }
         localTable["authComponent-AuthComponent"] = { [unowned self] in self.authComponent as Any }
@@ -202,6 +194,13 @@ extension AppComponent: Registration {
         localTable["studentsRepository-any StudentsRepository"] = { [unowned self] in self.studentsRepository as Any }
         localTable["renewalPasswordUseCase-any RenewalPasswordUseCase"] = { [unowned self] in self.renewalPasswordUseCase as Any }
         localTable["signupUseCase-any SignupUseCase"] = { [unowned self] in self.signupUseCase as Any }
+        localTable["localUsersDataSource-any LocalUsersDataSource"] = { [unowned self] in self.localUsersDataSource as Any }
+        localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
+        localTable["localUsersRepository-any LocalUsersRepository"] = { [unowned self] in self.localUsersRepository as Any }
+        localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
+        localTable["loadJwtTokenUseCase-any LoadJwtTokenUseCase"] = { [unowned self] in self.loadJwtTokenUseCase as Any }
+        localTable["reissueTokenUseCase-any ReissueTokenUseCase"] = { [unowned self] in self.reissueTokenUseCase as Any }
+        localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
         localTable["remoteApplicationsDataSource-any RemoteApplicationsDataSource"] = { [unowned self] in self.remoteApplicationsDataSource as Any }
         localTable["applicationsRepository-any ApplicationsRepository"] = { [unowned self] in self.applicationsRepository as Any }
         localTable["applyCompanyUseCase-any ApplyCompanyUseCase"] = { [unowned self] in self.applyCompanyUseCase as Any }

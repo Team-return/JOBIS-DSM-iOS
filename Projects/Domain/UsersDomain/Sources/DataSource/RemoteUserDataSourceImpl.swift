@@ -1,8 +1,8 @@
-import UserDomainInterface
+import UsersDomainInterface
 import BaseDomain
 import Combine
 
-public final class RemoteUserDataSourceImpl: BaseRemoteDataSource<UsersAPI>, RemoteUserDataSource {
+public final class RemoteUsersDataSourceImpl: BaseRemoteDataSource<UsersAPI>, RemoteUsersDataSource {
     public func signin(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error> {
         request(.signin(req), dto: AuthorityResponseDTO.self)
             .map { $0.toDomain() }

@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-public protocol UserRepository {
+public protocol RemoteUsersDataSource {
     func signin(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error>
     func reissueToken() -> AnyPublisher<Void, Error>
 }

@@ -1,13 +1,13 @@
 import Foundation
 
-public enum UserDomainError: Error {
+public enum UsersDomainError: Error {
     case badRequest
     case unauthorized
     case internalServerError
     case notFound
 }
 
-extension UserDomainError: LocalizedError {
+extension UsersDomainError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .badRequest:

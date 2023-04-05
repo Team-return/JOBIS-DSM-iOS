@@ -1,5 +1,5 @@
 import Moya
-import UserDomainInterface
+import UsersDomainInterface
 import BaseDomain
 
 public enum UsersAPI {
@@ -8,10 +8,10 @@ public enum UsersAPI {
 }
 
 extension UsersAPI: JobisAPI {
-    public typealias ErrorType = UserDomainError
+    public typealias ErrorType = UsersDomainError
 
     public var domain: JobisDomain {
-        .user
+        .users
     }
 
     public var urlPath: String {

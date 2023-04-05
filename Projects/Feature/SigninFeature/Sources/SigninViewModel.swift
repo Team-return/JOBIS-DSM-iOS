@@ -1,5 +1,5 @@
 import BaseFeature
-import UserDomainInterface
+import UsersDomainInterface
 import Combine
 
 final class SigninViewModel: BaseViewModel {

@@ -3,7 +3,7 @@ import ProjectDescriptionHelpers
 import DependencyPlugin
 
 let project = Project.makeModule(
-    name: ModulePaths.Domain.UserDomain.rawValue,
+    name: ModulePaths.Domain.UsersDomain.rawValue,
     product: .staticLibrary,
     targets: [.interface, .testing, .unitTest],
     internalDependencies: [
