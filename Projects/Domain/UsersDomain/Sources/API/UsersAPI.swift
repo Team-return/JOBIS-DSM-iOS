@@ -58,14 +58,15 @@ extension UsersAPI: JobisAPI {
         switch self {
         case .signin:
             return [
-                400: .badRequest,
-                401: .unauthorized,
+                400: .notSpaceInput,
+                401: .notFoundPassword,
+                404: .notFound,
                 500: .internalServerError
             ]
 
         case .reissueToken:
             return [
-                400: .unauthorized,
+                400: .notFoundPassword,
                 404: .notFound
             ]
         }
