@@ -67,13 +67,7 @@ struct AuthView: View {
             authNavigation()
                 .offset(y: isAppear ? 0 : 250)
                 .animation(.spring(
-                    response: 0.6,
-                    dampingFraction: 1,
-                    blendDuration: 0.0
-                ), value: isAppear)
-                .matchedGeometryEffect(id: "AuthNavigation", in: signinAnimation)
-                .animation(.spring(
-                    response: 0.6,
+                    response: 0.75,
                     dampingFraction: 0.8,
                     blendDuration: 0.0
                 ), value: isAppear)
@@ -111,11 +105,7 @@ struct AuthView: View {
             SolidBtn(
                 text: "로그인",
                 action: {
-                    withAnimation(.spring(
-                        response: 0.4,
-                        dampingFraction: 0.6,
-                        blendDuration: 0.0
-                    )) {
+                    withAnimation {
                         viewModel.isPresentedSignin.toggle()
                     }
                 },
@@ -132,7 +122,11 @@ struct AuthView: View {
             )
             .padding(.bottom, 70)
         }
-        .background(Color.Sub.gray10)
-        .cornerRadius(20, corners: [.topLeft, .topRight])
+        .background(
+            Rectangle()
+                .fill(Color.Sub.gray10)
+                .cornerRadius(20, corners: [.topLeft, .topRight])
+                .matchedGeometryEffect(id: "AuthNavigation", in: signinAnimation)
+        )
     }
 }

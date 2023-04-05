@@ -1,11 +1,16 @@
 import DesignSystem
 import SwiftUI
+import BaseFeature
 
 struct SigninView: View {
+    private enum FocusField {
+        case id
+        case password
+    }
+    @EnvironmentObject var appState: AppState
     @StateObject var viewModel: SigninViewModel
+    @FocusState private var focusField: FocusField?
     @Binding var isPresented: Bool
-    @State private var email: String = ""
-    @State private var password: String = ""
     var signinAnimation: Namespace.ID
 
     init(
@@ -27,13 +32,16 @@ struct SigninView: View {
                 )
                 .onTapGesture {
                     withAnimation(.spring(
-                        response: 0.5,
-                        dampingFraction: 0.6,
+                        response: 0.6,
+                        dampingFraction: 0.7,
                         blendDuration: 0.0
                     )) {
-                        self.isPresented.toggle()
+                        if !(focusField == .id || focusField == .password) {
+                            self.isPresented.toggle()
+                        }
                     }
                 }
+                .hideKeyboardWhenTap()
                 VStack {
                     HStack {
                         Spacer()
@@ -42,15 +50,25 @@ struct SigninView: View {
                             .frame(width: 199, height: 144)
                             .offset(x: 76, y: 30)
                             .matchedGeometryEffect(id: "TechnyLaptop", in: signinAnimation)
+                            .animation(.spring(
+                                response: 0.75,
+                                dampingFraction: 0.7,
+                                blendDuration: 0.0
+                            ), value: isPresented)
                     }
                     Spacer()
-                        .frame(height: (proxy.size.height / 3) * 2)
+                        .frame(height: (proxy.size.height / 4) * 3)
                 }
 
-                authNavigation(height: (proxy.size.height / 3) * 2)
+                authNavigation(height: (proxy.size.height / 4) * 3)
                     .matchedGeometryEffect(id: "AuthNavigation", in: signinAnimation)
             }
             .edgesIgnoringSafeArea(.all)
+        }
+        .hideKeyboardWhenTap()
+        .onChange(of: viewModel.isSuccessSignin) { newValue in
+            guard newValue else { return }
+            appState.sceneFlow = .main
         }
     }
 
@@ -70,25 +88,29 @@ struct SigninView: View {
                 VStack {
                     JOBISTextField(
                         placeholder: "@dsm.hs.kr이 포함되어야합니다.",
-                        text: $email,
+                        text: $viewModel.email,
                         isError: viewModel.isErrorOcuured,
                         errorMessage: viewModel.errorMessage,
                         inputType: .none,
                         outlinedType: .bottomlined,
                         topMessage: "이메일") {
-                            print("이메일")
+                            focusField = .password
                         }
+                        .focused($focusField, equals: .id)
+                        .textContentType(.emailAddress)
                         .padding(.bottom, 45)
                     JOBISTextField(
                         placeholder: "최대 20자",
-                        text: $password,
+                        text: $viewModel.password,
                         isError: viewModel.isErrorOcuured,
                         errorMessage: viewModel.errorMessage,
                         inputType: .password,
                         outlinedType: .bottomlined,
                         topMessage: "비밀번호") {
-                            print("비밀번호")
+                            viewModel.signinButtonDidTap()
                         }
+                        .focused($focusField, equals: .password)
+                        .textContentType(.password)
                 }
                 .padding(.horizontal, 40)
                 .padding(.top, 60)
@@ -105,7 +127,7 @@ struct SigninView: View {
                 SolidBtn(
                     text: "로그인",
                     action: {
-                        print("로그인")
+                        viewModel.signinButtonDidTap()
                     },
                     size: .large
                 )
@@ -113,8 +135,16 @@ struct SigninView: View {
                 .padding(.bottom, 45)
             }
             .frame(maxHeight: height)
-            .background(Color.Sub.gray10)
-            .cornerRadius(20, corners: [.topLeft, .topRight])
+            .background(
+                Rectangle()
+                    .fill(Color.Sub.gray10)
+                    .cornerRadius(20, corners: [.topLeft, .topRight])
+                    .animation(.spring(
+                        response: 0.75,
+                        dampingFraction: 0.8,
+                        blendDuration: 0.0),
+                               value: isPresented)
+            )
         }
     }
 }
