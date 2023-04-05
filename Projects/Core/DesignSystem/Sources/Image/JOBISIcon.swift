@@ -22,7 +22,6 @@ public struct JOBISImage: View {
         case fileEarmarkArrowDown
         case fileEarmarkPlus
         case logout
-        case menu
         case plus
         case search
         case toastError
@@ -32,6 +31,9 @@ public struct JOBISImage: View {
         case trash
         case upload
         case checkBoxIcon
+        case menu
+        case mypage
+        case house
     }
 
     private var image: Image
@@ -121,6 +123,12 @@ public struct JOBISImage: View {
 
         case .checkBoxIcon:
             return DesignSystemAsset.Icons.checkBoxIcon.suiImage
+
+        case .mypage:
+            return DesignSystemAsset.Icons.mypage.suiImage
+
+        case .house:
+            return DesignSystemAsset.Icons.house.suiImage
         }
     }
 }

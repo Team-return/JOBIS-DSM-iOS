@@ -77,7 +77,7 @@ public struct JOBISTextField: View {
             Text(topMessage)
                 .JOBISFont(
                     .body(.body4),
-                    color: isEnabled ? isError ? .State.error : .Sub.gray60 : .Sub.gray50
+                    color: isEnabled ? isError ? .State.error : .Sub.gray70 : .Sub.gray50
                 )
                 .offset(y: -18)
         }
