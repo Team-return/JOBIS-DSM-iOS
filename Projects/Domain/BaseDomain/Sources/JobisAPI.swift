@@ -30,7 +30,7 @@ public extension JobisAPI {
 
 public enum JobisDomain: String {
     case auth
-    case user
+    case users
     case recruitments
     case companies
     case students

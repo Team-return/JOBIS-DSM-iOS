@@ -1,8 +1,11 @@
 import SwiftUI
+import UsersDomainInterface
 import NeedleFoundation
 import SigninFeatureInterface
 
-public protocol SigninDependency: Dependency {}
+public protocol SigninDependency: Dependency {
+    var signinUseCase: any SigninUseCase { get }
+}
 
 public final class SigninComponent: Component<SigninDependency>, SigninFactory {
     public func makeView(
@@ -11,7 +14,9 @@ public final class SigninComponent: Component<SigninDependency>, SigninFactory {
     ) -> some View {
         SigninView(
             isPresented: isPresented,
-            viewModel: .init(),
+            viewModel: .init(
+                signinUseCase: dependency.signinUseCase
+            ),
             signinAnimation: signinAnimation
         )
     }

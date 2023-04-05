@@ -1,8 +1,8 @@
-import UserDomainInterface
+import UsersDomainInterface
 import Combine
 import JwtStoreInterface
 
-public struct LocalUserDataSourceImpl: LocalUserDataSource {
+public struct LocalUsersDataSourceImpl: LocalUsersDataSource {
     private let keychain: any Keychain
 
     public init(keychain: any Keychain) {

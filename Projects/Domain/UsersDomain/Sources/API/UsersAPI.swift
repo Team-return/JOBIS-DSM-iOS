@@ -1,5 +1,5 @@
 import Moya
-import UserDomainInterface
+import UsersDomainInterface
 import BaseDomain
 
 public enum UsersAPI {
@@ -8,10 +8,10 @@ public enum UsersAPI {
 }
 
 extension UsersAPI: JobisAPI {
-    public typealias ErrorType = UserDomainError
+    public typealias ErrorType = UsersDomainError
 
     public var domain: JobisDomain {
-        .user
+        .users
     }
 
     public var urlPath: String {
@@ -58,14 +58,15 @@ extension UsersAPI: JobisAPI {
         switch self {
         case .signin:
             return [
-                400: .badRequest,
-                401: .unauthorized,
+                400: .notSpaceInput,
+                401: .notFoundPassword,
+                404: .notFound,
                 500: .internalServerError
             ]
 
         case .reissueToken:
             return [
-                400: .unauthorized,
+                400: .notFoundPassword,
                 404: .notFound
             ]
         }

@@ -6,7 +6,6 @@ import AuthDomain
 import AuthDomainInterface
 import AuthFeature
 import AuthFeatureInterface
-import BaseFeature
 import CodeDomain
 import CodeDomainInterface
 import CompaniesDomain
@@ -34,8 +33,8 @@ import SplashFeatureInterface
 import StudentsDomain
 import StudentsDomainInterface
 import SwiftUI
-import UserDomain
-import UserDomainInterface
+import UsersDomain
+import UsersDomainInterface
 
 // swiftlint:disable unused_declaration
 private let needleDependenciesHash : String? = nil
@@ -132,15 +131,17 @@ private func factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5(_ component: Needle
     return RootDependency3944cc797a4a88956fb5Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class SigninDependencyde06a9d0b22764487733Provider: SigninDependency {
-
-
-    init() {
-
+    var signinUseCase: any SigninUseCase {
+        return appComponent.signinUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
     }
 }
 /// ^->AppComponent->SigninComponent
-private func factory2882a056d84a613debcce3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return SigninDependencyde06a9d0b22764487733Provider()
+private func factory2882a056d84a613debccf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return SigninDependencyde06a9d0b22764487733Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class HomeDependency443c4e1871277bd8432aProvider: HomeDependency {
 
@@ -181,13 +182,6 @@ extension AppComponent: Registration {
         localTable["codeRepository-any CodeRepository"] = { [unowned self] in self.codeRepository as Any }
         localTable["fetchJobCodeUseCase-any FetchJobCodeUseCase"] = { [unowned self] in self.fetchJobCodeUseCase as Any }
         localTable["fetchTechCodeUseCase-any FetchTechCodeUseCase"] = { [unowned self] in self.fetchTechCodeUseCase as Any }
-        localTable["localUserDataSource-any LocalUserDataSource"] = { [unowned self] in self.localUserDataSource as Any }
-        localTable["remoteUserDataSource-any RemoteUserDataSource"] = { [unowned self] in self.remoteUserDataSource as Any }
-        localTable["localUserRepository-any LocalUserRepository"] = { [unowned self] in self.localUserRepository as Any }
-        localTable["userRepository-any UserRepository"] = { [unowned self] in self.userRepository as Any }
-        localTable["loadJwtTokenUseCase-any LoadJwtTokenUseCase"] = { [unowned self] in self.loadJwtTokenUseCase as Any }
-        localTable["reissueTokenUseCase-any ReissueTokenUseCase"] = { [unowned self] in self.reissueTokenUseCase as Any }
-        localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
         localTable["signinComponent-SigninComponent"] = { [unowned self] in self.signinComponent as Any }
         localTable["signupComponent-SignupComponent"] = { [unowned self] in self.signupComponent as Any }
         localTable["authComponent-AuthComponent"] = { [unowned self] in self.authComponent as Any }
@@ -200,6 +194,13 @@ extension AppComponent: Registration {
         localTable["studentsRepository-any StudentsRepository"] = { [unowned self] in self.studentsRepository as Any }
         localTable["renewalPasswordUseCase-any RenewalPasswordUseCase"] = { [unowned self] in self.renewalPasswordUseCase as Any }
         localTable["signupUseCase-any SignupUseCase"] = { [unowned self] in self.signupUseCase as Any }
+        localTable["localUsersDataSource-any LocalUsersDataSource"] = { [unowned self] in self.localUsersDataSource as Any }
+        localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
+        localTable["localUsersRepository-any LocalUsersRepository"] = { [unowned self] in self.localUsersRepository as Any }
+        localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
+        localTable["loadJwtTokenUseCase-any LoadJwtTokenUseCase"] = { [unowned self] in self.loadJwtTokenUseCase as Any }
+        localTable["reissueTokenUseCase-any ReissueTokenUseCase"] = { [unowned self] in self.reissueTokenUseCase as Any }
+        localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
         localTable["remoteApplicationsDataSource-any RemoteApplicationsDataSource"] = { [unowned self] in self.remoteApplicationsDataSource as Any }
         localTable["applicationsRepository-any ApplicationsRepository"] = { [unowned self] in self.applicationsRepository as Any }
         localTable["applyCompanyUseCase-any ApplyCompanyUseCase"] = { [unowned self] in self.applyCompanyUseCase as Any }
@@ -246,7 +247,7 @@ extension RootComponent: Registration {
 }
 extension SigninComponent: Registration {
     public func registerItems() {
-
+        keyPathToName[\SigninDependency.signinUseCase] = "signinUseCase-any SigninUseCase"
     }
 }
 extension HomeComponent: Registration {
@@ -282,7 +283,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->MyPageComponent", factory0f6f456ebf157d02dfb3e3b0c44298fc1c149afb)
     registerProviderFactory("^->AppComponent->AuthComponent", factorybe7a1f90226e27d1b2e4f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RootComponent", factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5)
-    registerProviderFactory("^->AppComponent->SigninComponent", factory2882a056d84a613debcce3b0c44298fc1c149afb)
+    registerProviderFactory("^->AppComponent->SigninComponent", factory2882a056d84a613debccf47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->HomeComponent", factory67229cdf0f755562b2b1e3b0c44298fc1c149afb)
     registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3e3b0c44298fc1c149afb)
 }

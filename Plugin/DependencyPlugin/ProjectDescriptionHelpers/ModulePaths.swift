@@ -34,7 +34,7 @@ public extension ModulePaths {
         case StudentsDomain
         case CompaniesDomain
         case RecruitmentsDomain
-        case UserDomain
+        case UsersDomain
         case BaseDomain
         case AuthDomain
 

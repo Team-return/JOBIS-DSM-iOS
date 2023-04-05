@@ -25,8 +25,6 @@ struct RootView: View {
 
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [.Main.darkBlue, .Main.lightBlue, .Main.lightBlue]),
-                           startPoint: .top, endPoint: .bottom)
             switch appState.sceneFlow {
             case .auth:
                 authComponent.makeView()
@@ -41,7 +39,6 @@ struct RootView: View {
                     .environmentObject(appState)
             }
         }
-        .ignoresSafeArea()
         .animation(.easeInOut, value: appState.sceneFlow)
         .transition(.opacity.animation(.easeInOut))
     }
