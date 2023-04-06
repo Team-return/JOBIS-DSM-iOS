@@ -63,15 +63,17 @@ private func factoryace9f05f51d68f4c0677f47b58f8f304c97af4d5(_ component: Needle
     return SplashDependencye0cb7136f2ec3edfd60aProvider(appComponent: parent1(component) as! AppComponent)
 }
 private class SignupDependency1ff7d1355204bb65e850Provider: SignupDependency {
-
-
-    init() {
-
+    var signupUseCase: any SignupUseCase {
+        return appComponent.signupUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
     }
 }
 /// ^->AppComponent->SignupComponent
-private func factory86602ff0d0dbaf2cb017e3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return SignupDependency1ff7d1355204bb65e850Provider()
+private func factory86602ff0d0dbaf2cb017f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return SignupDependency1ff7d1355204bb65e850Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class MainTabDependency2826cdb310ed0b17a725Provider: MainTabDependency {
     var homeComponent: HomeComponent {
@@ -227,7 +229,7 @@ extension SplashComponent: Registration {
 }
 extension SignupComponent: Registration {
     public func registerItems() {
-
+        keyPathToName[\SignupDependency.signupUseCase] = "signupUseCase-any SignupUseCase"
     }
 }
 extension MainTabComponent: Registration {
@@ -288,7 +290,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 @inline(never) private func register1() {
     registerProviderFactory("^->AppComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->AppComponent->SplashComponent", factoryace9f05f51d68f4c0677f47b58f8f304c97af4d5)
-    registerProviderFactory("^->AppComponent->SignupComponent", factory86602ff0d0dbaf2cb017e3b0c44298fc1c149afb)
+    registerProviderFactory("^->AppComponent->SignupComponent", factory86602ff0d0dbaf2cb017f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MainTabComponent", factory1ab5a747ddf21e1393f9f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MyPageComponent", factory0f6f456ebf157d02dfb3e3b0c44298fc1c149afb)
     registerProviderFactory("^->AppComponent->AuthComponent", factorybe7a1f90226e27d1b2e4f47b58f8f304c97af4d5)
