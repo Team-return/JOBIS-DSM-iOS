@@ -48,6 +48,7 @@ struct AuthView: View {
                         .frame(width: 199, height: 144)
                         .offset(x: 76, y: 63)
                         .matchedGeometryEffect(id: "TechnyLaptop", in: signinAnimation)
+                        .matchedGeometryEffect(id: "TechnyLaptop", in: signupAnimation)
                         .animation(.spring(
                             response: 0.6,
                             dampingFraction: 0.8,
@@ -78,6 +79,11 @@ struct AuthView: View {
                 signinComponent.makeView(
                     signinAnimation: signinAnimation,
                     isPresented: $viewModel.isPresentedSignin
+                )
+            } else if viewModel.isPresentedSignup {
+                signupComponent.makeView(
+                    signupAnimation: signupAnimation,
+                    isPresented: $viewModel.isPresentedSignup
                 )
             } else {
                 EmptyView()
@@ -120,17 +126,25 @@ struct AuthView: View {
             GhostBtn(
                 text: "회원가입",
                 action: {
-                    print("회원가입")
+                    withAnimation(.spring(
+                        response: 0.6,
+                        dampingFraction: 0.7,
+                        blendDuration: 0.0
+                    )) {
+                        viewModel.isPresentedSignup.toggle()
+                    }
                 },
                 size: .large
             )
-            .padding(.bottom, 70)
+            .matchedGeometryEffect(id: "SignupButton", in: signupAnimation)
+            .padding(.bottom, 45)
         }
         .background(
             Rectangle()
                 .fill(Color.Sub.gray10)
                 .cornerRadius(20, corners: [.topLeft, .topRight])
                 .matchedGeometryEffect(id: "AuthNavigation", in: signinAnimation)
+                .matchedGeometryEffect(id: "AuthNavigation", in: signupAnimation)
         )
     }
 }
