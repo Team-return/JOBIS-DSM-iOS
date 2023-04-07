@@ -4,7 +4,6 @@ import BaseDomain
 
 public enum UsersAPI {
     case signin(SigninRequestDTO)
-    case reissueToken
 }
 
 extension UsersAPI: JobisAPI {
@@ -18,9 +17,6 @@ extension UsersAPI: JobisAPI {
         switch self {
         case .signin:
             return "/login"
-
-        case .reissueToken:
-            return "/reissue"
         }
     }
 
@@ -28,9 +24,6 @@ extension UsersAPI: JobisAPI {
         switch self {
         case .signin:
             return .post
-
-        case .reissueToken:
-            return .put
         }
     }
 
@@ -38,17 +31,11 @@ extension UsersAPI: JobisAPI {
         switch self {
         case let .signin(req):
             return .requestJSONEncodable(req)
-
-        default:
-            return .requestPlain
         }
     }
 
     public var jwtTokenType: JwtTokenType {
         switch self {
-        case .reissueToken:
-            return .refreshToken
-
         default:
             return .none
         }
@@ -62,12 +49,6 @@ extension UsersAPI: JobisAPI {
                 401: .notFoundPassword,
                 404: .notFound,
                 500: .internalServerError
-            ]
-
-        case .reissueToken:
-            return [
-                400: .notFoundPassword,
-                404: .notFound
             ]
         }
     }

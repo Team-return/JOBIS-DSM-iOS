@@ -1,9 +1,14 @@
-//
-//  ReissueTokenUseCaseImpl.swift
-//  AuthDomain
-//
-//  Created by 홍승재 on 2023/04/07.
-//  Copyright © 2023 Team-Return. All rights reserved.
-//
+import AuthDomainInterface
+import Combine
 
-import Foundation
+public struct ReissueTokenUseCaseImpl: ReissueTokenUseCase {
+    private let authRepository: any AuthRepository
+
+    public init(authRepository: any AuthRepository) {
+        self.authRepository = authRepository
+    }
+
+    public func execute() -> AnyPublisher<Void, Error> {
+        authRepository.reissueToken()
+    }
+}

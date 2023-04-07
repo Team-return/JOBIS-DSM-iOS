@@ -8,8 +8,4 @@ public final class RemoteUsersDataSourceImpl: BaseRemoteDataSource<UsersAPI>, Re
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }
-
-    public func reissueToken() -> AnyPublisher<Void, Error> {
-        request(.reissueToken)
-    }
 }

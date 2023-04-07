@@ -1,6 +1,6 @@
 import BaseFeature
 import Combine
-import UsersDomainInterface
+import AuthDomainInterface
 
 final class SplashViewModel: BaseViewModel {
     private let reissueTokenUseCase: any ReissueTokenUseCase

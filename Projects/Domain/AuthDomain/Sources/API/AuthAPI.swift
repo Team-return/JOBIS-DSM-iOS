@@ -5,6 +5,7 @@ import BaseDomain
 public enum AuthAPI {
     case verifyAuthCode
     case sendAuthCode(SendAuthCodeRequestDTO)
+    case reissueToken
 }
 
 extension AuthAPI: JobisAPI {
@@ -18,6 +19,8 @@ extension AuthAPI: JobisAPI {
         switch self {
         case .sendAuthCode, .verifyAuthCode:
             return "/code"
+        case .reissueToken:
+            return "/reissue"
         }
     }
 
@@ -27,6 +30,8 @@ extension AuthAPI: JobisAPI {
             return .post
         case .verifyAuthCode:
             return .patch
+        case .reissueToken:
+            return .put
         }
     }
 
@@ -34,13 +39,15 @@ extension AuthAPI: JobisAPI {
         switch self {
         case let .sendAuthCode(req):
             return .requestJSONEncodable(req)
-        case .verifyAuthCode:
+        case .verifyAuthCode, .reissueToken:
             return .requestPlain
         }
     }
 
     public var jwtTokenType: JwtTokenType {
         switch self {
+        case .reissueToken:
+            return .refreshToken
         default:
             return .none
         }
@@ -63,6 +70,11 @@ extension AuthAPI: JobisAPI {
                 403: .forbidden,
                 404: .notFound,
                 409: .conflict
+            ]
+        case .reissueToken:
+            return [
+                404: .notFound,
+                500: .internalServerError
             ]
         }
     }

@@ -2,6 +2,7 @@ public enum KeychainType: String {
     case accessToken = "ACCESS-TOKEN"
     case refreshToken = "REFRESH-TOKEN"
     case accessExpiresAt = "ACCESS-EXPIRED-AT"
+    case refreshExpiresAt = "REFRESH-EXPIRED-AT"
 }
 
 public protocol Keychain {

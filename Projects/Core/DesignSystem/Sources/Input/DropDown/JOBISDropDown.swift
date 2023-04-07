@@ -3,6 +3,7 @@ import SwiftUI
 public struct JOBISDropDown: View {
     @State private var isOpen: Bool = false
     @Binding var selectedValue: String?
+    @Binding var isTapBackground: Bool
     var title: String
     var selections: [String]
     var width: CGFloat
@@ -14,11 +15,13 @@ public struct JOBISDropDown: View {
     }
     public init(
         selectedValue: Binding<String?>,
+        isTapBackground: Binding<Bool>,
         title: String,
         selections: [String],
         width: CGFloat = 90
     ) {
         _selectedValue = selectedValue
+        _isTapBackground = isTapBackground
         self.title = title
         self.selections = selections
         self.width = width
@@ -106,6 +109,9 @@ public struct JOBISDropDown: View {
                 isOpen = false
             }
         }
+        .onChange(of: isTapBackground, perform: { _ in
+            self.isOpen = false
+        })
         .animation(.easeIn(duration: 0.1), value: isOpen)
     }
 }
@@ -116,6 +122,7 @@ struct JOBISDropDown_Previews: PreviewProvider {
             HStack {
                 JOBISDropDown(
                     selectedValue: .constant(nil),
+                    isTapBackground: .constant(false),
                     title: "전공동아리",
                     selections: [
                         "DMS",
@@ -134,6 +141,7 @@ struct JOBISDropDown_Previews: PreviewProvider {
                 HStack {
                     JOBISDropDown(
                         selectedValue: .constant(nil),
+                        isTapBackground: .constant(false),
                         title: "학년",
                         selections: [
                             "1",
@@ -143,6 +151,7 @@ struct JOBISDropDown_Previews: PreviewProvider {
                     )
                     JOBISDropDown(
                         selectedValue: .constant(nil),
+                        isTapBackground: .constant(false),
                         title: "반",
                         selections: [
                             "1",

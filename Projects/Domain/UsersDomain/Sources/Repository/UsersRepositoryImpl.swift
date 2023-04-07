@@ -14,8 +14,4 @@ public struct UsersRepositoryImpl: UsersRepository {
     public func signin(req: SigninRequestDTO) -> AnyPublisher<AuthorityEntity, Error> {
         remoteUsersDataSource.signin(req: req)
     }
-
-    public func reissueToken() -> AnyPublisher<Void, Error> {
-        remoteUsersDataSource.reissueToken()
-    }
 }

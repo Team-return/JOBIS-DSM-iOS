@@ -6,6 +6,7 @@ public enum AuthDomainError: Error {
     case forbidden
     case notFound
     case conflict
+    case internalServerError
 }
 
 extension AuthDomainError: LocalizedError {
@@ -21,6 +22,8 @@ extension AuthDomainError: LocalizedError {
             return "User Not Found"
         case .conflict:
             return "Conflict"
+        case .internalServerError:
+            return "Internal Server Error"
         }
     }
 }

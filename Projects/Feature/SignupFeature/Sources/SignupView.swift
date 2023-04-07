@@ -10,6 +10,7 @@ struct SignupView: View {
         case checkPassword
         case name
     }
+    @State private var isTapBackground = false
     @EnvironmentObject var appState: AppState
     @StateObject var viewModel: SignupViewModel
     @FocusState private var focusField: FocusField?
@@ -44,11 +45,10 @@ struct SignupView: View {
                         }
                     }
                 }
-                .hideKeyboardWhenTap()
                 VStack {
                     HStack {
                         Spacer()
-                        
+
                         SigninImage(.technyLaptop)
                             .frame(width: 199, height: 144)
                             .offset(x: 76, y: 30)
@@ -62,8 +62,9 @@ struct SignupView: View {
                     }
                     Spacer()
                 }
-                
+
                 authNavigation(proxy: proxy)
+                    .hideKeyboardWhenTap()
             }
             .edgesIgnoringSafeArea(.all)
             .jobisToast(isShowing: $viewModel.isErrorOcuured, message: viewModel.errorMessage, style: .error)
@@ -73,7 +74,7 @@ struct SignupView: View {
             self.isPresented.toggle()
         }
     }
-    
+
     // swiftlint:disable function_body_length
     @ViewBuilder
     func authNavigation(proxy: GeometryProxy) -> some View {
@@ -159,6 +160,7 @@ struct SignupView: View {
                             HStack {
                                 JOBISDropDown(
                                     selectedValue: $viewModel.grade,
+                                    isTapBackground: $isTapBackground,
                                     title: "학년",
                                     selections: [
                                         "1", "2", "3"
@@ -169,6 +171,7 @@ struct SignupView: View {
 
                                 JOBISDropDown(
                                     selectedValue: $viewModel.classRoom,
+                                    isTapBackground: $isTapBackground,
                                     title: "반",
                                     selections: [
                                         "1", "2", "3", "4"
@@ -179,6 +182,7 @@ struct SignupView: View {
 
                                 JOBISDropDown(
                                     selectedValue: $viewModel.number,
+                                    isTapBackground: $isTapBackground,
                                     title: "번호",
                                     selections: [
                                         "1", "2", "3", "4",
@@ -191,6 +195,17 @@ struct SignupView: View {
                                 )
                                 .zIndex(10)
                             }
+                            JOBISDropDown(
+                                selectedValue: $viewModel.gender,
+                                isTapBackground: $isTapBackground,
+                                title: "성별",
+                                selections: [
+                                    "남자",
+                                    "여자"
+                                ],
+                                width: proxy.size.width / 4
+                            )
+                            .zIndex(10)
                         }
                     }
                     .padding(.horizontal, 40)
@@ -205,6 +220,9 @@ struct SignupView: View {
                     .matchedGeometryEffect(id: "SignupButton", in: signupAnimation)
                     .padding(.bottom, 45)
                 }
+            }
+            .onTapGesture {
+                isTapBackground.toggle()
             }
             .jobisToast(isShowing: $viewModel.isErrorOcuured, message: viewModel.errorMessage, style: .error)
             .frame(maxHeight: isPresented ? (proxy.size.height) * 0.95 : 0)

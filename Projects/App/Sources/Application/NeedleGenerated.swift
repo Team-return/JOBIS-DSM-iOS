@@ -14,7 +14,6 @@ import HomeFeature
 import HomeFeatureInterface
 import JwtStoreInterface
 import MainTabFeature
-import MainTabFeatureInterface
 import MenuFeature
 import MenuFeatureInterface
 import MyPageFeature
@@ -184,6 +183,7 @@ extension AppComponent: Registration {
         localTable["remoteAuthDataSource-any RemoteAuthDataSource"] = { [unowned self] in self.remoteAuthDataSource as Any }
         localTable["authRepository-any AuthRepository"] = { [unowned self] in self.authRepository as Any }
         localTable["sendAuthCodeUseCase-any SendAuthCodeUseCase"] = { [unowned self] in self.sendAuthCodeUseCase as Any }
+        localTable["reissueTokenUseCase-any ReissueTokenUseCase"] = { [unowned self] in self.reissueTokenUseCase as Any }
         localTable["remoteRecruitmentsDataSource-any RemoteRecruitmentsDataSource"] = { [unowned self] in self.remoteRecruitmentsDataSource as Any }
         localTable["recruitmentsRepository-any RecruitmentsRepository"] = { [unowned self] in self.recruitmentsRepository as Any }
         localTable["fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"] = { [unowned self] in self.fetchRecruitmentDetailUseCase as Any }
@@ -204,12 +204,8 @@ extension AppComponent: Registration {
         localTable["studentsRepository-any StudentsRepository"] = { [unowned self] in self.studentsRepository as Any }
         localTable["renewalPasswordUseCase-any RenewalPasswordUseCase"] = { [unowned self] in self.renewalPasswordUseCase as Any }
         localTable["signupUseCase-any SignupUseCase"] = { [unowned self] in self.signupUseCase as Any }
-        localTable["localUsersDataSource-any LocalUsersDataSource"] = { [unowned self] in self.localUsersDataSource as Any }
         localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
-        localTable["localUsersRepository-any LocalUsersRepository"] = { [unowned self] in self.localUsersRepository as Any }
         localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
-        localTable["loadJwtTokenUseCase-any LoadJwtTokenUseCase"] = { [unowned self] in self.loadJwtTokenUseCase as Any }
-        localTable["reissueTokenUseCase-any ReissueTokenUseCase"] = { [unowned self] in self.reissueTokenUseCase as Any }
         localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
         localTable["remoteApplicationsDataSource-any RemoteApplicationsDataSource"] = { [unowned self] in self.remoteApplicationsDataSource as Any }
         localTable["applicationsRepository-any ApplicationsRepository"] = { [unowned self] in self.applicationsRepository as Any }

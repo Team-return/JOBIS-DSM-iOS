@@ -61,6 +61,7 @@ struct SigninView: View {
                 }
 
                 authNavigation(height: (proxy.size.height / 4) * 3)
+                    .hideKeyboardWhenTap()
             }
             .edgesIgnoringSafeArea(.all)
             .jobisToast(isShowing: $viewModel.isErrorOcuured, message: viewModel.errorMessage, style: .error)

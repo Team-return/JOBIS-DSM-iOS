@@ -13,4 +13,8 @@ public struct AuthRepositoryImpl: AuthRepository {
     public func sendAuthCode(req: SendAuthCodeRequestDTO) -> AnyPublisher<Void, Error> {
         remoteAuthDataSource.sendAuthCode(req: req)
     }
+
+    public func reissueToken() -> AnyPublisher<Void, Error> {
+        remoteAuthDataSource.reissueToken()
+    }
 }
