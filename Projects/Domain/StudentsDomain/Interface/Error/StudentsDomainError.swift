@@ -1,6 +1,7 @@
 import Foundation
 
 public enum StudentsDomainError: Error {
+    // Sign up
     case badRequest
     case unauthorized
     case notFound

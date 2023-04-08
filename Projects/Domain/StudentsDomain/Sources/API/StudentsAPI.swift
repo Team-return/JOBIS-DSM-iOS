@@ -17,7 +17,7 @@ extension StudentsAPI: JobisAPI {
     public var urlPath: String {
         switch self {
         case .signup:
-            return "/"
+            return ""
         case .renewalPassword:
             return "/password"
         }
@@ -50,6 +50,7 @@ extension StudentsAPI: JobisAPI {
         case .signup:
             return [
                 400: .badRequest,
+                403: .badRequest,
                 409: .conflict
             ]
         case .renewalPassword:

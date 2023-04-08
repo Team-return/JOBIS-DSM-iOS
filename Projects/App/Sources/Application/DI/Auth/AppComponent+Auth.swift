@@ -20,4 +20,10 @@ public extension AppComponent {
             SendAuthCodeUseCaseImpl(authRepository: authRepository)
         }
     }
+
+    var reissueTokenUseCase: any ReissueTokenUseCase {
+        shared {
+            ReissueTokenUseCaseImpl(authRepository: authRepository)
+        }
+    }
 }

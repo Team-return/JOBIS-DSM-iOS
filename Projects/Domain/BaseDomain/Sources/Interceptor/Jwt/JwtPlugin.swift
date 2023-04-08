@@ -30,6 +30,7 @@ public struct JwtPlugin: PluginType {
         switch result {
         case let .success(res):
             if let new = try? res.map(TokenDTO.self) {
+                print("\n new: \(new) \n")
                 saveToken(token: new)
             }
         default:
@@ -49,6 +50,9 @@ private extension JwtPlugin {
 
         case .accessExpiresAt:
             return keychain.load(type: .accessExpiresAt)
+
+        case .refreshExpiresAt:
+            return keychain.load(type: .refreshExpiresAt)
         }
     }
 
@@ -56,5 +60,6 @@ private extension JwtPlugin {
         keychain.save(type: .accessToken, value: token.accessToken)
         keychain.save(type: .refreshToken, value: token.refreshToken)
         keychain.save(type: .accessExpiresAt, value: token.accessExpiresAt)
+        keychain.save(type: .refreshExpiresAt, value: token.refreshExpiresAt)
     }
 }
