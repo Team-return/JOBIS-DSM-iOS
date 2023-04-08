@@ -1,10 +1,12 @@
 import SwiftUI
 import StudentsDomainInterface
 import SignupFeatureInterface
+import AuthDomainInterface
 import NeedleFoundation
 
 public protocol SignupDependency: Dependency {
     var signupUseCase: any SignupUseCase { get }
+    var sendAuthCodeUseCase: any SendAuthCodeUseCase { get }
 }
 
 public final class SignupComponent: Component<SignupDependency>, SignupFactory {
@@ -15,7 +17,8 @@ public final class SignupComponent: Component<SignupDependency>, SignupFactory {
         SignupView(
             isPresented: isPresented,
             viewModel: .init(
-                signupUseCase: dependency.signupUseCase
+                signupUseCase: dependency.signupUseCase,
+                sendAuthCodeUseCase: dependency.sendAuthCodeUseCase
             ),
             signupAnimation: signupAnimation
         )

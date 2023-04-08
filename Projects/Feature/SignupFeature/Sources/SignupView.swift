@@ -69,7 +69,6 @@ struct SignupView: View {
             .edgesIgnoringSafeArea(.all)
             .jobisToast(isShowing: $viewModel.isErrorOcuured, message: viewModel.errorMessage, style: .error)
         }
-        .hideKeyboardWhenTap()
         .onChange(of: viewModel.isSuccessSignup) { _ in
             self.isPresented.toggle()
         }
@@ -98,26 +97,36 @@ struct SignupView: View {
                                 errorMessage: viewModel.errorMessage,
                                 inputType: .none,
                                 outlinedType: .bottomlined,
-                                topMessage: "이메일") {
-                                    focusField = .authCode
-                                }
-                                .padding(.top, 60)
-                                .focused($focusField, equals: .email)
-                                .textContentType(.emailAddress)
+                                topMessage: "이메일"
+                            ) {
+                                focusField = .authCode
+                            }
+                            .padding(.top, 60)
+                            .focused($focusField, equals: .email)
+                            .textContentType(.emailAddress)
 
-                            JOBISTextField(
-                                placeholder: "최대 20자",
-                                text: $viewModel.authCode,
-                                isError: viewModel.isErrorOcuured,
-                                errorMessage: viewModel.errorMessage,
-                                inputType: .password,
-                                outlinedType: .bottomlined,
-                                topMessage: "인증번호") {
+                            HStack {
+                                JOBISTextField(
+                                    placeholder: "최대 20자",
+                                    text: $viewModel.authCode,
+                                    isError: viewModel.isErrorOcuured,
+                                    errorMessage: viewModel.errorMessage,
+                                    inputType: .password,
+                                    outlinedType: .bottomlined,
+                                    topMessage: "인증번호"
+                                ) {
                                     focusField = .password
                                 }
                                 .focused($focusField, equals: .authCode)
                                 .textContentType(.telephoneNumber)
 
+                                SolidBtn(
+                                    text: "인증번호",
+                                    action: {
+                                        print("hello")
+                                    }, size: .small
+                                )
+                            }
                             JOBISTextField(
                                 placeholder: "최대 20자",
                                 text: $viewModel.password,
@@ -125,11 +134,12 @@ struct SignupView: View {
                                 errorMessage: viewModel.errorMessage,
                                 inputType: .password,
                                 outlinedType: .bottomlined,
-                                topMessage: "비밀번호") {
-                                    focusField = .checkPassword
-                                }
-                                .focused($focusField, equals: .password)
-                                .textContentType(.password)
+                                topMessage: "비밀번호"
+                            ) {
+                                focusField = .checkPassword
+                            }
+                            .focused($focusField, equals: .password)
+                            .textContentType(.password)
 
                             JOBISTextField(
                                 placeholder: "최대 20자",
@@ -138,11 +148,12 @@ struct SignupView: View {
                                 errorMessage: viewModel.errorMessage,
                                 inputType: .password,
                                 outlinedType: .bottomlined,
-                                topMessage: "비밀번호 확인") {
-                                    focusField = .name
-                                }
-                                .focused($focusField, equals: .checkPassword)
-                                .textContentType(.password)
+                                topMessage: "비밀번호 확인"
+                            ) {
+                                focusField = .name
+                            }
+                            .focused($focusField, equals: .checkPassword)
+                            .textContentType(.password)
 
                             JOBISTextField(
                                 placeholder: "최대 20자",
@@ -151,11 +162,12 @@ struct SignupView: View {
                                 errorMessage: viewModel.errorMessage,
                                 inputType: .password,
                                 outlinedType: .bottomlined,
-                                topMessage: "이름") {
-                                    focusField = .none
-                                }
-                                .focused($focusField, equals: .name)
-                                .textContentType(.name)
+                                topMessage: "이름"
+                            ) {
+                                focusField = .none
+                            }
+                            .focused($focusField, equals: .name)
+                            .textContentType(.name)
 
                             HStack {
                                 JOBISDropDown(

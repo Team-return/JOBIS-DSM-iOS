@@ -1,5 +1,6 @@
 import BaseFeature
 import StudentsDomainInterface
+import AuthDomainInterface
 import Combine
 
 final class SignupViewModel: BaseViewModel {
@@ -21,30 +22,30 @@ final class SignupViewModel: BaseViewModel {
     @Published var isNameError = false
 
     private let signupUseCase: SignupUseCase
+    private let sendAuthCodeUseCase: SendAuthCodeUseCase
 
-    public init(signupUseCase: any SignupUseCase) {
+    public init(
+        signupUseCase: any SignupUseCase,
+        sendAuthCodeUseCase: any SendAuthCodeUseCase
+    ) {
         self.signupUseCase = signupUseCase
+        self.sendAuthCodeUseCase = sendAuthCodeUseCase
     }
 
     func signupButtonDidTap() {
         
     }
 
-//    func signupExcute() {
+    func sendAuthCodeButtonDidTap() {
 //        addCancellable(
-//            signupUseCase.execute(
+//            sendAuthCodeUseCase.execute(
 //                req: .init(
-//                    email: email,
-//                    password: password,
-//                    grade: Int(grade ?? ""),
-//                    name: name,
-//                    gender: gender,
-//                    classRoom: Int(classRoom ?? ""),
-//                    number: Int(number ?? "")
+//                    email: self.email,
+//                    authCodeType: self.authCode
 //                )
 //            )
 //        ) { [weak self] _ in
-//            self?.isSuccessSignup = true
+//
 //        }
-//    }
+    }
 }

@@ -65,6 +65,9 @@ private class SignupDependency1ff7d1355204bb65e850Provider: SignupDependency {
     var signupUseCase: any SignupUseCase {
         return appComponent.signupUseCase
     }
+    var sendAuthCodeUseCase: any SendAuthCodeUseCase {
+        return appComponent.sendAuthCodeUseCase
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -226,6 +229,7 @@ extension SplashComponent: Registration {
 extension SignupComponent: Registration {
     public func registerItems() {
         keyPathToName[\SignupDependency.signupUseCase] = "signupUseCase-any SignupUseCase"
+        keyPathToName[\SignupDependency.sendAuthCodeUseCase] = "sendAuthCodeUseCase-any SendAuthCodeUseCase"
     }
 }
 extension MainTabComponent: Registration {
