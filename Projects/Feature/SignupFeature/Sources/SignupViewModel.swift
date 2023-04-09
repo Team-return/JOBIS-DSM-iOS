@@ -10,7 +10,20 @@ final class SignupViewModel: BaseViewModel {
     @Published var checkPassword: String  = ""
     @Published var grade: String?
     @Published var name: String = ""
-    @Published var gender: String?
+    @Published var man: Bool = false {
+        willSet {
+            if newValue == true {
+                woman = false
+            }
+        }
+    }
+    @Published var woman: Bool = false {
+        willSet {
+            if newValue == true {
+                man = false
+            }
+        }
+    }
     @Published var classRoom: String?
     @Published var number: String?
     @Published var isSuccessSignup = false
@@ -33,7 +46,7 @@ final class SignupViewModel: BaseViewModel {
     }
 
     func signupButtonDidTap() {
-        
+
     }
 
     func sendAuthCodeButtonDidTap() {
