@@ -8,7 +8,7 @@ let project = Project.makeModule(
     targets: [.interface, .unitTest],
     internalDependencies: [
         .Feature.BaseFeature,
-        .Feature.SigninFeature,
-        .Feature.SignupFeature
+        .Feature.SigninFeatureInterface,
+        .Feature.SignupFeatureInterface
     ]
 )
