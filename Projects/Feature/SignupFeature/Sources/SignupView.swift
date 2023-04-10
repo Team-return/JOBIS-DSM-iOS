@@ -89,85 +89,99 @@ struct SignupView: View {
             VStack {
                 VStack {
                     ScrollView {
-                        VStack(spacing: 40) {
-                            JOBISTextField(
-                                placeholder: "@dsm.hs.kr이 포함되어야합니다.",
-                                text: $viewModel.email,
-                                isError: viewModel.isErrorOcuured,
-                                errorMessage: viewModel.errorMessage,
-                                inputType: .none,
-                                outlinedType: .bottomlined,
-                                topMessage: "이메일"
-                            ) {
-                                focusField = .authCode
-                            }
-                            .padding(.top, 60)
-                            .focused($focusField, equals: .email)
-                            .textContentType(.emailAddress)
+                        VStack(spacing: 30) {
+                            VStack(spacing: 40) {
+                                JOBISTextField(
+                                    placeholder: "@dsm.hs.kr이 포함되어야합니다.",
+                                    text: $viewModel.email,
+                                    isError: viewModel.isErrorOcuured,
+                                    errorMessage: viewModel.errorMessage,
+                                    inputType: .none,
+                                    outlinedType: .bottomlined,
+                                    topMessage: "이메일"
+                                ) {
+                                    focusField = .authCode
+                                }
+                                .padding(.top, 60)
+                                .focused($focusField, equals: .email)
+                                .textContentType(.emailAddress)
 
-                            HStack {
+                                HStack {
+                                    JOBISTextField(
+                                        placeholder: "인증번호 6자리",
+                                        text: $viewModel.authCode,
+                                        isError: viewModel.isErrorOcuured,
+                                        errorMessage: viewModel.errorMessage,
+                                        inputType: .none,
+                                        outlinedType: .bottomlined,
+                                        topMessage: "인증번호"
+                                    ) {
+                                        focusField = .password
+                                    }
+                                    .focused($focusField, equals: .authCode)
+                                    .textContentType(.telephoneNumber)
+
+                                    SolidBtn(
+                                        text: "인증번호",
+                                        action: {
+                                            print("hello")
+                                        }, size: .small
+                                    )
+                                }
                                 JOBISTextField(
                                     placeholder: "최대 20자",
-                                    text: $viewModel.authCode,
+                                    text: $viewModel.password,
                                     isError: viewModel.isErrorOcuured,
                                     errorMessage: viewModel.errorMessage,
                                     inputType: .password,
                                     outlinedType: .bottomlined,
-                                    topMessage: "인증번호"
+                                    topMessage: "비밀번호"
                                 ) {
-                                    focusField = .password
+                                    focusField = .checkPassword
                                 }
-                                .focused($focusField, equals: .authCode)
-                                .textContentType(.telephoneNumber)
+                                .focused($focusField, equals: .password)
+                                .textContentType(.password)
 
-                                SolidBtn(
-                                    text: "인증번호",
-                                    action: {
-                                        print("hello")
-                                    }, size: .small
-                                )
-                            }
-                            JOBISTextField(
-                                placeholder: "최대 20자",
-                                text: $viewModel.password,
-                                isError: viewModel.isErrorOcuured,
-                                errorMessage: viewModel.errorMessage,
-                                inputType: .password,
-                                outlinedType: .bottomlined,
-                                topMessage: "비밀번호"
-                            ) {
-                                focusField = .checkPassword
-                            }
-                            .focused($focusField, equals: .password)
-                            .textContentType(.password)
+                                JOBISTextField(
+                                    placeholder: "최대 20자",
+                                    text: $viewModel.password,
+                                    isError: viewModel.isErrorOcuured,
+                                    errorMessage: viewModel.errorMessage,
+                                    inputType: .password,
+                                    outlinedType: .bottomlined,
+                                    topMessage: "비밀번호 확인"
+                                ) {
+                                    focusField = .name
+                                }
+                                .focused($focusField, equals: .checkPassword)
+                                .textContentType(.password)
 
-                            JOBISTextField(
-                                placeholder: "최대 20자",
-                                text: $viewModel.password,
-                                isError: viewModel.isErrorOcuured,
-                                errorMessage: viewModel.errorMessage,
-                                inputType: .password,
-                                outlinedType: .bottomlined,
-                                topMessage: "비밀번호 확인"
-                            ) {
-                                focusField = .name
+                                JOBISTextField(
+                                    placeholder: "실명을 입력해주세요.",
+                                    text: $viewModel.name,
+                                    isError: viewModel.isErrorOcuured,
+                                    errorMessage: viewModel.errorMessage,
+                                    inputType: .none,
+                                    outlinedType: .bottomlined,
+                                    topMessage: "이름"
+                                ) {
+                                    focusField = .none
+                                }
+                                .focused($focusField, equals: .name)
+                                .textContentType(.name)
                             }
-                            .focused($focusField, equals: .checkPassword)
-                            .textContentType(.password)
 
-                            JOBISTextField(
-                                placeholder: "최대 20자",
-                                text: $viewModel.name,
-                                isError: viewModel.isErrorOcuured,
-                                errorMessage: viewModel.errorMessage,
-                                inputType: .password,
-                                outlinedType: .bottomlined,
-                                topMessage: "이름"
-                            ) {
-                                focusField = .none
+                            HStack {
+                                Text("성별")
+                                    .JOBISFont(.body(.body4), color: .Sub.gray70)
+                                Spacer()
+                                JOBISRadioBox(isOn: $viewModel.man)
+                                Text("남성")
+                                    .JOBISFont(.body(.body4), color: .Sub.gray90)
+                                JOBISRadioBox(isOn: $viewModel.woman)
+                                Text("여성")
+                                    .JOBISFont(.body(.body4), color: .Sub.gray90)
                             }
-                            .focused($focusField, equals: .name)
-                            .textContentType(.name)
 
                             HStack {
                                 JOBISDropDown(
@@ -207,17 +221,6 @@ struct SignupView: View {
                                 )
                                 .zIndex(10)
                             }
-                            JOBISDropDown(
-                                selectedValue: $viewModel.gender,
-                                isTapBackground: $isTapBackground,
-                                title: "성별",
-                                selections: [
-                                    "남자",
-                                    "여자"
-                                ],
-                                width: proxy.size.width / 4
-                            )
-                            .zIndex(10)
                         }
                     }
                     .padding(.horizontal, 40)
