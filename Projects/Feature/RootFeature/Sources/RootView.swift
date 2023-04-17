@@ -1,33 +1,30 @@
 import BaseFeature
 import SwiftUI
-import AuthFeature
 import MainTabFeature
 import SplashFeature
-
+import SigninFeature
 import DesignSystem
 
 struct RootView: View {
     @EnvironmentObject var appState: AppState
-
-    private let authComponent: AuthComponent
+    private let signinComponent: SigninComponent
     private let mainTabComponent: MainTabComponent
     private let splashComponent: SplashComponent
 
     public init(
-        authComponent: AuthComponent,
+        signinComponent: SigninComponent,
         mainTabComponent: MainTabComponent,
         splashComponent: SplashComponent
     ) {
-        self.authComponent = authComponent
+        self.signinComponent = signinComponent
         self.mainTabComponent = mainTabComponent
         self.splashComponent = splashComponent
     }
-
     var body: some View {
         ZStack {
             switch appState.sceneFlow {
             case .auth:
-                authComponent.makeView()
+                signinComponent.makeView()
                     .environmentObject(appState)
 
             case .main:
