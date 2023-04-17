@@ -10,17 +10,12 @@ public protocol SignupDependency: Dependency {
 }
 
 public final class SignupComponent: Component<SignupDependency>, SignupFactory {
-    public func makeView(
-        signupAnimation: Namespace.ID,
-        isPresented: Binding<Bool>
-    ) -> some View {
+    public func makeView() -> some View {
         SignupView(
-            isPresented: isPresented,
             viewModel: .init(
                 signupUseCase: dependency.signupUseCase,
                 sendAuthCodeUseCase: dependency.sendAuthCodeUseCase
-            ),
-            signupAnimation: signupAnimation
+            )
         )
     }
 }
