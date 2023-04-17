@@ -8,16 +8,11 @@ public protocol SigninDependency: Dependency {
 }
 
 public final class SigninComponent: Component<SigninDependency>, SigninFactory {
-    public func makeView(
-        signinAnimation: Namespace.ID,
-        isPresented: Binding<Bool>
-    ) -> some View {
+    public func makeView() -> some View {
         SigninView(
-            isPresented: isPresented,
             viewModel: .init(
                 signinUseCase: dependency.signinUseCase
-            ),
-            signinAnimation: signinAnimation
+            )
         )
     }
 }
