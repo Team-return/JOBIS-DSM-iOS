@@ -51,8 +51,8 @@ public struct JOBISTextField: View {
                 textFieldIcon()
             }
         }
-        .padding(.vertical, 8)
-        .padding(.horizontal, 16)
+        .padding(.vertical, 10)
+        .padding(.horizontal, 14)
         .overlay(alignment: .bottom) {
             if outlinedType == .outlined {
                 RoundedRectangle(cornerRadius: 3)
@@ -69,7 +69,7 @@ public struct JOBISTextField: View {
         .background(
             outlinedType == .outlined ?
             isEnabled ?
-            Color.Sub.gray10 : .Sub.gray30 : .clear
+            Color.Sub.gray10 : .Sub.gray30 : .Sub.gray10
         )
         .focused($isFocused)
         .onSubmit(onCommit)
@@ -120,7 +120,7 @@ public struct JOBISTextField: View {
             } label: {
                 Image(systemName: isPWSecure ? "eye" : "eye.slash")
                     .foregroundColor(
-                        isEnabled ? isError ? .State.error : .Sub.gray90 : .Sub.gray50
+                        isEnabled ? isError ? .State.error : .Sub.gray60 : .Sub.gray50
                     )
             }
         case .search:
@@ -129,7 +129,7 @@ public struct JOBISTextField: View {
             } label: {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(
-                        isEnabled ? isError ? .State.error : .Sub.gray90 : .Sub.gray50
+                        isEnabled ? isError ? .State.error : .Sub.gray60 : .Sub.gray50
                     )
             }
         }
