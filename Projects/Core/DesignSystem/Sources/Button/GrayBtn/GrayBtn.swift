@@ -17,7 +17,15 @@ public struct GrayBtn: View {
 
     public var body: some View {
         Button(action: action) {
-            Text(text)
+            HStack {
+                if size == .large {
+                    Spacer()
+                }
+                Text(text)
+                if size == .large {
+                    Spacer()
+                }
+            }
         }
         .buttonStyle(GrayBtnStyle(size: size))
     }
