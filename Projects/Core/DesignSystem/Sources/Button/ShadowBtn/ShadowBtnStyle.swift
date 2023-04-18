@@ -38,7 +38,6 @@ extension ShadowBtnStyle {
                 .JOBISFont(fetchButtonInfo(size: size).font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Sub.gray90
                            : Color.Sub.gray50)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10
                             : Color.Sub.gray30)
@@ -59,7 +58,6 @@ extension ShadowBtnStyle {
                 .JOBISFont(fetchButtonInfo(size: size).font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Sub.gray90
                            : Color.Sub.gray50)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10
                             : Color.Sub.gray30)
@@ -80,7 +78,6 @@ extension ShadowBtnStyle {
                 .JOBISFont(fetchButtonInfo(size: size).font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Sub.gray90
                            : Color.Sub.gray50)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10
                             : Color.Sub.gray30)

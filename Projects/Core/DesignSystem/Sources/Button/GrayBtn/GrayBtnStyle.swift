@@ -25,7 +25,6 @@ extension GrayBtnStyle {
                 .JOBISFont(fetchButtonInfo(size: size).font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Sub.gray90
                            : Color.Sub.gray50)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(configuration.isPressed ? Color.Sub.gray60 : Color.Sub.gray30)
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)

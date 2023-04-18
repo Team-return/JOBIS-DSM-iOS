@@ -38,7 +38,6 @@ extension LightBtnStyle {
                 .JOBISFont(fetchButtonInfo(size: size).font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
                            : Color.Sub.gray50)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray30)
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
@@ -57,7 +56,6 @@ extension LightBtnStyle {
                 .JOBISFont(fetchButtonInfo(size: size).font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
                            : Color.Sub.gray50)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray30)
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
@@ -76,7 +74,6 @@ extension LightBtnStyle {
                 .JOBISFont(fetchButtonInfo(size: size).font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
                            : Color.Sub.gray50)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray30)
                 .cornerRadius(fetchButtonInfo(size: size).cornerRadius)

@@ -36,7 +36,6 @@ extension SolidBtnStyle {
         var body: some View {
             configuration.label
                 .JOBISFont(fetchButtonInfo(size: size).font, color: .Sub.gray10)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
@@ -54,7 +53,6 @@ extension SolidBtnStyle {
         var body: some View {
             configuration.label
                 .JOBISFont(fetchButtonInfo(size: size).font, color: .Sub.gray10)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
@@ -72,7 +70,6 @@ extension SolidBtnStyle {
         var body: some View {
             configuration.label
                 .JOBISFont(fetchButtonInfo(size: size).font, color: .Sub.gray10)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
                 .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
