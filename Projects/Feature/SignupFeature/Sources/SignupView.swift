@@ -13,13 +13,13 @@ struct SignupView: View {
     @EnvironmentObject var appState: AppState
     @StateObject var viewModel: SignupViewModel
     @FocusState private var focusField: FocusField?
-    
+
     init(
         viewModel: SignupViewModel
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
+
     var body: some View {
         EmptyView()
     }
