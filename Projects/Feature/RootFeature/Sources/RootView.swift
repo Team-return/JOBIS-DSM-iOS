@@ -38,5 +38,8 @@ struct RootView: View {
         }
         .animation(.easeInOut, value: appState.sceneFlow)
         .transition(.opacity.animation(.easeInOut))
+        .onAppear {
+            DesignSystemFontFamily.registerAllCustomFonts()
+        }
     }
 }
