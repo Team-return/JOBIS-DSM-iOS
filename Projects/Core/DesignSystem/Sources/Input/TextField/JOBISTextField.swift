@@ -81,14 +81,14 @@ public struct JOBISTextField: View {
                 )
                 .offset(y: -18)
         }
-        .overlay(alignment: .topLeading) {
+        .overlay(alignment: .bottomLeading) {
             Text(isError ? errorMessage : bottomMessage)
                 .JOBISFont(
                     .etc(.caption),
                     color: isError ? .State.error : .Sub.gray60
                 )
                 .opacity(isEnabled ? 1 : 0)
-                .offset(y: 40)
+                .offset(y: 20)
         }
         .animation(.easeIn(duration: 0.3), value: isError)
         .animation(.easeIn(duration: 0.3), value: isFocused)
