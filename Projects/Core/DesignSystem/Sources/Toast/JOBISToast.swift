@@ -49,11 +49,11 @@ struct JOBISToast: ViewModifier {
                     VStack(alignment: .leading, spacing: 0) {
                         if let title {
                             Text(title)
-                                .JOBISFont(.body(.body3), color: .Sub.gray70)
+                                .JOBISFont(.body(.body3), color: style.textForeground)
                         }
 
                         Text(message)
-                            .JOBISFont(.body(.body4), color: style.textForeground)
+                            .JOBISFont(.body(.body4), color: .Sub.gray70)
                     }
                     Spacer()
                     DesignSystemAsset.Icons.close.swiftUIImage
