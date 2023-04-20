@@ -39,8 +39,8 @@ public extension AppComponent {
     var signinComponent: SigninComponent {
         SigninComponent(parent: self)
     }
-    var signupComponent: SignupComponent {
-        SignupComponent(parent: self)
+    var infoSettingComponent: InfoSettingComponent {
+        InfoSettingComponent(parent: self)
     }
     var splashComponent: SplashComponent {
         SplashComponent(parent: self)

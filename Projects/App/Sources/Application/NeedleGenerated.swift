@@ -59,21 +59,16 @@ private class SplashDependencye0cb7136f2ec3edfd60aProvider: SplashDependency {
 private func factoryace9f05f51d68f4c0677f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return SplashDependencye0cb7136f2ec3edfd60aProvider(appComponent: parent1(component) as! AppComponent)
 }
-private class SignupDependency1ff7d1355204bb65e850Provider: SignupDependency {
-    var signupUseCase: any SignupUseCase {
-        return appComponent.signupUseCase
-    }
-    var sendAuthCodeUseCase: any SendAuthCodeUseCase {
-        return appComponent.sendAuthCodeUseCase
-    }
-    private let appComponent: AppComponent
-    init(appComponent: AppComponent) {
-        self.appComponent = appComponent
+private class InfoSettingDependencyda5872b9bdd84990e780Provider: InfoSettingDependency {
+
+
+    init() {
+
     }
 }
-/// ^->AppComponent->SignupComponent
-private func factory86602ff0d0dbaf2cb017f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return SignupDependency1ff7d1355204bb65e850Provider(appComponent: parent1(component) as! AppComponent)
+/// ^->AppComponent->InfoSettingComponent
+private func factory15af88ecfb834319b78ce3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return InfoSettingDependencyda5872b9bdd84990e780Provider()
 }
 private class MainTabDependency2826cdb310ed0b17a725Provider: MainTabDependency {
     var homeComponent: HomeComponent {
@@ -128,6 +123,9 @@ private class SigninDependencyde06a9d0b22764487733Provider: SigninDependency {
     var signinUseCase: any SigninUseCase {
         return appComponent.signinUseCase
     }
+    var infoSettingComponent: InfoSettingComponent {
+        return appComponent.infoSettingComponent
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -178,7 +176,7 @@ extension AppComponent: Registration {
         localTable["fetchJobCodeUseCase-any FetchJobCodeUseCase"] = { [unowned self] in self.fetchJobCodeUseCase as Any }
         localTable["fetchTechCodeUseCase-any FetchTechCodeUseCase"] = { [unowned self] in self.fetchTechCodeUseCase as Any }
         localTable["signinComponent-SigninComponent"] = { [unowned self] in self.signinComponent as Any }
-        localTable["signupComponent-SignupComponent"] = { [unowned self] in self.signupComponent as Any }
+        localTable["infoSettingComponent-InfoSettingComponent"] = { [unowned self] in self.infoSettingComponent as Any }
         localTable["splashComponent-SplashComponent"] = { [unowned self] in self.splashComponent as Any }
         localTable["mainTabComponent-MainTabComponent"] = { [unowned self] in self.mainTabComponent as Any }
         localTable["homeComponent-HomeComponent"] = { [unowned self] in self.homeComponent as Any }
@@ -207,10 +205,9 @@ extension SplashComponent: Registration {
         keyPathToName[\SplashDependency.reissueTokenUseCase] = "reissueTokenUseCase-any ReissueTokenUseCase"
     }
 }
-extension SignupComponent: Registration {
+extension InfoSettingComponent: Registration {
     public func registerItems() {
-        keyPathToName[\SignupDependency.signupUseCase] = "signupUseCase-any SignupUseCase"
-        keyPathToName[\SignupDependency.sendAuthCodeUseCase] = "sendAuthCodeUseCase-any SendAuthCodeUseCase"
+
     }
 }
 extension MainTabComponent: Registration {
@@ -235,6 +232,7 @@ extension RootComponent: Registration {
 extension SigninComponent: Registration {
     public func registerItems() {
         keyPathToName[\SigninDependency.signinUseCase] = "signinUseCase-any SigninUseCase"
+        keyPathToName[\SigninDependency.infoSettingComponent] = "infoSettingComponent-InfoSettingComponent"
     }
 }
 extension HomeComponent: Registration {
@@ -265,7 +263,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 @inline(never) private func register1() {
     registerProviderFactory("^->AppComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->AppComponent->SplashComponent", factoryace9f05f51d68f4c0677f47b58f8f304c97af4d5)
-    registerProviderFactory("^->AppComponent->SignupComponent", factory86602ff0d0dbaf2cb017f47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->InfoSettingComponent", factory15af88ecfb834319b78ce3b0c44298fc1c149afb)
     registerProviderFactory("^->AppComponent->MainTabComponent", factory1ab5a747ddf21e1393f9f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MyPageComponent", factory0f6f456ebf157d02dfb3e3b0c44298fc1c149afb)
     registerProviderFactory("^->AppComponent->RootComponent", factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5)
