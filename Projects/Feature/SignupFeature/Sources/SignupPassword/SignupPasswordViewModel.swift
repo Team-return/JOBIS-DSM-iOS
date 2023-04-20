@@ -16,10 +16,8 @@ final class SignupPasswordViewModel: BaseViewModel {
             }
         }
     }
-    @Published var name: String = ""
-    @Published var grade: String = ""
-    @Published var classRoom: String = ""
-    @Published var number: String = ""
+    @Published var password: String = ""
+    @Published var checkPassword: String = ""
 
     func nextButtonDidTap() {
         print("next!")
