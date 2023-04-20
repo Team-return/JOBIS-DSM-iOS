@@ -60,15 +60,41 @@ private func factoryace9f05f51d68f4c0677f47b58f8f304c97af4d5(_ component: Needle
     return SplashDependencye0cb7136f2ec3edfd60aProvider(appComponent: parent1(component) as! AppComponent)
 }
 private class InfoSettingDependencyda5872b9bdd84990e780Provider: InfoSettingDependency {
+    var signupEmailVerifyComponent: SignupEmailVerifyComponent {
+        return appComponent.signupEmailVerifyComponent
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->InfoSettingComponent
+private func factory15af88ecfb834319b78cf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return InfoSettingDependencyda5872b9bdd84990e780Provider(appComponent: parent1(component) as! AppComponent)
+}
+private class SignupPasswordDependency778bf5389a70d7df6152Provider: SignupPasswordDependency {
 
 
     init() {
 
     }
 }
-/// ^->AppComponent->InfoSettingComponent
-private func factory15af88ecfb834319b78ce3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return InfoSettingDependencyda5872b9bdd84990e780Provider()
+/// ^->AppComponent->SignupPasswordComponent
+private func factorye93d1d56840ff97c674ae3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return SignupPasswordDependency778bf5389a70d7df6152Provider()
+}
+private class SignupEmailVerifyDependencyf9d372ac752ee19b78caProvider: SignupEmailVerifyDependency {
+    var signupPasswordComponent: SignupPasswordComponent {
+        return appComponent.signupPasswordComponent
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->SignupEmailVerifyComponent
+private func factory3b1904c76335d70151ebf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return SignupEmailVerifyDependencyf9d372ac752ee19b78caProvider(appComponent: parent1(component) as! AppComponent)
 }
 private class MainTabDependency2826cdb310ed0b17a725Provider: MainTabDependency {
     var homeComponent: HomeComponent {
@@ -177,6 +203,8 @@ extension AppComponent: Registration {
         localTable["fetchTechCodeUseCase-any FetchTechCodeUseCase"] = { [unowned self] in self.fetchTechCodeUseCase as Any }
         localTable["signinComponent-SigninComponent"] = { [unowned self] in self.signinComponent as Any }
         localTable["infoSettingComponent-InfoSettingComponent"] = { [unowned self] in self.infoSettingComponent as Any }
+        localTable["signupEmailVerifyComponent-SignupEmailVerifyComponent"] = { [unowned self] in self.signupEmailVerifyComponent as Any }
+        localTable["signupPasswordComponent-SignupPasswordComponent"] = { [unowned self] in self.signupPasswordComponent as Any }
         localTable["splashComponent-SplashComponent"] = { [unowned self] in self.splashComponent as Any }
         localTable["mainTabComponent-MainTabComponent"] = { [unowned self] in self.mainTabComponent as Any }
         localTable["homeComponent-HomeComponent"] = { [unowned self] in self.homeComponent as Any }
@@ -207,7 +235,17 @@ extension SplashComponent: Registration {
 }
 extension InfoSettingComponent: Registration {
     public func registerItems() {
+        keyPathToName[\InfoSettingDependency.signupEmailVerifyComponent] = "signupEmailVerifyComponent-SignupEmailVerifyComponent"
+    }
+}
+extension SignupPasswordComponent: Registration {
+    public func registerItems() {
 
+    }
+}
+extension SignupEmailVerifyComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\SignupEmailVerifyDependency.signupPasswordComponent] = "signupPasswordComponent-SignupPasswordComponent"
     }
 }
 extension MainTabComponent: Registration {
@@ -263,7 +301,9 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 @inline(never) private func register1() {
     registerProviderFactory("^->AppComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->AppComponent->SplashComponent", factoryace9f05f51d68f4c0677f47b58f8f304c97af4d5)
-    registerProviderFactory("^->AppComponent->InfoSettingComponent", factory15af88ecfb834319b78ce3b0c44298fc1c149afb)
+    registerProviderFactory("^->AppComponent->InfoSettingComponent", factory15af88ecfb834319b78cf47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->SignupPasswordComponent", factorye93d1d56840ff97c674ae3b0c44298fc1c149afb)
+    registerProviderFactory("^->AppComponent->SignupEmailVerifyComponent", factory3b1904c76335d70151ebf47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MainTabComponent", factory1ab5a747ddf21e1393f9f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MyPageComponent", factory0f6f456ebf157d02dfb3e3b0c44298fc1c149afb)
     registerProviderFactory("^->AppComponent->RootComponent", factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5)
