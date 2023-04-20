@@ -7,7 +7,7 @@ public func fetchButtonInfo(size: BtnSize) -> ButtonInfo {
             minWidth: 70,
             minHeight: 30,
             cornerRadius: 15,
-            font: .body(.body2))
+            font: .body(.body4))
     case .medium:
         return ButtonInfo(
             minWidth: 130,
