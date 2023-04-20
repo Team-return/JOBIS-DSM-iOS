@@ -20,8 +20,10 @@ final class InfoSettingViewModel: BaseViewModel {
     @Published var grade: String = ""
     @Published var classRoom: String = ""
     @Published var number: String = ""
+    @Published var isNavigateVerifyEmail = false
 
     func nextButtonDidTap() {
         print("next!")
+        self.isNavigateVerifyEmail = true
     }
 }
