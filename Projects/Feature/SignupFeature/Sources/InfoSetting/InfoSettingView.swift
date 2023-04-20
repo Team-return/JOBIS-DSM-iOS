@@ -9,16 +9,18 @@ struct InfoSettingView: View {
         case classRoom
         case number
     }
-    @EnvironmentObject var appState: AppState
     @StateObject var viewModel: InfoSettingViewModel
     @FocusState private var focusField: FocusField?
     @Environment(\.dismiss) var dismiss
-    @State private var progressValue: Int = 0
+
+    private let signupEmailVerifyComponent: SignupEmailVerifyComponent
 
     init(
-        viewModel: InfoSettingViewModel
+        viewModel: InfoSettingViewModel,
+        signupEmailVerifyComponent: SignupEmailVerifyComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.signupEmailVerifyComponent = signupEmailVerifyComponent
     }
 
     var body: some View {
@@ -38,14 +40,10 @@ struct InfoSettingView: View {
         }
         .padding(.horizontal, 26)
         .jobisBackButton(dismiss: dismiss, title: "회원가입")
-        .animation(.default, value: progressValue)
-        .onChange(of: viewModel.isMan || viewModel.isWoman) { _ in
-            if viewModel.isMan || viewModel.isWoman {
-                progressValue += 1
-            } else {
-                progressValue -= 1
-            }
-        }
+        .navigate(
+            to: signupEmailVerifyComponent.makeView(),
+            when: $viewModel.isNavigateVerifyEmail
+        )
     }
 
     @ViewBuilder
@@ -113,6 +111,8 @@ struct InfoSettingView: View {
                 self.focusField = .classRoom
             }
             .focused($focusField, equals: .grade)
+            .keyboardType(.numberPad)
+            .filterNumericInput($viewModel.grade)
 
             JOBISTextField(
                 placeholder: "반",
@@ -124,6 +124,8 @@ struct InfoSettingView: View {
                 self.focusField = .number
             }
             .focused($focusField, equals: .classRoom)
+            .keyboardType(.numberPad)
+            .filterNumericInput($viewModel.classRoom)
 
             JOBISTextField(
                 placeholder: "번호",
@@ -135,6 +137,8 @@ struct InfoSettingView: View {
                 viewModel.nextButtonDidTap()
             }
             .focused($focusField, equals: .number)
+            .keyboardType(.numberPad)
+            .filterNumericInput($viewModel.number)
         }
     }
 
@@ -142,10 +146,10 @@ struct InfoSettingView: View {
     func nextButton() -> some View {
         VStack(spacing: 0) {
             VStack(alignment: .trailing, spacing: 4) {
-                Text((String(progressValue)) + "/5")
+                Text("0/3")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
 
-                ProgressView(value: Double(progressValue)/5)
+                ProgressView(value: 0)
                     .progressViewStyle(LinearProgressViewStyle(tint: .Main.lightBlue))
             }
 

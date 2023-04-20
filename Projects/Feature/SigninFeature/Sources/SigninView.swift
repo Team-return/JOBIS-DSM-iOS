@@ -106,7 +106,7 @@ struct SigninView: View {
             ) {
                 focusField = .password
             }
-            .textContentType(.username)
+            .keyboardType(.emailAddress)
             .focused($focusField, equals: .id)
 
             JOBISTextField(
