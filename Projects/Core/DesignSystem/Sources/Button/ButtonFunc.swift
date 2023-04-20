@@ -16,7 +16,7 @@ public func fetchButtonInfo(size: BtnSize) -> ButtonInfo {
             font: .heading(.heading6))
     case .large:
         return ButtonInfo(
-            minWidth: 320,
+            minWidth: 0,
             minHeight: 50,
             cornerRadius: 12,
             font: .heading(.heading6))
