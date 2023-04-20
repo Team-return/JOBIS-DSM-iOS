@@ -1,9 +1,13 @@
-//
-//  View+hello.swift
-//  DesignSystem
-//
-//  Created by 홍승재 on 2023/04/20.
-//  Copyright © 2023 Team-Return. All rights reserved.
-//
+import SwiftUI
+import Combine
 
-import Foundation
+public extension View {
+    func filterNumericInput(_ input: Binding<String>) -> some View {
+        return self.onReceive(Just(input.wrappedValue)) { newValue in
+            let filtered = newValue.filter { "0123456789".contains($0) }
+            if filtered != newValue {
+                input.wrappedValue = filtered
+            }
+        }
+    }
+}
