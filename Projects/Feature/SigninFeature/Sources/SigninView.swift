@@ -1,6 +1,7 @@
 import DesignSystem
 import SwiftUI
 import BaseFeature
+import SignupFeature
 
 struct SigninView: View {
     private enum FocusField {
@@ -10,52 +11,68 @@ struct SigninView: View {
     @EnvironmentObject var appState: AppState
     @StateObject var viewModel: SigninViewModel
     @FocusState private var focusField: FocusField?
+    @State var isNavigateSignup = false
+    @State private var isOnAppear = false
+
+    private let infoSettingComponent: InfoSettingComponent
 
     init(
-        viewModel: SigninViewModel
+        viewModel: SigninViewModel,
+        infoSettingComponent: InfoSettingComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.infoSettingComponent = infoSettingComponent
     }
 
     var body: some View {
-        ZStack {
-            Color.Sub.gray10
-                .ignoresSafeArea()
+        NavigationView {
+            ZStack {
+                designRectangle()
 
-            designRectangle()
-
-            VStack(spacing: 0) {
-                Spacer()
-
-                HStack {
-                    VStack {
-                        Text("취업의 지름길")
-                            .JOBISFont(.etc(.caption), color: .Sub.gray70)
-                            .offset(x: -9, y: 5)
-
-                        Text("JOBIS")
-                            .JOBISFont(.heading(.heading1), color: .Main.lightBlue)
-                    }
+                VStack(spacing: 0) {
                     Spacer()
+
+                    HStack {
+                        VStack {
+                            Text("취업의 지름길")
+                                .JOBISFont(.etc(.caption), color: .Sub.gray70)
+                                .offset(x: -10, y: 10)
+
+                            Text("JOBIS")
+                                .JOBISFont(.heading(.heading1), color: .Main.lightBlue)
+                        }
+                        Spacer()
+                    }
+
+                    Spacer()
+
+                    signinInput()
+
+                    Spacer()
+                    Spacer()
+
+                    signinButton()
                 }
-
-                Spacer()
-
-                signinInput()
-
-                Spacer()
-                Spacer()
-
-                signinButton()
+                .padding(.horizontal, 20)
             }
-            .padding(.horizontal, 20)
-        }
-        .ignoresSafeArea(.keyboard)
-        .jobisToast(isShowing: $viewModel.isShowToast, message: viewModel.errorMessage, style: .error)
-        .hideKeyboardWhenTap()
-        .onChange(of: viewModel.isSuccessSignin) { newValue in
-            guard newValue else { return }
-            appState.sceneFlow = .main
+            .ignoresSafeArea(.keyboard)
+            .jobisToast(isShowing: $viewModel.isShowToast, message: viewModel.errorMessage, style: .error)
+            .jobisBackground()
+            .hideKeyboardWhenTap()
+            .onChange(of: viewModel.isSuccessSignin) { newValue in
+                guard newValue else { return }
+                appState.sceneFlow = .main
+            }
+            .navigate(
+                to: infoSettingComponent.makeView(),
+                when: $isNavigateSignup
+            )
+            .onAppear {
+                withAnimation(.spring()) {
+                    self.isOnAppear = true
+                }
+            }
+            .environment(\.rootPresentationMode, $isNavigateSignup)
         }
     }
 
@@ -70,6 +87,7 @@ struct SigninView: View {
             .cornerRadius(10)
             .rotationEffect(.degrees(-45))
             .offset(x: 100, y: -240)
+            .offset(y: isOnAppear ? 0 : -1000)
             .shadow(radius: 10)
 
             Spacer()
@@ -132,9 +150,13 @@ struct SigninView: View {
                 Text("아직 회원이 아니신가요? ")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
 
-                Text("회원가입")
-                    .JOBISFont(.etc(.caption), color: .Sub.gray90)
-                    .underline()
+                Button {
+                    isNavigateSignup.toggle()
+                } label: {
+                    Text("회원가입")
+                        .JOBISFont(.etc(.caption), color: .Sub.gray90)
+                        .underline()
+                }
 
                 Spacer()
             }
