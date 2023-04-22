@@ -97,7 +97,17 @@ public extension View {
 
 struct JOBISToast_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {}
-            .jobisToast(isShowing: .constant(true), message: "안녕하세요", style: .error, title: "hello")
+        NavigationView(content: {
+            NavigationLink {
+                Text("nav")
+                    .jobisToast(isShowing: .constant(false), message: "안녕하세요", style: .error, title: "hello")
+                    .jobisBackButton {
+                        
+                    }
+            } label: {
+                Text("hello")
+            }
+            
+        })
     }
 }

@@ -59,42 +59,24 @@ private class SplashDependencye0cb7136f2ec3edfd60aProvider: SplashDependency {
 private func factoryace9f05f51d68f4c0677f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return SplashDependencye0cb7136f2ec3edfd60aProvider(appComponent: parent1(component) as! AppComponent)
 }
-private class InfoSettingDependencyda5872b9bdd84990e780Provider: InfoSettingDependency {
-    var signupEmailVerifyComponent: SignupEmailVerifyComponent {
-        return appComponent.signupEmailVerifyComponent
+private class SignupDependency1ff7d1355204bb65e850Provider: SignupDependency {
+    var signupUseCase: any SignupUseCase {
+        return appComponent.signupUseCase
+    }
+    var sendAuthCodeUseCase: any SendAuthCodeUseCase {
+        return appComponent.sendAuthCodeUseCase
+    }
+    var verifyAuthCodeUseCase: any VerifyAuthCodeUseCase {
+        return appComponent.verifyAuthCodeUseCase
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
     }
 }
-/// ^->AppComponent->InfoSettingComponent
-private func factory15af88ecfb834319b78cf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return InfoSettingDependencyda5872b9bdd84990e780Provider(appComponent: parent1(component) as! AppComponent)
-}
-private class SignupPasswordDependency778bf5389a70d7df6152Provider: SignupPasswordDependency {
-
-
-    init() {
-
-    }
-}
-/// ^->AppComponent->SignupPasswordComponent
-private func factorye93d1d56840ff97c674ae3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return SignupPasswordDependency778bf5389a70d7df6152Provider()
-}
-private class SignupEmailVerifyDependencyf9d372ac752ee19b78caProvider: SignupEmailVerifyDependency {
-    var signupPasswordComponent: SignupPasswordComponent {
-        return appComponent.signupPasswordComponent
-    }
-    private let appComponent: AppComponent
-    init(appComponent: AppComponent) {
-        self.appComponent = appComponent
-    }
-}
-/// ^->AppComponent->SignupEmailVerifyComponent
-private func factory3b1904c76335d70151ebf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return SignupEmailVerifyDependencyf9d372ac752ee19b78caProvider(appComponent: parent1(component) as! AppComponent)
+/// ^->AppComponent->SignupComponent
+private func factory86602ff0d0dbaf2cb017f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return SignupDependency1ff7d1355204bb65e850Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class MainTabDependency2826cdb310ed0b17a725Provider: MainTabDependency {
     var homeComponent: HomeComponent {
@@ -149,8 +131,8 @@ private class SigninDependencyde06a9d0b22764487733Provider: SigninDependency {
     var signinUseCase: any SigninUseCase {
         return appComponent.signinUseCase
     }
-    var infoSettingComponent: InfoSettingComponent {
-        return appComponent.infoSettingComponent
+    var signupComponent: SignupComponent {
+        return appComponent.signupComponent
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -192,6 +174,7 @@ extension AppComponent: Registration {
         localTable["remoteAuthDataSource-any RemoteAuthDataSource"] = { [unowned self] in self.remoteAuthDataSource as Any }
         localTable["authRepository-any AuthRepository"] = { [unowned self] in self.authRepository as Any }
         localTable["sendAuthCodeUseCase-any SendAuthCodeUseCase"] = { [unowned self] in self.sendAuthCodeUseCase as Any }
+        localTable["verifyAuthCodeUseCase-any VerifyAuthCodeUseCase"] = { [unowned self] in self.verifyAuthCodeUseCase as Any }
         localTable["reissueTokenUseCase-any ReissueTokenUseCase"] = { [unowned self] in self.reissueTokenUseCase as Any }
         localTable["remoteRecruitmentsDataSource-any RemoteRecruitmentsDataSource"] = { [unowned self] in self.remoteRecruitmentsDataSource as Any }
         localTable["recruitmentsRepository-any RecruitmentsRepository"] = { [unowned self] in self.recruitmentsRepository as Any }
@@ -202,9 +185,7 @@ extension AppComponent: Registration {
         localTable["fetchJobCodeUseCase-any FetchJobCodeUseCase"] = { [unowned self] in self.fetchJobCodeUseCase as Any }
         localTable["fetchTechCodeUseCase-any FetchTechCodeUseCase"] = { [unowned self] in self.fetchTechCodeUseCase as Any }
         localTable["signinComponent-SigninComponent"] = { [unowned self] in self.signinComponent as Any }
-        localTable["infoSettingComponent-InfoSettingComponent"] = { [unowned self] in self.infoSettingComponent as Any }
-        localTable["signupEmailVerifyComponent-SignupEmailVerifyComponent"] = { [unowned self] in self.signupEmailVerifyComponent as Any }
-        localTable["signupPasswordComponent-SignupPasswordComponent"] = { [unowned self] in self.signupPasswordComponent as Any }
+        localTable["signupComponent-SignupComponent"] = { [unowned self] in self.signupComponent as Any }
         localTable["splashComponent-SplashComponent"] = { [unowned self] in self.splashComponent as Any }
         localTable["mainTabComponent-MainTabComponent"] = { [unowned self] in self.mainTabComponent as Any }
         localTable["homeComponent-HomeComponent"] = { [unowned self] in self.homeComponent as Any }
@@ -233,19 +214,11 @@ extension SplashComponent: Registration {
         keyPathToName[\SplashDependency.reissueTokenUseCase] = "reissueTokenUseCase-any ReissueTokenUseCase"
     }
 }
-extension InfoSettingComponent: Registration {
+extension SignupComponent: Registration {
     public func registerItems() {
-        keyPathToName[\InfoSettingDependency.signupEmailVerifyComponent] = "signupEmailVerifyComponent-SignupEmailVerifyComponent"
-    }
-}
-extension SignupPasswordComponent: Registration {
-    public func registerItems() {
-
-    }
-}
-extension SignupEmailVerifyComponent: Registration {
-    public func registerItems() {
-        keyPathToName[\SignupEmailVerifyDependency.signupPasswordComponent] = "signupPasswordComponent-SignupPasswordComponent"
+        keyPathToName[\SignupDependency.signupUseCase] = "signupUseCase-any SignupUseCase"
+        keyPathToName[\SignupDependency.sendAuthCodeUseCase] = "sendAuthCodeUseCase-any SendAuthCodeUseCase"
+        keyPathToName[\SignupDependency.verifyAuthCodeUseCase] = "verifyAuthCodeUseCase-any VerifyAuthCodeUseCase"
     }
 }
 extension MainTabComponent: Registration {
@@ -270,7 +243,7 @@ extension RootComponent: Registration {
 extension SigninComponent: Registration {
     public func registerItems() {
         keyPathToName[\SigninDependency.signinUseCase] = "signinUseCase-any SigninUseCase"
-        keyPathToName[\SigninDependency.infoSettingComponent] = "infoSettingComponent-InfoSettingComponent"
+        keyPathToName[\SigninDependency.signupComponent] = "signupComponent-SignupComponent"
     }
 }
 extension HomeComponent: Registration {
@@ -301,9 +274,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
 @inline(never) private func register1() {
     registerProviderFactory("^->AppComponent", factoryEmptyDependencyProvider)
     registerProviderFactory("^->AppComponent->SplashComponent", factoryace9f05f51d68f4c0677f47b58f8f304c97af4d5)
-    registerProviderFactory("^->AppComponent->InfoSettingComponent", factory15af88ecfb834319b78cf47b58f8f304c97af4d5)
-    registerProviderFactory("^->AppComponent->SignupPasswordComponent", factorye93d1d56840ff97c674ae3b0c44298fc1c149afb)
-    registerProviderFactory("^->AppComponent->SignupEmailVerifyComponent", factory3b1904c76335d70151ebf47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->SignupComponent", factory86602ff0d0dbaf2cb017f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MainTabComponent", factory1ab5a747ddf21e1393f9f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MyPageComponent", factory0f6f456ebf157d02dfb3e3b0c44298fc1c149afb)
     registerProviderFactory("^->AppComponent->RootComponent", factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5)

@@ -39,14 +39,8 @@ public extension AppComponent {
     var signinComponent: SigninComponent {
         SigninComponent(parent: self)
     }
-    var infoSettingComponent: InfoSettingComponent {
-        InfoSettingComponent(parent: self)
-    }
-    var signupEmailVerifyComponent: SignupEmailVerifyComponent {
-        SignupEmailVerifyComponent(parent: self)
-    }
-    var signupPasswordComponent: SignupPasswordComponent {
-        SignupPasswordComponent(parent: self)
+    var signupComponent: SignupComponent {
+        SignupComponent(parent: self)
     }
     var splashComponent: SplashComponent {
         SplashComponent(parent: self)

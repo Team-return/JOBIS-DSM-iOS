@@ -17,4 +17,8 @@ public struct AuthRepositoryImpl: AuthRepository {
     public func reissueToken() -> AnyPublisher<Void, Error> {
         remoteAuthDataSource.reissueToken()
     }
+
+    public func verifyAuthCode(email: String, authCode: String) -> AnyPublisher<Void, Error> {
+        remoteAuthDataSource.verifyAuthCode(email: email, authCode: authCode)
+    }
 }

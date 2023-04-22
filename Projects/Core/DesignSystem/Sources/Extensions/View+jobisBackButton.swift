@@ -2,16 +2,13 @@ import SwiftUI
 
 struct JobisBackButtonModifier: ViewModifier {
     let willDismiss: () -> Void
-    let dismiss: DismissAction
     let title: String
 
     public init(
         willDismiss: @escaping () -> Void,
-        dismiss: DismissAction,
         title: String = ""
     ) {
         self.willDismiss = willDismiss
-        self.dismiss = dismiss
         self.title = title
     }
 
@@ -21,7 +18,6 @@ struct JobisBackButtonModifier: ViewModifier {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
                     Button {
                         willDismiss()
-                        dismiss()
                     } label: {
                         HStack {
                             Image(systemName: "arrow.left")
@@ -38,11 +34,10 @@ struct JobisBackButtonModifier: ViewModifier {
 }
 public extension View {
     func jobisBackButton(
-        willDismiss: @escaping () -> Void = {},
-        dismiss: DismissAction,
-        title: String = ""
+        title: String = "",
+        willDismiss: @escaping () -> Void
     ) -> some View {
-        modifier(JobisBackButtonModifier(willDismiss: willDismiss, dismiss: dismiss, title: title))
+        modifier(JobisBackButtonModifier(willDismiss: willDismiss, title: title))
     }
 }
 

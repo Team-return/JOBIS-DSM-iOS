@@ -10,4 +10,8 @@ public final class RemoteAuthDataSourceImpl: BaseRemoteDataSource<AuthAPI>, Remo
     public func reissueToken() -> AnyPublisher<Void, Error> {
         request(.reissueToken)
     }
+
+    public func verifyAuthCode(email: String, authCode: String) -> AnyPublisher<Void, Error> {
+        request(.verifyAuthCode(email: email, authCode: authCode))
+    }
 }
