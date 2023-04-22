@@ -6,7 +6,7 @@ import SignupFeature
 
 public protocol SigninDependency: Dependency {
     var signinUseCase: any SigninUseCase { get }
-    var infoSettingComponent: InfoSettingComponent { get }
+    var signupComponent: SignupComponent { get }
 }
 
 public final class SigninComponent: Component<SigninDependency>, SigninFactory {
@@ -15,7 +15,7 @@ public final class SigninComponent: Component<SigninDependency>, SigninFactory {
             viewModel: .init(
                 signinUseCase: dependency.signinUseCase
             ),
-            infoSettingComponent: dependency.infoSettingComponent
+            signupComponent: dependency.signupComponent
         )
     }
 }

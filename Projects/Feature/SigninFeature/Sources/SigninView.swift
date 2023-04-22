@@ -14,14 +14,14 @@ struct SigninView: View {
     @State var isNavigateSignup = false
     @State private var isOnAppear = false
 
-    private let infoSettingComponent: InfoSettingComponent
+    private let signupComponent: SignupComponent
 
     init(
         viewModel: SigninViewModel,
-        infoSettingComponent: InfoSettingComponent
+        signupComponent: SignupComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.infoSettingComponent = infoSettingComponent
+        self.signupComponent = signupComponent
     }
 
     var body: some View {
@@ -64,7 +64,7 @@ struct SigninView: View {
                 appState.sceneFlow = .main
             }
             .navigate(
-                to: infoSettingComponent.makeView(),
+                to: signupComponent.makeView(),
                 when: $isNavigateSignup
             )
             .onAppear {
