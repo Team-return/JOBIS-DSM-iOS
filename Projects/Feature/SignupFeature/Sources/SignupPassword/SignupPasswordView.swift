@@ -1,4 +1,5 @@
 import DesignSystem
+import StudentsDomainInterface
 import SwiftUI
 import BaseFeature
 
@@ -7,15 +8,8 @@ struct SignupPasswordView: View {
         case email
         case verifyCode
     }
-    @StateObject var viewModel: SignupPasswordViewModel
+    @StateObject var viewModel: SignupViewModel
     @FocusState private var focusField: FocusField?
-    @Environment(\.dismiss) var dismiss
-
-    init(
-        viewModel: SignupPasswordViewModel
-    ) {
-        _viewModel = StateObject(wrappedValue: viewModel)
-    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -24,13 +18,7 @@ struct SignupPasswordView: View {
                 .padding(.vertical, 32)
 
             inputTextfield()
-
-            Spacer()
-
-            nextButton()
         }
-        .padding(.horizontal, 26)
-        .jobisBackButton(dismiss: dismiss, title: "회원가입")
     }
 
     @ViewBuilder
@@ -62,28 +50,6 @@ struct SignupPasswordView: View {
             }
             .focused($focusField, equals: .verifyCode)
             .textContentType(.newPassword)
-        }
-    }
-
-    @ViewBuilder
-    func nextButton() -> some View {
-        VStack(spacing: 0) {
-            VStack(alignment: .trailing, spacing: 4) {
-                Text("2/3")
-                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
-
-                ProgressView(value: Double(2)/3)
-                    .progressViewStyle(LinearProgressViewStyle(tint: .Main.lightBlue))
-            }
-
-            SolidBtn(
-                text: "다음",
-                action: {
-                    viewModel.nextButtonDidTap()
-                },
-                size: .large
-            )
-            .padding(.vertical, 20)
         }
     }
 }

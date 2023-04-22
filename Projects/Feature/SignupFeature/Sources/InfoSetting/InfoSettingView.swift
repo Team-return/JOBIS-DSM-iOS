@@ -1,6 +1,7 @@
 import DesignSystem
 import SwiftUI
 import BaseFeature
+import StudentsDomainInterface
 
 struct InfoSettingView: View {
     private enum FocusField {
@@ -9,19 +10,8 @@ struct InfoSettingView: View {
         case classRoom
         case number
     }
-    @StateObject var viewModel: InfoSettingViewModel
+    @StateObject var viewModel: SignupViewModel
     @FocusState private var focusField: FocusField?
-    @Environment(\.dismiss) var dismiss
-
-    private let signupEmailVerifyComponent: SignupEmailVerifyComponent
-
-    init(
-        viewModel: InfoSettingViewModel,
-        signupEmailVerifyComponent: SignupEmailVerifyComponent
-    ) {
-        _viewModel = StateObject(wrappedValue: viewModel)
-        self.signupEmailVerifyComponent = signupEmailVerifyComponent
-    }
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,17 +23,7 @@ struct InfoSettingView: View {
                 .padding(.bottom, 28)
 
             inputTextfield()
-
-            Spacer()
-
-            nextButton()
         }
-        .padding(.horizontal, 26)
-        .jobisBackButton(dismiss: dismiss, title: "회원가입")
-        .navigate(
-            to: signupEmailVerifyComponent.makeView(),
-            when: $viewModel.isNavigateVerifyEmail
-        )
     }
 
     @ViewBuilder
@@ -139,28 +119,6 @@ struct InfoSettingView: View {
             .focused($focusField, equals: .number)
             .keyboardType(.numberPad)
             .filterNumericInput($viewModel.number)
-        }
-    }
-
-    @ViewBuilder
-    func nextButton() -> some View {
-        VStack(spacing: 0) {
-            VStack(alignment: .trailing, spacing: 4) {
-                Text("0/3")
-                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
-
-                ProgressView(value: 0)
-                    .progressViewStyle(LinearProgressViewStyle(tint: .Main.lightBlue))
-            }
-
-            SolidBtn(
-                text: "다음",
-                action: {
-                    viewModel.nextButtonDidTap()
-                },
-                size: .large
-            )
-            .padding(.vertical, 20)
         }
     }
 }
