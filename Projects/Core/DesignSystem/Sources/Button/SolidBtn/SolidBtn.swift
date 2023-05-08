@@ -30,6 +30,9 @@ public struct SolidBtn: View {
     public var body: some View {
         Button(action: action) {
             HStack(spacing: size == .large ? 8 : 5) {
+                if size == .large {
+                    Spacer()
+                }
                 if style == .lIcon { // L icon
                     icon
                         .frame(width: iconWidth, height: iconHeight)
@@ -45,6 +48,9 @@ public struct SolidBtn: View {
                     icon
                         .resizable()
                         .frame(width: iconWidth, height: iconHeight)
+                }
+                if size == .large {
+                    Spacer()
                 }
             }
         }

@@ -2,22 +2,20 @@ import SwiftUI
 import UsersDomainInterface
 import NeedleFoundation
 import SigninFeatureInterface
+import SignupFeature
 
 public protocol SigninDependency: Dependency {
     var signinUseCase: any SigninUseCase { get }
+    var signupComponent: SignupComponent { get }
 }
 
 public final class SigninComponent: Component<SigninDependency>, SigninFactory {
-    public func makeView(
-        signinAnimation: Namespace.ID,
-        isPresented: Binding<Bool>
-    ) -> some View {
+    public func makeView() -> some View {
         SigninView(
-            isPresented: isPresented,
             viewModel: .init(
                 signinUseCase: dependency.signinUseCase
             ),
-            signinAnimation: signinAnimation
+            signupComponent: dependency.signupComponent
         )
     }
 }

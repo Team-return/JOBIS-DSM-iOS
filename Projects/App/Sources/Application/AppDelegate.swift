@@ -1,4 +1,5 @@
 import Foundation
+import DesignSystem
 import JwtStoreInterface
 import UIKit
 import WatchConnectivity
@@ -16,6 +17,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             session.delegate = self
             session.activate()
         }
+
+        DesignSystemFontFamily.registerAllCustomFonts()
         return true
     }
 }

@@ -1,12 +1,29 @@
+import Foundation
 import BaseFeature
 import UsersDomainInterface
+import UsersDomain
 import Combine
 
 final class SigninViewModel: BaseViewModel {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var isSuccessSignin = false
-    @Published var authorityEntity: AuthorityEntity?
+    @Published var isEmailError = false {
+        didSet {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.isEmailError = false
+            }
+        }
+    }
+    @Published var isPasswordError = false {
+        didSet {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.isPasswordError = false
+            }
+        }
+    }
+    @Published var isShowToast = false
+    @Published var isAutoSignin = false
 
     private let signinUseCase: SigninUseCase
 
@@ -14,7 +31,7 @@ final class SigninViewModel: BaseViewModel {
         self.signinUseCase = signinUseCase
     }
 
-    func signinButtonDidTap() {
+    private func signin() {
         addCancellable(
             signinUseCase.execute(
                 req: .init(
@@ -23,8 +40,32 @@ final class SigninViewModel: BaseViewModel {
                 )
             )
         ) { [weak self] authority in
-            self?.authorityEntity = authority
-            self?.isSuccessSignin = true
+            if authority.authority == .student {
+                self?.isSuccessSignin = true
+            }
+        } onReceiveError: { error in
+            guard let usersError = error as? UsersDomainError else { return }
+
+            switch usersError {
+            case .notFoundPassword:
+                self.isPasswordError = true
+
+            case .notFound:
+                self.isEmailError = true
+
+            default:
+                self.isShowToast = true
+            }
         }
+    }
+
+    func signinButtonDidTap() {
+        if self.email.isEmpty {
+            self.isEmailError = true
+            self.errorMessage = "아이디는 공백이 들어갈 수 없습니다."
+        } else if self.password.isEmpty {
+            self.isPasswordError = true
+            self.errorMessage = "비밀번호는 공백이 들어갈 수 없습니다."
+        } else { signin() }
     }
 }

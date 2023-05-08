@@ -21,6 +21,12 @@ public extension AppComponent {
         }
     }
 
+    var verifyAuthCodeUseCase: any VerifyAuthCodeUseCase {
+        shared {
+            VerifyAuthCodeUseCaseImpl(authRepository: authRepository)
+        }
+    }
+
     var reissueTokenUseCase: any ReissueTokenUseCase {
         shared {
             ReissueTokenUseCaseImpl(authRepository: authRepository)

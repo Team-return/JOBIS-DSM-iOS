@@ -13,9 +13,9 @@ public struct JOBISCheckboxStyle: ToggleStyle {
         .frame(width: 20, height: 20)
         .background(configuration.isOn ?
                     (isEnabled ? Color.input : .Sub.gray50) :
-                        (isEnabled ? .clear : .Sub.gray40))
+                        (isEnabled ? .Sub.gray10 : .Sub.gray40))
         .cornerRadius(2)
-        .border(configuration.isOn ? Color.clear : isEnabled ? Color.Sub.gray40
+        .border(configuration.isOn ? .Sub.gray10 : isEnabled ? Color.Sub.gray40
                 : Color.Sub.gray50, width: 1.5)
         .cornerRadius(2)
         .onTapGesture {

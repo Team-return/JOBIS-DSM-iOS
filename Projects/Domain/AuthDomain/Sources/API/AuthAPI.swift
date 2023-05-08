@@ -3,7 +3,7 @@ import AuthDomainInterface
 import BaseDomain
 
 public enum AuthAPI {
-    case verifyAuthCode
+    case verifyAuthCode(email: String, authCode: String)
     case sendAuthCode(SendAuthCodeRequestDTO)
     case reissueToken
 }
@@ -57,23 +57,18 @@ extension AuthAPI: JobisAPI {
         switch self {
         case .verifyAuthCode:
             return [
-                400: .badRequest,
-                401: .unauthorized,
-                403: .forbidden,
-                404: .notFound,
-                409: .conflict
+                401: .wrongAuthCode,
+                404: .notFoundAuthCode
             ]
         case .sendAuthCode:
             return [
-                400: .badRequest,
-                401: .unauthorized,
-                403: .forbidden,
-                404: .notFound,
-                409: .conflict
+                400: .wrongEmailForm,
+                404: .userNotFound,
+                409: .existUser
             ]
         case .reissueToken:
             return [
-                404: .notFound,
+                404: .notFoundToken,
                 500: .internalServerError
             ]
         }

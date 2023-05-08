@@ -10,6 +10,7 @@ let project = Project.makeModule(
         .Feature.BaseFeature,
         .Feature.SplashFeature,
         .Feature.MainTabFeature,
-        .Feature.AuthFeature
+        .Feature.SigninFeature,
+        .Feature.SignupFeature
     ]
 )

@@ -21,7 +21,6 @@ struct JOBISToast: ViewModifier {
     func body(content: Content) -> some View {
         ZStack {
             content
-
             jobisToastView()
         }
         .onChange(of: isShowing) { _ in
@@ -49,19 +48,17 @@ struct JOBISToast: ViewModifier {
                     VStack(alignment: .leading, spacing: 0) {
                         if let title {
                             Text(title)
-                                .JOBISFont(.body(.body3), color: .Sub.gray70)
+                                .JOBISFont(.body(.body3), color: style.textForeground)
                         }
 
                         Text(message)
-                            .JOBISFont(.body(.body4), color: style.textForeground)
+                            .JOBISFont(.body(.body4), color: .Sub.gray70)
                     }
                     Spacer()
                     DesignSystemAsset.Icons.close.swiftUIImage
                         .resizable()
                         .frame(width: 20, height: 20)
                 }
-                .transition(.offset(y: -50).combined(with: AnyTransition.opacity.animation(.default)))
-                .frame(maxWidth: .infinity)
                 .padding(.vertical, 15)
                 .padding(.horizontal, 15)
                 .background {
@@ -71,19 +68,36 @@ struct JOBISToast: ViewModifier {
                         .shadow(color: .Sub.gray50, radius: 5)
                 }
                 .padding(.horizontal, 12)
+                .transition(.move(edge: .top).combined(
+                        with: AnyTransition
+                            .opacity
+                            .animation(
+                                .easeInOut
+                            )
+                    )
+                )
                 .onTapGesture {
                     withAnimation {
                         isShowing = false
                     }
                 }
             }
-
             Spacer()
         }
         .animation(.default, value: isShowing)
+        .offset(y: safeArea().top)
+        .ignoresSafeArea()
+    }
+    private func safeArea() -> UIEdgeInsets {
+        guard let screen = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            return .zero
+        }
+        guard let safeArea = screen.windows.first?.safeAreaInsets else {
+            return .zero
+        }
+        return safeArea
     }
 }
-
 public extension View {
     func jobisToast(
         isShowing: Binding<Bool>,
@@ -97,7 +111,17 @@ public extension View {
 
 struct JOBISToast_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {}
-            .jobisToast(isShowing: .constant(true), message: "안녕하세요", style: .error, title: "hello")
+        NavigationView(content: {
+            NavigationLink {
+                Text("nav")
+                    .jobisToast(isShowing: .constant(true), message: "안녕하세요", style: .error, title: "hello")
+                    .jobisBackButton {
+                        print("hello")
+                    }
+            } label: {
+                Text("hello")
+            }
+        })
+//        .jobisToast(isShowing: .constant(true), message: "안녕하세요", style: .error, title: "hello")
     }
 }

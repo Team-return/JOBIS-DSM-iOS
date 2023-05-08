@@ -1,6 +1,7 @@
 import DesignSystem
 import SwiftUI
 import BaseFeature
+import SignupFeature
 
 struct SigninView: View {
     private enum FocusField {
@@ -10,144 +11,166 @@ struct SigninView: View {
     @EnvironmentObject var appState: AppState
     @StateObject var viewModel: SigninViewModel
     @FocusState private var focusField: FocusField?
-    @Binding var isPresented: Bool
-    var signinAnimation: Namespace.ID
+    @State var isNavigateSignup = false
+    @State private var isOnAppear = false
+
+    private let signupComponent: SignupComponent
 
     init(
-        isPresented: Binding<Bool>,
         viewModel: SigninViewModel,
-        signinAnimation: Namespace.ID
+        signupComponent: SignupComponent
     ) {
-        _isPresented = isPresented
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.signinAnimation = signinAnimation
+        self.signupComponent = signupComponent
     }
 
     var body: some View {
-        GeometryReader { proxy in
-            ZStack(alignment: .bottom) {
-                LinearGradient(
-                    gradient: Gradient(colors: [.Main.darkBlue, .Main.lightBlue, .Main.lightBlue]),
-                    startPoint: .top, endPoint: .bottom
-                )
-                .onTapGesture {
-                    withAnimation(.spring(
-                        response: 0.6,
-                        dampingFraction: 0.7,
-                        blendDuration: 0.0
-                    )) {
-                        if !(focusField == .id || focusField == .password) {
-                            self.isPresented.toggle()
-                        }
-                    }
-                }
-                .hideKeyboardWhenTap()
-                VStack {
-                    HStack {
-                        Spacer()
+        NavigationView {
+            ZStack {
+                designRectangle()
 
-                        SigninImage(.technyLaptop)
-                            .frame(width: 199, height: 144)
-                            .offset(x: 76, y: 30)
-                            .matchedGeometryEffect(id: "TechnyLaptop", in: signinAnimation)
-                            .animation(.spring(
-                                response: 0.75,
-                                dampingFraction: 0.7,
-                                blendDuration: 0.0
-                            ), value: isPresented)
-                    }
+                VStack(spacing: 0) {
                     Spacer()
-                        .frame(height: (proxy.size.height / 4) * 3)
-                }
 
-                authNavigation(height: (proxy.size.height / 4) * 3)
-                    .hideKeyboardWhenTap()
+                    HStack {
+                        VStack {
+                            Text("취업의 지름길")
+                                .JOBISFont(.etc(.caption), color: .Sub.gray70)
+                                .offset(x: -10, y: 10)
+
+                            Text("JOBIS")
+                                .JOBISFont(.heading(.heading1), color: .Main.lightBlue)
+                        }
+                        Spacer()
+                    }
+
+                    Spacer()
+
+                    signinInput()
+
+                    Spacer()
+                    Spacer()
+
+                    signinButton()
+                }
+                .padding(.horizontal, 20)
             }
-            .edgesIgnoringSafeArea(.all)
-            .jobisToast(isShowing: $viewModel.isErrorOcuured, message: viewModel.errorMessage, style: .error)
-        }
-        .hideKeyboardWhenTap()
-        .onChange(of: viewModel.isSuccessSignin) { newValue in
-            guard newValue else { return }
-            appState.sceneFlow = .main
+            .ignoresSafeArea(.keyboard)
+            .jobisToast(isShowing: $viewModel.isShowToast, message: viewModel.errorMessage, style: .error)
+            .jobisBackground()
+            .hideKeyboardWhenTap()
+            .onChange(of: viewModel.isSuccessSignin) { newValue in
+                guard newValue else { return }
+                appState.sceneFlow = .main
+            }
+            .navigate(
+                to: signupComponent.makeView(),
+                when: $isNavigateSignup
+            )
+            .onAppear {
+                withAnimation(.spring()) {
+                    self.isOnAppear = true
+                }
+            }
+            .environment(\.rootPresentationMode, $isNavigateSignup)
+
+            .jobisToast(isShowing: $viewModel.isAutoSignin, message: "testTest", style: .message)
         }
     }
 
-    // swiftlint:disable function_body_length
     @ViewBuilder
-    func authNavigation(height: CGFloat) -> some View {
-        VStack(alignment: .leading) {
-            VStack(alignment: .leading) {
-                Text("welcome")
-                    .JOBISFont(.etc(.authSubTitle), color: .Sub.gray50)
-                    .offset(x: 2)
-                Text("Sign In")
-                    .JOBISFont(.etc(.authTitle), color: .Sub.gray10)
-            }
-            .padding(.leading, 30)
-            VStack(spacing: 15) {
-                VStack {
-                    JOBISTextField(
-                        placeholder: "@dsm.hs.kr이 포함되어야합니다.",
-                        text: $viewModel.email,
-                        isError: viewModel.isErrorOcuured,
-                        errorMessage: viewModel.errorMessage,
-                        inputType: .none,
-                        outlinedType: .bottomlined,
-                        topMessage: "이메일") {
-                            focusField = .password
-                        }
-                        .focused($focusField, equals: .id)
-                        .textContentType(.emailAddress)
-                        .padding(.bottom, 45)
-                    JOBISTextField(
-                        placeholder: "최대 20자",
-                        text: $viewModel.password,
-                        isError: viewModel.isErrorOcuured,
-                        errorMessage: viewModel.errorMessage,
-                        inputType: .password,
-                        outlinedType: .bottomlined,
-                        topMessage: "비밀번호") {
-                            viewModel.signinButtonDidTap()
-                        }
-                        .focused($focusField, equals: .password)
-                        .textContentType(.password)
-                }
-                .padding(.horizontal, 40)
-                .padding(.top, 60)
-                Spacer()
-                Text("비밀번호를 잊으셨나요?")
-                    .JOBISFont(.body(.body4), color: .Sub.gray70)
-                    .overlay(
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(.Sub.gray70),
-                        alignment: .bottom
-                    )
-                    .padding(.bottom, 15)
-                SolidBtn(
-                    text: "로그인",
-                    action: {
-                        viewModel.signinButtonDidTap()
-                    },
-                    size: .large
-                )
-                .matchedGeometryEffect(id: "SigninButton", in: signinAnimation)
-                .padding(.bottom, 45)
-            }
-            .frame(maxHeight: isPresented ? height : 0)
-            .background(
-                Rectangle()
-                    .fill(Color.Sub.gray10)
-                    .cornerRadius(20, corners: [.topLeft, .topRight])
-                    .animation(.spring(
-                        response: 0.75,
-                        dampingFraction: 0.8,
-                        blendDuration: 0.0),
-                               value: isPresented
-                    )
-                    .matchedGeometryEffect(id: "AuthNavigation", in: signinAnimation)
+    func designRectangle() -> some View {
+        VStack(alignment: .trailing) {
+            LinearGradient(
+                gradient: Gradient(colors: [.Main.blue, .Main.blue, .Main.lightBlue]),
+                startPoint: .trailing, endPoint: .leading
             )
+            .frame(width: 320, height: 320)
+            .cornerRadius(10)
+            .rotationEffect(.degrees(-45))
+            .offset(x: 100, y: -240)
+            .offset(y: isOnAppear ? 0 : -1000)
+            .shadow(radius: 10)
+
+            Spacer()
+        }
+    }
+
+    @ViewBuilder
+    func signinInput() -> some View {
+        VStack(spacing: 30) {
+            JOBISTextField(
+                placeholder: "이메일을 입력해주세요",
+                text: $viewModel.email,
+                isError: viewModel.isEmailError,
+                errorMessage: viewModel.errorMessage,
+                outlinedType: .outlined
+            ) {
+                focusField = .password
+            }
+            .keyboardType(.emailAddress)
+            .focused($focusField, equals: .id)
+
+            JOBISTextField(
+                placeholder: "비밀번호를 입력해주세요",
+                text: $viewModel.password,
+                isError: viewModel.isPasswordError,
+                errorMessage: viewModel.errorMessage,
+                inputType: .password,
+                outlinedType: .outlined
+            ) {
+                viewModel.signinButtonDidTap()
+            }
+            .textContentType(.password)
+            .focused($focusField, equals: .password)
+
+            HStack(spacing: 8) {
+                JOBISCheckBox(isOn: $viewModel.isAutoSignin)
+
+                Text("자동로그인")
+                    .JOBISFont(.etc(.caption), color: .Sub.gray90)
+                    .onTapGesture {
+                        withAnimation {
+                            viewModel.isAutoSignin.toggle()
+                        }
+                    }
+
+                Spacer()
+
+                Text("비밀번호 재설정")
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+            }
+        }
+    }
+
+    @ViewBuilder
+    func signinButton() -> some View {
+        VStack {
+            HStack {
+                Spacer()
+
+                Text("아직 회원이 아니신가요? ")
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+
+                Button {
+                    isNavigateSignup.toggle()
+                } label: {
+                    Text("회원가입")
+                        .JOBISFont(.etc(.caption), color: .Sub.gray90)
+                        .underline()
+                }
+
+                Spacer()
+            }
+
+            SolidBtn(
+                text: "로그인",
+                action: {
+                    viewModel.signinButtonDidTap()
+                },
+                size: .large
+            )
+            .padding(.vertical, 20)
         }
     }
 }

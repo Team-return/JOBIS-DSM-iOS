@@ -10,19 +10,19 @@ public struct SignupRequestDto: Encodable {
     public init(
         email: String,
         password: String,
-        grade: Int?,
+        grade: Int,
         name: String,
-        gender: GenderType?,
-        classRoom: Int?,
-        number: Int?
+        gender: GenderType,
+        classRoom: Int,
+        number: Int
     ) {
         self.email = email
         self.password = password
-        self.grade = grade ?? 0
+        self.grade = grade
         self.name = name
-        self.gender = gender ?? .man
-        self.classRoom = classRoom ?? 0
-        self.number = number ?? 0
+        self.gender = gender
+        self.classRoom = classRoom
+        self.number = number
     }
 
     enum CodingKeys: String, CodingKey {
