@@ -105,8 +105,8 @@ final class SignupViewModel: BaseViewModel {
     func verifyAuthCode() {
         addCancellable(
             verifyAuthCodeUseCase.execute(email: email, authCode: authCode)
-        ) { [weak self] in
-//            self?.isShowMessageToast = true
+        ) { [weak self] _ in
+            self?.isShowMessageToast = true
         }
     }
 

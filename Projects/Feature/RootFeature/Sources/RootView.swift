@@ -3,7 +3,6 @@ import SwiftUI
 import MainTabFeature
 import SplashFeature
 import SigninFeature
-import DesignSystem
 
 struct RootView: View {
     @EnvironmentObject var appState: AppState
@@ -38,8 +37,5 @@ struct RootView: View {
         }
         .animation(.easeInOut, value: appState.sceneFlow)
         .transition(.opacity.animation(.easeInOut))
-        .onAppear {
-            DesignSystemFontFamily.registerAllCustomFonts()
-        }
     }
 }

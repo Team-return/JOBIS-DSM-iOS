@@ -49,8 +49,7 @@ struct SignupEmailVerifyView: View {
                     focusField = .none
                 }
                 .focused($focusField, equals: .verifyCode)
-                .keyboardType(.numberPad)
-                .filterNumericInput($viewModel.authCode)
+                .keyboardType(.default)
                 .onReceive(Just(viewModel.authCode)) { _ in
                     if 6 < viewModel.authCode.count {
                         viewModel.authCode = String(viewModel.authCode.prefix(6))

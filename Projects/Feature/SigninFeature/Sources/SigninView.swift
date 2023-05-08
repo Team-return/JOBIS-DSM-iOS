@@ -73,6 +73,8 @@ struct SigninView: View {
                 }
             }
             .environment(\.rootPresentationMode, $isNavigateSignup)
+
+            .jobisToast(isShowing: $viewModel.isAutoSignin, message: "testTest", style: .message)
         }
     }
 

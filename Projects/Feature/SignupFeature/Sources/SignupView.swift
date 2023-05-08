@@ -11,14 +11,9 @@ struct SignupView: View {
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
-    
-    @State var isShowToast = false
 
     var body: some View {
         VStack(alignment: .leading) {
-            Button("hello") {
-                isShowToast.toggle()
-            }
             switch viewModel.signupType {
             case .infoSetting:
                 InfoSettingView(viewModel: viewModel)
@@ -34,12 +29,11 @@ struct SignupView: View {
         }
         .padding(.horizontal, 26)
         .animation(.default, value: viewModel.progressValue)
-        .navigationTitle("hi")
-//        .jobisBackButton(title: "회원가입") {
-//            viewModel.backButtonDidTap {
-//                dismiss()
-//            }
-//        }
+        .jobisBackButton(title: "회원가입") {
+            viewModel.backButtonDidTap {
+                dismiss()
+            }
+        }
         .jobisToast(
             isShowing: $viewModel.isShowMessageToast,
             message: "인증번호 발송 완료",
@@ -51,11 +45,6 @@ struct SignupView: View {
             message: viewModel.errorMessage,
             style: .error,
             title: "에러"
-        )
-        .jobisToast(
-            isShowing: $isShowToast,
-            message: "errorTestToast",
-            style: .error
         )
     }
 
