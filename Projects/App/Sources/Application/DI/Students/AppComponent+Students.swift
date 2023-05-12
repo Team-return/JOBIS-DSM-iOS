@@ -26,4 +26,10 @@ public extension AppComponent {
             SignupUseCaseImpl(studentsRepository: studentsRepository)
         }
     }
+
+    var studentExistsUseCase: any StudentExistsUseCase {
+        shared {
+            StudentExistsUseCaseImpl(studentsRepository: studentsRepository)
+        }
+    }
 }

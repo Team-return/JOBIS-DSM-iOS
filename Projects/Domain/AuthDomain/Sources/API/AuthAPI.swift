@@ -39,7 +39,14 @@ extension AuthAPI: JobisAPI {
         switch self {
         case let .sendAuthCode(req):
             return .requestJSONEncodable(req)
-        case .verifyAuthCode, .reissueToken:
+        case let .verifyAuthCode(email, authCode):
+            return .requestParameters(
+                parameters: [
+                    "email": email,
+                    "auth-code": authCode
+                ], encoding: URLEncoding.queryString
+            )
+        case .reissueToken:
             return .requestPlain
         }
     }
