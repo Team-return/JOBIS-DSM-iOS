@@ -28,8 +28,6 @@ struct SignupEmailVerifyView: View {
             JOBISTextField(
                 placeholder: "이메일을 입력해주세요",
                 text: $viewModel.email,
-                isError: viewModel.isErrorOcuured,
-                errorMessage: "에러에러에러",
                 outlinedType: .outlined,
                 bottomMessage: "@dsm.hs.kr 이 포함되어야 합니다"
             ) {
@@ -39,30 +37,38 @@ struct SignupEmailVerifyView: View {
             .keyboardType(.emailAddress)
 
             HStack(spacing: 12) {
-                JOBISTextField(
-                    placeholder: "인증번호 6자리",
-                    text: $viewModel.authCode,
-                    isError: viewModel.isErrorOcuured,
-                    errorMessage: "에러에러에러",
-                    outlinedType: .outlined
-                ) {
-                    focusField = .none
-                }
-                .focused($focusField, equals: .verifyCode)
-                .keyboardType(.default)
-                .onReceive(Just(viewModel.authCode)) { _ in
-                    if 6 < viewModel.authCode.count {
-                        viewModel.authCode = String(viewModel.authCode.prefix(6))
+                ZStack {
+                    JOBISTextField(
+                        placeholder: "인증번호 6자리",
+                        text: $viewModel.authCode,
+                        outlinedType: .outlined
+                    ) {
+                        focusField = .none
+                    }
+                    .focused($focusField, equals: .verifyCode)
+                    .keyboardType(.default)
+                    .onReceive(Just(viewModel.authCode)) { _ in
+                        if 6 < viewModel.authCode.count {
+                            viewModel.authCode = String(viewModel.authCode.prefix(6))
+                        }
+                    }
+
+                    HStack {
+                        Spacer()
+                        Text(viewModel.timeText)
+                            .padding(.trailing, 12)
+                            .JOBISFont(.body(.body4), color: .State.message)
                     }
                 }
 
                 SolidBtn(
-                    text: viewModel.sendEmailTitle,
+                    text: viewModel.sendEmailButtonTitle,
                     action: {
                         viewModel.sendAuthCode()
                     },
                     size: .small
                 )
+                .disabled(!viewModel.email.contains("@dsm.hs.kr"))
             }
         }
     }

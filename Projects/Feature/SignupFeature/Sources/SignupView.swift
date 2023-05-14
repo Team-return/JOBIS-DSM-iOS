@@ -3,6 +3,7 @@ import SwiftUI
 import BaseFeature
 
 struct SignupView: View {
+    @EnvironmentObject var appState: AppState
     @StateObject var viewModel: SignupViewModel
     @Environment(\.dismiss) var dismiss
 
@@ -35,17 +36,39 @@ struct SignupView: View {
             }
         }
         .jobisToast(
+            isShowing: $viewModel.isInfoSettingError,
+            message: viewModel.errorMessage,
+            style: .error,
+            title: "에러"
+        )
+        .jobisToast(
+            isShowing: $viewModel.isAuthCodeError,
+            message: viewModel.errorMessage,
+            style: .error,
+            title: "에러"
+        )
+        .jobisToast(
+            isShowing: $viewModel.isShowSuccessVerifyEmailToast,
+            message: "다음을 눌러 계속 진행하세요.",
+            style: .success,
+            title: "인증완료!"
+        )
+        .jobisToast(
             isShowing: $viewModel.isShowMessageToast,
             message: "인증번호 발송 완료",
             style: .message,
             title: "이메일을 확인해 주세요"
         )
         .jobisToast(
-            isShowing: $viewModel.isShowErrorToast,
-            message: viewModel.errorMessage,
+            isShowing: $viewModel.isShowSignupErrorToast,
+            message: "중복 계정",
             style: .error,
-            title: "에러"
+            title: "이미 계정이 존재합니다!"
         )
+        .onChange(of: viewModel.isSuccessSignup) { newValue in
+            guard newValue else { return }
+            appState.sceneFlow = .main
+        }
     }
 
     @ViewBuilder
@@ -60,11 +83,14 @@ struct SignupView: View {
             }
 
             SolidBtn(
-                text: "다음",
+                text: viewModel.nextButtonTitle,
                 action: {
                     viewModel.nextButtonDidTap()
                 },
                 size: .large
+            )
+            .disabled(
+                viewModel.isButtonEnabled
             )
             .padding(.vertical, 20)
         }
