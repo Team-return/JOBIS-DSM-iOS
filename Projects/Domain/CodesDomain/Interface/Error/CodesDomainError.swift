@@ -1,10 +1,10 @@
 import Foundation
 
-public enum CodeDomainError: Error {
+public enum CodesDomainError: Error {
     case badRequest
 }
 
-extension CodeDomainError: LocalizedError {
+extension CodesDomainError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .badRequest:

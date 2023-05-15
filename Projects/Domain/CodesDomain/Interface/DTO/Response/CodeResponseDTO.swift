@@ -1,6 +1,6 @@
 import Foundation
 
-public struct JobCodeRequestDTO: Decodable {
+public struct CodesResponseDTO: Decodable {
     public let code: Int
     public let keyword: String
     public let jobType: JobType
@@ -18,15 +18,15 @@ public struct JobCodeRequestDTO: Decodable {
     }
 }
 
-public extension [JobCodeRequestDTO] {
-    func toDomain() -> [JobCodeEntity] {
+public extension [CodesResponseDTO] {
+    func toDomain() -> [CodeEntity] {
         map { $0.toDomain() }
     }
 }
 
-public extension JobCodeRequestDTO {
-    func toDomain() -> JobCodeEntity {
-        JobCodeEntity(
+public extension CodesResponseDTO {
+    func toDomain() -> CodeEntity {
+        CodeEntity(
             code: code,
             keyword: keyword,
             jobType: jobType
