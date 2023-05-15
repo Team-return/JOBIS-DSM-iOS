@@ -1,29 +1,23 @@
 import NeedleFoundation
-import CodeDomain
-import CodeDomainInterface
+import CodesDomain
+import CodesDomainInterface
 
 public extension AppComponent {
-    var remoteCodeDataSource: any RemoteCodeDataSource {
+    var remoteCodesDataSource: any RemoteCodesDataSource {
         shared {
-            RemoteCodeDataSourceImpl(keychain: keychain)
+            RemoteCodesDataSourceImpl(keychain: keychain)
         }
     }
 
-    var codeRepository: any CodeRepository {
+    var codesRepository: any CodesRepository {
         shared {
-            CodeRepositoryImpl(remoteCodeDataSource: remoteCodeDataSource)
+            CodesRepositoryImpl(remoteCodesDataSource: remoteCodesDataSource)
         }
     }
 
-    var fetchJobCodeUseCase: any FetchJobCodeUseCase {
+    var fetchCodesUseCase: any FetchCodesUseCase {
         shared {
-            FetchJobCodeUseCaseImpl(codeRepository: codeRepository)
-        }
-    }
-
-    var fetchTechCodeUseCase: any FetchTechCodeUseCase {
-        shared {
-            FetchTechCodeUseCaseImpl(codeRepository: codeRepository)
+            FetchCodesUseCaseImpl(codesRepository: codesRepository)
         }
     }
 }

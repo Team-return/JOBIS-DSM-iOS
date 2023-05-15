@@ -29,7 +29,7 @@ public extension ModulePaths {
 public extension ModulePaths {
     enum Domain: String {
         case ApplicationsDomain
-        case CodeDomain
+        case CodesDomain
         case StudentsDomain
         case CompaniesDomain
         case RecruitmentsDomain

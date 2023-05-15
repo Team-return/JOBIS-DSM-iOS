@@ -1,6 +1,6 @@
 import Foundation
 
-public struct JobCodeEntity: Equatable {
+public struct CodeEntity: Equatable {
     public let code: Int
     public let keyword: String
     public let jobType: JobType

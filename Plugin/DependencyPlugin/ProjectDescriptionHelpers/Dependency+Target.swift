@@ -92,17 +92,17 @@ public extension TargetDependency.Domain {
         target: ModulePaths.Domain.ApplicationsDomain.targetName(type: .sources),
         path: .relativeToDomain(ModulePaths.Domain.ApplicationsDomain.rawValue)
     )
-    static let CodeDomainTesting = TargetDependency.project(
-        target: ModulePaths.Domain.CodeDomain.targetName(type: .testing),
-        path: .relativeToDomain(ModulePaths.Domain.CodeDomain.rawValue)
+    static let CodesDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.CodesDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.CodesDomain.rawValue)
     )
-    static let CodeDomainInterface = TargetDependency.project(
-        target: ModulePaths.Domain.CodeDomain.targetName(type: .interface),
-        path: .relativeToDomain(ModulePaths.Domain.CodeDomain.rawValue)
+    static let CodesDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.CodesDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.CodesDomain.rawValue)
     )
-    static let CodeDomain = TargetDependency.project(
-        target: ModulePaths.Domain.CodeDomain.targetName(type: .sources),
-        path: .relativeToDomain(ModulePaths.Domain.CodeDomain.rawValue)
+    static let CodesDomain = TargetDependency.project(
+        target: ModulePaths.Domain.CodesDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.CodesDomain.rawValue)
     )
     static let StudentsDomainTesting = TargetDependency.project(
         target: ModulePaths.Domain.StudentsDomain.targetName(type: .testing),
