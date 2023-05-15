@@ -63,6 +63,9 @@ private class SignupDependency1ff7d1355204bb65e850Provider: SignupDependency {
     var signupUseCase: any SignupUseCase {
         return appComponent.signupUseCase
     }
+    var studentExistsUseCase: any StudentExistsUseCase {
+        return appComponent.studentExistsUseCase
+    }
     var sendAuthCodeUseCase: any SendAuthCodeUseCase {
         return appComponent.sendAuthCodeUseCase
     }
@@ -195,6 +198,7 @@ extension AppComponent: Registration {
         localTable["studentsRepository-any StudentsRepository"] = { [unowned self] in self.studentsRepository as Any }
         localTable["renewalPasswordUseCase-any RenewalPasswordUseCase"] = { [unowned self] in self.renewalPasswordUseCase as Any }
         localTable["signupUseCase-any SignupUseCase"] = { [unowned self] in self.signupUseCase as Any }
+        localTable["studentExistsUseCase-any StudentExistsUseCase"] = { [unowned self] in self.studentExistsUseCase as Any }
         localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
         localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
         localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
@@ -217,6 +221,7 @@ extension SplashComponent: Registration {
 extension SignupComponent: Registration {
     public func registerItems() {
         keyPathToName[\SignupDependency.signupUseCase] = "signupUseCase-any SignupUseCase"
+        keyPathToName[\SignupDependency.studentExistsUseCase] = "studentExistsUseCase-any StudentExistsUseCase"
         keyPathToName[\SignupDependency.sendAuthCodeUseCase] = "sendAuthCodeUseCase-any SendAuthCodeUseCase"
         keyPathToName[\SignupDependency.verifyAuthCodeUseCase] = "verifyAuthCodeUseCase-any VerifyAuthCodeUseCase"
     }

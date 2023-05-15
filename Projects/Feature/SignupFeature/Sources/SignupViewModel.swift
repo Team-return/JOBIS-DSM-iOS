@@ -2,6 +2,8 @@ import BaseFeature
 import Combine
 import StudentsDomainInterface
 import AuthDomainInterface
+import UIKit
+import UtilityModule
 
 final class SignupViewModel: BaseViewModel {
     enum SignupType {
@@ -9,7 +11,19 @@ final class SignupViewModel: BaseViewModel {
         case emailVerify
         case password
     }
-    @Published var signupType: SignupType = .infoSetting
+    @Published var isSuccessSignup = false
+    @Published var signupType: SignupType = .infoSetting {
+        didSet {
+            switch signupType {
+            case .infoSetting:
+                nextButtonTitle = "다음"
+            case .emailVerify:
+                nextButtonTitle = "인증확인"
+            case .password:
+                nextButtonTitle = "회원가입"
+            }
+        }
+    }
     @Published var progressValue: Int = 0 {
         didSet {
             if progressValue > 3 {
@@ -42,32 +56,86 @@ final class SignupViewModel: BaseViewModel {
     @Published var password: String = ""
     @Published var checkPassword: String = ""
 
-    @Published var verifyEmailTitle: String = "인증확인"
-    @Published var sendEmailTitle: String = "인증요청"
+    @Published var timeRemaining = 0
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    var timeText: String {
+        timeRemaining == 0 ? "" : timeRemaining % 60 < 10 ?
+        "\(timeRemaining/60):0\(timeRemaining%60)" :
+        "\(timeRemaining/60):\(timeRemaining%60)"
+    }
+
+    var isButtonEnabled: Bool {
+        switch signupType {
+        case .infoSetting:
+            return grade.isEmpty || name.isEmpty || classRoom.isEmpty || number.isEmpty || !(isWoman || isMan)
+        case .emailVerify:
+            return !isEmailSend
+        case .password:
+            return password.isEmpty && checkPassword.isEmpty
+        }
+    }
+
+    @Published var nextButtonTitle: String = "다음"
+    @Published var sendEmailButtonTitle: String = "인증요청"
+
+    @Published var isEmailSend: Bool = false
+    @Published var isEmailVerified: Bool = false
 
     @Published var isShowMessageToast: Bool = false
-    @Published var isShowErrorToast: Bool = false
+    @Published var isShowSuccessVerifyEmailToast: Bool = false
+    @Published var isShowSignupErrorToast: Bool = false
+
+    @Published var isInfoSettingError: Bool = false
+    @Published var isAuthCodeError: Bool = false
+    @Published var isPasswordRegexError: Bool = false {
+        didSet {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.isPasswordRegexError = false
+            }
+        }
+    }
+    @Published var isPasswordMismatchedError: Bool = false {
+        didSet {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.isPasswordMismatchedError = false
+            }
+        }
+    }
 
     private let signupUseCase: SignupUseCase
+    private let studentExistsUseCase: StudentExistsUseCase
     private let sendAuthCodeUseCase: SendAuthCodeUseCase
     private let verifyAuthCodeUseCase: VerifyAuthCodeUseCase
 
     public init(
         signupUseCase: any SignupUseCase,
+        studentExistsUseCase: any StudentExistsUseCase,
         sendAuthCodeUseCase: any SendAuthCodeUseCase,
         verifyAuthCodeUseCase: any VerifyAuthCodeUseCase
     ) {
         self.signupUseCase = signupUseCase
+        self.studentExistsUseCase = studentExistsUseCase
         self.sendAuthCodeUseCase = sendAuthCodeUseCase
         self.verifyAuthCodeUseCase = verifyAuthCodeUseCase
+
+        super.init()
+
+        addCancellable(
+            timer.setFailureType(to: Error.self).eraseToAnyPublisher()
+        ) { [weak self] _ in
+            guard let self, self.timeRemaining > 0 else { return }
+            self.timeRemaining -= 1
+        }
     }
 
     func nextButtonDidTap() {
         switch signupType {
         case .infoSetting:
             infoSettingNextButtonDidTap()
+
         case .emailVerify:
             emailVerifyNextButtonDidTap()
+
         case .password:
             passwordNextButtonDidTap()
         }
@@ -77,15 +145,18 @@ final class SignupViewModel: BaseViewModel {
         switch signupType {
         case .infoSetting:
             action()
+
         case .emailVerify:
             signupType = .infoSetting
             progressValue -= 1
+
         case .password:
             signupType = .emailVerify
             progressValue -= 1
         }
     }
 
+    // MARK: - Email Verify
     func sendAuthCode() {
         addCancellable(
             sendAuthCodeUseCase.execute(
@@ -96,31 +167,53 @@ final class SignupViewModel: BaseViewModel {
                 )
             )
         ) { [weak self] in
+            self?.timeRemaining = 300
             self?.isShowMessageToast = true
-        } onReceiveError: { _ in
-            self.isShowErrorToast = true
+            self?.sendEmailButtonTitle = "재발송"
+            self?.isEmailSend = true
         }
     }
 
-    func verifyAuthCode() {
+    private func verifyAuthCode() {
         addCancellable(
             verifyAuthCodeUseCase.execute(email: email, authCode: authCode)
         ) { [weak self] _ in
-            self?.isShowMessageToast = true
+            self?.isShowSuccessVerifyEmailToast = true
+            self?.isEmailVerified = true
+            self?.nextButtonTitle = "다음"
+        } onReceiveError: { [weak self] _ in
+            self?.isAuthCodeError = true
         }
     }
 
-    private func infoSettingNextButtonDidTap() {
-        signupType = .emailVerify
-        progressValue += 1
-    }
-
     private func emailVerifyNextButtonDidTap() {
-        signupType = .password
-        progressValue += 1
+        if isEmailVerified {
+            signupType = .password
+            progressValue += 1
+        } else {
+            verifyAuthCode()
+        }
     }
 
-    private func passwordNextButtonDidTap() {
+    // MARK: - InfoSetting
+    private func infoSettingNextButtonDidTap() {
+        if isButtonEnabled {
+            isInfoSettingError = true
+            errorMessage = "공백이 있습니다."
+        } else {
+            addCancellable(
+                studentExistsUseCase.execute(gcn: Int(grade + classRoom + number) ?? 0, name: name)
+            ) { [weak self] in
+                self?.signupType = .emailVerify
+                self?.progressValue += 1
+            } onReceiveError: { [weak self] _ in
+                self?.isInfoSettingError = true
+            }
+        }
+    }
+
+    // MARK: - Password
+    private func signup() {
         let gender: GenderType? = {
             if isMan {
                 return .man
@@ -148,9 +241,24 @@ final class SignupViewModel: BaseViewModel {
                 )
             )
         ) { [weak self] _ in
-            print(self?.$email ?? "성공")
+            self?.isSuccessSignup = true
         } onReceiveError: { [weak self] _ in
-            print(self?.$email ?? "실패")
+            self?.isShowSignupErrorToast = true
         }
+    }
+    private func passwordNextButtonDidTap() {
+        let passwordExpression = "^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+=-]).{8,20}"
+
+        guard password ~= passwordExpression else {
+            isPasswordRegexError = true
+            return
+        }
+
+        guard password == checkPassword else {
+            isPasswordMismatchedError = true
+            return
+        }
+
+        signup()
     }
 }

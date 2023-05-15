@@ -10,4 +10,8 @@ public final class RemoteStudentsDataSourceImpl: BaseRemoteDataSource<StudentsAP
     public func renewalPassword(req: RenewalPasswordRequestDTO) -> AnyPublisher<Void, Error> {
         request(.renewalPassword(req))
     }
+
+    public func studentExists(gcn: Int, name: String) -> AnyPublisher<Void, Error> {
+        request(.studentExists(gcn: gcn, name: name))
+    }
 }

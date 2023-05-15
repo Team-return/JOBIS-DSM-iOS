@@ -27,8 +27,8 @@ struct SignupPasswordView: View {
             JOBISTextField(
                 placeholder: "비밀번호를 입력해주세요",
                 text: $viewModel.password,
-                isError: viewModel.isErrorOcuured,
-                errorMessage: "에러에러에러",
+                isError: viewModel.isPasswordRegexError,
+                errorMessage: "비밀번호 형식이 올바르지 않습니다.",
                 inputType: .password,
                 outlinedType: .outlined,
                 bottomMessage: "8 ~ 16자, 영문자, 숫자, 특수문자 포함"
@@ -41,8 +41,8 @@ struct SignupPasswordView: View {
             JOBISTextField(
                 placeholder: "비밀번호를 다시 입력해주세요",
                 text: $viewModel.checkPassword,
-                isError: viewModel.isErrorOcuured,
-                errorMessage: "에러에러에러",
+                isError: viewModel.isPasswordMismatchedError,
+                errorMessage: "비밀번호가 일치하지 않습니다.",
                 inputType: .password,
                 outlinedType: .outlined
             ) {

@@ -72,8 +72,6 @@ struct InfoSettingView: View {
         JOBISTextField(
             placeholder: "이름을 입력하세요",
             text: $viewModel.name,
-            isError: viewModel.isErrorOcuured,
-            errorMessage: "에러에러에러",
             outlinedType: .outlined
         ) {
             self.focusField = .grade
@@ -84,8 +82,6 @@ struct InfoSettingView: View {
             JOBISTextField(
                 placeholder: "학년",
                 text: $viewModel.grade,
-                isError: viewModel.isErrorOcuured,
-                errorMessage: "에러에러에러",
                 outlinedType: .outlined
             ) {
                 self.focusField = .classRoom
@@ -97,8 +93,6 @@ struct InfoSettingView: View {
             JOBISTextField(
                 placeholder: "반",
                 text: $viewModel.classRoom,
-                isError: viewModel.isErrorOcuured,
-                errorMessage: "에러에러에러",
                 outlinedType: .outlined
             ) {
                 self.focusField = .number
@@ -110,11 +104,13 @@ struct InfoSettingView: View {
             JOBISTextField(
                 placeholder: "번호",
                 text: $viewModel.number,
-                isError: viewModel.isErrorOcuured,
-                errorMessage: "에러에러에러",
                 outlinedType: .outlined
             ) {
-                viewModel.nextButtonDidTap()
+                if viewModel.isButtonEnabled {
+                    focusField = .none
+                } else {
+                    viewModel.nextButtonDidTap()
+                }
             }
             .focused($focusField, equals: .number)
             .keyboardType(.numberPad)

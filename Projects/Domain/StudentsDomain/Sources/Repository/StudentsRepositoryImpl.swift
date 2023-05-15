@@ -15,4 +15,8 @@ public struct StudentsRepositoryImpl: StudentsRepository {
     public func renewalPassword(req: RenewalPasswordRequestDTO) -> AnyPublisher<Void, Error> {
         remoteStudentsDataSource.renewalPassword(req: req)
     }
+
+    public func studentExists(gcn: Int, name: String) -> AnyPublisher<Void, Error> {
+        remoteStudentsDataSource.studentExists(gcn: gcn, name: name)
+    }
 }

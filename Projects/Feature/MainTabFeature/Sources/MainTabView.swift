@@ -52,9 +52,10 @@ struct MainTabView: View {
                     tabbarView()
                         .background {
                             Color.Sub.gray10
-                                .cornerRadius(20, corners: [.topLeft, .topRight])
+                                .cornerRadius(10, corners: [.topLeft, .topRight])
                                 .ignoresSafeArea()
                         }
+                        .shadow(radius: 4, y: -2)
                         .environment(\.jobisSelectionTabbKey, $selection)
                 }
             }

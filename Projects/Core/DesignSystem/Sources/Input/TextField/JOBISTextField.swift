@@ -18,7 +18,7 @@ public struct JOBISTextField: View {
     public init(
         placeholder: String,
         text: Binding<String>,
-        isError: Bool,
+        isError: Bool = false,
         errorMessage: String = "",
         inputType: TFInputType = .none,
         outlinedType: TFOutlinedType,

@@ -5,6 +5,7 @@ import BaseDomain
 public enum StudentsAPI {
     case signup(SignupRequestDto)
     case renewalPassword(RenewalPasswordRequestDTO)
+    case studentExists(gcn: Int, name: String)
 }
 
 extension StudentsAPI: JobisAPI {
@@ -20,6 +21,8 @@ extension StudentsAPI: JobisAPI {
             return ""
         case .renewalPassword:
             return "/password"
+        case .studentExists:
+            return "/exists"
         }
     }
 
@@ -29,6 +32,8 @@ extension StudentsAPI: JobisAPI {
             return .post
         case .renewalPassword:
             return .patch
+        case .studentExists:
+            return .get
         }
     }
 
@@ -38,6 +43,13 @@ extension StudentsAPI: JobisAPI {
             return .requestJSONEncodable(req)
         case let .renewalPassword(req):
             return .requestJSONEncodable(req)
+        case let .studentExists(gcn, name):
+            return .requestParameters(
+                parameters: [
+                    "gcn": gcn,
+                    "name": name
+                ],
+                encoding: URLEncoding.queryString)
         }
     }
 
@@ -49,9 +61,7 @@ extension StudentsAPI: JobisAPI {
         switch self {
         case .signup:
             return [
-                400: .badRequest,
-                403: .badRequest,
-                409: .conflict
+                409: .alreadyExistsAccount
             ]
         case .renewalPassword:
             return [
@@ -59,6 +69,10 @@ extension StudentsAPI: JobisAPI {
                 401: .unauthorized,
                 404: .notFound,
                 409: .conflict
+            ]
+        case .studentExists:
+            return [
+                404: .notExistsStudent
             ]
         }
     }
