@@ -49,7 +49,7 @@ let targets: [Target] = [
             // 띄우기 용
             .Domain.RecruitmentsDomain,
             .Domain.ApplicationsDomain,
-            .Domain.CodeDomain,
+            .Domain.CodesDomain,
             .Domain.CompaniesDomain,
             .Domain.StudentsDomain
         ],

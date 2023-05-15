@@ -34,7 +34,7 @@ public enum JobisDomain: String {
     case recruitments
     case companies
     case students
-    case code
+    case codes
     case applications
 }
 

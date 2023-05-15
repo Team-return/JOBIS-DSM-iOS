@@ -4,8 +4,8 @@ import ApplicationsDomain
 import ApplicationsDomainInterface
 import AuthDomain
 import AuthDomainInterface
-import CodeDomain
-import CodeDomainInterface
+import CodesDomain
+import CodesDomainInterface
 import CompaniesDomain
 import CompaniesDomainInterface
 import HomeFeature
@@ -183,8 +183,8 @@ extension AppComponent: Registration {
         localTable["recruitmentsRepository-any RecruitmentsRepository"] = { [unowned self] in self.recruitmentsRepository as Any }
         localTable["fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"] = { [unowned self] in self.fetchRecruitmentDetailUseCase as Any }
         localTable["fetchRecruitmentListUseCase-any FetchRecruitmentListUseCase"] = { [unowned self] in self.fetchRecruitmentListUseCase as Any }
-        localTable["remoteCodeDataSource-any RemoteCodeDataSource"] = { [unowned self] in self.remoteCodeDataSource as Any }
-        localTable["codeRepository-any CodeRepository"] = { [unowned self] in self.codeRepository as Any }
+        localTable["remoteCodesDataSource-any RemoteCodesDataSource"] = { [unowned self] in self.remoteCodesDataSource as Any }
+        localTable["codesRepository-any CodesRepository"] = { [unowned self] in self.codesRepository as Any }
         localTable["fetchJobCodeUseCase-any FetchJobCodeUseCase"] = { [unowned self] in self.fetchJobCodeUseCase as Any }
         localTable["fetchTechCodeUseCase-any FetchTechCodeUseCase"] = { [unowned self] in self.fetchTechCodeUseCase as Any }
         localTable["signinComponent-SigninComponent"] = { [unowned self] in self.signinComponent as Any }
