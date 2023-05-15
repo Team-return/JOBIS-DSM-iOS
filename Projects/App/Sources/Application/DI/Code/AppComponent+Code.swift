@@ -15,7 +15,7 @@ public extension AppComponent {
         }
     }
 
-    var FetchCodesUseCase: any FetchCodesUseCase {
+    var fetchCodesUseCase: any FetchCodesUseCase {
         shared {
             FetchCodesUseCaseImpl(codesRepository: codesRepository)
         }
