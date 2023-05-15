@@ -15,15 +15,9 @@ public extension AppComponent {
         }
     }
 
-    var fetchJobCodeUseCase: any FetchJobCodeUseCase {
+    var FetchCodesUseCase: any FetchCodesUseCase {
         shared {
-            FetchJobCodeUseCaseImpl(codesRepository: codesRepository)
-        }
-    }
-
-    var fetchTechCodeUseCase: any FetchTechCodeUseCase {
-        shared {
-            FetchTechCodeUseCaseImpl(codesRepository: codesRepository)
+            FetchCodesUseCaseImpl(codesRepository: codesRepository)
         }
     }
 }
