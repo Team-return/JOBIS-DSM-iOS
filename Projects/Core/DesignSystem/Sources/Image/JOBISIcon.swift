@@ -32,7 +32,8 @@ public struct JOBISImage: View {
         case upload
         case checkBoxIcon
         case menu
-        case mypage
+        case recruitment
+        case profile
         case house
     }
 
@@ -124,11 +125,14 @@ public struct JOBISImage: View {
         case .checkBoxIcon:
             return DesignSystemAsset.Icons.checkBoxIcon.suiImage
 
-        case .mypage:
-            return DesignSystemAsset.Icons.mypage.suiImage
+        case .profile:
+            return DesignSystemAsset.Icons.profile.suiImage
 
         case .house:
             return DesignSystemAsset.Icons.house.suiImage
+
+        case .recruitment:
+            return DesignSystemAsset.Icons.recruitment.suiImage
         }
     }
 }

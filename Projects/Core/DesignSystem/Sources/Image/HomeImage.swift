@@ -1,9 +1,8 @@
 import SwiftUI
-public struct SigninImage: View {
+public struct HomeImage: View {
     public enum Image {
-        case splashIcon
-        case technyFeed
-        case technyLaptop
+        case recruitment
+        case findWorkspace
     }
 
     private var image: Image
@@ -25,14 +24,10 @@ public struct SigninImage: View {
 
     private func jobisToImage() -> SwiftUI.Image {
         switch image {
-        case .splashIcon:
-            return DesignSystemAsset.Image.splashIcon.swiftUIImage
-
-        case .technyFeed:
-            return DesignSystemAsset.Image.technyFeed.swiftUIImage
-
-        case .technyLaptop:
-            return DesignSystemAsset.Image.technyLaptop.swiftUIImage
+        case .findWorkspace:
+            return DesignSystemAsset.Image.findWorkspaceImage.swiftUIImage
+        case .recruitment:
+            return DesignSystemAsset.Image.recruitmentImage.swiftUIImage
         }
     }
 }
