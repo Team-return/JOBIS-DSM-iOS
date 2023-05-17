@@ -1,7 +1,8 @@
 import Foundation
 
 public enum TabFlow: Int {
-    case menu
     case home
-    case myPage
+    case recruitment
+    case profile
+    case menu
 }
