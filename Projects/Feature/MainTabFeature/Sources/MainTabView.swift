@@ -12,36 +12,43 @@ struct MainTabView: View {
     @State var tabbarHidden = false
 
     var tabItem: [(Image, String, TabFlow)] = [
-        (DesignSystemAsset.Icons.menu.swiftUIImage, "메뉴", .menu),
         (DesignSystemAsset.Icons.house.swiftUIImage, "홈", .home),
-        (DesignSystemAsset.Icons.mypage.swiftUIImage, "내 정보", .myPage)
+        (DesignSystemAsset.Icons.recruitment.swiftUIImage, "의뢰서", .recruitment),
+        (DesignSystemAsset.Icons.profile.swiftUIImage, "프로필", .profile),
+        (DesignSystemAsset.Icons.menu.swiftUIImage, "메뉴", .menu)
     ]
 
     private let homeComponent: HomeComponent
-    private let menuComponent: MenuComponent
+//    private let recruitmentComponent: RecruitmentComponent
     private let myPageComponent: MyPageComponent
+    private let menuComponent: MenuComponent
 
     init(
         homeComponent: HomeComponent,
-        menuComponent: MenuComponent,
-        myPageComponent: MyPageComponent
+//        recruitmentComponent: RecruitmentComponent,
+        myPageComponent: MyPageComponent,
+        menuComponent: MenuComponent
     ) {
         self.homeComponent = homeComponent
-        self.menuComponent = menuComponent
+//        self.recruitmentComponent = recruitmentComponent
         self.myPageComponent = myPageComponent
+        self.menuComponent = menuComponent
     }
 
     var body: some View {
         ZStack {
             TabView(selection: $selection) {
-                menuComponent.makeView()
-                    .tag(TabFlow.menu)
-
                 homeComponent.makeView()
                     .tag(TabFlow.home)
 
+                Text("임시 RecruitmentComponent.makeView()")
+                    .tag(TabFlow.recruitment)
+
                 myPageComponent.makeView()
-                    .tag(TabFlow.myPage)
+                    .tag(TabFlow.profile)
+
+                menuComponent.makeView()
+                    .tag(TabFlow.menu)
             }
             .environment(\.tabbarHidden, $tabbarHidden)
 
@@ -55,7 +62,7 @@ struct MainTabView: View {
                                 .cornerRadius(10, corners: [.topLeft, .topRight])
                                 .ignoresSafeArea()
                         }
-                        .shadow(radius: 4, y: -2)
+                        .shadow(opacity: 0.1, y: -2, blur: 4)
                         .environment(\.jobisSelectionTabbKey, $selection)
                 }
             }
@@ -73,7 +80,7 @@ struct MainTabView: View {
 
             ForEach(tabItem, id: \.1) { image, title, tag in
                 tabItemView(image: image, title: title, tag: tag)
-                    .frame(width: 56, height: 44)
+                    .frame(width: 56, height: 60)
 
                 Spacer()
             }
@@ -97,8 +104,7 @@ struct MainTabView: View {
                         .JOBISFont(.etc(.caption), color: .Main.lightBlue)
                 }
             }
-            .padding(.top, 12)
-            .padding(.bottom, 4)
+            .padding(.vertical, 18)
         }
     }
 }

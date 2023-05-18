@@ -85,11 +85,11 @@ private class MainTabDependency2826cdb310ed0b17a725Provider: MainTabDependency {
     var homeComponent: HomeComponent {
         return appComponent.homeComponent
     }
-    var menuComponent: MenuComponent {
-        return appComponent.menuComponent
-    }
     var myPageComponent: MyPageComponent {
         return appComponent.myPageComponent
+    }
+    var menuComponent: MenuComponent {
+        return appComponent.menuComponent
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -228,8 +228,8 @@ extension SignupComponent: Registration {
 extension MainTabComponent: Registration {
     public func registerItems() {
         keyPathToName[\MainTabDependency.homeComponent] = "homeComponent-HomeComponent"
-        keyPathToName[\MainTabDependency.menuComponent] = "menuComponent-MenuComponent"
         keyPathToName[\MainTabDependency.myPageComponent] = "myPageComponent-MyPageComponent"
+        keyPathToName[\MainTabDependency.menuComponent] = "menuComponent-MenuComponent"
     }
 }
 extension MyPageComponent: Registration {
