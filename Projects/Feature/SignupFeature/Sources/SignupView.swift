@@ -60,6 +60,12 @@ struct SignupView: View {
             title: "이메일을 확인해 주세요"
         )
         .jobisToast(
+            isShowing: $viewModel.isShowEmailVerifyErrorToast,
+            message: viewModel.errorMessage,
+            style: .error,
+            title: "에러"
+        )
+        .jobisToast(
             isShowing: $viewModel.isShowSignupErrorToast,
             message: "중복 계정",
             style: .error,
