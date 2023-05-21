@@ -82,8 +82,9 @@ final class SignupViewModel: BaseViewModel {
     @Published var isEmailVerified: Bool = false
 
     @Published var isShowMessageToast: Bool = false
-    @Published var isShowSuccessVerifyEmailToast: Bool = false
     @Published var isShowSignupErrorToast: Bool = false
+    @Published var isShowSuccessVerifyEmailToast: Bool = false
+    @Published var isShowEmailVerifyErrorToast: Bool = false
 
     @Published var isInfoSettingError: Bool = false
     @Published var isAuthCodeError: Bool = false
@@ -171,6 +172,8 @@ final class SignupViewModel: BaseViewModel {
             self?.isShowMessageToast = true
             self?.sendEmailButtonTitle = "재발송"
             self?.isEmailSend = true
+        } onReceiveError: { [weak self] _ in
+            self?.isShowEmailVerifyErrorToast = true
         }
     }
 
