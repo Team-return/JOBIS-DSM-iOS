@@ -43,7 +43,7 @@ extension AuthAPI: JobisAPI {
             return .requestParameters(
                 parameters: [
                     "email": email,
-                    "auth-code": authCode
+                    "auth_code": authCode
                 ], encoding: URLEncoding.queryString
             )
         case .reissueToken:
