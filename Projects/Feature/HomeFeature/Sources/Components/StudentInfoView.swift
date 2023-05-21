@@ -1,21 +1,22 @@
-//
-//  StudentInfoView.swift
-//  HomeFeatureInterface
-//
-//  Created by 홍승재 on 2023/05/21.
-//  Copyright © 2023 Team-Return. All rights reserved.
-//
-
 import SwiftUI
+import DesignSystem
 
 struct StudentInfoView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        HStack(spacing: 13) {
+            Image(systemName: "person.circle")
+                .resizable()
+                .frame(width: 40, height: 40)
+                .foregroundColor(.Sub.gray50)
 
-struct StudentInfoView_Previews: PreviewProvider {
-    static var previews: some View {
-        StudentInfoView()
+            VStack(spacing: 0) {
+                Text("3101 홍길동")
+                    .JOBISFont(.body(.body2), color: .Sub.gray70)
+                Text("소프트웨어개발과")
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+            }
+        }
+        .padding(.leading, 30)
+        .padding(.bottom, 22)
     }
 }
