@@ -12,6 +12,9 @@ public enum StudentsDomainError: Error {
 
     // Student Exists
     case notExistsStudent
+
+    // Fetch Main Page Information
+    case wrongToken
 }
 
 extension StudentsDomainError: LocalizedError {
@@ -34,6 +37,10 @@ extension StudentsDomainError: LocalizedError {
 
         case .notExistsStudent:
             return "존재하지 않은 학생입니다."
+
+        case .wrongToken:
+            print("토큰 만료")
+            return "토큰 만료"
         }
     }
 }

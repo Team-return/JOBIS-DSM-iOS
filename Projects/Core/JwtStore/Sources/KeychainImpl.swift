@@ -7,7 +7,7 @@ public struct KeychainImpl: Keychain {
     private let bundleIdentifier: String = Bundle.main.bundleIdentifier ?? ""
     private let appIdentifierPrefix = Bundle.main.infoDictionary!["AppIdentifierPrefix"] as? String ?? ""
     private var accessGroup: String {
-        "\(appIdentifierPrefix)com.team.return-jobis.keychainGroup"
+        "\(appIdentifierPrefix)com.team.jobis.JOBIS-DSM-iOS.keychainGroup"
     }
 
     public func save(type: KeychainType, value: String) {

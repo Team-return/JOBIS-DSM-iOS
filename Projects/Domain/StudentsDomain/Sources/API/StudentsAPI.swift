@@ -6,6 +6,7 @@ public enum StudentsAPI {
     case signup(SignupRequestDto)
     case renewalPassword(RenewalPasswordRequestDTO)
     case studentExists(gcn: Int, name: String)
+    case fetchMainPageInfo
 }
 
 extension StudentsAPI: JobisAPI {
@@ -19,10 +20,15 @@ extension StudentsAPI: JobisAPI {
         switch self {
         case .signup:
             return ""
+
         case .renewalPassword:
             return "/password"
+
         case .studentExists:
             return "/exists"
+
+        case .fetchMainPageInfo:
+            return "/main"
         }
     }
 
@@ -30,9 +36,11 @@ extension StudentsAPI: JobisAPI {
         switch self {
         case .signup:
             return .post
+
         case .renewalPassword:
             return .patch
-        case .studentExists:
+
+        case .studentExists, .fetchMainPageInfo:
             return .get
         }
     }
@@ -41,8 +49,10 @@ extension StudentsAPI: JobisAPI {
         switch self {
         case let .signup(req):
             return .requestJSONEncodable(req)
+
         case let .renewalPassword(req):
             return .requestJSONEncodable(req)
+
         case let .studentExists(gcn, name):
             return .requestParameters(
                 parameters: [
@@ -50,11 +60,20 @@ extension StudentsAPI: JobisAPI {
                     "name": name
                 ],
                 encoding: URLEncoding.queryString)
+
+        case .fetchMainPageInfo:
+            return .requestPlain
         }
     }
 
     public var jwtTokenType: JwtTokenType {
-        .none
+        switch self {
+        case .fetchMainPageInfo:
+            return .accessToken
+
+        default:
+            return .none
+        }
     }
 
     public var errorMap: [Int: ErrorType] {
@@ -63,6 +82,7 @@ extension StudentsAPI: JobisAPI {
             return [
                 409: .alreadyExistsAccount
             ]
+
         case .renewalPassword:
             return [
                 400: .badRequest,
@@ -70,9 +90,15 @@ extension StudentsAPI: JobisAPI {
                 404: .notFound,
                 409: .conflict
             ]
+
         case .studentExists:
             return [
                 404: .notExistsStudent
+            ]
+
+        case .fetchMainPageInfo:
+            return [
+                401: .wrongToken
             ]
         }
     }
