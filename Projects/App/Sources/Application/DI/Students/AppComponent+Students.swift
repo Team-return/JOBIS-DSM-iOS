@@ -32,4 +32,10 @@ public extension AppComponent {
             StudentExistsUseCaseImpl(studentsRepository: studentsRepository)
         }
     }
+
+    var fetchMainPageInfoUseCase: any FetchMainPageInfoUseCase {
+        shared {
+            FetchMainPageInfoUseCaseImpl(studentsRepository: studentsRepository)
+        }
+    }
 }
