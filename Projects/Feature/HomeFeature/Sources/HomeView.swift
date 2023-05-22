@@ -16,12 +16,19 @@ struct HomeView: View {
                 Color.Sub.gray10.ignoresSafeArea()
 
                 VStack(alignment: .leading, spacing: 0) {
-                    ImploymentPersentView()
-                        .padding(.bottom, 40)
+                    ImploymentPersentView(
+                        totalStudentCount: viewModel.mainPageInfo?.totalStudentCount ?? 1,
+                        passerCount: viewModel.mainPageInfo?.passCount ?? 0,
+                        applyerCount: viewModel.mainPageInfo?.approvedCount ?? 0
+                    )
+                    .padding(.bottom, 40)
 
-                    StudentInfoView()
+                    StudentInfoView(
+                        name: viewModel.mainPageInfo?.studentName ?? "",
+                        gcn: viewModel.mainPageInfo?.studentGcn ?? ""
+                    )
 
-                    ApplicationStatusView()
+                    ApplicationStatusView(applicationList: viewModel.mainPageInfo?.applyCompanies ?? [])
 
                     Spacer()
 
@@ -51,6 +58,9 @@ struct HomeView: View {
             }
         }
         .ignoresSafeArea(edges: .top)
+        .onAppear {
+            viewModel.onAppear()
+        }
     }
 
     @ViewBuilder

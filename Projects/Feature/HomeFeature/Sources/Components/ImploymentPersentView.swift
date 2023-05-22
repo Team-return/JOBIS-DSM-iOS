@@ -2,11 +2,15 @@ import SwiftUI
 import DesignSystem
 
 struct ImploymentPersentView: View {
+    let totalStudentCount: Int
+    let passerCount: Int
+    let applyerCount: Int
+
     var body: some View {
         HStack(alignment: .bottom) {
-            VStack(spacing: 0) {
+            VStack(alignment: .trailing, spacing: 0) {
                 HStack(spacing: 2) {
-                    Text("36.5")
+                    Text(String(passerCount/totalStudentCount * 100))
                         .JOBISFont(.heading(.heading3), color: .Sub.gray10)
 
                     Text("%")
@@ -21,10 +25,10 @@ struct ImploymentPersentView: View {
             Spacer()
 
             VStack {
-                Text("합격자 수 : 10/65")
+                Text("합격자 수 : \(passerCount)/\(totalStudentCount)")
                     .JOBISFont(.etc(.caption), color: .Sub.gray10)
 
-                Text("지원자 수 : 32/65")
+                Text("지원자 수 : \(applyerCount)/\(totalStudentCount)")
                     .JOBISFont(.etc(.caption), color: .Sub.gray10)
             }
             .padding(.trailing, 20)
