@@ -51,7 +51,6 @@ let targets: [Target] = [
             .Domain.ApplicationsDomain,
             .Domain.CodesDomain,
             .Domain.CompaniesDomain,
-            .Domain.StudentsDomain
         ],
         settings: .settings(base: env.baseSetting)
     )
