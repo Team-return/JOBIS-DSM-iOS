@@ -32,6 +32,7 @@ public struct JwtPlugin: PluginType {
             if let new = try? res.map(TokenDTO.self) {
                 print("\n new: \(new) \n")
                 saveToken(token: new)
+                print("loadToken: \(keychain.load(type: .accessToken))")
             }
         default:
             break
