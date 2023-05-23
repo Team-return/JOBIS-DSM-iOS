@@ -1,24 +1,37 @@
 import Foundation
 
-public struct RecruitmentListEntity: Equatable {
-    let recruitments: [RecruitmentEntity]
+public struct RecruitmentListEntity: Equatable, Hashable {
+    public let recruitments: [RecruitmentEntity]
+
+    public init(recruitments: [RecruitmentEntity]) {
+        self.recruitments = recruitments
+    }
 }
 
-public struct RecruitmentEntity: Equatable {
-    let recruitID, companyName: String
-    let companyProfileURL: String
-    let trainPay: Int
-    let military: Bool
-    let totalHiring: Int
-    let jobCodeList: [String]
+public struct RecruitmentEntity: Equatable, Hashable {
+    public let recruitID: Int
+    public let companyName: String
+    public let companyProfileURL: String
+    public let trainPay: Int
+    public let military: Bool
+    public let totalHiring: Int
+    public let jobCodeList: [String]
 
-    enum CodingKeys: String, CodingKey {
-        case recruitID = "recruit_id"
-        case companyName = "company_name"
-        case companyProfileURL = "company_profile_url"
-        case trainPay = "train_pay"
-        case military
-        case totalHiring = "total_hiring"
-        case jobCodeList = "job_code_list"
+    public init(
+        recruitID: Int,
+        companyName: String,
+        companyProfileURL: String,
+        trainPay: Int,
+        military: Bool,
+        totalHiring: Int,
+        jobCodeList: [String]
+    ) {
+        self.recruitID = recruitID
+        self.companyName = companyName
+        self.companyProfileURL = companyProfileURL
+        self.trainPay = trainPay
+        self.military = military
+        self.totalHiring = totalHiring
+        self.jobCodeList = jobCodeList
     }
 }

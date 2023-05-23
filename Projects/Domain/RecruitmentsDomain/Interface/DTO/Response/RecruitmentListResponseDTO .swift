@@ -1,16 +1,18 @@
 import Foundation
 
-public struct RecruitmentListResponseDTO: Decodable {
-    let recruitments: [RecruitmentResponseDTO]
+public struct RecruitmentListResponseDTO: Codable {
+    public let recruitments: [RecruitmentResponseDTO]
 }
 
-public struct RecruitmentResponseDTO: Decodable {
-    let recruitID, companyName: String
-    let companyProfileURL: String
-    let trainPay: Int
-    let military: Bool
-    let totalHiring: Int
-    let jobCodeList: [String]
+public struct RecruitmentResponseDTO: Codable {
+    public let recruitID: Int
+    public let companyName: String
+    public let companyProfileURL: String
+    public let trainPay: Int
+    public let military: Bool
+    public let totalHiring: Int
+    public let jobCodeList: [String]
+    public let bookmarked: Bool
 
     enum CodingKeys: String, CodingKey {
         case recruitID = "recruit_id"
@@ -20,6 +22,7 @@ public struct RecruitmentResponseDTO: Decodable {
         case military
         case totalHiring = "total_hiring"
         case jobCodeList = "job_code_list"
+        case bookmarked
     }
 }
 

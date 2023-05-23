@@ -4,7 +4,7 @@ import BaseDomain
 
 public enum RecruitmentsAPI {
     case fetchRecruitmentDetail(id: String)
-    case fetchRecruitmentList(page: Int)
+    case fetchRecruitmentList(page: Int, codeId: Int?, company: String?)
 }
 
 extension RecruitmentsAPI: JobisAPI {
@@ -32,8 +32,13 @@ extension RecruitmentsAPI: JobisAPI {
 
     public var task: Task {
         switch self {
-        case .fetchRecruitmentList:
-            return .requestPlain
+        case let .fetchRecruitmentList(page, keyword, company):
+            return .requestParameters(parameters: [
+                "page": page,
+                "keyword": keyword ?? "",
+                "company": company ?? ""
+            ],
+            encoding: URLEncoding.queryString)
         case let .fetchRecruitmentDetail(page):
             return .requestParameters(parameters: [
                     "page": page

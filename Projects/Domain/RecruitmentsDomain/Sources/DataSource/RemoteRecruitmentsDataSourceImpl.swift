@@ -10,9 +10,13 @@ public final class RemoteRecruitmentsDataSourceImpl: BaseRemoteDataSource<Recrui
             .eraseToAnyPublisher()
     }
 
-    public func fetchRecruitmentList(page: Int) -> AnyPublisher<RecruitmentListEntity, Error> {
-        request(.fetchRecruitmentList(page: page), dto: RecruitmentListResponseDTO.self)
-            .map { $0.toDomain() }
-            .eraseToAnyPublisher()
+    public func fetchRecruitmentList(
+        page: Int, codeId: Int?, company: String?) -> AnyPublisher<RecruitmentListEntity, Error> {
+        request(
+            .fetchRecruitmentList(page: page, codeId: codeId, company: company),
+            dto: RecruitmentListResponseDTO.self
+        )
+        .map { $0.toDomain() }
+        .eraseToAnyPublisher()
     }
 }
