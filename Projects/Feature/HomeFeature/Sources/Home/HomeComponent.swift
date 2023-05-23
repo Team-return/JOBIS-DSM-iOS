@@ -5,12 +5,17 @@ import NeedleFoundation
 
 public protocol HomeDependency: Dependency {
     var fetchMainPageInfoUseCase: any FetchMainPageInfoUseCase { get }
+    var recruitmentComponent: RecruitmentComponent { get }
 }
 
 public final class HomeComponent: Component<HomeDependency>, HomeFactory {
     public func makeView() -> some View {
         NavigationView {
-            HomeView(viewModel: .init(fetchMainPageInfoUseCase: dependency.fetchMainPageInfoUseCase))
+            HomeView(
+                viewModel: .init(
+                    fetchMainPageInfoUseCase: dependency.fetchMainPageInfoUseCase),
+                recruitmentComponent: dependency.recruitmentComponent
+            )
         }
     }
 }

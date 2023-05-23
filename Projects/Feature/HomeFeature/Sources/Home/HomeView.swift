@@ -4,10 +4,14 @@ import SwiftUI
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
 
+    private let recruitmentComponent: RecruitmentComponent
+
     init(
-        viewModel: HomeViewModel
+        viewModel: HomeViewModel,
+        recruitmentComponent: RecruitmentComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.recruitmentComponent = recruitmentComponent
     }
 
     var body: some View {
@@ -40,7 +44,7 @@ struct HomeView: View {
                             text: "모집의뢰서\n조회하기",
                             image: HomeImage(.recruitment)
                         ) {
-                            Text("모집의뢰서")
+                            viewModel.isNavigateRecruitment.toggle()
                         }
                         .frame(width: proxy.size.width / 2)
 
@@ -48,7 +52,7 @@ struct HomeView: View {
                             text: "기업찾기\n",
                             image: HomeImage(.findWorkspace)
                         ) {
-                            Text("기업 찾기")
+                            viewModel.isNavigateFindWorkSpace.toggle()
                         }
                     }
                     .padding(22)
@@ -61,18 +65,21 @@ struct HomeView: View {
         .onAppear {
             viewModel.onAppear()
         }
+        .navigate(to: recruitmentComponent.makeView(), when: $viewModel.isNavigateRecruitment)
+        .navigate(to: Text("기업찾기 뷰"), when: $viewModel.isNavigateFindWorkSpace)
     }
 
     @ViewBuilder
     func navigateButton(
         text: String,
         image: HomeImage,
-        toWhere: () -> some View
+        action: @escaping () -> Void
     ) -> some View {
-        NavigationLink(destination: toWhere) {
+        Button(action: action) {
             VStack {
                 HStack {
                     Text(text)
+                        .multilineTextAlignment(.leading)
                         .JOBISFont(.body(.body1), color: .Sub.gray80)
 
                     Spacer()
