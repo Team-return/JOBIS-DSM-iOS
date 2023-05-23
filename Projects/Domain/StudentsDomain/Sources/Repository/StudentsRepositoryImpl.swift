@@ -19,8 +19,4 @@ public struct StudentsRepositoryImpl: StudentsRepository {
     public func studentExists(gcn: Int, name: String) -> AnyPublisher<Void, Error> {
         remoteStudentsDataSource.studentExists(gcn: gcn, name: name)
     }
-
-    public func fetchMainPageInfo() -> AnyPublisher<MainPageInfoEntity, Error> {
-        remoteStudentsDataSource.fetchMainPageInfo()
-    }
 }
