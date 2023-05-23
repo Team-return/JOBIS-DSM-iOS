@@ -52,6 +52,9 @@ public extension AppComponent {
     var mainTabComponent: MainTabComponent {
         MainTabComponent(parent: self)
     }
+    var recruitmentComponent: RecruitmentComponent {
+        RecruitmentComponent(parent: self)
+    }
     var homeComponent: HomeComponent {
         HomeComponent(parent: self)
     }

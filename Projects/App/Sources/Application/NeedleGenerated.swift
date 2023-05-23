@@ -150,6 +150,9 @@ private class HomeDependency443c4e1871277bd8432aProvider: HomeDependency {
     var fetchMainPageInfoUseCase: any FetchMainPageInfoUseCase {
         return appComponent.fetchMainPageInfoUseCase
     }
+    var recruitmentComponent: RecruitmentComponent {
+        return appComponent.recruitmentComponent
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -158,6 +161,19 @@ private class HomeDependency443c4e1871277bd8432aProvider: HomeDependency {
 /// ^->AppComponent->HomeComponent
 private func factory67229cdf0f755562b2b1f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return HomeDependency443c4e1871277bd8432aProvider(appComponent: parent1(component) as! AppComponent)
+}
+private class RecruitmentDependency799de5378039058f4ec0Provider: RecruitmentDependency {
+    var fetchRecruitmentListUseCase: any FetchRecruitmentListUseCase {
+        return appComponent.fetchRecruitmentListUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->RecruitmentComponent
+private func factoryb1923ea1b010875d9389f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return RecruitmentDependency799de5378039058f4ec0Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class MenuDependency43a0e3ba5712a2a90856Provider: MenuDependency {
 
@@ -192,6 +208,7 @@ extension AppComponent: Registration {
         localTable["signupComponent-SignupComponent"] = { [unowned self] in self.signupComponent as Any }
         localTable["splashComponent-SplashComponent"] = { [unowned self] in self.splashComponent as Any }
         localTable["mainTabComponent-MainTabComponent"] = { [unowned self] in self.mainTabComponent as Any }
+        localTable["recruitmentComponent-RecruitmentComponent"] = { [unowned self] in self.recruitmentComponent as Any }
         localTable["homeComponent-HomeComponent"] = { [unowned self] in self.homeComponent as Any }
         localTable["myPageComponent-MyPageComponent"] = { [unowned self] in self.myPageComponent as Any }
         localTable["menuComponent-MenuComponent"] = { [unowned self] in self.menuComponent as Any }
@@ -256,6 +273,12 @@ extension SigninComponent: Registration {
 extension HomeComponent: Registration {
     public func registerItems() {
         keyPathToName[\HomeDependency.fetchMainPageInfoUseCase] = "fetchMainPageInfoUseCase-any FetchMainPageInfoUseCase"
+        keyPathToName[\HomeDependency.recruitmentComponent] = "recruitmentComponent-RecruitmentComponent"
+    }
+}
+extension RecruitmentComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\RecruitmentDependency.fetchRecruitmentListUseCase] = "fetchRecruitmentListUseCase-any FetchRecruitmentListUseCase"
     }
 }
 extension MenuComponent: Registration {
@@ -287,6 +310,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->RootComponent", factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->SigninComponent", factory2882a056d84a613debccf47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->HomeComponent", factory67229cdf0f755562b2b1f47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->RecruitmentComponent", factoryb1923ea1b010875d9389f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3e3b0c44298fc1c149afb)
 }
 #endif
