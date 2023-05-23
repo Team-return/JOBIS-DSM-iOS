@@ -35,6 +35,7 @@ let targets: [Target] = [
         infoPlist: .file(path: "Support/Info.plist"),
         sources: ["Sources/**"],
         resources: ["Resources/**"],
+        entitlements: "Support/\(env.name).entitlements",
         scripts: scripts,
         dependencies: [
             .Feature.RootFeature,
