@@ -5,12 +5,15 @@ struct ImploymentPersentView: View {
     let totalStudentCount: Int
     let passerCount: Int
     let applyerCount: Int
+    private var imploymentPersent: Float {
+        Float(passerCount) / Float(totalStudentCount) * 100
+    }
 
     var body: some View {
         HStack(alignment: .bottom) {
             VStack(alignment: .trailing, spacing: 0) {
                 HStack(spacing: 2) {
-                    Text(String(passerCount/totalStudentCount * 100))
+                    Text(String(format: "%.1f", imploymentPersent))
                         .JOBISFont(.heading(.heading3), color: .Sub.gray10)
 
                     Text("%")

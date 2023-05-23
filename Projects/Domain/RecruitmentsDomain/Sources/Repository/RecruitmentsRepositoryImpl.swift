@@ -12,7 +12,9 @@ public struct RecruitmentsRepositoryImpl: RecruitmentsRepository {
         remoteRecruitmentsDataSource.fetchRecruitmentDetail(id: id)
     }
 
-    public func fetchRecruitmentList(page: Int) -> AnyPublisher<RecruitmentListEntity, Error> {
-        remoteRecruitmentsDataSource.fetchRecruitmentList(page: page)
+    public func fetchRecruitmentList(
+        page: Int, codeId: Int?, company: String?
+    ) -> AnyPublisher<RecruitmentListEntity, Error> {
+        remoteRecruitmentsDataSource.fetchRecruitmentList(page: page, codeId: codeId, company: company)
     }
 }

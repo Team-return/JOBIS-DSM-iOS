@@ -4,6 +4,8 @@ import StudentsDomainInterface
 
 final class HomeViewModel: BaseViewModel {
     @Published var mainPageInfo: MainPageInfoEntity?
+    @Published var isNavigateRecruitment: Bool = false
+    @Published var isNavigateFindWorkSpace: Bool = false
 
     private let fetchMainPageInfoUseCase: FetchMainPageInfoUseCase
 
