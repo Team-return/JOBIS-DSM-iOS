@@ -9,6 +9,8 @@ struct RecruitmentListCell: View {
     var body: some View {
         HStack(spacing: 12) {
             KFImage(URL(string: recruitmentEntity.companyProfileURL))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 80, height: 80)
                 .cornerRadius(15)
                 .padding(8)
@@ -28,8 +30,7 @@ struct RecruitmentListCell: View {
             Spacer()
 
             VStack {
-                JOBISImage(.save)
-                    .frame(width: 12, height: 16)
+                bookmarkButton()
 
                 Spacer()
 
@@ -44,5 +45,16 @@ struct RecruitmentListCell: View {
         .background(Color.Sub.gray10)
         .cornerRadius(15)
         .shadow(color: .black, opacity: 0.1, blur: 4)
+        .padding(.horizontal, 24)
+    }
+
+    @ViewBuilder
+    func bookmarkButton() -> some View {
+        Button {
+//            isBookmarked.toggle()
+        } label: {
+            JOBISImage(recruitmentEntity.bookmarked ? .bookmarkOn : .bookmarkOff)
+                .frame(width: 12, height: 16)
+        }
     }
 }
