@@ -16,6 +16,7 @@ public struct RecruitmentEntity: Equatable, Hashable {
     public let military: Bool
     public let totalHiring: Int
     public let jobCodeList: [String]
+    public let bookmarked: Bool
 
     public init(
         recruitID: Int,
@@ -24,7 +25,8 @@ public struct RecruitmentEntity: Equatable, Hashable {
         trainPay: Int,
         military: Bool,
         totalHiring: Int,
-        jobCodeList: [String]
+        jobCodeList: [String],
+        bookmarked: Bool
     ) {
         self.recruitID = recruitID
         self.companyName = companyName
@@ -33,5 +35,6 @@ public struct RecruitmentEntity: Equatable, Hashable {
         self.military = military
         self.totalHiring = totalHiring
         self.jobCodeList = jobCodeList
+        self.bookmarked = bookmarked
     }
 }

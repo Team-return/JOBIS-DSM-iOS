@@ -1,23 +1,23 @@
 import DesignSystem
 import SwiftUI
 
-struct RecruitmentView: View {
-    @StateObject var viewModel: RecruitmentViewModel
+struct FindWorkSpaceView: View {
+    @StateObject var viewModel: FindWorkSpaceViewModel
     @Environment(\.dismiss) var dismiss
 
     init(
-        viewModel: RecruitmentViewModel
+        viewModel: FindWorkSpaceViewModel
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
         VStack(alignment: .leading) {
-            if let list = viewModel.recruitmentList {
+            if let list = viewModel.studentCompany {
                 ScrollView {
-                    ForEach(list.recruitments, id: \.self) { recruitmentEntity in
-                        NavigationLink(destination: Text(recruitmentEntity.companyName)) {
-                            RecruitmentListCell(recruitmentEntity: recruitmentEntity)
+                    ForEach(list.companies, id: \.self) { companyEntity in
+                        NavigationLink(destination: Text(companyEntity.name)) {
+                            FindWorkSpaceListCell(companyEntity: companyEntity)
                         }
                     }
                 }

@@ -55,6 +55,9 @@ public extension AppComponent {
     var recruitmentComponent: RecruitmentComponent {
         RecruitmentComponent(parent: self)
     }
+    var findWorkSpaceComponent: FindWorkSpaceComponent {
+        FindWorkSpaceComponent(parent: self)
+    }
     var homeComponent: HomeComponent {
         HomeComponent(parent: self)
     }

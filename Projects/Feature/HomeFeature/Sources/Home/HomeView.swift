@@ -6,16 +6,16 @@ struct HomeView: View {
     @Environment(\.tabbarHidden) var tabbarHidden
 
     private let recruitmentComponent: RecruitmentComponent
-//    private let findWorkSpaceComponent: FindWorkSpaceComponent
+    private let findWorkSpaceComponent: FindWorkSpaceComponent
 
     init(
         viewModel: HomeViewModel,
-        recruitmentComponent: RecruitmentComponent
-//        findWorkSpaceComponent: FindWorkSpaceComponent
+        recruitmentComponent: RecruitmentComponent,
+        findWorkSpaceComponent: FindWorkSpaceComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.recruitmentComponent = recruitmentComponent
-//        self.findWorkSpaceComponent = findWorkSpaceComponent
+        self.findWorkSpaceComponent = findWorkSpaceComponent
     }
 
     var body: some View {
@@ -66,7 +66,7 @@ struct HomeView: View {
             tabbarHidden.wrappedValue = $0
         }
         .navigate(to: recruitmentComponent.makeView(), when: $viewModel.isNavigateRecruitment)
-//        .navigate(to: findWorkSpaceComponent.makeView(), when: $viewModel.isNavigateFindWorkSpace)
+        .navigate(to: findWorkSpaceComponent.makeView(), when: $viewModel.isNavigateFindWorkSpace)
     }
 
     @ViewBuilder

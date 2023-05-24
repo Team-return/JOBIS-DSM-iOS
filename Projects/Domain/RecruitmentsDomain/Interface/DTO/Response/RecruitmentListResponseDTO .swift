@@ -41,7 +41,8 @@ public extension RecruitmentResponseDTO {
             trainPay: trainPay,
             military: military,
             totalHiring: totalHiring,
-            jobCodeList: jobCodeList
+            jobCodeList: jobCodeList,
+            bookmarked: bookmarked
         )
     }
 }
