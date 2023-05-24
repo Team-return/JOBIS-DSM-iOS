@@ -14,13 +14,13 @@ struct RecruitmentView: View {
     var body: some View {
         VStack(alignment: .leading) {
             if let list = viewModel.recruitmentList {
-                List(list.recruitments, id: \.self) { recruitmentEntity in
-                    RecruitmentListCell(recruitmentEntity: recruitmentEntity)
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(.init(top: 7, leading: 24, bottom: 7, trailing: 24))
+                ScrollView {
+                    ForEach(list.recruitments, id: \.self) { recruitmentEntity in
+                        NavigationLink(destination: Text(recruitmentEntity.companyName)) {
+                            RecruitmentListCell(recruitmentEntity: recruitmentEntity)
+                        }
+                    }
                 }
-                .listRowBackground(Color.clear)
-                .listStyle(.plain)
                 .refreshable {
                     viewModel.onAppear()
                 }
