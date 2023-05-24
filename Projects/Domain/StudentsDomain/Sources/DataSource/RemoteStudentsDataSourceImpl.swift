@@ -14,4 +14,10 @@ public final class RemoteStudentsDataSourceImpl: BaseRemoteDataSource<StudentsAP
     public func studentExists(gcn: Int, name: String) -> AnyPublisher<Void, Error> {
         request(.studentExists(gcn: gcn, name: name))
     }
+
+    public func fetchStudentInfo() -> AnyPublisher<StudentInfoEntity, Error> {
+        request(.fetchStudentInfo, dto: StudentInfoResponseDTO.self)
+            .map { $0.toDomain() }
+            .eraseToAnyPublisher()
+    }
 }

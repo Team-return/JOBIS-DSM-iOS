@@ -6,6 +6,7 @@ public enum StudentsAPI {
     case signup(SignupRequestDto)
     case renewalPassword(RenewalPasswordRequestDTO)
     case studentExists(gcn: Int, name: String)
+    case fetchStudentInfo
 }
 
 extension StudentsAPI: JobisAPI {
@@ -25,6 +26,9 @@ extension StudentsAPI: JobisAPI {
 
         case .studentExists:
             return "/exists"
+
+        case .fetchStudentInfo:
+            return "/my"
         }
     }
 
@@ -36,7 +40,7 @@ extension StudentsAPI: JobisAPI {
         case .renewalPassword:
             return .patch
 
-        case .studentExists:
+        case .studentExists, .fetchStudentInfo:
             return .get
         }
     }
@@ -56,11 +60,16 @@ extension StudentsAPI: JobisAPI {
                     "name": name
                 ],
                 encoding: URLEncoding.queryString)
+
+        case .fetchStudentInfo:
+            return .requestPlain
         }
     }
 
     public var jwtTokenType: JwtTokenType {
         switch self {
+        case .fetchStudentInfo:
+            return .accessToken
         default:
             return .none
         }
@@ -85,6 +94,9 @@ extension StudentsAPI: JobisAPI {
             return [
                 404: .notExistsStudent
             ]
+
+        case .fetchStudentInfo:
+            return [:]
         }
     }
 }
