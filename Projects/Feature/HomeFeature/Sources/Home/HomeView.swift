@@ -24,17 +24,10 @@ struct HomeView: View {
                 Color.Sub.gray10.ignoresSafeArea()
 
                 VStack(alignment: .leading, spacing: 0) {
-                    ImploymentPersentView(
-                        totalStudentCount: 1,
-                        passerCount: 0,
-                        applyerCount: 0
-                    )
+                    ImploymentPersentView(totalPassStudent: viewModel.totalPassStudent)
                     .padding(.bottom, 40)
 
-                    StudentInfoView(
-                        name: "홍길동",
-                        gcn: "2234"
-                    )
+                    StudentInfoView(isLoading: $viewModel.isLoading, studentInfo: viewModel.studentInfo)
 
                     ApplicationStatusView(applicationList: viewModel.applicationList?.applications ?? [])
 
