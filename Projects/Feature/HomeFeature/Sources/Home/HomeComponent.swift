@@ -9,7 +9,7 @@ public protocol HomeDependency: Dependency {
     var fetchTotalPassStudentUseCase: any FetchTotalPassStudentUseCase { get }
     var fetchStudentInfoUseCase: any FetchStudentInfoUseCase { get }
     var recruitmentComponent: RecruitmentComponent { get }
-    var findWorkSpaceComponent: FindWorkSpaceComponent { get }
+//    var findWorkSpaceComponent: FindWorkSpaceComponent { get }
 }
 
 public final class HomeComponent: Component<HomeDependency>, HomeFactory {
@@ -21,8 +21,8 @@ public final class HomeComponent: Component<HomeDependency>, HomeFactory {
                     fetchTotalPassStudentUseCase: dependency.fetchTotalPassStudentUseCase,
                     fetchStudentInfoUseCase: dependency.fetchStudentInfoUseCase
                 ),
-                recruitmentComponent: dependency.recruitmentComponent,
-                findWorkSpaceComponent: dependency.findWorkSpaceComponent
+                recruitmentComponent: dependency.recruitmentComponent
+//                findWorkSpaceComponent: dependency.findWorkSpaceComponent
             )
         }
     }
