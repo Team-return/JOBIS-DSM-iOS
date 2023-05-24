@@ -1,4 +1,5 @@
 import SwiftUI
+import HomeFeatureInterface
 import CompaniesDomainInterface
 import NeedleFoundation
 
