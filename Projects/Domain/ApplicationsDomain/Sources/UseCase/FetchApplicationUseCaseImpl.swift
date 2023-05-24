@@ -8,7 +8,7 @@ public struct FetchApplicationUseCaseImpl: FetchApplicationUseCase {
         self.applicationRepository = applicationRepository
     }
 
-    public func execute() -> AnyPublisher<[ApplicationEntity], Error> {
+    public func execute() -> AnyPublisher<ApplicationListEntity, Error> {
         applicationRepository.fetchApplication()
     }
 }

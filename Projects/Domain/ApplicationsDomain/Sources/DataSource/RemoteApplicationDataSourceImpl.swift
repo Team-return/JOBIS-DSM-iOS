@@ -12,8 +12,8 @@ public final class RemoteApplicationsDataSourceImpl: BaseRemoteDataSource<Applic
         request(.cancelApply(id: id))
     }
 
-    public func fetchApplication() -> AnyPublisher<[ApplicationEntity], Error> {
-        request(.fetchApplication, dto: [FetchApplicationResponseDTO].self)
+    public func fetchApplication() -> AnyPublisher<ApplicationListEntity, Error> {
+        request(.fetchApplication, dto: ApplicationListResponseDTO.self)
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }

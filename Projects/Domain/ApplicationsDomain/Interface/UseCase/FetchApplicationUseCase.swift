@@ -1,5 +1,5 @@
 import Combine
 
 public protocol FetchApplicationUseCase {
-    func execute() -> AnyPublisher<[ApplicationEntity], Error>
+    func execute() -> AnyPublisher<ApplicationListEntity, Error>
 }

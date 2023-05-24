@@ -1,23 +1,23 @@
 import BaseFeature
 import Combine
-import StudentsDomainInterface
+import ApplicationsDomainInterface
 
 final class HomeViewModel: BaseViewModel {
-//    @Published var mainPageInfo: MainPageInfoEntity?
+    @Published var applicationList: ApplicationListEntity?
     @Published var isNavigateRecruitment: Bool = false
     @Published var isNavigateFindWorkSpace: Bool = false
 
-//    private let fetchMainPageInfoUseCase: FetchMainPageInfoUseCase
-//
-//    public init(fetchMainPageInfoUseCase: any FetchMainPageInfoUseCase) {
-//        self.fetchMainPageInfoUseCase = fetchMainPageInfoUseCase
-//    }
+    private let fetchApplicationUseCase: FetchApplicationUseCase
+
+    public init(fetchApplicationUseCase: any FetchApplicationUseCase) {
+        self.fetchApplicationUseCase = fetchApplicationUseCase
+    }
 
     func onAppear() {
-//        addCancellable(
-//            fetchMainPageInfoUseCase.execute()
-//        ) { [weak self] mainPageInfo in
-//            self?.mainPageInfo = mainPageInfo
-//        }
+        addCancellable(
+            fetchApplicationUseCase.execute()
+        ) { [weak self] applicationList in
+            self?.applicationList = applicationList
+        }
     }
 }
