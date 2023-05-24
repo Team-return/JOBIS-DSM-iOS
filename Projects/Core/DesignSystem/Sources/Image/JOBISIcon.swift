@@ -36,8 +36,8 @@ public struct JOBISImage: View {
         case profile
         case house
         case militaryServiceExceptionIcon
-        case save
-        case saveNot
+        case bookmarkOn
+        case bookmarkOff
     }
 
     private var image: Image
@@ -140,11 +140,11 @@ public struct JOBISImage: View {
         case .militaryServiceExceptionIcon:
             return DesignSystemAsset.Icons.militaryServiceExceptionIcon.suiImage
 
-        case .save:
-            return DesignSystemAsset.Icons.save.suiImage
+        case .bookmarkOn:
+            return DesignSystemAsset.Icons.bookmarkOn.suiImage
 
-        case .saveNot:
-            return DesignSystemAsset.Icons.saveNot.suiImage
+        case .bookmarkOff:
+            return DesignSystemAsset.Icons.bookmarkOff.suiImage
         }
     }
 }
