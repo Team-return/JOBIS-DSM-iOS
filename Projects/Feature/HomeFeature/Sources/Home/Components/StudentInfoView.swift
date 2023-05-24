@@ -1,9 +1,10 @@
 import SwiftUI
+import StudentsDomainInterface
 import DesignSystem
 
 struct StudentInfoView: View {
-    let name: String
-    let gcn: String
+    @Binding var isLoading: Bool
+    let studentInfo: StudentInfoEntity?
 
     var body: some View {
         HStack(spacing: 13) {
@@ -12,10 +13,11 @@ struct StudentInfoView: View {
                 .frame(width: 40, height: 40)
                 .foregroundColor(.Sub.gray50)
 
-            VStack(spacing: 0) {
-                Text("\(gcn) \(name)")
+            VStack(alignment: .leading, spacing: 0) {
+                Text("\(studentInfo?.studentGcn ?? "Loading...") \(studentInfo?.studentName ?? "")")
                     .JOBISFont(.body(.body2), color: .Sub.gray70)
-                Text("소프트웨어개발과")
+
+                Text(studentInfo?.department.localizedString() ?? "")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
             }
         }
