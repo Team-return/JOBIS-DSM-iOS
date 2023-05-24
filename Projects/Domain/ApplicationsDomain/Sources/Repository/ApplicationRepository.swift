@@ -21,4 +21,8 @@ public struct ApplicationsRepositoryImpl: ApplicationsRepository {
     public func fetchApplication() -> AnyPublisher<ApplicationListEntity, Error> {
         remoteApplicationsDataSource.fetchApplication()
     }
+
+    public func fetchTotalPassStudent() -> AnyPublisher<TotalPassStudentEntity, Error> {
+        remoteApplicationsDataSource.fetchTotalPassStudent()
+    }
 }

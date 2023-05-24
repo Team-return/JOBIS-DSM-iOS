@@ -17,4 +17,10 @@ public final class RemoteApplicationsDataSourceImpl: BaseRemoteDataSource<Applic
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }
+
+    public func fetchTotalPassStudent() -> AnyPublisher<TotalPassStudentEntity, Error> {
+        request(.fetchTotalPassStudent, dto: TotalPassStudentResponseDTO.self)
+            .map { $0.toDomain() }
+            .eraseToAnyPublisher()
+    }
 }

@@ -32,4 +32,10 @@ public extension AppComponent {
             FetchApplicationUseCaseImpl(applicationRepository: applicationsRepository)
         }
     }
+
+    var fetchTotalPassStudentUseCase: any FetchTotalPassStudentUseCase {
+        shared {
+            FetchTotalPassStudentUseCaseImpl(applicationRepository: applicationsRepository)
+        }
+    }
 }
