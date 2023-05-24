@@ -1,17 +1,27 @@
 import SwiftUI
+import ApplicationsDomainInterface
 import DesignSystem
 
 struct ImploymentPersentView: View {
-    let totalStudentCount: Int
-    let passerCount: Int
-    let applyerCount: Int
+    let totalPassStudent: TotalPassStudentEntity?
     private var imploymentPersent: Float {
-        Float(passerCount) / Float(totalStudentCount) * 100
+        Float(totalPassStudent?.passedCount ?? 0) /
+        Float(totalPassStudent?.totalStudentCount ?? 1) * 100
+    }
+    private var passerCountString: String {
+        guard let passedCount = totalPassStudent?.passedCount,
+              let totalStudentCount = totalPassStudent?.totalStudentCount else { return  "0/1" }
+        return "\(passedCount)/\(totalStudentCount)"
+    }
+    private var approvedCountString: String {
+        guard let apprivedCount = totalPassStudent?.approvedCount,
+              let totalStudentCount = totalPassStudent?.totalStudentCount else { return  "0/1" }
+        return "\(apprivedCount)/\(totalStudentCount)"
     }
 
     var body: some View {
         HStack(alignment: .bottom) {
-            VStack(alignment: .trailing, spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 2) {
                     Text(String(format: "%.1f", imploymentPersent))
                         .JOBISFont(.heading(.heading3), color: .Sub.gray10)
@@ -23,21 +33,21 @@ struct ImploymentPersentView: View {
                 Text("대마고 취업률")
                     .JOBISFont(.etc(.caption), color: .Sub.gray10)
             }
-            .padding(.leading, 20)
+            .padding(.leading, 32)
 
             Spacer()
 
             VStack {
-                Text("합격자 수 : \(passerCount)/\(totalStudentCount)")
+                Text("합격자 수 : \(passerCountString)")
                     .JOBISFont(.etc(.caption), color: .Sub.gray10)
 
-                Text("지원자 수 : \(applyerCount)/\(totalStudentCount)")
+                Text("지원자 수 : \(approvedCountString)")
                     .JOBISFont(.etc(.caption), color: .Sub.gray10)
             }
             .padding(.trailing, 20)
         }
         .padding(.top, safeAreaTopInset())
-        .padding(.bottom, 16)
+        .padding(.bottom, 20)
         .background {
             LinearGradient(
                 gradient: Gradient(colors: [.Main.blue, .Main.blue, .Main.lightBlue]),

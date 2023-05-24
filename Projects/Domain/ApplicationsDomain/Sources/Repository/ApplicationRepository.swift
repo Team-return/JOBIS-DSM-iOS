@@ -18,7 +18,11 @@ public struct ApplicationsRepositoryImpl: ApplicationsRepository {
         remoteApplicationsDataSource.cancelApply(id: id)
     }
 
-    public func fetchApplication() -> AnyPublisher<[ApplicationEntity], Error> {
+    public func fetchApplication() -> AnyPublisher<ApplicationListEntity, Error> {
         remoteApplicationsDataSource.fetchApplication()
+    }
+
+    public func fetchTotalPassStudent() -> AnyPublisher<TotalPassStudentEntity, Error> {
+        remoteApplicationsDataSource.fetchTotalPassStudent()
     }
 }

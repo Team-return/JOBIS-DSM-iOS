@@ -8,7 +8,7 @@ public struct StudentCompanyEntity: Equatable {
     }
 }
 
-public struct CompanyEntity: Equatable {
+public struct CompanyEntity: Equatable, Hashable {
     public let name: String
     public let logoURL: String
     public let take: Int

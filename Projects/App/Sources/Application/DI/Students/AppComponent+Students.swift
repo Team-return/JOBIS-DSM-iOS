@@ -33,9 +33,9 @@ public extension AppComponent {
         }
     }
 
-    var fetchMainPageInfoUseCase: any FetchMainPageInfoUseCase {
+    var fetchStudentInfoUseCase: any FetchStudentInfoUseCase {
         shared {
-            FetchMainPageInfoUseCaseImpl(studentsRepository: studentsRepository)
+            FetchStudentInfoUseCaseImpl(studentsRepository: studentsRepository)
         }
     }
 }

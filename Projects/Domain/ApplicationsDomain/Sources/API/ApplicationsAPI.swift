@@ -6,6 +6,7 @@ public enum ApplicationsAPI {
     case applyCompany(id: String, ApplyCompanyRequestDTO)
     case cancelApply(id: String)
     case fetchApplication
+    case fetchTotalPassStudent
 }
 
 extension ApplicationsAPI: JobisAPI {
@@ -19,10 +20,15 @@ extension ApplicationsAPI: JobisAPI {
         switch self {
         case let .applyCompany(id, _):
             return "/\(id)"
+
         case let .cancelApply(id):
             return "/\(id)"
+
         case .fetchApplication:
             return "/students"
+
+        case .fetchTotalPassStudent:
+            return "/employment/count"
         }
     }
 
@@ -30,9 +36,11 @@ extension ApplicationsAPI: JobisAPI {
         switch self {
         case .applyCompany:
             return .post
+
         case .cancelApply:
             return .delete
-        case .fetchApplication:
+
+        case .fetchApplication, .fetchTotalPassStudent:
             return .get
         }
     }
@@ -41,13 +49,19 @@ extension ApplicationsAPI: JobisAPI {
         switch self {
         case let .applyCompany(_, req):
             return .requestJSONEncodable(req)
-        case .cancelApply, .fetchApplication:
+
+        case .cancelApply, .fetchApplication, .fetchTotalPassStudent:
             return .requestPlain
         }
     }
 
     public var jwtTokenType: JwtTokenType {
-        .accessToken
+        switch self {
+        case .fetchApplication:
+            return .accessToken
+        default:
+            return .none
+        }
     }
 
     public var errorMap: [Int: ErrorType] {
@@ -70,6 +84,9 @@ extension ApplicationsAPI: JobisAPI {
                 401: .unauthorized,
                 403: .forbidden
             ]
+
+        case .fetchTotalPassStudent:
+            return [:]
         }
     }
 }

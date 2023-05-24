@@ -3,15 +3,19 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
+    @Environment(\.tabbarHidden) var tabbarHidden
 
     private let recruitmentComponent: RecruitmentComponent
+//    private let findWorkSpaceComponent: FindWorkSpaceComponent
 
     init(
         viewModel: HomeViewModel,
         recruitmentComponent: RecruitmentComponent
+//        findWorkSpaceComponent: FindWorkSpaceComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.recruitmentComponent = recruitmentComponent
+//        self.findWorkSpaceComponent = findWorkSpaceComponent
     }
 
     var body: some View {
@@ -20,19 +24,12 @@ struct HomeView: View {
                 Color.Sub.gray10.ignoresSafeArea()
 
                 VStack(alignment: .leading, spacing: 0) {
-                    ImploymentPersentView(
-                        totalStudentCount: viewModel.mainPageInfo?.totalStudentCount ?? 1,
-                        passerCount: viewModel.mainPageInfo?.passCount ?? 0,
-                        applyerCount: viewModel.mainPageInfo?.approvedCount ?? 0
-                    )
+                    ImploymentPersentView(totalPassStudent: viewModel.totalPassStudent)
                     .padding(.bottom, 40)
 
-                    StudentInfoView(
-                        name: viewModel.mainPageInfo?.studentName ?? "",
-                        gcn: viewModel.mainPageInfo?.studentGcn ?? ""
-                    )
+                    StudentInfoView(isLoading: $viewModel.isLoading, studentInfo: viewModel.studentInfo)
 
-                    ApplicationStatusView(applicationList: viewModel.mainPageInfo?.applyCompanies ?? [])
+                    ApplicationStatusView(applicationList: viewModel.applicationList?.applications ?? [])
 
                     Spacer()
 
@@ -56,17 +53,20 @@ struct HomeView: View {
                         }
                     }
                     .padding(22)
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 100)
                     .background(Color.Sub.gray20)
                 }
             }
         }
-        .ignoresSafeArea(edges: .top)
+        .ignoresSafeArea()
         .onAppear {
             viewModel.onAppear()
         }
+        .onChange(of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindWorkSpace) {
+            tabbarHidden.wrappedValue = $0
+        }
         .navigate(to: recruitmentComponent.makeView(), when: $viewModel.isNavigateRecruitment)
-        .navigate(to: Text("기업찾기 뷰"), when: $viewModel.isNavigateFindWorkSpace)
+//        .navigate(to: findWorkSpaceComponent.makeView(), when: $viewModel.isNavigateFindWorkSpace)
     }
 
     @ViewBuilder

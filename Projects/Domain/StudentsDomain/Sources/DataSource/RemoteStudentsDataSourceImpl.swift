@@ -15,8 +15,8 @@ public final class RemoteStudentsDataSourceImpl: BaseRemoteDataSource<StudentsAP
         request(.studentExists(gcn: gcn, name: name))
     }
 
-    public func fetchMainPageInfo() -> AnyPublisher<MainPageInfoEntity, Error> {
-        request(.fetchMainPageInfo, dto: MainPageInfoResponseDTO.self)
+    public func fetchStudentInfo() -> AnyPublisher<StudentInfoEntity, Error> {
+        request(.fetchStudentInfo, dto: StudentInfoResponseDTO.self)
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }

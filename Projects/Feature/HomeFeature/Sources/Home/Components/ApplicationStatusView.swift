@@ -1,16 +1,15 @@
 import SwiftUI
-import StudentsDomainInterface
 import DesignSystem
+import ApplicationsDomainInterface
 
 struct ApplicationStatusView: View {
-    let applicationList: [ApplyCompanyEntity]
+    let applicationList: [ApplicationEntity]
 
     var body: some View {
         VStack(alignment: .leading) {
             Text("지원현황")
                 .JOBISFont(.etc(.caption), color: .Sub.gray60)
                 .padding(.bottom, 4)
-                .padding(.leading, 9)
             if applicationList.isEmpty {
                 HStack {
                     Spacer()
@@ -28,7 +27,10 @@ struct ApplicationStatusView: View {
                 .cornerRadius(10)
             } else {
                 ForEach(applicationList, id: \.self) { data in
-                    applicationStatusCell(title: data.companyName, applicationStatus: data.status)
+                    applicationStatusCell(
+                        title: data.company,
+                        applicationStatus: data.applicationStatus.localizedString()
+                    )
                 }
             }
         }

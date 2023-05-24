@@ -147,8 +147,14 @@ private func factory2882a056d84a613debccf47b58f8f304c97af4d5(_ component: Needle
     return SigninDependencyde06a9d0b22764487733Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class HomeDependency443c4e1871277bd8432aProvider: HomeDependency {
-    var fetchMainPageInfoUseCase: any FetchMainPageInfoUseCase {
-        return appComponent.fetchMainPageInfoUseCase
+    var fetchApplicationUseCase: any FetchApplicationUseCase {
+        return appComponent.fetchApplicationUseCase
+    }
+    var fetchTotalPassStudentUseCase: any FetchTotalPassStudentUseCase {
+        return appComponent.fetchTotalPassStudentUseCase
+    }
+    var fetchStudentInfoUseCase: any FetchStudentInfoUseCase {
+        return appComponent.fetchStudentInfoUseCase
     }
     var recruitmentComponent: RecruitmentComponent {
         return appComponent.recruitmentComponent
@@ -217,7 +223,7 @@ extension AppComponent: Registration {
         localTable["renewalPasswordUseCase-any RenewalPasswordUseCase"] = { [unowned self] in self.renewalPasswordUseCase as Any }
         localTable["signupUseCase-any SignupUseCase"] = { [unowned self] in self.signupUseCase as Any }
         localTable["studentExistsUseCase-any StudentExistsUseCase"] = { [unowned self] in self.studentExistsUseCase as Any }
-        localTable["fetchMainPageInfoUseCase-any FetchMainPageInfoUseCase"] = { [unowned self] in self.fetchMainPageInfoUseCase as Any }
+        localTable["fetchStudentInfoUseCase-any FetchStudentInfoUseCase"] = { [unowned self] in self.fetchStudentInfoUseCase as Any }
         localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
         localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
         localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
@@ -226,6 +232,7 @@ extension AppComponent: Registration {
         localTable["applyCompanyUseCase-any ApplyCompanyUseCase"] = { [unowned self] in self.applyCompanyUseCase as Any }
         localTable["cancelApplyUseCase-any CancelApplyUseCase"] = { [unowned self] in self.cancelApplyUseCase as Any }
         localTable["fetchApplicationUseCase-any FetchApplicationUseCase"] = { [unowned self] in self.fetchApplicationUseCase as Any }
+        localTable["fetchTotalPassStudentUseCase-any FetchTotalPassStudentUseCase"] = { [unowned self] in self.fetchTotalPassStudentUseCase as Any }
         localTable["remoteCompaniesDataSource-any RemoteCompaniesDataSource"] = { [unowned self] in self.remoteCompaniesDataSource as Any }
         localTable["companiesRepository-any CompaniesRepository"] = { [unowned self] in self.companiesRepository as Any }
         localTable["fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"] = { [unowned self] in self.fetchCompanyInfoDetailUseCase as Any }
@@ -272,7 +279,9 @@ extension SigninComponent: Registration {
 }
 extension HomeComponent: Registration {
     public func registerItems() {
-        keyPathToName[\HomeDependency.fetchMainPageInfoUseCase] = "fetchMainPageInfoUseCase-any FetchMainPageInfoUseCase"
+        keyPathToName[\HomeDependency.fetchApplicationUseCase] = "fetchApplicationUseCase-any FetchApplicationUseCase"
+        keyPathToName[\HomeDependency.fetchTotalPassStudentUseCase] = "fetchTotalPassStudentUseCase-any FetchTotalPassStudentUseCase"
+        keyPathToName[\HomeDependency.fetchStudentInfoUseCase] = "fetchStudentInfoUseCase-any FetchStudentInfoUseCase"
         keyPathToName[\HomeDependency.recruitmentComponent] = "recruitmentComponent-RecruitmentComponent"
     }
 }
