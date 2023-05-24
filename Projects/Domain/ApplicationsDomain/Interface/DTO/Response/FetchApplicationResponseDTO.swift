@@ -1,48 +1,51 @@
 import Foundation
 
-public struct FetchApplicationResponseDTO: Decodable {
-    public let applicationId: String
-    public let student: String
+public struct ApplicationListResponseDTO: Decodable {
+    public let applications: [ApplicationResponseDTO]
+
+    public init(applications: [ApplicationResponseDTO]) {
+        self.applications = applications
+    }
+}
+
+public struct ApplicationResponseDTO: Decodable {
+    public let applicationID: Int
     public let company: String
-    public let urlList: [String]
+    public let attachmentURLList: [String]
     public let applicationStatus: ApplicationStatusType
 
     public init(
-        applicationId: String,
-        student: String,
+        applicationID: Int,
         company: String,
-        urlList: [String],
+        attachmentURLList: [String],
         applicationStatus: ApplicationStatusType
     ) {
-        self.applicationId = applicationId
-        self.student = student
+        self.applicationID = applicationID
         self.company = company
-        self.urlList = urlList
+        self.attachmentURLList = attachmentURLList
         self.applicationStatus = applicationStatus
     }
 
     enum CodingKeys: String, CodingKey {
-        case applicationId = "application_id"
-        case student
+        case applicationID = "application_id"
         case company
-        case urlList = "url_list"
+        case attachmentURLList = "attachment_url_list"
         case applicationStatus = "application_status"
     }
 }
 
-public extension [FetchApplicationResponseDTO] {
-    func toDomain() -> [ApplicationEntity] {
-        map { $0.toDomain() }
+public extension ApplicationListResponseDTO {
+    func toDomain() -> ApplicationListEntity {
+        ApplicationListEntity(applications: applications.map { $0.toDomain() })
     }
 }
 
-public extension FetchApplicationResponseDTO {
+public extension ApplicationResponseDTO {
     func toDomain() -> ApplicationEntity {
         ApplicationEntity(
-            applicationId: applicationId,
-            student: student,
+            applicationID: applicationID,
             company: company,
-            urlList: urlList,
+            attachmentURLList: attachmentURLList,
             applicationStatus: applicationStatus
         )
     }
