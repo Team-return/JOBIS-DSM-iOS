@@ -80,6 +80,18 @@ public extension TargetDependency.Feature {
 }
 
 public extension TargetDependency.Domain {
+    static let BookmarksDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.BookmarksDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.BookmarksDomain.rawValue)
+    )
+    static let BookmarksDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.BookmarksDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.BookmarksDomain.rawValue)
+    )
+    static let BookmarksDomain = TargetDependency.project(
+        target: ModulePaths.Domain.BookmarksDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.BookmarksDomain.rawValue)
+    )
     static let ApplicationsDomainTesting = TargetDependency.project(
         target: ModulePaths.Domain.ApplicationsDomain.targetName(type: .testing),
         path: .relativeToDomain(ModulePaths.Domain.ApplicationsDomain.rawValue)
