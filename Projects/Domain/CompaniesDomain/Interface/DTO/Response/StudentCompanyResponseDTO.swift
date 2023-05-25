@@ -27,8 +27,8 @@ public struct CompanyResponseDTO: Decodable {
 }
 
 public extension StudentCompanyResponseDTO {
-    func toDomain() -> StudentCompanyEntity {
-        StudentCompanyEntity(companies: companies.map { $0.toDomain() })
+    func toDomain() -> StudentCompanyListEntity {
+        StudentCompanyListEntity(companies: companies.map { $0.toDomain() })
     }
 }
 
