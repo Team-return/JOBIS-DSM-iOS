@@ -14,13 +14,21 @@ struct RecruitmentView: View {
     var body: some View {
         VStack(alignment: .leading) {
             if let list = viewModel.recruitmentList {
-                ScrollView {
-                    ForEach(list.recruitments, id: \.self) { recruitmentEntity in
-                        NavigationLink(destination: Text(recruitmentEntity.companyName)) {
-                            RecruitmentListCell(recruitmentEntity: recruitmentEntity)
-                        }
+                List(list.recruitments, id: \.self) { recruitmentEntity in
+                    Button {
+                        viewModel.isNavigateRecruitmentDetail.toggle()
+                    } label: {
+                        RecruitmentListCell(recruitmentEntity: recruitmentEntity)
                     }
+                    .onAppear {
+                        viewModel.appendRecruitmentList(list: recruitmentEntity)
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(.init(top: 7, leading: 0, bottom: 7, trailing: 0)))
                 }
+                .listStyle(.plain)
+                .listSectionSeparator(.hidden)
                 .refreshable {
                     viewModel.onAppear()
                 }
@@ -32,5 +40,6 @@ struct RecruitmentView: View {
             viewModel.onAppear()
         }
         .jobisBackButton(title: "모집의뢰서 조회하기") { dismiss() }
+        .navigate(to: Text("모집의뢰서 Detail"), when: $viewModel.isNavigateRecruitmentDetail)
     }
 }
