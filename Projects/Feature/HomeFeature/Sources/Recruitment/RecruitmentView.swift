@@ -18,7 +18,9 @@ struct RecruitmentView: View {
                     Button {
                         viewModel.isNavigateRecruitmentDetail.toggle()
                     } label: {
-                        RecruitmentListCell(recruitmentEntity: recruitmentEntity)
+                        RecruitmentListCell(recruitmentEntity: recruitmentEntity) {
+                            viewModel.bookmark(id: recruitmentEntity.recruitID)
+                        }
                     }
                     .onAppear {
                         viewModel.appendRecruitmentList(list: recruitmentEntity)

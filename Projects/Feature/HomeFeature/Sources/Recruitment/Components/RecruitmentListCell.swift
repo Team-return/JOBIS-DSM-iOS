@@ -5,12 +5,12 @@ import Kingfisher
 
 struct RecruitmentListCell: View {
     let recruitmentEntity: RecruitmentEntity
+    let bookmark: () -> Void
     @State private var isBookmarked: Bool = false
 
-    init(recruitmentEntity: RecruitmentEntity) {
+    init(recruitmentEntity: RecruitmentEntity, bookmark: @escaping () -> Void) {
         self.recruitmentEntity = recruitmentEntity
-
-        self.isBookmarked = recruitmentEntity.bookmarked
+        self.bookmark = bookmark
     }
 
     var body: some View {
@@ -39,7 +39,11 @@ struct RecruitmentListCell: View {
             VStack {
                 JOBISImage(self.isBookmarked ? .bookmarkOn : .bookmarkOff)
                     .frame(width: 12, height: 16)
-                    .onTapGesture { isBookmarked.toggle() }
+                    .padding(5)
+                    .onTapGesture {
+                        isBookmarked.toggle()
+                        bookmark()
+                    }
 
                 Spacer()
 
@@ -55,5 +59,8 @@ struct RecruitmentListCell: View {
         .cornerRadius(15)
         .shadow(color: .black, opacity: 0.1, blur: 4)
         .padding(.horizontal, 24)
+        .onAppear {
+            self.isBookmarked = self.recruitmentEntity.bookmarked
+        }
     }
 }
