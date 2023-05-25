@@ -48,8 +48,6 @@ let targets: [Target] = [
             .SPM.Needle,
 
             // 띄우기 용
-            .Domain.RecruitmentsDomain,
-            .Domain.ApplicationsDomain,
             .Domain.CodesDomain,
             .Domain.CompaniesDomain
         ],
