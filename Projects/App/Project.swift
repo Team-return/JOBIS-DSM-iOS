@@ -38,18 +38,19 @@ let targets: [Target] = [
         entitlements: "Support/\(env.name).entitlements",
         scripts: scripts,
         dependencies: [
-            .Feature.RootFeature,
             .Core.JwtStore,
             .Core.JwtStoreInterface,
+            .Feature.RootFeature,
             .Feature.SplashFeature,
             .Feature.SigninFeature,
             .Domain.UsersDomain,
             .Domain.AuthDomain,
-            .SPM.Needle,
-
-            // 띄우기 용
+            .Domain.RecruitmentsDomain,
+            .Domain.ApplicationsDomain,
             .Domain.CodesDomain,
-            .Domain.CompaniesDomain
+            .Domain.CompaniesDomain,
+            .Domain.BookmarksDomain,
+            .SPM.Needle
         ],
         settings: .settings(base: env.baseSetting)
     )

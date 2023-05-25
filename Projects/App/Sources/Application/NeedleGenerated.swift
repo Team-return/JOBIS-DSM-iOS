@@ -4,6 +4,8 @@ import ApplicationsDomain
 import ApplicationsDomainInterface
 import AuthDomain
 import AuthDomainInterface
+import BookmarksDomain
+import BookmarksDomainInterface
 import CodesDomain
 import CodesDomainInterface
 import CompaniesDomain
@@ -241,6 +243,9 @@ extension AppComponent: Registration {
         localTable["signupUseCase-any SignupUseCase"] = { [unowned self] in self.signupUseCase as Any }
         localTable["studentExistsUseCase-any StudentExistsUseCase"] = { [unowned self] in self.studentExistsUseCase as Any }
         localTable["fetchStudentInfoUseCase-any FetchStudentInfoUseCase"] = { [unowned self] in self.fetchStudentInfoUseCase as Any }
+        localTable["remoteBookmarksDataSource-any RemoteBookmarksDataSource"] = { [unowned self] in self.remoteBookmarksDataSource as Any }
+        localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
+        localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
         localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
         localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
         localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
