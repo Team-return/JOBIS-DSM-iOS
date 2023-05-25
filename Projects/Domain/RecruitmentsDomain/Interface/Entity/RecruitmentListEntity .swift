@@ -1,7 +1,7 @@
 import Foundation
 
 public struct RecruitmentListEntity: Equatable, Hashable {
-    public let recruitments: [RecruitmentEntity]
+    public var recruitments: [RecruitmentEntity]
 
     public init(recruitments: [RecruitmentEntity]) {
         self.recruitments = recruitments

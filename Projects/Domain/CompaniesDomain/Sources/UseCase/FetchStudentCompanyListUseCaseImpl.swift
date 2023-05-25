@@ -8,7 +8,7 @@ public struct FetchStudentCompanyListUseCaseImpl: FetchStudentCompanyListUseCase
         self.companiesRepository = companiesRepository
     }
 
-    public func execute() -> AnyPublisher<StudentCompanyEntity, Error> {
-        companiesRepository.fetchStudentCompanyList()
+    public func execute(page: Int, name: String?) -> AnyPublisher<StudentCompanyListEntity, Error> {
+        companiesRepository.fetchStudentCompanyList(page: page, name: name)
     }
 }

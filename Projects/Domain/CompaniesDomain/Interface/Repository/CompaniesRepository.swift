@@ -2,6 +2,6 @@ import Combine
 import Foundation
 
 public protocol CompaniesRepository {
-    func fetchStudentCompanyList() -> AnyPublisher<StudentCompanyEntity, Error>
+    func fetchStudentCompanyList(page: Int, name: String?) -> AnyPublisher<StudentCompanyListEntity, Error>
     func fetchCompanyInfoDetail(id: String) -> AnyPublisher<CompanyInfoDetailEntity, Error>
 }

@@ -10,8 +10,8 @@ public struct CompaniesRepositoryImpl: CompaniesRepository {
         self.remoteCompaniesDataSource = remoteCompaniesDataSource
     }
 
-    public func fetchStudentCompanyList() -> AnyPublisher<StudentCompanyEntity, Error> {
-        remoteCompaniesDataSource.fetchStudentCompanyList()
+    public func fetchStudentCompanyList(page: Int, name: String?) -> AnyPublisher<StudentCompanyListEntity, Error> {
+        remoteCompaniesDataSource.fetchStudentCompanyList(page: page, name: name)
     }
 
     public func fetchCompanyInfoDetail(id: String) -> AnyPublisher<CompanyInfoDetailEntity, Error> {

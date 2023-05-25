@@ -13,14 +13,22 @@ struct FindWorkSpaceView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            if let list = viewModel.studentCompany {
-                ScrollView {
-                    ForEach(list.companies, id: \.self) { companyEntity in
-                        NavigationLink(destination: Text(companyEntity.name)) {
-                            FindWorkSpaceListCell(companyEntity: companyEntity)
-                        }
+            if let list = viewModel.studentCompanyList {
+                List(list.companies, id: \.self) { companyEntity in
+                    Button {
+                        viewModel.isNavigateCompanyDetail.toggle()
+                    } label: {
+                        FindWorkSpaceListCell(companyEntity: companyEntity)
                     }
+                    .onAppear {
+                        viewModel.appendFindWorkSpaceList(list: companyEntity)
+                    }
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets(.init(top: 7, leading: 0, bottom: 7, trailing: 0)))
                 }
+                .listStyle(.plain)
+                .listSectionSeparator(.hidden)
                 .refreshable {
                     viewModel.onAppear()
                 }
@@ -31,6 +39,7 @@ struct FindWorkSpaceView: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .jobisBackButton(title: "모집의뢰서 조회하기") { dismiss() }
+        .jobisBackButton(title: "기업 조회하기") { dismiss() }
+        .navigate(to: Text("기업 조회하기 Detail"), when: $viewModel.isNavigateCompanyDetail)
     }
 }
