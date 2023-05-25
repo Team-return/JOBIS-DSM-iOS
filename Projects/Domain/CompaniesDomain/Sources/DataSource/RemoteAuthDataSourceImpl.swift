@@ -3,8 +3,8 @@ import BaseDomain
 import Combine
 
 public final class RemoteCompaniesDataSourceImpl: BaseRemoteDataSource<CompaniesAPI>, RemoteCompaniesDataSource {
-    public func fetchStudentCompanyList() -> AnyPublisher<StudentCompanyEntity, Error> {
-        request(.fetchStudentCompanyList, dto: StudentCompanyResponseDTO.self)
+    public func fetchStudentCompanyList(page: Int, name: String?) -> AnyPublisher<StudentCompanyListEntity, Error> {
+        request(.fetchStudentCompanyList(page: page, name: name), dto: StudentCompanyResponseDTO.self)
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }

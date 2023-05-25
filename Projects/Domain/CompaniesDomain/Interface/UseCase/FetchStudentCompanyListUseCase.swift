@@ -1,5 +1,5 @@
 import Combine
 
 public protocol FetchStudentCompanyListUseCase {
-    func execute() -> AnyPublisher<StudentCompanyEntity, Error>
+    func execute(page: Int, name: String?) -> AnyPublisher<StudentCompanyListEntity, Error>
 }

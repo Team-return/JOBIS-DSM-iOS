@@ -3,7 +3,7 @@ import CompaniesDomainInterface
 import BaseDomain
 
 public enum CompaniesAPI {
-    case fetchStudentCompanyList
+    case fetchStudentCompanyList(page: Int, name: String?)
     case fetchCompanyInfoDetail(id: String)
 }
 
@@ -31,7 +31,16 @@ extension CompaniesAPI: JobisAPI {
     }
 
     public var task: Task {
-        .requestPlain
+        switch self {
+        case let .fetchStudentCompanyList(page, name):
+            return .requestParameters(
+                parameters: [
+                    "page": page,
+                    "name": name ?? ""
+                ], encoding: URLEncoding.queryString)
+        default:
+            return .requestPlain
+        }
     }
 
     public var jwtTokenType: JwtTokenType {
