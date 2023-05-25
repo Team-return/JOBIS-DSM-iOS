@@ -1,7 +1,7 @@
 import Foundation
 
-public struct StudentCompanyEntity: Equatable {
-    public let companies: [CompanyEntity]
+public struct StudentCompanyListEntity: Equatable {
+    public var companies: [CompanyEntity]
 
     public init(companies: [CompanyEntity]) {
         self.companies = companies
