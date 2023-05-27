@@ -13,6 +13,6 @@ let project = Project.makeModule(
         .Domain.ApplicationsDomainInterface,
         .Domain.StudentsDomainInterface,
         .Domain.RecruitmentsDomainInterface,
-        .Domain.BookmarksDomainInterface,
+        .Domain.BookmarksDomainInterface
     ]
 )
