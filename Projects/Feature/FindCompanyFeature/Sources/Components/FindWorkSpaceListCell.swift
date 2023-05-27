@@ -4,17 +4,17 @@ import DesignSystem
 import Kingfisher
 import UtilityModule
 
-struct FindWorkSpaceListCell: View {
-    @State var isbool = false
+struct FindCompanyListCell: View {
+    @State var isNaviagteDetail = false
     let companyEntity: CompanyEntity
-    
+
     init(companyEntity: CompanyEntity) {
         self.companyEntity = companyEntity
     }
 
     var body: some View {
         Button {
-            isbool.toggle()
+            self.isNaviagteDetail.toggle()
         } label: {
             HStack(spacing: 12) {
                 KFImage(URL(string: companyEntity.logoURL))
@@ -44,8 +44,5 @@ struct FindWorkSpaceListCell: View {
             .shadow(color: .black, opacity: 0.1, blur: 4)
             .padding(.horizontal, 24)
         }
-        .navigate(
-            to: FindWorkSpaceDetailComponent.makeView(),
-            when: $isbool)
     }
 }

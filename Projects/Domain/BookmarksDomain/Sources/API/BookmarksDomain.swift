@@ -48,7 +48,7 @@ extension BookmarksDomain: JobisAPI {
         }
     }
 
-    public var errorMap: [Int : BookmarksError] {
+    public var errorMap: [Int: BookmarksError] {
         switch self {
         default:
             return [:]

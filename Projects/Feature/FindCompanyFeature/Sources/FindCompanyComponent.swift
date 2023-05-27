@@ -1,5 +1,5 @@
 import SwiftUI
-import HomeFeatureInterface
+import FindCompanyFeatureInterface
 import CompaniesDomainInterface
 import NeedleFoundation
 
@@ -7,7 +7,7 @@ public protocol FindCompanyDependency: Dependency {
     var fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase { get }
 }
 
-public final class FindCompanyComponent: Component<FindWorkSpaceDependency>, FindCompanyFactory {
+public final class FindCompanyComponent: Component<FindCompanyDependency>, FindCompanyFactory {
     public func makeView() -> some View {
         FindCompanyView(
             viewModel: .init(

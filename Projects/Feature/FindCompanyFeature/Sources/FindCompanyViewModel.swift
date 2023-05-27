@@ -2,7 +2,7 @@ import BaseFeature
 import CompaniesDomainInterface
 import Combine
 
-final class FindWorkSpaceViewModel: BaseViewModel {
+final class FindCompanyViewModel: BaseViewModel {
     @Published var listPage: Int = 1
     @Published var studentCompanyList: StudentCompanyListEntity?
     @Published var isNavigateCompanyDetail: Bool = false

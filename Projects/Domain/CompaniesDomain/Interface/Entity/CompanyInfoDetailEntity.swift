@@ -2,17 +2,20 @@ import Foundation
 
 public struct CompanyInfoDetailEntity: Equatable {
     public let businessNumber: String
+    public let companyName: String
     public let companyProfileURL: String
     public let companyIntroduce, zipCode1, address1: String
     public let zipCode2: String?
     public let address2, manager1, phoneNumber1: String
     public let manager2, phoneNumber2, fax: String?
     public let email, representativeName, foundedAt: String
-    public let workerNumber, take: Int
+    public let workerNumber: Int
+    public let take: Double
     public let recruitmentID: String
 
     public init(
         businessNumber: String,
+        companyName: String,
         companyProfileURL: String,
         companyIntroduce: String,
         zipCode1: String,
@@ -28,10 +31,11 @@ public struct CompanyInfoDetailEntity: Equatable {
         representativeName: String,
         foundedAt: String,
         workerNumber: Int,
-        take: Int,
+        take: Double,
         recruitmentID: String
     ) {
         self.businessNumber = businessNumber
+        self.companyName = companyName
         self.companyProfileURL = companyProfileURL
         self.companyIntroduce = companyIntroduce
         self.zipCode1 = zipCode1

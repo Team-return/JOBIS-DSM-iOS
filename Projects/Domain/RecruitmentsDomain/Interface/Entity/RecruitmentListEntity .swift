@@ -15,7 +15,7 @@ public struct RecruitmentEntity: Equatable, Hashable {
     public let trainPay: Int
     public let military: Bool
     public let totalHiring: Int
-    public let jobCodeList: [String]
+    public let jobCodeList: String
     public let bookmarked: Bool
 
     public init(
@@ -25,7 +25,7 @@ public struct RecruitmentEntity: Equatable, Hashable {
         trainPay: Int,
         military: Bool,
         totalHiring: Int,
-        jobCodeList: [String],
+        jobCodeList: String,
         bookmarked: Bool
     ) {
         self.recruitID = recruitID

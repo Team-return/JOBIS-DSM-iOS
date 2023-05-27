@@ -1,4 +1,6 @@
 import DesignSystem
+import FindCompanyFeature
+import RecruitmentFeature
 import SwiftUI
 
 struct HomeView: View {
@@ -6,16 +8,16 @@ struct HomeView: View {
     @Environment(\.tabbarHidden) var tabbarHidden
 
     private let recruitmentComponent: RecruitmentComponent
-    private let findWorkSpaceComponent: FindWorkSpaceComponent
+    private let findCompanyComponent: FindCompanyComponent
 
     init(
         viewModel: HomeViewModel,
         recruitmentComponent: RecruitmentComponent,
-        findWorkSpaceComponent: FindWorkSpaceComponent
+        findCompanyComponent: FindCompanyComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.recruitmentComponent = recruitmentComponent
-        self.findWorkSpaceComponent = findWorkSpaceComponent
+        self.findCompanyComponent = findCompanyComponent
     }
 
     var body: some View {
@@ -66,7 +68,7 @@ struct HomeView: View {
             tabbarHidden.wrappedValue = $0
         }
         .navigate(to: recruitmentComponent.makeView(), when: $viewModel.isNavigateRecruitment)
-        .navigate(to: findWorkSpaceComponent.makeView(), when: $viewModel.isNavigateFindWorkSpace)
+        .navigate(to: findCompanyComponent.makeView(), when: $viewModel.isNavigateFindWorkSpace)
     }
 
     @ViewBuilder

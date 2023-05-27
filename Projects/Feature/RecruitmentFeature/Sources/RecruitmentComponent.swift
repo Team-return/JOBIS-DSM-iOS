@@ -1,6 +1,6 @@
 import SwiftUI
 import RecruitmentsDomainInterface
-import HomeFeatureInterface
+import RecruitmentFeatureInterface
 import BookmarksDomainInterface
 import NeedleFoundation
 
