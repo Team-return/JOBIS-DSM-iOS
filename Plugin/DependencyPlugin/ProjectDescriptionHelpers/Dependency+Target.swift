@@ -9,6 +9,22 @@ public extension TargetDependency {
 }
 
 public extension TargetDependency.Feature {
+    static let RecruitmentFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.RecruitmentFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.RecruitmentFeature.rawValue)
+    )
+    static let RecruitmentFeature = TargetDependency.project(
+        target: ModulePaths.Feature.RecruitmentFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.RecruitmentFeature.rawValue)
+    )
+    static let FindCompanyFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.FindCompanyFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.FindCompanyFeature.rawValue)
+    )
+    static let FindCompanyFeature = TargetDependency.project(
+        target: ModulePaths.Feature.FindCompanyFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.FindCompanyFeature.rawValue)
+    )
     static let MyPageFeatureInterface = TargetDependency.project(
         target: ModulePaths.Feature.MyPageFeature.targetName(type: .interface),
         path: .relativeToFeature(ModulePaths.Feature.MyPageFeature.rawValue)
