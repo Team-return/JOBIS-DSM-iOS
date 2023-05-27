@@ -12,7 +12,7 @@ extension ReviewsAPI: JobisAPI {
     public typealias ErrorType = ReviewsDomainError
 
     public var domain: JobisDomain {
-        .auth
+        .reviews
     }
 
     public var urlPath: String {

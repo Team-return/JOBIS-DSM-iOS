@@ -8,7 +8,7 @@ public struct ReviewListEntity: Equatable {
     }
 }
 
-public struct ReviewEntity: Equatable {
+public struct ReviewEntity: Equatable, Hashable {
     public let reviewID: String
     public let year: Int
     public let writer, createdDate: String

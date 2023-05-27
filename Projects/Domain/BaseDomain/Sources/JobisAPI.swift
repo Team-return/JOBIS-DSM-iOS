@@ -37,6 +37,7 @@ public enum JobisDomain: String {
     case codes
     case applications
     case bookmarks
+    case reviews
 }
 
 extension JobisDomain {

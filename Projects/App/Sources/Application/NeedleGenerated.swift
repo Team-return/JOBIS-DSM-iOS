@@ -25,6 +25,8 @@ import RecruitmentFeature
 import RecruitmentFeatureInterface
 import RecruitmentsDomain
 import RecruitmentsDomainInterface
+import ReviewsDomain
+import ReviewsDomainInterface
 import RootFeature
 import RootFeatureInterface
 import SigninFeature
@@ -197,6 +199,9 @@ private class FindCompanyDetailDependency4141f6f851410a3f60d3Provider: FindCompa
     var fetchCompanyInfoDetailUseCase: any FetchCompanyInfoDetailUseCase {
         return appComponent.fetchCompanyInfoDetailUseCase
     }
+    var fetchReviewListUseCase: any FetchReviewListUseCase {
+        return appComponent.fetchReviewListUseCase
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -248,9 +253,6 @@ extension AppComponent: Registration {
         localTable["recruitmentsRepository-any RecruitmentsRepository"] = { [unowned self] in self.recruitmentsRepository as Any }
         localTable["fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"] = { [unowned self] in self.fetchRecruitmentDetailUseCase as Any }
         localTable["fetchRecruitmentListUseCase-any FetchRecruitmentListUseCase"] = { [unowned self] in self.fetchRecruitmentListUseCase as Any }
-        localTable["remoteCodesDataSource-any RemoteCodesDataSource"] = { [unowned self] in self.remoteCodesDataSource as Any }
-        localTable["codesRepository-any CodesRepository"] = { [unowned self] in self.codesRepository as Any }
-        localTable["fetchCodesUseCase-any FetchCodesUseCase"] = { [unowned self] in self.fetchCodesUseCase as Any }
         localTable["signinComponent-SigninComponent"] = { [unowned self] in self.signinComponent as Any }
         localTable["signupComponent-SignupComponent"] = { [unowned self] in self.signupComponent as Any }
         localTable["splashComponent-SplashComponent"] = { [unowned self] in self.splashComponent as Any }
@@ -274,6 +276,9 @@ extension AppComponent: Registration {
         localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
         localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
         localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
+        localTable["remoteCodesDataSource-any RemoteCodesDataSource"] = { [unowned self] in self.remoteCodesDataSource as Any }
+        localTable["codesRepository-any CodesRepository"] = { [unowned self] in self.codesRepository as Any }
+        localTable["fetchCodesUseCase-any FetchCodesUseCase"] = { [unowned self] in self.fetchCodesUseCase as Any }
         localTable["remoteApplicationsDataSource-any RemoteApplicationsDataSource"] = { [unowned self] in self.remoteApplicationsDataSource as Any }
         localTable["applicationsRepository-any ApplicationsRepository"] = { [unowned self] in self.applicationsRepository as Any }
         localTable["applyCompanyUseCase-any ApplyCompanyUseCase"] = { [unowned self] in self.applyCompanyUseCase as Any }
@@ -284,6 +289,11 @@ extension AppComponent: Registration {
         localTable["companiesRepository-any CompaniesRepository"] = { [unowned self] in self.companiesRepository as Any }
         localTable["fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"] = { [unowned self] in self.fetchCompanyInfoDetailUseCase as Any }
         localTable["fetchStudentCompanyListUseCase-any FetchStudentCompanyListUseCase"] = { [unowned self] in self.fetchStudentCompanyListUseCase as Any }
+        localTable["remoteReviewsDataSource-any RemoteReviewsDataSource"] = { [unowned self] in self.remoteReviewsDataSource as Any }
+        localTable["reviewsRepository-any ReviewsRepository"] = { [unowned self] in self.reviewsRepository as Any }
+        localTable["fetchReviewDetailUseCase-any FetchReviewDetailUseCase"] = { [unowned self] in self.fetchReviewDetailUseCase as Any }
+        localTable["fetchReviewListUseCase-any FetchReviewListUseCase"] = { [unowned self] in self.fetchReviewListUseCase as Any }
+        localTable["postReviewUseCase-any PostReviewUseCase"] = { [unowned self] in self.postReviewUseCase as Any }
     }
 }
 extension SplashComponent: Registration {
@@ -342,6 +352,7 @@ extension FindCompanyComponent: Registration {
 extension FindCompanyDetailComponent: Registration {
     public func registerItems() {
         keyPathToName[\FindCompanyDetailDependency.fetchCompanyInfoDetailUseCase] = "fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"
+        keyPathToName[\FindCompanyDetailDependency.fetchReviewListUseCase] = "fetchReviewListUseCase-any FetchReviewListUseCase"
     }
 }
 extension RecruitmentComponent: Registration {
