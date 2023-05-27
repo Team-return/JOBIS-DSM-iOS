@@ -23,7 +23,7 @@ struct RecruitmentListCell: View {
                 .padding(8)
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(recruitmentEntity.jobCodeList.joined(separator: " / "))
+                Text(recruitmentEntity.jobCodeList)
                     .JOBISFont(.body(.body2), color: .Sub.gray90)
 
                 Text(recruitmentEntity.companyName)

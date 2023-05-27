@@ -9,7 +9,9 @@ final class FindWorkSpaceViewModel: BaseViewModel {
 
     private let fetchStudentCompanyListUseCase: FetchStudentCompanyListUseCase
 
-    public init(fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase) {
+    public init(
+        fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase
+    ) {
         self.fetchStudentCompanyListUseCase = fetchStudentCompanyListUseCase
     }
 
