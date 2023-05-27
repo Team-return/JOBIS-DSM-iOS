@@ -60,6 +60,9 @@ public extension AppComponent {
     var findCompanyComponent: FindCompanyComponent {
         FindCompanyComponent(parent: self)
     }
+    var findCompanyDetailComponent: FindCompanyDetailComponent {
+        FindCompanyDetailComponent(parent: self)
+    }
     var homeComponent: HomeComponent {
         HomeComponent(parent: self)
     }
