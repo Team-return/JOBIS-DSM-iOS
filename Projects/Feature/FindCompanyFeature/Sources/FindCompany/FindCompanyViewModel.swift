@@ -24,7 +24,7 @@ final class FindCompanyViewModel: BaseViewModel {
         }
     }
 
-    func appendFindWorkSpaceList(list: CompanyEntity) {
+    func appendFindCompanyList(list: CompanyEntity) {
         if self.studentCompanyList?.companies.last == list {
             listPage += 1
             addCancellable(

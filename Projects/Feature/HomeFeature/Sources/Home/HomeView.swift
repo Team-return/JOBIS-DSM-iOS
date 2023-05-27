@@ -49,9 +49,9 @@ struct HomeView: View {
 
                         navigateButton(
                             text: "기업찾기\n",
-                            image: HomeImage(.findWorkspace)
+                            image: HomeImage(.findCompany)
                         ) {
-                            viewModel.isNavigateFindWorkSpace.toggle()
+                            viewModel.isNavigateFindCompany.toggle()
                         }
                     }
                     .padding(22)
@@ -64,11 +64,11 @@ struct HomeView: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .onChange(of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindWorkSpace) {
+        .onChange(of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindCompany) {
             tabbarHidden.wrappedValue = $0
         }
         .navigate(to: recruitmentComponent.makeView(), when: $viewModel.isNavigateRecruitment)
-        .navigate(to: findCompanyComponent.makeView(), when: $viewModel.isNavigateFindWorkSpace)
+        .navigate(to: findCompanyComponent.makeView(), when: $viewModel.isNavigateFindCompany)
     }
 
     @ViewBuilder

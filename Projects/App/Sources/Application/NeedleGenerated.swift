@@ -181,6 +181,9 @@ private class FindCompanyDependency40f7eec2789a2c3ddf11Provider: FindCompanyDepe
     var fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase {
         return appComponent.fetchStudentCompanyListUseCase
     }
+    var findCompanyDetailComponent: FindCompanyDetailComponent {
+        return appComponent.findCompanyDetailComponent
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -189,6 +192,19 @@ private class FindCompanyDependency40f7eec2789a2c3ddf11Provider: FindCompanyDepe
 /// ^->AppComponent->FindCompanyComponent
 private func factory161fb699dfcd446598cbf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return FindCompanyDependency40f7eec2789a2c3ddf11Provider(appComponent: parent1(component) as! AppComponent)
+}
+private class FindCompanyDetailDependency4141f6f851410a3f60d3Provider: FindCompanyDetailDependency {
+    var fetchCompanyInfoDetailUseCase: any FetchCompanyInfoDetailUseCase {
+        return appComponent.fetchCompanyInfoDetailUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->FindCompanyDetailComponent
+private func factoryca6789757d5d9bbb6659f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return FindCompanyDetailDependency4141f6f851410a3f60d3Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class RecruitmentDependency799de5378039058f4ec0Provider: RecruitmentDependency {
     var fetchRecruitmentListUseCase: any FetchRecruitmentListUseCase {
@@ -241,6 +257,7 @@ extension AppComponent: Registration {
         localTable["mainTabComponent-MainTabComponent"] = { [unowned self] in self.mainTabComponent as Any }
         localTable["recruitmentComponent-RecruitmentComponent"] = { [unowned self] in self.recruitmentComponent as Any }
         localTable["findCompanyComponent-FindCompanyComponent"] = { [unowned self] in self.findCompanyComponent as Any }
+        localTable["findCompanyDetailComponent-FindCompanyDetailComponent"] = { [unowned self] in self.findCompanyDetailComponent as Any }
         localTable["homeComponent-HomeComponent"] = { [unowned self] in self.homeComponent as Any }
         localTable["myPageComponent-MyPageComponent"] = { [unowned self] in self.myPageComponent as Any }
         localTable["menuComponent-MenuComponent"] = { [unowned self] in self.menuComponent as Any }
@@ -319,6 +336,12 @@ extension HomeComponent: Registration {
 extension FindCompanyComponent: Registration {
     public func registerItems() {
         keyPathToName[\FindCompanyDependency.fetchStudentCompanyListUseCase] = "fetchStudentCompanyListUseCase-any FetchStudentCompanyListUseCase"
+        keyPathToName[\FindCompanyDependency.findCompanyDetailComponent] = "findCompanyDetailComponent-FindCompanyDetailComponent"
+    }
+}
+extension FindCompanyDetailComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\FindCompanyDetailDependency.fetchCompanyInfoDetailUseCase] = "fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"
     }
 }
 extension RecruitmentComponent: Registration {
@@ -357,6 +380,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->SigninComponent", factory2882a056d84a613debccf47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->HomeComponent", factory67229cdf0f755562b2b1f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->FindCompanyComponent", factory161fb699dfcd446598cbf47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->FindCompanyDetailComponent", factoryca6789757d5d9bbb6659f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RecruitmentComponent", factoryb1923ea1b010875d9389f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3e3b0c44298fc1c149afb)
 }

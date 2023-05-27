@@ -5,10 +5,14 @@ struct FindCompanyView: View {
     @StateObject var viewModel: FindCompanyViewModel
     @Environment(\.dismiss) var dismiss
 
+    private let findCompanyDetailComponent: FindCompanyDetailComponent
+
     init(
-        viewModel: FindCompanyViewModel
+        viewModel: FindCompanyViewModel,
+        findCompanyDetailComponent: FindCompanyDetailComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.findCompanyDetailComponent = findCompanyDetailComponent
     }
 
     var body: some View {
@@ -18,10 +22,13 @@ struct FindCompanyView: View {
                     Button {
                         viewModel.isNavigateCompanyDetail.toggle()
                     } label: {
-                        FindCompanyListCell(companyEntity: companyEntity)
+                        FindCompanyListCell(
+                            companyEntity: companyEntity,
+                            findCompanyDetailComponent: findCompanyDetailComponent
+                        )
                     }
                     .onAppear {
-                        viewModel.appendFindWorkSpaceList(list: companyEntity)
+                        viewModel.appendFindCompanyList(list: companyEntity)
                     }
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)

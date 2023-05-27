@@ -8,8 +8,14 @@ struct FindCompanyListCell: View {
     @State var isNaviagteDetail = false
     let companyEntity: CompanyEntity
 
-    init(companyEntity: CompanyEntity) {
+    private let findCompanyDetailComponent: FindCompanyDetailComponent
+
+    init(
+        companyEntity: CompanyEntity,
+        findCompanyDetailComponent: FindCompanyDetailComponent
+    ) {
         self.companyEntity = companyEntity
+        self.findCompanyDetailComponent = findCompanyDetailComponent
     }
 
     var body: some View {
@@ -43,6 +49,10 @@ struct FindCompanyListCell: View {
             .cornerRadius(15)
             .shadow(color: .black, opacity: 0.1, blur: 4)
             .padding(.horizontal, 24)
+        }
+        .sheet(isPresented: $isNaviagteDetail) {
+            findCompanyDetailComponent.makeView(id: String(companyEntity.id))
+                .presentationDragIndicator(.visible)
         }
     }
 }
