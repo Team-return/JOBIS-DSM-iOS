@@ -30,6 +30,7 @@ public extension ModulePaths {
 
 public extension ModulePaths {
     enum Domain: String {
+        case ReviewsDomain
         case BookmarksDomain
         case ApplicationsDomain
         case CodesDomain

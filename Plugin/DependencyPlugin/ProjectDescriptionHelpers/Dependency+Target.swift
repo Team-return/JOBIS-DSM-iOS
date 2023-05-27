@@ -96,6 +96,18 @@ public extension TargetDependency.Feature {
 }
 
 public extension TargetDependency.Domain {
+    static let ReviewsDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.ReviewsDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.ReviewsDomain.rawValue)
+    )
+    static let ReviewsDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.ReviewsDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.ReviewsDomain.rawValue)
+    )
+    static let ReviewsDomain = TargetDependency.project(
+        target: ModulePaths.Domain.ReviewsDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.ReviewsDomain.rawValue)
+    )
     static let BookmarksDomainTesting = TargetDependency.project(
         target: ModulePaths.Domain.BookmarksDomain.targetName(type: .testing),
         path: .relativeToDomain(ModulePaths.Domain.BookmarksDomain.rawValue)
