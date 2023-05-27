@@ -2,23 +2,26 @@ import Foundation
 
 public struct CompanyInfoDetailResponseDTO: Decodable {
     public let businessNumber: String
+    public let companyName: String
     public let companyProfileURL: String
     public let companyIntroduce, zipCode1, address1: String
-    public let zipCode2: String?
-    public let address2, manager1, phoneNumber1: String
+    public let zipCode2, address2: String?
+    public let manager1, phoneNumber1: String
     public let manager2, phoneNumber2, fax: String?
     public let email, representativeName, foundedAt: String
-    public let workerNumber, take: Int
-    public let recruitmentID: String
+    public let workerNumber: Int
+    public let take: Double
+    public let recruitmentID: Int?
 
     public init(
         businessNumber: String,
+        companyName: String,
         companyProfileURL: String,
         companyIntroduce: String,
         zipCode1: String,
         address1: String,
         zipCode2: String?,
-        address2: String,
+        address2: String?,
         manager1: String,
         phoneNumber1: String,
         manager2: String?,
@@ -28,10 +31,11 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         representativeName: String,
         foundedAt: String,
         workerNumber: Int,
-        take: Int,
-        recruitmentID: String
+        take: Double,
+        recruitmentID: Int?
     ) {
         self.businessNumber = businessNumber
+        self.companyName = companyName
         self.companyProfileURL = companyProfileURL
         self.companyIntroduce = companyIntroduce
         self.zipCode1 = zipCode1
@@ -53,6 +57,7 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
 
     enum CodingKeys: String, CodingKey {
         case businessNumber = "business_number"
+        case companyName = "company_name"
         case companyProfileURL = "company_profile_url"
         case companyIntroduce = "company_introduce"
         case zipCode1 = "zip_code1"
@@ -75,6 +80,7 @@ public extension CompanyInfoDetailResponseDTO {
     func toDomain() -> CompanyInfoDetailEntity {
         CompanyInfoDetailEntity(
             businessNumber: businessNumber,
+            companyName: companyName,
             companyProfileURL: companyProfileURL,
             companyIntroduce: companyIntroduce,
             zipCode1: zipCode1,

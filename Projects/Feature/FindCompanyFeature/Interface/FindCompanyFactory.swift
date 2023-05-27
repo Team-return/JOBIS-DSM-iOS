@@ -1,6 +1,6 @@
 import SwiftUI
 
-public protocol FindWorkSpaceFactory {
+public protocol FindCompanyFactory {
     associatedtype SomeView: View
     func makeView() -> SomeView
 }

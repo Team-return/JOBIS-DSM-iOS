@@ -2,14 +2,16 @@ import BaseFeature
 import CompaniesDomainInterface
 import Combine
 
-final class FindWorkSpaceViewModel: BaseViewModel {
+final class FindCompanyViewModel: BaseViewModel {
     @Published var listPage: Int = 1
     @Published var studentCompanyList: StudentCompanyListEntity?
     @Published var isNavigateCompanyDetail: Bool = false
 
     private let fetchStudentCompanyListUseCase: FetchStudentCompanyListUseCase
 
-    public init(fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase) {
+    public init(
+        fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase
+    ) {
         self.fetchStudentCompanyListUseCase = fetchStudentCompanyListUseCase
     }
 
@@ -22,7 +24,7 @@ final class FindWorkSpaceViewModel: BaseViewModel {
         }
     }
 
-    func appendFindWorkSpaceList(list: CompanyEntity) {
+    func appendFindCompanyList(list: CompanyEntity) {
         if self.studentCompanyList?.companies.last == list {
             listPage += 1
             addCancellable(

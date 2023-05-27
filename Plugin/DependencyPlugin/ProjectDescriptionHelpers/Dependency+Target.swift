@@ -9,6 +9,22 @@ public extension TargetDependency {
 }
 
 public extension TargetDependency.Feature {
+    static let RecruitmentFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.RecruitmentFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.RecruitmentFeature.rawValue)
+    )
+    static let RecruitmentFeature = TargetDependency.project(
+        target: ModulePaths.Feature.RecruitmentFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.RecruitmentFeature.rawValue)
+    )
+    static let FindCompanyFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.FindCompanyFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.FindCompanyFeature.rawValue)
+    )
+    static let FindCompanyFeature = TargetDependency.project(
+        target: ModulePaths.Feature.FindCompanyFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.FindCompanyFeature.rawValue)
+    )
     static let MyPageFeatureInterface = TargetDependency.project(
         target: ModulePaths.Feature.MyPageFeature.targetName(type: .interface),
         path: .relativeToFeature(ModulePaths.Feature.MyPageFeature.rawValue)
@@ -80,6 +96,18 @@ public extension TargetDependency.Feature {
 }
 
 public extension TargetDependency.Domain {
+    static let ReviewsDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.ReviewsDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.ReviewsDomain.rawValue)
+    )
+    static let ReviewsDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.ReviewsDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.ReviewsDomain.rawValue)
+    )
+    static let ReviewsDomain = TargetDependency.project(
+        target: ModulePaths.Domain.ReviewsDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.ReviewsDomain.rawValue)
+    )
     static let BookmarksDomainTesting = TargetDependency.project(
         target: ModulePaths.Domain.BookmarksDomain.targetName(type: .testing),
         path: .relativeToDomain(ModulePaths.Domain.BookmarksDomain.rawValue)

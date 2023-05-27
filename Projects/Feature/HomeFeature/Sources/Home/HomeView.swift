@@ -1,4 +1,6 @@
 import DesignSystem
+import FindCompanyFeature
+import RecruitmentFeature
 import SwiftUI
 
 struct HomeView: View {
@@ -6,16 +8,16 @@ struct HomeView: View {
     @Environment(\.tabbarHidden) var tabbarHidden
 
     private let recruitmentComponent: RecruitmentComponent
-    private let findWorkSpaceComponent: FindWorkSpaceComponent
+    private let findCompanyComponent: FindCompanyComponent
 
     init(
         viewModel: HomeViewModel,
         recruitmentComponent: RecruitmentComponent,
-        findWorkSpaceComponent: FindWorkSpaceComponent
+        findCompanyComponent: FindCompanyComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.recruitmentComponent = recruitmentComponent
-        self.findWorkSpaceComponent = findWorkSpaceComponent
+        self.findCompanyComponent = findCompanyComponent
     }
 
     var body: some View {
@@ -47,9 +49,9 @@ struct HomeView: View {
 
                         navigateButton(
                             text: "기업찾기\n",
-                            image: HomeImage(.findWorkspace)
+                            image: HomeImage(.findCompany)
                         ) {
-                            viewModel.isNavigateFindWorkSpace.toggle()
+                            viewModel.isNavigateFindCompany.toggle()
                         }
                     }
                     .padding(22)
@@ -62,11 +64,11 @@ struct HomeView: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .onChange(of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindWorkSpace) {
+        .onChange(of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindCompany) {
             tabbarHidden.wrappedValue = $0
         }
         .navigate(to: recruitmentComponent.makeView(), when: $viewModel.isNavigateRecruitment)
-        .navigate(to: findWorkSpaceComponent.makeView(), when: $viewModel.isNavigateFindWorkSpace)
+        .navigate(to: findCompanyComponent.makeView(), when: $viewModel.isNavigateFindCompany)
     }
 
     @ViewBuilder

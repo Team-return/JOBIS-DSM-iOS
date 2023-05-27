@@ -2,7 +2,7 @@ import SwiftUI
 public struct HomeImage: View {
     public enum Image {
         case recruitment
-        case findWorkspace
+        case findCompany
     }
 
     private var image: Image
@@ -24,8 +24,8 @@ public struct HomeImage: View {
 
     private func jobisToImage() -> SwiftUI.Image {
         switch image {
-        case .findWorkspace:
-            return DesignSystemAsset.Image.findWorkspaceImage.swiftUIImage
+        case .findCompany:
+            return DesignSystemAsset.Image.findCompanyImage.swiftUIImage
         case .recruitment:
             return DesignSystemAsset.Image.recruitmentImage.swiftUIImage
         }

@@ -10,6 +10,8 @@ public enum ModulePaths {
 
 public extension ModulePaths {
     enum Feature: String {
+        case RecruitmentFeature
+        case FindCompanyFeature
         case MyPageFeature
         case HomeFeature
         case MenuFeature
@@ -28,6 +30,7 @@ public extension ModulePaths {
 
 public extension ModulePaths {
     enum Domain: String {
+        case ReviewsDomain
         case BookmarksDomain
         case ApplicationsDomain
         case CodesDomain

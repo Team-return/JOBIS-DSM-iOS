@@ -10,6 +10,8 @@ import CodesDomain
 import CodesDomainInterface
 import CompaniesDomain
 import CompaniesDomainInterface
+import FindCompanyFeature
+import FindCompanyFeatureInterface
 import HomeFeature
 import HomeFeatureInterface
 import JwtStoreInterface
@@ -19,8 +21,12 @@ import MenuFeatureInterface
 import MyPageFeature
 import MyPageFeatureInterface
 import NeedleFoundation
+import RecruitmentFeature
+import RecruitmentFeatureInterface
 import RecruitmentsDomain
 import RecruitmentsDomainInterface
+import ReviewsDomain
+import ReviewsDomainInterface
 import RootFeature
 import RootFeatureInterface
 import SigninFeature
@@ -161,8 +167,8 @@ private class HomeDependency443c4e1871277bd8432aProvider: HomeDependency {
     var recruitmentComponent: RecruitmentComponent {
         return appComponent.recruitmentComponent
     }
-    var findWorkSpaceComponent: FindWorkSpaceComponent {
-        return appComponent.findWorkSpaceComponent
+    var findCompanyComponent: FindCompanyComponent {
+        return appComponent.findCompanyComponent
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -172,6 +178,38 @@ private class HomeDependency443c4e1871277bd8432aProvider: HomeDependency {
 /// ^->AppComponent->HomeComponent
 private func factory67229cdf0f755562b2b1f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return HomeDependency443c4e1871277bd8432aProvider(appComponent: parent1(component) as! AppComponent)
+}
+private class FindCompanyDependency40f7eec2789a2c3ddf11Provider: FindCompanyDependency {
+    var fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase {
+        return appComponent.fetchStudentCompanyListUseCase
+    }
+    var findCompanyDetailComponent: FindCompanyDetailComponent {
+        return appComponent.findCompanyDetailComponent
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->FindCompanyComponent
+private func factory161fb699dfcd446598cbf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return FindCompanyDependency40f7eec2789a2c3ddf11Provider(appComponent: parent1(component) as! AppComponent)
+}
+private class FindCompanyDetailDependency4141f6f851410a3f60d3Provider: FindCompanyDetailDependency {
+    var fetchCompanyInfoDetailUseCase: any FetchCompanyInfoDetailUseCase {
+        return appComponent.fetchCompanyInfoDetailUseCase
+    }
+    var fetchReviewListUseCase: any FetchReviewListUseCase {
+        return appComponent.fetchReviewListUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->FindCompanyDetailComponent
+private func factoryca6789757d5d9bbb6659f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return FindCompanyDetailDependency4141f6f851410a3f60d3Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class RecruitmentDependency799de5378039058f4ec0Provider: RecruitmentDependency {
     var fetchRecruitmentListUseCase: any FetchRecruitmentListUseCase {
@@ -188,19 +226,6 @@ private class RecruitmentDependency799de5378039058f4ec0Provider: RecruitmentDepe
 /// ^->AppComponent->RecruitmentComponent
 private func factoryb1923ea1b010875d9389f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return RecruitmentDependency799de5378039058f4ec0Provider(appComponent: parent1(component) as! AppComponent)
-}
-private class FindWorkSpaceDependencya6881a191be8b67a7f28Provider: FindWorkSpaceDependency {
-    var fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase {
-        return appComponent.fetchStudentCompanyListUseCase
-    }
-    private let appComponent: AppComponent
-    init(appComponent: AppComponent) {
-        self.appComponent = appComponent
-    }
-}
-/// ^->AppComponent->FindWorkSpaceComponent
-private func factory356b7b8d0b5d948a9152f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return FindWorkSpaceDependencya6881a191be8b67a7f28Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class MenuDependency43a0e3ba5712a2a90856Provider: MenuDependency {
 
@@ -228,15 +253,13 @@ extension AppComponent: Registration {
         localTable["recruitmentsRepository-any RecruitmentsRepository"] = { [unowned self] in self.recruitmentsRepository as Any }
         localTable["fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"] = { [unowned self] in self.fetchRecruitmentDetailUseCase as Any }
         localTable["fetchRecruitmentListUseCase-any FetchRecruitmentListUseCase"] = { [unowned self] in self.fetchRecruitmentListUseCase as Any }
-        localTable["remoteCodesDataSource-any RemoteCodesDataSource"] = { [unowned self] in self.remoteCodesDataSource as Any }
-        localTable["codesRepository-any CodesRepository"] = { [unowned self] in self.codesRepository as Any }
-        localTable["fetchCodesUseCase-any FetchCodesUseCase"] = { [unowned self] in self.fetchCodesUseCase as Any }
         localTable["signinComponent-SigninComponent"] = { [unowned self] in self.signinComponent as Any }
         localTable["signupComponent-SignupComponent"] = { [unowned self] in self.signupComponent as Any }
         localTable["splashComponent-SplashComponent"] = { [unowned self] in self.splashComponent as Any }
         localTable["mainTabComponent-MainTabComponent"] = { [unowned self] in self.mainTabComponent as Any }
         localTable["recruitmentComponent-RecruitmentComponent"] = { [unowned self] in self.recruitmentComponent as Any }
-        localTable["findWorkSpaceComponent-FindWorkSpaceComponent"] = { [unowned self] in self.findWorkSpaceComponent as Any }
+        localTable["findCompanyComponent-FindCompanyComponent"] = { [unowned self] in self.findCompanyComponent as Any }
+        localTable["findCompanyDetailComponent-FindCompanyDetailComponent"] = { [unowned self] in self.findCompanyDetailComponent as Any }
         localTable["homeComponent-HomeComponent"] = { [unowned self] in self.homeComponent as Any }
         localTable["myPageComponent-MyPageComponent"] = { [unowned self] in self.myPageComponent as Any }
         localTable["menuComponent-MenuComponent"] = { [unowned self] in self.menuComponent as Any }
@@ -253,6 +276,9 @@ extension AppComponent: Registration {
         localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
         localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
         localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
+        localTable["remoteCodesDataSource-any RemoteCodesDataSource"] = { [unowned self] in self.remoteCodesDataSource as Any }
+        localTable["codesRepository-any CodesRepository"] = { [unowned self] in self.codesRepository as Any }
+        localTable["fetchCodesUseCase-any FetchCodesUseCase"] = { [unowned self] in self.fetchCodesUseCase as Any }
         localTable["remoteApplicationsDataSource-any RemoteApplicationsDataSource"] = { [unowned self] in self.remoteApplicationsDataSource as Any }
         localTable["applicationsRepository-any ApplicationsRepository"] = { [unowned self] in self.applicationsRepository as Any }
         localTable["applyCompanyUseCase-any ApplyCompanyUseCase"] = { [unowned self] in self.applyCompanyUseCase as Any }
@@ -263,6 +289,11 @@ extension AppComponent: Registration {
         localTable["companiesRepository-any CompaniesRepository"] = { [unowned self] in self.companiesRepository as Any }
         localTable["fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"] = { [unowned self] in self.fetchCompanyInfoDetailUseCase as Any }
         localTable["fetchStudentCompanyListUseCase-any FetchStudentCompanyListUseCase"] = { [unowned self] in self.fetchStudentCompanyListUseCase as Any }
+        localTable["remoteReviewsDataSource-any RemoteReviewsDataSource"] = { [unowned self] in self.remoteReviewsDataSource as Any }
+        localTable["reviewsRepository-any ReviewsRepository"] = { [unowned self] in self.reviewsRepository as Any }
+        localTable["fetchReviewDetailUseCase-any FetchReviewDetailUseCase"] = { [unowned self] in self.fetchReviewDetailUseCase as Any }
+        localTable["fetchReviewListUseCase-any FetchReviewListUseCase"] = { [unowned self] in self.fetchReviewListUseCase as Any }
+        localTable["postReviewUseCase-any PostReviewUseCase"] = { [unowned self] in self.postReviewUseCase as Any }
     }
 }
 extension SplashComponent: Registration {
@@ -309,18 +340,25 @@ extension HomeComponent: Registration {
         keyPathToName[\HomeDependency.fetchTotalPassStudentUseCase] = "fetchTotalPassStudentUseCase-any FetchTotalPassStudentUseCase"
         keyPathToName[\HomeDependency.fetchStudentInfoUseCase] = "fetchStudentInfoUseCase-any FetchStudentInfoUseCase"
         keyPathToName[\HomeDependency.recruitmentComponent] = "recruitmentComponent-RecruitmentComponent"
-        keyPathToName[\HomeDependency.findWorkSpaceComponent] = "findWorkSpaceComponent-FindWorkSpaceComponent"
+        keyPathToName[\HomeDependency.findCompanyComponent] = "findCompanyComponent-FindCompanyComponent"
+    }
+}
+extension FindCompanyComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\FindCompanyDependency.fetchStudentCompanyListUseCase] = "fetchStudentCompanyListUseCase-any FetchStudentCompanyListUseCase"
+        keyPathToName[\FindCompanyDependency.findCompanyDetailComponent] = "findCompanyDetailComponent-FindCompanyDetailComponent"
+    }
+}
+extension FindCompanyDetailComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\FindCompanyDetailDependency.fetchCompanyInfoDetailUseCase] = "fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"
+        keyPathToName[\FindCompanyDetailDependency.fetchReviewListUseCase] = "fetchReviewListUseCase-any FetchReviewListUseCase"
     }
 }
 extension RecruitmentComponent: Registration {
     public func registerItems() {
         keyPathToName[\RecruitmentDependency.fetchRecruitmentListUseCase] = "fetchRecruitmentListUseCase-any FetchRecruitmentListUseCase"
         keyPathToName[\RecruitmentDependency.bookmarkUseCase] = "bookmarkUseCase-any BookmarkUseCase"
-    }
-}
-extension FindWorkSpaceComponent: Registration {
-    public func registerItems() {
-        keyPathToName[\FindWorkSpaceDependency.fetchStudentCompanyListUseCase] = "fetchStudentCompanyListUseCase-any FetchStudentCompanyListUseCase"
     }
 }
 extension MenuComponent: Registration {
@@ -352,8 +390,9 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->RootComponent", factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->SigninComponent", factory2882a056d84a613debccf47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->HomeComponent", factory67229cdf0f755562b2b1f47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->FindCompanyComponent", factory161fb699dfcd446598cbf47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->FindCompanyDetailComponent", factoryca6789757d5d9bbb6659f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RecruitmentComponent", factoryb1923ea1b010875d9389f47b58f8f304c97af4d5)
-    registerProviderFactory("^->AppComponent->FindWorkSpaceComponent", factory356b7b8d0b5d948a9152f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3e3b0c44298fc1c149afb)
 }
 #endif

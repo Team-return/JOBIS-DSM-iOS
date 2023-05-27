@@ -1,14 +1,18 @@
 import DesignSystem
 import SwiftUI
 
-struct FindWorkSpaceView: View {
-    @StateObject var viewModel: FindWorkSpaceViewModel
+struct FindCompanyView: View {
+    @StateObject var viewModel: FindCompanyViewModel
     @Environment(\.dismiss) var dismiss
 
+    private let findCompanyDetailComponent: FindCompanyDetailComponent
+
     init(
-        viewModel: FindWorkSpaceViewModel
+        viewModel: FindCompanyViewModel,
+        findCompanyDetailComponent: FindCompanyDetailComponent
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.findCompanyDetailComponent = findCompanyDetailComponent
     }
 
     var body: some View {
@@ -18,10 +22,13 @@ struct FindWorkSpaceView: View {
                     Button {
                         viewModel.isNavigateCompanyDetail.toggle()
                     } label: {
-                        FindWorkSpaceListCell(companyEntity: companyEntity)
+                        FindCompanyListCell(
+                            companyEntity: companyEntity,
+                            findCompanyDetailComponent: findCompanyDetailComponent
+                        )
                     }
                     .onAppear {
-                        viewModel.appendFindWorkSpaceList(list: companyEntity)
+                        viewModel.appendFindCompanyList(list: companyEntity)
                     }
                     .listRowSeparator(.hidden)
                     .listRowBackground(Color.clear)

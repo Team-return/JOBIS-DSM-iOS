@@ -6,6 +6,8 @@ import SigninFeature
 import SignupFeature
 import MainTabFeature
 import HomeFeature
+import FindCompanyFeature
+import RecruitmentFeature
 import MyPageFeature
 import MenuFeature
 import SplashFeature
@@ -55,8 +57,11 @@ public extension AppComponent {
     var recruitmentComponent: RecruitmentComponent {
         RecruitmentComponent(parent: self)
     }
-    var findWorkSpaceComponent: FindWorkSpaceComponent {
-        FindWorkSpaceComponent(parent: self)
+    var findCompanyComponent: FindCompanyComponent {
+        FindCompanyComponent(parent: self)
+    }
+    var findCompanyDetailComponent: FindCompanyDetailComponent {
+        FindCompanyDetailComponent(parent: self)
     }
     var homeComponent: HomeComponent {
         HomeComponent(parent: self)

@@ -16,5 +16,5 @@ public struct BookmarksRepositoryImpl: BookmarksRepository {
 
     public func bookmark(id: Int) -> AnyPublisher<Void, Error> {
         remoteBookmarksDataSource.bookmark(id: id)
-    }    
+    }
 }
