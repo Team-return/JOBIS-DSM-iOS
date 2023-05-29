@@ -2,15 +2,25 @@ import NeedleFoundation
 import SwiftUI
 import JwtStoreInterface
 import RootFeature
+import RootFeatureInterface
 import SigninFeature
+import SigninFeatureInterface
 import SignupFeature
+import SignupFeatureInterface
 import MainTabFeature
+import MainTabFeatureInterface
 import HomeFeature
+import HomeFeatureInterface
 import FindCompanyFeature
+import FindCompanyFeatureInterface
 import RecruitmentFeature
+import RecruitmentFeatureInterface
 import MyPageFeature
+import MyPageFeatureInterface
 import MenuFeature
+import MenuFeatureInterface
 import SplashFeature
+import SplashFeatureInterface
 
 public final class AppComponent: BootstrapComponent {
     private let _keychain: any Keychain
@@ -36,40 +46,38 @@ public final class AppComponent: BootstrapComponent {
     }
 }
 
-// MARK: - Auth
 public extension AppComponent {
-    var signinComponent: SigninComponent {
+    var signinFactory: any SigninFactory {
         SigninComponent(parent: self)
     }
-    var signupComponent: SignupComponent {
+    var signupFactory: any SignupFactory {
         SignupComponent(parent: self)
     }
-    var splashComponent: SplashComponent {
+    var splashFactory: any SplashFactory {
         SplashComponent(parent: self)
     }
-}
-
-// MARK: - Main
-public extension AppComponent {
-    var mainTabComponent: MainTabComponent {
+    var mainTabFactory: any MainTabFactory {
         MainTabComponent(parent: self)
     }
-    var recruitmentComponent: RecruitmentComponent {
+    var recruitmentFactory: any RecruitmentFactory {
         RecruitmentComponent(parent: self)
     }
-    var findCompanyComponent: FindCompanyComponent {
+    var recruitmentDetailFactory: any RecruitmentDetailFactory {
+        RecruitmentDetailComponent(parent: self)
+    }
+    var findCompanyFactory: any FindCompanyFactory {
         FindCompanyComponent(parent: self)
     }
-    var findCompanyDetailComponent: FindCompanyDetailComponent {
+    var findCompanyDetailFactory: any FindCompanyDetailFactory {
         FindCompanyDetailComponent(parent: self)
     }
-    var homeComponent: HomeComponent {
+    var homeFactory: any HomeFactory {
         HomeComponent(parent: self)
     }
-    var myPageComponent: MyPageComponent {
+    var myPageFactory: any MyPageFactory {
         MyPageComponent(parent: self)
     }
-    var menuComponent: MenuComponent {
+    var menuFactory: any MenuFactory {
         MenuComponent(parent: self)
     }
 }

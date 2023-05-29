@@ -1,21 +1,57 @@
 import Foundation
 
 public struct RecruitmentDetailResponseDTO: Decodable {
-    let areas: [AreaResponseDTO]
-    let preferentialTreatment: String?
-    let requiredGrade: Int?
-    let workHours: Int
-    let requiredLicenses: [String]?
-    let hiringProgress: [String]
-    let trainPay: Int
-    let pay: Int?
-    let benefits: String
-    let military: Bool
-    let submitDocument: String?
-    let startDate, endDate: String
-    let etc: String?
+    public let companyID: Int
+    public let areas: [AreaResponseDTO]
+    public let preferentialTreatment: String?
+    public let requiredGrade: Int?
+    public let workHours: Int
+    public let requiredLicenses: [String]?
+    public let hiringProgress: [InterviewType]
+    public let trainPay: Int
+    public let pay: Int?
+    public let benefits: String?
+    public let military: Bool
+    public let submitDocument: String
+    public let startDate, endDate: String
+    public let etc: String?
+
+    public init(
+        companyID: Int,
+        areas: [AreaResponseDTO],
+        preferentialTreatment: String?,
+        requiredGrade: Int?,
+        workHours: Int,
+        requiredLicenses: [String]?,
+        hiringProgress: [InterviewType],
+        trainPay: Int,
+        pay: Int?,
+        benefits: String?,
+        military: Bool,
+        submitDocument: String,
+        startDate: String,
+        endDate: String,
+        etc: String?
+    ) {
+        self.companyID = companyID
+        self.areas = areas
+        self.preferentialTreatment = preferentialTreatment
+        self.requiredGrade = requiredGrade
+        self.workHours = workHours
+        self.requiredLicenses = requiredLicenses
+        self.hiringProgress = hiringProgress
+        self.trainPay = trainPay
+        self.pay = pay
+        self.benefits = benefits
+        self.military = military
+        self.submitDocument = submitDocument
+        self.startDate = startDate
+        self.endDate = endDate
+        self.etc = etc
+    }
 
     enum CodingKeys: String, CodingKey {
+        case companyID = "company_id"
         case areas
         case preferentialTreatment = "preferential_treatment"
         case requiredGrade = "required_grade"
@@ -32,14 +68,28 @@ public struct RecruitmentDetailResponseDTO: Decodable {
 }
 
 public struct AreaResponseDTO: Decodable {
-    let recruitAreaID: String
-    let job, tech: [String]
-    let hiring: Int
-    let majorTask: String
+    public let id: Int
+    public let job: String
+    public let tech: [String]
+    public let hiring: Int
+    public let majorTask: String
+
+    public init(
+        id: Int,
+        job: String,
+        tech: [String],
+        hiring: Int,
+        majorTask: String
+    ) {
+        self.id = id
+        self.job = job
+        self.tech = tech
+        self.hiring = hiring
+        self.majorTask = majorTask
+    }
 
     enum CodingKeys: String, CodingKey {
-        case recruitAreaID = "recruit_area_id"
-        case job, tech, hiring
+        case id, job, tech, hiring
         case majorTask = "major_task"
     }
 }
@@ -47,20 +97,23 @@ public struct AreaResponseDTO: Decodable {
 public extension RecruitmentDetailResponseDTO {
     func toDomain() -> RecruitmentDetailEntity {
         RecruitmentDetailEntity(
+            companyID: companyID,
             areas: areas.map { $0.toDomain() },
-            preferentialTreatment: preferentialTreatment,
+            preferentialTreatment: preferentialTreatment ?? "없음",
             requiredGrade: requiredGrade,
-            workHours: workHours,
-            requiredLicenses: requiredLicenses,
-            hiringProgress: hiringProgress,
-            trainPay: trainPay,
+            workHours: String(workHours),
+            requiredLicenses: requiredLicenses?.joined(separator: ", ") ?? "없음",
+            hiringProgress: hiringProgress.enumerated().map { (index, value) in
+                "\(index + 1). \(value.localizedString())"
+            }.joined(separator: "\n"),
+            trainPay: String(trainPay),
             pay: pay,
-            benefits: benefits,
+            benefits: benefits ?? "없음",
             military: military,
             submitDocument: submitDocument,
             startDate: startDate,
             endDate: endDate,
-            etc: etc
+            etc: etc ?? "없음"
         )
     }
 }
@@ -68,7 +121,7 @@ public extension RecruitmentDetailResponseDTO {
 public extension AreaResponseDTO {
     func toDomain() -> AreaEntity {
         AreaEntity(
-            recruitAreaID: recruitAreaID,
+            id: String(id),
             job: job,
             tech: tech,
             hiring: hiring,

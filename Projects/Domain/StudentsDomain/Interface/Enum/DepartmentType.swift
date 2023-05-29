@@ -5,7 +5,7 @@ public enum DepartmentType: String, Codable {
     case softwareDevelop = "SOFTWARE_DEVELOP"
     case embeddedSoftware = "EMBEDDED_SOFTWARE"
     case informationSecurity = "INFORMATION_SECURITY"
-    case ai = "AI"
+    case ai = "AI_SOFTWARE"
 
     public func localizedString() -> String {
         switch self {

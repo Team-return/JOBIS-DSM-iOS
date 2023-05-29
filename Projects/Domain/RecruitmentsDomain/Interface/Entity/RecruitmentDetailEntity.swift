@@ -1,36 +1,39 @@
 import Foundation
 
 public struct RecruitmentDetailEntity: Equatable {
+    public let companyID: Int
     public let areas: [AreaEntity]
-    public let preferentialTreatment: String?
+    public let preferentialTreatment: String
     public let requiredGrade: Int?
-    public let workHours: Int
-    public let requiredLicenses: [String]?
-    public let hiringProgress: [String]
-    public let trainPay: Int
+    public let workHours: String
+    public let requiredLicenses: String
+    public let hiringProgress: String
+    public let trainPay: String
     public let pay: Int?
     public let benefits: String
     public let military: Bool
-    public let submitDocument: String?
+    public let submitDocument: String
     public let startDate, endDate: String
-    public let etc: String?
+    public let etc: String
 
     public init(
+        companyID: Int,
         areas: [AreaEntity],
-        preferentialTreatment: String?,
+        preferentialTreatment: String,
         requiredGrade: Int?,
-        workHours: Int,
-        requiredLicenses: [String]?,
-        hiringProgress: [String],
-        trainPay: Int,
+        workHours: String,
+        requiredLicenses: String,
+        hiringProgress: String,
+        trainPay: String,
         pay: Int?,
         benefits: String,
         military: Bool,
-        submitDocument: String?,
+        submitDocument: String,
         startDate: String,
         endDate: String,
-        etc: String?
+        etc: String
     ) {
+        self.companyID = companyID
         self.areas = areas
         self.preferentialTreatment = preferentialTreatment
         self.requiredGrade = requiredGrade
@@ -48,20 +51,21 @@ public struct RecruitmentDetailEntity: Equatable {
     }
 }
 
-public struct AreaEntity: Equatable {
-    public let recruitAreaID: String
-    public let job, tech: [String]
+public struct AreaEntity: Equatable, Hashable {
+    public let id: String
+    public let job: String
+    public let tech: [String]
     public let hiring: Int
     public let majorTask: String
 
     public init(
-        recruitAreaID: String,
-        job: [String],
+        id: String,
+        job: String,
         tech: [String],
         hiring: Int,
         majorTask: String
     ) {
-        self.recruitAreaID = recruitAreaID
+        self.id = id
         self.job = job
         self.tech = tech
         self.hiring = hiring

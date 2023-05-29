@@ -5,12 +5,12 @@ public struct CompanyInfoDetailEntity: Equatable {
     public let companyName: String
     public let companyProfileURL: String
     public let companyIntroduce, zipCode1, address1: String
-    public let zipCode2, address2: String?
+    public let zipCode2, address2: String
     public let manager1, phoneNumber1: String
-    public let manager2, phoneNumber2, fax: String?
+    public let manager2, phoneNumber2, fax: String
     public let email, representativeName, foundedAt: String
-    public let workerNumber: Int
-    public let take: Double
+    public let workerNumber: String
+    public let take: String
     public let recruitmentID: Int?
 
     public init(
@@ -20,18 +20,18 @@ public struct CompanyInfoDetailEntity: Equatable {
         companyIntroduce: String,
         zipCode1: String,
         address1: String,
-        zipCode2: String?,
-        address2: String?,
+        zipCode2: String,
+        address2: String,
         manager1: String,
         phoneNumber1: String,
-        manager2: String?,
-        phoneNumber2: String?,
-        fax: String?,
+        manager2: String,
+        phoneNumber2: String,
+        fax: String,
         email: String,
         representativeName: String,
         foundedAt: String,
-        workerNumber: Int,
-        take: Double,
+        workerNumber: String,
+        take: String,
         recruitmentID: Int?
     ) {
         self.businessNumber = businessNumber

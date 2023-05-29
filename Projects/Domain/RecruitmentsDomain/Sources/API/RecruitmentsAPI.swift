@@ -17,7 +17,7 @@ extension RecruitmentsAPI: JobisAPI {
     public var urlPath: String {
         switch self {
         case let .fetchRecruitmentDetail(id):
-            return "/student/\(id)"
+            return "/\(id)"
         case .fetchRecruitmentList:
             return "/student"
         }
@@ -39,11 +39,8 @@ extension RecruitmentsAPI: JobisAPI {
                 "company": company ?? ""
             ],
             encoding: URLEncoding.queryString)
-        case let .fetchRecruitmentDetail(page):
-            return .requestParameters(parameters: [
-                    "page": page
-                ],
-                encoding: URLEncoding.queryString)
+        case .fetchRecruitmentDetail:
+            return .requestPlain
         }
     }
 
