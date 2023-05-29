@@ -46,7 +46,7 @@ struct FindCompanyDetailView: View {
                     if let reviewList = viewModel.reviewList {
                         Text("면접 후기")
                             .JOBISFont(.body(.body2), color: .Sub.gray70)
-                        
+
                         ForEach(reviewList.reviews, id: \.self) { review in
                             reviewCell(title: review.writer, date: review.createdDate)
                         }

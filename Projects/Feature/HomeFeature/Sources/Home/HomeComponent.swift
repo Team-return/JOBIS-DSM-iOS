@@ -2,16 +2,16 @@ import SwiftUI
 import ApplicationsDomainInterface
 import StudentsDomainInterface
 import HomeFeatureInterface
-import RecruitmentFeature
-import FindCompanyFeature
+import RecruitmentFeatureInterface
+import FindCompanyFeatureInterface
 import NeedleFoundation
 
 public protocol HomeDependency: Dependency {
     var fetchApplicationUseCase: any FetchApplicationUseCase { get }
     var fetchTotalPassStudentUseCase: any FetchTotalPassStudentUseCase { get }
     var fetchStudentInfoUseCase: any FetchStudentInfoUseCase { get }
-    var recruitmentComponent: RecruitmentComponent { get }
-    var findCompanyComponent: FindCompanyComponent { get }
+    var recruitmentFactory: any RecruitmentFactory { get }
+    var findCompanyFactory: any FindCompanyFactory { get }
 }
 
 public final class HomeComponent: Component<HomeDependency>, HomeFactory {
@@ -23,8 +23,8 @@ public final class HomeComponent: Component<HomeDependency>, HomeFactory {
                     fetchTotalPassStudentUseCase: dependency.fetchTotalPassStudentUseCase,
                     fetchStudentInfoUseCase: dependency.fetchStudentInfoUseCase
                 ),
-                recruitmentComponent: dependency.recruitmentComponent,
-                findCompanyComponent: dependency.findCompanyComponent
+                recruitmentFactory: dependency.recruitmentFactory,
+                findCompanyFactory: dependency.findCompanyFactory
             )
         }
     }

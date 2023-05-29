@@ -45,13 +45,13 @@ final class FindCompanyDetailViewModel: BaseViewModel {
                 String(companyInfoDetail.workerNumber),
                 String(companyInfoDetail.take),
                 companyInfoDetail.address1,
-                companyInfoDetail.address2 ?? "없음",
+                companyInfoDetail.address2,
                 companyInfoDetail.manager1,
                 companyInfoDetail.phoneNumber1,
-                companyInfoDetail.manager2 ?? "없음",
-                companyInfoDetail.phoneNumber2 ?? "없음",
+                companyInfoDetail.manager2,
+                companyInfoDetail.phoneNumber2,
                 companyInfoDetail.email,
-                companyInfoDetail.fax ?? "없음"
+                companyInfoDetail.fax
             ]
         }
     }

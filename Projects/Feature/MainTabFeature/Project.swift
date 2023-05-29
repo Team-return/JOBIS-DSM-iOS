@@ -8,8 +8,8 @@ let project = Project.makeModule(
     targets: [.interface, .unitTest],
     internalDependencies: [
         .Feature.BaseFeature,
-        .Feature.HomeFeature,
-        .Feature.MenuFeature,
-        .Feature.MyPageFeature
+        .Feature.HomeFeatureInterface,
+        .Feature.MenuFeatureInterface,
+        .Feature.MyPageFeatureInterface
     ]
 )

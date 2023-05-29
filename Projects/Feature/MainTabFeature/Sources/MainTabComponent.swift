@@ -1,21 +1,22 @@
 import NeedleFoundation
 import SwiftUI
-import MenuFeature
-import HomeFeature
-import MyPageFeature
+import MainTabFeatureInterface
+import MenuFeatureInterface
+import HomeFeatureInterface
+import MyPageFeatureInterface
 
 public protocol MainTabDependency: Dependency {
-    var homeComponent: HomeComponent { get }
-    var myPageComponent: MyPageComponent { get }
-    var menuComponent: MenuComponent { get }
+    var homeFactory: any HomeFactory { get }
+    var myPageFactory: any MyPageFactory { get }
+    var menuFactory: any MenuFactory { get }
 }
 
-public final class MainTabComponent: Component<MainTabDependency> {
+public final class MainTabComponent: Component<MainTabDependency>, MainTabFactory {
     public func makeView() -> some View {
         MainTabView(
-            homeComponent: dependency.homeComponent,
-            myPageComponent: dependency.myPageComponent,
-            menuComponent: dependency.menuComponent
+            homeFactory: dependency.homeFactory,
+            myPageFactory: dependency.myPageFactory,
+            menuFactory: dependency.menuFactory
         )
     }
 }

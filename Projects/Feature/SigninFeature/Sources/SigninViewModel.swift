@@ -1,7 +1,6 @@
 import Foundation
 import BaseFeature
 import UsersDomainInterface
-import UsersDomain
 import Combine
 
 final class SigninViewModel: BaseViewModel {

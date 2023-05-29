@@ -1,7 +1,7 @@
 import SwiftUI
-import MenuFeature
-import HomeFeature
-import MyPageFeature
+import MenuFeatureInterface
+import HomeFeatureInterface
+import MyPageFeatureInterface
 import BaseFeature
 import DesignSystem
 import UtilityModule
@@ -18,36 +18,36 @@ struct MainTabView: View {
         (DesignSystemAsset.Icons.menu.swiftUIImage, "메뉴", .menu)
     ]
 
-    private let homeComponent: HomeComponent
-//    private let recruitmentComponent: RecruitmentComponent
-    private let myPageComponent: MyPageComponent
-    private let menuComponent: MenuComponent
+    private let homeFactory: any HomeFactory
+    private let myPageFactory: any MyPageFactory
+    private let menuFactory: any MenuFactory
 
     init(
-        homeComponent: HomeComponent,
-//        recruitmentComponent: RecruitmentComponent,
-        myPageComponent: MyPageComponent,
-        menuComponent: MenuComponent
+        homeFactory: any HomeFactory,
+        myPageFactory: any MyPageFactory,
+        menuFactory: any MenuFactory
     ) {
-        self.homeComponent = homeComponent
-//        self.recruitmentComponent = recruitmentComponent
-        self.myPageComponent = myPageComponent
-        self.menuComponent = menuComponent
+        self.homeFactory = homeFactory
+        self.myPageFactory = myPageFactory
+        self.menuFactory = menuFactory
     }
 
     var body: some View {
         ZStack {
             TabView(selection: $selection) {
-                homeComponent.makeView()
+                homeFactory.makeView()
+                    .eraseToAnyView()
                     .tag(TabFlow.home)
 
                 Text("임시 RecruitmentComponent.makeView()")
                     .tag(TabFlow.recruitment)
 
-                myPageComponent.makeView()
+                myPageFactory.makeView()
+                    .eraseToAnyView()
                     .tag(TabFlow.profile)
 
-                menuComponent.makeView()
+                menuFactory.makeView()
+                    .eraseToAnyView()
                     .tag(TabFlow.menu)
             }
             .environment(\.tabbarHidden, $tabbarHidden)

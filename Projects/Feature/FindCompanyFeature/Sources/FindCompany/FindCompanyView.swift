@@ -1,18 +1,19 @@
 import DesignSystem
 import SwiftUI
+import FindCompanyFeatureInterface
 
 struct FindCompanyView: View {
     @StateObject var viewModel: FindCompanyViewModel
     @Environment(\.dismiss) var dismiss
 
-    private let findCompanyDetailComponent: FindCompanyDetailComponent
+    private let findCompanyDetailFactory: any FindCompanyDetailFactory
 
     init(
         viewModel: FindCompanyViewModel,
-        findCompanyDetailComponent: FindCompanyDetailComponent
+        findCompanyDetailFactory: any FindCompanyDetailFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.findCompanyDetailComponent = findCompanyDetailComponent
+        self.findCompanyDetailFactory = findCompanyDetailFactory
     }
 
     var body: some View {
@@ -24,7 +25,7 @@ struct FindCompanyView: View {
                     } label: {
                         FindCompanyListCell(
                             companyEntity: companyEntity,
-                            findCompanyDetailComponent: findCompanyDetailComponent
+                            findCompanyDetailFactory: findCompanyDetailFactory
                         )
                     }
                     .onAppear {
