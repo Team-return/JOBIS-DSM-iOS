@@ -7,9 +7,3 @@ public struct AuthorityResponseDTO: Decodable {
         self.authority = authority
     }
 }
-
-public extension AuthorityResponseDTO {
-    func toDomain() -> AuthorityEntity {
-        AuthorityEntity(authority: authority)
-    }
-}
