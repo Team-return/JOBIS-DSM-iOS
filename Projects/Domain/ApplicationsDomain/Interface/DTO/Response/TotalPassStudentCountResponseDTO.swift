@@ -15,13 +15,3 @@ public struct TotalPassStudentResponseDTO: Codable {
         case approvedCount = "approved_count"
     }
 }
-
-public extension TotalPassStudentResponseDTO {
-    func toDomain() -> TotalPassStudentEntity {
-        TotalPassStudentEntity(
-            totalStudentCount: totalStudentCount,
-            passedCount: passedCount,
-            approvedCount: approvedCount
-        )
-    }
-}
