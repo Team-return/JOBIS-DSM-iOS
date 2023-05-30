@@ -10,7 +10,7 @@ public struct BookmarksRepositoryImpl: BookmarksRepository {
         self.remoteBookmarksDataSource = remoteBookmarksDataSource
     }
 
-    public func fetchBookmarkList() -> AnyPublisher<BookmarksListEntity, Error> {
+    public func fetchBookmarkList() -> AnyPublisher<BookmarkListEntity, Error> {
         remoteBookmarksDataSource.fetchBookmarkList()
     }
 

@@ -23,9 +23,6 @@ struct RecruitmentDetailView: View {
             VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 12) {
                     KFImage(URL(string: profileURL))
-                        .placeholder({
-                            Color.Sub.gray40
-                        })
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 80, height: 80)

@@ -8,7 +8,7 @@ public struct FetchBookmarkListUseCaseImpl: FetchBookmarkListUseCase {
         self.bookmarksRepository = bookmarksRepository
     }
 
-    public func execute() -> AnyPublisher<BookmarksListEntity, Error> {
+    public func execute() -> AnyPublisher<BookmarkListEntity, Error> {
         bookmarksRepository.fetchBookmarkList()
     }
 }
