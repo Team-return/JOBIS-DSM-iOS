@@ -8,7 +8,7 @@ public struct FetchCodesUseCaseImpl: FetchCodesUseCase {
         self.codesRepository = codesRepository
     }
 
-    public func execute(keyword: String, type: CodeType) -> AnyPublisher<CodeEntity, Error> {
+    public func execute(keyword: String, type: CodeType) -> AnyPublisher<CodeListEntity, Error> {
         codesRepository.fetchCodes(keyword: keyword, type: type)
     }
 }
