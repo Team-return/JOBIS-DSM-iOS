@@ -1,14 +1,19 @@
 import DesignSystem
+import RecruitmentFeatureInterface
 import SwiftUI
 
 struct RecruitmentView: View {
     @StateObject var viewModel: RecruitmentViewModel
     @Environment(\.dismiss) var dismiss
 
+    private let recruitmentDetailFactory: any RecruitmentDetailFactory
+
     init(
-        viewModel: RecruitmentViewModel
+        viewModel: RecruitmentViewModel,
+        recruitmentDetailFactory: any RecruitmentDetailFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.recruitmentDetailFactory = recruitmentDetailFactory
     }
 
     var body: some View {
@@ -18,7 +23,10 @@ struct RecruitmentView: View {
                     Button {
                         viewModel.isNavigateRecruitmentDetail.toggle()
                     } label: {
-                        RecruitmentListCell(recruitmentEntity: recruitmentEntity) {
+                        RecruitmentListCell(
+                            recruitmentEntity: recruitmentEntity,
+                            recruitmentDetailFactory: recruitmentDetailFactory
+                        ) {
                             viewModel.bookmark(id: recruitmentEntity.recruitID)
                         }
                     }
@@ -42,6 +50,5 @@ struct RecruitmentView: View {
             viewModel.onAppear()
         }
         .jobisBackButton(title: "모집의뢰서 조회하기") { dismiss() }
-        .navigate(to: Text("모집의뢰서 Detail"), when: $viewModel.isNavigateRecruitmentDetail)
     }
 }

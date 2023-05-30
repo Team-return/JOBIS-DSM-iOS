@@ -28,7 +28,6 @@ open class BaseRemoteDataSource<API: JobisAPI> {
         requestPublisher(api)
             .map(\.data)
             .decode(type: dto, decoder: decoder)
-            .mapError { $0 as Error }
             .eraseToAnyPublisher()
     }
 

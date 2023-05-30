@@ -2,11 +2,11 @@ import SwiftUI
 import UsersDomainInterface
 import NeedleFoundation
 import SigninFeatureInterface
-import SignupFeature
+import SignupFeatureInterface
 
 public protocol SigninDependency: Dependency {
     var signinUseCase: any SigninUseCase { get }
-    var signupComponent: SignupComponent { get }
+    var signupFactory: any SignupFactory { get }
 }
 
 public final class SigninComponent: Component<SigninDependency>, SigninFactory {
@@ -15,7 +15,7 @@ public final class SigninComponent: Component<SigninDependency>, SigninFactory {
             viewModel: .init(
                 signinUseCase: dependency.signinUseCase
             ),
-            signupComponent: dependency.signupComponent
+            signupFactory: dependency.signupFactory
         )
     }
 }

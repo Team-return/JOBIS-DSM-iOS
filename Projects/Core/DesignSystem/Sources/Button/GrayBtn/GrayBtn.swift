@@ -7,8 +7,8 @@ public struct GrayBtn: View {
 
     public init(
         text: String,
-        action: @escaping () -> Void,
-        size: BtnSize = .medium
+        size: BtnSize = .medium,
+        action: @escaping () -> Void
     ) {
         self.text = text
         self.action = action
@@ -36,9 +36,9 @@ struct GrayBtn_Previews: PreviewProvider {
         ScrollView {
             VStack(spacing: 20) {
                 VStack {
-                    GrayBtn(text: "버튼", action: {}, size: .small)
-                    GrayBtn(text: "버튼", action: {}, size: .medium)
-                    GrayBtn(text: "버튼", action: {}, size: .large)
+                    GrayBtn(text: "버튼", size: .small, action: {})
+                    GrayBtn(text: "버튼", size: .medium, action: {})
+                    GrayBtn(text: "버튼", size: .large, action: {})
                 }
                 .padding(10)
                 .background(.white)

@@ -13,9 +13,9 @@ let configurations: [Configuration] = isCI ?
   .release(name: .prod)
 ] :
 [
-    .debug(name: .dev, xcconfig: .relativeToXCConfig(type: .dev, name: env.name)),
-  .debug(name: .stage, xcconfig: .relativeToXCConfig(type: .stage, name: env.name)),
-  .release(name: .prod, xcconfig: .relativeToXCConfig(type: .prod, name: env.name))
+    .debug(name: .dev, xcconfig: .relativeToXCConfig(type: .dev, name: env.targetName)),
+  .debug(name: .stage, xcconfig: .relativeToXCConfig(type: .stage, name: env.targetName)),
+  .release(name: .prod, xcconfig: .relativeToXCConfig(type: .prod, name: env.targetName))
 ]
 
 let settings: Settings =
@@ -27,22 +27,39 @@ let scripts: [TargetScript] = isCI ? [] : [.swiftLint, .needle]
 
 let targets: [Target] = [
     .init(
-        name: env.name,
+        name: env.targetName,
         platform: env.platform,
         product: .app,
-        bundleId: "\(env.organizationName).\(env.name)",
+        bundleId: "\(env.organizationName).\(env.targetName)",
         deploymentTarget: env.deploymentTarget,
         infoPlist: .file(path: "Support/Info.plist"),
         sources: ["Sources/**"],
         resources: ["Resources/**"],
-        entitlements: "Support/\(env.name).entitlements",
+        entitlements: "Support/\(env.appName).entitlements",
         scripts: scripts,
         dependencies: [
             .Core.JwtStore,
             .Core.JwtStoreInterface,
             .Feature.RootFeature,
-            .Feature.SplashFeature,
+            .Feature.RootFeatureInterface,
             .Feature.SigninFeature,
+            .Feature.SigninFeatureInterface,
+            .Feature.SignupFeature,
+            .Feature.SignupFeatureInterface,
+            .Feature.MainTabFeature,
+            .Feature.MainTabFeatureInterface,
+            .Feature.HomeFeature,
+            .Feature.HomeFeatureInterface,
+            .Feature.FindCompanyFeature,
+            .Feature.FindCompanyFeatureInterface,
+            .Feature.RecruitmentFeature,
+            .Feature.RecruitmentFeatureInterface,
+            .Feature.MyPageFeature,
+            .Feature.MyPageFeatureInterface,
+            .Feature.MenuFeature,
+            .Feature.MenuFeatureInterface,
+            .Feature.SplashFeature,
+            .Feature.SplashFeatureInterface,
             .Domain.UsersDomain,
             .Domain.AuthDomain,
             .Domain.RecruitmentsDomain,
@@ -54,32 +71,46 @@ let targets: [Target] = [
             .SPM.Needle
         ],
         settings: .settings(base: env.baseSetting)
+    ),
+    .init(
+        name: env.targetTestName,
+        platform: .iOS,
+        product: .unitTests,
+        bundleId: "\(env.organizationName).\(env.targetName)Tests",
+        deploymentTarget: env.deploymentTarget,
+        infoPlist: .default,
+        sources: ["Tests/**"],
+        dependencies: [
+            .SPM.Quick,
+            .SPM.Nimble,
+            .target(name: env.targetName)
+        ]
     )
 ]
 
 let schemes: [Scheme] = [
     .init(
-        name: "\(env.name)-DEV",
+        name: "\(env.targetName)-DEV",
         shared: true,
-        buildAction: .buildAction(targets: ["\(env.name)"]),
+        buildAction: .buildAction(targets: ["\(env.targetName)"]),
         runAction: .runAction(configuration: .dev),
         archiveAction: .archiveAction(configuration: .dev),
         profileAction: .profileAction(configuration: .dev),
         analyzeAction: .analyzeAction(configuration: .dev)
     ),
     .init(
-        name: "\(env.name)-STAGE",
+        name: "\(env.targetName)-STAGE",
         shared: true,
-        buildAction: .buildAction(targets: ["\(env.name)"]),
+        buildAction: .buildAction(targets: ["\(env.targetName)"]),
         runAction: .runAction(configuration: .stage),
         archiveAction: .archiveAction(configuration: .stage),
         profileAction: .profileAction(configuration: .stage),
         analyzeAction: .analyzeAction(configuration: .stage)
     ),
     .init(
-        name: "\(env.name)-PROD",
+        name: "\(env.targetName)-PROD",
         shared: true,
-        buildAction: .buildAction(targets: ["\(env.name)"]),
+        buildAction: .buildAction(targets: ["\(env.targetName)"]),
         runAction: .runAction(configuration: .prod),
         archiveAction: .archiveAction(configuration: .prod),
         profileAction: .profileAction(configuration: .prod),
@@ -88,7 +119,7 @@ let schemes: [Scheme] = [
 ]
 
 let project = Project(
-    name: env.name,
+    name: env.targetName,
     organizationName: env.organizationName,
     settings: settings,
     targets: targets,

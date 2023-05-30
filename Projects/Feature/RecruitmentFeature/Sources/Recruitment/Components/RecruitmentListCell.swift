@@ -1,4 +1,5 @@
 import SwiftUI
+import RecruitmentFeatureInterface
 import RecruitmentsDomainInterface
 import DesignSystem
 import Kingfisher
@@ -9,9 +10,16 @@ struct RecruitmentListCell: View {
     let recruitmentEntity: RecruitmentEntity
     let bookmark: () -> Void
 
-    init(recruitmentEntity: RecruitmentEntity, bookmark: @escaping () -> Void) {
+    private let recruitmentDetailFactory: any RecruitmentDetailFactory
+
+    init(
+        recruitmentEntity: RecruitmentEntity,
+        recruitmentDetailFactory: any RecruitmentDetailFactory,
+        bookmark: @escaping () -> Void
+    ) {
         self.recruitmentEntity = recruitmentEntity
         self.bookmark = bookmark
+        self.recruitmentDetailFactory = recruitmentDetailFactory
     }
 
     var body: some View {
@@ -67,6 +75,14 @@ struct RecruitmentListCell: View {
                 self.isBookmarked = self.recruitmentEntity.bookmarked
             }
         }
-
+        .sheet(isPresented: $isNaviagteDetail) {
+            recruitmentDetailFactory.makeView(
+                id: "\(recruitmentEntity.recruitID)",
+                profileURL: recruitmentEntity.companyProfileURL,
+                companyName: recruitmentEntity.companyName
+            )
+            .eraseToAnyView()
+            .presentationDragIndicator(.visible)
+        }
     }
 }

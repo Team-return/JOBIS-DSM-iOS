@@ -5,7 +5,7 @@ import NeedleFoundation
 
 public protocol FindCompanyDependency: Dependency {
     var fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase { get }
-    var findCompanyDetailComponent: FindCompanyDetailComponent { get }
+    var findCompanyDetailFactory: any FindCompanyDetailFactory { get }
 }
 
 public final class FindCompanyComponent: Component<FindCompanyDependency>, FindCompanyFactory {
@@ -13,7 +13,7 @@ public final class FindCompanyComponent: Component<FindCompanyDependency>, FindC
         FindCompanyView(
             viewModel: .init(
                 fetchStudentCompanyListUseCase: dependency.fetchStudentCompanyListUseCase),
-            findCompanyDetailComponent: dependency.findCompanyDetailComponent
+            findCompanyDetailFactory: dependency.findCompanyDetailFactory
         )
     }
 }

@@ -1,23 +1,24 @@
 import DesignSystem
-import FindCompanyFeature
-import RecruitmentFeature
+import FindCompanyFeatureInterface
+import RecruitmentFeatureInterface
 import SwiftUI
+import UtilityModule
 
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
     @Environment(\.tabbarHidden) var tabbarHidden
 
-    private let recruitmentComponent: RecruitmentComponent
-    private let findCompanyComponent: FindCompanyComponent
+    private let recruitmentFactory: any RecruitmentFactory
+    private let findCompanyFactory: any FindCompanyFactory
 
     init(
         viewModel: HomeViewModel,
-        recruitmentComponent: RecruitmentComponent,
-        findCompanyComponent: FindCompanyComponent
+        recruitmentFactory: any RecruitmentFactory,
+        findCompanyFactory: any FindCompanyFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.recruitmentComponent = recruitmentComponent
-        self.findCompanyComponent = findCompanyComponent
+        self.recruitmentFactory = recruitmentFactory
+        self.findCompanyFactory = findCompanyFactory
     }
 
     var body: some View {
@@ -67,8 +68,16 @@ struct HomeView: View {
         .onChange(of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindCompany) {
             tabbarHidden.wrappedValue = $0
         }
-        .navigate(to: recruitmentComponent.makeView(), when: $viewModel.isNavigateRecruitment)
-        .navigate(to: findCompanyComponent.makeView(), when: $viewModel.isNavigateFindCompany)
+        .navigate(
+            to: recruitmentFactory.makeView()
+                .eraseToAnyView(),
+            when: $viewModel.isNavigateRecruitment
+        )
+        .navigate(
+            to: findCompanyFactory.makeView()
+                .eraseToAnyView(),
+            when: $viewModel.isNavigateFindCompany
+        )
     }
 
     @ViewBuilder

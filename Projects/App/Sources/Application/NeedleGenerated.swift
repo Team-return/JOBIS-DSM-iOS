@@ -16,6 +16,7 @@ import HomeFeature
 import HomeFeatureInterface
 import JwtStoreInterface
 import MainTabFeature
+import MainTabFeatureInterface
 import MenuFeature
 import MenuFeatureInterface
 import MyPageFeature
@@ -90,14 +91,14 @@ private func factory86602ff0d0dbaf2cb017f47b58f8f304c97af4d5(_ component: Needle
     return SignupDependency1ff7d1355204bb65e850Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class MainTabDependency2826cdb310ed0b17a725Provider: MainTabDependency {
-    var homeComponent: HomeComponent {
-        return appComponent.homeComponent
+    var homeFactory: any HomeFactory {
+        return appComponent.homeFactory
     }
-    var myPageComponent: MyPageComponent {
-        return appComponent.myPageComponent
+    var myPageFactory: any MyPageFactory {
+        return appComponent.myPageFactory
     }
-    var menuComponent: MenuComponent {
-        return appComponent.menuComponent
+    var menuFactory: any MenuFactory {
+        return appComponent.menuFactory
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -120,14 +121,14 @@ private func factory0f6f456ebf157d02dfb3e3b0c44298fc1c149afb(_ component: Needle
     return MyPageDependency48d84b530313b3ee40feProvider()
 }
 private class RootDependency3944cc797a4a88956fb5Provider: RootDependency {
-    var signinComponent: SigninComponent {
-        return appComponent.signinComponent
+    var signinFactory: any SigninFactory {
+        return appComponent.signinFactory
     }
-    var mainTabComponent: MainTabComponent {
-        return appComponent.mainTabComponent
+    var mainTabFactory: any MainTabFactory {
+        return appComponent.mainTabFactory
     }
-    var splashComponent: SplashComponent {
-        return appComponent.splashComponent
+    var splashFactory: any SplashFactory {
+        return appComponent.splashFactory
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -142,8 +143,8 @@ private class SigninDependencyde06a9d0b22764487733Provider: SigninDependency {
     var signinUseCase: any SigninUseCase {
         return appComponent.signinUseCase
     }
-    var signupComponent: SignupComponent {
-        return appComponent.signupComponent
+    var signupFactory: any SignupFactory {
+        return appComponent.signupFactory
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -164,11 +165,11 @@ private class HomeDependency443c4e1871277bd8432aProvider: HomeDependency {
     var fetchStudentInfoUseCase: any FetchStudentInfoUseCase {
         return appComponent.fetchStudentInfoUseCase
     }
-    var recruitmentComponent: RecruitmentComponent {
-        return appComponent.recruitmentComponent
+    var recruitmentFactory: any RecruitmentFactory {
+        return appComponent.recruitmentFactory
     }
-    var findCompanyComponent: FindCompanyComponent {
-        return appComponent.findCompanyComponent
+    var findCompanyFactory: any FindCompanyFactory {
+        return appComponent.findCompanyFactory
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -183,8 +184,8 @@ private class FindCompanyDependency40f7eec2789a2c3ddf11Provider: FindCompanyDepe
     var fetchStudentCompanyListUseCase: any FetchStudentCompanyListUseCase {
         return appComponent.fetchStudentCompanyListUseCase
     }
-    var findCompanyDetailComponent: FindCompanyDetailComponent {
-        return appComponent.findCompanyDetailComponent
+    var findCompanyDetailFactory: any FindCompanyDetailFactory {
+        return appComponent.findCompanyDetailFactory
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -218,6 +219,9 @@ private class RecruitmentDependency799de5378039058f4ec0Provider: RecruitmentDepe
     var bookmarkUseCase: any BookmarkUseCase {
         return appComponent.bookmarkUseCase
     }
+    var recruitmentDetailFactory: any RecruitmentDetailFactory {
+        return appComponent.recruitmentDetailFactory
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -226,6 +230,19 @@ private class RecruitmentDependency799de5378039058f4ec0Provider: RecruitmentDepe
 /// ^->AppComponent->RecruitmentComponent
 private func factoryb1923ea1b010875d9389f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return RecruitmentDependency799de5378039058f4ec0Provider(appComponent: parent1(component) as! AppComponent)
+}
+private class RecruitmentDetailDependency56f94833461a60671180Provider: RecruitmentDetailDependency {
+    var fetchRecruitmentDetailUseCase: any FetchRecruitmentDetailUseCase {
+        return appComponent.fetchRecruitmentDetailUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->RecruitmentDetailComponent
+private func factory14d63d6fecffe94dd0e1f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return RecruitmentDetailDependency56f94833461a60671180Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class MenuDependency43a0e3ba5712a2a90856Provider: MenuDependency {
 
@@ -253,16 +270,17 @@ extension AppComponent: Registration {
         localTable["recruitmentsRepository-any RecruitmentsRepository"] = { [unowned self] in self.recruitmentsRepository as Any }
         localTable["fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"] = { [unowned self] in self.fetchRecruitmentDetailUseCase as Any }
         localTable["fetchRecruitmentListUseCase-any FetchRecruitmentListUseCase"] = { [unowned self] in self.fetchRecruitmentListUseCase as Any }
-        localTable["signinComponent-SigninComponent"] = { [unowned self] in self.signinComponent as Any }
-        localTable["signupComponent-SignupComponent"] = { [unowned self] in self.signupComponent as Any }
-        localTable["splashComponent-SplashComponent"] = { [unowned self] in self.splashComponent as Any }
-        localTable["mainTabComponent-MainTabComponent"] = { [unowned self] in self.mainTabComponent as Any }
-        localTable["recruitmentComponent-RecruitmentComponent"] = { [unowned self] in self.recruitmentComponent as Any }
-        localTable["findCompanyComponent-FindCompanyComponent"] = { [unowned self] in self.findCompanyComponent as Any }
-        localTable["findCompanyDetailComponent-FindCompanyDetailComponent"] = { [unowned self] in self.findCompanyDetailComponent as Any }
-        localTable["homeComponent-HomeComponent"] = { [unowned self] in self.homeComponent as Any }
-        localTable["myPageComponent-MyPageComponent"] = { [unowned self] in self.myPageComponent as Any }
-        localTable["menuComponent-MenuComponent"] = { [unowned self] in self.menuComponent as Any }
+        localTable["signinFactory-any SigninFactory"] = { [unowned self] in self.signinFactory as Any }
+        localTable["signupFactory-any SignupFactory"] = { [unowned self] in self.signupFactory as Any }
+        localTable["splashFactory-any SplashFactory"] = { [unowned self] in self.splashFactory as Any }
+        localTable["mainTabFactory-any MainTabFactory"] = { [unowned self] in self.mainTabFactory as Any }
+        localTable["recruitmentFactory-any RecruitmentFactory"] = { [unowned self] in self.recruitmentFactory as Any }
+        localTable["recruitmentDetailFactory-any RecruitmentDetailFactory"] = { [unowned self] in self.recruitmentDetailFactory as Any }
+        localTable["findCompanyFactory-any FindCompanyFactory"] = { [unowned self] in self.findCompanyFactory as Any }
+        localTable["findCompanyDetailFactory-any FindCompanyDetailFactory"] = { [unowned self] in self.findCompanyDetailFactory as Any }
+        localTable["homeFactory-any HomeFactory"] = { [unowned self] in self.homeFactory as Any }
+        localTable["myPageFactory-any MyPageFactory"] = { [unowned self] in self.myPageFactory as Any }
+        localTable["menuFactory-any MenuFactory"] = { [unowned self] in self.menuFactory as Any }
         localTable["remoteStudentsDataSource-any RemoteStudentsDataSource"] = { [unowned self] in self.remoteStudentsDataSource as Any }
         localTable["studentsRepository-any StudentsRepository"] = { [unowned self] in self.studentsRepository as Any }
         localTable["renewalPasswordUseCase-any RenewalPasswordUseCase"] = { [unowned self] in self.renewalPasswordUseCase as Any }
@@ -311,9 +329,9 @@ extension SignupComponent: Registration {
 }
 extension MainTabComponent: Registration {
     public func registerItems() {
-        keyPathToName[\MainTabDependency.homeComponent] = "homeComponent-HomeComponent"
-        keyPathToName[\MainTabDependency.myPageComponent] = "myPageComponent-MyPageComponent"
-        keyPathToName[\MainTabDependency.menuComponent] = "menuComponent-MenuComponent"
+        keyPathToName[\MainTabDependency.homeFactory] = "homeFactory-any HomeFactory"
+        keyPathToName[\MainTabDependency.myPageFactory] = "myPageFactory-any MyPageFactory"
+        keyPathToName[\MainTabDependency.menuFactory] = "menuFactory-any MenuFactory"
     }
 }
 extension MyPageComponent: Registration {
@@ -323,15 +341,15 @@ extension MyPageComponent: Registration {
 }
 extension RootComponent: Registration {
     public func registerItems() {
-        keyPathToName[\RootDependency.signinComponent] = "signinComponent-SigninComponent"
-        keyPathToName[\RootDependency.mainTabComponent] = "mainTabComponent-MainTabComponent"
-        keyPathToName[\RootDependency.splashComponent] = "splashComponent-SplashComponent"
+        keyPathToName[\RootDependency.signinFactory] = "signinFactory-any SigninFactory"
+        keyPathToName[\RootDependency.mainTabFactory] = "mainTabFactory-any MainTabFactory"
+        keyPathToName[\RootDependency.splashFactory] = "splashFactory-any SplashFactory"
     }
 }
 extension SigninComponent: Registration {
     public func registerItems() {
         keyPathToName[\SigninDependency.signinUseCase] = "signinUseCase-any SigninUseCase"
-        keyPathToName[\SigninDependency.signupComponent] = "signupComponent-SignupComponent"
+        keyPathToName[\SigninDependency.signupFactory] = "signupFactory-any SignupFactory"
     }
 }
 extension HomeComponent: Registration {
@@ -339,14 +357,14 @@ extension HomeComponent: Registration {
         keyPathToName[\HomeDependency.fetchApplicationUseCase] = "fetchApplicationUseCase-any FetchApplicationUseCase"
         keyPathToName[\HomeDependency.fetchTotalPassStudentUseCase] = "fetchTotalPassStudentUseCase-any FetchTotalPassStudentUseCase"
         keyPathToName[\HomeDependency.fetchStudentInfoUseCase] = "fetchStudentInfoUseCase-any FetchStudentInfoUseCase"
-        keyPathToName[\HomeDependency.recruitmentComponent] = "recruitmentComponent-RecruitmentComponent"
-        keyPathToName[\HomeDependency.findCompanyComponent] = "findCompanyComponent-FindCompanyComponent"
+        keyPathToName[\HomeDependency.recruitmentFactory] = "recruitmentFactory-any RecruitmentFactory"
+        keyPathToName[\HomeDependency.findCompanyFactory] = "findCompanyFactory-any FindCompanyFactory"
     }
 }
 extension FindCompanyComponent: Registration {
     public func registerItems() {
         keyPathToName[\FindCompanyDependency.fetchStudentCompanyListUseCase] = "fetchStudentCompanyListUseCase-any FetchStudentCompanyListUseCase"
-        keyPathToName[\FindCompanyDependency.findCompanyDetailComponent] = "findCompanyDetailComponent-FindCompanyDetailComponent"
+        keyPathToName[\FindCompanyDependency.findCompanyDetailFactory] = "findCompanyDetailFactory-any FindCompanyDetailFactory"
     }
 }
 extension FindCompanyDetailComponent: Registration {
@@ -359,6 +377,12 @@ extension RecruitmentComponent: Registration {
     public func registerItems() {
         keyPathToName[\RecruitmentDependency.fetchRecruitmentListUseCase] = "fetchRecruitmentListUseCase-any FetchRecruitmentListUseCase"
         keyPathToName[\RecruitmentDependency.bookmarkUseCase] = "bookmarkUseCase-any BookmarkUseCase"
+        keyPathToName[\RecruitmentDependency.recruitmentDetailFactory] = "recruitmentDetailFactory-any RecruitmentDetailFactory"
+    }
+}
+extension RecruitmentDetailComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\RecruitmentDetailDependency.fetchRecruitmentDetailUseCase] = "fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"
     }
 }
 extension MenuComponent: Registration {
@@ -393,6 +417,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->FindCompanyComponent", factory161fb699dfcd446598cbf47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->FindCompanyDetailComponent", factoryca6789757d5d9bbb6659f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RecruitmentComponent", factoryb1923ea1b010875d9389f47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->RecruitmentDetailComponent", factory14d63d6fecffe94dd0e1f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3e3b0c44298fc1c149afb)
 }
 #endif

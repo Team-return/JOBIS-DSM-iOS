@@ -1,18 +1,19 @@
 import DesignSystem
 import SwiftUI
+import FindCompanyFeatureInterface
 
 struct FindCompanyView: View {
     @StateObject var viewModel: FindCompanyViewModel
     @Environment(\.dismiss) var dismiss
 
-    private let findCompanyDetailComponent: FindCompanyDetailComponent
+    private let findCompanyDetailFactory: any FindCompanyDetailFactory
 
     init(
         viewModel: FindCompanyViewModel,
-        findCompanyDetailComponent: FindCompanyDetailComponent
+        findCompanyDetailFactory: any FindCompanyDetailFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.findCompanyDetailComponent = findCompanyDetailComponent
+        self.findCompanyDetailFactory = findCompanyDetailFactory
     }
 
     var body: some View {
@@ -24,7 +25,7 @@ struct FindCompanyView: View {
                     } label: {
                         FindCompanyListCell(
                             companyEntity: companyEntity,
-                            findCompanyDetailComponent: findCompanyDetailComponent
+                            findCompanyDetailFactory: findCompanyDetailFactory
                         )
                     }
                     .onAppear {
@@ -47,6 +48,5 @@ struct FindCompanyView: View {
             viewModel.onAppear()
         }
         .jobisBackButton(title: "기업 조회하기") { dismiss() }
-        .navigate(to: Text("기업 조회하기 Detail"), when: $viewModel.isNavigateCompanyDetail)
     }
 }

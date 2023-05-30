@@ -1,7 +1,7 @@
 import DesignSystem
 import SwiftUI
 import BaseFeature
-import SignupFeature
+import SignupFeatureInterface
 
 struct SigninView: View {
     private enum FocusField {
@@ -14,14 +14,14 @@ struct SigninView: View {
     @State var isNavigateSignup = false
     @State private var isOnAppear = false
 
-    private let signupComponent: SignupComponent
+    private let signupFactory: any SignupFactory
 
     init(
         viewModel: SigninViewModel,
-        signupComponent: SignupComponent
+        signupFactory: any SignupFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.signupComponent = signupComponent
+        self.signupFactory = signupFactory
     }
 
     var body: some View {
@@ -64,7 +64,7 @@ struct SigninView: View {
                 appState.sceneFlow = .main
             }
             .navigate(
-                to: signupComponent.makeView(),
+                to: signupFactory.makeView().eraseToAnyView(),
                 when: $isNavigateSignup
             )
             .onAppear {

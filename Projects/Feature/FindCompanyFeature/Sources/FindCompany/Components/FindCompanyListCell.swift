@@ -1,4 +1,5 @@
 import SwiftUI
+import FindCompanyFeatureInterface
 import CompaniesDomainInterface
 import DesignSystem
 import Kingfisher
@@ -8,14 +9,14 @@ struct FindCompanyListCell: View {
     @State var isNaviagteDetail = false
     let companyEntity: CompanyEntity
 
-    private let findCompanyDetailComponent: FindCompanyDetailComponent
+    private let findCompanyDetailFactory: any FindCompanyDetailFactory
 
     init(
         companyEntity: CompanyEntity,
-        findCompanyDetailComponent: FindCompanyDetailComponent
+        findCompanyDetailFactory: any FindCompanyDetailFactory
     ) {
         self.companyEntity = companyEntity
-        self.findCompanyDetailComponent = findCompanyDetailComponent
+        self.findCompanyDetailFactory = findCompanyDetailFactory
     }
 
     var body: some View {
@@ -51,7 +52,8 @@ struct FindCompanyListCell: View {
             .padding(.horizontal, 24)
         }
         .sheet(isPresented: $isNaviagteDetail) {
-            findCompanyDetailComponent.makeView(id: String(companyEntity.id))
+            findCompanyDetailFactory.makeView(id: String(companyEntity.id))
+                .eraseToAnyView()
                 .presentationDragIndicator(.visible)
         }
     }
