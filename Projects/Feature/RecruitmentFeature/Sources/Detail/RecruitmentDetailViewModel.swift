@@ -26,7 +26,6 @@ final class RecruitmentDetailViewModel: BaseViewModel {
         addCancellable(
             fetchRecruitmentDetailUseCase.execute(id: id)
         ) { [weak self] recruitmentDetail in
-            print("HELLO!")
             self?.recruitmentDetail = recruitmentDetail
             self?.titles = [
                 "우대사항", "자격증", "근무시간",
@@ -36,8 +35,8 @@ final class RecruitmentDetailViewModel: BaseViewModel {
             self?.contents = [
                 recruitmentDetail.preferentialTreatment,
                 recruitmentDetail.requiredLicenses,
-                recruitmentDetail.workHours,
-                "\(recruitmentDetail.trainPay) 만원/월",
+                recruitmentDetail.workHours + " 시간",
+                (recruitmentDetail.trainPay) + " 만원/월",
                 recruitmentDetail.benefits,
                 recruitmentDetail.hiringProgress,
                 recruitmentDetail.submitDocument,

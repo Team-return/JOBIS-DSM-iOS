@@ -5,48 +5,47 @@ import Kingfisher
 
 struct RecruitmentDetailView: View {
     @StateObject var viewModel: RecruitmentDetailViewModel
+    let profileURL: String
+    let companyName: String
 
     init(
-        viewModel: RecruitmentDetailViewModel
+        viewModel: RecruitmentDetailViewModel,
+        profileURL: String,
+        companyName: String
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.profileURL = profileURL
+        self.companyName = companyName
     }
 
     var body: some View {
         ScrollView {
-            if let recruitmentDetail = viewModel.recruitmentDetail {
-                VStack(alignment: .leading, spacing: 10) {
-                    HStack(spacing: 12) {
-                        KFImage(URL(string: "ㅁㅁㄴㅇㄹ"))
-                            .placeholder({
-                                Color.Sub.gray40
-                            })
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
-                            .cornerRadius(15)
+            VStack(alignment: .leading, spacing: 10) {
+                HStack(spacing: 12) {
+                    KFImage(URL(string: profileURL))
+                        .placeholder({
+                            Color.Sub.gray40
+                        })
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80, height: 80)
+                        .cornerRadius(15)
 
-                        Text("대충 회사이름")
-                            .JOBISFont(.body(.body1), color: .Sub.gray90)
-                    }
-                    .padding(.bottom, 2)
-
-                    GrayBtn(text: "기업 보기") {
-                        print("기업보기")
-                    }
-
-                    Divider()
-                        .foregroundColor(.Sub.gray40)
-
-                    VStack(alignment: .leading, spacing: 10) {
-                        ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
-                            recruitmentInfo(title: title, content: content)
-                        }
-                    }
-                    .padding(.vertical, 10)
+                    Text(companyName)
+                        .JOBISFont(.body(.body1), color: .Sub.gray90)
                 }
-                .padding([.horizontal, .top], 24)
+                .padding(.bottom, 2)
+
+                GrayBtn(text: "기업 보기", size: .large) {
+                    print("기업 보기")
+                }
+
+                Divider()
+                    .foregroundColor(.Sub.gray40)
+
+                recruitmentInfo()
             }
+            .padding([.horizontal, .top], 24)
         }
         .onAppear {
             viewModel.onAppear()
@@ -54,8 +53,27 @@ struct RecruitmentDetailView: View {
     }
 
     @ViewBuilder
-    func recruitmentInfo(title: String, content: String) -> some View {
-        HStack(spacing: 0) {
+    func recruitmentInfo() -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if let detailInfo = viewModel.recruitmentDetail {
+                recruitmentInfoCell(
+                    title: "모집기간",
+                    content: detailInfo.startDate + " ~ " + detailInfo.endDate
+                )
+
+                areaView(areas: detailInfo.areas)
+            }
+
+            ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
+                recruitmentInfoCell(title: title, content: content)
+            }
+        }
+        .padding(.vertical, 10)
+    }
+
+    @ViewBuilder
+    func recruitmentInfoCell(title: String, content: String) -> some View {
+        HStack(alignment: .top, spacing: 0) {
             Text(title)
                 .JOBISFont(.etc(.caption), color: .Sub.gray70)
                 .frame(width: 76, alignment: .leading)
@@ -68,41 +86,16 @@ struct RecruitmentDetailView: View {
 
     @ViewBuilder
     func areaView(areas: [AreaEntity]) -> some View {
-        HStack(spacing: 0) {
+        HStack(alignment: .top, spacing: 0) {
             Text("모집분야")
                 .JOBISFont(.etc(.caption), color: .Sub.gray70)
                 .frame(width: 76, alignment: .leading)
 
             VStack {
                 ForEach(areas, id: \.self) { area in
-                    areaCell(area: area)
+                    AreaCell(area: area)
                 }
             }
         }
-    }
-
-    @ViewBuilder
-    func areaCell(area: AreaEntity) -> some View {
-        VStack {
-            HStack {
-                Text(area.job)
-                    .JOBISFont(.body(.body3), color: .Sub.gray90)
-
-                Spacer()
-
-                Text(String(area.hiring))
-                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
-            }
-
-            Text("리액트를 이용한 프론트 개발")
-                .JOBISFont(.etc(.caption), color: .Sub.gray90)
-        }
-        .padding(.vertical, 8)
-        .padding(.horizontal, 12)
-        .background(Color.Sub.gray10)
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.Sub.gray40)
-        )
     }
 }
