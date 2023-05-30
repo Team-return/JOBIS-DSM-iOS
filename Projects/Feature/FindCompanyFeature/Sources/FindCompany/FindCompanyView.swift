@@ -48,6 +48,5 @@ struct FindCompanyView: View {
             viewModel.onAppear()
         }
         .jobisBackButton(title: "기업 조회하기") { dismiss() }
-        .navigate(to: Text("기업 조회하기 Detail"), when: $viewModel.isNavigateCompanyDetail)
     }
 }

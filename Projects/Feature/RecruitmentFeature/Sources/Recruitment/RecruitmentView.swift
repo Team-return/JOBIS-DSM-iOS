@@ -50,6 +50,5 @@ struct RecruitmentView: View {
             viewModel.onAppear()
         }
         .jobisBackButton(title: "모집의뢰서 조회하기") { dismiss() }
-        .navigate(to: Text("모집의뢰서 Detail"), when: $viewModel.isNavigateRecruitmentDetail)
     }
 }
