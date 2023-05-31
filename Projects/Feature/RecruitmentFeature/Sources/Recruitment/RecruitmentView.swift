@@ -1,10 +1,12 @@
 import DesignSystem
+import RecruitmentsDomainInterface
 import RecruitmentFeatureInterface
 import SwiftUI
 
 struct RecruitmentView: View {
     @StateObject var viewModel: RecruitmentViewModel
     @Environment(\.dismiss) var dismiss
+    private let listCellEdgeInset = EdgeInsets(top: 7, leading: 0, bottom: 7, trailing: 0)
 
     private let recruitmentDetailFactory: any RecruitmentDetailFactory
 
@@ -17,32 +19,28 @@ struct RecruitmentView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
-            if let list = viewModel.recruitmentList {
-                List(list.recruitments, id: \.self) { recruitmentEntity in
-                    Button {
-                        viewModel.isNavigateRecruitmentDetail.toggle()
-                    } label: {
-                        RecruitmentListCell(
-                            recruitmentEntity: recruitmentEntity,
-                            recruitmentDetailFactory: recruitmentDetailFactory
-                        ) {
-                            viewModel.bookmark(id: recruitmentEntity.recruitID)
+        ZStack {
+            VStack(alignment: .leading) {
+                List {
+                    searchBar()
+
+                    if let list = viewModel.recruitmentList {
+                        ForEach(list.recruitments, id: \.self) { recruitmentEntity in
+                            navigateToRecruitmentDetail(recruitmentEntity: recruitmentEntity)
                         }
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(listCellEdgeInset)
                     }
-                    .onAppear {
-                        viewModel.appendRecruitmentList(list: recruitmentEntity)
-                    }
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.clear)
-                    .listRowInsets(EdgeInsets(.init(top: 7, leading: 0, bottom: 7, trailing: 0)))
                 }
                 .listStyle(.plain)
                 .listSectionSeparator(.hidden)
                 .refreshable {
                     viewModel.onAppear()
                 }
-            } else {
+            }
+
+            if viewModel.isLoading {
                 ProgressView().progressViewStyle(.circular)
             }
         }
