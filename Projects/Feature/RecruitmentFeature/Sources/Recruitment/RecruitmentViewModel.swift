@@ -4,6 +4,8 @@ import BookmarksDomainInterface
 import Combine
 
 final class RecruitmentViewModel: BaseViewModel {
+    @Published var companyText: String = ""
+    @Published var filteringName: String = ""
     @Published var listPage: Int = 1
     @Published var recruitmentList: RecruitmentListEntity?
     @Published var isNavigateRecruitmentDetail: Bool = false
@@ -20,14 +22,20 @@ final class RecruitmentViewModel: BaseViewModel {
     }
 
     func onAppear() {
-        self.listPage = 1
         fetchRecruitment()
     }
 
-    private func fetchRecruitment() {
+    func fetchRecruitment() {
+        self.listPage = 1
+
         addCancellable(
-            fetchRecruitmentListUseCase.execute(page: listPage, codeId: nil, company: nil)
+            fetchRecruitmentListUseCase.execute(
+                page: listPage,
+                codeId: nil,
+                name: companyText.isEmpty ? nil : companyText
+            )
         ) { [weak self] recruitmentList in
+            self?.filteringName = self?.companyText ?? ""
             self?.recruitmentList = recruitmentList
         }
     }
@@ -37,7 +45,9 @@ final class RecruitmentViewModel: BaseViewModel {
             listPage += 1
             addCancellable(
                 fetchRecruitmentListUseCase.execute(
-                    page: listPage, codeId: nil, company: nil
+                    page: listPage,
+                    codeId: nil,
+                    name: companyText.isEmpty ? nil : companyText
                 )
             ) { [weak self] recruitmentList in
                 self?.recruitmentList?.recruitments.append(contentsOf: recruitmentList.recruitments)

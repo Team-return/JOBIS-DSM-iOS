@@ -17,4 +17,3 @@ public struct ReviewDetailEntity: Equatable {
         self.qnaResponses = qnaResponses
     }
 }
-
