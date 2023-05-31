@@ -1,5 +1,6 @@
 import Foundation
 
+// swiftlint:disable identifier_name
 public enum InterviewType: String, Decodable {
     case cultureInterview = "CULTURE_INTERVIEW"
     case document = "DOCUMENT"
