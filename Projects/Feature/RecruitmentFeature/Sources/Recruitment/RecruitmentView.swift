@@ -53,6 +53,50 @@ struct RecruitmentView: View {
     }
 
     @ViewBuilder
+    func searchBar() -> some View {
+        VStack {
+            HStack {
+                JOBISTextField(
+                    placeholder: "회사명을 입력해주세요.",
+                    text: $viewModel.companyText,
+                    inputType: .search,
+                    outlinedType: .outlined
+                ) {
+                    viewModel.fetchRecruitment()
+                }
+
+                SolidBtn(
+                    text: "",
+                    style: .icon1,
+                    size: .small,
+                    icon: JOBISImage(.filterIcon).jobisImageToImage(),
+                    iconWidth: 24,
+                    iconHeight: 24
+                ) {
+                    print("번쩍ㅂ번쩍")
+                }
+            }
+
+            HStack(spacing: 0) {
+                if !viewModel.filteringName.isEmpty {
+                    Text("검색결과 : ")
+                        .JOBISFont(.etc(.caption), color: .Sub.gray60)
+
+                    Text(viewModel.filteringName)
+                        .JOBISFont(.etc(.caption), color: .Sub.gray90)
+                }
+
+                Spacer()
+
+                Text("필터 적용됨")
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+            }
+        }
+        .listRowSeparator(.hidden)
+        .listRowBackground(Color.clear)
+    }
+
+    @ViewBuilder
     func navigateToRecruitmentDetail(recruitmentEntity: RecruitmentEntity) -> some View {
         Button {
             viewModel.isNavigateRecruitmentDetail.toggle()
