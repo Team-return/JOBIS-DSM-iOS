@@ -38,6 +38,7 @@ public struct JOBISImage: View {
         case militaryServiceExceptionIcon
         case bookmarkOn
         case bookmarkOff
+        case filterIcon
     }
 
     private var image: Image
@@ -57,7 +58,7 @@ public struct JOBISImage: View {
             .renderingMode(renderingMode)
     }
 
-    private func jobisImageToImage() -> SwiftUI.Image {
+    public func jobisImageToImage() -> SwiftUI.Image {
         switch image {
         case .chevronBarDown:
             return DesignSystemAsset.Icons.chevronBarDown.suiImage
@@ -145,6 +146,9 @@ public struct JOBISImage: View {
 
         case .bookmarkOff:
             return DesignSystemAsset.Icons.bookmarkOff.suiImage
+
+        case .filterIcon:
+            return DesignSystemAsset.Icons.filterIcon.suiImage
         }
     }
 }
