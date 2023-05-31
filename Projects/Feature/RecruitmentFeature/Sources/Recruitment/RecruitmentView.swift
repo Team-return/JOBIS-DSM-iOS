@@ -51,4 +51,21 @@ struct RecruitmentView: View {
         }
         .jobisBackButton(title: "모집의뢰서 조회하기") { dismiss() }
     }
+
+    @ViewBuilder
+    func navigateToRecruitmentDetail(recruitmentEntity: RecruitmentEntity) -> some View {
+        Button {
+            viewModel.isNavigateRecruitmentDetail.toggle()
+        } label: {
+            RecruitmentListCell(
+                recruitmentEntity: recruitmentEntity,
+                recruitmentDetailFactory: recruitmentDetailFactory
+            ) {
+                viewModel.bookmark(id: recruitmentEntity.recruitID)
+            }
+        }
+        .onAppear {
+            viewModel.appendRecruitmentList(list: recruitmentEntity)
+        }
+    }
 }
