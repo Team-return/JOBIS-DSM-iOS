@@ -63,11 +63,10 @@ struct SignupEmailVerifyView: View {
 
                 SolidBtn(
                     text: viewModel.sendEmailButtonTitle,
-                    action: {
-                        viewModel.sendAuthCode()
-                    },
                     size: .small
-                )
+                ) {
+                        viewModel.sendAuthCode()
+                }
                 .disabled(!viewModel.email.contains("@dsm.hs.kr"))
             }
         }

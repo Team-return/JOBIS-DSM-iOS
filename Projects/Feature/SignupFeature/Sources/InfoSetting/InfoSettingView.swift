@@ -32,37 +32,33 @@ struct InfoSettingView: View {
             if viewModel.isMan {
                 SolidBtn(
                     text: "남성",
-                    action: {
-                        viewModel.isMan.toggle()
-                    },
                     size: .large
-                )
+                ) {
+                    viewModel.isMan.toggle()
+                }
             } else {
                 ShadowBtn(
                     text: "남성",
-                    action: {
-                        viewModel.isMan.toggle()
-                    },
                     size: .large
-                )
+                ) {
+                    viewModel.isMan.toggle()
+                }
             }
 
             if viewModel.isWoman {
                 SolidBtn(
                     text: "여성",
-                    action: {
-                        viewModel.isWoman.toggle()
-                    },
                     size: .large
-                )
+                ) {
+                    viewModel.isWoman.toggle()
+                }
             } else {
                 ShadowBtn(
                     text: "여성",
-                    action: {
-                        viewModel.isWoman.toggle()
-                    },
                     size: .large
-                )
+                ) {
+                    viewModel.isWoman.toggle()
+                }
             }
         }
     }

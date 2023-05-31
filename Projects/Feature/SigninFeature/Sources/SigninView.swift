@@ -165,11 +165,10 @@ struct SigninView: View {
 
             SolidBtn(
                 text: "로그인",
-                action: {
-                    viewModel.signinButtonDidTap()
-                },
                 size: .large
-            )
+            ) {
+                viewModel.signinButtonDidTap()
+            }
             .padding(.vertical, 20)
         }
     }
