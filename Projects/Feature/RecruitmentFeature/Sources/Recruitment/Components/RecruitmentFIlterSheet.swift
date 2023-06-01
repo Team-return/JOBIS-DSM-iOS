@@ -124,11 +124,14 @@ struct RecruitmentFIlterSheet: View {
         FlowLayout(
             mode: .scrollable,
             items: jobCodeList,
-            itemSpacing: 8
+            itemSpacing: 4
         ) {
-            SolidBtn(text: $0, size: .small) {
-                
-            }
+            ShadowBtn(
+                text: $0,
+                size: .small
+            ) { }
         }
+        .listRowSeparator(.hidden)
+        .listRowBackground(Color.clear)
     }
 }
