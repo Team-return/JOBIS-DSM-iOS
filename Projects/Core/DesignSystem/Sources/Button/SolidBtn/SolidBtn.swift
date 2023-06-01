@@ -12,11 +12,11 @@ public struct SolidBtn: View {
     public init(
         text: String,
         style: BtnStyle = .defaultStyle,
-        action: @escaping () -> Void,
         size: BtnSize = .medium,
         icon: Image = Image(""),
         iconWidth: CGFloat = 20,
-        iconHeight: CGFloat = 20
+        iconHeight: CGFloat = 20,
+        action: @escaping () -> Void
     ) {
         self.text = text
         self.style = style
@@ -65,33 +65,33 @@ struct SolidBtn_Previews: PreviewProvider {
         ScrollView {
             VStack(spacing: 20) {
                 VStack {
-                    SolidBtn(text: "버튼", style: .defaultStyle, action: {}, size: .small)
+                    SolidBtn(text: "버튼", style: .defaultStyle, size: .small, action: {})
 //                        .disabled(true)
-                    SolidBtn(text: "버튼", style: .defaultStyle, action: {}, size: .medium)
-                    SolidBtn(text: "버튼", style: .defaultStyle, action: {}, size: .large)
+                    SolidBtn(text: "버튼", style: .defaultStyle, size: .medium, action: {})
+                    SolidBtn(text: "버튼", style: .defaultStyle, size: .large, action: {})
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    SolidBtn(text: "버튼", style: .lIcon, action: {}, size: .medium, icon: Image(systemName: "pencil"))
-                    SolidBtn(text: "버튼", style: .lIcon, action: {}, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    SolidBtn(text: "버튼", style: .lIcon, size: .medium, icon: Image(systemName: "pencil"), action: {})
+                    SolidBtn(text: "버튼", style: .lIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4) {}
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    SolidBtn(text: "버튼", style: .rIcon, action: {}, size: .medium, icon: Image(systemName: "pencil"))
-                    SolidBtn(text: "버튼", style: .rIcon, action: {}, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    SolidBtn(text: "버튼", style: .rIcon, size: .medium, icon: Image(systemName: "pencil")) {}
+                    SolidBtn(text: "버튼", style: .rIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4) {}
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    SolidBtn(text: "버튼", style: .icon1, action: {}, icon: Image(systemName: "pencil"))
+                    SolidBtn(text: "버튼", style: .icon1, icon: Image(systemName: "pencil")) {}
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    SolidBtn(text: "버튼", style: .icon2, action: {}, size: .small, icon: Image(systemName: "pencil"))
-                    SolidBtn(text: "버튼", style: .icon2, action: {}, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    SolidBtn(text: "버튼", style: .icon2, size: .small, icon: Image(systemName: "pencil")) {}
+                    SolidBtn(text: "버튼", style: .icon2, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4) {}
                 }
                 .padding(10)
                 .background(.white)

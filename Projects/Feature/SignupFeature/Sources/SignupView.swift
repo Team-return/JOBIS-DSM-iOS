@@ -90,11 +90,10 @@ struct SignupView: View {
 
             SolidBtn(
                 text: viewModel.nextButtonTitle,
-                action: {
-                    viewModel.nextButtonDidTap()
-                },
                 size: .large
-            )
+            ) {
+                viewModel.nextButtonDidTap()
+            }
             .disabled(
                 viewModel.isButtonEnabled
             )

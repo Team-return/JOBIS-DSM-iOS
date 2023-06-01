@@ -7,4 +7,3 @@ public struct ReviewListEntity: Equatable {
         self.reviews = reviews
     }
 }
-

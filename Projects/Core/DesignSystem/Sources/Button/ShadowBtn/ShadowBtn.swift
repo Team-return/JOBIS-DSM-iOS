@@ -12,11 +12,11 @@ public struct ShadowBtn: View {
     public init(
         text: String,
         style: BtnStyle = .defaultStyle,
-        action: @escaping () -> Void,
         size: BtnSize = .medium,
         icon: Image = Image(""),
         iconWidth: CGFloat = 20,
-        iconHeight: CGFloat = 20
+        iconHeight: CGFloat = 20,
+        action: @escaping () -> Void
     ) {
         self.text = text
         self.style = style
@@ -64,33 +64,33 @@ struct ShadowBtn_Previews: PreviewProvider {
         ScrollView {
             VStack(spacing: 20) {
                 VStack {
-                    ShadowBtn(text: "버튼", style: .defaultStyle, action: {}, size: .small)
+                    ShadowBtn(text: "버튼", style: .defaultStyle, size: .small) {}
 //                        .disabled(true)
-                    ShadowBtn(text: "버튼", style: .defaultStyle, action: {}, size: .medium)
-                    ShadowBtn(text: "버튼", style: .defaultStyle, action: {}, size: .large)
+                    ShadowBtn(text: "버튼", style: .defaultStyle, size: .medium) {}
+                    ShadowBtn(text: "버튼", style: .defaultStyle, size: .large) {}
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    ShadowBtn(text: "버튼", style: .lIcon, action: {}, size: .medium, icon: Image(systemName: "pencil"))
-                    ShadowBtn(text: "버튼", style: .lIcon, action: {}, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    ShadowBtn(text: "버튼", style: .lIcon, size: .medium, icon: Image(systemName: "pencil")) {}
+                    ShadowBtn(text: "버튼", style: .lIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4) {}
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    ShadowBtn(text: "버튼", style: .rIcon, action: {}, size: .medium, icon: Image(systemName: "pencil"))
-                    ShadowBtn(text: "버튼", style: .rIcon, action: {}, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    ShadowBtn(text: "버튼", style: .rIcon, size: .medium, icon: Image(systemName: "pencil")) {}
+                    ShadowBtn(text: "버튼", style: .rIcon, size: .large, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4) {}
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    ShadowBtn(text: "버튼", style: .icon1, action: {}, icon: Image(systemName: "pencil"))
+                    ShadowBtn(text: "버튼", style: .icon1, icon: Image(systemName: "pencil")) {}
                 }
                 .padding(10)
                 .background(.white)
                 VStack {
-                    ShadowBtn(text: "버튼", style: .icon2, action: {}, size: .small, icon: Image(systemName: "pencil"))
-                    ShadowBtn(text: "버튼", style: .icon2, action: {}, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4)
+                    ShadowBtn(text: "버튼", style: .icon2, size: .small, icon: Image(systemName: "pencil")) {}
+                    ShadowBtn(text: "버튼", style: .icon2, icon: Image(systemName: "pencil"), iconWidth: 26.4, iconHeight: 26.4) {}
                 }
                 .padding(10)
                 .background(.white)
