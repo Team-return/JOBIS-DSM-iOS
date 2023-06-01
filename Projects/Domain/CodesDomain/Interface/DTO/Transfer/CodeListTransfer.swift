@@ -10,8 +10,7 @@ public extension CodeResponseDTO {
     func toDomain() -> CodeEntity {
         CodeEntity(
             code: code,
-            keyword: keyword,
-            jobType: jobType
+            keyword: keyword
         )
     }
 }

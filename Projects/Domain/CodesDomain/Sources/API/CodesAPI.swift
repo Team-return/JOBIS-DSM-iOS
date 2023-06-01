@@ -3,7 +3,7 @@ import CodesDomainInterface
 import BaseDomain
 
 public enum CodesAPI {
-    case fetchCodes(keyword: String, type: CodeType)
+    case fetchCodes(keyword: String?, type: CodeType, parentCode: String?)
 }
 
 extension CodesAPI: JobisAPI {
@@ -29,11 +29,12 @@ extension CodesAPI: JobisAPI {
 
     public var task: Task {
         switch self {
-        case let .fetchCodes(keyword, type):
+        case let .fetchCodes(keyword, type, parentCode):
             return .requestParameters(
                 parameters: [
-                    "keyword": keyword,
-                    "type": type
+                    "keyword": keyword ?? "",
+                    "type": type,
+                    "parent_code": parentCode ?? ""
                 ], encoding: URLEncoding.queryString)
         }
     }
