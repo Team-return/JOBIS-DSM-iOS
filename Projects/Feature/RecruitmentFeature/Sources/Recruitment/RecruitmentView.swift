@@ -48,6 +48,12 @@ struct RecruitmentView: View {
             viewModel.onAppear()
         }
         .jobisBackButton(title: "모집의뢰서 조회하기") { dismiss() }
+        .sheet(isPresented: $viewModel.isShowFilterSheet) {
+            print("sheet dismiss")
+        } content: {
+            RecruitmentFIlterSheet()
+                .presentationDragIndicator(.visible)
+        }
     }
 
     @ViewBuilder
@@ -71,7 +77,7 @@ struct RecruitmentView: View {
                     iconWidth: 24,
                     iconHeight: 24
                 ) {
-                    print("번쩍ㅂ번쩍")
+                    viewModel.isShowFilterSheet.toggle()
                 }
             }
 

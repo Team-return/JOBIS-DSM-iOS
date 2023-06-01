@@ -4,11 +4,14 @@ import BookmarksDomainInterface
 import Combine
 
 final class RecruitmentViewModel: BaseViewModel {
+    @Published var techCodeText: String = ""
+
     @Published var companyText: String = ""
     @Published var filteringName: String = ""
     @Published var listPage: Int = 1
     @Published var recruitmentList: RecruitmentListEntity?
     @Published var isNavigateRecruitmentDetail: Bool = false
+    @Published var isShowFilterSheet: Bool = false
 
     private let fetchRecruitmentListUseCase: FetchRecruitmentListUseCase
     private let bookmarkUseCase: BookmarkUseCase
