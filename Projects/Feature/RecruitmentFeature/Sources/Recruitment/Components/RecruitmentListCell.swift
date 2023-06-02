@@ -3,6 +3,7 @@ import RecruitmentFeatureInterface
 import RecruitmentsDomainInterface
 import DesignSystem
 import Kingfisher
+import UtilityModule
 
 struct RecruitmentListCell: View {
     @State var isNaviagteDetail = false

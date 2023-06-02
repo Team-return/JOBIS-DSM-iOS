@@ -13,7 +13,11 @@ struct SplashView: View {
     }
 
     var body: some View {
-        ZStack {}
+        ZStack {
+            DesignSystemAsset.Image.splashLogo.swiftUIImage
+                .resizable()
+                .frame(width: 200, height: 200)
+        }
         .onAppear {
             viewModel.onAppear {
                 appState.sceneFlow = .main
