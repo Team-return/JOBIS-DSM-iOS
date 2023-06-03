@@ -51,7 +51,7 @@ struct RecruitmentView: View {
         .sheet(isPresented: $viewModel.isShowFilterSheet) {
             print("sheet dismiss")
         } content: {
-            RecruitmentFIlterSheet()
+            RecruitmentFilterSheet(viewModel: viewModel)
                 .presentationDragIndicator(.visible)
         }
     }

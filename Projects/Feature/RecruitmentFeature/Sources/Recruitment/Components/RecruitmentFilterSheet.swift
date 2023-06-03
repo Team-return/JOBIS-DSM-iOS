@@ -1,35 +1,21 @@
 import DesignSystem
+import CodesDomainInterface
 import RecruitmentsDomainInterface
 import RecruitmentFeatureInterface
 import SwiftUI
 import SwiftUIFlowLayout
 
-struct RecruitmentFIlterSheet: View {
+struct RecruitmentFilterSheet: View {
     @State var isShowMore = false
-    @State var techCodeText = ""
-    @State var codeList = [
-        "SpringBoot",
-        "JavaScript",
-        "Swift",
-        "Java",
-        "HTML",
-        "CSS",
-        "Kotlin",
-        "Phthon"
-    ]
-    @State var techBoolList = [
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false,
-        false
-    ]
-    @State var selectedJobCode: String = ""
-    @State var selectedTechCode: [String] = []
     @State var howMove: CGFloat = 0
+
+    @StateObject var viewModel: RecruitmentViewModel
+
+    init(
+        viewModel: RecruitmentViewModel
+    ) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
 
     var body: some View {
         VStack(alignment: .center, spacing: 0) {
@@ -47,18 +33,7 @@ struct RecruitmentFIlterSheet: View {
                     searchBar()
 
                     ZStack(alignment: .top) {
-                        techCodeTagList(jobCodeList: [
-                            "백엔드",
-                            "프론트엔드",
-                            "iOS",
-                            "Android",
-                            "AI",
-                            "게임 개발",
-                            "임베디드",
-                            "서버개발",
-                            "FullStack",
-                            "사과먹고싶당"
-                        ])
+                        jobCodeTagList(jobCodeList: viewModel.jobCodeList)
 
                         VStack {
                             Spacer()
@@ -74,13 +49,16 @@ struct RecruitmentFIlterSheet: View {
                                     Text("선택 됨 : ")
                                         .JOBISFont(.body(.body4), color: .Sub.gray90)
 
-                                    Text(selectedTechCode.joined(separator: " | "))
+                                    Text(
+                                        viewModel.selectedTechCode.map { $0.keyword }
+                                            .joined(separator: " | ")
+                                    )
                                         .JOBISFont(.body(.body4), color: .Main.lightBlue)
 
                                     Spacer()
                                 }
 
-                                jobCodeList()
+                                techCodeList(techCodeList: viewModel.techCodeList)
                             }
                             .background(Color.Sub.gray10)
                         }
@@ -90,73 +68,68 @@ struct RecruitmentFIlterSheet: View {
             }
         }
         .padding(.horizontal, 20)
+        .onAppear {
+            viewModel.sheetOnAppear()
+        }
     }
 
     @ViewBuilder
     func searchBar() -> some View {
         JOBISTextField(
             placeholder: "기술 코드를 입력해주세요.",
-            text: $techCodeText,
+            text: $viewModel.techCodeText,
             inputType: .search,
             outlinedType: .outlined
         ) {
-//            viewModel.fetchRecruitment()
+            viewModel.sheetOnAppear()
         }
         .listRowSeparator(.hidden)
         .listRowBackground(Color.clear)
     }
 
     @ViewBuilder
-    func techCodeTagList(jobCodeList: [String]) -> some View {
+    func jobCodeTagList(jobCodeList: [CodeEntity]) -> some View {
         FlowLayout(
             mode: .scrollable,
             items: jobCodeList,
             itemSpacing: 4
         ) { jobCode in
             let action = {
-                if selectedJobCode == jobCode {
-                    selectedJobCode = ""
-                } else {
-                    selectedJobCode = jobCode
-                }
+                viewModel.selectedJobCode = viewModel.selectedJobCode == jobCode ? nil : jobCode
             }
 
-            if selectedJobCode.contains(jobCode) {
-                SolidBtn(text: jobCode, size: .small) { action() }
+            if viewModel.selectedJobCode == jobCode {
+                SolidBtn(text: jobCode.keyword, size: .small) { action() }
             } else {
-                ShadowBtn(text: jobCode, size: .small) { action() }
+                ShadowBtn(text: jobCode.keyword, size: .small) { action() }
             }
         }
         .padding(.vertical, 10)
-        .background {
-            GeometryReader { proxy in
-                Color.clear
-                    .onChange(of: isShowMore) { newValue in
-                        howMove = newValue ? proxy.size.height : 0
-                    }
+        .background(GeometryReader { proxy in
+            Color.clear.onChange(of: isShowMore) {
+                howMove = $0 ? proxy.size.height : 0
             }
-        }
+        })
     }
 
     @ViewBuilder
-    func jobCodeList() -> some View {
+    func techCodeList(techCodeList: [CodeEntity]) -> some View {
         VStack(alignment: .leading, spacing: 20) {
-            ForEach(codeList, id: \.self) { code in
-                HStack {
-                    JOBISCheckBox(isOn: $techBoolList[codeList.firstIndex(of: code) ?? 0])
-
-                    Text(code)
-                        .JOBISFont(.body(.body3), color: .Sub.gray60)
-                }
-                .onChange(of: techBoolList[codeList.firstIndex(of: code) ?? 0]) { newValue in
-                    if newValue {
-                        selectedTechCode.append(code)
-                    } else {
-                        selectedTechCode.removeAll { $0 == code }
+            ForEach(techCodeList, id: \.self) { code in
+                TechCodeListCell(
+                    title: code.keyword,
+                    isChecked: viewModel.selectedTechCode.contains(code)
+                ) {
+                    withAnimation(.easeIn(duration: 0.3)) {
+                        if viewModel.selectedTechCode.contains(code) {
+                            viewModel.selectedTechCode.removeAll { $0 == code }
+                        } else {
+                            viewModel.selectedTechCode.append(code)
+                        }
                     }
                 }
 
-                if code != codeList.last {
+                if code != techCodeList.last {
                     Divider()
                         .foregroundColor(.Sub.gray40)
                 }

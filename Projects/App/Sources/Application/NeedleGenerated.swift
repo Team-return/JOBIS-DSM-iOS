@@ -219,6 +219,9 @@ private class RecruitmentDependency799de5378039058f4ec0Provider: RecruitmentDepe
     var bookmarkUseCase: any BookmarkUseCase {
         return appComponent.bookmarkUseCase
     }
+    var fetchCodesUseCase: any FetchCodesUseCase {
+        return appComponent.fetchCodesUseCase
+    }
     var recruitmentDetailFactory: any RecruitmentDetailFactory {
         return appComponent.recruitmentDetailFactory
     }
@@ -377,6 +380,7 @@ extension RecruitmentComponent: Registration {
     public func registerItems() {
         keyPathToName[\RecruitmentDependency.fetchRecruitmentListUseCase] = "fetchRecruitmentListUseCase-any FetchRecruitmentListUseCase"
         keyPathToName[\RecruitmentDependency.bookmarkUseCase] = "bookmarkUseCase-any BookmarkUseCase"
+        keyPathToName[\RecruitmentDependency.fetchCodesUseCase] = "fetchCodesUseCase-any FetchCodesUseCase"
         keyPathToName[\RecruitmentDependency.recruitmentDetailFactory] = "recruitmentDetailFactory-any RecruitmentDetailFactory"
     }
 }
