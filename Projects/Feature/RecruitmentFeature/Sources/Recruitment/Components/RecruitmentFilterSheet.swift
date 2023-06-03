@@ -63,6 +63,14 @@ struct RecruitmentFilterSheet: View {
                             .background(Color.Sub.gray10)
                         }
                         .animation(.easeIn, value: howMove)
+
+                        VStack {
+                            Spacer()
+
+                            SolidBtn(text: "적용", size: .large) {
+                                viewModel.fetchRecruitment()
+                            }
+                        }
                     }
                 }
             }

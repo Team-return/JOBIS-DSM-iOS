@@ -6,17 +6,36 @@ import CodesDomainInterface
 import Combine
 
 final class RecruitmentViewModel: BaseViewModel {
-    @Published var techCodeText: String = ""
+    @Published var techCodeText: String = "" {
+        didSet {
+            if !techCodeText.isEmpty {
+                techCodeList = fetchTechCodeList.filter {
+                    $0.keyword.localizedCaseInsensitiveContains(techCodeText)
+                }
+            } else {
+                techCodeList = fetchTechCodeList
+            }
+        }
+    }
     @Published var companyText: String = ""
     @Published var filteringName: String = ""
     @Published var listPage: Int = 1
 
     @Published var recruitmentList: RecruitmentListEntity?
-    @Published var selectedJobCode: CodeEntity? = nil {
-        didSet { fetchCodeList(codeType: .tech) }
+    @Published var selectedJobCode: CodeEntity? {
+        didSet {
+            if selectedJobCode == nil {
+                techCodeList = fetchTechCodeList
+            } else {
+                techCodeList = fetchTechCodeList.filter {
+                    $0.code == selectedJobCode?.code
+                }
+            }
+        }
     }
     @Published var selectedTechCode: [CodeEntity] = []
     @Published var techCodeList: [CodeEntity] = []
+    var fetchTechCodeList: [CodeEntity] = []
     @Published var jobCodeList: [CodeEntity] = []
 
     @Published var isNavigateRecruitmentDetail: Bool = false
@@ -71,9 +90,7 @@ final class RecruitmentViewModel: BaseViewModel {
     }
 
     func bookmark(id: Int) {
-        addCancellable(
-            bookmarkUseCase.execute(id: id)
-        ) { _ in }
+        addCancellable(bookmarkUseCase.execute(id: id)) { _ in }
     }
 
     func sheetOnAppear() {
@@ -81,7 +98,7 @@ final class RecruitmentViewModel: BaseViewModel {
         fetchCodeList(codeType: .tech)
     }
 
-    func fetchCodeList(codeType: CodeType) {
+    private func fetchCodeList(codeType: CodeType) {
         var keyword: String? {
             switch codeType {
             case .tech:
@@ -103,7 +120,8 @@ final class RecruitmentViewModel: BaseViewModel {
         ) { [weak self] codeList in
             switch codeType {
             case .tech:
-                self?.techCodeList = codeList.codes
+                self?.fetchTechCodeList = codeList.codes
+                self?.techCodeList = self?.fetchTechCodeList ?? []
             case .job:
                 self?.jobCodeList = codeList.codes
             }
