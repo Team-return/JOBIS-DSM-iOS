@@ -134,6 +134,8 @@ struct RecruitmentFilterSheet: View {
                         .foregroundColor(.Sub.gray40)
                 }
             }
+            Spacer()
         }
+        .frame(maxHeight: .infinity)
     }
 }

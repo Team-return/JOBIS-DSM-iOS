@@ -18,6 +18,8 @@ struct TechCodeListCell: View {
 
             Text(title)
                 .JOBISFont(.body(.body3), color: .Sub.gray60)
+
+            Spacer()
         }
         .overlay {
             Color.clear

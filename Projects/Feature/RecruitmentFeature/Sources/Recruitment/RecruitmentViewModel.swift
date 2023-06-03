@@ -12,7 +12,9 @@ final class RecruitmentViewModel: BaseViewModel {
     @Published var listPage: Int = 1
 
     @Published var recruitmentList: RecruitmentListEntity?
-    @Published var selectedJobCode: CodeEntity?
+    @Published var selectedJobCode: CodeEntity? = nil {
+        didSet { fetchCodeList(codeType: .tech) }
+    }
     @Published var selectedTechCode: [CodeEntity] = []
     @Published var techCodeList: [CodeEntity] = []
     @Published var jobCodeList: [CodeEntity] = []
@@ -88,11 +90,15 @@ final class RecruitmentViewModel: BaseViewModel {
                 return nil
             }
         }
+        var parentCode: String? {
+            guard let code = selectedJobCode?.code else { return nil }
+            return String(code)
+        }
         addCancellable(
             fetchCodesUseCase.execute(
                 keyword: keyword,
                 type: codeType,
-                parentCode: nil
+                parentCode: parentCode
             )
         ) { [weak self] codeList in
             switch codeType {
