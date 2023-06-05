@@ -24,19 +24,13 @@ final class RecruitmentViewModel: BaseViewModel {
     @Published var recruitmentList: RecruitmentListEntity?
     @Published var selectedJobCode: CodeEntity? {
         didSet {
-            if selectedJobCode == nil {
-                techCodeList = fetchTechCodeList
-            } else {
-                techCodeList = fetchTechCodeList.filter {
-                    $0.code == selectedJobCode?.code
-                }
-            }
+            fetchCodeList(codeType: .tech, code: selectedJobCode?.code)
         }
     }
     @Published var selectedTechCode: [CodeEntity] = []
     @Published var techCodeList: [CodeEntity] = []
-    var fetchTechCodeList: [CodeEntity] = []
     @Published var jobCodeList: [CodeEntity] = []
+    var fetchTechCodeList: [CodeEntity] = []
 
     @Published var isNavigateRecruitmentDetail: Bool = false
     @Published var isShowFilterSheet: Bool = false
@@ -65,8 +59,8 @@ final class RecruitmentViewModel: BaseViewModel {
         addCancellable(
             fetchRecruitmentListUseCase.execute(
                 page: listPage,
-                codeId: nil,
-                name: companyText.isEmpty ? nil : companyText
+                code: nil,
+                companyName: companyText.isEmpty ? nil : companyText
             )
         ) { [weak self] recruitmentList in
             self?.filteringName = self?.companyText ?? ""
@@ -80,8 +74,8 @@ final class RecruitmentViewModel: BaseViewModel {
             addCancellable(
                 fetchRecruitmentListUseCase.execute(
                     page: listPage,
-                    codeId: nil,
-                    name: companyText.isEmpty ? nil : companyText
+                    code: nil,
+                    companyName: companyText.isEmpty ? nil : companyText
                 )
             ) { [weak self] recruitmentList in
                 self?.recruitmentList?.recruitments.append(contentsOf: recruitmentList.recruitments)
@@ -98,7 +92,7 @@ final class RecruitmentViewModel: BaseViewModel {
         fetchCodeList(codeType: .tech)
     }
 
-    private func fetchCodeList(codeType: CodeType) {
+    private func fetchCodeList(codeType: CodeType, code: Int? = nil) {
         var keyword: String? {
             switch codeType {
             case .tech:
@@ -108,8 +102,11 @@ final class RecruitmentViewModel: BaseViewModel {
             }
         }
         var parentCode: String? {
-            guard let code = selectedJobCode?.code else { return nil }
-            return String(code)
+            if let code {
+                return String(code)
+            } else {
+                return nil
+            }
         }
         addCancellable(
             fetchCodesUseCase.execute(
@@ -121,7 +118,7 @@ final class RecruitmentViewModel: BaseViewModel {
             switch codeType {
             case .tech:
                 self?.fetchTechCodeList = codeList.codes
-                self?.techCodeList = self?.fetchTechCodeList ?? []
+                self?.techCodeList = codeList.codes
             case .job:
                 self?.jobCodeList = codeList.codes
             }

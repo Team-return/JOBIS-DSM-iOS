@@ -13,8 +13,8 @@ public struct RecruitmentsRepositoryImpl: RecruitmentsRepository {
     }
 
     public func fetchRecruitmentList(
-        page: Int, codeId: Int?, name: String?
+        page: Int, code: String?, companyName: String?
     ) -> AnyPublisher<RecruitmentListEntity, Error> {
-        remoteRecruitmentsDataSource.fetchRecruitmentList(page: page, codeId: codeId, name: name)
+        remoteRecruitmentsDataSource.fetchRecruitmentList(page: page, code: code, companyName: companyName)
     }
 }
