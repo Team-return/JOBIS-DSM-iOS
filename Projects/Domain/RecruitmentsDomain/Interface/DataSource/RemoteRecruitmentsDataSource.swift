@@ -4,6 +4,6 @@ import Foundation
 public protocol RemoteRecruitmentsDataSource {
     func fetchRecruitmentDetail(id: String) -> AnyPublisher<RecruitmentDetailEntity, Error>
     func fetchRecruitmentList(
-        page: Int, code: String?, companyName: String?
+        page: Int, code: String?, name: String?
     ) -> AnyPublisher<RecruitmentListEntity, Error>
 }

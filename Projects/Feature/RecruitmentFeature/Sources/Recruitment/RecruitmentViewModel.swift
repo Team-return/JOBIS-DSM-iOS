@@ -60,7 +60,7 @@ final class RecruitmentViewModel: BaseViewModel {
             fetchRecruitmentListUseCase.execute(
                 page: listPage,
                 code: nil,
-                companyName: companyText.isEmpty ? nil : companyText
+                name: companyText.isEmpty ? nil : companyText
             )
         ) { [weak self] recruitmentList in
             self?.filteringName = self?.companyText ?? ""
@@ -75,7 +75,7 @@ final class RecruitmentViewModel: BaseViewModel {
                 fetchRecruitmentListUseCase.execute(
                     page: listPage,
                     code: nil,
-                    companyName: companyText.isEmpty ? nil : companyText
+                    name: companyText.isEmpty ? nil : companyText
                 )
             ) { [weak self] recruitmentList in
                 self?.recruitmentList?.recruitments.append(contentsOf: recruitmentList.recruitments)
