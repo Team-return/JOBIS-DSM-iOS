@@ -1,4 +1,5 @@
 import Moya
+import Foundation
 import RecruitmentsDomainInterface
 import BaseDomain
 
@@ -18,25 +19,30 @@ extension RecruitmentsAPI: JobisAPI {
         switch self {
         case let .fetchRecruitmentDetail(id):
             return "/\(id)"
-        case .fetchRecruitmentList:
+        case let .fetchRecruitmentList(page, code, name):
+            let pageQuery = "page=\(page)"
+            let codeQuery = "code=\(code ?? "")"
+            let nameQuery = "name=\(name ?? "")"
+            let queryString = "/student?" + [pageQuery, codeQuery, nameQuery].joined(separator: "&")
+            if let encodedString = queryString.addingPercentEncoding(
+                withAllowedCharacters: .urlQueryAllowed) {
+                return encodedString
+            }
             return "/student"
         }
     }
 
-    public var method: Method {
+    public var method: Moya.Method {
         switch self {
         case .fetchRecruitmentList, .fetchRecruitmentDetail:
             return .get
         }
     }
 
-    public var task: Task {
+    public var task: Moya.Task {
         switch self {
         case .fetchRecruitmentList:
-            return .requestParameters(parameters: [
-                "asdf": "asdf",
-                "asdf": "fdsa"
-            ], encoding: URLEncoding.queryString)
+            return .requestParameters(parameters: [:], encoding: URLEncoding.queryString)
         default:
             return .requestPlain
         }
