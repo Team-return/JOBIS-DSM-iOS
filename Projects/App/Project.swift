@@ -41,6 +41,7 @@ let targets: [Target] = [
             .Core.JwtStore,
             .Core.JwtStoreInterface,
             .Feature.RootFeature,
+            .Feature.BookmarkListFeature,
             .Feature.SigninFeature,
             .Feature.SignupFeature,
             .Feature.MainTabFeature,
