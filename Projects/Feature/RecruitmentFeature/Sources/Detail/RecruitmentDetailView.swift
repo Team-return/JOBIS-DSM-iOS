@@ -20,7 +20,7 @@ struct RecruitmentDetailView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 10) {
+            LazyVStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 12) {
                     KFImage(URL(string: profileURL))
                         .resizable()

@@ -14,7 +14,7 @@ struct FindCompanyDetailView: View {
     var body: some View {
         ScrollView {
             if let infoDetail = viewModel.companyInfoDetail {
-                VStack(alignment: .leading, spacing: 10) {
+                LazyVStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 12) {
                         KFImage(URL(string: infoDetail.companyProfileURL))
                             .resizable()
