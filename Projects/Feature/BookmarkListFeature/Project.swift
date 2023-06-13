@@ -3,14 +3,11 @@ import ProjectDescriptionHelpers
 import DependencyPlugin
 
 let project = Project.makeModule(
-    name: ModulePaths.Feature.MainTabFeature.rawValue,
+    name: ModulePaths.Feature.BookmarkListFeature.rawValue,
     product: .staticLibrary,
     targets: [.interface, .unitTest],
     internalDependencies: [
         .Feature.BaseFeature,
-        .Feature.HomeFeatureInterface,
-        .Feature.BookmarkListFeatureInterface,
-        .Feature.MenuFeatureInterface,
-        .Feature.MyPageFeatureInterface
+        .Domain.BookmarksDomainInterface
     ]
 )
