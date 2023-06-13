@@ -59,7 +59,7 @@ public struct JOBISDropDown: View {
             .overlay(alignment: .top) {
                 if isOpen {
                     ScrollView {
-                        VStack(spacing: 0) {
+                        LazyVStack(spacing: 0) {
                             ForEach(selections, id: \.self) { value in
                                 HStack {
                                     Text(value)
