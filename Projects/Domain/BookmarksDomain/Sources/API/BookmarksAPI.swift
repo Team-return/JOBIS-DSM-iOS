@@ -2,12 +2,12 @@ import Moya
 import BookmarksDomainInterface
 import BaseDomain
 
-public enum BookmarksDomain {
+public enum BookmarksAPI {
     case fetchBookmarkList
     case bookmark(id: Int)
 }
 
-extension BookmarksDomain: JobisAPI {
+extension BookmarksAPI: JobisAPI {
     public typealias ErrorType = BookmarksError
 
     public var domain: JobisDomain {
