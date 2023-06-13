@@ -73,8 +73,6 @@ struct SigninView: View {
                 }
             }
             .environment(\.rootPresentationMode, $isNavigateSignup)
-
-            .jobisToast(isShowing: $viewModel.isAutoSignin, message: "testTest", style: .message)
         }
     }
 
@@ -88,8 +86,7 @@ struct SigninView: View {
             .frame(width: 320, height: 320)
             .cornerRadius(10)
             .rotationEffect(.degrees(-45))
-            .offset(x: 100, y: -240)
-            .offset(y: isOnAppear ? 0 : -1000)
+            .offset(x: 100, y: isOnAppear ? -240 : -1000)
             .shadow(blur: 20)
 
             Spacer()
