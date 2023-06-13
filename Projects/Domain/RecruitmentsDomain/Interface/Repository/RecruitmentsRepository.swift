@@ -4,6 +4,6 @@ import Foundation
 public protocol RecruitmentsRepository {
     func fetchRecruitmentDetail(id: String) -> AnyPublisher<RecruitmentDetailEntity, Error>
     func fetchRecruitmentList(
-        page: Int, code: String?, name: String?
+        page: Int, code: [String]?, name: String?
     ) -> AnyPublisher<RecruitmentListEntity, Error>
 }

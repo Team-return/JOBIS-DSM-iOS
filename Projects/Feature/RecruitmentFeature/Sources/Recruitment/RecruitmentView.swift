@@ -49,7 +49,7 @@ struct RecruitmentView: View {
         }
         .jobisBackButton(title: "모집의뢰서 조회하기") { dismiss() }
         .sheet(isPresented: $viewModel.isShowFilterSheet) {
-            print("sheet dismiss")
+            viewModel.fetchRecruitment()
         } content: {
             RecruitmentFilterSheet(viewModel: viewModel)
                 .presentationDragIndicator(.visible)

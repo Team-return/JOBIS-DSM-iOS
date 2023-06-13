@@ -23,53 +23,60 @@ struct RecruitmentFilterSheet: View {
                 .JOBISFont(.body(.body4), color: .Sub.gray60)
                 .padding(.vertical, 18)
 
-            Divider()
-                .foregroundColor(.Sub.gray40)
-                .padding(.horizontal, 24)
+            ZStack(alignment: .bottom) {
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 5) {
 
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 5) {
+                        searchBar()
 
-                    searchBar()
-
-                    ZStack(alignment: .top) {
-                        jobCodeTagList(jobCodeList: viewModel.jobCodeList)
-
-                        VStack {
-                            Spacer()
-                                .frame(height: howMove)
+                        ZStack(alignment: .top) {
+                            jobCodeTagList(jobCodeList: viewModel.jobCodeList)
 
                             VStack {
-                                Text(isShowMore ? "접기" : "분야 선택")
-                                    .underline(color: .Sub.gray60)
-                                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                                    .onTapGesture { isShowMore.toggle() }
+                                Spacer()
+                                    .frame(height: howMove)
 
-                                HStack(alignment: .top, spacing: 0) {
-                                    Text("선택 됨 : ")
-                                        .JOBISFont(.body(.body4), color: .Sub.gray90)
+                                VStack {
+                                    Text(isShowMore ? "접기" : "분야 선택")
+                                        .underline(color: .Sub.gray60)
+                                        .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                                        .onTapGesture { isShowMore.toggle() }
 
-                                    Text(
-                                        viewModel.selectedTechCode.map { $0.keyword }
-                                            .joined(separator: " | ")
-                                    )
-                                        .JOBISFont(.body(.body4), color: .Main.lightBlue)
+                                    selectedOption()
 
-                                    Spacer()
+                                    techCodeList(techCodeList: viewModel.techCodeList)
                                 }
-
-                                techCodeList(techCodeList: viewModel.techCodeList)
+                                .background(Color.Sub.gray10)
                             }
-                            .background(Color.Sub.gray10)
+                            .animation(.easeIn, value: howMove)
                         }
-                        .animation(.easeIn, value: howMove)
                     }
+                }
+
+                SolidBtn(text: "적용", size: .large) {
+                    viewModel.fetchRecruitment()
+                    viewModel.isShowFilterSheet.toggle()
                 }
             }
         }
         .padding(.horizontal, 20)
         .onAppear {
             viewModel.sheetOnAppear()
+        }
+    }
+    @ViewBuilder
+    func selectedOption() -> some View {
+        HStack(alignment: .top, spacing: 0) {
+            Text("선택 됨 : ")
+                .JOBISFont(.body(.body4), color: .Sub.gray90)
+
+            Text(
+                viewModel.selectedTechCode.map { $0.keyword }
+                    .joined(separator: " | ")
+            )
+            .JOBISFont(.body(.body4), color: .Main.lightBlue)
+
+            Spacer()
         }
     }
 
@@ -134,12 +141,8 @@ struct RecruitmentFilterSheet: View {
                         .foregroundColor(.Sub.gray40)
                 }
             }
-            Spacer()
-
-            SolidBtn(text: "적용", size: .large) {
-                viewModel.fetchRecruitment()
-            }
         }
+        .padding(.bottom, 70)
         .frame(maxHeight: .infinity)
     }
 }

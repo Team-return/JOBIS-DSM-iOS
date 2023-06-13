@@ -59,7 +59,7 @@ final class RecruitmentViewModel: BaseViewModel {
         addCancellable(
             fetchRecruitmentListUseCase.execute(
                 page: listPage,
-                code: nil,
+                code: selectedTechCode.map { String($0.code) },
                 name: companyText.isEmpty ? nil : companyText
             )
         ) { [weak self] recruitmentList in

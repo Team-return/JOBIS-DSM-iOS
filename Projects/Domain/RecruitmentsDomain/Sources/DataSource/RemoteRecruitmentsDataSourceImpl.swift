@@ -11,7 +11,7 @@ public final class RemoteRecruitmentsDataSourceImpl:
     }
 
     public func fetchRecruitmentList(
-        page: Int, code: String?, name: String?
+        page: Int, code: [String]?, name: String?
     ) -> AnyPublisher<RecruitmentListEntity, Error> {
         request(
             .fetchRecruitmentList(page: page, code: code, name: name),
