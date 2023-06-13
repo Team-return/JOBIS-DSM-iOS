@@ -11,9 +11,10 @@ public final class RemoteRecruitmentsDataSourceImpl:
     }
 
     public func fetchRecruitmentList(
-        page: Int, codeId: Int?, name: String?) -> AnyPublisher<RecruitmentListEntity, Error> {
+        page: Int, code: [String]?, name: String?
+    ) -> AnyPublisher<RecruitmentListEntity, Error> {
         request(
-            .fetchRecruitmentList(page: page, codeId: codeId, name: name),
+            .fetchRecruitmentList(page: page, code: code, name: name),
             dto: RecruitmentListResponseDTO.self
         )
         .map { $0.toDomain() }

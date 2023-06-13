@@ -10,7 +10,9 @@ public struct CodesRepositoryImpl: CodesRepository {
         self.remoteCodesDataSource = remoteCodesDataSource
     }
 
-    public func fetchCodes(keyword: String?, type: CodeType, parentCode: String?) -> AnyPublisher<CodeListEntity, Error> {
+    public func fetchCodes(
+        keyword: String?, type: CodeType, parentCode: String?
+    ) -> AnyPublisher<CodeListEntity, Error> {
         remoteCodesDataSource.fetchCodes(keyword: keyword, type: type, parentCode: parentCode)
     }
 }

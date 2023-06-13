@@ -48,6 +48,12 @@ struct RecruitmentView: View {
             viewModel.onAppear()
         }
         .jobisBackButton(title: "모집의뢰서 조회하기") { dismiss() }
+        .sheet(isPresented: $viewModel.isShowFilterSheet) {
+            viewModel.fetchRecruitment()
+        } content: {
+            RecruitmentFilterSheet(viewModel: viewModel)
+                .presentationDragIndicator(.visible)
+        }
     }
 
     @ViewBuilder
@@ -71,7 +77,7 @@ struct RecruitmentView: View {
                     iconWidth: 24,
                     iconHeight: 24
                 ) {
-                    print("번쩍ㅂ번쩍")
+                    viewModel.isShowFilterSheet.toggle()
                 }
             }
 
@@ -86,8 +92,10 @@ struct RecruitmentView: View {
 
                 Spacer()
 
-                Text("필터 적용됨")
-                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                if !viewModel.selectedTechCode.isEmpty {
+                    Text("필터 적용됨")
+                        .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                }
             }
         }
         .listRowSeparator(.hidden)

@@ -9,6 +9,7 @@ let project = Project.makeModule(
     internalDependencies: [
         .Feature.BaseFeature,
         .Domain.RecruitmentsDomainInterface,
-        .Domain.CodesDomainInterface
+        .Domain.CodesDomainInterface,
+        .Domain.BookmarksDomainInterface
     ]
 )

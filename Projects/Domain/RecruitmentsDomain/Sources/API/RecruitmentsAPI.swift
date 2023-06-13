@@ -1,10 +1,11 @@
 import Moya
+import Foundation
 import RecruitmentsDomainInterface
 import BaseDomain
 
 public enum RecruitmentsAPI {
     case fetchRecruitmentDetail(id: String)
-    case fetchRecruitmentList(page: Int, codeId: Int?, name: String?)
+    case fetchRecruitmentList(page: Int, code: [String]?, name: String?)
 }
 
 extension RecruitmentsAPI: JobisAPI {
@@ -23,23 +24,22 @@ extension RecruitmentsAPI: JobisAPI {
         }
     }
 
-    public var method: Method {
+    public var method: Moya.Method {
         switch self {
         case .fetchRecruitmentList, .fetchRecruitmentDetail:
             return .get
         }
     }
 
-    public var task: Task {
+    public var task: Moya.Task {
         switch self {
-        case let .fetchRecruitmentList(page, keyword, name):
+        case let .fetchRecruitmentList(page, code, name):
             return .requestParameters(parameters: [
                 "page": page,
-                "keyword": keyword ?? "",
+                "code": code?.joined(separator: ",") ?? "",
                 "name": name ?? ""
-            ],
-            encoding: URLEncoding.queryString)
-        case .fetchRecruitmentDetail:
+            ], encoding: URLEncoding.queryString)
+        default:
             return .requestPlain
         }
     }

@@ -10,7 +10,8 @@ let dependencies = Dependencies(
                 .remote(url: "https://github.com/Quick/Nimble.git", requirement: .upToNextMajor(from: "10.0.0")),
                 .remote(url: "https://github.com/uber/needle.git", requirement: .upToNextMajor(from: "0.19.0")),
                 .remote(url: "https://github.com/team-aliens/Moya.git", requirement: .branch("master")),
-                .remote(url: "https://github.com/onevcat/Kingfisher.git", requirement: .upToNextMajor(from: "7.0"))
+                .remote(url: "https://github.com/onevcat/Kingfisher.git", requirement: .upToNextMajor(from: "7.0")),
+                .remote(url: "https://github.com/globulus/swiftui-flow-layout", requirement: .upToNextMajor(from: "1.0.4"))
             ],
             baseSettings: .settings(
                 configurations: [

@@ -33,7 +33,7 @@ extension CodesAPI: JobisAPI {
             return .requestParameters(
                 parameters: [
                     "keyword": keyword ?? "",
-                    "type": type,
+                    "type": type.rawValue,
                     "parent_code": parentCode ?? ""
                 ], encoding: URLEncoding.queryString)
         }
