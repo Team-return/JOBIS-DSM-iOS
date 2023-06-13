@@ -5,6 +5,8 @@ import Combine
 final class FindCompanyViewModel: BaseViewModel {
     @Published var listPage: Int = 1
     @Published var studentCompanyList: StudentCompanyListEntity?
+    @Published var companyText: String = ""
+    @Published var filteringName: String = ""
     @Published var isNavigateCompanyDetail: Bool = false
 
     private let fetchStudentCompanyListUseCase: FetchStudentCompanyListUseCase
@@ -18,9 +20,10 @@ final class FindCompanyViewModel: BaseViewModel {
     func onAppear() {
         self.listPage = 1
         addCancellable(
-            fetchStudentCompanyListUseCase.execute(page: listPage, name: nil)
+            fetchStudentCompanyListUseCase.execute(page: listPage, name: companyText)
         ) { [weak self] studentCompanyList in
             self?.studentCompanyList = studentCompanyList
+            self?.filteringName = self?.companyText ?? ""
         }
     }
 
