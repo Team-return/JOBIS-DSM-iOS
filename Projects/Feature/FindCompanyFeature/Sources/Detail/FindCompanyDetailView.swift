@@ -33,6 +33,7 @@ struct FindCompanyDetailView: View {
 
                     Divider()
                         .foregroundColor(.Sub.gray40)
+
                     VStack(alignment: .leading, spacing: 10) {
                         ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
                             companyInfo(title: title, content: content)
@@ -40,15 +41,17 @@ struct FindCompanyDetailView: View {
                     }
                     .padding(.vertical, 10)
 
-                    Divider()
-                        .foregroundColor(.Sub.gray40)
-
                     if let reviewList = viewModel.reviewList {
-                        Text("면접 후기")
+                        if !reviewList.reviews.isEmpty {
+                            Divider()
+                            .foregroundColor(.Sub.gray40)
+
+                            Text("면접 후기")
                             .JOBISFont(.body(.body2), color: .Sub.gray70)
 
-                        ForEach(reviewList.reviews, id: \.self) { review in
-                            reviewCell(title: review.writer, date: review.createdDate)
+                            ForEach(reviewList.reviews, id: \.self) { review in
+                                reviewCell(title: review.writer, date: review.createdDate)
+                            }
                         }
                     }
                 }
