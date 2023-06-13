@@ -18,6 +18,7 @@ struct FindCompanyView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+                    searchBar()
             if let list = viewModel.studentCompanyList {
                 List(list.companies, id: \.self) { companyEntity in
                     Button {
@@ -49,4 +50,29 @@ struct FindCompanyView: View {
         }
         .jobisBackButton(title: "기업 조회하기") { dismiss() }
     }
+
+    @ViewBuilder
+    func searchBar() -> some View {
+        VStack(alignment: .leading) {
+            JOBISTextField(
+                placeholder: "회사명을 입력해주세요.",
+                text: $viewModel.companyText,
+                inputType: .search,
+                outlinedType: .outlined
+            ) {
+                viewModel.onAppear()
+            }
+
+            if !viewModel.filteringName.isEmpty {
+                Text("검색결과 : ")
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+
+                Text(viewModel.filteringName)
+                    .JOBISFont(.etc(.caption), color: .Sub.gray90)
+            }
+        }
+        .listRowSeparator(.hidden)
+        .listRowBackground(Color.clear)
+    }
+
 }
