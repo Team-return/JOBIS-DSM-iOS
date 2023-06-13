@@ -92,8 +92,10 @@ struct RecruitmentView: View {
 
                 Spacer()
 
-                Text("필터 적용됨")
-                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                if !viewModel.selectedTechCode.isEmpty {
+                    Text("필터 적용됨")
+                        .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                }
             }
         }
         .listRowSeparator(.hidden)
