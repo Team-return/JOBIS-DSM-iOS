@@ -4,6 +4,8 @@ import ApplicationsDomain
 import ApplicationsDomainInterface
 import AuthDomain
 import AuthDomainInterface
+import BookmarkListFeature
+import BookmarkListFeatureInterface
 import BookmarksDomain
 import BookmarksDomainInterface
 import CodesDomain
@@ -94,6 +96,9 @@ private class MainTabDependency2826cdb310ed0b17a725Provider: MainTabDependency {
     var homeFactory: any HomeFactory {
         return appComponent.homeFactory
     }
+    var bookmarkListFactory: any BookmarkListFactory {
+        return appComponent.bookmarkListFactory
+    }
     var myPageFactory: any MyPageFactory {
         return appComponent.myPageFactory
     }
@@ -119,6 +124,22 @@ private class MyPageDependency48d84b530313b3ee40feProvider: MyPageDependency {
 /// ^->AppComponent->MyPageComponent
 private func factory0f6f456ebf157d02dfb3e3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
     return MyPageDependency48d84b530313b3ee40feProvider()
+}
+private class BookmarkListDependency51ed5641ae9b8f23fd81Provider: BookmarkListDependency {
+    var fetchBookmarkListUseCase: any FetchBookmarkListUseCase {
+        return appComponent.fetchBookmarkListUseCase
+    }
+    var bookmarkUseCase: any BookmarkUseCase {
+        return appComponent.bookmarkUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->BookmarkListComponent
+private func factory4fe746186ebb99322754f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return BookmarkListDependency51ed5641ae9b8f23fd81Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class RootDependency3944cc797a4a88956fb5Provider: RootDependency {
     var signinFactory: any SigninFactory {
@@ -281,6 +302,7 @@ extension AppComponent: Registration {
         localTable["recruitmentDetailFactory-any RecruitmentDetailFactory"] = { [unowned self] in self.recruitmentDetailFactory as Any }
         localTable["findCompanyFactory-any FindCompanyFactory"] = { [unowned self] in self.findCompanyFactory as Any }
         localTable["findCompanyDetailFactory-any FindCompanyDetailFactory"] = { [unowned self] in self.findCompanyDetailFactory as Any }
+        localTable["bookmarkListFactory-any BookmarkListFactory"] = { [unowned self] in self.bookmarkListFactory as Any }
         localTable["homeFactory-any HomeFactory"] = { [unowned self] in self.homeFactory as Any }
         localTable["myPageFactory-any MyPageFactory"] = { [unowned self] in self.myPageFactory as Any }
         localTable["menuFactory-any MenuFactory"] = { [unowned self] in self.menuFactory as Any }
@@ -333,6 +355,7 @@ extension SignupComponent: Registration {
 extension MainTabComponent: Registration {
     public func registerItems() {
         keyPathToName[\MainTabDependency.homeFactory] = "homeFactory-any HomeFactory"
+        keyPathToName[\MainTabDependency.bookmarkListFactory] = "bookmarkListFactory-any BookmarkListFactory"
         keyPathToName[\MainTabDependency.myPageFactory] = "myPageFactory-any MyPageFactory"
         keyPathToName[\MainTabDependency.menuFactory] = "menuFactory-any MenuFactory"
     }
@@ -340,6 +363,12 @@ extension MainTabComponent: Registration {
 extension MyPageComponent: Registration {
     public func registerItems() {
 
+    }
+}
+extension BookmarkListComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\BookmarkListDependency.fetchBookmarkListUseCase] = "fetchBookmarkListUseCase-any FetchBookmarkListUseCase"
+        keyPathToName[\BookmarkListDependency.bookmarkUseCase] = "bookmarkUseCase-any BookmarkUseCase"
     }
 }
 extension RootComponent: Registration {
@@ -415,6 +444,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->SignupComponent", factory86602ff0d0dbaf2cb017f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MainTabComponent", factory1ab5a747ddf21e1393f9f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MyPageComponent", factory0f6f456ebf157d02dfb3e3b0c44298fc1c149afb)
+    registerProviderFactory("^->AppComponent->BookmarkListComponent", factory4fe746186ebb99322754f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RootComponent", factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->SigninComponent", factory2882a056d84a613debccf47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->HomeComponent", factory67229cdf0f755562b2b1f47b58f8f304c97af4d5)
