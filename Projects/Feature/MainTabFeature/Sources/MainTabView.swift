@@ -1,4 +1,5 @@
 import SwiftUI
+import BookmarkListFeatureInterface
 import MenuFeatureInterface
 import HomeFeatureInterface
 import MyPageFeatureInterface
@@ -19,15 +20,18 @@ struct MainTabView: View {
     ]
 
     private let homeFactory: any HomeFactory
+    private let bookmarkListFactory: any BookmarkListFactory
     private let myPageFactory: any MyPageFactory
     private let menuFactory: any MenuFactory
 
     init(
         homeFactory: any HomeFactory,
+        bookmarkListFactory: any BookmarkListFactory,
         myPageFactory: any MyPageFactory,
         menuFactory: any MenuFactory
     ) {
         self.homeFactory = homeFactory
+        self.bookmarkListFactory = bookmarkListFactory
         self.myPageFactory = myPageFactory
         self.menuFactory = menuFactory
     }
@@ -39,7 +43,8 @@ struct MainTabView: View {
                     .eraseToAnyView()
                     .tag(TabFlow.home)
 
-                Text("임시 RecruitmentComponent.makeView()")
+                bookmarkListFactory.makeView()
+                    .eraseToAnyView()
                     .tag(TabFlow.recruitment)
 
                 myPageFactory.makeView()
