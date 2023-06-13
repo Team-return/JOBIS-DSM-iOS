@@ -2,7 +2,7 @@ import BookmarksDomainInterface
 import BaseDomain
 import Combine
 
-public final class RemoteBookmarksDataSourceImpl: BaseRemoteDataSource<BookmarksDomain>,
+public final class RemoteBookmarksDataSourceImpl: BaseRemoteDataSource<BookmarksAPI>,
                                                   RemoteBookmarksDataSource {
     public func fetchBookmarkList() -> AnyPublisher<BookmarkListEntity, Error> {
         request(.fetchBookmarkList, dto: BookmarkListResponseDTO.self)
