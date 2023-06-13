@@ -15,6 +15,8 @@ import FindCompanyFeature
 import FindCompanyFeatureInterface
 import RecruitmentFeature
 import RecruitmentFeatureInterface
+import BookmarkListFeature
+import BookmarkListFeatureInterface
 import MyPageFeature
 import MyPageFeatureInterface
 import MenuFeature
@@ -68,6 +70,9 @@ public extension AppComponent {
     }
     var findCompanyDetailFactory: any FindCompanyDetailFactory {
         FindCompanyDetailComponent(parent: self)
+    }
+    var bookmarkListFactory: any BookmarkListFactory {
+        BookmarkListComponent(parent: self)
     }
     var homeFactory: any HomeFactory {
         HomeComponent(parent: self)
