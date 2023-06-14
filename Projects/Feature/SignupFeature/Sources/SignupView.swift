@@ -48,12 +48,6 @@ struct SignupView: View {
             title: "에러"
         )
         .jobisToast(
-            isShowing: $viewModel.isShowSuccessVerifyEmailToast,
-            message: "다음을 눌러 계속 진행하세요.",
-            style: .success,
-            title: "인증완료!"
-        )
-        .jobisToast(
             isShowing: $viewModel.isShowMessageToast,
             message: "인증번호 발송 완료",
             style: .message,

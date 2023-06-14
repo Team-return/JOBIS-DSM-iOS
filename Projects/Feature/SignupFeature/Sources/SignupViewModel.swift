@@ -83,7 +83,6 @@ final class SignupViewModel: BaseViewModel {
 
     @Published var isShowMessageToast: Bool = false
     @Published var isShowSignupErrorToast: Bool = false
-    @Published var isShowSuccessVerifyEmailToast: Bool = false
     @Published var isShowEmailVerifyErrorToast: Bool = false
 
     @Published var isInfoSettingError: Bool = false
@@ -177,24 +176,14 @@ final class SignupViewModel: BaseViewModel {
         }
     }
 
-    private func verifyAuthCode() {
+    private func emailVerifyNextButtonDidTap() {
         addCancellable(
             verifyAuthCodeUseCase.execute(email: email, authCode: authCode)
         ) { [weak self] _ in
-            self?.isShowSuccessVerifyEmailToast = true
-            self?.isEmailVerified = true
-            self?.nextButtonTitle = "다음"
+            self?.signupType = .password
+            self?.progressValue += 1
         } onReceiveError: { [weak self] _ in
             self?.isAuthCodeError = true
-        }
-    }
-
-    private func emailVerifyNextButtonDidTap() {
-        if isEmailVerified {
-            signupType = .password
-            progressValue += 1
-        } else {
-            verifyAuthCode()
         }
     }
 
@@ -204,8 +193,10 @@ final class SignupViewModel: BaseViewModel {
             isInfoSettingError = true
             errorMessage = "공백이 있습니다."
         } else {
+            let formattedNumber = String(format: "%02d", Int(number) ?? 0)
+            let gcn = Int(grade + classRoom + formattedNumber) ?? 0
             addCancellable(
-                studentExistsUseCase.execute(gcn: Int(grade + classRoom + number) ?? 0, name: name)
+                studentExistsUseCase.execute(gcn: gcn, name: name)
             ) { [weak self] in
                 self?.signupType = .emailVerify
                 self?.progressValue += 1
@@ -250,7 +241,7 @@ final class SignupViewModel: BaseViewModel {
         }
     }
     private func passwordNextButtonDidTap() {
-        let passwordExpression = "^(?=.*[A-Za-z])(?=.*)(?=.*[~!@#$%^&*()+|=])[A-Za-z~!@#$%^&*()+|=]{8,16}"
+        let passwordExpression = #"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$"#
 
         guard password ~= passwordExpression else {
             isPasswordRegexError = true
