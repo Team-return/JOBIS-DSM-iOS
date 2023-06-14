@@ -83,7 +83,6 @@ final class SignupViewModel: BaseViewModel {
 
     @Published var isShowMessageToast: Bool = false
     @Published var isShowSignupErrorToast: Bool = false
-    @Published var isShowSuccessVerifyEmailToast: Bool = false
     @Published var isShowEmailVerifyErrorToast: Bool = false
 
     @Published var isInfoSettingError: Bool = false
@@ -204,8 +203,10 @@ final class SignupViewModel: BaseViewModel {
             isInfoSettingError = true
             errorMessage = "공백이 있습니다."
         } else {
+            let formattedNumber = String(format: "%02d", Int(number) ?? 0)
+            let gcn = Int(grade + classRoom + formattedNumber) ?? 0
             addCancellable(
-                studentExistsUseCase.execute(gcn: Int(grade + classRoom + number) ?? 0, name: name)
+                studentExistsUseCase.execute(gcn: gcn, name: name)
             ) { [weak self] in
                 self?.signupType = .emailVerify
                 self?.progressValue += 1
