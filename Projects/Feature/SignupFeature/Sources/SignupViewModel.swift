@@ -176,24 +176,14 @@ final class SignupViewModel: BaseViewModel {
         }
     }
 
-    private func verifyAuthCode() {
+    private func emailVerifyNextButtonDidTap() {
         addCancellable(
             verifyAuthCodeUseCase.execute(email: email, authCode: authCode)
         ) { [weak self] _ in
-            self?.isShowSuccessVerifyEmailToast = true
-            self?.isEmailVerified = true
-            self?.nextButtonTitle = "다음"
+            self?.signupType = .password
+            self?.progressValue += 1
         } onReceiveError: { [weak self] _ in
             self?.isAuthCodeError = true
-        }
-    }
-
-    private func emailVerifyNextButtonDidTap() {
-        if isEmailVerified {
-            signupType = .password
-            progressValue += 1
-        } else {
-            verifyAuthCode()
         }
     }
 
