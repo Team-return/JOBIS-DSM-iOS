@@ -251,7 +251,7 @@ final class SignupViewModel: BaseViewModel {
         }
     }
     private func passwordNextButtonDidTap() {
-        let passwordExpression = "^(?=.*[A-Za-z])(?=.*)(?=.*[~!@#$%^&*()+|=])[A-Za-z~!@#$%^&*()+|=]{8,16}"
+        let passwordExpression = #"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$"#
 
         guard password ~= passwordExpression else {
             isPasswordRegexError = true
