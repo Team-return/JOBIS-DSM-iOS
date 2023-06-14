@@ -14,8 +14,8 @@ struct MainTabView: View {
 
     var tabItem: [(Image, String, TabFlow)] = [
         (DesignSystemAsset.Icons.house.swiftUIImage, "홈", .home),
-        (DesignSystemAsset.Icons.recruitment.swiftUIImage, "의뢰서", .recruitment),
-        (DesignSystemAsset.Icons.profile.swiftUIImage, "프로필", .profile),
+        (DesignSystemAsset.Icons.bookmarkOn.swiftUIImage, "북마크", .bookmark),
+        (DesignSystemAsset.Icons.profile.swiftUIImage, "마이페이지", .profile),
         (DesignSystemAsset.Icons.menu.swiftUIImage, "메뉴", .menu)
     ]
 
@@ -45,7 +45,7 @@ struct MainTabView: View {
 
                 bookmarkListFactory.makeView()
                     .eraseToAnyView()
-                    .tag(TabFlow.recruitment)
+                    .tag(TabFlow.bookmark)
 
                 myPageFactory.makeView()
                     .eraseToAnyView()
