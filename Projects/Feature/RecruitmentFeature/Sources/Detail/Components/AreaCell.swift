@@ -1,5 +1,6 @@
 import SwiftUI
 import DesignSystem
+import UtilityModule
 import RecruitmentsDomainInterface
 
 struct AreaCell: View {
@@ -33,7 +34,7 @@ struct AreaCell: View {
 
                 Text(isShowDetail ? "간략히" : "자세히")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                    .underline()
+                    .underline(color: .Sub.gray60)
                     .onTapGesture {
                         withAnimation(
                             .spring(
