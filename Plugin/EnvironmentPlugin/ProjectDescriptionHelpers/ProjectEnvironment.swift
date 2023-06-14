@@ -17,7 +17,7 @@ public let env = ProjectEnvironment (
     targetName: "JOBIS-DSM-iOS",
     targetTestName: "DMS-AliensTests",
     organizationName: "com.team.return",
-    deploymentTarget: .iOS(targetVersion: "16.0", devices: [.iphone, .ipad]),
+    deploymentTarget: .iOS(targetVersion: "15.0", devices: [.iphone, .ipad]),
     platform: .iOS,
     baseSetting: [:]
 )
