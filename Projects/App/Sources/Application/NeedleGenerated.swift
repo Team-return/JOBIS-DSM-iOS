@@ -132,6 +132,12 @@ private class BookmarkListDependency51ed5641ae9b8f23fd81Provider: BookmarkListDe
     var bookmarkUseCase: any BookmarkUseCase {
         return appComponent.bookmarkUseCase
     }
+    var recruitmentFactory: any RecruitmentFactory {
+        return appComponent.recruitmentFactory
+    }
+    var recruitmentDetailFactory: any RecruitmentDetailFactory {
+        return appComponent.recruitmentDetailFactory
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -369,6 +375,8 @@ extension BookmarkListComponent: Registration {
     public func registerItems() {
         keyPathToName[\BookmarkListDependency.fetchBookmarkListUseCase] = "fetchBookmarkListUseCase-any FetchBookmarkListUseCase"
         keyPathToName[\BookmarkListDependency.bookmarkUseCase] = "bookmarkUseCase-any BookmarkUseCase"
+        keyPathToName[\BookmarkListDependency.recruitmentFactory] = "recruitmentFactory-any RecruitmentFactory"
+        keyPathToName[\BookmarkListDependency.recruitmentDetailFactory] = "recruitmentDetailFactory-any RecruitmentDetailFactory"
     }
 }
 extension RootComponent: Registration {

@@ -52,7 +52,7 @@ struct RecruitmentView: View {
             viewModel.fetchRecruitment()
         } content: {
             RecruitmentFilterSheet(viewModel: viewModel)
-                .presentationDragIndicator(.visible)
+//                .presentationDragIndicator(.visible)
         }
     }
 
