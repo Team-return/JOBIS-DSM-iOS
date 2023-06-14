@@ -2,6 +2,8 @@ import Foundation
 
 public struct RecruitmentDetailResponseDTO: Decodable {
     public let companyID: Int
+    public let companyProfileUrl: String
+    public let companyName: String
     public let areas: [AreaResponseDTO]
     public let preferentialTreatment: String?
     public let requiredGrade: Int?
@@ -18,6 +20,8 @@ public struct RecruitmentDetailResponseDTO: Decodable {
 
     public init(
         companyID: Int,
+        companyProfileUrl: String,
+        companyName: String,
         areas: [AreaResponseDTO],
         preferentialTreatment: String?,
         requiredGrade: Int?,
@@ -34,6 +38,8 @@ public struct RecruitmentDetailResponseDTO: Decodable {
         etc: String?
     ) {
         self.companyID = companyID
+        self.companyProfileUrl = companyProfileUrl
+        self.companyName = companyName
         self.areas = areas
         self.preferentialTreatment = preferentialTreatment
         self.requiredGrade = requiredGrade
@@ -52,6 +58,8 @@ public struct RecruitmentDetailResponseDTO: Decodable {
 
     enum CodingKeys: String, CodingKey {
         case companyID = "company_id"
+        case companyProfileUrl = "company_profile_url"
+        case companyName = "company_name"
         case areas
         case preferentialTreatment = "preferential_treatment"
         case requiredGrade = "required_grade"

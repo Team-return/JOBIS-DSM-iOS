@@ -4,6 +4,8 @@ public extension RecruitmentDetailResponseDTO {
     func toDomain() -> RecruitmentDetailEntity {
         RecruitmentDetailEntity(
             companyID: companyID,
+            companyProfileUrl: companyProfileUrl,
+            companyName: companyName,
             areas: areas.map { $0.toDomain() },
             preferentialTreatment: preferentialTreatment ?? "없음",
             requiredGrade: requiredGrade,
