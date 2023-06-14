@@ -5,61 +5,59 @@ import Kingfisher
 
 struct RecruitmentDetailView: View {
     @StateObject var viewModel: RecruitmentDetailViewModel
-    let profileURL: String
-    let companyName: String
+    @Environment(\.dismiss) var dismiss
 
     init(
-        viewModel: RecruitmentDetailViewModel,
-        profileURL: String,
-        companyName: String
+        viewModel: RecruitmentDetailViewModel
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
-        self.profileURL = profileURL
-        self.companyName = companyName
     }
 
     var body: some View {
         ScrollView {
-            LazyVStack(alignment: .leading, spacing: 10) {
-                HStack(spacing: 12) {
-                    KFImage(URL(string: profileURL))
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 80, height: 80)
-                        .cornerRadius(15)
+            if let detailInfo = viewModel.recruitmentDetail {
+                LazyVStack(alignment: .leading, spacing: 10) {
+                    HStack(spacing: 12) {
+                        KFImage(URL(string: detailInfo.companyProfileUrl))
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 80, height: 80)
+                            .cornerRadius(15)
 
-                    Text(companyName)
-                        .JOBISFont(.body(.body1), color: .Sub.gray90)
+                        Text(detailInfo.companyName)
+                            .JOBISFont(.body(.body1), color: .Sub.gray90)
+                    }
+                    .padding(.bottom, 2)
+
+                    GrayBtn(text: "기업 보기", size: .large) {
+                        print("기업 보기")
+                    }
+
+                    Divider()
+                        .foregroundColor(.Sub.gray40)
+
+                    recruitmentInfo(detailInfo: detailInfo)
                 }
-                .padding(.bottom, 2)
-
-                GrayBtn(text: "기업 보기", size: .large) {
-                    print("기업 보기")
-                }
-
-                Divider()
-                    .foregroundColor(.Sub.gray40)
-
-                recruitmentInfo()
+                .padding(.horizontal, 24)
             }
-            .padding([.horizontal, .top], 24)
         }
         .onAppear {
             viewModel.onAppear()
         }
+        .jobisBackButton(title: "모집의뢰서 상세보기") {
+            dismiss()
+        }
     }
 
     @ViewBuilder
-    func recruitmentInfo() -> some View {
+    func recruitmentInfo(detailInfo: RecruitmentDetailEntity) -> some View {
         VStack(alignment: .leading, spacing: 10) {
-            if let detailInfo = viewModel.recruitmentDetail {
-                recruitmentInfoCell(
-                    title: "모집기간",
-                    content: detailInfo.startDate + " ~ " + detailInfo.endDate
-                )
+            recruitmentInfoCell(
+                title: "모집기간",
+                content: detailInfo.startDate + " ~ " + detailInfo.endDate
+            )
 
-                areaView(areas: detailInfo.areas)
-            }
+            areaView(areas: detailInfo.areas)
 
             ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
                 recruitmentInfoCell(title: title, content: content)
