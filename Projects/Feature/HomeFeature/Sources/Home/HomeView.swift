@@ -65,8 +65,10 @@ struct HomeView: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .onChange(of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindCompany) {
-            tabbarHidden.wrappedValue = $0
+        .onChange(of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindCompany) { newValue in
+            withAnimation {
+                tabbarHidden.wrappedValue = newValue
+            }
         }
         .navigate(
             to: recruitmentFactory.makeView()
