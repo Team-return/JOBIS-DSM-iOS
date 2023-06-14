@@ -56,6 +56,7 @@ struct SigninView: View {
                 .padding(.horizontal, 20)
             }
             .ignoresSafeArea(.keyboard)
+            .ignoresSafeArea(edges: .top)
             .jobisToast(isShowing: $viewModel.isShowToast, message: viewModel.errorMessage, style: .error)
             .jobisBackground()
             .hideKeyboardWhenTap()
