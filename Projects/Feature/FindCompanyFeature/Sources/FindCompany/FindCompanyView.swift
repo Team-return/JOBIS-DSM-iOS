@@ -1,6 +1,7 @@
 import DesignSystem
 import CompaniesDomainInterface
 import SwiftUI
+import UtilityModule
 import FindCompanyFeatureInterface
 
 struct FindCompanyView: View {
@@ -47,6 +48,7 @@ struct FindCompanyView: View {
         .onAppear {
             viewModel.onAppear()
         }
+        .hideKeyboardWhenTap()
         .jobisBackButton(title: "기업 조회하기") { dismiss() }
     }
 
