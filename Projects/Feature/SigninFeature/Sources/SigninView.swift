@@ -154,7 +154,7 @@ struct SigninView: View {
                 } label: {
                     Text("회원가입")
                         .JOBISFont(.etc(.caption), color: .Sub.gray90)
-                        .underline()
+                        .underline(color: .Sub.gray90)
                 }
 
                 Spacer()
