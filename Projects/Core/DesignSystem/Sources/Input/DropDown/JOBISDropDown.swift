@@ -97,7 +97,7 @@ public struct JOBISDropDown: View {
                             )
                     )
                     .offset(y: 37)
-                    .scrollDisabled(selections.count < 5)
+//                    .scrollDisabled(selections.count < 5)
                 }
             }
         }

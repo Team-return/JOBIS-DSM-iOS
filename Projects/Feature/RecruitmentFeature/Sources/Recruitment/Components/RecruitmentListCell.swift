@@ -83,7 +83,7 @@ struct RecruitmentListCell: View {
                 companyName: recruitmentEntity.companyName
             )
             .eraseToAnyView()
-            .presentationDragIndicator(.visible)
+//            .presentationDragIndicator(.visible)
         }
     }
 }
