@@ -16,14 +16,15 @@ struct StudentInfoView: View {
                 .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 0) {
-                Text("\(studentInfo?.studentGcn ?? "Loading...") \(studentInfo?.studentName ?? "")")
+                Text("\(studentInfo?.studentGcn ?? "0000") \(studentInfo?.studentName ?? "홍길동")")
                     .JOBISFont(.body(.body2), color: .Sub.gray70)
 
-                Text(studentInfo?.department.localizedString() ?? "")
+                Text(studentInfo?.department.localizedString() ?? "대전광역시개발과")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
             }
         }
         .padding(.leading, 30)
         .padding(.bottom, 22)
+        .redacted(reason: isLoading ? .placeholder : [])
     }
 }
