@@ -56,7 +56,7 @@ struct BookmarkListView: View {
                 } label: {
                     Text("모집의뢰서 보러가기 >")
                         .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                        .underline(color: .Sub.gray60)
+                        .underlineText(color: .Sub.gray60)
                 }
             }
 

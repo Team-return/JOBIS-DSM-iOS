@@ -11,8 +11,6 @@ struct SigninView: View {
     @EnvironmentObject var appState: AppState
     @StateObject var viewModel: SigninViewModel
     @FocusState private var focusField: FocusField?
-    @State var isNavigateSignup = false
-    @State private var isOnAppear = false
 
     private let signupFactory: any SignupFactory
 
@@ -55,7 +53,7 @@ struct SigninView: View {
                 }
                 .padding(.horizontal, 20)
             }
-            .ignoresSafeArea(.keyboard)
+            .ignoresSafeArea(.keyboard, edges: .bottom)
             .ignoresSafeArea(edges: .top)
             .jobisToast(isShowing: $viewModel.isShowToast, message: viewModel.errorMessage, style: .error)
             .jobisBackground()
@@ -66,14 +64,14 @@ struct SigninView: View {
             }
             .navigate(
                 to: signupFactory.makeView().eraseToAnyView(),
-                when: $isNavigateSignup
+                when: $viewModel.isNavigateSignup
             )
             .onAppear {
                 withAnimation(.spring()) {
-                    self.isOnAppear = true
+                    self.viewModel.isOnAppear = true
                 }
             }
-            .environment(\.rootPresentationMode, $isNavigateSignup)
+            .environment(\.rootPresentationMode, $viewModel.isNavigateSignup)
         }
     }
 
@@ -87,7 +85,7 @@ struct SigninView: View {
             .frame(width: 320, height: 320)
             .cornerRadius(10)
             .rotationEffect(.degrees(-45))
-            .offset(x: 100, y: isOnAppear ? -240 : -1000)
+            .offset(x: 100, y: viewModel.isOnAppear ? -240 : -1000)
             .shadow(blur: 20)
 
             Spacer()
@@ -151,11 +149,11 @@ struct SigninView: View {
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
 
                 Button {
-                    isNavigateSignup.toggle()
+                    viewModel.isNavigateSignup.toggle()
                 } label: {
                     Text("회원가입")
                         .JOBISFont(.etc(.caption), color: .Sub.gray90)
-                        .underline(color: .Sub.gray90)
+                        .underlineText(color: .Sub.gray90)
                 }
 
                 Spacer()

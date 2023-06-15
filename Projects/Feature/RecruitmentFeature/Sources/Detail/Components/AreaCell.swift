@@ -34,7 +34,7 @@ struct AreaCell: View {
 
                 Text(isShowDetail ? "간략히" : "자세히")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                    .underline(color: .Sub.gray60)
+                    .underlineText(color: .Sub.gray60)
                     .onTapGesture {
                         withAnimation(
                             .spring(

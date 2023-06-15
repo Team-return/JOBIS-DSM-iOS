@@ -39,7 +39,7 @@ struct RecruitmentFilterSheet: View {
 
                                 VStack {
                                     Text(isShowMore ? "접기" : "분야 선택")
-                                        .underline(color: .Sub.gray60)
+                                        .underlineText(color: .Sub.gray60)
                                         .JOBISFont(.etc(.caption), color: .Sub.gray60)
                                         .onTapGesture { isShowMore.toggle() }
 

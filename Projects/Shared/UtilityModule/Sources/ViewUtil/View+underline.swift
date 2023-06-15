@@ -21,7 +21,7 @@ struct UnderlineTextModifier: ViewModifier {
 }
 
 public extension View {
-    func underline(color: Color) -> some View {
+    func underlineText(color: Color) -> some View {
         self.modifier(UnderlineTextModifier(color: color))
     }
 }

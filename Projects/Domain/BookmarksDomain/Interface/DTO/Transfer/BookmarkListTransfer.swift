@@ -11,7 +11,7 @@ public extension BookmarkResponseDTO {
         let inputDateFormatter = DateFormatter()
         inputDateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
 
-        var inputDate = inputDateFormatter.date(from: createdAt) ?? Date()
+        let inputDate = inputDateFormatter.date(from: createdAt) ?? Date()
         let outputDateFormatter = DateFormatter()
         outputDateFormatter.dateFormat = "yyyy-MM-dd"
 
