@@ -230,6 +230,9 @@ private class FindCompanyDetailDependency4141f6f851410a3f60d3Provider: FindCompa
     var fetchReviewListUseCase: any FetchReviewListUseCase {
         return appComponent.fetchReviewListUseCase
     }
+    var recruitmentDetailFactory: any RecruitmentDetailFactory {
+        return appComponent.recruitmentDetailFactory
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -264,6 +267,9 @@ private func factoryb1923ea1b010875d9389f47b58f8f304c97af4d5(_ component: Needle
 private class RecruitmentDetailDependency56f94833461a60671180Provider: RecruitmentDetailDependency {
     var fetchRecruitmentDetailUseCase: any FetchRecruitmentDetailUseCase {
         return appComponent.fetchRecruitmentDetailUseCase
+    }
+    var findCompanyDetailFactory: any FindCompanyDetailFactory {
+        return appComponent.findCompanyDetailFactory
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -411,6 +417,7 @@ extension FindCompanyDetailComponent: Registration {
     public func registerItems() {
         keyPathToName[\FindCompanyDetailDependency.fetchCompanyInfoDetailUseCase] = "fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"
         keyPathToName[\FindCompanyDetailDependency.fetchReviewListUseCase] = "fetchReviewListUseCase-any FetchReviewListUseCase"
+        keyPathToName[\FindCompanyDetailDependency.recruitmentDetailFactory] = "recruitmentDetailFactory-any RecruitmentDetailFactory"
     }
 }
 extension RecruitmentComponent: Registration {
@@ -424,6 +431,7 @@ extension RecruitmentComponent: Registration {
 extension RecruitmentDetailComponent: Registration {
     public func registerItems() {
         keyPathToName[\RecruitmentDetailDependency.fetchRecruitmentDetailUseCase] = "fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"
+        keyPathToName[\RecruitmentDetailDependency.findCompanyDetailFactory] = "findCompanyDetailFactory-any FindCompanyDetailFactory"
     }
 }
 extension MenuComponent: Registration {

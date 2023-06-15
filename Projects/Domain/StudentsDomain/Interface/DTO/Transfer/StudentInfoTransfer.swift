@@ -5,7 +5,8 @@ public extension StudentInfoResponseDTO {
         StudentInfoEntity(
             studentName: studentName,
             studentGcn: studentGcn,
-            department: department
+            department: department,
+            profileImageUrl: profileImageUrl
         )
     }
 }

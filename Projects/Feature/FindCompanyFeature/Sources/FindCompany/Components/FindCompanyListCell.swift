@@ -52,7 +52,7 @@ struct FindCompanyListCell: View {
             .padding(.horizontal, 24)
         }
         .sheet(isPresented: $isNaviagteDetail) {
-            findCompanyDetailFactory.makeView(id: String(companyEntity.id))
+            findCompanyDetailFactory.makeView(id: String(companyEntity.id), isDetail: false)
                 .eraseToAnyView()
 //                .presentationDragIndicator(.visible)
         }

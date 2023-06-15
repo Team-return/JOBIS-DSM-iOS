@@ -1,14 +1,24 @@
 import DesignSystem
 import SwiftUI
 import Kingfisher
+import RecruitmentFeatureInterface
+import UtilityModule
 
 struct FindCompanyDetailView: View {
     @StateObject var viewModel: FindCompanyDetailViewModel
+    @State private var isShowDetail = false
+    private let isDetail: Bool
+
+    private let recruitmentDetailFactory: any RecruitmentDetailFactory
 
     init(
-        viewModel: FindCompanyDetailViewModel
+        viewModel: FindCompanyDetailViewModel,
+        recruitmentDetailFactory: any RecruitmentDetailFactory,
+        isDetail: Bool
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.recruitmentDetailFactory = recruitmentDetailFactory
+        self.isDetail = isDetail
     }
 
     var body: some View {
@@ -27,9 +37,19 @@ struct FindCompanyDetailView: View {
                     }
                     .padding(.bottom, 2)
 
-                    Text(infoDetail.companyIntroduce)
-                        .JOBISFont(.etc(.caption), color: .Sub.gray70)
-                        .padding(.bottom, 22)
+                    companyIntroduce(introduce: infoDetail.companyIntroduce)
+
+                    if let recruitmentID = infoDetail.recruitmentID, !isDetail {
+                        GrayBtn(text: "모집의뢰서 보기", size: .large) {
+                            viewModel.isSheetRecruitmentDetail.toggle()
+                        }
+                        .sheet(isPresented: $viewModel.isSheetRecruitmentDetail) {
+                            recruitmentDetailFactory.makeView(
+                                id: String(recruitmentID),
+                                isDetail: true
+                            ).eraseToAnyView()
+                        }
+                    }
 
                     Divider()
                         .foregroundColor(.Sub.gray40)
@@ -41,17 +61,15 @@ struct FindCompanyDetailView: View {
                     }
                     .padding(.vertical, 10)
 
-                    if let reviewList = viewModel.reviewList {
-                        if !reviewList.reviews.isEmpty {
-                            Divider()
-                            .foregroundColor(.Sub.gray40)
+                    if let reviewList = viewModel.reviewList, !reviewList.reviews.isEmpty {
+                        Divider()
+                        .foregroundColor(.Sub.gray40)
 
-                            Text("면접 후기")
-                            .JOBISFont(.body(.body2), color: .Sub.gray70)
+                        Text("면접 후기")
+                        .JOBISFont(.body(.body2), color: .Sub.gray70)
 
-                            ForEach(reviewList.reviews, id: \.self) { review in
-                                reviewCell(title: review.writer, date: review.createdDate)
-                            }
+                        ForEach(reviewList.reviews, id: \.self) { review in
+                            reviewCell(title: review.writer, date: review.createdDate)
                         }
                     }
                 }
@@ -94,5 +112,27 @@ struct FindCompanyDetailView: View {
             RoundedRectangle(cornerRadius: 12)
                 .stroke(Color.Sub.gray40)
         )
+    }
+
+    @ViewBuilder
+    func companyIntroduce(introduce: String) -> some View {
+        VStack(spacing: 5) {
+            Text(introduce)
+                .lineLimit(isShowDetail ? nil : 3)
+                .JOBISFont(.etc(.caption), color: .Sub.gray70)
+
+            Text(isShowDetail ? "간략히" : "자세히")
+                .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                .underlineText(color: .Sub.gray60)
+                .onTapGesture {
+                    withAnimation(
+                        .spring(
+                            response: 0.6, dampingFraction: 0.8, blendDuration: 1.0
+                        )
+                    ) {
+                        isShowDetail.toggle()
+                    }
+                }
+        }
     }
 }

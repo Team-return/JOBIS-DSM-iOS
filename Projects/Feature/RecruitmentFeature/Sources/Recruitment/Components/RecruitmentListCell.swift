@@ -78,7 +78,7 @@ struct RecruitmentListCell: View {
         }
         .sheet(isPresented: $isNaviagteDetail) {
             recruitmentDetailFactory.makeView(
-                id: "\(recruitmentEntity.recruitID)"
+                id: "\(recruitmentEntity.recruitID)", isDetail: false
             )
             .eraseToAnyView()
         }
