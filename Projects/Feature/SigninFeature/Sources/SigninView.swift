@@ -85,7 +85,7 @@ struct SigninView: View {
             .frame(width: 320, height: 320)
             .cornerRadius(10)
             .rotationEffect(.degrees(-45))
-            .offset(x: 100, y: viewModel.isOnAppear ? -240 : -1000)
+            .offset(x: 100, y: viewModel.isOnAppear ? -200 : -1000)
             .shadow(blur: 20)
 
             Spacer()
