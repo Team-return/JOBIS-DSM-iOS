@@ -7,8 +7,8 @@ import SwiftUI
 import SwiftUIFlowLayout
 
 struct RecruitmentFilterSheet: View {
-    @State var isShowMore = false
-    @State var howMove: CGFloat = 0
+    @State private var isShowMore = false
+    @State private var howMove: CGFloat = 0
 
     @StateObject var viewModel: RecruitmentViewModel
 
