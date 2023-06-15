@@ -4,11 +4,16 @@ import Kingfisher
 
 struct FindCompanyDetailView: View {
     @StateObject var viewModel: FindCompanyDetailViewModel
+    private let isDetail: Bool
+
+    private let recruitmentDetailFactory: any RecruitmentDetailFactory
 
     init(
         viewModel: FindCompanyDetailViewModel
+        isDetail: Bool
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.isDetail = isDetail
     }
 
     var body: some View {
@@ -29,7 +34,17 @@ struct FindCompanyDetailView: View {
 
                     Text(infoDetail.companyIntroduce)
                         .JOBISFont(.etc(.caption), color: .Sub.gray70)
-                        .padding(.bottom, 22)
+                    if let recruitmentID = infoDetail.recruitmentID, !isDetail {
+                        GrayBtn(text: "모집의뢰서 보기", size: .large) {
+                            viewModel.isSheetRecruitmentDetail.toggle()
+                        }
+                        .sheet(isPresented: $viewModel.isSheetRecruitmentDetail) {
+                            recruitmentDetailFactory.makeView(
+                                id: String(recruitmentID),
+                                isDetail: true
+                            ).eraseToAnyView()
+                        }
+                    }
 
                     Divider()
                         .foregroundColor(.Sub.gray40)

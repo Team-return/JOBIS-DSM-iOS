@@ -106,7 +106,7 @@ struct BookmarkListView: View {
             )
             .sheet(isPresented: $viewModel.isSheetRecruitmentDetail) {
                 recruitmentDetailFactory.makeView(
-                    id: "\(bookmark.recruitmentID)"
+                    id: "\(bookmark.recruitmentID)", isDetail: false
                 )
                 .eraseToAnyView()
 //                .presentationDragIndicator(.visible)

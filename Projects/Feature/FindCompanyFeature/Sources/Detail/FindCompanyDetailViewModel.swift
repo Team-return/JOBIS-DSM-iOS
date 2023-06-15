@@ -5,9 +5,11 @@ import Combine
 
 final class FindCompanyDetailViewModel: BaseViewModel {
     @Published var companyInfoDetail: CompanyInfoDetailEntity?
+    @Published var isSheetRecruitmentDetail = false
     @Published var reviewList: ReviewListEntity?
     @Published var titles: [String] = []
     @Published var contents: [String] = []
+
     private let id: String
 
     private let fetchCompanyInfoDetailUseCase: FetchCompanyInfoDetailUseCase
