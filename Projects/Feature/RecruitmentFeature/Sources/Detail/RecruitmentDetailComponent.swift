@@ -10,13 +10,14 @@ public protocol RecruitmentDetailDependency: Dependency {
 }
 
 public final class RecruitmentDetailComponent: Component<RecruitmentDetailDependency>, RecruitmentDetailFactory {
-    public func makeView(id: String) -> some View {
+    public func makeView(id: String, isDetail: Bool) -> some View {
         RecruitmentDetailView(
             viewModel: .init(
                 fetchRecruitmentDetailUseCase: dependency.fetchRecruitmentDetailUseCase,
                 id: id
             ),
-            findCompanyDetailFactory: dependency.findCompanyDetailFactory
+            findCompanyDetailFactory: dependency.findCompanyDetailFactory,
+            isDetail: isDetail
         )
     }
 }

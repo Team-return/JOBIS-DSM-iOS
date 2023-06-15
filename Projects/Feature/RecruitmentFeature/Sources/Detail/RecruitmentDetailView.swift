@@ -7,16 +7,18 @@ import Kingfisher
 
 struct RecruitmentDetailView: View {
     @StateObject var viewModel: RecruitmentDetailViewModel
-    @Environment(\.dismiss) var dismiss
+    private let isDetail: Bool
 
     private let findCompanyDetailFactory: any FindCompanyDetailFactory
 
     init(
         viewModel: RecruitmentDetailViewModel,
-        findCompanyDetailFactory: any FindCompanyDetailFactory
+        findCompanyDetailFactory: any FindCompanyDetailFactory,
+        isDetail: Bool
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.findCompanyDetailFactory = findCompanyDetailFactory
+        self.isDetail = isDetail
     }
 
     var body: some View {
@@ -35,8 +37,16 @@ struct RecruitmentDetailView: View {
                     }
                     .padding(.bottom, 2)
 
-                    GrayBtn(text: "기업 보기", size: .large) {
-                        viewModel.isSheetCompanyDetail.toggle()
+                    if !isDetail {
+                        GrayBtn(text: "기업 보기", size: .large) {
+                            viewModel.isSheetCompanyDetail.toggle()
+                        }
+                        .sheet(isPresented: $viewModel.isSheetCompanyDetail) {
+                            findCompanyDetailFactory.makeView(
+                                id: String(detailInfo.companyID),
+                                isDetail: true
+                            ).eraseToAnyView()
+                        }
                     }
 
                     Divider()
@@ -44,10 +54,7 @@ struct RecruitmentDetailView: View {
 
                     recruitmentInfo(detailInfo: detailInfo)
                 }
-                .padding(.horizontal, 24)
-                .sheet(isPresented: $viewModel.isSheetCompanyDetail) {
-                    findCompanyDetailFactory.makeView(id: String(detailInfo.companyID)).eraseToAnyView()
-                }
+                .padding([.horizontal, .top], 24)
             }
         }
         .onAppear {
