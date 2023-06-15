@@ -230,6 +230,9 @@ private class FindCompanyDetailDependency4141f6f851410a3f60d3Provider: FindCompa
     var fetchReviewListUseCase: any FetchReviewListUseCase {
         return appComponent.fetchReviewListUseCase
     }
+    var recruitmentDetailFactory: any RecruitmentDetailFactory {
+        return appComponent.recruitmentDetailFactory
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -414,6 +417,7 @@ extension FindCompanyDetailComponent: Registration {
     public func registerItems() {
         keyPathToName[\FindCompanyDetailDependency.fetchCompanyInfoDetailUseCase] = "fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"
         keyPathToName[\FindCompanyDetailDependency.fetchReviewListUseCase] = "fetchReviewListUseCase-any FetchReviewListUseCase"
+        keyPathToName[\FindCompanyDetailDependency.recruitmentDetailFactory] = "recruitmentDetailFactory-any RecruitmentDetailFactory"
     }
 }
 extension RecruitmentComponent: Registration {
