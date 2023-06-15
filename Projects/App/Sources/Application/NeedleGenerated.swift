@@ -265,6 +265,9 @@ private class RecruitmentDetailDependency56f94833461a60671180Provider: Recruitme
     var fetchRecruitmentDetailUseCase: any FetchRecruitmentDetailUseCase {
         return appComponent.fetchRecruitmentDetailUseCase
     }
+    var findCompanyDetailFactory: any FindCompanyDetailFactory {
+        return appComponent.findCompanyDetailFactory
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -424,6 +427,7 @@ extension RecruitmentComponent: Registration {
 extension RecruitmentDetailComponent: Registration {
     public func registerItems() {
         keyPathToName[\RecruitmentDetailDependency.fetchRecruitmentDetailUseCase] = "fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"
+        keyPathToName[\RecruitmentDetailDependency.findCompanyDetailFactory] = "findCompanyDetailFactory-any FindCompanyDetailFactory"
     }
 }
 extension MenuComponent: Registration {

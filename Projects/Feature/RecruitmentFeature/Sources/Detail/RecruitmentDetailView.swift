@@ -1,16 +1,22 @@
 import DesignSystem
 import RecruitmentsDomainInterface
+import FindCompanyFeatureInterface
 import SwiftUI
+import UtilityModule
 import Kingfisher
 
 struct RecruitmentDetailView: View {
     @StateObject var viewModel: RecruitmentDetailViewModel
     @Environment(\.dismiss) var dismiss
 
+    private let findCompanyDetailFactory: any FindCompanyDetailFactory
+
     init(
-        viewModel: RecruitmentDetailViewModel
+        viewModel: RecruitmentDetailViewModel,
+        findCompanyDetailFactory: any FindCompanyDetailFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.findCompanyDetailFactory = findCompanyDetailFactory
     }
 
     var body: some View {
@@ -30,7 +36,7 @@ struct RecruitmentDetailView: View {
                     .padding(.bottom, 2)
 
                     GrayBtn(text: "기업 보기", size: .large) {
-                        print("기업 보기")
+                        viewModel.isSheetCompanyDetail.toggle()
                     }
 
                     Divider()
@@ -39,13 +45,13 @@ struct RecruitmentDetailView: View {
                     recruitmentInfo(detailInfo: detailInfo)
                 }
                 .padding(.horizontal, 24)
+                .sheet(isPresented: $viewModel.isSheetCompanyDetail) {
+                    findCompanyDetailFactory.makeView(id: String(detailInfo.companyID)).eraseToAnyView()
+                }
             }
         }
         .onAppear {
             viewModel.onAppear()
-        }
-        .jobisBackButton(title: "모집의뢰서 상세보기") {
-            dismiss()
         }
     }
 
