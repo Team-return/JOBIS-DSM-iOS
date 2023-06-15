@@ -2,6 +2,8 @@ import Foundation
 
 public struct RecruitmentDetailEntity: Equatable {
     public let companyID: Int
+    public let companyProfileUrl: String
+    public let companyName: String
     public let areas: [AreaEntity]
     public let preferentialTreatment: String
     public let requiredGrade: Int?
@@ -18,6 +20,8 @@ public struct RecruitmentDetailEntity: Equatable {
 
     public init(
         companyID: Int,
+        companyProfileUrl: String,
+        companyName: String,
         areas: [AreaEntity],
         preferentialTreatment: String,
         requiredGrade: Int?,
@@ -34,6 +38,8 @@ public struct RecruitmentDetailEntity: Equatable {
         etc: String
     ) {
         self.companyID = companyID
+        self.companyProfileUrl = companyProfileUrl
+        self.companyName = companyName
         self.areas = areas
         self.preferentialTreatment = preferentialTreatment
         self.requiredGrade = requiredGrade

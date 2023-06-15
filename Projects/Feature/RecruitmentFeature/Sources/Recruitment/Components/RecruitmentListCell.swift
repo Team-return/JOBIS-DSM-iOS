@@ -78,12 +78,9 @@ struct RecruitmentListCell: View {
         }
         .sheet(isPresented: $isNaviagteDetail) {
             recruitmentDetailFactory.makeView(
-                id: "\(recruitmentEntity.recruitID)",
-                profileURL: recruitmentEntity.companyProfileURL,
-                companyName: recruitmentEntity.companyName
+                id: "\(recruitmentEntity.recruitID)"
             )
             .eraseToAnyView()
-            .presentationDragIndicator(.visible)
         }
     }
 }

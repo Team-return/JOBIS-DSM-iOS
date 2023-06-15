@@ -3,14 +3,12 @@ import ProjectDescriptionHelpers
 import DependencyPlugin
 
 let project = Project.makeModule(
-    name: ModulePaths.Feature.RecruitmentFeature.rawValue,
+    name: ModulePaths.Feature.BookmarkListFeature.rawValue,
     product: .staticLibrary,
     targets: [.interface, .unitTest],
     internalDependencies: [
         .Feature.BaseFeature,
-        .Feature.FindCompanyFeatureInterface,
-        .Domain.RecruitmentsDomainInterface,
-        .Domain.CodesDomainInterface,
+        .Feature.RecruitmentFeatureInterface,
         .Domain.BookmarksDomainInterface
     ]
 )

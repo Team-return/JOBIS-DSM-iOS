@@ -8,14 +8,14 @@ let isCI = (ProcessInfo.processInfo.environment["TUIST_CI"] ?? "0") == "1" ? tru
 
 let configurations: [Configuration] = isCI ?
 [
-  .debug(name: .dev),
-  .debug(name: .stage),
-  .release(name: .prod)
+    .debug(name: .dev),
+    .debug(name: .stage),
+    .release(name: .prod)
 ] :
 [
     .debug(name: .dev, xcconfig: .relativeToXCConfig(type: .dev, name: env.targetName)),
-  .debug(name: .stage, xcconfig: .relativeToXCConfig(type: .stage, name: env.targetName)),
-  .release(name: .prod, xcconfig: .relativeToXCConfig(type: .prod, name: env.targetName))
+    .debug(name: .stage, xcconfig: .relativeToXCConfig(type: .stage, name: env.targetName)),
+    .release(name: .prod, xcconfig: .relativeToXCConfig(type: .prod, name: env.targetName))
 ]
 
 let settings: Settings =
@@ -41,6 +41,7 @@ let targets: [Target] = [
             .Core.JwtStore,
             .Core.JwtStoreInterface,
             .Feature.RootFeature,
+            .Feature.BookmarkListFeature,
             .Feature.SigninFeature,
             .Feature.SignupFeature,
             .Feature.MainTabFeature,

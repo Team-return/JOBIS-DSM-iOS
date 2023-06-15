@@ -9,6 +9,14 @@ public extension TargetDependency {
 }
 
 public extension TargetDependency.Feature {
+    static let BookmarkListFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.BookmarkListFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.BookmarkListFeature.rawValue)
+    )
+    static let BookmarkListFeature = TargetDependency.project(
+        target: ModulePaths.Feature.BookmarkListFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.BookmarkListFeature.rawValue)
+    )
     static let RecruitmentFeatureInterface = TargetDependency.project(
         target: ModulePaths.Feature.RecruitmentFeature.targetName(type: .interface),
         path: .relativeToFeature(ModulePaths.Feature.RecruitmentFeature.rawValue)

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct BookmarkEntity: Equatable {
+public struct BookmarkEntity: Equatable, Hashable {
     public let companyName: String
     public let recruitmentID: Int
     public let createdAt: String

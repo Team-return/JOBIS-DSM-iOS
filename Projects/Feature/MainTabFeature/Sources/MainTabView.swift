@@ -1,4 +1,5 @@
 import SwiftUI
+import BookmarkListFeatureInterface
 import MenuFeatureInterface
 import HomeFeatureInterface
 import MyPageFeatureInterface
@@ -13,21 +14,24 @@ struct MainTabView: View {
 
     var tabItem: [(Image, String, TabFlow)] = [
         (DesignSystemAsset.Icons.house.swiftUIImage, "홈", .home),
-        (DesignSystemAsset.Icons.recruitment.swiftUIImage, "의뢰서", .recruitment),
-        (DesignSystemAsset.Icons.profile.swiftUIImage, "프로필", .profile),
+        (DesignSystemAsset.Icons.bookmarkOn.swiftUIImage, "북마크", .bookmark),
+        (DesignSystemAsset.Icons.profile.swiftUIImage, "마이페이지", .profile),
         (DesignSystemAsset.Icons.menu.swiftUIImage, "메뉴", .menu)
     ]
 
     private let homeFactory: any HomeFactory
+    private let bookmarkListFactory: any BookmarkListFactory
     private let myPageFactory: any MyPageFactory
     private let menuFactory: any MenuFactory
 
     init(
         homeFactory: any HomeFactory,
+        bookmarkListFactory: any BookmarkListFactory,
         myPageFactory: any MyPageFactory,
         menuFactory: any MenuFactory
     ) {
         self.homeFactory = homeFactory
+        self.bookmarkListFactory = bookmarkListFactory
         self.myPageFactory = myPageFactory
         self.menuFactory = menuFactory
     }
@@ -39,8 +43,9 @@ struct MainTabView: View {
                     .eraseToAnyView()
                     .tag(TabFlow.home)
 
-                Text("임시 RecruitmentComponent.makeView()")
-                    .tag(TabFlow.recruitment)
+                bookmarkListFactory.makeView()
+                    .eraseToAnyView()
+                    .tag(TabFlow.bookmark)
 
                 myPageFactory.makeView()
                     .eraseToAnyView()

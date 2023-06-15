@@ -1,6 +1,7 @@
 import DesignSystem
 import RecruitmentsDomainInterface
 import RecruitmentFeatureInterface
+import UtilityModule
 import SwiftUI
 
 struct RecruitmentView: View {
@@ -47,12 +48,13 @@ struct RecruitmentView: View {
         .onAppear {
             viewModel.onAppear()
         }
+        .hideKeyboardWhenTap()
         .jobisBackButton(title: "모집의뢰서 조회하기") { dismiss() }
         .sheet(isPresented: $viewModel.isShowFilterSheet) {
             viewModel.fetchRecruitment()
         } content: {
             RecruitmentFilterSheet(viewModel: viewModel)
-                .presentationDragIndicator(.visible)
+//                .presentationDragIndicator(.visible)
         }
     }
 

@@ -2,6 +2,7 @@ import DesignSystem
 import CodesDomainInterface
 import RecruitmentsDomainInterface
 import RecruitmentFeatureInterface
+import UtilityModule
 import SwiftUI
 import SwiftUIFlowLayout
 
@@ -38,7 +39,7 @@ struct RecruitmentFilterSheet: View {
 
                                 VStack {
                                     Text(isShowMore ? "접기" : "분야 선택")
-                                        .underline(color: .Sub.gray60)
+                                        .underlineText(color: .Sub.gray60)
                                         .JOBISFont(.etc(.caption), color: .Sub.gray60)
                                         .onTapGesture { isShowMore.toggle() }
 
@@ -57,9 +58,11 @@ struct RecruitmentFilterSheet: View {
                     viewModel.fetchRecruitment()
                     viewModel.isShowFilterSheet.toggle()
                 }
+                .padding(.bottom, 10)
             }
         }
         .padding(.horizontal, 20)
+        .hideKeyboardWhenTap()
         .onAppear {
             viewModel.sheetOnAppear()
         }
@@ -141,6 +144,8 @@ struct RecruitmentFilterSheet: View {
                         .foregroundColor(.Sub.gray40)
                 }
             }
+
+            Spacer()
         }
         .padding(.bottom, 70)
         .frame(maxHeight: .infinity)
