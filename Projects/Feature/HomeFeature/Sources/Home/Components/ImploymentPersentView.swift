@@ -4,9 +4,11 @@ import DesignSystem
 
 struct ImploymentPersentView: View {
     let totalPassStudent: TotalPassStudentEntity?
-    private var imploymentPersent: Float {
-        Float(totalPassStudent?.passedCount ?? 0) /
-        Float(totalPassStudent?.totalStudentCount ?? 1) * 100
+    private var imploymentPersent: String {
+        guard let passCount = totalPassStudent?.passedCount,
+              let totalStudentCount = totalPassStudent?.totalStudentCount,
+              totalStudentCount != 0 else { return "0.0"}
+        return String(format: "%.1f", Float(passCount) / Float(totalStudentCount) * 100)
     }
     private var passerCountString: String {
         guard let passedCount = totalPassStudent?.passedCount,
@@ -23,7 +25,7 @@ struct ImploymentPersentView: View {
         HStack(alignment: .bottom) {
             VStack(alignment: .leading, spacing: 0) {
                 HStack(spacing: 2) {
-                    Text(String(format: "%.1f", imploymentPersent))
+                    Text(imploymentPersent)
                         .JOBISFont(.heading(.heading3), color: .Sub.gray10)
 
                     Text("%")
