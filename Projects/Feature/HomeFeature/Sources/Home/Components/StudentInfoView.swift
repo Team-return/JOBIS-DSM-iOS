@@ -1,5 +1,6 @@
 import SwiftUI
 import StudentsDomainInterface
+import Kingfisher
 import DesignSystem
 
 struct StudentInfoView: View {
@@ -8,10 +9,11 @@ struct StudentInfoView: View {
 
     var body: some View {
         HStack(spacing: 13) {
-            Image(systemName: "person.circle")
+            KFImage(URL(string: studentInfo?.profileImageUrl ?? ""))
                 .resizable()
+                .aspectRatio(contentMode: .fit)
                 .frame(width: 40, height: 40)
-                .foregroundColor(.Sub.gray50)
+                .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 0) {
                 Text("\(studentInfo?.studentGcn ?? "Loading...") \(studentInfo?.studentName ?? "")")
