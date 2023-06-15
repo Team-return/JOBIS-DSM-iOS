@@ -22,7 +22,7 @@ struct BookmarkListView: View {
     }
 
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 0) {
             HStack {
                 Text("북마크한 모집의뢰서")
                     .JOBISFont(.body(.body2), color: .Sub.gray60)
@@ -30,34 +30,40 @@ struct BookmarkListView: View {
 
                 Spacer()
             }
+            .padding(.bottom, 10)
 
             Divider()
                 .foregroundColor(.Sub.gray40)
 
-            if !viewModel.bookmarkList.isEmpty {
-                List {
-                    ForEach(viewModel.bookmarkList, id: \.self) { bookmark in
-                        bookmarkCell(bookmark: bookmark)
+            if !viewModel.isLoading {
+                if !viewModel.bookmarkList.isEmpty {
+                    List {
+                        ForEach(viewModel.bookmarkList, id: \.self) { bookmark in
+                            bookmarkCell(bookmark: bookmark)
+                        }
+                        .onDelete(perform: viewModel.deleteBookmark)
+                        .listRowSeparator(.hidden)
+                        .listRowBackground(Color.clear)
+                        .listRowInsets(.init(top: 3, leading: 3, bottom: 3, trailing: 3))
                     }
-//                    .onDelete(perform: viewModel.deleteBookmark)
-                    .listRowSeparator(.hidden)
-                    .listRowBackground(Color.clear)
-                    .listRowInsets(.init(top: 3, leading: 3, bottom: 3, trailing: 3))
+                    .listStyle(.plain)
+                } else {
+                    Spacer()
+
+                    Text("아직 북마크한 모집의뢰서가 없어요.")
+                        .JOBISFont(.body(.body4), color: .Sub.gray90)
+
+                    Button {
+                        viewModel.isNavigateRecruitmentView.toggle()
+                    } label: {
+                        Text("모집의뢰서 보러가기 >")
+                            .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                            .underlineText(color: .Sub.gray60)
+                    }
                 }
-                .listStyle(.plain)
             } else {
-                Spacer()
-
-                Text("아직 북마크한 모집의뢰서가 없어요.")
-                    .JOBISFont(.body(.body4), color: .Sub.gray90)
-
-                Button {
-                    viewModel.isNavigateRecruitmentView.toggle()
-                } label: {
-                    Text("모집의뢰서 보러가기 >")
-                        .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                        .underlineText(color: .Sub.gray60)
-                }
+                ProgressView().progressViewStyle(.circular)
+                    .frame(maxHeight: .infinity)
             }
 
             Spacer()
