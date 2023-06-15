@@ -14,7 +14,7 @@ struct MainTabView: View {
 
     var tabItem: [(Image, String, TabFlow)] = [
         (DesignSystemAsset.Icons.house.swiftUIImage, "홈", .home),
-        (DesignSystemAsset.Icons.bookmarkOn.swiftUIImage, "북마크", .bookmark),
+        (DesignSystemAsset.Icons.bookmark.swiftUIImage, "북마크", .bookmark),
         (DesignSystemAsset.Icons.profile.swiftUIImage, "마이페이지", .profile),
         (DesignSystemAsset.Icons.menu.swiftUIImage, "메뉴", .menu)
     ]
@@ -66,8 +66,8 @@ struct MainTabView: View {
                             Color.Sub.gray10
                                 .cornerRadius(10, corners: [.topLeft, .topRight])
                                 .ignoresSafeArea()
+                                .shadow(opacity: 0.1, y: -2, blur: 4)
                         }
-                        .shadow(opacity: 0.1, y: -2, blur: 4)
                         .environment(\.jobisSelectionTabbKey, $selection)
                 }
             }
