@@ -12,6 +12,7 @@ import CodesDomain
 import CodesDomainInterface
 import CompaniesDomain
 import CompaniesDomainInterface
+import DesignSystem
 import FindCompanyFeature
 import FindCompanyFeatureInterface
 import HomeFeature
@@ -281,15 +282,26 @@ private func factory14d63d6fecffe94dd0e1f47b58f8f304c97af4d5(_ component: Needle
     return RecruitmentDetailDependency56f94833461a60671180Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class MenuDependency43a0e3ba5712a2a90856Provider: MenuDependency {
-
-
-    init() {
-
+    var recruitmentFactory: any RecruitmentFactory {
+        return appComponent.recruitmentFactory
+    }
+    var findCompanyFactory: any FindCompanyFactory {
+        return appComponent.findCompanyFactory
+    }
+    var bookmarkListFactory: any BookmarkListFactory {
+        return appComponent.bookmarkListFactory
+    }
+    var myPageFactory: any MyPageFactory {
+        return appComponent.myPageFactory
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
     }
 }
 /// ^->AppComponent->MenuComponent
-private func factory9727a582143c5cd40ff3e3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return MenuDependency43a0e3ba5712a2a90856Provider()
+private func factory9727a582143c5cd40ff3f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return MenuDependency43a0e3ba5712a2a90856Provider(appComponent: parent1(component) as! AppComponent)
 }
 
 #else
@@ -436,7 +448,10 @@ extension RecruitmentDetailComponent: Registration {
 }
 extension MenuComponent: Registration {
     public func registerItems() {
-
+        keyPathToName[\MenuDependency.recruitmentFactory] = "recruitmentFactory-any RecruitmentFactory"
+        keyPathToName[\MenuDependency.findCompanyFactory] = "findCompanyFactory-any FindCompanyFactory"
+        keyPathToName[\MenuDependency.bookmarkListFactory] = "bookmarkListFactory-any BookmarkListFactory"
+        keyPathToName[\MenuDependency.myPageFactory] = "myPageFactory-any MyPageFactory"
     }
 }
 
@@ -468,7 +483,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->FindCompanyDetailComponent", factoryca6789757d5d9bbb6659f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RecruitmentComponent", factoryb1923ea1b010875d9389f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RecruitmentDetailComponent", factory14d63d6fecffe94dd0e1f47b58f8f304c97af4d5)
-    registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3e3b0c44298fc1c149afb)
+    registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3f47b58f8f304c97af4d5)
 }
 #endif
 
