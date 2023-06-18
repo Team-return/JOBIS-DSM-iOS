@@ -23,15 +23,6 @@ struct BookmarkListView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
-                Text("북마크한 모집의뢰서")
-                    .JOBISFont(.body(.body2), color: .Sub.gray60)
-                    .padding(.leading, 4)
-
-                Spacer()
-            }
-            .padding(.bottom, 10)
-
             Divider()
                 .foregroundColor(.Sub.gray40)
 
@@ -44,9 +35,10 @@ struct BookmarkListView: View {
                         .onDelete(perform: viewModel.deleteBookmark)
                         .listRowSeparator(.hidden)
                         .listRowBackground(Color.clear)
-                        .listRowInsets(.init(top: 3, leading: 3, bottom: 3, trailing: 3))
+                        .listRowInsets(.init(top: 5, leading: 3, bottom: 5, trailing: 3))
                     }
                     .listStyle(.plain)
+                    .padding(.top, 5)
                 } else {
                     Spacer()
 
@@ -81,6 +73,7 @@ struct BookmarkListView: View {
             to: recruitmentFactory.makeView().eraseToAnyView(),
             when: $viewModel.isNavigateRecruitmentView
         )
+        .navigationTitle("북마크한 모집의뢰서")
     }
 
     @ViewBuilder
