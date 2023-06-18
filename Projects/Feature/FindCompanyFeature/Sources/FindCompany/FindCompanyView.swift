@@ -49,7 +49,7 @@ struct FindCompanyView: View {
             viewModel.onAppear()
         }
         .hideKeyboardWhenTap()
-        .jobisBackButton(title: "기업 조회하기") { dismiss() }
+        .navigationTitle("기업 조회하기")
     }
 
     @ViewBuilder

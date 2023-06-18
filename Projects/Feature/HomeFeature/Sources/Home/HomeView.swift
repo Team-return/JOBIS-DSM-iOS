@@ -42,7 +42,7 @@ struct HomeView: View {
                     HStack(spacing: 12) {
                         navigateButton(
                             text: "모집의뢰서\n조회하기",
-                            image: HomeImage(.recruitment)
+                            image: .recruitment
                         ) {
                             viewModel.isNavigateRecruitment.toggle()
                         }
@@ -50,7 +50,7 @@ struct HomeView: View {
 
                         navigateButton(
                             text: "기업찾기\n",
-                            image: HomeImage(.findCompany)
+                            image: .findCompany
                         ) {
                             viewModel.isNavigateFindCompany.toggle()
                         }
@@ -80,12 +80,14 @@ struct HomeView: View {
                 .eraseToAnyView(),
             when: $viewModel.isNavigateFindCompany
         )
+        .navigationTitle("홈")
+        .navigationBarHidden(true)
     }
 
     @ViewBuilder
     func navigateButton(
         text: String,
-        image: HomeImage,
+        image: HomeImage.Image,
         action: @escaping () -> Void
     ) -> some View {
         Button(action: action) {
@@ -103,7 +105,7 @@ struct HomeView: View {
                 HStack {
                     Spacer()
 
-                    image
+                    HomeImage(image)
                         .frame(width: 96, height: 96)
                 }
                 .padding(.bottom, 8)

@@ -4,6 +4,7 @@ import StudentsDomainInterface
 import HomeFeatureInterface
 import RecruitmentFeatureInterface
 import FindCompanyFeatureInterface
+import DesignSystem
 import NeedleFoundation
 
 public protocol HomeDependency: Dependency {
@@ -27,5 +28,6 @@ public final class HomeComponent: Component<HomeDependency>, HomeFactory {
                 findCompanyFactory: dependency.findCompanyFactory
             )
         }
+        .accentColor(.Sub.gray70)
     }
 }

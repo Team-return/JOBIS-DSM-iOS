@@ -15,7 +15,7 @@ struct MainTabView: View {
     var tabItem: [(Image, String, TabFlow)] = [
         (DesignSystemAsset.Icons.house.swiftUIImage, "홈", .home),
         (DesignSystemAsset.Icons.bookmark.swiftUIImage, "북마크", .bookmark),
-        (DesignSystemAsset.Icons.profile.swiftUIImage, "마이페이지", .profile),
+        (DesignSystemAsset.Icons.mypage.swiftUIImage, "마이페이지", .profile),
         (DesignSystemAsset.Icons.menu.swiftUIImage, "메뉴", .menu)
     ]
 
