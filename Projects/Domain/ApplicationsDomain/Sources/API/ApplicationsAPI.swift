@@ -57,7 +57,7 @@ extension ApplicationsAPI: JobisAPI {
 
     public var jwtTokenType: JwtTokenType {
         switch self {
-        case .fetchApplication:
+        case .fetchApplication, .applyCompany:
             return .accessToken
         default:
             return .none
