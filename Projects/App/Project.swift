@@ -59,6 +59,7 @@ let targets: [Target] = [
             .Domain.CompaniesDomain,
             .Domain.BookmarksDomain,
             .Domain.ReviewsDomain,
+            .Domain.FilesDomain,
             .SPM.Needle
         ],
         settings: .settings(base: env.baseSetting)

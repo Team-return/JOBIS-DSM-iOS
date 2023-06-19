@@ -6,6 +6,7 @@ import UtilityModule
 import Kingfisher
 
 struct RecruitmentDetailView: View {
+    @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: RecruitmentDetailViewModel
     private let isDetail: Bool
 
@@ -22,43 +23,85 @@ struct RecruitmentDetailView: View {
     }
 
     var body: some View {
-        ScrollView {
-            if let detailInfo = viewModel.recruitmentDetail {
-                LazyVStack(alignment: .leading, spacing: 10) {
-                    HStack(spacing: 12) {
-                        KFImage(URL(string: detailInfo.companyProfileUrl))
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
-                            .cornerRadius(15)
+        if let detailInfo = viewModel.recruitmentDetail {
+            ZStack {
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 10) {
+                        HStack(spacing: 12) {
+                            KFImage(URL(string: detailInfo.companyProfileUrl))
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 80, height: 80)
+                                .cornerRadius(15)
 
-                        Text(detailInfo.companyName)
-                            .JOBISFont(.body(.body1), color: .Sub.gray90)
-                    }
-                    .padding(.bottom, 2)
-
-                    if !isDetail {
-                        GrayBtn(text: "기업 보기", size: .large) {
-                            viewModel.isSheetCompanyDetail.toggle()
+                            Text(detailInfo.companyName)
+                                .JOBISFont(.body(.body1), color: .Sub.gray90)
                         }
-                        .sheet(isPresented: $viewModel.isSheetCompanyDetail) {
-                            findCompanyDetailFactory.makeView(
-                                id: String(detailInfo.companyID),
-                                isDetail: true
-                            ).eraseToAnyView()
+                        .padding(.bottom, 2)
+
+                        if !isDetail {
+                            GrayBtn(text: "기업 보기", size: .large) {
+                                viewModel.isSheetCompanyDetail.toggle()
+                            }
+                            .sheet(isPresented: $viewModel.isSheetCompanyDetail) {
+                                findCompanyDetailFactory.makeView(
+                                    id: String(detailInfo.companyID),
+                                    isDetail: true
+                                ).eraseToAnyView()
+                            }
                         }
+
+                        Divider()
+                            .foregroundColor(.Sub.gray40)
+
+                        recruitmentInfo(detailInfo: detailInfo)
                     }
-
-                    Divider()
-                        .foregroundColor(.Sub.gray40)
-
-                    recruitmentInfo(detailInfo: detailInfo)
+                    .padding(.vertical, 24)
+                    .padding(.bottom, 40)
                 }
-                .padding([.horizontal, .top], 24)
+                .padding(.horizontal, 20)
+
+                VStack {
+                    Spacer()
+
+                    SolidBtn(text: "지원하기", size: .large) {
+                        withAnimation(.easeIn(duration: 0.1)) {
+                            viewModel.isTappedApplyButton.toggle()
+                        }
+                    }
+                }
+                .padding(.bottom, 10)
+                .padding(.horizontal, 20)
+
+                Color.black
+                    .opacity(viewModel.isTappedApplyButton ? 0.2 : 0)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        withAnimation(.easeIn(duration: 0.1)) {
+                            viewModel.isTappedApplyButton.toggle()
+                        }
+                    }
+
+                ApplySheet(
+                    urls: $viewModel.urls,
+                    documents: $viewModel.documents,
+                    submitDoc: detailInfo.submitDocument
+                ) {
+                    viewModel.apply {
+                        dismiss()
+                    }
+                }
+                .opacity(viewModel.isTappedApplyButton ? 1 : 0)
             }
-        }
-        .onAppear {
-            viewModel.onAppear()
+            .onAppear {
+                viewModel.onAppear()
+            }
+        } else {
+            ProgressView().progressViewStyle(.circular)
+                .frame(maxHeight: .infinity)
+                .onAppear {
+                    viewModel.onAppear()
+                }
         }
     }
 
@@ -76,7 +119,6 @@ struct RecruitmentDetailView: View {
                 recruitmentInfoCell(title: title, content: content)
             }
         }
-        .padding(.vertical, 10)
     }
 
     @ViewBuilder

@@ -13,6 +13,8 @@ import CodesDomainInterface
 import CompaniesDomain
 import CompaniesDomainInterface
 import DesignSystem
+import FilesDomain
+import FilesDomainInterface
 import FindCompanyFeature
 import FindCompanyFeatureInterface
 import HomeFeature
@@ -269,6 +271,12 @@ private class RecruitmentDetailDependency56f94833461a60671180Provider: Recruitme
     var fetchRecruitmentDetailUseCase: any FetchRecruitmentDetailUseCase {
         return appComponent.fetchRecruitmentDetailUseCase
     }
+    var uploadFileUseCase: any UploadFileUseCase {
+        return appComponent.uploadFileUseCase
+    }
+    var applyCompanyUseCase: any ApplyCompanyUseCase {
+        return appComponent.applyCompanyUseCase
+    }
     var findCompanyDetailFactory: any FindCompanyDetailFactory {
         return appComponent.findCompanyDetailFactory
     }
@@ -343,6 +351,9 @@ extension AppComponent: Registration {
         localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
         localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
         localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
+        localTable["remoteFilesDataSource-any RemoteFilesDataSource"] = { [unowned self] in self.remoteFilesDataSource as Any }
+        localTable["filesRepository-any FilesRepository"] = { [unowned self] in self.filesRepository as Any }
+        localTable["uploadFileUseCase-any UploadFileUseCase"] = { [unowned self] in self.uploadFileUseCase as Any }
         localTable["remoteCodesDataSource-any RemoteCodesDataSource"] = { [unowned self] in self.remoteCodesDataSource as Any }
         localTable["codesRepository-any CodesRepository"] = { [unowned self] in self.codesRepository as Any }
         localTable["fetchCodesUseCase-any FetchCodesUseCase"] = { [unowned self] in self.fetchCodesUseCase as Any }
@@ -443,6 +454,8 @@ extension RecruitmentComponent: Registration {
 extension RecruitmentDetailComponent: Registration {
     public func registerItems() {
         keyPathToName[\RecruitmentDetailDependency.fetchRecruitmentDetailUseCase] = "fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"
+        keyPathToName[\RecruitmentDetailDependency.uploadFileUseCase] = "uploadFileUseCase-any UploadFileUseCase"
+        keyPathToName[\RecruitmentDetailDependency.applyCompanyUseCase] = "applyCompanyUseCase-any ApplyCompanyUseCase"
         keyPathToName[\RecruitmentDetailDependency.findCompanyDetailFactory] = "findCompanyDetailFactory-any FindCompanyDetailFactory"
     }
 }

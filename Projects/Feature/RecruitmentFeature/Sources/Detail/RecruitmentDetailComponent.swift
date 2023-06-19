@@ -2,10 +2,14 @@ import SwiftUI
 import RecruitmentFeatureInterface
 import RecruitmentsDomainInterface
 import FindCompanyFeatureInterface
+import FilesDomainInterface
+import ApplicationsDomainInterface
 import NeedleFoundation
 
 public protocol RecruitmentDetailDependency: Dependency {
     var fetchRecruitmentDetailUseCase: any FetchRecruitmentDetailUseCase { get }
+    var uploadFileUseCase: any UploadFileUseCase { get }
+    var applyCompanyUseCase: any ApplyCompanyUseCase { get }
     var findCompanyDetailFactory: any FindCompanyDetailFactory { get }
 }
 
@@ -14,6 +18,8 @@ public final class RecruitmentDetailComponent: Component<RecruitmentDetailDepend
         RecruitmentDetailView(
             viewModel: .init(
                 fetchRecruitmentDetailUseCase: dependency.fetchRecruitmentDetailUseCase,
+                uploadFileUseCase: dependency.uploadFileUseCase,
+                applyCompanyUseCase: dependency.applyCompanyUseCase,
                 id: id
             ),
             findCompanyDetailFactory: dependency.findCompanyDetailFactory,

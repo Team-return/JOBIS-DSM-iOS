@@ -32,9 +32,6 @@ struct MenuView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
-//                Text("메뉴")
-//                    .JOBISFont(.body(.body2), color: .Sub.gray60)
-
                 Divider().foregroundColor(.Sub.gray40)
                     .padding(.bottom, 25)
 

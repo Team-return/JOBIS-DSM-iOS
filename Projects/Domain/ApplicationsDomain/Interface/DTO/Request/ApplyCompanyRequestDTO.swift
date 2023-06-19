@@ -1,9 +1,9 @@
 import Foundation
 
 public struct ApplyCompanyRequestDTO: Encodable {
-    public let attachmentURL: String
+    public let attachmentURL: [String]
 
-    public init(attachmentURL: String) {
+    public init(attachmentURL: [String]) {
         self.attachmentURL = attachmentURL
     }
 
