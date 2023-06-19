@@ -6,6 +6,7 @@ import UtilityModule
 import Kingfisher
 
 struct RecruitmentDetailView: View {
+    @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: RecruitmentDetailViewModel
     private let isDetail: Bool
 
@@ -86,8 +87,9 @@ struct RecruitmentDetailView: View {
                     documents: $viewModel.documents,
                     submitDoc: detailInfo.submitDocument
                 ) {
-                    print("지원!")
-                    print(viewModel.urls.joined(separator: ", "))
+                    viewModel.apply {
+                        dismiss()
+                    }
                 }
                 .opacity(viewModel.isTappedApplyButton ? 1 : 0)
             }
