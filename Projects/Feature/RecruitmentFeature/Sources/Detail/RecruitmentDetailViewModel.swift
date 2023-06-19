@@ -1,6 +1,8 @@
 import BaseFeature
+import FilesDomainInterface
 import Foundation
 import RecruitmentsDomainInterface
+import ApplicationsDomainInterface
 import Combine
 
 final class RecruitmentDetailViewModel: BaseViewModel {
@@ -11,20 +13,60 @@ final class RecruitmentDetailViewModel: BaseViewModel {
     @Published var contents: [String] = []
     @Published var urls: [String] = []
     @Published var documents: [URL] = []
+
     private let id: String
 
     private let fetchRecruitmentDetailUseCase: FetchRecruitmentDetailUseCase
+    private let uploadFileUseCase: UploadFileUseCase
+    private let applyCompanyUseCase: ApplyCompanyUseCase
 
     public init(
         fetchRecruitmentDetailUseCase: any FetchRecruitmentDetailUseCase,
+        uploadFileUseCase: any UploadFileUseCase,
+        applyCompanyUseCase: any ApplyCompanyUseCase,
         id: String
     ) {
         self.fetchRecruitmentDetailUseCase = fetchRecruitmentDetailUseCase
+        self.uploadFileUseCase = uploadFileUseCase
+        self.applyCompanyUseCase = applyCompanyUseCase
         self.id = id
     }
 
     func onAppear() {
         fetchRecruitmentDetail()
+    }
+
+    func apply(complete: @escaping () -> Void) {
+        uploadFiles(complete: complete)
+    }
+
+    private func applyCompany(_ attachmentUrl: [String], complete: @escaping () -> Void) {
+        addCancellable(
+            applyCompanyUseCase.execute(
+                id: id,
+                req: .init(attachmentURL: attachmentUrl)
+            )
+        ) { _ in
+            complete()
+        }
+    }
+
+    private func uploadFiles(complete: @escaping () -> Void) {
+        var attachmentUrl: [String] = []
+        documents.forEach {
+            do {
+                let data = try Data(contentsOf: $0)
+                addCancellable(
+                    uploadFileUseCase.execute(data: data)
+                ) { url in
+                    attachmentUrl.append(contentsOf: url)
+                }
+            } catch {
+                print("URL을 Data로 변환하는 데 실패했습니다: \(error)")
+            }
+        }
+        attachmentUrl += urls
+        self.applyCompany(attachmentUrl, complete: complete)
     }
 
     private func fetchRecruitmentDetail() {
