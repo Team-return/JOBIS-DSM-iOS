@@ -53,7 +53,7 @@ struct ApplySheet: View {
         .frame(maxHeight: UIScreen.main.bounds.height / 2)
         .padding(10)
         .padding(.horizontal, 18)
-//        .animation(.spring(response: 0.), value: [urls, files])
+        .animation(.spring(response: 0.1), value: [urls, files])
     }
 
     @ViewBuilder
