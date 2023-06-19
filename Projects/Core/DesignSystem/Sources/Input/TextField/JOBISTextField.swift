@@ -7,6 +7,7 @@ public struct JOBISTextField: View {
     var isError: Bool
     var errorMessage: String
     var onCommit: () -> Void
+    var deleteAction: () -> Void
     @FocusState var isFocused: Bool
 
     var inputType: TFInputType
@@ -24,7 +25,8 @@ public struct JOBISTextField: View {
         outlinedType: TFOutlinedType,
         bottomMessage: String = "",
         topMessage: String = "",
-        onCommit: @escaping () -> Void = {}
+        onCommit: @escaping () -> Void = {},
+        deleteAction: @escaping () -> Void = {}
     ) {
         self.placeholder = placeholder
         _text = text
@@ -35,6 +37,7 @@ public struct JOBISTextField: View {
         self.bottomMessage = bottomMessage
         self.topMessage = topMessage
         self.onCommit = onCommit
+        self.deleteAction = deleteAction
     }
 
     public var body: some View {
@@ -45,6 +48,7 @@ public struct JOBISTextField: View {
                     color: isEnabled ? .Sub.gray60 : .Sub.gray50
                 )
                 .opacity(text.isEmpty ? 1 : 0)
+
             HStack {
                 jobisTextfield()
                 Spacer()
@@ -114,6 +118,7 @@ public struct JOBISTextField: View {
         switch inputType {
         case .none:
             EmptyView()
+
         case .password:
             Button {
                 isPWSecure.toggle()
@@ -123,6 +128,7 @@ public struct JOBISTextField: View {
                         isEnabled ? isError ? .State.error : .Sub.gray60 : .Sub.gray50
                     )
             }
+
         case .search:
             Button {
                 onCommit()
@@ -131,6 +137,14 @@ public struct JOBISTextField: View {
                     .foregroundColor(
                         isEnabled ? isError ? .State.error : .Sub.gray60 : .Sub.gray50
                     )
+            }
+
+        case .deletable:
+            Button {
+                deleteAction()
+            } label: {
+                Image(systemName: "xmark")
+                    .foregroundColor(.Sub.gray90)
             }
         }
     }
