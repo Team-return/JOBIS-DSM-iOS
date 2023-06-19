@@ -37,7 +37,7 @@ extension ApplicationsDomainError: LocalizedError {
             return "모집의뢰서를 찾을 수 없습니다."
 
         case .alreadyApply:
-            return "이미 지원한 모집의뢰서입니다."
+            return "승인된 지원서가 존재하거나, 이미 지원한 기업입니다."
         }
     }
 }
