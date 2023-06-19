@@ -9,6 +9,7 @@ final class RecruitmentDetailViewModel: BaseViewModel {
     @Published var recruitmentDetail: RecruitmentDetailEntity?
     @Published var isTappedApplyButton = false
     @Published var isSheetCompanyDetail = false
+    @Published var isSuccessApply = false
     @Published var titles: [String] = []
     @Published var contents: [String] = []
     @Published var urls: [String] = []
@@ -46,8 +47,9 @@ final class RecruitmentDetailViewModel: BaseViewModel {
                 id: id,
                 req: .init(attachmentURL: attachmentUrl)
             )
-        ) { _ in
+        ) { [weak self] _ in
             complete()
+            self?.isSuccessApply.toggle()
         }
     }
 

@@ -40,20 +40,24 @@ struct MainTabView: View {
         ZStack {
             TabView(selection: $selection) {
                 homeFactory.makeView()
-                    .eraseToAnyView()
+                    .toNavigationView()
                     .tag(TabFlow.home)
+                    .accentColor(.Sub.gray70)
 
                 bookmarkListFactory.makeView()
-                    .eraseToAnyView()
+                    .toNavigationView()
                     .tag(TabFlow.bookmark)
+                    .accentColor(.Sub.gray70)
 
                 myPageFactory.makeView()
-                    .eraseToAnyView()
+                    .toNavigationView()
                     .tag(TabFlow.profile)
+                    .accentColor(.Sub.gray70)
 
                 menuFactory.makeView()
-                    .eraseToAnyView()
+                    .toNavigationView()
                     .tag(TabFlow.menu)
+                    .accentColor(.Sub.gray70)
             }
             .environment(\.tabbarHidden, $tabbarHidden)
 
@@ -110,6 +114,14 @@ struct MainTabView: View {
                 }
             }
             .padding(.vertical, 18)
+        }
+    }
+}
+
+extension View {
+    func toNavigationView() -> NavigationView<AnyView> {
+        NavigationView {
+            self.eraseToAnyView()
         }
     }
 }

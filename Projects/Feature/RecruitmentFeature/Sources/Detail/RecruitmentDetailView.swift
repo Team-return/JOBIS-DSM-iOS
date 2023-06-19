@@ -6,7 +6,6 @@ import UtilityModule
 import Kingfisher
 
 struct RecruitmentDetailView: View {
-    @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: RecruitmentDetailViewModel
     private let isDetail: Bool
 
@@ -65,9 +64,7 @@ struct RecruitmentDetailView: View {
                     Spacer()
 
                     SolidBtn(text: "지원하기", size: .large) {
-                        withAnimation(.easeIn(duration: 0.1)) {
-                            viewModel.isTappedApplyButton.toggle()
-                        }
+                        viewModel.isTappedApplyButton.toggle()
                     }
                 }
                 .padding(.bottom, 10)
@@ -77,9 +74,7 @@ struct RecruitmentDetailView: View {
                     .opacity(viewModel.isTappedApplyButton ? 0.2 : 0)
                     .ignoresSafeArea()
                     .onTapGesture {
-                        withAnimation(.easeIn(duration: 0.1)) {
-                            viewModel.isTappedApplyButton.toggle()
-                        }
+                        viewModel.isTappedApplyButton.toggle()
                     }
 
                 ApplySheet(
@@ -88,7 +83,7 @@ struct RecruitmentDetailView: View {
                     submitDoc: detailInfo.submitDocument
                 ) {
                     viewModel.apply {
-                        dismiss()
+                        viewModel.isTappedApplyButton.toggle()
                     }
                 }
                 .opacity(viewModel.isTappedApplyButton ? 1 : 0)
@@ -100,8 +95,15 @@ struct RecruitmentDetailView: View {
                 isShowing: $viewModel.isErrorOcuured,
                 message: viewModel.errorMessage,
                 style: .error,
-                title: "에러"
+                title: "지원 불가"
             )
+            .jobisToast(
+                isShowing: $viewModel.isSuccessApply,
+                message: "성공적으로 지원되셨습니다.",
+                style: .success,
+                title: "지원 성공"
+            )
+            .animation(.easeIn(duration: 0.1), value: viewModel.isTappedApplyButton)
         } else {
             ProgressView().progressViewStyle(.circular)
                 .frame(maxHeight: .infinity)
