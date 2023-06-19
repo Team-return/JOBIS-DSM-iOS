@@ -1,18 +1,22 @@
 import SwiftUI
 import DesignSystem
+import UtilityModule
 
 struct ApplySheet: View {
     @Binding var urls: [String]
-    @State var files: [String] = []
+    @Binding var documents: [URL]
+    @State var showDocumentPicker = false
     let submitDoc: String
     let applyAction: () -> Void
 
     init(
         urls: Binding<[String]>,
+        documents: Binding<[URL]>,
         submitDoc: String,
         applyAction: @escaping () -> Void
     ) {
         _urls = urls
+        _documents = documents
         self.submitDoc = submitDoc
         self.applyAction = applyAction
     }
@@ -53,7 +57,8 @@ struct ApplySheet: View {
         .frame(maxHeight: UIScreen.main.bounds.height / 2)
         .padding(10)
         .padding(.horizontal, 18)
-        .animation(.spring(response: 0.1), value: [urls, files])
+        .animation(.spring(response: 0.1), value: urls)
+        .animation(.spring(response: 0.1), value: documents)
     }
 
     @ViewBuilder
@@ -63,12 +68,13 @@ struct ApplySheet: View {
                 .JOBISFont(.etc(.caption), color: .Sub.gray60)
                 .padding(.leading, 5)
 
-            ForEach(0..<files.count, id: \.self) { index in
+            ForEach(0..<documents.count, id: \.self) { index in
                 HStack(spacing: 2) {
-                    Text("files[index]")
+                    Text(documents[index].lastPathComponent)
                         .JOBISFont(.etc(.caption), color: .Sub.gray90)
+                        .lineLimit(1)
 
-                    Text("11KB")
+                    Text(documents[index].getFileSize())
                         .JOBISFont(.etc(.caption), color: .Sub.gray60)
 
                     Spacer()
@@ -78,7 +84,7 @@ struct ApplySheet: View {
                         .foregroundColor(.Sub.gray90)
                         .frame(width: 9, height: 9)
                         .onTapGesture {
-                            files.remove(at: index)
+                            documents.remove(at: index)
                         }
                 }
                 .padding(10)
@@ -88,8 +94,9 @@ struct ApplySheet: View {
             }
 
             addDataButton(explain: "눌러서 파일 추가하기") {
-                files.append("")
+                showDocumentPicker.toggle()
             }
+            .documentPicker(isShow: $showDocumentPicker, url: $documents)
         }
     }
 

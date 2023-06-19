@@ -1,4 +1,5 @@
 import BaseFeature
+import Foundation
 import RecruitmentsDomainInterface
 import Combine
 
@@ -9,6 +10,7 @@ final class RecruitmentDetailViewModel: BaseViewModel {
     @Published var titles: [String] = []
     @Published var contents: [String] = []
     @Published var urls: [String] = []
+    @Published var documents: [URL] = []
     private let id: String
 
     private let fetchRecruitmentDetailUseCase: FetchRecruitmentDetailUseCase

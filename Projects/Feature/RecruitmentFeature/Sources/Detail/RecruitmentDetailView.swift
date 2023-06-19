@@ -81,7 +81,11 @@ struct RecruitmentDetailView: View {
                         }
                     }
 
-                ApplySheet(urls: $viewModel.urls, submitDoc: detailInfo.submitDocument) {
+                ApplySheet(
+                    urls: $viewModel.urls,
+                    documents: $viewModel.documents,
+                    submitDoc: detailInfo.submitDocument
+                ) {
                     print("지원!")
                     print(viewModel.urls.joined(separator: ", "))
                 }
