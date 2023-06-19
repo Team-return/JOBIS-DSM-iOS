@@ -58,8 +58,8 @@ struct RecruitmentDetailView: View {
                     }
                     .padding(.vertical, 24)
                     .padding(.bottom, 40)
+                    .padding(.horizontal, 20)
                 }
-                .padding(.horizontal, 20)
 
                 VStack {
                     Spacer()
@@ -96,6 +96,12 @@ struct RecruitmentDetailView: View {
             .onAppear {
                 viewModel.onAppear()
             }
+            .jobisToast(
+                isShowing: $viewModel.isErrorOcuured,
+                message: viewModel.errorMessage,
+                style: .error,
+                title: "에러"
+            )
         } else {
             ProgressView().progressViewStyle(.circular)
                 .frame(maxHeight: .infinity)
