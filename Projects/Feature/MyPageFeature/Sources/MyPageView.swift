@@ -19,23 +19,25 @@ struct MyPageView: View {
                 Divider().foregroundColor(.Sub.gray40)
                     .padding(.bottom, 50)
 
-                KFImage(URL(string: ""))
-                    .placeholder { Color.gray }
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 62, height: 62)
-                    .clipShape(Circle())
-                    .padding(.bottom, 5)
+                Group {
+                    KFImage(URL(string: viewModel.studentInfo?.profileImageUrl ?? ""))
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 62, height: 62)
+                        .clipShape(Circle())
+                        .padding(.bottom, 5)
 
-                Text("강용수")
-                    .JOBISFont(.heading(.heading6), color: .Sub.gray90)
+                    Text(viewModel.studentInfo?.studentName ?? "홍길동")
+                        .JOBISFont(.heading(.heading6), color: .Sub.gray90)
 
-                Text("임베디드소프트웨어개발과")
-                    .JOBISFont(.body(.body2), color: .Sub.gray90)
+                    Text((viewModel.studentInfo?.department ?? .softwareDevelop).localizedString())
+                        .JOBISFont(.body(.body2), color: .Sub.gray90)
 
-                Text("2학년 3반 2번")
-                    .JOBISFont(.body(.body4), color: .Sub.gray70)
-                    .padding(.bottom, 15)
+                    Text(viewModel.studentInfo?.studentGcn ?? "2학년 2반 18번")
+                        .JOBISFont(.body(.body4), color: .Sub.gray70)
+                        .padding(.bottom, 15)
+                }
+                .redacted(reason: viewModel.isLoading ? .placeholder : [])
 
                 Text("백엔드")
                     .JOBISFont(.body(.body4), color: .Sub.gray10)
@@ -75,6 +77,9 @@ struct MyPageView: View {
             withAnimation {
                 tabbarHidden.wrappedValue = newValue
             }
+        }
+        .onAppear {
+            viewModel.onAppear()
         }
         .navigationTitle("마이페이지")
     }

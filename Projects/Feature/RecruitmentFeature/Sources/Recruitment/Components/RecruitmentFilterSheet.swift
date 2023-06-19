@@ -89,10 +89,11 @@ struct RecruitmentFilterSheet: View {
             placeholder: "기술 코드를 입력해주세요.",
             text: $viewModel.techCodeText,
             inputType: .search,
-            outlinedType: .outlined
-        ) {
-            viewModel.sheetOnAppear()
-        }
+            outlinedType: .outlined,
+            onCommit:  {
+                viewModel.sheetOnAppear()
+            }
+        )
         .listRowSeparator(.hidden)
         .listRowBackground(Color.clear)
     }
