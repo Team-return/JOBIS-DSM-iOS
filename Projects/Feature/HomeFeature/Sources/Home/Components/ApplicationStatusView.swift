@@ -26,11 +26,13 @@ struct ApplicationStatusView: View {
                 .background(Color.Sub.gray40)
                 .cornerRadius(10)
             } else {
-                ForEach(applicationList, id: \.self) { data in
-                    applicationStatusCell(
-                        title: data.company,
-                        applicationStatus: data.applicationStatus.localizedString()
-                    )
+                ScrollView {
+                    ForEach(applicationList, id: \.self) { data in
+                        applicationStatusCell(
+                            title: data.company,
+                            applicationStatus: data.applicationStatus.localizedString()
+                        )
+                    }
                 }
             }
         }
