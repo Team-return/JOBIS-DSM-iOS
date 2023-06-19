@@ -1,7 +1,17 @@
 import SwiftUI
 
+public extension View {
+    func documentPicker(isShow: Binding<Bool>, url: Binding<[URL]>) -> some View {
+        self
+            .sheet(isPresented: isShow) {
+                DocumentPicker(selectedURL: url)
+                    .ignoresSafeArea()
+            }
+    }
+}
+
 struct DocumentPicker: UIViewControllerRepresentable {
-    @Binding var selectedURL: URL?
+    @Binding var selectedURL: [URL]
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.data])
@@ -16,14 +26,15 @@ struct DocumentPicker: UIViewControllerRepresentable {
     }
 
     class Coordinator: NSObject, UIDocumentPickerDelegate {
-        @Binding var selectedURL: URL?
+        @Binding var selectedURL: [URL]
 
-        init(selectedURL: Binding<URL?>) {
+        init(selectedURL: Binding<[URL]>) {
             _selectedURL = selectedURL
         }
 
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            selectedURL = urls.first
+            guard let url = urls.first else { return }
+            selectedURL.append(url)
         }
     }
 }
