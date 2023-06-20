@@ -4,7 +4,7 @@ import BaseDomain
 import Moya
 
 public enum FilesAPI {
-    case uploadFile(data: Data)
+    case uploadFile(data: [Data])
 }
 
 extension FilesAPI: JobisAPI {
@@ -25,8 +25,15 @@ extension FilesAPI: JobisAPI {
     public var task: Moya.Task {
         switch self {
         case let .uploadFile(data):
-            let formData = MultipartFormData(provider: .data(data), name: "file", fileName: "\(UUID().uuidString).png")
-            let multipartData = [formData]
+            var multipartData: [MultipartFormData] {
+                data.map {
+                    MultipartFormData(
+                        provider: .data($0),
+                        name: "file",
+                        fileName: "\($0)"
+                    )
+                }
+            }
 
             return .uploadCompositeMultipart(
                 multipartData,
@@ -40,6 +47,9 @@ extension FilesAPI: JobisAPI {
     }
 
     public var errorMap: [Int: ErrorType] {
-        [:]
+        return [
+            400: .wrongFileForm,
+            413: .fileSizeExceeded
+        ]
     }
 }

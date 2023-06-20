@@ -56,10 +56,16 @@ final class RecruitmentViewModel: BaseViewModel {
     func fetchRecruitment() {
         self.listPage = 1
 
+        var jobCode: String? {
+            guard let selectedJobCode = selectedJobCode?.code else { return nil }
+            return String(selectedJobCode)
+        }
+
         addCancellable(
             fetchRecruitmentListUseCase.execute(
                 page: listPage,
-                code: selectedTechCode.map { String($0.code) },
+                jobCode: jobCode,
+                techCode: selectedTechCode.map { String($0.code) },
                 name: companyText.isEmpty ? nil : companyText
             )
         ) { [weak self] recruitmentList in
@@ -69,12 +75,18 @@ final class RecruitmentViewModel: BaseViewModel {
     }
 
     func appendRecruitmentList(list: RecruitmentEntity) {
+        var jobCode: String? {
+            guard let selectedJobCode = selectedJobCode?.code else { return nil }
+            return String(selectedJobCode)
+        }
+
         if self.recruitmentList?.recruitments.last == list {
             listPage += 1
             addCancellable(
                 fetchRecruitmentListUseCase.execute(
                     page: listPage,
-                    code: selectedTechCode.map { String($0.code) },
+                    jobCode: jobCode,
+                    techCode: selectedTechCode.map { String($0.code) },
                     name: companyText.isEmpty ? nil : companyText
                 )
             ) { [weak self] recruitmentList in
@@ -101,6 +113,7 @@ final class RecruitmentViewModel: BaseViewModel {
                 return nil
             }
         }
+
         var parentCode: String? {
             if let code {
                 return String(code)
@@ -108,6 +121,7 @@ final class RecruitmentViewModel: BaseViewModel {
                 return nil
             }
         }
+
         addCancellable(
             fetchCodesUseCase.execute(
                 keyword: keyword,

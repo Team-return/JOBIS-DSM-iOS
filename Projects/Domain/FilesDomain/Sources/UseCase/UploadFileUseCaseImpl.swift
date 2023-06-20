@@ -9,7 +9,7 @@ public struct UploadFileUseCaseImpl: UploadFileUseCase {
         self.filesRepository = filesRepository
     }
 
-    public func execute(data: Data) -> AnyPublisher<[String], Error> {
+    public func execute(data: [Data]) -> AnyPublisher<[String], Error> {
         filesRepository.uploadFile(data: data)
     }
 }

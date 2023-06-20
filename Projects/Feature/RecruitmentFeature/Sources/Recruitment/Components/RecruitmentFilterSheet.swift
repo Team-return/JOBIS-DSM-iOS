@@ -90,7 +90,7 @@ struct RecruitmentFilterSheet: View {
             text: $viewModel.techCodeText,
             inputType: .search,
             outlinedType: .outlined,
-            onCommit:  {
+            onCommit: {
                 viewModel.sheetOnAppear()
             }
         )

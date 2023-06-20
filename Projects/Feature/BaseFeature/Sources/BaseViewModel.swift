@@ -2,13 +2,7 @@ import Combine
 import UIKit
 
 open class BaseViewModel: ObservableObject {
-    @Published public var isErrorOcuured = false {
-        didSet {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                self.isErrorOcuured = false
-            }
-        }
-    }
+    @Published public var isErrorOcuured = false
     @Published public var isLoading = false
     @Published public var errorMessage = ""
 

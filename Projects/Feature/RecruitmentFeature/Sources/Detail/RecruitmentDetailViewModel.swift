@@ -54,21 +54,27 @@ final class RecruitmentDetailViewModel: BaseViewModel {
     }
 
     private func uploadFiles(complete: @escaping () -> Void) {
-        var attachmentUrl: [String] = []
-        documents.forEach {
-            do {
-                let data = try Data(contentsOf: $0)
-                addCancellable(
-                    uploadFileUseCase.execute(data: data)
-                ) { url in
-                    attachmentUrl.append(contentsOf: url)
-                }
-            } catch {
-                print("URL을 Data로 변환하는 데 실패했습니다: \(error)")
+        if documents.isEmpty {
+            self.applyCompany(urls, complete: complete)
+        } else {
+            var attachmentUrl: [String] = []
+            addCancellable(
+                uploadFileUseCase.execute(
+                    data: documents.map {
+                        do {
+                            let data = try Data(contentsOf: $0)
+                            return data
+                        } catch {
+                            print("URL을 Data로 변환하는 데 실패했습니다: \(error)")
+                            return Data()
+                        }
+                    }
+                )
+            ) { [weak self] urls in
+                attachmentUrl += urls
+                self?.applyCompany(attachmentUrl, complete: complete)
             }
         }
-        attachmentUrl += urls
-        self.applyCompany(attachmentUrl, complete: complete)
     }
 
     private func fetchRecruitmentDetail() {
