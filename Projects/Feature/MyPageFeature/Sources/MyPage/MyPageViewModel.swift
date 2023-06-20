@@ -4,6 +4,7 @@ import StudentsDomainInterface
 
 final class MyPageViewModel: BaseViewModel {
     @Published var isNavigateReportView = false
+    @Published var isLogout = false
     var isTabbarHidden: Bool {
         isNavigateReportView
     }

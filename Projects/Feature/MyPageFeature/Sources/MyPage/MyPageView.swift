@@ -75,7 +75,7 @@ struct MyPageView: View {
                     Divider().foregroundColor(.Sub.gray40)
 
                     myPageNavigateCell(title: "로그아웃", color: .State.error) {
-                        viewModel.isNavigateReportView.toggle()
+                        viewModel.isLogout.toggle()
                     }
 
                     Divider().foregroundColor(.Sub.gray40)
@@ -96,6 +96,21 @@ struct MyPageView: View {
             viewModel.onAppear()
         }
         .navigationTitle("마이페이지")
+        .alert(isPresented: $viewModel.isLogout) {
+            Alert(
+                title: Text("로그아웃"),
+                message: Text("정말로 로그아웃 하시겠습니까?"),
+                primaryButton: Alert.Button.cancel(
+                    Text("네"),
+                    action: {
+                        // logout
+                    }
+                ),
+                secondaryButton: Alert.Button.default(
+                    Text("아니요")
+                )
+            )
+        }
     }
 
     @ViewBuilder
