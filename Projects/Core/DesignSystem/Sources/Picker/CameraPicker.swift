@@ -2,17 +2,19 @@ import SwiftUI
 import UIKit
 
 public extension View {
-    func cameraPicker(isShow: Binding<Bool>, uiImage: Binding<UIImage?>) -> some View {
+    func cameraPicker(isShow: Binding<Bool>, uiImage: Binding<[UIImage]>) -> some View {
         self
             .fullScreenCover(isPresented: isShow) {
                 CameraPicker(sourceType: .camera, image: uiImage, isPresented: isShow)
+                    .background(Color.black)
             }
+            .ignoresSafeArea()
     }
 }
 
 struct CameraPicker: UIViewControllerRepresentable {
     var sourceType: UIImagePickerController.SourceType
-    @Binding var image: UIImage?
+    @Binding var image: [UIImage]
     @Binding var isPresented: Bool
 
     func makeCoordinator() -> ImagePickerViewCoordinator {
@@ -31,10 +33,10 @@ struct CameraPicker: UIViewControllerRepresentable {
 }
 
 final class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    @Binding var image: UIImage?
+    @Binding var image: [UIImage]
     @Binding var isPresented: Bool
 
-    init(image: Binding<UIImage?>, isPresented: Binding<Bool>) {
+    init(image: Binding<[UIImage]>, isPresented: Binding<Bool>) {
         self._image = image
         self._isPresented = isPresented
     }
@@ -44,7 +46,7 @@ final class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
     ) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            self.image = image
+            self.image.append(image)
         }
         self.isPresented = false
     }
