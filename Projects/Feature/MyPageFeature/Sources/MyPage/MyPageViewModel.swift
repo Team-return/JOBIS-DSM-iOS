@@ -7,11 +7,10 @@ final class MyPageViewModel: BaseViewModel {
     @Published var isNavigateReportView = false
     @Published var isPresentedLogoutAlert = false
     @Published var isSuccessLogout = false
+    @Published var studentInfo: StudentInfoEntity?
     var isTabbarHidden: Bool {
         isNavigateReportView
     }
-
-    @Published var studentInfo: StudentInfoEntity?
 
     private let fetchStudentInfoUseCase: FetchStudentInfoUseCase
     private let logoutUseCase: any LogoutUseCase
