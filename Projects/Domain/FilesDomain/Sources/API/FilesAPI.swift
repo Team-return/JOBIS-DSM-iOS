@@ -30,7 +30,7 @@ extension FilesAPI: JobisAPI {
                     MultipartFormData(
                         provider: .data($0),
                         name: "file",
-                        fileName: "\($0)"
+                        fileName: "\(UUID().uuidString)"
                     )
                 }
             }
@@ -43,7 +43,7 @@ extension FilesAPI: JobisAPI {
     }
 
     public var jwtTokenType: JwtTokenType {
-        .accessToken
+        .none
     }
 
     public var errorMap: [Int: ErrorType] {
