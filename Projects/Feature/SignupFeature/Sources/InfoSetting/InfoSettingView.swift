@@ -68,20 +68,22 @@ struct InfoSettingView: View {
         JOBISTextField(
             placeholder: "이름을 입력하세요",
             text: $viewModel.name,
-            outlinedType: .outlined
-        ) {
+            outlinedType: .outlined,
+            onCommit: {
             self.focusField = .grade
         }
+        )
         .focused($focusField, equals: .name)
 
         HStack {
             JOBISTextField(
                 placeholder: "학년",
                 text: $viewModel.grade,
-                outlinedType: .outlined
-            ) {
-                self.focusField = .classRoom
-            }
+                outlinedType: .outlined,
+                onCommit: {
+                    self.focusField = .classRoom
+                }
+            )
             .focused($focusField, equals: .grade)
             .keyboardType(.numberPad)
             .filterNumericInput($viewModel.grade)
@@ -89,10 +91,11 @@ struct InfoSettingView: View {
             JOBISTextField(
                 placeholder: "반",
                 text: $viewModel.classRoom,
-                outlinedType: .outlined
-            ) {
+                outlinedType: .outlined,
+                onCommit: {
                 self.focusField = .number
             }
+            )
             .focused($focusField, equals: .classRoom)
             .keyboardType(.numberPad)
             .filterNumericInput($viewModel.classRoom)
@@ -100,14 +103,15 @@ struct InfoSettingView: View {
             JOBISTextField(
                 placeholder: "번호",
                 text: $viewModel.number,
-                outlinedType: .outlined
-            ) {
-                if viewModel.isButtonEnabled {
-                    focusField = .none
-                } else {
-                    viewModel.nextButtonDidTap()
+                outlinedType: .outlined,
+                onCommit: {
+                    if viewModel.isButtonEnabled {
+                        focusField = .none
+                    } else {
+                        viewModel.nextButtonDidTap()
+                    }
                 }
-            }
+            )
             .focused($focusField, equals: .number)
             .keyboardType(.numberPad)
             .filterNumericInput($viewModel.number)

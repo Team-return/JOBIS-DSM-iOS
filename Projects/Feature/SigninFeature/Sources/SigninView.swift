@@ -100,10 +100,11 @@ struct SigninView: View {
                 text: $viewModel.email,
                 isError: viewModel.isEmailError,
                 errorMessage: viewModel.errorMessage,
-                outlinedType: .outlined
-            ) {
-                focusField = .password
-            }
+                outlinedType: .outlined,
+                onCommit: {
+                    focusField = .password
+                }
+            )
             .keyboardType(.emailAddress)
             .focused($focusField, equals: .id)
 
@@ -113,10 +114,11 @@ struct SigninView: View {
                 isError: viewModel.isPasswordError,
                 errorMessage: viewModel.errorMessage,
                 inputType: .password,
-                outlinedType: .outlined
-            ) {
-                viewModel.signinButtonDidTap()
-            }
+                outlinedType: .outlined,
+                onCommit: {
+                    viewModel.signinButtonDidTap()
+                }
+            )
             .textContentType(.password)
             .focused($focusField, equals: .password)
 

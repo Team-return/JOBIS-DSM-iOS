@@ -29,10 +29,11 @@ struct SignupEmailVerifyView: View {
                 placeholder: "이메일을 입력해주세요",
                 text: $viewModel.email,
                 outlinedType: .outlined,
-                bottomMessage: "@dsm.hs.kr 이 포함되어야 합니다"
-            ) {
-                self.focusField = .verifyCode
-            }
+                bottomMessage: "@dsm.hs.kr 이 포함되어야 합니다",
+                onCommit: {
+                    self.focusField = .verifyCode
+                }
+            )
             .focused($focusField, equals: .email)
             .keyboardType(.emailAddress)
 
@@ -41,10 +42,11 @@ struct SignupEmailVerifyView: View {
                     JOBISTextField(
                         placeholder: "인증번호 6자리",
                         text: $viewModel.authCode,
-                        outlinedType: .outlined
-                    ) {
-                        focusField = .none
-                    }
+                        outlinedType: .outlined,
+                        onCommit: {
+                            focusField = .none
+                        }
+                    )
                     .focused($focusField, equals: .verifyCode)
                     .keyboardType(.default)
                     .onReceive(Just(viewModel.authCode)) { _ in

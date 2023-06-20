@@ -66,11 +66,11 @@ struct RecruitmentView: View {
                     placeholder: "회사명을 입력해주세요.",
                     text: $viewModel.companyText,
                     inputType: .search,
-                    outlinedType: .outlined
-                ) {
-                    viewModel.fetchRecruitment()
-                }
-
+                    outlinedType: .outlined,
+                    onCommit: {
+                        viewModel.fetchRecruitment()
+                    }
+                )
                 SolidBtn(
                     text: "",
                     style: .icon1,
