@@ -3,9 +3,9 @@ import Combine
 import StudentsDomainInterface
 
 final class MyPageViewModel: BaseViewModel {
-    @Published var isNavigateBookmarkListView = false
+    @Published var isNavigateReportView = false
     var isTabbarHidden: Bool {
-        isNavigateBookmarkListView
+        isNavigateReportView
     }
 
     @Published var studentInfo: StudentInfoEntity?
@@ -35,4 +35,3 @@ final class MyPageViewModel: BaseViewModel {
         }
     }
 }
-

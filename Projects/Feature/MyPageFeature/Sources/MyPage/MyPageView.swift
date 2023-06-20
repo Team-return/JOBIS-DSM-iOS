@@ -1,4 +1,5 @@
 import DesignSystem
+import MyPageFeatureInterface
 import SwiftUI
 import UtilityModule
 import Kingfisher
@@ -7,10 +8,14 @@ struct MyPageView: View {
     @Environment(\.tabbarHidden) var tabbarHidden
     @StateObject var viewModel: MyPageViewModel
 
+    private let reportFactory: any ReportFactory
+
     init(
-        viewModel: MyPageViewModel
+        viewModel: MyPageViewModel,
+        reportFactory: any ReportFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.reportFactory = reportFactory
     }
 
     var body: some View {
@@ -21,6 +26,7 @@ struct MyPageView: View {
 
                 Group {
                     KFImage(URL(string: viewModel.studentInfo?.profileImageUrl ?? ""))
+                        .placeholder { Circle().fill(Color.Sub.gray50) }
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 62, height: 62)
@@ -50,29 +56,37 @@ struct MyPageView: View {
                 VStack(alignment: .leading, spacing: 15) {
                     Divider().foregroundColor(.Sub.gray40)
 
-                    Text("버그 제보하기")
-                        .JOBISFont(.etc(.caption), color: .Main.lightBlue)
+                    myPageNavigateCell(title: "버그 제보하기", color: .Main.lightBlue) {
+                        viewModel.isNavigateReportView.toggle()
+                    }
 
                     Divider().foregroundColor(.Sub.gray40)
 
-                    Text("관심분야 선택하기")
-                        .JOBISFont(.etc(.caption), color: .Main.lightBlue)
+                    myPageNavigateCell(title: "관심분야 선택하기", color: .Main.lightBlue) {
+                        viewModel.isNavigateReportView.toggle()
+                    }
 
                     Divider().foregroundColor(.Sub.gray40)
 
-                    Text("비밀번호 변경하기")
-                        .JOBISFont(.etc(.caption), color: .Main.lightBlue)
+                    myPageNavigateCell(title: "비밀번호 변경하기", color: .Main.lightBlue) {
+                        viewModel.isNavigateReportView.toggle()
+                    }
 
                     Divider().foregroundColor(.Sub.gray40)
 
-                    Text("로그아웃")
-                        .JOBISFont(.etc(.caption), color: .State.error)
+                    myPageNavigateCell(title: "로그아웃", color: .State.error) {
+                        viewModel.isNavigateReportView.toggle()
+                    }
 
                     Divider().foregroundColor(.Sub.gray40)
                 }
             }
             .padding(.horizontal, 25)
         }
+        .navigate(
+            to: reportFactory.makeView().eraseToAnyView(),
+            when: $viewModel.isNavigateReportView
+        )
         .onChange(of: viewModel.isTabbarHidden) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue
@@ -82,5 +96,21 @@ struct MyPageView: View {
             viewModel.onAppear()
         }
         .navigationTitle("마이페이지")
+    }
+
+    @ViewBuilder
+    func myPageNavigateCell(
+        title: String, color: Color, action: @escaping () -> Void
+    ) -> some View {
+        Button {
+            action()
+        } label: {
+            HStack {
+                Text(title)
+                    .JOBISFont(.etc(.caption), color: color)
+
+                Spacer()
+            }
+        }
     }
 }
