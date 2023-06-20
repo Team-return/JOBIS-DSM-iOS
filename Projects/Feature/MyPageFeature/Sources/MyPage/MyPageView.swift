@@ -3,9 +3,11 @@ import MyPageFeatureInterface
 import SwiftUI
 import UtilityModule
 import Kingfisher
+import BaseFeature
 
 struct MyPageView: View {
     @Environment(\.tabbarHidden) var tabbarHidden
+    @EnvironmentObject var appState: AppState
     @StateObject var viewModel: MyPageViewModel
 
     private let reportFactory: any ReportFactory
@@ -75,7 +77,7 @@ struct MyPageView: View {
                     Divider().foregroundColor(.Sub.gray40)
 
                     myPageNavigateCell(title: "로그아웃", color: .State.error) {
-                        viewModel.isLogout.toggle()
+                        viewModel.isPresentedLogoutAlert.toggle()
                     }
 
                     Divider().foregroundColor(.Sub.gray40)
@@ -92,22 +94,29 @@ struct MyPageView: View {
                 tabbarHidden.wrappedValue = newValue
             }
         }
+        .onChange(of: viewModel.isSuccessLogout) { newValue in
+            if newValue {
+                withAnimation {
+                    appState.sceneFlow = .auth
+                }
+            }
+        }
         .onAppear {
             viewModel.onAppear()
         }
         .navigationTitle("마이페이지")
-        .alert(isPresented: $viewModel.isLogout) {
+        .alert(isPresented: $viewModel.isPresentedLogoutAlert) {
             Alert(
                 title: Text("로그아웃"),
                 message: Text("정말로 로그아웃 하시겠습니까?"),
-                primaryButton: Alert.Button.cancel(
-                    Text("네"),
+                primaryButton: Alert.Button.destructive(
+                    Text("확인"),
                     action: {
-                        // logout
+                        viewModel.confirmLogoutButtonDidTap()
                     }
                 ),
-                secondaryButton: Alert.Button.default(
-                    Text("아니요")
+                secondaryButton: Alert.Button.cancel(
+                    Text("취소")
                 )
             )
         }

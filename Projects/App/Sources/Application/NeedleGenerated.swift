@@ -121,6 +121,9 @@ private class MyPageDependency48d84b530313b3ee40feProvider: MyPageDependency {
     var fetchStudentInfoUseCase: any FetchStudentInfoUseCase {
         return appComponent.fetchStudentInfoUseCase
     }
+    var logoutUseCase: any LogoutUseCase {
+        return appComponent.logoutUseCase
+    }
     var reportFactory: any ReportFactory {
         return appComponent.reportFactory
     }
@@ -334,10 +337,12 @@ extension AppComponent: Registration {
 
         localTable["keychain-any Keychain"] = { [unowned self] in self.keychain as Any }
         localTable["remoteAuthDataSource-any RemoteAuthDataSource"] = { [unowned self] in self.remoteAuthDataSource as Any }
+        localTable["localAuthDataSource-any LocalAuthDataSource"] = { [unowned self] in self.localAuthDataSource as Any }
         localTable["authRepository-any AuthRepository"] = { [unowned self] in self.authRepository as Any }
         localTable["sendAuthCodeUseCase-any SendAuthCodeUseCase"] = { [unowned self] in self.sendAuthCodeUseCase as Any }
         localTable["verifyAuthCodeUseCase-any VerifyAuthCodeUseCase"] = { [unowned self] in self.verifyAuthCodeUseCase as Any }
         localTable["reissueTokenUseCase-any ReissueTokenUseCase"] = { [unowned self] in self.reissueTokenUseCase as Any }
+        localTable["logoutUseCase-any LogoutUseCase"] = { [unowned self] in self.logoutUseCase as Any }
         localTable["remoteRecruitmentsDataSource-any RemoteRecruitmentsDataSource"] = { [unowned self] in self.remoteRecruitmentsDataSource as Any }
         localTable["recruitmentsRepository-any RecruitmentsRepository"] = { [unowned self] in self.recruitmentsRepository as Any }
         localTable["fetchRecruitmentDetailUseCase-any FetchRecruitmentDetailUseCase"] = { [unowned self] in self.fetchRecruitmentDetailUseCase as Any }
@@ -415,6 +420,7 @@ extension MainTabComponent: Registration {
 extension MyPageComponent: Registration {
     public func registerItems() {
         keyPathToName[\MyPageDependency.fetchStudentInfoUseCase] = "fetchStudentInfoUseCase-any FetchStudentInfoUseCase"
+        keyPathToName[\MyPageDependency.logoutUseCase] = "logoutUseCase-any LogoutUseCase"
         keyPathToName[\MyPageDependency.reportFactory] = "reportFactory-any ReportFactory"
     }
 }

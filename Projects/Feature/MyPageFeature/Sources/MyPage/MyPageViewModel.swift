@@ -1,10 +1,12 @@
 import BaseFeature
 import Combine
 import StudentsDomainInterface
+import AuthDomainInterface
 
 final class MyPageViewModel: BaseViewModel {
     @Published var isNavigateReportView = false
-    @Published var isLogout = false
+    @Published var isPresentedLogoutAlert = false
+    @Published var isSuccessLogout = false
     var isTabbarHidden: Bool {
         isNavigateReportView
     }
@@ -12,11 +14,14 @@ final class MyPageViewModel: BaseViewModel {
     @Published var studentInfo: StudentInfoEntity?
 
     private let fetchStudentInfoUseCase: FetchStudentInfoUseCase
+    private let logoutUseCase: any LogoutUseCase
 
     public init(
-        fetchStudentInfoUseCase: any FetchStudentInfoUseCase
+        fetchStudentInfoUseCase: any FetchStudentInfoUseCase,
+        logoutUseCase: any LogoutUseCase
     ) {
         self.fetchStudentInfoUseCase = fetchStudentInfoUseCase
+        self.logoutUseCase = logoutUseCase
     }
 
     func onAppear() {
@@ -34,5 +39,14 @@ final class MyPageViewModel: BaseViewModel {
                 profileImageUrl: studentInfo.profileImageUrl
             )
         }
+    }
+
+    func logoutButtonDidTap() {
+        isPresentedLogoutAlert = true
+    }
+
+    func confirmLogoutButtonDidTap() {
+        logoutUseCase.execute()
+        isSuccessLogout = true
     }
 }
