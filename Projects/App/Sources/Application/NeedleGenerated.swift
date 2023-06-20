@@ -121,6 +121,9 @@ private class MyPageDependency48d84b530313b3ee40feProvider: MyPageDependency {
     var fetchStudentInfoUseCase: any FetchStudentInfoUseCase {
         return appComponent.fetchStudentInfoUseCase
     }
+    var reportFactory: any ReportFactory {
+        return appComponent.reportFactory
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -129,6 +132,17 @@ private class MyPageDependency48d84b530313b3ee40feProvider: MyPageDependency {
 /// ^->AppComponent->MyPageComponent
 private func factory0f6f456ebf157d02dfb3f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return MyPageDependency48d84b530313b3ee40feProvider(appComponent: parent1(component) as! AppComponent)
+}
+private class ReportDependency6e94b8b26a4d1950e6e6Provider: ReportDependency {
+
+
+    init() {
+
+    }
+}
+/// ^->AppComponent->ReportComponent
+private func factoryf9f7e1c92faf5c6d60dae3b0c44298fc1c149afb(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return ReportDependency6e94b8b26a4d1950e6e6Provider()
 }
 private class BookmarkListDependency51ed5641ae9b8f23fd81Provider: BookmarkListDependency {
     var fetchBookmarkListUseCase: any FetchBookmarkListUseCase {
@@ -339,6 +353,7 @@ extension AppComponent: Registration {
         localTable["bookmarkListFactory-any BookmarkListFactory"] = { [unowned self] in self.bookmarkListFactory as Any }
         localTable["homeFactory-any HomeFactory"] = { [unowned self] in self.homeFactory as Any }
         localTable["myPageFactory-any MyPageFactory"] = { [unowned self] in self.myPageFactory as Any }
+        localTable["reportFactory-any ReportFactory"] = { [unowned self] in self.reportFactory as Any }
         localTable["menuFactory-any MenuFactory"] = { [unowned self] in self.menuFactory as Any }
         localTable["remoteStudentsDataSource-any RemoteStudentsDataSource"] = { [unowned self] in self.remoteStudentsDataSource as Any }
         localTable["studentsRepository-any StudentsRepository"] = { [unowned self] in self.studentsRepository as Any }
@@ -400,6 +415,12 @@ extension MainTabComponent: Registration {
 extension MyPageComponent: Registration {
     public func registerItems() {
         keyPathToName[\MyPageDependency.fetchStudentInfoUseCase] = "fetchStudentInfoUseCase-any FetchStudentInfoUseCase"
+        keyPathToName[\MyPageDependency.reportFactory] = "reportFactory-any ReportFactory"
+    }
+}
+extension ReportComponent: Registration {
+    public func registerItems() {
+
     }
 }
 extension BookmarkListComponent: Registration {
@@ -490,6 +511,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->SignupComponent", factory86602ff0d0dbaf2cb017f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MainTabComponent", factory1ab5a747ddf21e1393f9f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MyPageComponent", factory0f6f456ebf157d02dfb3f47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->ReportComponent", factoryf9f7e1c92faf5c6d60dae3b0c44298fc1c149afb)
     registerProviderFactory("^->AppComponent->BookmarkListComponent", factory4fe746186ebb99322754f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RootComponent", factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->SigninComponent", factory2882a056d84a613debccf47b58f8f304c97af4d5)

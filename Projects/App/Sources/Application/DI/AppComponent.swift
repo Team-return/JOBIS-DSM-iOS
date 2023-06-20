@@ -80,6 +80,9 @@ public extension AppComponent {
     var myPageFactory: any MyPageFactory {
         MyPageComponent(parent: self)
     }
+    var reportFactory: any ReportFactory {
+        ReportComponent(parent: self)
+    }
     var menuFactory: any MenuFactory {
         MenuComponent(parent: self)
     }
