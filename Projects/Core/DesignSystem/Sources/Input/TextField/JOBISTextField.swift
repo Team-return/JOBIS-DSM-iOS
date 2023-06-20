@@ -44,7 +44,7 @@ public struct JOBISTextField: View {
         ZStack(alignment: .leading) {
             Text(placeholder)
                 .JOBISFont(
-                    .body(.body1),
+                    .body(.body4),
                     color: isEnabled ? .Sub.gray60 : .Sub.gray50
                 )
                 .opacity(text.isEmpty ? 1 : 0)
@@ -56,10 +56,10 @@ public struct JOBISTextField: View {
             }
         }
         .padding(.vertical, 10)
-        .padding(.horizontal, 14)
+        .padding(.horizontal, 12)
         .overlay(alignment: .bottom) {
             if outlinedType == .outlined {
-                RoundedRectangle(cornerRadius: 3)
+                RoundedRectangle(cornerRadius: 5)
                     .strokeBorder(
                         isError && isEnabled ? Color.State.error : isFocused ? .Sub.gray60 : .Sub.gray40,
                         lineWidth: 1
@@ -83,7 +83,7 @@ public struct JOBISTextField: View {
                     .body(.body4),
                     color: isEnabled ? isError ? .State.error : .Sub.gray70 : .Sub.gray50
                 )
-                .offset(y: -18)
+                .offset(y: -20)
         }
         .overlay(alignment: .bottomLeading) {
             Text(isError ? errorMessage : bottomMessage)
@@ -108,7 +108,7 @@ public struct JOBISTextField: View {
             }
         }
         .JOBISFont(
-            .body(.body2),
+            .body(.body4),
             color: isEnabled ? .Sub.gray90 : .Sub.gray50
         )
     }
