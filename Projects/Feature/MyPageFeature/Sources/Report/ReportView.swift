@@ -70,7 +70,7 @@ struct ReportView: View {
 
                 Text(viewModel.selectedDepartment)
 
-                JOBISImage(.chevronDown)
+                JOBISIcon(.chevronDown)
                     .frame(width: 16, height: 16)
             }
             .frame(width: 75)

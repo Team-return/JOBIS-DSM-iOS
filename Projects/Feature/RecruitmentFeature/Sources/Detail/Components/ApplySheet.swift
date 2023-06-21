@@ -7,7 +7,7 @@ struct ApplySheet: View {
         case file = "눌러서 파일 추가하기"
         case url = "URL 입력란 추가하기"
 
-        var systemName: JOBISImage.Image {
+        var systemName: JOBISIcon.Image {
             switch self {
             case .file:
                 return .upload
@@ -145,7 +145,7 @@ struct ApplySheet: View {
             addAction()
         } label: {
             VStack {
-                JOBISImage(fileType.systemName)
+                JOBISIcon(fileType.systemName)
                     .foregroundColor(.Sub.gray60)
                     .frame(width: 15, height: 15)
 

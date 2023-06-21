@@ -75,7 +75,7 @@ struct RecruitmentView: View {
                     text: "",
                     style: .icon1,
                     size: .small,
-                    icon: JOBISImage(.filterIcon).jobisImageToImage(),
+                    icon: JOBISIcon(.filterIcon).jobisIconToImage(),
                     iconWidth: 24,
                     iconHeight: 24
                 ) {
