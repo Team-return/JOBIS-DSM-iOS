@@ -62,15 +62,13 @@ struct RecruitmentView: View {
     func searchBar() -> some View {
         VStack {
             HStack {
-                JOBISTextField(
-                    placeholder: "회사명을 입력해주세요.",
-                    text: $viewModel.companyText,
-                    inputType: .search,
-                    outlinedType: .outlined,
-                    onCommit: {
-                        viewModel.fetchRecruitment()
-                    }
-                )
+                SearchJOBISFormTextField(
+                    "회사명을 입력해주세요.",
+                    text: $viewModel.companyText
+                ) {
+                    viewModel.fetchRecruitment()
+                }
+
                 SolidBtn(
                     text: "",
                     style: .icon1,

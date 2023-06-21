@@ -122,15 +122,14 @@ struct ApplySheet: View {
                 .padding(.leading, 5)
 
             ForEach(0..<urls.count, id: \.self) { index in
-                JOBISTextField(
-                    placeholder: "URL 입력",
+                DeleteableJOBISFormTextField(
+                    "URL 입력",
                     text: $urls[index],
-                    inputType: .deletable,
-                    outlinedType: .outlined,
-                    deleteAction: {
-                        urls.remove(at: index)
-                    }
-                )
+                    deleteArray: $urls,
+                    deleteIndex: index
+                ) {
+                    urls.append("")
+                }
             }
 
             addDataButton(fileType: .url) {

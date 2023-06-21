@@ -95,30 +95,25 @@ struct SigninView: View {
     @ViewBuilder
     func signinInput() -> some View {
         VStack(spacing: 30) {
-            JOBISTextField(
-                placeholder: "이메일을 입력해주세요",
+            JOBISFormTextField(
+                "이메일을 입력해주세요.",
                 text: $viewModel.email,
                 isError: viewModel.isEmailError,
-                errorMessage: viewModel.errorMessage,
-                outlinedType: .outlined,
-                onCommit: {
-                    focusField = .password
-                }
-            )
+                errorMessage: viewModel.errorMessage
+            ) {
+                focusField = .password
+            }
             .keyboardType(.emailAddress)
             .focused($focusField, equals: .id)
 
-            JOBISTextField(
-                placeholder: "비밀번호를 입력해주세요",
+            SecureJOBISFormTextField(
+                "비밀번호를 입력해주세요.",
                 text: $viewModel.password,
                 isError: viewModel.isPasswordError,
-                errorMessage: viewModel.errorMessage,
-                inputType: .password,
-                outlinedType: .outlined,
-                onCommit: {
-                    viewModel.signinButtonDidTap()
-                }
-            )
+                errorMessage: viewModel.errorMessage
+            ) {
+                viewModel.signinButtonDidTap()
+            }
             .textContentType(.password)
             .focused($focusField, equals: .password)
 

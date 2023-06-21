@@ -65,53 +65,45 @@ struct InfoSettingView: View {
 
     @ViewBuilder
     func inputTextfield() -> some View {
-        JOBISTextField(
-            placeholder: "이름을 입력하세요",
-            text: $viewModel.name,
-            outlinedType: .outlined,
-            onCommit: {
+        JOBISFormTextField(
+            "이름을 입력하세요.",
+            text: $viewModel.name
+        ) {
             self.focusField = .grade
         }
-        )
         .focused($focusField, equals: .name)
 
         HStack {
-            JOBISTextField(
-                placeholder: "학년",
-                text: $viewModel.grade,
-                outlinedType: .outlined,
-                onCommit: {
-                    self.focusField = .classRoom
-                }
-            )
+            JOBISFormTextField(
+                "학년",
+                text: $viewModel.grade
+            ) {
+                self.focusField = .classRoom
+            }
             .focused($focusField, equals: .grade)
             .keyboardType(.numberPad)
             .filterNumericInput($viewModel.grade)
 
-            JOBISTextField(
-                placeholder: "반",
-                text: $viewModel.classRoom,
-                outlinedType: .outlined,
-                onCommit: {
+            JOBISFormTextField(
+                "반",
+                text: $viewModel.classRoom
+            ) {
                 self.focusField = .number
             }
-            )
             .focused($focusField, equals: .classRoom)
             .keyboardType(.numberPad)
             .filterNumericInput($viewModel.classRoom)
 
-            JOBISTextField(
-                placeholder: "번호",
-                text: $viewModel.number,
-                outlinedType: .outlined,
-                onCommit: {
-                    if viewModel.isButtonEnabled {
-                        focusField = .none
-                    } else {
-                        viewModel.nextButtonDidTap()
-                    }
+            JOBISFormTextField(
+                "번호",
+                text: $viewModel.number
+            ) {
+                if viewModel.isButtonEnabled {
+                    focusField = .none
+                } else {
+                    viewModel.nextButtonDidTap()
                 }
-            )
+            }
             .focused($focusField, equals: .number)
             .keyboardType(.numberPad)
             .filterNumericInput($viewModel.number)

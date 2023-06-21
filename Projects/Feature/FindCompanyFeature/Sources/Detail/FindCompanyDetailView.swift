@@ -118,10 +118,12 @@ struct FindCompanyDetailView: View {
     func companyIntroduce(introduce: String) -> some View {
         VStack(spacing: 5) {
             Text(introduce)
-                .lineLimit(isShowDetail ? nil : 3)
+                .lineLimit(
+                    isShowDetail ? nil : introduce.count > 200 ? 3 : nil
+                )
                 .JOBISFont(.etc(.caption), color: .Sub.gray70)
 
-            if introduce.count > 50 {
+            if introduce.count > 200 {
                 Text(isShowDetail ? "간략히" : "자세히")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
                     .underlineText(color: .Sub.gray60)

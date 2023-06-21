@@ -84,14 +84,12 @@ struct ReportView: View {
             Text("제목")
                 .JOBISFont(.etc(.caption), color: .Sub.gray70)
 
-            JOBISTextField(
-                placeholder: "제목을 입력해주세요.",
-                text: $viewModel.title,
-                outlinedType: .outlined,
-                onCommit: {
-                    focusField = .content
-                }
-            )
+            JOBISFormTextField(
+                "제목을 입력해주세요.",
+                text: $viewModel.title
+            ) {
+                focusField = .content
+            }
             .focused($focusField, equals: .title)
             .onReceive(Just(viewModel.title)) { _ in
                 if 20 < viewModel.title.count {
@@ -107,34 +105,13 @@ struct ReportView: View {
             Text("내용")
                 .JOBISFont(.etc(.caption), color: .Sub.gray70)
 
-            ZStack(alignment: .topLeading) {
-                TextEditor(text: $viewModel.content)
-                    .JOBISFont(.body(.body4), color: .Sub.gray90)
-                    .padding(.top, 2)
-                    .padding(.leading, 7)
-                    .focused($focusField, equals: .content)
-                    .onReceive(Just(viewModel.content)) { _ in
-                        if 400 < viewModel.content.count {
-                            viewModel.content = String(viewModel.content.prefix(400))
-                        }
+            JOBISFormTextEditor("버그가 어떻게 일어났는지 구체적으로 써주세요.", text: $viewModel.content)
+                .focused($focusField, equals: .content)
+                .onReceive(Just(viewModel.content)) { _ in
+                    if 400 < viewModel.content.count {
+                        viewModel.content = String(viewModel.content.prefix(400))
                     }
-
-                Text("버그가 어떻게 났는지 설명해주세요!")
-                    .JOBISFont(.body(.body4), color: .Sub.gray60)
-                    .opacity(viewModel.content.isEmpty ? 1 : 0)
-                    .padding(.top, 10)
-                    .padding(.leading, 12)
-            }
-            .frame(height: 200)
-            .overlay(
-                RoundedRectangle(cornerRadius: 5)
-                    .strokeBorder(
-                        focusField == .content ? Color.Sub.gray60 : .Sub.gray40,
-                        lineWidth: 1
-                    )
-            )
-            .background(Color.Sub.gray10)
-            .animation(.easeIn(duration: 0.3), value: focusField)
+                }
         }
     }
 

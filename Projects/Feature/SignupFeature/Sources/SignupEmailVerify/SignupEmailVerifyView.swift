@@ -24,29 +24,29 @@ struct SignupEmailVerifyView: View {
 
     @ViewBuilder
     func inputTextfield() -> some View {
-        VStack(spacing: 30) {
-            JOBISTextField(
-                placeholder: "이메일을 입력해주세요",
-                text: $viewModel.email,
-                outlinedType: .outlined,
-                bottomMessage: "@dsm.hs.kr 이 포함되어야 합니다",
-                onCommit: {
-                    self.focusField = .verifyCode
-                }
-            )
+        VStack(spacing: 0) {
+            JOBISFormTextField(
+                "이메일을 입력해주세요.",
+                text: $viewModel.email
+            ) {
+                self.focusField = .verifyCode
+            }
             .focused($focusField, equals: .email)
             .keyboardType(.emailAddress)
+            .padding(.bottom, 4)
+
+            Text("@dsm.hs.kr 이 포함되어야 합니다.")
+                .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                .padding(.bottom, 12)
 
             HStack(spacing: 12) {
                 ZStack {
-                    JOBISTextField(
-                        placeholder: "인증번호 6자리",
-                        text: $viewModel.authCode,
-                        outlinedType: .outlined,
-                        onCommit: {
-                            focusField = .none
-                        }
-                    )
+                    JOBISFormTextField(
+                        "인증번호 6자리",
+                        text: $viewModel.authCode
+                    ) {
+                        focusField = .none
+                    }
                     .focused($focusField, equals: .verifyCode)
                     .keyboardType(.default)
                     .onReceive(Just(viewModel.authCode)) { _ in

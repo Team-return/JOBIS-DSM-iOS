@@ -240,6 +240,7 @@ final class SignupViewModel: BaseViewModel {
             self?.isShowSignupErrorToast = true
         }
     }
+
     private func passwordNextButtonDidTap() {
         let passwordExpression = #"^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,16}$"#
 
