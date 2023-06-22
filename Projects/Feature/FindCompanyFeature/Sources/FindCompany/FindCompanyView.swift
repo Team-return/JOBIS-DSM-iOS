@@ -55,11 +55,9 @@ struct FindCompanyView: View {
     @ViewBuilder
     func searchBar() -> some View {
         VStack(alignment: .leading) {
-            JOBISTextField(
-                placeholder: "회사명을 입력해주세요.",
-                text: $viewModel.companyText,
-                inputType: .search,
-                outlinedType: .outlined
+            SearchJOBISFormTextField(
+                "회사명을 입력해주세요.",
+                text: $viewModel.companyText
             ) {
                 viewModel.onAppear()
             }

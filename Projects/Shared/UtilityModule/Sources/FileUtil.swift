@@ -4,9 +4,14 @@ public extension URL {
     func getFileSize() -> String {
         do {
             let attributes = try FileManager.default.attributesOfItem(atPath: self.path)
-            if let fileSize = attributes[.size] as? Int64 {
+            if let fileSize = attributes[.size] as? Double {
                 let fileSizeInKB = Double(fileSize) / 1024.0
-                return String(format: "%.1f", fileSizeInKB) + "KB"
+                if fileSizeInKB >= 1024 {
+                    let fileSizeInMB = fileSizeInKB / 1024.0
+                    return String(format: "%.1fMB", fileSizeInMB)
+                } else {
+                    return String(format: "%.1fKB", fileSizeInKB)
+                }
             }
         } catch {
             print("Error: \(error)")

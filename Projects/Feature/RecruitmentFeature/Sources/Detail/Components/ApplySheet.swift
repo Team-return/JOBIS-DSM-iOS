@@ -3,6 +3,20 @@ import DesignSystem
 import UtilityModule
 
 struct ApplySheet: View {
+    enum FileType: String {
+        case file = "눌러서 파일 추가하기"
+        case url = "URL 입력란 추가하기"
+
+        var systemName: JOBISIcon.Image {
+            switch self {
+            case .file:
+                return .upload
+            case .url:
+                return .plus
+            }
+        }
+    }
+
     @Binding var urls: [String]
     @Binding var documents: [URL]
     @State var showDocumentPicker = false
@@ -51,8 +65,8 @@ struct ApplySheet: View {
                     Spacer()
                 }
             }
+            .padding(15)
         }
-        .padding(15)
         .background(Color.Sub.gray10)
         .frame(maxHeight: UIScreen.main.bounds.height / 2)
         .padding(10)
@@ -93,7 +107,7 @@ struct ApplySheet: View {
                 .shadow(opacity: 0.1, blur: 4)
             }
 
-            addDataButton(explain: "눌러서 파일 추가하기") {
+            addDataButton(fileType: .file) {
                 showDocumentPicker.toggle()
             }
             .documentPicker(isShow: $showDocumentPicker, url: $documents)
@@ -108,35 +122,33 @@ struct ApplySheet: View {
                 .padding(.leading, 5)
 
             ForEach(0..<urls.count, id: \.self) { index in
-                JOBISTextField(
-                    placeholder: "URL 입력",
+                DeleteableJOBISFormTextField(
+                    "URL 입력",
                     text: $urls[index],
-                    inputType: .deletable,
-                    outlinedType: .outlined,
-                    deleteAction: {
-                        urls.remove(at: index)
-                    }
-                )
+                    deleteArray: $urls,
+                    deleteIndex: index
+                ) {
+                    urls.append("")
+                }
             }
 
-            addDataButton(explain: "눌러서 입력란 추가하기") {
+            addDataButton(fileType: .url) {
                 urls.append("")
             }
         }
     }
 
     @ViewBuilder
-    func addDataButton(explain: String, _ addAction: @escaping () -> Void) -> some View {
+    func addDataButton(fileType: FileType, _ addAction: @escaping () -> Void) -> some View {
         Button {
             addAction()
         } label: {
             VStack {
-                Image(systemName: "plus")
-                    .resizable()
+                JOBISIcon(fileType.systemName)
                     .foregroundColor(.Sub.gray60)
                     .frame(width: 15, height: 15)
 
-                Text(explain)
+                Text(fileType.rawValue)
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
             }
             .frame(maxWidth: .infinity)

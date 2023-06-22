@@ -50,7 +50,7 @@ struct RecruitmentListCell: View {
                 Spacer()
 
                 VStack {
-                    JOBISImage(self.isBookmarked ? .bookmarkOn : .bookmarkOff)
+                    JOBISIcon(self.isBookmarked ? .bookmarkOn : .bookmarkOff)
                         .frame(width: 12, height: 16)
                         .padding(5)
                         .onTapGesture {
@@ -60,7 +60,7 @@ struct RecruitmentListCell: View {
 
                     Spacer()
 
-                    JOBISImage(.militaryServiceExceptionIcon)
+                    JOBISIcon(.militaryServiceExceptionIcon)
                         .frame(width: 16, height: 16)
                         .opacity(recruitmentEntity.military ? 1 : 0)
                 }

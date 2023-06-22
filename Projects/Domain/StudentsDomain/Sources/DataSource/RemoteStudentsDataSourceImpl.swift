@@ -20,4 +20,12 @@ public final class RemoteStudentsDataSourceImpl: BaseRemoteDataSource<StudentsAP
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }
+
+    public func changePassword(req: ChangePasswordRequestDTO) -> AnyPublisher<Void, Error> {
+        request(.changePassword(req))
+    }
+
+    public func compareCurrentPasssword(password: String) -> AnyPublisher<Void, Error> {
+        request(.compareCurrentPasssword(password: password))
+    }
 }

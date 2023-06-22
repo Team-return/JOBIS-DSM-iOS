@@ -8,7 +8,7 @@ import NeedleFoundation
 
 public protocol RecruitmentDetailDependency: Dependency {
     var fetchRecruitmentDetailUseCase: any FetchRecruitmentDetailUseCase { get }
-    var uploadFileUseCase: any UploadFileUseCase { get }
+    var uploadFilesUseCase: any UploadFilesUseCase { get }
     var applyCompanyUseCase: any ApplyCompanyUseCase { get }
     var findCompanyDetailFactory: any FindCompanyDetailFactory { get }
 }
@@ -18,7 +18,7 @@ public final class RecruitmentDetailComponent: Component<RecruitmentDetailDepend
         RecruitmentDetailView(
             viewModel: .init(
                 fetchRecruitmentDetailUseCase: dependency.fetchRecruitmentDetailUseCase,
-                uploadFileUseCase: dependency.uploadFileUseCase,
+                uploadFilesUseCase: dependency.uploadFilesUseCase,
                 applyCompanyUseCase: dependency.applyCompanyUseCase,
                 id: id
             ),

@@ -9,9 +9,18 @@ public extension AppComponent {
         }
     }
 
+    var localAuthDataSource: any LocalAuthDataSource {
+        shared {
+            LocalAuthDataSourceImpl(keychain: keychain)
+        }
+    }
+
     var authRepository: any AuthRepository {
         shared {
-            AuthRepositoryImpl(remoteAuthDataSource: remoteAuthDataSource)
+            AuthRepositoryImpl(
+                remoteAuthDataSource: remoteAuthDataSource,
+                localAuthDataSource: localAuthDataSource
+            )
         }
     }
 
@@ -30,6 +39,12 @@ public extension AppComponent {
     var reissueTokenUseCase: any ReissueTokenUseCase {
         shared {
             ReissueTokenUseCaseImpl(authRepository: authRepository)
+        }
+    }
+
+    var logoutUseCase: any LogoutUseCase {
+        shared {
+            LogoutUseCaseImpl(authRepository: authRepository)
         }
     }
 }

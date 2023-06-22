@@ -85,11 +85,9 @@ struct RecruitmentFilterSheet: View {
 
     @ViewBuilder
     func searchBar() -> some View {
-        JOBISTextField(
-            placeholder: "기술 코드를 입력해주세요.",
-            text: $viewModel.techCodeText,
-            inputType: .search,
-            outlinedType: .outlined
+        SearchJOBISFormTextField(
+            "기술 코드를 입력해주세요.",
+            text: $viewModel.techCodeText
         ) {
             viewModel.sheetOnAppear()
         }

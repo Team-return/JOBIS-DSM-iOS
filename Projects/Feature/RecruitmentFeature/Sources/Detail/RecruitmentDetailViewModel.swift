@@ -9,6 +9,7 @@ final class RecruitmentDetailViewModel: BaseViewModel {
     @Published var recruitmentDetail: RecruitmentDetailEntity?
     @Published var isTappedApplyButton = false
     @Published var isSheetCompanyDetail = false
+    @Published var isSuccessApply = false
     @Published var titles: [String] = []
     @Published var contents: [String] = []
     @Published var urls: [String] = []
@@ -17,17 +18,17 @@ final class RecruitmentDetailViewModel: BaseViewModel {
     private let id: String
 
     private let fetchRecruitmentDetailUseCase: FetchRecruitmentDetailUseCase
-    private let uploadFileUseCase: UploadFileUseCase
+    private let uploadFilesUseCase: UploadFilesUseCase
     private let applyCompanyUseCase: ApplyCompanyUseCase
 
     public init(
         fetchRecruitmentDetailUseCase: any FetchRecruitmentDetailUseCase,
-        uploadFileUseCase: any UploadFileUseCase,
+        uploadFilesUseCase: any UploadFilesUseCase,
         applyCompanyUseCase: any ApplyCompanyUseCase,
         id: String
     ) {
         self.fetchRecruitmentDetailUseCase = fetchRecruitmentDetailUseCase
-        self.uploadFileUseCase = uploadFileUseCase
+        self.uploadFilesUseCase = uploadFilesUseCase
         self.applyCompanyUseCase = applyCompanyUseCase
         self.id = id
     }
@@ -46,27 +47,35 @@ final class RecruitmentDetailViewModel: BaseViewModel {
                 id: id,
                 req: .init(attachmentURL: attachmentUrl)
             )
-        ) { _ in
+        ) { [weak self] _ in
             complete()
+            self?.isSuccessApply.toggle()
         }
     }
 
     private func uploadFiles(complete: @escaping () -> Void) {
-        var attachmentUrl: [String] = []
-        documents.forEach {
-            do {
-                let data = try Data(contentsOf: $0)
-                addCancellable(
-                    uploadFileUseCase.execute(data: data)
-                ) { url in
-                    attachmentUrl.append(contentsOf: url)
-                }
-            } catch {
-                print("URL을 Data로 변환하는 데 실패했습니다: \(error)")
+        if documents.isEmpty {
+            self.applyCompany(urls, complete: complete)
+        } else {
+            var attachmentUrl: [String] = []
+            addCancellable(
+                uploadFilesUseCase.execute(
+                    data: documents.map {
+                        do {
+                            let data = try Data(contentsOf: $0)
+                            return data
+                        } catch {
+                            print("URL을 Data로 변환하는 데 실패했습니다: \(error)")
+                            return Data()
+                        }
+                    },
+                    fileName: documents.first?.lastPathComponent ?? "image.jpg"
+                )
+            ) { [weak self] urls in
+                attachmentUrl += urls
+                self?.applyCompany(attachmentUrl, complete: complete)
             }
         }
-        attachmentUrl += urls
-        self.applyCompany(attachmentUrl, complete: complete)
     }
 
     private func fetchRecruitmentDetail() {

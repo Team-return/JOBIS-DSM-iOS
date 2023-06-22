@@ -69,9 +69,10 @@ extension ApplicationsAPI: JobisAPI {
         case .applyCompany:
             return [
                 400: .badRequest,
-                401: .unauthorized,
+                401: .noThirdGrad,
                 403: .forbidden,
-                409: .conflict
+                404: .notFoundRecruitment,
+                409: .alreadyApply
             ]
         case .cancelApply:
             return [

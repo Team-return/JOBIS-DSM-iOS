@@ -48,7 +48,7 @@ extension BookmarksAPI: JobisAPI {
         }
     }
 
-    public var errorMap: [Int: BookmarksError] {
+    public var errorMap: [Int: ErrorType] {
         switch self {
         default:
             return [:]

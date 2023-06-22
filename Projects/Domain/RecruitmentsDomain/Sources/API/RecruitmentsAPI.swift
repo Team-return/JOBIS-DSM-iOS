@@ -5,7 +5,7 @@ import BaseDomain
 
 public enum RecruitmentsAPI {
     case fetchRecruitmentDetail(id: String)
-    case fetchRecruitmentList(page: Int, code: [String]?, name: String?)
+    case fetchRecruitmentList(page: Int, jobCode: String?, techCode: [String]?, name: String?)
 }
 
 extension RecruitmentsAPI: JobisAPI {
@@ -33,10 +33,11 @@ extension RecruitmentsAPI: JobisAPI {
 
     public var task: Moya.Task {
         switch self {
-        case let .fetchRecruitmentList(page, code, name):
+        case let .fetchRecruitmentList(page, jobCode, techCode, name):
             return .requestParameters(parameters: [
                 "page": page,
-                "code": code?.joined(separator: ",") ?? "",
+                "job_code": jobCode ?? "",
+                "tech_code": techCode?.joined(separator: ",") ?? "",
                 "name": name ?? ""
             ], encoding: URLEncoding.queryString)
         default:

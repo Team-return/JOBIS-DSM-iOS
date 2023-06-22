@@ -17,17 +17,15 @@ public protocol HomeDependency: Dependency {
 
 public final class HomeComponent: Component<HomeDependency>, HomeFactory {
     public func makeView() -> some View {
-        NavigationView {
-            HomeView(
-                viewModel: .init(
-                    fetchApplicationUseCase: dependency.fetchApplicationUseCase,
-                    fetchTotalPassStudentUseCase: dependency.fetchTotalPassStudentUseCase,
-                    fetchStudentInfoUseCase: dependency.fetchStudentInfoUseCase
-                ),
-                recruitmentFactory: dependency.recruitmentFactory,
-                findCompanyFactory: dependency.findCompanyFactory
-            )
-        }
-        .accentColor(.Sub.gray70)
+        HomeView(
+            viewModel: .init(
+                fetchApplicationUseCase: dependency.fetchApplicationUseCase,
+                fetchTotalPassStudentUseCase: dependency.fetchTotalPassStudentUseCase,
+                fetchStudentInfoUseCase: dependency.fetchStudentInfoUseCase
+            ),
+            recruitmentFactory: dependency.recruitmentFactory,
+            findCompanyFactory: dependency.findCompanyFactory
+        )
+        .navigationBarHidden(true)
     }
 }

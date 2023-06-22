@@ -11,7 +11,6 @@ public extension View {
     }
 }
 
-
 struct ImagePicker: UIViewControllerRepresentable {
     let configuration: PHPickerConfiguration
     @Binding var requests: UIImage?

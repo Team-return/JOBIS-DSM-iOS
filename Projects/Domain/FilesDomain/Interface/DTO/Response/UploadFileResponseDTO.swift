@@ -1,5 +1,5 @@
 import Foundation
 
-public struct UploadFileResponseDTO: Decodable {
+public struct UploadFilesResponseDTO: Decodable {
     public let urls: [String]
 }

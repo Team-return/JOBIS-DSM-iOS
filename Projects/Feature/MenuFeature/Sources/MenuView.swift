@@ -86,21 +86,27 @@ struct MenuView: View {
     }
 
     @ViewBuilder
-    func menuListCell(image: MenuImage.Image, title: String) -> some View {
+    func menuListCell(image: JOBISImage.Image, title: String) -> some View {
         Button {
             switch image {
             case .bookmarkList:
                 viewModel.isNavigateBookmarkListView.toggle()
+
             case .fetchRecruitment:
                 viewModel.isNavigateRecruitmentView.toggle()
+
             case .findCompany:
                 viewModel.isNavigateCompanyView.toggle()
+
             case .profile:
                 viewModel.isNavigateMyPage.toggle()
+
+            default: break
             }
         } label: {
             HStack(spacing: 12) {
-                MenuImage(image)
+                JOBISImage(image)
+                    .frame(width: 24, height: 24)
 
                 Text(title)
                     .JOBISFont(.body(.body2), color: .Sub.gray80)

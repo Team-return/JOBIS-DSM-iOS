@@ -15,9 +15,9 @@ public extension AppComponent {
         }
     }
 
-    var uploadFileUseCase: any UploadFileUseCase {
+    var uploadFilesUseCase: any UploadFilesUseCase {
         shared {
-            UploadFileUseCaseImpl(filesRepository: filesRepository)
+            UploadFilesUseCaseImpl(filesRepository: filesRepository)
         }
     }
 }

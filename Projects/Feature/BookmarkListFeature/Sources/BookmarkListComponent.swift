@@ -13,15 +13,13 @@ public protocol BookmarkListDependency: Dependency {
 
 public final class BookmarkListComponent: Component<BookmarkListDependency>, BookmarkListFactory {
     public func makeView() -> some View {
-        NavigationView {
-            BookmarkListView(
-                viewModel: .init(
-                    fetchBookmarkListUseCase: dependency.fetchBookmarkListUseCase,
-                    bookmarkUseCase: dependency.bookmarkUseCase
-                ),
-                recruitmentFactory: dependency.recruitmentFactory,
-                recruitmentDetailFactory: dependency.recruitmentDetailFactory
-            )
-        }
+        BookmarkListView(
+            viewModel: .init(
+                fetchBookmarkListUseCase: dependency.fetchBookmarkListUseCase,
+                bookmarkUseCase: dependency.bookmarkUseCase
+            ),
+            recruitmentFactory: dependency.recruitmentFactory,
+            recruitmentDetailFactory: dependency.recruitmentDetailFactory
+        )
     }
 }

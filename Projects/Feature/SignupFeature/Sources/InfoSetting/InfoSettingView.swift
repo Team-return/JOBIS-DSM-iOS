@@ -65,20 +65,18 @@ struct InfoSettingView: View {
 
     @ViewBuilder
     func inputTextfield() -> some View {
-        JOBISTextField(
-            placeholder: "이름을 입력하세요",
-            text: $viewModel.name,
-            outlinedType: .outlined
+        JOBISFormTextField(
+            "이름을 입력하세요.",
+            text: $viewModel.name
         ) {
             self.focusField = .grade
         }
         .focused($focusField, equals: .name)
 
         HStack {
-            JOBISTextField(
-                placeholder: "학년",
-                text: $viewModel.grade,
-                outlinedType: .outlined
+            JOBISFormTextField(
+                "학년",
+                text: $viewModel.grade
             ) {
                 self.focusField = .classRoom
             }
@@ -86,10 +84,9 @@ struct InfoSettingView: View {
             .keyboardType(.numberPad)
             .filterNumericInput($viewModel.grade)
 
-            JOBISTextField(
-                placeholder: "반",
-                text: $viewModel.classRoom,
-                outlinedType: .outlined
+            JOBISFormTextField(
+                "반",
+                text: $viewModel.classRoom
             ) {
                 self.focusField = .number
             }
@@ -97,10 +94,9 @@ struct InfoSettingView: View {
             .keyboardType(.numberPad)
             .filterNumericInput($viewModel.classRoom)
 
-            JOBISTextField(
-                placeholder: "번호",
-                text: $viewModel.number,
-                outlinedType: .outlined
+            JOBISFormTextField(
+                "번호",
+                text: $viewModel.number
             ) {
                 if viewModel.isButtonEnabled {
                     focusField = .none

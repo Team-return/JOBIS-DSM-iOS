@@ -7,6 +7,8 @@ public enum StudentsAPI {
     case renewalPassword(RenewalPasswordRequestDTO)
     case studentExists(gcn: Int, name: String)
     case fetchStudentInfo
+    case compareCurrentPasssword(password: String)
+    case changePassword(ChangePasswordRequestDTO)
 }
 
 extension StudentsAPI: JobisAPI {
@@ -22,13 +24,16 @@ extension StudentsAPI: JobisAPI {
             return ""
 
         case .renewalPassword:
-            return "/password"
+            return "/forgotten_password"
 
         case .studentExists:
             return "/exists"
 
         case .fetchStudentInfo:
             return "/my"
+
+        case .compareCurrentPasssword, .changePassword:
+            return "/password"
         }
     }
 
@@ -37,10 +42,10 @@ extension StudentsAPI: JobisAPI {
         case .signup:
             return .post
 
-        case .renewalPassword:
+        case .renewalPassword, .changePassword:
             return .patch
 
-        case .studentExists, .fetchStudentInfo:
+        case .studentExists, .fetchStudentInfo, .compareCurrentPasssword:
             return .get
         }
     }
@@ -63,12 +68,21 @@ extension StudentsAPI: JobisAPI {
 
         case .fetchStudentInfo:
             return .requestPlain
+
+        case let .compareCurrentPasssword(password):
+            return .requestParameters(
+                parameters: [
+                    "password": password
+                ], encoding: URLEncoding.queryString)
+
+        case let .changePassword(req):
+            return .requestJSONEncodable(req)
         }
     }
 
     public var jwtTokenType: JwtTokenType {
         switch self {
-        case .fetchStudentInfo:
+        case .fetchStudentInfo, .compareCurrentPasssword, .changePassword:
             return .accessToken
         default:
             return .none
@@ -97,6 +111,16 @@ extension StudentsAPI: JobisAPI {
 
         case .fetchStudentInfo:
             return [:]
+
+        case .compareCurrentPasssword:
+            return [
+                401: .wrongPassword
+            ]
+
+        case .changePassword:
+            return [
+                401: .wrongPassword
+            ]
         }
     }
 }
