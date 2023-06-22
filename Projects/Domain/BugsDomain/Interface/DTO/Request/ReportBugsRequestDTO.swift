@@ -2,13 +2,13 @@ import Foundation
 
 public struct ReportBugsRequestDTO: Encodable {
     public let title: String
-    public let content: Int
+    public let content: String
     public let developmentArea: DevelopmentType
     public let attachmentUrls: [String]
 
     public init(
         title: String,
-        content: Int,
+        content: String,
         developmentArea: DevelopmentType,
         attachmentUrls: [String]
     ) {

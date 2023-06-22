@@ -1,6 +1,6 @@
 import Combine
 import Foundation
 
-public protocol UploadFileUseCase {
+public protocol UploadFilesUseCase {
     func execute(data: [Data], fileName: String) -> AnyPublisher<[String], Error>
 }

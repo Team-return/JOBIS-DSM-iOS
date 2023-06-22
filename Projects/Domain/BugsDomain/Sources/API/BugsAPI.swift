@@ -10,7 +10,7 @@ extension BugsAPI: JobisAPI {
     public typealias ErrorType = BugsError
 
     public var domain: JobisDomain {
-        return .bookmarks
+        return .bugs
     }
 
     public var urlPath: String {

@@ -12,6 +12,7 @@ struct ReportView: View {
     }
     @FocusState private var focusField: FocusField?
     @StateObject var viewModel: ReportViewModel
+    @Environment(\.dismiss) var dismiss
 
     init(
         viewModel: ReportViewModel
@@ -20,32 +21,40 @@ struct ReportView: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                Divider().foregroundColor(.Sub.gray40)
-                    .padding(.bottom, 15)
+        VStack(spacing: 0) {
+            Divider().foregroundColor(.Sub.gray40)
+                .padding(.bottom, 15)
 
-                titleTextView()
-                    .padding(.bottom, 25)
+            titleTextView()
+                .padding(.bottom, 25)
 
-                contentTextView()
-                    .padding(.bottom, 25)
+            contentTextView()
+                .padding(.bottom, 25)
 
-                screenShotView()
-                    .padding(.bottom, 100)
+            screenShotImages()
+                .padding(.bottom, 25)
 
-                SolidBtn(text: "제보하기", size: .large) {
-                    // 대충 제보 하는 api
-                }
+            Spacer()
+
+            SolidBtn(text: "제보하기", size: .large) {
+                viewModel.reportBugsButtonDidTap()
             }
-            .padding(.horizontal, 20)
         }
+        .padding(.horizontal, 20)
         .background(Color.Sub.gray10)
         .onAppear {
             viewModel.onAppear()
         }
         .navigationTitle("버그 제보하기")
         .navigationBarItems(trailing: majorPicker())
+        .onChange(of: viewModel.isSuccessReport) { _ in
+            dismiss()
+        }
+        .jobisToast(
+            isShowing: $viewModel.isErrorOcuured,
+            message: viewModel.errorMessage,
+            style: .error
+        )
     }
 
     @ViewBuilder
@@ -56,7 +65,7 @@ struct ReportView: View {
                     viewModel.selectedDepartment = major
                 } label: {
                     HStack {
-                        Text(major)
+                        Text(major.localizedString())
 
                         if viewModel.selectedDepartment == major {
                             Image(systemName: "checkmark")
@@ -68,7 +77,7 @@ struct ReportView: View {
             HStack(spacing: 5) {
                 Spacer()
 
-                Text(viewModel.selectedDepartment)
+                Text(viewModel.selectedDepartment.localizedString())
 
                 JOBISIcon(.chevronDown)
                     .frame(width: 16, height: 16)
@@ -116,7 +125,7 @@ struct ReportView: View {
     }
 
     @ViewBuilder
-    func screenShotView() -> some View {
+    func screenShotImages() -> some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("스크린샷 (\(viewModel.images.count)/5)")
                 .JOBISFont(.etc(.caption), color: .Sub.gray70)

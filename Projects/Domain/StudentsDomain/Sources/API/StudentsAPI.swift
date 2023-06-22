@@ -82,7 +82,7 @@ extension StudentsAPI: JobisAPI {
 
     public var jwtTokenType: JwtTokenType {
         switch self {
-        case .fetchStudentInfo, .compareCurrentPasssword:
+        case .fetchStudentInfo, .compareCurrentPasssword, .changePassword:
             return .accessToken
         default:
             return .none

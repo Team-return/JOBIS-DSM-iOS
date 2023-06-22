@@ -4,7 +4,7 @@ import BaseDomain
 import Moya
 
 public enum FilesAPI {
-    case uploadFile(data: [Data], fileName: String)
+    case uploadFiles(data: [Data], fileName: String)
 }
 
 extension FilesAPI: JobisAPI {
@@ -24,7 +24,7 @@ extension FilesAPI: JobisAPI {
 
     public var task: Moya.Task {
         switch self {
-        case let .uploadFile(data, fileName):
+        case let .uploadFiles(data, fileName):
             var multipartData: [MultipartFormData] {
                 data.map {
                     MultipartFormData(

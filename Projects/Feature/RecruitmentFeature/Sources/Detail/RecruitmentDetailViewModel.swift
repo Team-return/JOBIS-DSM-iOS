@@ -18,17 +18,17 @@ final class RecruitmentDetailViewModel: BaseViewModel {
     private let id: String
 
     private let fetchRecruitmentDetailUseCase: FetchRecruitmentDetailUseCase
-    private let uploadFileUseCase: UploadFileUseCase
+    private let uploadFilesUseCase: UploadFilesUseCase
     private let applyCompanyUseCase: ApplyCompanyUseCase
 
     public init(
         fetchRecruitmentDetailUseCase: any FetchRecruitmentDetailUseCase,
-        uploadFileUseCase: any UploadFileUseCase,
+        uploadFilesUseCase: any UploadFilesUseCase,
         applyCompanyUseCase: any ApplyCompanyUseCase,
         id: String
     ) {
         self.fetchRecruitmentDetailUseCase = fetchRecruitmentDetailUseCase
-        self.uploadFileUseCase = uploadFileUseCase
+        self.uploadFilesUseCase = uploadFilesUseCase
         self.applyCompanyUseCase = applyCompanyUseCase
         self.id = id
     }
@@ -59,7 +59,7 @@ final class RecruitmentDetailViewModel: BaseViewModel {
         } else {
             var attachmentUrl: [String] = []
             addCancellable(
-                uploadFileUseCase.execute(
+                uploadFilesUseCase.execute(
                     data: documents.map {
                         do {
                             let data = try Data(contentsOf: $0)
