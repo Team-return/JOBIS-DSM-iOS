@@ -1,14 +1,13 @@
 import Moya
-import BookmarksDomainInterface
+import BugsDomainInterface
 import BaseDomain
 
-public enum BookmarksAPI {
-    case fetchBookmarkList
-    case bookmark(id: Int)
+public enum BugsAPI {
+    case reportBugs(ReportBugsRequestDTO)
 }
 
-extension BookmarksAPI: JobisAPI {
-    public typealias ErrorType = BookmarksError
+extension BugsAPI: JobisAPI {
+    public typealias ErrorType = BugsAPI
 
     public var domain: JobisDomain {
         return .bookmarks
@@ -16,28 +15,22 @@ extension BookmarksAPI: JobisAPI {
 
     public var urlPath: String {
         switch self {
-        case .fetchBookmarkList:
-            return "/"
-
-        case let .bookmark(id):
-            return "/\(id)"
+        case .reportBugs:
+            return ""
         }
     }
 
     public var method: Method {
         switch self {
-        case .fetchBookmarkList:
-            return .get
-
-        case .bookmark:
-            return .patch
+        case .reportBugs:
+            return .post
         }
     }
 
     public var task: Task {
         switch self {
-        default:
-            return .requestPlain
+        case .reportBugs(let req):
+            return .requestJSONEncodable(req)
         }
     }
 
