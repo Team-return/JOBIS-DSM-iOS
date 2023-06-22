@@ -7,7 +7,7 @@ public enum BugsAPI {
 }
 
 extension BugsAPI: JobisAPI {
-    public typealias ErrorType = BugsAPI
+    public typealias ErrorType = BugsError
 
     public var domain: JobisDomain {
         return .bookmarks
