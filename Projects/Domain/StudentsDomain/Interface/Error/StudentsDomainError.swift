@@ -12,6 +12,9 @@ public enum StudentsDomainError: Error {
 
     // Student Exists
     case notExistsStudent
+
+    // compare Password
+    case wrongPassword
 }
 
 extension StudentsDomainError: LocalizedError {
@@ -34,6 +37,9 @@ extension StudentsDomainError: LocalizedError {
 
         case .notExistsStudent:
             return "존재하지 않은 학생입니다."
+
+        case .wrongPassword:
+            return "비밀번호가 일치하지 않습니다."
         }
     }
 }

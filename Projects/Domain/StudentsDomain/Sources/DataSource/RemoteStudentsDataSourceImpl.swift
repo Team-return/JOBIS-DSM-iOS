@@ -25,4 +25,7 @@ public final class RemoteStudentsDataSourceImpl: BaseRemoteDataSource<StudentsAP
         request(.changePassword(req))
     }
 
+    public func compareCurrentPasssword(password: String) -> AnyPublisher<Void, Error> {
+        request(.compareCurrentPasssword(password: password))
+    }
 }

@@ -28,4 +28,7 @@ public struct StudentsRepositoryImpl: StudentsRepository {
         remoteStudentsDataSource.changePassword(req: req)
     }
 
+    public func compareCurrentPasssword(password: String) -> AnyPublisher<Void, Error> {
+        remoteStudentsDataSource.compareCurrentPasssword(password: password)
+    }
 }
