@@ -104,6 +104,18 @@ public extension TargetDependency.Feature {
 }
 
 public extension TargetDependency.Domain {
+    static let BugsDomainTesting = TargetDependency.project(
+        target: ModulePaths.Domain.BugsDomain.targetName(type: .testing),
+        path: .relativeToDomain(ModulePaths.Domain.BugsDomain.rawValue)
+    )
+    static let BugsDomainInterface = TargetDependency.project(
+        target: ModulePaths.Domain.BugsDomain.targetName(type: .interface),
+        path: .relativeToDomain(ModulePaths.Domain.BugsDomain.rawValue)
+    )
+    static let BugsDomain = TargetDependency.project(
+        target: ModulePaths.Domain.BugsDomain.targetName(type: .sources),
+        path: .relativeToDomain(ModulePaths.Domain.BugsDomain.rawValue)
+    )
     static let FilesDomainTesting = TargetDependency.project(
         target: ModulePaths.Domain.FilesDomain.targetName(type: .testing),
         path: .relativeToDomain(ModulePaths.Domain.FilesDomain.rawValue)
