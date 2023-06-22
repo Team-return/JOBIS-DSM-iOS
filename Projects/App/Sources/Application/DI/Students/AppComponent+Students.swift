@@ -38,4 +38,16 @@ public extension AppComponent {
             FetchStudentInfoUseCaseImpl(studentsRepository: studentsRepository)
         }
     }
+
+    var compareCurrentPassswordUseCase: any CompareCurrentPassswordUseCase {
+        shared {
+            CompareCurrentPassswordUseCaseImpl(studentsRepository: studentsRepository)
+        }
+    }
+
+    var changePasswordUseCase: any ChangePasswordUseCase {
+        shared {
+            ChangePasswordUseCaseImpl(studentsRepository: studentsRepository)
+        }
+    }
 }
