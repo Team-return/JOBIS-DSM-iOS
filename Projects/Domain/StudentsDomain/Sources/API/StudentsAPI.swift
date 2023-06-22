@@ -7,6 +7,7 @@ public enum StudentsAPI {
     case renewalPassword(RenewalPasswordRequestDTO)
     case studentExists(gcn: Int, name: String)
     case fetchStudentInfo
+    case changePassword(ChangePasswordRequestDTO)
 }
 
 extension StudentsAPI: JobisAPI {
@@ -29,6 +30,9 @@ extension StudentsAPI: JobisAPI {
 
         case .fetchStudentInfo:
             return "/my"
+
+        case .compareCurrentPasssword, .changePassword:
+            return "/password"
         }
     }
 
@@ -37,7 +41,7 @@ extension StudentsAPI: JobisAPI {
         case .signup:
             return .post
 
-        case .renewalPassword:
+        case .renewalPassword, .changePassword:
             return .patch
 
         case .studentExists, .fetchStudentInfo:
@@ -63,6 +67,9 @@ extension StudentsAPI: JobisAPI {
 
         case .fetchStudentInfo:
             return .requestPlain
+
+        case let .changePassword(req):
+            return .requestJSONEncodable(req)
         }
     }
 
@@ -97,6 +104,10 @@ extension StudentsAPI: JobisAPI {
 
         case .fetchStudentInfo:
             return [:]
+        case .changePassword:
+            return [
+                401: .wrongPassword
+            ]
         }
     }
 }

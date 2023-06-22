@@ -23,4 +23,9 @@ public struct StudentsRepositoryImpl: StudentsRepository {
     public func fetchStudentInfo() -> AnyPublisher<StudentInfoEntity, Error> {
         remoteStudentsDataSource.fetchStudentInfo()
     }
+
+    public func changePassword(req: ChangePasswordRequestDTO) -> AnyPublisher<Void, Error> {
+        remoteStudentsDataSource.changePassword(req: req)
+    }
+
 }
