@@ -6,5 +6,7 @@ let project = Project.makeModule(
     name: ModulePaths.Domain.BugsDomain.rawValue,
     product: .staticLibrary,
     targets: [.interface, .testing, .unitTest],
-    internalDependencies: []
+    internalDependencies: [
+        .Domain.BaseDomain
+    ]
 )
