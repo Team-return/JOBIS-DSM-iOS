@@ -68,7 +68,8 @@ final class RecruitmentDetailViewModel: BaseViewModel {
                             print("URL을 Data로 변환하는 데 실패했습니다: \(error)")
                             return Data()
                         }
-                    }
+                    },
+                    fileName: documents.first?.lastPathComponent ?? "image.jpg"
                 )
             ) { [weak self] urls in
                 attachmentUrl += urls
