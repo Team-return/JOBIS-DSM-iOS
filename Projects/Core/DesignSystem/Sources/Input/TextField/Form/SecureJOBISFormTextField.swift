@@ -49,7 +49,7 @@ public struct SecureJOBISFormTextField: View {
                         isSecure.toggle()
                     }
                 } label: {
-                    Image(systemName: isSecure ? "eye" : "eye.slash")
+                    Image(systemName: isSecure ? "eye.slash" : "eye")
                         .frame(height: 20)
                         .foregroundColor(
                             isEnabled ? isError ? .State.error : .Sub.gray60 : .Sub.gray50
