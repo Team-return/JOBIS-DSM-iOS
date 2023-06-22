@@ -6,20 +6,27 @@ public enum ApplicationStatusType: String, Codable {
     case failed = "FAILED"
     case pass = "PASS"
     case rejected = "REJECTED"
+    case fieldTrain = "FIELD_TRAIN"
 
     public func localizedString() -> String {
         switch self {
         case .requested:
             return "요청됨"
+
         case .approved:
             return "승인됨"
+
         case .failed:
             return "탈락"
+
         case .pass:
             return "합격"
 
         case .rejected:
             return "반려"
+
+        case .fieldTrain:
+            return "현장 실습"
         }
     }
 }
