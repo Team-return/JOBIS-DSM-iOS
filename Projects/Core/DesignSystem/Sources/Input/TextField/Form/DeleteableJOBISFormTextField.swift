@@ -72,7 +72,7 @@ public struct DeleteableJOBISFormTextField<T>: View {
 struct DeleteableJOBISFormTextField_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            DeleteableJOBISFormTextField<String>(
+            DeleteableJOBISFormTextField(
                 "placeholder",
                 text: .constant(""),
                 deleteArray: .constant(["ASDF"]),

@@ -11,13 +11,16 @@ struct MyPageView: View {
     @StateObject var viewModel: MyPageViewModel
 
     private let reportFactory: any ReportFactory
+    private let checkPasswordFactory: any CheckPasswordFactory
 
     init(
         viewModel: MyPageViewModel,
-        reportFactory: any ReportFactory
+        reportFactory: any ReportFactory,
+        checkPasswordFactory: any CheckPasswordFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.reportFactory = reportFactory
+        self.checkPasswordFactory = checkPasswordFactory
     }
 
     var body: some View {
@@ -65,13 +68,13 @@ struct MyPageView: View {
                     Divider().foregroundColor(.Sub.gray40)
 
                     myPageNavigateCell(title: "관심분야 선택하기", color: .Main.lightBlue) {
-                        viewModel.isNavigateReportView.toggle()
+                        viewModel.isShowFieldOfInterest.toggle()
                     }
 
                     Divider().foregroundColor(.Sub.gray40)
 
                     myPageNavigateCell(title: "비밀번호 변경하기", color: .Main.lightBlue) {
-                        viewModel.isNavigateReportView.toggle()
+                        viewModel.isNavigateChangePassword.toggle()
                     }
 
                     Divider().foregroundColor(.Sub.gray40)
@@ -88,6 +91,14 @@ struct MyPageView: View {
         .navigate(
             to: reportFactory.makeView().eraseToAnyView(),
             when: $viewModel.isNavigateReportView
+        )
+        .sheet(isPresented: $viewModel.isShowFieldOfInterest) {
+            Text("관심분야 선택하기")
+        }
+        .navigate(
+            to: checkPasswordFactory.makeView().eraseToAnyView()
+                .environment(\.rootPresentationMode, $viewModel.isNavigateChangePassword),
+            when: $viewModel.isNavigateChangePassword
         )
         .onChange(of: viewModel.isTabbarHidden) { newValue in
             withAnimation {

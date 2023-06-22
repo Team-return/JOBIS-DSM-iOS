@@ -8,6 +8,7 @@ public protocol MyPageDependency: Dependency {
     var fetchStudentInfoUseCase: any FetchStudentInfoUseCase { get }
     var logoutUseCase: any LogoutUseCase { get }
     var reportFactory: any ReportFactory { get }
+    var checkPasswordFactory: any CheckPasswordFactory { get }
 }
 
 public final class MyPageComponent: Component<MyPageDependency>, MyPageFactory {
@@ -16,7 +17,8 @@ public final class MyPageComponent: Component<MyPageDependency>, MyPageFactory {
             viewModel: .init(
                 fetchStudentInfoUseCase: dependency.fetchStudentInfoUseCase,
                 logoutUseCase: dependency.logoutUseCase),
-            reportFactory: dependency.reportFactory
+            reportFactory: dependency.reportFactory,
+            checkPasswordFactory: dependency.checkPasswordFactory
         )
     }
 }

@@ -5,11 +5,13 @@ import AuthDomainInterface
 
 final class MyPageViewModel: BaseViewModel {
     @Published var isNavigateReportView = false
+    @Published var isShowFieldOfInterest = false
+    @Published var isNavigateChangePassword = false
     @Published var isPresentedLogoutAlert = false
     @Published var isSuccessLogout = false
     @Published var studentInfo: StudentInfoEntity?
     var isTabbarHidden: Bool {
-        isNavigateReportView
+        isNavigateReportView || isNavigateChangePassword
     }
 
     private let fetchStudentInfoUseCase: FetchStudentInfoUseCase
