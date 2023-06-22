@@ -10,16 +10,16 @@ struct SignupPasswordView: View {
     }
     @StateObject var viewModel: SignupViewModel
     @FocusState private var focusField: FocusField?
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("비밀번호 설정")
                 .JOBISFont(.heading(.heading5), color: .Sub.gray90)
                 .padding(.vertical, 32)
-            
+
             Text("비밀번호는 영문, 숫자, 기호를 포함한 8~16자이어야 합니다.")
                 .JOBISFont(.etc(.caption), color: .Sub.gray60)
-            
+
             VStack(spacing: 30) {
                 SecureJOBISFormTextField(
                     "비밀번호를 입력해주세요.",
@@ -31,7 +31,7 @@ struct SignupPasswordView: View {
                 }
                 .focused($focusField, equals: .password)
                 .textContentType(.password)
-                
+
                 SecureJOBISFormTextField(
                     "비밀번호를 다시 입력해주세요.",
                     text: $viewModel.checkPassword,
