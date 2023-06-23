@@ -11,6 +11,12 @@ struct SignupPasswordView: View {
     @StateObject var viewModel: SignupViewModel
     @FocusState private var focusField: FocusField?
 
+    init(
+        viewModel: SignupViewModel
+    ) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("비밀번호 설정")

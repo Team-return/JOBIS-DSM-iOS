@@ -13,6 +13,12 @@ struct InfoSettingView: View {
     @StateObject var viewModel: SignupViewModel
     @FocusState private var focusField: FocusField?
 
+    init(
+        viewModel: SignupViewModel
+    ) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("개인정보 입력")
@@ -22,7 +28,49 @@ struct InfoSettingView: View {
             genderButton()
                 .padding(.bottom, 28)
 
-            inputTextfield()
+            JOBISFormTextField(
+                "이름을 입력하세요.",
+                text: $viewModel.name
+            ) {
+                self.focusField = .grade
+            }
+            .focused($focusField, equals: .name)
+
+            HStack {
+                JOBISFormTextField(
+                    "학년",
+                    text: $viewModel.grade
+                ) {
+                    self.focusField = .classRoom
+                }
+                .focused($focusField, equals: .grade)
+                .keyboardType(.numberPad)
+                .filterNumericInput($viewModel.grade)
+
+                JOBISFormTextField(
+                    "반",
+                    text: $viewModel.classRoom
+                ) {
+                    self.focusField = .number
+                }
+                .focused($focusField, equals: .classRoom)
+                .keyboardType(.numberPad)
+                .filterNumericInput($viewModel.classRoom)
+
+                JOBISFormTextField(
+                    "번호",
+                    text: $viewModel.number
+                ) {
+                    if viewModel.isButtonEnabled {
+                        focusField = .none
+                    } else {
+                        viewModel.nextButtonDidTap()
+                    }
+                }
+                .focused($focusField, equals: .number)
+                .keyboardType(.numberPad)
+                .filterNumericInput($viewModel.number)
+            }
         }
     }
 
@@ -60,53 +108,6 @@ struct InfoSettingView: View {
                     viewModel.isWoman.toggle()
                 }
             }
-        }
-    }
-
-    @ViewBuilder
-    func inputTextfield() -> some View {
-        JOBISFormTextField(
-            "이름을 입력하세요.",
-            text: $viewModel.name
-        ) {
-            self.focusField = .grade
-        }
-        .focused($focusField, equals: .name)
-
-        HStack {
-            JOBISFormTextField(
-                "학년",
-                text: $viewModel.grade
-            ) {
-                self.focusField = .classRoom
-            }
-            .focused($focusField, equals: .grade)
-            .keyboardType(.numberPad)
-            .filterNumericInput($viewModel.grade)
-
-            JOBISFormTextField(
-                "반",
-                text: $viewModel.classRoom
-            ) {
-                self.focusField = .number
-            }
-            .focused($focusField, equals: .classRoom)
-            .keyboardType(.numberPad)
-            .filterNumericInput($viewModel.classRoom)
-
-            JOBISFormTextField(
-                "번호",
-                text: $viewModel.number
-            ) {
-                if viewModel.isButtonEnabled {
-                    focusField = .none
-                } else {
-                    viewModel.nextButtonDidTap()
-                }
-            }
-            .focused($focusField, equals: .number)
-            .keyboardType(.numberPad)
-            .filterNumericInput($viewModel.number)
         }
     }
 }
