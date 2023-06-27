@@ -19,5 +19,5 @@ public let env = ProjectEnvironment (
     organizationName: "com.team.return",
     deploymentTarget: .iOS(targetVersion: "15.0", devices: [.iphone, .ipad]),
     platform: .iOS,
-    baseSetting: [:]
+    baseSetting: ["OTHER_LDFLAGS": "-Xlinker -interposable"]
 )
