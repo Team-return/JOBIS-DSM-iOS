@@ -3,11 +3,14 @@ import BaseFeature
 import JwtStoreInterface
 import JwtStore
 import NeedleFoundation
+import Inject
 
 @main
 struct JOBISApp: App {
+    @ObservedObject private var iOput = Inject.observer
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var appState = AppState(sceneFlow: .splash)
+
     private let keychain: any Keychain
 
     init() {
@@ -20,6 +23,7 @@ struct JOBISApp: App {
         WindowGroup {
             AppComponent(keychain: keychain).makeRootView()
                 .environmentObject(appState)
+                .enableInjection()
         }
     }
 }
