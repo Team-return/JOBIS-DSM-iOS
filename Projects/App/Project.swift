@@ -61,7 +61,8 @@ let targets: [Target] = [
             .Domain.ReviewsDomain,
             .Domain.FilesDomain,
             .Domain.BugsDomain,
-            .SPM.Needle
+            .SPM.Needle,
+            .SPM.Injection
         ],
         settings: .settings(base: env.baseSetting)
     ),
