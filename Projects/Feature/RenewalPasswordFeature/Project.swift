@@ -6,5 +6,9 @@ let project = Project.makeModule(
     name: ModulePaths.Feature.RenewalPasswordFeature.rawValue,
     product: .staticLibrary,
     targets: [.interface, .unitTest],
-    internalDependencies: []
+    internalDependencies: [
+        .Feature.BaseFeature,
+        .Domain.StudentsDomainInterface,
+        .Domain.AuthDomain
+    ]
 )
