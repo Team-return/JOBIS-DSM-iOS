@@ -1,27 +1,34 @@
 import DesignSystem
+import Combine
 import SwiftUI
+import UtilityModule
 
-struct ModifyPasswordView: View {
+struct RenewalPasswordView: View {
+    @Environment(\.dismiss) var dismiss
     private enum FocusField {
         case password
         case passwordCheck
     }
 
     @FocusState private var focusField: FocusField?
-    @StateObject var viewModel: ModifyPasswordViewModel
+    @StateObject var viewModel: RenewalPasswordViewModel
     @Environment(\.rootPresentationMode) var rootPresentationMode
 
     init(
-        viewModel: ModifyPasswordViewModel
+        viewModel: RenewalPasswordViewModel
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 35) {
-            Text("변경할 비밀번호를 입력해주세요.")
+        VStack(alignment: .leading, spacing: 10) {
+            Text("이메일 인증")
+                .JOBISFont(.heading(.heading5), color: .Sub.gray90)
+                .padding(.top, 45)
+
+            Text("8 ~ 16자, 영문자, 숫자, 특수문자 포함")
                 .JOBISFont(.body(.body4), color: .Sub.gray60)
-                .padding(.bottom, 26)
+                .padding(.bottom, 35)
 
             SecureJOBISFormTextField(
                 "새 비밀번호 입력",
@@ -33,6 +40,7 @@ struct ModifyPasswordView: View {
             }
             .focused($focusField, equals: .password)
             .textContentType(.password)
+            .padding(.bottom, 25)
 
             SecureJOBISFormTextField(
                 "새 비밀번호 확인",
@@ -49,10 +57,13 @@ struct ModifyPasswordView: View {
             SolidBtn(text: "다음", size: .large) {
                 viewModel.changePasswordButtonDidTap()
             }
+            .padding(.vertical, 20)
         }
         .hideKeyboardWhenTap()
         .padding(.horizontal, 20)
-        .navigationTitle("비밀번호 재설정")
+        .jobisBackButton(title: "비밀번호 재설정") {
+            dismiss()
+        }
         .jobisToast(isShowing: $viewModel.isShowingToast, message: viewModel.toastMessage, style: .success)
         .jobisToast(isShowing: $viewModel.isErrorOcuured, message: viewModel.errorMessage, style: .error)
         .alert(isPresented: $viewModel.isTappedChangePassword) {

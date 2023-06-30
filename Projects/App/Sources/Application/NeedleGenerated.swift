@@ -33,6 +33,8 @@ import RecruitmentFeature
 import RecruitmentFeatureInterface
 import RecruitmentsDomain
 import RecruitmentsDomainInterface
+import RenewalPasswordFeature
+import RenewalPasswordFeatureInterface
 import ReviewsDomain
 import ReviewsDomainInterface
 import RootFeature
@@ -234,6 +236,9 @@ private class SigninDependencyde06a9d0b22764487733Provider: SigninDependency {
     var signupFactory: any SignupFactory {
         return appComponent.signupFactory
     }
+    var authenticationEmailFactory: any AuthenticationEmailFactory {
+        return appComponent.authenticationEmailFactory
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -302,6 +307,38 @@ private class FindCompanyDetailDependency4141f6f851410a3f60d3Provider: FindCompa
 /// ^->AppComponent->FindCompanyDetailComponent
 private func factoryca6789757d5d9bbb6659f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return FindCompanyDetailDependency4141f6f851410a3f60d3Provider(appComponent: parent1(component) as! AppComponent)
+}
+private class AuthenticationEmailDependency73189eb572618b10e0fbProvider: AuthenticationEmailDependency {
+    var sendAuthCodeUseCase: any SendAuthCodeUseCase {
+        return appComponent.sendAuthCodeUseCase
+    }
+    var verifyAuthCodeUseCase: any VerifyAuthCodeUseCase {
+        return appComponent.verifyAuthCodeUseCase
+    }
+    var renewalPasswordFactory: any RenewalPasswordFactory {
+        return appComponent.renewalPasswordFactory
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->AuthenticationEmailComponent
+private func factory8798d0becd9d2870112af47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return AuthenticationEmailDependency73189eb572618b10e0fbProvider(appComponent: parent1(component) as! AppComponent)
+}
+private class RenewalPasswordDependencya722dc02d5f3ad3403cfProvider: RenewalPasswordDependency {
+    var renewalPasswordUseCase: any RenewalPasswordUseCase {
+        return appComponent.renewalPasswordUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->RenewalPasswordComponent
+private func factory236a429a80d834e1f370f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return RenewalPasswordDependencya722dc02d5f3ad3403cfProvider(appComponent: parent1(component) as! AppComponent)
 }
 private class RecruitmentDependency799de5378039058f4ec0Provider: RecruitmentDependency {
     var fetchRecruitmentListUseCase: any FetchRecruitmentListUseCase {
@@ -390,6 +427,8 @@ extension AppComponent: Registration {
         localTable["bugsRepository-any BugsRepository"] = { [unowned self] in self.bugsRepository as Any }
         localTable["reportBugsUseCase-any ReportBugsUseCase"] = { [unowned self] in self.reportBugsUseCase as Any }
         localTable["signinFactory-any SigninFactory"] = { [unowned self] in self.signinFactory as Any }
+        localTable["authenticationEmailFactory-any AuthenticationEmailFactory"] = { [unowned self] in self.authenticationEmailFactory as Any }
+        localTable["renewalPasswordFactory-any RenewalPasswordFactory"] = { [unowned self] in self.renewalPasswordFactory as Any }
         localTable["signupFactory-any SignupFactory"] = { [unowned self] in self.signupFactory as Any }
         localTable["splashFactory-any SplashFactory"] = { [unowned self] in self.splashFactory as Any }
         localTable["mainTabFactory-any MainTabFactory"] = { [unowned self] in self.mainTabFactory as Any }
@@ -507,6 +546,7 @@ extension SigninComponent: Registration {
     public func registerItems() {
         keyPathToName[\SigninDependency.signinUseCase] = "signinUseCase-any SigninUseCase"
         keyPathToName[\SigninDependency.signupFactory] = "signupFactory-any SignupFactory"
+        keyPathToName[\SigninDependency.authenticationEmailFactory] = "authenticationEmailFactory-any AuthenticationEmailFactory"
     }
 }
 extension HomeComponent: Registration {
@@ -529,6 +569,18 @@ extension FindCompanyDetailComponent: Registration {
         keyPathToName[\FindCompanyDetailDependency.fetchCompanyInfoDetailUseCase] = "fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"
         keyPathToName[\FindCompanyDetailDependency.fetchReviewListUseCase] = "fetchReviewListUseCase-any FetchReviewListUseCase"
         keyPathToName[\FindCompanyDetailDependency.recruitmentDetailFactory] = "recruitmentDetailFactory-any RecruitmentDetailFactory"
+    }
+}
+extension AuthenticationEmailComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\AuthenticationEmailDependency.sendAuthCodeUseCase] = "sendAuthCodeUseCase-any SendAuthCodeUseCase"
+        keyPathToName[\AuthenticationEmailDependency.verifyAuthCodeUseCase] = "verifyAuthCodeUseCase-any VerifyAuthCodeUseCase"
+        keyPathToName[\AuthenticationEmailDependency.renewalPasswordFactory] = "renewalPasswordFactory-any RenewalPasswordFactory"
+    }
+}
+extension RenewalPasswordComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\RenewalPasswordDependency.renewalPasswordUseCase] = "renewalPasswordUseCase-any RenewalPasswordUseCase"
     }
 }
 extension RecruitmentComponent: Registration {
@@ -585,6 +637,8 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->HomeComponent", factory67229cdf0f755562b2b1f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->FindCompanyComponent", factory161fb699dfcd446598cbf47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->FindCompanyDetailComponent", factoryca6789757d5d9bbb6659f47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->AuthenticationEmailComponent", factory8798d0becd9d2870112af47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->RenewalPasswordComponent", factory236a429a80d834e1f370f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RecruitmentComponent", factoryb1923ea1b010875d9389f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RecruitmentDetailComponent", factory14d63d6fecffe94dd0e1f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3f47b58f8f304c97af4d5)

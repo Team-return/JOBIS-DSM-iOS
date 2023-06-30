@@ -5,6 +5,7 @@ import Combine
 
 final class SigninViewModel: BaseViewModel {
     @Published var isNavigateSignup = false
+    @Published var isNavigateRenewalPassword = false
     @Published var isOnAppear = false
     @Published var email: String = ""
     @Published var password: String = ""

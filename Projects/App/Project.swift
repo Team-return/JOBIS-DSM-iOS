@@ -51,6 +51,7 @@ let targets: [Target] = [
             .Feature.MyPageFeature,
             .Feature.MenuFeature,
             .Feature.SplashFeature,
+            .Feature.RenewalPasswordFeature,
             .Domain.UsersDomain,
             .Domain.AuthDomain,
             .Domain.RecruitmentsDomain,

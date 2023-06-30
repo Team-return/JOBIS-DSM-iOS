@@ -5,6 +5,8 @@ import RootFeature
 import RootFeatureInterface
 import SigninFeature
 import SigninFeatureInterface
+import RenewalPasswordFeature
+import RenewalPasswordFeatureInterface
 import SignupFeature
 import SignupFeatureInterface
 import MainTabFeature
@@ -49,6 +51,12 @@ public final class AppComponent: BootstrapComponent {
 public extension AppComponent {
     var signinFactory: any SigninFactory {
         SigninComponent(parent: self)
+    }
+    var authenticationEmailFactory: any AuthenticationEmailFactory {
+        AuthenticationEmailComponent(parent: self)
+    }
+    var renewalPasswordFactory: any RenewalPasswordFactory {
+        RenewalPasswordComponent(parent: self)
     }
     var signupFactory: any SignupFactory {
         SignupComponent(parent: self)
