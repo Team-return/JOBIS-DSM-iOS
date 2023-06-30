@@ -162,8 +162,7 @@ final class SignupViewModel: BaseViewModel {
             sendAuthCodeUseCase.execute(
                 req: .init(
                     email: email,
-                    authCodeType: .signup,
-                    userName: name
+                    authCodeType: .signup
                 )
             )
         ) { [weak self] in
