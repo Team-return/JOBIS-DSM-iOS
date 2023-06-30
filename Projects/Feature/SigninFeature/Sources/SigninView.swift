@@ -1,4 +1,5 @@
 import DesignSystem
+import RenewalPasswordFeatureInterface
 import SwiftUI
 import BaseFeature
 import SignupFeatureInterface
@@ -13,13 +14,16 @@ struct SigninView: View {
     @FocusState private var focusField: FocusField?
 
     private let signupFactory: any SignupFactory
+    private let authenticationEmailFactory: any AuthenticationEmailFactory
 
     init(
         viewModel: SigninViewModel,
-        signupFactory: any SignupFactory
+        signupFactory: any SignupFactory,
+        authenticationEmailFactory: any AuthenticationEmailFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.signupFactory = signupFactory
+        self.authenticationEmailFactory = authenticationEmailFactory
     }
 
     var body: some View {
@@ -65,6 +69,12 @@ struct SigninView: View {
             .navigate(
                 to: signupFactory.makeView().eraseToAnyView(),
                 when: $viewModel.isNavigateSignup
+            )
+            .navigate(
+                to: authenticationEmailFactory.makeView()
+                    .eraseToAnyView()
+                    .environment(\.rootPresentationMode, $viewModel.isNavigateRenewalPassword),
+                when: $viewModel.isNavigateRenewalPassword
             )
             .onAppear {
                 withAnimation(.spring()) {
@@ -132,6 +142,9 @@ struct SigninView: View {
 
                 Text("비밀번호 재설정")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                    .onTapGesture {
+                        viewModel.isNavigateRenewalPassword.toggle()
+                    }
             }
         }
     }
