@@ -19,7 +19,7 @@ struct ModifyPasswordView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 35) {
-            Text("기존 비밀번호를 입력해주세요.")
+            Text("변경할 비밀번호를 입력해주세요.")
                 .JOBISFont(.body(.body4), color: .Sub.gray60)
                 .padding(.bottom, 26)
 
