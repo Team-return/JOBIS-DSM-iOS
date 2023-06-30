@@ -83,6 +83,7 @@ struct SigninView: View {
             }
             .environment(\.rootPresentationMode, $viewModel.isNavigateSignup)
         }
+        .navigationViewStyle(.stack)
     }
 
     @ViewBuilder

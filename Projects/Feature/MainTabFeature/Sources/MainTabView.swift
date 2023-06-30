@@ -41,21 +41,25 @@ struct MainTabView: View {
             TabView(selection: $selection) {
                 homeFactory.makeView()
                     .toNavigationView()
+                    .eraseToAnyView()
                     .tag(TabFlow.home)
                     .accentColor(.Sub.gray70)
 
                 bookmarkListFactory.makeView()
                     .toNavigationView()
+                    .eraseToAnyView()
                     .tag(TabFlow.bookmark)
                     .accentColor(.Sub.gray70)
 
                 myPageFactory.makeView()
                     .toNavigationView()
+                    .eraseToAnyView()
                     .tag(TabFlow.profile)
                     .accentColor(.Sub.gray70)
 
                 menuFactory.makeView()
                     .toNavigationView()
+                    .eraseToAnyView()
                     .tag(TabFlow.menu)
                     .accentColor(.Sub.gray70)
             }
@@ -119,9 +123,10 @@ struct MainTabView: View {
 }
 
 extension View {
-    func toNavigationView() -> NavigationView<AnyView> {
+    func toNavigationView() -> any View {
         NavigationView {
-            self.eraseToAnyView()
+            self
         }
+        .navigationViewStyle(.stack)
     }
 }
