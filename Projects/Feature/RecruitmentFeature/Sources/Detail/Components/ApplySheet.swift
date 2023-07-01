@@ -11,6 +11,7 @@ struct ApplySheet: View {
             switch self {
             case .file:
                 return .upload
+
             case .url:
                 return .plus
             }

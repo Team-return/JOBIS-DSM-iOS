@@ -57,6 +57,7 @@ extension CompaniesAPI: JobisAPI {
                 404: .notFound,
                 409: .conflict
             ]
+
         case .fetchCompanyInfoDetail:
             return [
                 400: .badRequest,

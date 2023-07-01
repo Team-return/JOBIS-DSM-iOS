@@ -19,8 +19,10 @@ extension ReviewsAPI: JobisAPI {
         switch self {
         case let .fetchReviewDetail(id):
             return "/detail/\(id)"
+
         case let .fetchReviewList(id):
             return "/\(id)"
+
         case .postReview:
             return "/"
         }
@@ -30,6 +32,7 @@ extension ReviewsAPI: JobisAPI {
         switch self {
         case .fetchReviewList, .fetchReviewDetail:
             return .get
+
         case .postReview:
             return .post
         }

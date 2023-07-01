@@ -13,12 +13,16 @@ extension CompaniesDomainError: LocalizedError {
         switch self {
         case .badRequest:
             return "Bad Request"
+
         case .unauthorized:
             return "Unauthorized"
+
         case .forbidden:
             return "Forbidden"
+
         case .notFound:
             return "User Not Found"
+
         case .conflict:
             return "Conflict"
         }

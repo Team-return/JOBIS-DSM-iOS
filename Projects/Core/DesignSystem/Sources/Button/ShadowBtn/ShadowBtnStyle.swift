@@ -8,12 +8,16 @@ public struct ShadowBtnStyle: ButtonStyle {
         switch style {
         case .defaultStyle:
             return AnyView(DefaultButton(configuration: configuration, size: size))
+
         case .lIcon:
             return AnyView(LIconButton(configuration: configuration, size: size))
+
         case .rIcon:
             return AnyView(RIconButton(configuration: configuration, size: size))
+
         case .icon1:
             return AnyView(Icon1Button(configuration: configuration))
+
         case .icon2:
             return AnyView(Icon2Button(configuration: configuration, size: size))
         }

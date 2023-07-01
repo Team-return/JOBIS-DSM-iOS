@@ -109,6 +109,7 @@ final class RecruitmentViewModel: BaseViewModel {
             switch codeType {
             case .tech:
                 return techCodeText.isEmpty ? nil : techCodeText
+
             case .job:
                 return nil
             }
@@ -133,6 +134,7 @@ final class RecruitmentViewModel: BaseViewModel {
             case .tech:
                 self?.fetchTechCodeList = codeList.codes
                 self?.techCodeList = codeList.codes
+
             case .job:
                 self?.jobCodeList = codeList.codes
             }

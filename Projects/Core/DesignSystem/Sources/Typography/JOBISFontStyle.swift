@@ -69,6 +69,7 @@ public extension JOBISFontStyle.Heading {
         switch self {
         case .heading1, .heading2, .heading3:
             return .bold
+
         case .heading4, .heading5, .heading6:
             return .medium
         }
@@ -81,6 +82,7 @@ public extension JOBISFontStyle.Body {
         switch self {
         case .body1, .body2, .body4:
             return .regular
+
         case .body3:
             return .medium
         }
@@ -93,8 +95,10 @@ public extension JOBISFontStyle.Etc {
         switch self {
         case .caption:
             return .regular
+
         case .authTitle:
             return .medium
+
         case .authSubTitle:
             return .regular
         }

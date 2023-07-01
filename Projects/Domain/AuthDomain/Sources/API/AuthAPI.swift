@@ -19,6 +19,7 @@ extension AuthAPI: JobisAPI {
         switch self {
         case .sendAuthCode, .verifyAuthCode:
             return "/code"
+
         case .reissueToken:
             return "/reissue"
         }
@@ -28,8 +29,10 @@ extension AuthAPI: JobisAPI {
         switch self {
         case .sendAuthCode:
             return .post
+
         case .verifyAuthCode:
             return .patch
+
         case .reissueToken:
             return .put
         }
@@ -39,6 +42,7 @@ extension AuthAPI: JobisAPI {
         switch self {
         case let .sendAuthCode(req):
             return .requestJSONEncodable(req)
+
         case let .verifyAuthCode(email, authCode):
             return .requestParameters(
                 parameters: [
@@ -46,6 +50,7 @@ extension AuthAPI: JobisAPI {
                     "auth_code": authCode
                 ], encoding: URLEncoding.queryString
             )
+
         case .reissueToken:
             return .requestPlain
         }
@@ -55,6 +60,7 @@ extension AuthAPI: JobisAPI {
         switch self {
         case .reissueToken:
             return .refreshToken
+
         default:
             return .none
         }
@@ -67,12 +73,14 @@ extension AuthAPI: JobisAPI {
                 401: .wrongAuthCode,
                 404: .notFoundAuthCode
             ]
+
         case .sendAuthCode:
             return [
                 400: .wrongEmailForm,
                 404: .userNotFound,
                 409: .existUser
             ]
+
         case .reissueToken:
             return [
                 404: .notFoundToken,

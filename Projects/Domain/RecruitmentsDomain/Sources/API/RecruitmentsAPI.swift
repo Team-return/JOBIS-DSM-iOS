@@ -19,6 +19,7 @@ extension RecruitmentsAPI: JobisAPI {
         switch self {
         case let .fetchRecruitmentDetail(id):
             return "/\(id)"
+
         case .fetchRecruitmentList:
             return "/student"
         }
@@ -40,6 +41,7 @@ extension RecruitmentsAPI: JobisAPI {
                 "tech_code": techCode?.joined(separator: ",") ?? "",
                 "name": name ?? ""
             ], encoding: URLEncoding.queryString)
+
         default:
             return .requestPlain
         }
@@ -57,6 +59,7 @@ extension RecruitmentsAPI: JobisAPI {
                 403: .forbidden,
                 404: .notFound
             ]
+
         case .fetchRecruitmentList:
             return [
                 401: .unauthorized,

@@ -16,20 +16,28 @@ public enum InterviewType: String, Decodable {
         switch self {
         case .cultureInterview:
             return "컬처 면접"
+
         case .document:
             return "서류전형"
+
         case .task:
             return "과제 제출"
+
         case .liveCoding:
             return "라이브코딩"
+
         case .techInterview:
             return "기술면접"
+
         case .finalInterview:
             return "최종면접"
+
         case .personality:
             return "인적성 테스트"
+
         case .ai:
             return "AI 면접"
+
         case .codingTest:
             return "코딩테스트"
         }
