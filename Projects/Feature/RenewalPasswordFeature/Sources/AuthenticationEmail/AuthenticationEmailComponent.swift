@@ -21,4 +21,3 @@ public final class AuthenticationEmailComponent: Component<AuthenticationEmailDe
         )
     }
 }
-
