@@ -26,7 +26,7 @@ struct BookmarkListView: View {
             Divider()
                 .foregroundColor(.Sub.gray40)
 
-            if !viewModel.isLoading {
+            if !viewModel.isFetchingBookmarkList {
                 if !viewModel.bookmarkList.isEmpty {
                     List {
                         ForEach(viewModel.bookmarkList, id: \.self) { bookmark in
