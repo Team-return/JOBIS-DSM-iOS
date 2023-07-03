@@ -18,8 +18,10 @@ struct SignupView: View {
             switch viewModel.signupType {
             case .infoSetting:
                 InfoSettingView(viewModel: viewModel)
+
             case .emailVerify:
                 SignupEmailVerifyView(viewModel: viewModel)
+
             case .password:
                 SignupPasswordView(viewModel: viewModel)
             }
