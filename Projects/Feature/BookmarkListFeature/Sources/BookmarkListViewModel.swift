@@ -7,6 +7,7 @@ final class BookmarkListViewModel: BaseViewModel {
     @Published var bookmarkList: [BookmarkEntity] = []
     @Published var isNavigateRecruitmentView: Bool = false
     @Published var isSheetRecruitmentDetail: Bool = false
+    @Published var isFetchingBookmarkList: Bool = true
 
     private let fetchBookmarkListUseCase: FetchBookmarkListUseCase
     private let bookmarkUseCase: BookmarkUseCase
@@ -20,13 +21,14 @@ final class BookmarkListViewModel: BaseViewModel {
     }
 
     func onAppear() {
+        self.isFetchingBookmarkList = true
         fetchBookmarkList()
     }
 
     func deleteBookmark(at offsets: IndexSet) {
-        let deletedItems = offsets.map { bookmarkList[$0] } // 삭제된 항목의 값을 가져옴
         bookmarkList.remove(atOffsets: offsets)
 
+        let deletedItems = offsets.map { bookmarkList[$0] }
         for item in deletedItems {
             bookmark(id: item.recruitmentID)
         }
@@ -37,6 +39,7 @@ final class BookmarkListViewModel: BaseViewModel {
             fetchBookmarkListUseCase.execute()
         ) { [weak self] bookmarkList in
             self?.bookmarkList = bookmarkList.bookmarks
+            self?.isFetchingBookmarkList = false
         }
     }
 
