@@ -22,6 +22,7 @@ struct JOBISApp: App {
     var body: some Scene {
         WindowGroup {
             AppComponent(keychain: keychain).makeRootView()
+                .preferredColorScheme(.light)
                 .environmentObject(appState)
                 .enableInjection()
         }
