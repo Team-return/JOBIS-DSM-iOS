@@ -22,7 +22,7 @@ struct RenewalPasswordView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text("이메일 인증")
+            Text("비밀번호 변경")
                 .JOBISFont(.heading(.heading5), color: .Sub.gray90)
                 .padding(.top, 45)
 
