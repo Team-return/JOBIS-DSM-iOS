@@ -37,39 +37,39 @@ struct ApplySheet: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 0) {
-                Text("메뉴")
-                    .JOBISFont(.body(.body2), color: .Sub.gray60)
-                    .padding([.bottom, .leading], 5)
+        VStack(alignment: .leading, spacing: 0) {
+            Text("메뉴")
+                .JOBISFont(.body(.body2), color: .Sub.gray60)
+                .padding([.bottom, .leading], 5)
 
-                Divider().foregroundColor(.Sub.gray40)
-                    .padding(.bottom, 25)
+            Divider().foregroundColor(.Sub.gray40)
+                .padding(.bottom, 25)
 
-                Text("제출 서류 : \(submitDoc)")
-                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                    .padding(.bottom, 15)
+            Text("제출 서류 : \(submitDoc)")
+                .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                .padding(.bottom, 15)
 
-                fetchFiles()
-                    .padding(.horizontal, 2)
-                    .padding(.bottom, 18)
+            fetchFiles()
+                .padding(.horizontal, 2)
+                .padding(.bottom, 18)
 
-                inputURLs()
-                    .padding(.horizontal, 2)
-                    .padding(.bottom, 30)
+            inputURLs()
+                .padding(.horizontal, 2)
+                .padding(.bottom, 30)
 
-                HStack {
-                    Spacer()
+            Spacer()
 
-                    SolidBtn(text: "지원하기") { applyAction() }
+            HStack {
+                Spacer()
 
-                    Spacer()
-                }
+                SolidBtn(text: "지원하기") { applyAction() }
+
+                Spacer()
             }
-            .padding(15)
         }
+        .padding(15)
         .background(Color.Sub.gray10)
-        .frame(maxHeight: UIScreen.main.bounds.height / 2)
+        .frame(maxHeight: UIScreen.main.bounds.height * 2 / 3)
         .padding(10)
         .padding(.horizontal, 18)
         .animation(.spring(response: 0.1), value: urls)
@@ -79,7 +79,7 @@ struct ApplySheet: View {
     @ViewBuilder
     func fetchFiles() -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("첨부파일")
+            Text("첨부파일 \(documents.count)/3")
                 .JOBISFont(.etc(.caption), color: .Sub.gray60)
                 .padding(.leading, 5)
 
@@ -111,6 +111,7 @@ struct ApplySheet: View {
             addDataButton(fileType: .file) {
                 showDocumentPicker.toggle()
             }
+            .disabled(documents.count >= 3)
             .documentPicker(isShow: $showDocumentPicker, url: $documents)
         }
     }
@@ -118,7 +119,7 @@ struct ApplySheet: View {
     @ViewBuilder
     func inputURLs() -> some View {
         VStack(alignment: .leading, spacing: 6) {
-            Text("URL")
+            Text("URL \(urls.count)/4")
                 .JOBISFont(.etc(.caption), color: .Sub.gray60)
                 .padding(.leading, 5)
 
@@ -136,6 +137,7 @@ struct ApplySheet: View {
             addDataButton(fileType: .url) {
                 urls.append("")
             }
+            .disabled(urls.count >= 4)
         }
     }
 

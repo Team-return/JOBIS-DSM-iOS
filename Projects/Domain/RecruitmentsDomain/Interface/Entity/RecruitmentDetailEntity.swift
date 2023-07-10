@@ -5,14 +5,14 @@ public struct RecruitmentDetailEntity: Equatable {
     public let companyProfileUrl: String
     public let companyName: String
     public let areas: [AreaEntity]
-    public let preferentialTreatment: String
-    public let requiredGrade: Int?
+    public let preferentialTreatment: String?
+    public let requiredGrade: String?
     public let workHours: String
-    public let requiredLicenses: String
+    public let requiredLicenses: String?
     public let hiringProgress: String
     public let trainPay: String
-    public let pay: Int?
-    public let benefits: String
+    public let pay: String?
+    public let benefits: String?
     public let military: Bool
     public let submitDocument: String
     public let startDate, endDate: String
@@ -23,14 +23,14 @@ public struct RecruitmentDetailEntity: Equatable {
         companyProfileUrl: String,
         companyName: String,
         areas: [AreaEntity],
-        preferentialTreatment: String,
-        requiredGrade: Int?,
+        preferentialTreatment: String?,
+        requiredGrade: String?,
         workHours: String,
-        requiredLicenses: String,
+        requiredLicenses: String?,
         hiringProgress: String,
         trainPay: String,
-        pay: Int?,
-        benefits: String,
+        pay: String?,
+        benefits: String?,
         military: Bool,
         submitDocument: String,
         startDate: String,

@@ -2,7 +2,7 @@ import Foundation
 
 public extension CompanyInfoDetailResponseDTO {
     func toDomain() -> CompanyInfoDetailEntity {
-        CompanyInfoDetailEntity(
+        return CompanyInfoDetailEntity(
             businessNumber: businessNumber,
             companyName: companyName,
             companyProfileURL: companyProfileURL,
@@ -19,9 +19,11 @@ public extension CompanyInfoDetailResponseDTO {
             email: email,
             representativeName: representativeName,
             foundedAt: foundedAt,
-            workerNumber: String(workerNumber),
-            take: String(take),
-            recruitmentID: recruitmentID
+            workerNumber: String(workerNumber) + "명",
+            take: String(take) + "억원",
+            recruitmentID: recruitmentID,
+            serviceName: serviceName,
+            businessArea: businessArea
         )
     }
 }

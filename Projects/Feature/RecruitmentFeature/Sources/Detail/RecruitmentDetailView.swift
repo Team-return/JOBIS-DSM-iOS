@@ -56,7 +56,7 @@ struct RecruitmentDetailView: View {
                         recruitmentInfo(detailInfo: detailInfo)
                     }
                     .padding(.vertical, 24)
-                    .padding(.bottom, 40)
+                    .padding(.bottom, 50)
                     .padding(.horizontal, 20)
                 }
 

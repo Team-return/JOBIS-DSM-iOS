@@ -12,6 +12,7 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
     public let workerNumber: Int
     public let take: Double
     public let recruitmentID: Int?
+    public let serviceName, businessArea: String
 
     public init(
         businessNumber: String,
@@ -32,7 +33,9 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         foundedAt: String,
         workerNumber: Int,
         take: Double,
-        recruitmentID: Int?
+        recruitmentID: Int?,
+        serviceName: String,
+        businessArea: String
     ) {
         self.businessNumber = businessNumber
         self.companyName = companyName
@@ -53,6 +56,8 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         self.workerNumber = workerNumber
         self.take = take
         self.recruitmentID = recruitmentID
+        self.serviceName = serviceName
+        self.businessArea = businessArea
     }
 
     enum CodingKeys: String, CodingKey {
@@ -73,5 +78,7 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         case workerNumber = "worker_number"
         case take
         case recruitmentID = "recruitment_id"
+        case serviceName = "service_name"
+        case businessArea = "business_area"
     }
 }

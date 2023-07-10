@@ -35,17 +35,29 @@ final class FindCompanyDetailViewModel: BaseViewModel {
             fetchCompanyInfoDetailUseCase.execute(id: id)
         ) { [weak self] companyInfoDetail in
             self?.companyInfoDetail = companyInfoDetail
-            self?.titles = [
-                "대표자", "설립일", "근로자 수",
-                "연매출", "주소(본사)", "주소(지점)",
-                "담당자1", "전화번호1", "담당자2",
-                "전화번호2", "이메일", "팩스"
+            let insertTitles = [
+                "대표자",
+                "대표서비스",
+                "사업분야",
+                "설립일",
+                "근로자 수",
+                "연매출",
+                "주소(본사)",
+                "주소(지점)",
+                "담당자1",
+                "전화번호1",
+                "담당자2",
+                "전화번호2",
+                "이메일",
+                "팩스"
             ]
-            self?.contents = [
+            let insertContents: [String?] = [
                 companyInfoDetail.representativeName,
+                companyInfoDetail.serviceName,
+                companyInfoDetail.businessArea,
                 companyInfoDetail.foundedAt,
-                String(companyInfoDetail.workerNumber),
-                String(companyInfoDetail.take),
+                companyInfoDetail.workerNumber,
+                companyInfoDetail.take,
                 companyInfoDetail.address1,
                 companyInfoDetail.address2,
                 companyInfoDetail.manager1,
@@ -55,6 +67,16 @@ final class FindCompanyDetailViewModel: BaseViewModel {
                 companyInfoDetail.email,
                 companyInfoDetail.fax
             ]
+            zip(insertTitles, insertContents).forEach { (title, content) in
+                self?.titles.append(title)
+                if let content {
+                    if content.isEmpty {
+                        self?.contents.append("없음")
+                    } else {
+                        self?.contents.append(content)
+                    }
+                }
+            }
         }
     }
 
