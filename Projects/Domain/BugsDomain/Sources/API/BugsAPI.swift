@@ -7,7 +7,7 @@ public enum BugsAPI {
 }
 
 extension BugsAPI: JobisAPI {
-    public typealias ErrorType = BugsError
+    public typealias ErrorType = BugsDomainError
 
     public var domain: JobisDomain {
         return .bugs
@@ -44,7 +44,9 @@ extension BugsAPI: JobisAPI {
     public var errorMap: [Int: ErrorType] {
         switch self {
         default:
-            return [:]
+            return [
+                400: .isSpace
+            ]
         }
     }
 }

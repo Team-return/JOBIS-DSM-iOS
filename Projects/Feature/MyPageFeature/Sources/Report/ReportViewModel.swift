@@ -18,6 +18,10 @@ final class ReportViewModel: BaseViewModel {
     @Published var showActionSheet: Bool = false
     @Published var isSuccessReport: Bool = false
 
+    public var isReportButtonDisable: Bool {
+        title.isEmpty || content.isEmpty
+    }
+
     private let reportBugsUseCase: any ReportBugsUseCase
     private let uploadFilesUseCase: any UploadFilesUseCase
 
