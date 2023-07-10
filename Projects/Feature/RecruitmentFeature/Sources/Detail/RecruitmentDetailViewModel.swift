@@ -83,28 +83,35 @@ final class RecruitmentDetailViewModel: BaseViewModel {
             fetchRecruitmentDetailUseCase.execute(id: id)
         ) { [weak self] recruitmentDetail in
             self?.recruitmentDetail = recruitmentDetail
-            self?.titles = [
-                "우대사항", "자격증", "근무시간",
-                "실습수당", "복리후생", "채용절차",
-                "제출서류", "기타사항"
+            let insertTitles = [
+                "우대사항",
+                "자격증",
+                "필수성적",
+                "근무시간",
+                "실습수당",
+                "정규직전환시",
+                "복리후생",
+                "채용절차",
+                "제출서류",
+                "기타사항"
             ]
-            self?.contents = [
+            let insertContents = [
                 recruitmentDetail.preferentialTreatment,
                 recruitmentDetail.requiredLicenses,
+                recruitmentDetail.requiredGrade,
                 recruitmentDetail.workHours + " 시간",
-                (recruitmentDetail.trainPay) + " 만원/월",
+                recruitmentDetail.trainPay + " 만원/월",
+                recruitmentDetail.pay,
                 recruitmentDetail.benefits,
                 recruitmentDetail.hiringProgress,
                 recruitmentDetail.submitDocument,
                 recruitmentDetail.etc
             ]
-            if let requiredGrade = recruitmentDetail.requiredGrade {
-                self?.titles.insert("필수성정", at: 2)
-                self?.contents.insert(String(requiredGrade), at: 2)
-            }
-            if let pay = recruitmentDetail.pay {
-                self?.titles.insert("정규직전환시", at: 5)
-                self?.contents.insert("\(pay) 만원/년", at: 5)
+            zip(insertTitles, insertContents).forEach { (title, content) in
+                guard let content else { return }
+                guard !content.isEmpty else { return }
+                self?.titles.append(title)
+                self?.contents.append(content)
             }
         }
     }
