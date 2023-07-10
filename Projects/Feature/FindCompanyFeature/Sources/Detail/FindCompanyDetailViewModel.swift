@@ -46,11 +46,12 @@ final class FindCompanyDetailViewModel: BaseViewModel {
                 "주소(지점)",
                 "담당자1",
                 "전화번호1",
+                "담당자2",
                 "전화번호2",
                 "이메일",
                 "팩스"
             ]
-            let insertContents = [
+            let insertContents: [String?] = [
                 companyInfoDetail.representativeName,
                 companyInfoDetail.serviceName,
                 companyInfoDetail.businessArea,
@@ -67,12 +68,13 @@ final class FindCompanyDetailViewModel: BaseViewModel {
                 companyInfoDetail.fax
             ]
             zip(insertTitles, insertContents).forEach { (title, content) in
-                guard let content else { return }
                 self?.titles.append(title)
-                if content.isEmpty {
-                    self?.contents.append("없음")
-                } else {
-                    self?.contents.append(content)
+                if let content {
+                    if content.isEmpty {
+                        self?.contents.append("없음")
+                    } else {
+                        self?.contents.append(content)
+                    }
                 }
             }
         }
