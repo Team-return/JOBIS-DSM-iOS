@@ -32,14 +32,13 @@ struct ReportView: View {
                 screenShotImages()
                     .padding(.bottom, 25)
 
-                Spacer()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(Color.black)
-
-                SolidBtn(text: "제보하기", size: .large) {
-                    viewModel.reportBugsButtonDidTap()
+                HStack(alignment: .bottom) {
+                    SolidBtn(text: "제보하기", size: .large) {
+                        viewModel.reportBugsButtonDidTap()
+                    }
+                    .disabled(viewModel.isReportButtonDisable)
                 }
-                .disabled(viewModel.isReportButtonDisable)
+                .frame(maxHeight: .infinity)
             }
             .padding(.horizontal, 20)
         }
