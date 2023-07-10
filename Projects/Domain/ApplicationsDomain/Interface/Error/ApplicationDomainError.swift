@@ -7,9 +7,11 @@ public enum ApplicationsDomainError: Error {
     case notFound
     case conflict
 
-    case noThirdGrad
+    case noThirdGrade
     case notFoundRecruitment
     case alreadyApply
+
+    case isSpace
 }
 
 extension ApplicationsDomainError: LocalizedError {
@@ -30,7 +32,7 @@ extension ApplicationsDomainError: LocalizedError {
         case .conflict:
             return "Conflict"
 
-        case .noThirdGrad:
+        case .noThirdGrade:
             return "3학년이 아니면 지원할 수 없습니다."
 
         case .notFoundRecruitment:
@@ -38,6 +40,9 @@ extension ApplicationsDomainError: LocalizedError {
 
         case .alreadyApply:
             return "승인된 지원서가 존재하거나, 이미 지원한 기업입니다."
+
+        case .isSpace:
+            return "공백이 있습니다."
         }
     }
 }

@@ -41,11 +41,11 @@ final class RecruitmentDetailViewModel: BaseViewModel {
         uploadFiles(complete: complete)
     }
 
-    private func applyCompany(_ attachmentUrl: [String], complete: @escaping () -> Void) {
+    private func applyCompany(_ attachments: [AttachmentsRequestDTO], complete: @escaping () -> Void) {
         addCancellable(
             applyCompanyUseCase.execute(
                 id: id,
-                req: .init(attachmentURL: attachmentUrl)
+                req: .init(attachments: attachments)
             )
         ) { [weak self] _ in
             complete()
@@ -55,9 +55,8 @@ final class RecruitmentDetailViewModel: BaseViewModel {
 
     private func uploadFiles(complete: @escaping () -> Void) {
         if documents.isEmpty {
-            self.applyCompany(urls, complete: complete)
+            self.applyCompany(urls.map { .init(url: $0, type: .url) }, complete: complete)
         } else {
-            var attachmentUrl: [String] = []
             addCancellable(
                 uploadFilesUseCase.execute(
                     data: documents.map {
@@ -72,8 +71,11 @@ final class RecruitmentDetailViewModel: BaseViewModel {
                     fileName: documents.first?.lastPathComponent ?? "image.jpg"
                 )
             ) { [weak self] urls in
-                attachmentUrl += urls
-                self?.applyCompany(attachmentUrl, complete: complete)
+                var attachments: [AttachmentsRequestDTO] = []
+
+                urls.forEach { attachments.append(.init(url: $0, type: .file)) }
+                self?.urls.forEach { attachments.append(.init(url: $0, type: .url)) }
+                self?.applyCompany(attachments, complete: complete)
             }
         }
     }

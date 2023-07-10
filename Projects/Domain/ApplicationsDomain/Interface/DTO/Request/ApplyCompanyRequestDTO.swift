@@ -1,13 +1,19 @@
 import Foundation
 
 public struct ApplyCompanyRequestDTO: Encodable {
-    public let attachmentURL: [String]
+    public let attachments: [AttachmentsRequestDTO]
 
-    public init(attachmentURL: [String]) {
-        self.attachmentURL = attachmentURL
+    public init(attachments: [AttachmentsRequestDTO]) {
+        self.attachments = attachments
     }
+}
 
-    enum CodingKeys: String, CodingKey {
-        case attachmentURL = "attachment_url"
+public struct AttachmentsRequestDTO: Encodable {
+    public let url: String
+    public let type: AttachmentType
+
+    public init(url: String, type: AttachmentType) {
+        self.url = url
+        self.type = type
     }
 }

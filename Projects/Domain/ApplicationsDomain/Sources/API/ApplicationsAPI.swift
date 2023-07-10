@@ -68,8 +68,8 @@ extension ApplicationsAPI: JobisAPI {
         switch self {
         case .applyCompany:
             return [
-                400: .badRequest,
-                401: .noThirdGrad,
+                400: .isSpace,
+                401: .noThirdGrade,
                 403: .forbidden,
                 404: .notFoundRecruitment,
                 409: .alreadyApply
