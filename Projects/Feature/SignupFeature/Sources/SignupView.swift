@@ -71,6 +71,7 @@ struct SignupView: View {
             guard newValue else { return }
             appState.sceneFlow = .main
         }
+        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 
     @ViewBuilder

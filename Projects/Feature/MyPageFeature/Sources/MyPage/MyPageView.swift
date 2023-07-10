@@ -50,13 +50,13 @@ struct MyPageView: View {
                 }
                 .redacted(reason: viewModel.isLoading ? .placeholder : [])
 
-                Text("백엔드")
-                    .JOBISFont(.body(.body4), color: .Sub.gray10)
-                    .padding(.vertical, 5)
-                    .padding(.horizontal, 15)
-                    .background(Color.Main.lightBlue)
-                    .cornerRadius(15)
-                    .padding(.bottom, 35)
+//                Text("백엔드")
+//                    .JOBISFont(.body(.body4), color: .Sub.gray10)
+//                    .padding(.vertical, 5)
+//                    .padding(.horizontal, 15)
+//                    .background(Color.Main.lightBlue)
+//                    .cornerRadius(15)
+//                    .padding(.bottom, 35)
 
                 VStack(alignment: .leading, spacing: 15) {
                     Divider().foregroundColor(.Sub.gray40)
@@ -65,11 +65,11 @@ struct MyPageView: View {
                         viewModel.isNavigateReportView.toggle()
                     }
 
-                    Divider().foregroundColor(.Sub.gray40)
-
-                    myPageNavigateCell(title: "관심분야 선택하기", color: .Main.lightBlue) {
-                        viewModel.isShowFieldOfInterest.toggle()
-                    }
+//                    Divider().foregroundColor(.Sub.gray40)
+//
+//                    myPageNavigateCell(title: "관심분야 선택하기", color: .Main.lightBlue) {
+//                        viewModel.isShowFieldOfInterest.toggle()
+//                    }
 
                     Divider().foregroundColor(.Sub.gray40)
 
