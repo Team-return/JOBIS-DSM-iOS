@@ -26,12 +26,11 @@ final class BookmarkListViewModel: BaseViewModel {
     }
 
     func deleteBookmark(at offsets: IndexSet) {
-        bookmarkList.remove(atOffsets: offsets)
-
         let deletedItems = offsets.map { bookmarkList[$0] }
         for item in deletedItems {
             bookmark(id: item.recruitmentID)
         }
+        bookmarkList.remove(atOffsets: offsets)
     }
 
     private func fetchBookmarkList() {
