@@ -18,7 +18,7 @@ extension ReviewsAPI: JobisAPI {
     public var urlPath: String {
         switch self {
         case let .fetchReviewDetail(id):
-            return "/detail/\(id)"
+            return "/details/\(id)"
 
         case let .fetchReviewList(id):
             return "/\(id)"

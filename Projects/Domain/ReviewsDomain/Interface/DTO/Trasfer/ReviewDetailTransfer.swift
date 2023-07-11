@@ -5,7 +5,6 @@ public extension ReviewDetailResponseDTO {
         ReviewDetailEntity(
             year: year,
             writer: writer,
-            createdDate: createdDate,
             qnaResponses: qnaResponses.map { $0.toDomain() }
         )
     }

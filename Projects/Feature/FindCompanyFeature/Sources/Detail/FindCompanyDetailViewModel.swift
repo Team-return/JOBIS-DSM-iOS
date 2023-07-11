@@ -7,6 +7,7 @@ final class FindCompanyDetailViewModel: BaseViewModel {
     @Published var companyInfoDetail: CompanyInfoDetailEntity?
     @Published var isSheetRecruitmentDetail = false
     @Published var reviewList: ReviewListEntity?
+    @Published var reviewDetail: ReviewDetailEntity?
     @Published var titles: [String] = []
     @Published var contents: [String] = []
 
@@ -14,14 +15,17 @@ final class FindCompanyDetailViewModel: BaseViewModel {
 
     private let fetchCompanyInfoDetailUseCase: FetchCompanyInfoDetailUseCase
     private let fetchReviewListUseCase: FetchReviewListUseCase
+    private let fetchReviewDetailUseCase: FetchReviewDetailUseCase
 
     public init(
         fetchCompanyInfoDetailUseCase: any FetchCompanyInfoDetailUseCase,
         fetchReviewListUseCase: any FetchReviewListUseCase,
+        fetchReviewDetailUseCase: any FetchReviewDetailUseCase,
         id: String
     ) {
         self.fetchCompanyInfoDetailUseCase = fetchCompanyInfoDetailUseCase
         self.fetchReviewListUseCase = fetchReviewListUseCase
+        self.fetchReviewDetailUseCase = fetchReviewDetailUseCase
         self.id = id
     }
 
@@ -85,6 +89,14 @@ final class FindCompanyDetailViewModel: BaseViewModel {
             fetchReviewListUseCase.execute(id: id)
         ) { [weak self] reviewList in
             self?.reviewList = reviewList
+        }
+    }
+
+    func fetchReviewDetail(id: String) {
+        addCancellable(
+            fetchReviewDetailUseCase.execute(id: id)
+        ) { [weak self] reviewDetail in
+            self?.reviewDetail = reviewDetail
         }
     }
 }

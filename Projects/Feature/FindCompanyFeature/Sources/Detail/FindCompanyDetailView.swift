@@ -69,14 +69,20 @@ struct FindCompanyDetailView: View {
                         .JOBISFont(.body(.body2), color: .Sub.gray70)
 
                         ForEach(reviewList.reviews, id: \.self) { review in
-                            reviewCell(title: review.writer, date: review.createdDate)
+                            NavigationLink {
+                                ReviewDetailView(reviewDetail: viewModel.reviewDetail)
+                                    .onAppear { viewModel.fetchReviewDetail(id: review.reviewID) }
+                                    .onDisappear { viewModel.reviewDetail = nil}
+                            } label: {
+                                reviewCell(title: review.writer)
+                            }
                         }
                     }
                 }
                 .padding([.horizontal, .top], 24)
             }
         }
-        .onAppear {
+        .onLoad {
             viewModel.onAppear()
         }
     }
@@ -95,15 +101,15 @@ struct FindCompanyDetailView: View {
     }
 
     @ViewBuilder
-    func reviewCell(title: String, date: String) -> some View {
+    func reviewCell(title: String) -> some View {
         HStack {
             Text(title + "의 후기")
                 .JOBISFont(.etc(.caption), color: .Sub.gray90)
 
             Spacer()
 
-            Text(date)
-                .JOBISFont(.etc(.caption), color: .Sub.gray60)
+            JOBISIcon(.chevronRight)
+                .frame(width: 16, height: 16)
         }
         .padding(.vertical, 16)
         .padding(.horizontal, 20)
