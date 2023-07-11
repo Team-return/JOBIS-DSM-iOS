@@ -31,4 +31,8 @@ public struct StudentsRepositoryImpl: StudentsRepository {
     public func compareCurrentPasssword(password: String) -> AnyPublisher<Void, Error> {
         remoteStudentsDataSource.compareCurrentPasssword(password: password)
     }
+
+    public func changeProfileImage(url: String) -> AnyPublisher<Void, Error> {
+        remoteStudentsDataSource.changeProfileImage(url: url)
+    }
 }
