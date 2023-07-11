@@ -22,8 +22,8 @@ final class ReportViewModel: BaseViewModel {
         title.isEmpty || content.isEmpty
     }
 
-    private let reportBugsUseCase: any ReportBugsUseCase
-    private let uploadFilesUseCase: any UploadFilesUseCase
+    private let reportBugsUseCase: ReportBugsUseCase
+    private let uploadFilesUseCase: UploadFilesUseCase
 
     init(
         reportBugsUseCase: any ReportBugsUseCase,
