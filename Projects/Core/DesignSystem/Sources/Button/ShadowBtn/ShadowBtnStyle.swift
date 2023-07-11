@@ -39,15 +39,15 @@ extension ShadowBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font,
+                .JOBISFont(size.fetchButtonInfo().font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Sub.gray60
                            : Color.Sub.gray50)
-                .padding(.vertical, fetchButtonInfo(size: size).vPadding)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .padding(.vertical, size.fetchButtonInfo().vPadding)
+                .padding(.horizontal, size.fetchButtonInfo().hPadding)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10
                             : Color.Sub.gray30)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
                 .shadow(color: .Sub.gray90.opacity(0.25), radius: isEnabled ?  4 : 0)
         }
     }
@@ -61,13 +61,13 @@ extension ShadowBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font,
+                .JOBISFont(size.fetchButtonInfo().font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Sub.gray90
                            : Color.Sub.gray50)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10
                             : Color.Sub.gray30)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
                 .shadow(radius: isEnabled ?  4 : 0)
         }
     }
@@ -81,13 +81,13 @@ extension ShadowBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font,
+                .JOBISFont(size.fetchButtonInfo().font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Sub.gray90
                            : Color.Sub.gray50)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10
                             : Color.Sub.gray30)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
                 .shadow(radius: isEnabled ?  4 : 0)
         }
     }
@@ -121,7 +121,7 @@ extension ShadowBtnStyle {
             configuration.label
                 .foregroundColor(isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Sub.gray90
                                  : Color.Sub.gray50)
-                .frame(width: fetchButtonInfo(size: size).minHeight, height: fetchButtonInfo(size: size).minHeight)
+                .frame(width: size.fetchButtonInfo().minHeight, height: size.fetchButtonInfo().minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10
                             : Color.Sub.gray30)
                 .clipShape(Circle())
