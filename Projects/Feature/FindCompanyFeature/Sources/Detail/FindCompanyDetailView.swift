@@ -69,14 +69,19 @@ struct FindCompanyDetailView: View {
                         .JOBISFont(.body(.body2), color: .Sub.gray70)
 
                         ForEach(reviewList.reviews, id: \.self) { review in
-                            reviewCell(title: review.writer)
+                            NavigationLink {
+                                ReviewDetailView(reviewDetail: viewModel.reviewDetail)
+                                    .onAppear { viewModel.fetchReviewDetail(id: review.reviewID) }
+                            } label: {
+                                reviewCell(title: review.writer)
+                            }
                         }
                     }
                 }
                 .padding([.horizontal, .top], 24)
             }
         }
-        .onAppear {
+        .onLoad {
             viewModel.onAppear()
         }
     }
