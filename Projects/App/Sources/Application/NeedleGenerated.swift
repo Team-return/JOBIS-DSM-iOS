@@ -128,6 +128,12 @@ private class MyPageDependency48d84b530313b3ee40feProvider: MyPageDependency {
     var logoutUseCase: any LogoutUseCase {
         return appComponent.logoutUseCase
     }
+    var uploadFilesUseCase: any UploadFilesUseCase {
+        return appComponent.uploadFilesUseCase
+    }
+    var changeProfileImageUseCase: any ChangeProfileImageUseCase {
+        return appComponent.changeProfileImageUseCase
+    }
     var reportFactory: any ReportFactory {
         return appComponent.reportFactory
     }
@@ -451,6 +457,7 @@ extension AppComponent: Registration {
         localTable["fetchStudentInfoUseCase-any FetchStudentInfoUseCase"] = { [unowned self] in self.fetchStudentInfoUseCase as Any }
         localTable["compareCurrentPassswordUseCase-any CompareCurrentPassswordUseCase"] = { [unowned self] in self.compareCurrentPassswordUseCase as Any }
         localTable["changePasswordUseCase-any ChangePasswordUseCase"] = { [unowned self] in self.changePasswordUseCase as Any }
+        localTable["changeProfileImageUseCase-any ChangeProfileImageUseCase"] = { [unowned self] in self.changeProfileImageUseCase as Any }
         localTable["remoteBookmarksDataSource-any RemoteBookmarksDataSource"] = { [unowned self] in self.remoteBookmarksDataSource as Any }
         localTable["bookmarksRepository-any BookmarksRepository"] = { [unowned self] in self.bookmarksRepository as Any }
         localTable["fetchBookmarkListUseCase-any FetchBookmarkListUseCase"] = { [unowned self] in self.fetchBookmarkListUseCase as Any }
@@ -506,6 +513,8 @@ extension MyPageComponent: Registration {
     public func registerItems() {
         keyPathToName[\MyPageDependency.fetchStudentInfoUseCase] = "fetchStudentInfoUseCase-any FetchStudentInfoUseCase"
         keyPathToName[\MyPageDependency.logoutUseCase] = "logoutUseCase-any LogoutUseCase"
+        keyPathToName[\MyPageDependency.uploadFilesUseCase] = "uploadFilesUseCase-any UploadFilesUseCase"
+        keyPathToName[\MyPageDependency.changeProfileImageUseCase] = "changeProfileImageUseCase-any ChangeProfileImageUseCase"
         keyPathToName[\MyPageDependency.reportFactory] = "reportFactory-any ReportFactory"
         keyPathToName[\MyPageDependency.checkPasswordFactory] = "checkPasswordFactory-any CheckPasswordFactory"
     }
