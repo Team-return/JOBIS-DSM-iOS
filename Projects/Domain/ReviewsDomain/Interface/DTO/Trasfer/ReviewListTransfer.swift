@@ -8,6 +8,6 @@ public extension ReviewListResponseDTO {
 
 public extension ReviewResponseDTO {
     func toDomain() -> ReviewEntity {
-        ReviewEntity(reviewID: reviewID, year: year, writer: writer, createdDate: createdDate)
+        ReviewEntity(reviewID: reviewID, year: year, writer: writer)
     }
 }
