@@ -76,14 +76,10 @@ struct FindCompanyView: View {
 
     @ViewBuilder
     func navigateToFindCompanyDetail(companyEntity: CompanyEntity) -> some View {
-        Button {
-            viewModel.isNavigateCompanyDetail.toggle()
-        } label: {
-            FindCompanyListCell(
-                companyEntity: companyEntity,
-                findCompanyDetailFactory: findCompanyDetailFactory
-            )
-        }
+        FindCompanyListCell(
+            companyEntity: companyEntity,
+            findCompanyDetailFactory: findCompanyDetailFactory
+        )
         .onAppear {
             viewModel.appendFindCompanyList(list: companyEntity)
         }

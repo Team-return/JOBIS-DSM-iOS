@@ -7,7 +7,6 @@ final class FindCompanyViewModel: BaseViewModel {
     @Published var studentCompanyList: StudentCompanyListEntity?
     @Published var companyText: String = ""
     @Published var filteringName: String = ""
-    @Published var isNavigateCompanyDetail: Bool = false
 
     private let fetchStudentCompanyListUseCase: FetchStudentCompanyListUseCase
 
