@@ -1,17 +1,25 @@
 import SwiftUI
 import ReviewsDomainInterface
+import DesignSystem
 
 struct ReviewDetailView: View {
-    let reviewDetail: ReviewDetailEntity?
+    @Environment(\.dismiss) var dismiss
+    var reviewDetail: ReviewDetailEntity?
 
     var body: some View {
-        VStack {
+        ScrollView {
             if let reviewDetail {
-                Text(String(reviewDetail.year))
-                Text(reviewDetail.writer)
-                Text(reviewDetail.qnaResponses.map { $0.answer }.joined(separator: ","))
-                Text(reviewDetail.qnaResponses.map { $0.area }.joined(separator: ","))
-                Text(reviewDetail.qnaResponses.map { $0.question }.joined(separator: ","))
+                VStack(alignment: .leading, spacing: 10) {
+                    ForEach(reviewDetail.qnaResponses, id: \.self) { qna in
+                        QnaListCellView(qna: qna)
+                    }
+
+                    Spacer()
+                }
+                .navigationBarTitle(reviewDetail.writer + "님의 후기")
+                .jobisBackButton { dismiss() }
+            } else {
+                ProgressView().progressViewStyle(.circular)
             }
         }
     }

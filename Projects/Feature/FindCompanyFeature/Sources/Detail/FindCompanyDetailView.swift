@@ -72,6 +72,7 @@ struct FindCompanyDetailView: View {
                             NavigationLink {
                                 ReviewDetailView(reviewDetail: viewModel.reviewDetail)
                                     .onAppear { viewModel.fetchReviewDetail(id: review.reviewID) }
+                                    .onDisappear { viewModel.reviewDetail = nil}
                             } label: {
                                 reviewCell(title: review.writer)
                             }
