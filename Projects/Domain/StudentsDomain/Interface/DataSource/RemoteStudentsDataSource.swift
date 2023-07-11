@@ -8,4 +8,5 @@ public protocol RemoteStudentsDataSource {
     func fetchStudentInfo() -> AnyPublisher<StudentInfoEntity, Error>
     func compareCurrentPasssword(password: String) -> AnyPublisher<Void, Error>
     func changePassword(req: ChangePasswordRequestDTO) -> AnyPublisher<Void, Error>
+    func changeProfileImage(url: String) -> AnyPublisher<Void, Error>
 }

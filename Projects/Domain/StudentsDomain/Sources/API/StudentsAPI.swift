@@ -9,6 +9,7 @@ public enum StudentsAPI {
     case fetchStudentInfo
     case compareCurrentPasssword(password: String)
     case changePassword(ChangePasswordRequestDTO)
+    case changeProfileImage(url: String)
 }
 
 extension StudentsAPI: JobisAPI {
@@ -34,6 +35,9 @@ extension StudentsAPI: JobisAPI {
 
         case .compareCurrentPasssword, .changePassword:
             return "/password"
+
+        case .changeProfileImage:
+            return "/profile"
         }
     }
 
@@ -42,7 +46,7 @@ extension StudentsAPI: JobisAPI {
         case .signup:
             return .post
 
-        case .renewalPassword, .changePassword:
+        case .renewalPassword, .changePassword, .changeProfileImage:
             return .patch
 
         case .studentExists, .fetchStudentInfo, .compareCurrentPasssword:
@@ -77,12 +81,18 @@ extension StudentsAPI: JobisAPI {
 
         case let .changePassword(req):
             return .requestJSONEncodable(req)
+
+        case let .changeProfileImage(url):
+            return .requestParameters(
+                parameters: [
+                    "profile_image_url": url
+                ], encoding: JSONEncoding.default)
         }
     }
 
     public var jwtTokenType: JwtTokenType {
         switch self {
-        case .fetchStudentInfo, .compareCurrentPasssword, .changePassword:
+        case .fetchStudentInfo, .compareCurrentPasssword, .changePassword, .changeProfileImage:
             return .accessToken
         default:
             return .none
@@ -121,6 +131,9 @@ extension StudentsAPI: JobisAPI {
             return [
                 401: .wrongPassword
             ]
+
+        case.changeProfileImage:
+            return [:]
         }
     }
 }

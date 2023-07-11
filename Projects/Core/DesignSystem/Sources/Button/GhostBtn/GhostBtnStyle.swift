@@ -39,16 +39,16 @@ extension GhostBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font,
+                .JOBISFont(size.fetchButtonInfo().font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
                            : Color.Sub.gray50)
-                .padding(.vertical, fetchButtonInfo(size: size).vPadding)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .padding(.vertical, size.fetchButtonInfo().vPadding)
+                .padding(.horizontal, size.fetchButtonInfo().hPadding)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
                 .overlay(
-                    RoundedRectangle(cornerRadius: fetchButtonInfo(size: size).cornerRadius)
+                    RoundedRectangle(cornerRadius: size.fetchButtonInfo().cornerRadius)
                         .stroke(isEnabled ? Color.Main.lightBlue
                                 : Color.Sub.gray40, lineWidth: 1.5)
                 )
@@ -64,14 +64,14 @@ extension GhostBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font,
+                .JOBISFont(size.fetchButtonInfo().font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
                            : Color.Sub.gray50)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
                 .overlay(
-                    RoundedRectangle(cornerRadius: fetchButtonInfo(size: size).cornerRadius)
+                    RoundedRectangle(cornerRadius: size.fetchButtonInfo().cornerRadius)
                         .stroke(isEnabled ? Color.Main.lightBlue
                                 : Color.Sub.gray40, lineWidth: 1.5)
                 )
@@ -87,14 +87,14 @@ extension GhostBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font,
+                .JOBISFont(size.fetchButtonInfo().font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
                            : Color.Sub.gray50)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
                 .overlay(
-                    RoundedRectangle(cornerRadius: fetchButtonInfo(size: size).cornerRadius)
+                    RoundedRectangle(cornerRadius: size.fetchButtonInfo().cornerRadius)
                         .stroke(isEnabled ? Color.Main.lightBlue
                                 : Color.Sub.gray40, lineWidth: 1.5)
                 )
@@ -134,7 +134,7 @@ extension GhostBtnStyle {
             configuration.label
                 .foregroundColor(isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Main.lightBlue
                       : Color.Sub.gray50)
-                .frame(width: fetchButtonInfo(size: size).minHeight, height: fetchButtonInfo(size: size).minHeight)
+                .frame(width: size.fetchButtonInfo().minHeight, height: size.fetchButtonInfo().minHeight)
                 .background(configuration.isPressed ? Color.Main.lightBlue : Color.Sub.gray10)
                 .clipShape(Circle())
                 .overlay(

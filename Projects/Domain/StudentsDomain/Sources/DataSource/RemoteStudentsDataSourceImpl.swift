@@ -28,4 +28,8 @@ public final class RemoteStudentsDataSourceImpl: BaseRemoteDataSource<StudentsAP
     public func compareCurrentPasssword(password: String) -> AnyPublisher<Void, Error> {
         request(.compareCurrentPasssword(password: password))
     }
+
+    public func changeProfileImage(url: String) -> AnyPublisher<Void, Error> {
+        request(.changeProfileImage(url: url))
+    }
 }

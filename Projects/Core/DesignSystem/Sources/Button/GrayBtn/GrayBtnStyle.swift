@@ -22,14 +22,14 @@ extension GrayBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font,
+                .JOBISFont(size.fetchButtonInfo().font,
                            color: isEnabled ? configuration.isPressed ? Color.Sub.gray10 : Color.Sub.gray90
                            : Color.Sub.gray50)
-                .padding(.vertical, fetchButtonInfo(size: size).vPadding)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .padding(.vertical, size.fetchButtonInfo().vPadding)
+                .padding(.horizontal, size.fetchButtonInfo().hPadding)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(configuration.isPressed ? Color.Sub.gray60 : Color.Sub.gray30)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
         }
     }
 }

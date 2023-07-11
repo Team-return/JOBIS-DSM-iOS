@@ -6,7 +6,7 @@ final class CheckPasswordViewModel: BaseViewModel {
     @Published var password: String = ""
     @Published var isSuccessCheckPassword: Bool = false
 
-    private var compareCurrentPassswordUseCase: any CompareCurrentPassswordUseCase
+    private let compareCurrentPassswordUseCase: CompareCurrentPassswordUseCase
 
     init(compareCurrentPassswordUseCase: any CompareCurrentPassswordUseCase) {
         self.compareCurrentPassswordUseCase = compareCurrentPassswordUseCase

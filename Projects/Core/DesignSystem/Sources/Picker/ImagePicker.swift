@@ -4,50 +4,43 @@ import PhotosUI
 public extension View {
     func imagePicker(isShow: Binding<Bool>, uiImage: Binding<UIImage?>) -> some View {
         self
-            .fullScreenCover(isPresented: isShow) {
-                ImagePicker(configuration: .init(photoLibrary: .shared()), requests: uiImage)
+            .sheet(isPresented: isShow) {
+                ImagePicker(image: uiImage)
                     .ignoresSafeArea()
             }
     }
 }
 
 struct ImagePicker: UIViewControllerRepresentable {
-    let configuration: PHPickerConfiguration
-    @Binding var requests: UIImage?
-
-    func makeUIViewController(context: Context) -> PHPickerViewController {
-        let controller = PHPickerViewController(configuration: configuration)
-        controller.delegate = context.coordinator
-        return controller
-    }
-
-    func updateUIViewController(_ uiViewController: PHPickerViewController, context: Context) { }
-
+    @Binding var image: UIImage?
+    private let controller = UIImagePickerController()
     func makeCoordinator() -> Coordinator {
-        Coordinator(self)
+        return Coordinator(photoPicker: self)
     }
-
-    class Coordinator: PHPickerViewControllerDelegate {
-        var parent: ImagePicker
-
-        init(_ parent: ImagePicker) {
-            self.parent = parent
+    final class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+        let photoPicker: ImagePicker
+        init(photoPicker: ImagePicker) {
+            self.photoPicker = photoPicker
         }
-
-        func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-            for result in results {
-                let provider = result.itemProvider
-                if provider.canLoadObject(ofClass: UIImage.self) {
-                    provider.loadObject(ofClass: UIImage.self) { [weak self] image, _ in
-                        if let image = image as? UIImage {
-                            DispatchQueue.main.async {
-                                self?.parent.requests = image
-                            }
-                        }
-                    }
-                }
+        func imagePickerController(
+            _ picker: UIImagePickerController,
+            didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+        ) {
+            if let image = info[.editedImage] as? UIImage {
+                guard let data = image.jpegData(compressionQuality: 0.1),
+                      let compressedImage = UIImage(data: data) else { return }
+                photoPicker.image = compressedImage
             }
             picker.dismiss(animated: true)
         }
     }
+    func makeUIViewController(context: Context) -> some UIImagePickerController {
+        let picker = UIImagePickerController()
+        picker.delegate = context.coordinator
+        picker.allowsEditing = true
+        return picker
+    }
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+    }
 }
+

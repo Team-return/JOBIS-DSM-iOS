@@ -39,13 +39,13 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font, color: .Sub.gray10)
-                .padding(.vertical, fetchButtonInfo(size: size).vPadding)
-                .padding(.horizontal, fetchButtonInfo(size: size).hPadding)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .JOBISFont(size.fetchButtonInfo().font, color: .Sub.gray10)
+                .padding(.vertical, size.fetchButtonInfo().vPadding)
+                .padding(.horizontal, size.fetchButtonInfo().hPadding)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
         }
     }
 }
@@ -58,11 +58,11 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font, color: .Sub.gray10)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .JOBISFont(size.fetchButtonInfo().font, color: .Sub.gray10)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
         }
     }
 }
@@ -75,11 +75,11 @@ extension SolidBtnStyle {
         @Environment(\.isEnabled) private var isEnabled: Bool
         var body: some View {
             configuration.label
-                .JOBISFont(fetchButtonInfo(size: size).font, color: .Sub.gray10)
-                .frame(minWidth: fetchButtonInfo(size: size).minWidth, minHeight: fetchButtonInfo(size: size).minHeight)
+                .JOBISFont(size.fetchButtonInfo().font, color: .Sub.gray10)
+                .frame(minWidth: size.fetchButtonInfo().minWidth, minHeight: size.fetchButtonInfo().minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
-                .cornerRadius(fetchButtonInfo(size: size).cornerRadius)
+                .cornerRadius(size.fetchButtonInfo().cornerRadius)
         }
     }
 }
@@ -109,7 +109,7 @@ extension SolidBtnStyle {
         var body: some View {
             configuration.label
                 .foregroundColor(.Sub.gray10)
-                .frame(width: fetchButtonInfo(size: size).minHeight, height: fetchButtonInfo(size: size).minHeight)
+                .frame(width: size.fetchButtonInfo().minHeight, height: size.fetchButtonInfo().minHeight)
                 .background(isEnabled ? configuration.isPressed ? Color.Main.darkBlue : Color.Main.lightBlue
                             : Color.Sub.gray50)
                 .clipShape(Circle())
