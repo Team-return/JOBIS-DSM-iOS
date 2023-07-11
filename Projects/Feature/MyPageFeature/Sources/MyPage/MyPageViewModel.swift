@@ -66,7 +66,9 @@ final class MyPageViewModel: BaseViewModel {
     private func changeProfileImage(url: String) {
         addCancellable(
             changeProfileImageUseCase.execute(url: url)
-        ) { _ in }
+        ) { [weak self] _ in
+            self?.fetchStudentInfo()
+        }
     }
 
     func logoutButtonDidTap() {

@@ -27,36 +27,59 @@ struct MyPageView: View {
         ScrollView {
             VStack(spacing: 0) {
                 Divider().foregroundColor(.Sub.gray40)
-                    .padding(.bottom, 50)
 
-                Group {
-                    KFImage(URL(string: viewModel.studentInfo?.profileImageUrl ?? ""))
-                        .placeholder { Circle().fill(Color.Sub.gray50) }
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 62, height: 62)
-                        .clipShape(Circle())
-                        .padding(.bottom, 5)
+                HStack(spacing: 22) {
+                    VStack {
+                        ZStack(alignment: .bottomTrailing) {
+                            Group {
+                                if let profileImage = viewModel.image {
+                                    Image(uiImage: profileImage)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                } else {
+                                    KFImage(URL(string: viewModel.studentInfo?.profileImageUrl ?? ""))
+                                        .placeholder {
+                                            ProgressView()
+                                                .progressViewStyle(
+                                                    CircularProgressViewStyle(tint: .white)
+                                                )
+                                                .background(Color.Sub.gray40)
+                                                .clipShape(Circle())
+                                        }
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                }
+                            }
+                            .frame(width: 85, height: 85)
+                            .clipShape(Circle())
 
-                    Text(viewModel.studentInfo?.studentName ?? "홍길동")
-                        .JOBISFont(.heading(.heading6), color: .Sub.gray90)
+                            Image(systemName: "pencil.circle.fill")
+                                .resizable()
+                                .frame(width: 26, height: 26)
+                                .foregroundColor(.Main.lightBlue)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .unredacted()
+                        }
+                    }
+                    .onTapGesture {
+                        viewModel.isShowImagePicker.toggle()
+                    }
 
-                    Text((viewModel.studentInfo?.department ?? .softwareDevelop).localizedString())
-                        .JOBISFont(.body(.body2), color: .Sub.gray90)
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text(viewModel.studentInfo?.studentName ?? "Loading")
+                            .JOBISFont(.heading(.heading6), color: .Sub.gray90)
 
-                    Text(viewModel.studentInfo?.studentGcn ?? "2학년 2반 18번")
-                        .JOBISFont(.body(.body4), color: .Sub.gray70)
-                        .padding(.bottom, 15)
+                        Text((viewModel.studentInfo?.department ?? .none).localizedString())
+                            .JOBISFont(.body(.body2), color: .Sub.gray90)
+
+                        Text(viewModel.studentInfo?.studentGcn ?? "")
+                            .JOBISFont(.body(.body4), color: .Sub.gray70)
+                    }
+
+                    Spacer()
                 }
-                .redacted(reason: viewModel.isLoading ? .placeholder : [])
-
-//                Text("백엔드")
-//                    .JOBISFont(.body(.body4), color: .Sub.gray10)
-//                    .padding(.vertical, 5)
-//                    .padding(.horizontal, 15)
-//                    .background(Color.Main.lightBlue)
-//                    .cornerRadius(15)
-//                    .padding(.bottom, 35)
+                .padding(.vertical, 40)
 
                 VStack(alignment: .leading, spacing: 15) {
                     Divider().foregroundColor(.Sub.gray40)
@@ -64,12 +87,6 @@ struct MyPageView: View {
                     myPageNavigateCell(title: "버그 제보하기", color: .Main.lightBlue) {
                         viewModel.isNavigateReportView.toggle()
                     }
-
-//                    Divider().foregroundColor(.Sub.gray40)
-//
-//                    myPageNavigateCell(title: "관심분야 선택하기", color: .Main.lightBlue) {
-//                        viewModel.isShowFieldOfInterest.toggle()
-//                    }
 
                     Divider().foregroundColor(.Sub.gray40)
 
@@ -100,6 +117,7 @@ struct MyPageView: View {
                 .environment(\.rootPresentationMode, $viewModel.isNavigateChangePassword),
             when: $viewModel.isNavigateChangePassword
         )
+        .imagePicker(isShow: $viewModel.isShowImagePicker, uiImage: $viewModel.image)
         .onChange(of: viewModel.isTabbarHidden) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue
@@ -111,6 +129,9 @@ struct MyPageView: View {
                     appState.sceneFlow = .auth
                 }
             }
+        }
+        .onChange(of: viewModel.image) { _ in
+            viewModel.changeProfileImageDidSelected()
         }
         .onAppear {
             viewModel.onAppear()

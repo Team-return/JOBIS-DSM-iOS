@@ -31,7 +31,7 @@ struct HomeView: View {
                         ImploymentPersentView(totalPassStudent: viewModel.totalPassStudent)
                         .padding(.bottom, 40)
 
-                        StudentInfoView(isLoading: $viewModel.isLoading, studentInfo: viewModel.studentInfo)
+                        StudentInfoView(studentInfo: viewModel.studentInfo)
 
                         ApplicationStatusView(applicationList: viewModel.applicationList?.applications ?? [])
 
