@@ -435,6 +435,8 @@ extension AppComponent: Registration {
         localTable["remoteBugsDataSource-any RemoteBugsDataSource"] = { [unowned self] in self.remoteBugsDataSource as Any }
         localTable["bugsRepository-any BugsRepository"] = { [unowned self] in self.bugsRepository as Any }
         localTable["reportBugsUseCase-any ReportBugsUseCase"] = { [unowned self] in self.reportBugsUseCase as Any }
+        localTable["fetchBugListUseCase-any FetchBugListUseCase"] = { [unowned self] in self.fetchBugListUseCase as Any }
+        localTable["fetchBugDetailUseCase-any FetchBugDetailUseCase"] = { [unowned self] in self.fetchBugDetailUseCase as Any }
         localTable["signinFactory-any SigninFactory"] = { [unowned self] in self.signinFactory as Any }
         localTable["authenticationEmailFactory-any AuthenticationEmailFactory"] = { [unowned self] in self.authenticationEmailFactory as Any }
         localTable["renewalPasswordFactory-any RenewalPasswordFactory"] = { [unowned self] in self.renewalPasswordFactory as Any }

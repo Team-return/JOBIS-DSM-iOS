@@ -7,6 +7,7 @@ import FilesDomainInterface
 
 final class MyPageViewModel: BaseViewModel {
     @Published var isNavigateReportView = false
+    @Published var isNavigateReportListView = false
     @Published var isShowFieldOfInterest = false
     @Published var isNavigateChangePassword = false
     @Published var isPresentedLogoutAlert = false

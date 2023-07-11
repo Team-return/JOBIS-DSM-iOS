@@ -42,7 +42,8 @@ final class SigninViewModel: BaseViewModel {
                 )
             )
         ) { [weak self] authority in
-            if authority.authority == .student {
+            if authority.authority == .student ||
+                authority.authority == .developer {
                 self?.isSuccessSignin = true
             }
         } onReceiveError: { error in

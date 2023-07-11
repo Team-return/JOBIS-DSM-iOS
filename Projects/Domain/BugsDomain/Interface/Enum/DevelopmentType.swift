@@ -1,9 +1,10 @@
 import Foundation
 
-public enum DevelopmentType: String, Encodable {
+public enum DevelopmentType: String, Codable {
     case all = "ALL"
     case server = "SERVER"
     case web = "WEB"
+    case android = "ANDROID"
     case ios = "IOS"
 
     public func localizedString() -> String {
@@ -16,6 +17,9 @@ public enum DevelopmentType: String, Encodable {
 
         case .web:
             return "웹"
+
+        case .android:
+            return "안드로이드"
 
         case .ios:
             return "iOS"

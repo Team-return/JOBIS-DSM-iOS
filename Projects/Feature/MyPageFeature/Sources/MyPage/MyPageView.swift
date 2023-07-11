@@ -90,6 +90,14 @@ struct MyPageView: View {
 
                     Divider().foregroundColor(.Sub.gray40)
 
+                    if appState.authority == .developer {
+                        myPageNavigateCell(title: "버그함", color: .Main.lightBlue) {
+                            viewModel.isNavigateReportView.toggle()
+                        }
+
+                        Divider().foregroundColor(.Sub.gray40)
+                    }
+
                     myPageNavigateCell(title: "비밀번호 변경하기", color: .Main.lightBlue) {
                         viewModel.isNavigateChangePassword.toggle()
                     }
