@@ -1,4 +1,5 @@
 import DesignSystem
+import BugFeatureInterface
 import MyPageFeatureInterface
 import SwiftUI
 import UtilityModule
@@ -11,23 +12,24 @@ struct MyPageView: View {
     @StateObject var viewModel: MyPageViewModel
 
     private let reportFactory: any ReportFactory
+    private let bugListFactory: any BugListFactory
     private let checkPasswordFactory: any CheckPasswordFactory
 
     init(
         viewModel: MyPageViewModel,
         reportFactory: any ReportFactory,
+        bugListFactory: any BugListFactory,
         checkPasswordFactory: any CheckPasswordFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.reportFactory = reportFactory
+        self.bugListFactory = bugListFactory
         self.checkPasswordFactory = checkPasswordFactory
     }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                Divider().foregroundColor(.Sub.gray40)
-
                 HStack(spacing: 22) {
                     VStack {
                         ZStack(alignment: .bottomTrailing) {
@@ -38,14 +40,7 @@ struct MyPageView: View {
                                         .aspectRatio(contentMode: .fit)
                                 } else {
                                     KFImage(URL(string: viewModel.studentInfo?.profileImageUrl ?? ""))
-                                        .placeholder {
-                                            ProgressView()
-                                                .progressViewStyle(
-                                                    CircularProgressViewStyle(tint: .white)
-                                                )
-                                                .background(Color.Sub.gray40)
-                                                .clipShape(Circle())
-                                        }
+                                        .placeholder { Circle().fill(Color.Sub.gray50) }
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                 }
@@ -92,7 +87,7 @@ struct MyPageView: View {
 
                     if appState.authority == .developer {
                         myPageNavigateCell(title: "버그함", color: .Main.lightBlue) {
-                            viewModel.isNavigateReportView.toggle()
+                            viewModel.isNavigateBugListView.toggle()
                         }
 
                         Divider().foregroundColor(.Sub.gray40)
@@ -116,6 +111,10 @@ struct MyPageView: View {
         .navigate(
             to: reportFactory.makeView().eraseToAnyView(),
             when: $viewModel.isNavigateReportView
+        )
+        .navigate(
+            to: bugListFactory.makeView().eraseToAnyView(),
+            when: $viewModel.isNavigateBugListView
         )
         .sheet(isPresented: $viewModel.isShowFieldOfInterest) {
             Text("관심분야 선택하기")

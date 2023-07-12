@@ -7,7 +7,7 @@ import FilesDomainInterface
 
 final class MyPageViewModel: BaseViewModel {
     @Published var isNavigateReportView = false
-    @Published var isNavigateReportListView = false
+    @Published var isNavigateBugListView = false
     @Published var isShowFieldOfInterest = false
     @Published var isNavigateChangePassword = false
     @Published var isPresentedLogoutAlert = false
@@ -16,7 +16,7 @@ final class MyPageViewModel: BaseViewModel {
     @Published var image: UIImage?
     @Published var studentInfo: StudentInfoEntity?
     var isTabbarHidden: Bool {
-        isNavigateReportView || isNavigateChangePassword
+        isNavigateReportView || isNavigateChangePassword || isNavigateBugListView
     }
 
     private let fetchStudentInfoUseCase: any FetchStudentInfoUseCase

@@ -1,4 +1,5 @@
 import SwiftUI
+import BugFeatureInterface
 import FilesDomainInterface
 import NeedleFoundation
 import MyPageFeatureInterface
@@ -11,6 +12,7 @@ public protocol MyPageDependency: Dependency {
     var uploadFilesUseCase: any UploadFilesUseCase { get }
     var changeProfileImageUseCase: any ChangeProfileImageUseCase { get }
     var reportFactory: any ReportFactory { get }
+    var bugListFactory: any BugListFactory { get }
     var checkPasswordFactory: any CheckPasswordFactory { get }
 }
 
@@ -24,6 +26,7 @@ public final class MyPageComponent: Component<MyPageDependency>, MyPageFactory {
                 changeProfileImageUseCase: dependency.changeProfileImageUseCase
             ),
             reportFactory: dependency.reportFactory,
+            bugListFactory: dependency.bugListFactory,
             checkPasswordFactory: dependency.checkPasswordFactory
         )
     }
