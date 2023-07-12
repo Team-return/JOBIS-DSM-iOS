@@ -7,8 +7,10 @@ public final class RemoteAuthDataSourceImpl: BaseRemoteDataSource<AuthAPI>, Remo
         request(.sendAuthCode(req))
     }
 
-    public func reissueToken() -> AnyPublisher<Void, Error> {
-        request(.reissueToken)
+    public func reissueToken() -> AnyPublisher<Bool, Error> {
+        request(.reissueToken, dto: ReissueTokenResponseDTO.self)
+            .map { $0.toDomain() }
+            .eraseToAnyPublisher()
     }
 
     public func verifyAuthCode(email: String, authCode: String) -> AnyPublisher<Void, Error> {

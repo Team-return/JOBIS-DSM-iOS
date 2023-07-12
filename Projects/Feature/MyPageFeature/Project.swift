@@ -8,9 +8,9 @@ let project = Project.makeModule(
     targets: [.interface, .unitTest],
     internalDependencies: [
         .Feature.BaseFeature,
+        .Feature.BugFeatureInterface,
         .Domain.AuthDomainInterface,
         .Domain.StudentsDomainInterface,
-        .Domain.BugsDomainInterface,
         .Domain.FilesDomainInterface
     ]
 )

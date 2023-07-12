@@ -2,6 +2,7 @@ import DesignSystem
 import SwiftUI
 import Kingfisher
 import RecruitmentFeatureInterface
+import ReviewsDomainInterface
 import UtilityModule
 
 struct FindCompanyDetailView: View {
@@ -69,13 +70,7 @@ struct FindCompanyDetailView: View {
                         .JOBISFont(.body(.body2), color: .Sub.gray70)
 
                         ForEach(reviewList.reviews, id: \.self) { review in
-                            NavigationLink {
-                                ReviewDetailView(reviewDetail: viewModel.reviewDetail)
-                                    .onAppear { viewModel.fetchReviewDetail(id: review.reviewID) }
-                                    .onDisappear { viewModel.reviewDetail = nil}
-                            } label: {
-                                reviewCell(title: review.writer)
-                            }
+                            reviewCell(review: review)
                         }
                     }
                 }
@@ -101,23 +96,29 @@ struct FindCompanyDetailView: View {
     }
 
     @ViewBuilder
-    func reviewCell(title: String) -> some View {
-        HStack {
-            Text(title + "의 후기")
-                .JOBISFont(.etc(.caption), color: .Sub.gray90)
+    func reviewCell(review: ReviewEntity) -> some View {
+        NavigationLink {
+            ReviewDetailView(reviewDetail: viewModel.reviewDetail)
+                .onAppear { viewModel.fetchReviewDetail(id: review.reviewID) }
+                .onDisappear { viewModel.reviewDetail = nil}
+        } label: {
+            HStack {
+                Text(review.writer + "의 후기")
+                    .JOBISFont(.etc(.caption), color: .Sub.gray90)
 
-            Spacer()
+                Spacer()
 
-            JOBISIcon(.chevronRight)
-                .frame(width: 16, height: 16)
+                JOBISIcon(.chevronRight)
+                    .frame(width: 16, height: 16)
+            }
+            .padding(.vertical, 16)
+            .padding(.horizontal, 20)
+            .background(Color.Sub.gray10)
+            .overlay(
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.Sub.gray40)
+            )
         }
-        .padding(.vertical, 16)
-        .padding(.horizontal, 20)
-        .background(Color.Sub.gray10)
-        .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(Color.Sub.gray40)
-        )
     }
 
     @ViewBuilder

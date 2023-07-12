@@ -19,7 +19,8 @@ struct SplashView: View {
                 .frame(width: 200, height: 200)
         }
         .onAppear {
-            viewModel.onAppear {
+            viewModel.onAppear { authority in
+                appState.authority = authority
                 appState.sceneFlow = .main
             } onError: { _ in
                 appState.sceneFlow = .auth

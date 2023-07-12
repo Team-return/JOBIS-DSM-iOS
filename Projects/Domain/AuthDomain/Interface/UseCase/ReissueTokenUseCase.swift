@@ -1,5 +1,6 @@
 import Combine
+import UsersDomainInterface
 
 public protocol ReissueTokenUseCase {
-    func execute() -> AnyPublisher<Void, Error>
+    func execute() -> AnyPublisher<Bool, Error>
 }

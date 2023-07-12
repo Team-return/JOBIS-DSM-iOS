@@ -11,7 +11,7 @@ public extension ApplicationResponseDTO {
         ApplicationEntity(
             applicationID: applicationID,
             company: company,
-            attachmentURLList: attachmentURLList,
+            attachments: attachments,
             applicationStatus: applicationStatus
         )
     }

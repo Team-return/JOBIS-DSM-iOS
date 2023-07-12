@@ -7,6 +7,7 @@ final class SigninViewModel: BaseViewModel {
     @Published var isNavigateSignup = false
     @Published var isNavigateRenewalPassword = false
     @Published var isOnAppear = false
+    @Published var authority: AuthorityType?
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var isSuccessSignin = false
@@ -42,7 +43,9 @@ final class SigninViewModel: BaseViewModel {
                 )
             )
         ) { [weak self] authority in
-            if authority.authority == .student {
+            self?.authority = authority.authority
+            if authority.authority == .student ||
+                authority.authority == .developer {
                 self?.isSuccessSignin = true
             }
         } onReceiveError: { error in

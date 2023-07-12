@@ -32,13 +32,10 @@ struct ReportView: View {
                 screenShotImages()
                     .padding(.bottom, 25)
 
-                HStack(alignment: .bottom) {
-                    SolidBtn(text: "제보하기", size: .large) {
-                        viewModel.reportBugsButtonDidTap()
-                    }
-                    .disabled(viewModel.isReportButtonDisable)
+                SolidBtn(text: "제보하기", size: .large) {
+                    viewModel.reportBugsButtonDidTap()
                 }
-                .frame(maxHeight: .infinity)
+                .disabled(viewModel.isReportButtonDisable)
             }
             .padding(.horizontal, 20)
         }

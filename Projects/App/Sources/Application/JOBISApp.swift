@@ -9,7 +9,7 @@ import Inject
 struct JOBISApp: App {
     @ObservedObject private var iOput = Inject.observer
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @StateObject var appState = AppState(sceneFlow: .splash)
+    @StateObject var appState = AppState(sceneFlow: .splash, authority: .student)
 
     private let keychain: any Keychain
 

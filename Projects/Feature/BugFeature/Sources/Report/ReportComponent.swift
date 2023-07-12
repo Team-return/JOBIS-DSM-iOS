@@ -1,6 +1,6 @@
 import SwiftUI
+import BugFeatureInterface
 import NeedleFoundation
-import MyPageFeatureInterface
 import BugsDomainInterface
 import FilesDomainInterface
 

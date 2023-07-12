@@ -11,12 +11,12 @@ struct StudentInfoView: View {
             KFImage(URL(string: studentInfo?.profileImageUrl ?? ""))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 40, height: 40)
+                .frame(width: 45, height: 45)
                 .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 0) {
                 Text("\(studentInfo?.studentGcn ?? "") \(studentInfo?.studentName ?? "Loading")")
-                    .JOBISFont(.body(.body2), color: .Sub.gray70)
+                    .JOBISFont(.body(.body1), color: .Sub.gray70)
 
                 Text((studentInfo?.department ?? .none).localizedString())
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
