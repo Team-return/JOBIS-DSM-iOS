@@ -4,13 +4,13 @@ public struct BugReportEntity: Equatable, Hashable {
     public let id: Int
     public let title: String
     public let developmentArea: DevelopmentType
-    public let createdAt: Data
+    public let createdAt: String
 
     public init(
         id: Int,
         title: String,
         developmentArea: DevelopmentType,
-        createdAt: Data
+        createdAt: String
     ) {
         self.id = id
         self.title = title

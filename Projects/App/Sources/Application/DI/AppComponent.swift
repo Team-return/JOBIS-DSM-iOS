@@ -21,6 +21,8 @@ import BookmarkListFeature
 import BookmarkListFeatureInterface
 import MyPageFeature
 import MyPageFeatureInterface
+import BugFeature
+import BugFeatureInterface
 import MenuFeature
 import MenuFeatureInterface
 import SplashFeature
@@ -90,6 +92,9 @@ public extension AppComponent {
     }
     var reportFactory: any ReportFactory {
         ReportComponent(parent: self)
+    }
+    var bugListFactory: any BugListFactory {
+        BugListComponent(parent: self)
     }
     var checkPasswordFactory: any CheckPasswordFactory {
         CheckPasswordComponent(parent: self)

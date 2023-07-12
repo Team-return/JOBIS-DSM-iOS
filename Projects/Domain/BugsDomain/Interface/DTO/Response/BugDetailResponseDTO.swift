@@ -5,14 +5,14 @@ public struct BugDetailResponseDTO: Decodable {
     public let content: String
     public let developmentArea: DevelopmentType
     public let attachments: [String]
-    public let createdAt: Data
+    public let createdAt: String
 
     public init(
         title: String,
         content: String,
         developmentArea: DevelopmentType,
         attachments: [String],
-        createdAt: Data
+        createdAt: String
     ) {
         self.title = title
         self.content = content

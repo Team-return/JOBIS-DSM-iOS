@@ -18,10 +18,10 @@ extension BugsAPI: JobisAPI {
     public var urlPath: String {
         switch self {
         case .reportBugs, .fetchBugList:
-            return ""
+            return "/"
 
         case let .fetchBugDetail(id):
-            return "/\(id)"
+            return "/\(id)/"
         }
     }
 
@@ -43,7 +43,7 @@ extension BugsAPI: JobisAPI {
         case let .fetchBugList(developmentType):
             return .requestParameters(
                 parameters: [
-                    "development_area": developmentType
+                    "development_area": developmentType.rawValue
                 ],
                 encoding: URLEncoding.queryString)
 
