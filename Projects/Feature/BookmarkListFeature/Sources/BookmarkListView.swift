@@ -69,7 +69,6 @@ struct BookmarkListView: View {
                 tabbarHidden.wrappedValue = newValue
             }
         }
-        
         .sheet(isPresented: $viewModel.isSheetRecruitmentDetail) {
             recruitmentDetailFactory.makeView(
                 id: String(viewModel.recruitmentID), isDetail: false

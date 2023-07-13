@@ -21,23 +21,31 @@ struct ReportView: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                titleTextView()
-                    .padding(.bottom, 25)
+        ZStack {
+            ScrollView {
+                VStack(spacing: 0) {
+                    titleTextView()
+                        .padding(.bottom, 25)
 
-                contentTextView()
-                    .padding(.bottom, 25)
+                    contentTextView()
+                        .padding(.bottom, 25)
 
-                screenShotImages()
-                    .padding(.bottom, 25)
+                    screenShotImages()
+                        .padding(.bottom, 25)
 
-                SolidBtn(text: "제보하기", size: .large) {
-                    viewModel.reportBugsButtonDidTap()
+                    SolidBtn(text: "제보하기", size: .large) {
+                        viewModel.reportBugsButtonDidTap()
+                    }
+                    .disabled(viewModel.isReportButtonDisable)
                 }
-                .disabled(viewModel.isReportButtonDisable)
+                .padding(.horizontal, 20)
             }
-            .padding(.horizontal, 20)
+
+            if viewModel.isLoading {
+                Color.black.opacity(0.3).ignoresSafeArea()
+
+                ProgressView().progressViewStyle(.circular)
+            }
         }
         .background(Color.Sub.gray10)
         .onAppear {

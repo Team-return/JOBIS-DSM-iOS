@@ -16,7 +16,7 @@ struct BugListView: View {
         VStack {
             if let bugList = viewModel.bugList?.bugReports {
                 ScrollView {
-                    VStack(spacing: 0) {
+                    VStack(spacing: 10) {
                         ForEach(bugList, id: \.self) { bug in
                             bugLiseCell(bug: bug)
                         }
