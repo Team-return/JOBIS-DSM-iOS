@@ -38,17 +38,37 @@ final class ReportViewModel: BaseViewModel {
     }
 
     func reportBugsButtonDidTap() {
-        let data = images.map { $0.pngData() ?? Data() }
-
-        guard !data.isEmpty else {
-            reportBugs(urls: [])
+        guard !images.isEmpty else {
+            self.reportBugs(urls: [])
             return
         }
 
-        addCancellable(
-            uploadFilesUseCase.execute(data: data, fileName: "bugsImage.png")
-        ) { [weak self] urls in
-            self?.reportBugs(urls: urls)
+        DispatchQueue.global().async {
+            let group = DispatchGroup()
+            let dispatchQueue = DispatchQueue(label: "imageProcessingQueue", attributes: .concurrent)
+            var imageDataArray = [Data?](repeating: nil, count: self.images.count)
+
+            for (index, image) in self.images.enumerated() {
+                group.enter()
+                dispatchQueue.async {
+                    if let imageData = image.pngData() {
+                        imageDataArray[index] = imageData
+                    }
+                    group.leave()
+                }
+            }
+
+            group.wait()
+
+            DispatchQueue.main.async {
+                let data = imageDataArray.compactMap { $0 }
+
+                self.addCancellable(
+                    self.uploadFilesUseCase.execute(data: data, fileName: "bugsImage.png")
+                ) { [weak self] urls in
+                    self?.reportBugs(urls: urls)
+                }
+            }
         }
     }
 
