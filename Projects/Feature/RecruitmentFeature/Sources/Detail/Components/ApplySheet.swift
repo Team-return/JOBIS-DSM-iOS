@@ -37,43 +37,50 @@ struct ApplySheet: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("메뉴")
-                .JOBISFont(.body(.body2), color: .Sub.gray60)
-                .padding([.bottom, .leading], 5)
+        ZStack {
+            Color.black
+                .opacity(0.2)
+                .ignoresSafeArea()
 
-            Divider().foregroundColor(.Sub.gray40)
-                .padding(.bottom, 25)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("메뉴")
+                    .JOBISFont(.body(.body2), color: .Sub.gray60)
+                    .padding([.bottom, .leading], 5)
 
-            Text("제출 서류 : \(submitDoc)")
-                .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                .padding(.bottom, 15)
+                Divider().foregroundColor(.Sub.gray40)
+                    .padding(.bottom, 25)
 
-            fetchFiles()
-                .padding(.horizontal, 2)
-                .padding(.bottom, 18)
+                Text("제출 서류 : \(submitDoc)")
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                    .padding(.bottom, 15)
 
-            inputURLs()
-                .padding(.horizontal, 2)
-                .padding(.bottom, 30)
+                fetchFiles()
+                    .padding(.horizontal, 2)
+                    .padding(.bottom, 18)
 
-            Spacer()
-
-            HStack {
-                Spacer()
-
-                SolidBtn(text: "지원하기") { applyAction() }
+                inputURLs()
+                    .padding(.horizontal, 2)
+                    .padding(.bottom, 30)
 
                 Spacer()
+
+                HStack {
+                    Spacer()
+
+                    SolidBtn(text: "지원하기") { applyAction() }
+
+                    Spacer()
+                }
             }
+            .padding(15)
+            .background(Color.Sub.gray10)
+            .frame(maxHeight: UIScreen.main.bounds.height * 2 / 3)
+            .padding(10)
+            .padding(.horizontal, 18)
+            .background(Background())
+            .animation(.spring(response: 0.1), value: urls)
+            .animation(.spring(response: 0.1), value: documents)
         }
-        .padding(15)
-        .background(Color.Sub.gray10)
-        .frame(maxHeight: UIScreen.main.bounds.height * 2 / 3)
-        .padding(10)
-        .padding(.horizontal, 18)
-        .animation(.spring(response: 0.1), value: urls)
-        .animation(.spring(response: 0.1), value: documents)
     }
 
     @ViewBuilder

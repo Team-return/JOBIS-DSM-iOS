@@ -69,14 +69,11 @@ struct RecruitmentDetailView: View {
                 }
                 .padding(.bottom, 10)
                 .padding(.horizontal, 20)
-
-                Color.black
-                    .opacity(viewModel.isTappedApplyButton ? 0.2 : 0)
-                    .ignoresSafeArea()
-                    .onTapGesture {
-                        viewModel.isTappedApplyButton.toggle()
-                    }
-
+            }
+            .onAppear {
+                viewModel.onAppear()
+            }
+            .fullScreenCover(isPresented: $viewModel.isTappedApplyButton) {
                 ApplySheet(
                     urls: $viewModel.urls,
                     documents: $viewModel.documents,
@@ -86,10 +83,6 @@ struct RecruitmentDetailView: View {
                         viewModel.isTappedApplyButton.toggle()
                     }
                 }
-                .opacity(viewModel.isTappedApplyButton ? 1 : 0)
-            }
-            .onAppear {
-                viewModel.onAppear()
             }
             .jobisToast(
                 isShowing: $viewModel.isErrorOcuured,
