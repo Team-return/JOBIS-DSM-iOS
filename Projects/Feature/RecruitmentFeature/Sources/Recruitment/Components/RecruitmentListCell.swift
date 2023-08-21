@@ -76,11 +76,12 @@ struct RecruitmentListCell: View {
                 self.isBookmarked = self.recruitmentEntity.bookmarked
             }
         }
-        .sheet(isPresented: $isNaviagteDetail) {
-            recruitmentDetailFactory.makeView(
+        .navigate(
+            to: recruitmentDetailFactory.makeView(
                 id: "\(recruitmentEntity.recruitID)", isDetail: false
             )
-            .eraseToAnyView()
-        }
+            .eraseToAnyView(),
+            when: $isNaviagteDetail
+        )
     }
 }

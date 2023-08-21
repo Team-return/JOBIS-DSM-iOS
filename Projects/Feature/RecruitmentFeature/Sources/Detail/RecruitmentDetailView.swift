@@ -40,14 +40,15 @@ struct RecruitmentDetailView: View {
 
                         if !isDetail {
                             GrayBtn(text: "기업 보기", size: .large) {
-                                viewModel.isSheetCompanyDetail.toggle()
+                                viewModel.isNavigateCompanyDetail.toggle()
                             }
-                            .sheet(isPresented: $viewModel.isSheetCompanyDetail) {
-                                findCompanyDetailFactory.makeView(
+                            .navigate(
+                                to: findCompanyDetailFactory.makeView(
                                     id: String(detailInfo.companyID),
                                     isDetail: true
-                                ).eraseToAnyView()
-                            }
+                                ).eraseToAnyView(),
+                                when: $viewModel.isNavigateCompanyDetail
+                            )
                         }
 
                         Divider()

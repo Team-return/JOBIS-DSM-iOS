@@ -51,10 +51,10 @@ struct FindCompanyListCell: View {
             .shadow(color: .black, opacity: 0.1, blur: 4)
             .padding(.horizontal, 24)
         }
-        .sheet(isPresented: $isNaviagteDetail) {
-            findCompanyDetailFactory.makeView(id: String(companyEntity.id), isDetail: false)
-                .eraseToAnyView()
-//                .presentationDragIndicator(.visible)
-        }
+        .navigate(
+            to: findCompanyDetailFactory.makeView(id: String(companyEntity.id), isDetail: false)
+                .eraseToAnyView(),
+            when: $isNaviagteDetail
+        )
     }
 }

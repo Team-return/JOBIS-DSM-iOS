@@ -116,9 +116,6 @@ struct MyPageView: View {
             to: bugListFactory.makeView().eraseToAnyView(),
             when: $viewModel.isNavigateBugListView
         )
-        .sheet(isPresented: $viewModel.isShowFieldOfInterest) {
-            Text("관심분야 선택하기")
-        }
         .navigate(
             to: checkPasswordFactory.makeView().eraseToAnyView()
                 .environment(\.rootPresentationMode, $viewModel.isNavigateChangePassword),

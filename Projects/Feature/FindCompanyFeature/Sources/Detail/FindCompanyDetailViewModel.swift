@@ -5,7 +5,7 @@ import Combine
 
 final class FindCompanyDetailViewModel: BaseViewModel {
     @Published var companyInfoDetail: CompanyInfoDetailEntity?
-    @Published var isSheetRecruitmentDetail = false
+    @Published var isNavigateRecruitmentDetail = false
     @Published var reviewList: ReviewListEntity?
     @Published var reviewDetail: ReviewDetailEntity?
     @Published var titles: [String] = []
