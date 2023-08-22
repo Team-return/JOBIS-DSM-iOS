@@ -27,6 +27,8 @@ import MenuFeature
 import MenuFeatureInterface
 import SplashFeature
 import SplashFeatureInterface
+import PostReviewFeature
+import PostReviewFeatureInterface
 
 public final class AppComponent: BootstrapComponent {
     private let _keychain: any Keychain
@@ -101,6 +103,9 @@ public extension AppComponent {
     }
     var modifyPasswordFactory: any ModifyPasswordFactory {
         ModifyPasswordComponent(parent: self)
+    }
+    var postReviewFactory: any PostReviewFactory {
+        PostReviewComponent(parent: self)
     }
     var menuFactory: any MenuFactory {
         MenuComponent(parent: self)
