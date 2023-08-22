@@ -64,6 +64,11 @@ struct BookmarkListView: View {
         .onAppear {
             viewModel.onAppear()
         }
+        .onChange(of: viewModel.isNavigateRecruitmentDetail) { newValue in
+            withAnimation {
+                tabbarHidden.wrappedValue = newValue
+            }
+        }
         .onChange(of: viewModel.isNavigateRecruitmentView) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue

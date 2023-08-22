@@ -6,7 +6,6 @@ import Kingfisher
 import UtilityModule
 
 struct FindCompanyListCell: View {
-    @State var isNaviagteDetail = false
     let companyEntity: CompanyEntity
 
     private let findCompanyDetailFactory: any FindCompanyDetailFactory
@@ -20,8 +19,9 @@ struct FindCompanyListCell: View {
     }
 
     var body: some View {
-        Button {
-            self.isNaviagteDetail.toggle()
+        NavigationLink {
+            findCompanyDetailFactory.makeView(id: String(companyEntity.id), isDetail: false)
+                .eraseToAnyView()
         } label: {
             HStack(spacing: 12) {
                 KFImage(URL(string: companyEntity.logoURL))
@@ -51,10 +51,5 @@ struct FindCompanyListCell: View {
             .shadow(color: .black, opacity: 0.1, blur: 4)
             .padding(.horizontal, 24)
         }
-        .navigate(
-            to: findCompanyDetailFactory.makeView(id: String(companyEntity.id), isDetail: false)
-                .eraseToAnyView(),
-            when: $isNaviagteDetail
-        )
     }
 }

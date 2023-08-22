@@ -6,6 +6,7 @@ import UtilityModule
 import Kingfisher
 
 struct RecruitmentDetailView: View {
+    @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: RecruitmentDetailViewModel
     private let isDetail: Bool
 
@@ -22,8 +23,8 @@ struct RecruitmentDetailView: View {
     }
 
     var body: some View {
-        if let detailInfo = viewModel.recruitmentDetail {
-            ZStack {
+        ZStack {
+            if let detailInfo = viewModel.recruitmentDetail {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 10) {
                         HStack(spacing: 12) {
@@ -56,8 +57,7 @@ struct RecruitmentDetailView: View {
 
                         recruitmentInfo(detailInfo: detailInfo)
                     }
-                    .padding(.vertical, 24)
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 100)
                     .padding(.horizontal, 20)
                 }
 
@@ -68,7 +68,6 @@ struct RecruitmentDetailView: View {
                         viewModel.isTappedApplyButton.toggle()
                     }
                 }
-                .padding(.bottom, 10)
                 .padding(.horizontal, 20)
 
                 Color.black
@@ -88,30 +87,31 @@ struct RecruitmentDetailView: View {
                     }
                 }
                 .opacity(viewModel.isTappedApplyButton ? 1 : 0)
+            } else {
+                ProgressView().progressViewStyle(.circular)
+                    .frame(maxHeight: .infinity)
+                    .onAppear {
+                        viewModel.onAppear()
+                    }
             }
-            .onAppear {
-                viewModel.onAppear()
-            }
-            .jobisToast(
-                isShowing: $viewModel.isErrorOcuured,
-                message: viewModel.errorMessage,
-                style: .error,
-                title: "지원 불가"
-            )
-            .jobisToast(
-                isShowing: $viewModel.isSuccessApply,
-                message: "성공적으로 지원되셨습니다.",
-                style: .success,
-                title: "지원 성공"
-            )
-            .animation(.easeIn(duration: 0.1), value: viewModel.isTappedApplyButton)
-        } else {
-            ProgressView().progressViewStyle(.circular)
-                .frame(maxHeight: .infinity)
-                .onAppear {
-                    viewModel.onAppear()
-                }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            viewModel.onAppear()
+        }
+        .jobisToast(
+            isShowing: $viewModel.isErrorOcuured,
+            message: viewModel.errorMessage,
+            style: .error,
+            title: "지원 불가"
+        )
+        .jobisToast(
+            isShowing: $viewModel.isSuccessApply,
+            message: "성공적으로 지원되셨습니다.",
+            style: .success,
+            title: "지원 성공"
+        )
+        .animation(.easeIn(duration: 0.1), value: viewModel.isTappedApplyButton)
     }
 
     @ViewBuilder
