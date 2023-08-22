@@ -1,12 +1,12 @@
 import Foundation
 
 public struct ReviewResponseDTO: Codable {
-    public let reviewID: String
+    public let reviewID: Int
     public let year: Int
     public let writer: String
 
     public init(
-        reviewID: String,
+        reviewID: Int,
         year: Int,
         writer: String
     ) {

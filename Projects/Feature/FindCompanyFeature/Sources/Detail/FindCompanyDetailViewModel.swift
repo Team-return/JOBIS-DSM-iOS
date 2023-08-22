@@ -92,9 +92,9 @@ final class FindCompanyDetailViewModel: BaseViewModel {
         }
     }
 
-    func fetchReviewDetail(id: String) {
+    func fetchReviewDetail(id: Int) {
         addCancellable(
-            fetchReviewDetailUseCase.execute(id: id)
+            fetchReviewDetailUseCase.execute(id: String(id))
         ) { [weak self] reviewDetail in
             self?.reviewDetail = reviewDetail
         }
