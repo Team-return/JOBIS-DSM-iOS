@@ -14,18 +14,15 @@ public protocol FindCompanyDetailDependency: Dependency {
 
 public final class FindCompanyDetailComponent: Component<FindCompanyDetailDependency>, FindCompanyDetailFactory {
     public func makeView(id: String, isDetail: Bool) -> some View {
-        NavigationView {
-            FindCompanyDetailView(
-                viewModel: .init(
-                    fetchCompanyInfoDetailUseCase: dependency.fetchCompanyInfoDetailUseCase,
-                    fetchReviewListUseCase: dependency.fetchReviewListUseCase,
-                    fetchReviewDetailUseCase: dependency.fetchReviewDetailUseCase,
-                    id: id
-                ),
-                recruitmentDetailFactory: dependency.recruitmentDetailFactory,
-                isDetail: isDetail
-            )
-            .navigationBarHidden(true)
-        }
+        FindCompanyDetailView(
+            viewModel: .init(
+                fetchCompanyInfoDetailUseCase: dependency.fetchCompanyInfoDetailUseCase,
+                fetchReviewListUseCase: dependency.fetchReviewListUseCase,
+                fetchReviewDetailUseCase: dependency.fetchReviewDetailUseCase,
+                id: id
+            ),
+            recruitmentDetailFactory: dependency.recruitmentDetailFactory,
+            isDetail: isDetail
+        )
     }
 }

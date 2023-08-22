@@ -8,7 +8,7 @@ import Combine
 final class RecruitmentDetailViewModel: BaseViewModel {
     @Published var recruitmentDetail: RecruitmentDetailEntity?
     @Published var isTappedApplyButton = false
-    @Published var isSheetCompanyDetail = false
+    @Published var isNavigateCompanyDetail = false
     @Published var isSuccessApply = false
     @Published var titles: [String] = []
     @Published var contents: [String] = []

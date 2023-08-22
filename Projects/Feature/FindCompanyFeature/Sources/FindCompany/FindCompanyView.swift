@@ -21,24 +21,20 @@ struct FindCompanyView: View {
 
     var body: some View {
         ZStack {
-            VStack(alignment: .leading) {
-                List {
+            ScrollView {
+                Group {
                     searchBar()
 
                     if let list = viewModel.studentCompanyList {
                         ForEach(list.companies, id: \.self) { companyEntity in
                             navigateToFindCompanyDetail(companyEntity: companyEntity)
                         }
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
-                        .listRowInsets(listCellEdgeInset)
                     }
                 }
-                .listStyle(.plain)
-                .listSectionSeparator(.hidden)
-                .refreshable {
-                    viewModel.onAppear()
-                }
+                .padding(.horizontal, 24)
+            }
+            .refreshable {
+                viewModel.onAppear()
             }
 
             if viewModel.isLoading {

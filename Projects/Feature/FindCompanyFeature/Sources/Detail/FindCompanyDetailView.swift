@@ -42,14 +42,15 @@ struct FindCompanyDetailView: View {
 
                     if let recruitmentID = infoDetail.recruitmentID, !isDetail {
                         GrayBtn(text: "모집의뢰서 보기", size: .large) {
-                            viewModel.isSheetRecruitmentDetail.toggle()
+                            viewModel.isNavigateRecruitmentDetail.toggle()
                         }
-                        .sheet(isPresented: $viewModel.isSheetRecruitmentDetail) {
-                            recruitmentDetailFactory.makeView(
+                        .navigate(
+                            to: recruitmentDetailFactory.makeView(
                                 id: String(recruitmentID),
                                 isDetail: true
-                            ).eraseToAnyView()
-                        }
+                            ).eraseToAnyView(),
+                            when: $viewModel.isNavigateRecruitmentDetail
+                        )
                     }
 
                     Divider()
@@ -74,9 +75,10 @@ struct FindCompanyDetailView: View {
                         }
                     }
                 }
-                .padding([.horizontal, .top], 24)
+                .padding(.horizontal, 20)
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
         .onLoad {
             viewModel.onAppear()
         }

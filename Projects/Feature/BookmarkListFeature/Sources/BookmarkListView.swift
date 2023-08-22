@@ -64,17 +64,22 @@ struct BookmarkListView: View {
         .onAppear {
             viewModel.onAppear()
         }
+        .onChange(of: viewModel.isNavigateRecruitmentDetail) { newValue in
+            withAnimation {
+                tabbarHidden.wrappedValue = newValue
+            }
+        }
         .onChange(of: viewModel.isNavigateRecruitmentView) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue
             }
         }
-        .sheet(isPresented: $viewModel.isSheetRecruitmentDetail) {
-            recruitmentDetailFactory.makeView(
+        .navigate(
+            to: recruitmentDetailFactory.makeView(
                 id: String(viewModel.recruitmentID), isDetail: false
-            )
-            .eraseToAnyView()
-        }
+            ).eraseToAnyView(),
+            when: $viewModel.isNavigateRecruitmentDetail
+        )
         .navigate(
             to: recruitmentFactory.makeView().eraseToAnyView(),
             when: $viewModel.isNavigateRecruitmentView
@@ -85,7 +90,7 @@ struct BookmarkListView: View {
     @ViewBuilder
     func bookmarkCell(bookmark: BookmarkEntity) -> some View {
         Button {
-            viewModel.isSheetRecruitmentDetail.toggle()
+            viewModel.isNavigateRecruitmentDetail.toggle()
             viewModel.recruitmentID = bookmark.recruitmentID
         } label: {
             HStack {

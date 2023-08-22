@@ -4,29 +4,30 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
     public let businessNumber: String
     public let companyName: String
     public let companyProfileURL: String
-    public let companyIntroduce, zipCode1, address1: String
-    public let zipCode2, address2: String?
-    public let manager1, phoneNumber1: String
-    public let manager2, phoneNumber2, fax: String?
+    public let companyIntroduce, mainZipCode, mainAddress: String
+    public let subZipCode, subAddress: String?
+    public let managerName, managerPhoneNo: String
+    public let subManagerName, subManagerPhoneNo, fax: String?
     public let email, representativeName, foundedAt: String
     public let workerNumber: Int
     public let take: Double
     public let recruitmentID: Int?
-    public let serviceName, businessArea: String
+    public let serviceName: String
+    public let businessArea: String
 
     public init(
         businessNumber: String,
         companyName: String,
         companyProfileURL: String,
         companyIntroduce: String,
-        zipCode1: String,
-        address1: String,
-        zipCode2: String?,
-        address2: String?,
-        manager1: String,
-        phoneNumber1: String,
-        manager2: String?,
-        phoneNumber2: String?,
+        mainZipCode: String,
+        mainAddress: String,
+        subZipCode: String?,
+        subAddress: String?,
+        managerName: String,
+        managerPhoneNo: String,
+        subManagerName: String?,
+        subManagerPhoneNo: String?,
         fax: String?,
         email: String,
         representativeName: String,
@@ -41,14 +42,14 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         self.companyName = companyName
         self.companyProfileURL = companyProfileURL
         self.companyIntroduce = companyIntroduce
-        self.zipCode1 = zipCode1
-        self.address1 = address1
-        self.zipCode2 = zipCode2
-        self.address2 = address2
-        self.manager1 = manager1
-        self.phoneNumber1 = phoneNumber1
-        self.manager2 = manager2
-        self.phoneNumber2 = phoneNumber2
+        self.mainZipCode = mainZipCode
+        self.mainAddress = mainAddress
+        self.subZipCode = subZipCode
+        self.subAddress = subAddress
+        self.managerName = managerName
+        self.managerPhoneNo = managerPhoneNo
+        self.subManagerName = subManagerName
+        self.subManagerPhoneNo = subManagerPhoneNo
         self.fax = fax
         self.email = email
         self.representativeName = representativeName
@@ -65,13 +66,14 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         case companyName = "company_name"
         case companyProfileURL = "company_profile_url"
         case companyIntroduce = "company_introduce"
-        case zipCode1 = "zip_code1"
-        case address1
-        case zipCode2 = "zip_code2"
-        case address2, manager1
-        case phoneNumber1 = "phone_number1"
-        case manager2
-        case phoneNumber2 = "phone_number2"
+        case mainZipCode = "main_zip_code"
+        case mainAddress = "main_address"
+        case subZipCode = "sub_zip_code"
+        case subAddress = "sub_address"
+        case managerName = "manager_name"
+        case managerPhoneNo = "manager_phone_no"
+        case subManagerName = "sub_manager_name"
+        case subManagerPhoneNo = "sub_manager_phone_no"
         case fax, email
         case representativeName = "representative_name"
         case foundedAt = "founded_at"

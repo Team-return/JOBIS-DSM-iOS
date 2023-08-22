@@ -21,24 +21,20 @@ struct RecruitmentView: View {
 
     var body: some View {
         ZStack {
-            VStack(alignment: .leading) {
-                List {
+            ScrollView {
+                Group {
                     searchBar()
 
                     if let list = viewModel.recruitmentList {
                         ForEach(list.recruitments, id: \.self) { recruitmentEntity in
                             navigateToRecruitmentDetail(recruitmentEntity: recruitmentEntity)
                         }
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
-                        .listRowInsets(listCellEdgeInset)
                     }
                 }
-                .listStyle(.plain)
-                .listSectionSeparator(.hidden)
-                .refreshable {
-                    viewModel.onAppear()
-                }
+                .padding(.horizontal, 24)
+            }
+            .refreshable {
+                viewModel.onAppear()
             }
 
             if viewModel.isLoading {
@@ -54,7 +50,6 @@ struct RecruitmentView: View {
             viewModel.fetchRecruitment()
         } content: {
             RecruitmentFilterSheet(viewModel: viewModel)
-//                .presentationDragIndicator(.visible)
         }
     }
 
