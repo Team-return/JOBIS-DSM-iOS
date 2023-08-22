@@ -14,4 +14,10 @@ public final class RemoteCompaniesDataSourceImpl: BaseRemoteDataSource<Companies
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }
+
+    public func fetchWritableReviewList() -> AnyPublisher<WritableReviewListEntity, Error> {
+        request(.fetchWritableReviewList, dto: WritableReviewListResponseDTO.self)
+            .map { $0.toDomain() }
+            .eraseToAnyPublisher()
+    }
 }

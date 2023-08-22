@@ -5,6 +5,7 @@ import BaseDomain
 public enum CompaniesAPI {
     case fetchStudentCompanyList(page: Int, name: String?)
     case fetchCompanyInfoDetail(id: String)
+    case fetchWritableReviewList
 }
 
 extension CompaniesAPI: JobisAPI {
@@ -18,14 +19,18 @@ extension CompaniesAPI: JobisAPI {
         switch self {
         case .fetchStudentCompanyList:
             return "/student"
+
         case let .fetchCompanyInfoDetail(id):
             return "/\(id)"
+
+        case .fetchWritableReviewList:
+            return "/review"
         }
     }
 
     public var method: Method {
         switch self {
-        case .fetchStudentCompanyList, .fetchCompanyInfoDetail:
+        case .fetchStudentCompanyList, .fetchCompanyInfoDetail, .fetchWritableReviewList:
             return .get
         }
     }
@@ -38,6 +43,7 @@ extension CompaniesAPI: JobisAPI {
                     "page": page,
                     "name": name ?? ""
                 ], encoding: URLEncoding.queryString)
+
         default:
             return .requestPlain
         }
@@ -64,6 +70,12 @@ extension CompaniesAPI: JobisAPI {
                 401: .unauthorized,
                 403: .forbidden,
                 404: .notFound
+            ]
+
+        case .fetchWritableReviewList:
+            return [
+                400: .badRequest,
+                403: .forbidden
             ]
         }
     }

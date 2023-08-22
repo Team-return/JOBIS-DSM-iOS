@@ -17,4 +17,8 @@ public struct CompaniesRepositoryImpl: CompaniesRepository {
     public func fetchCompanyInfoDetail(id: String) -> AnyPublisher<CompanyInfoDetailEntity, Error> {
         remoteCompaniesDataSource.fetchCompanyInfoDetail(id: id)
     }
+
+    public func fetchWritableReviewList() -> AnyPublisher<WritableReviewListEntity, Error> {
+        remoteCompaniesDataSource.fetchWritableReviewList()
+    }
 }
