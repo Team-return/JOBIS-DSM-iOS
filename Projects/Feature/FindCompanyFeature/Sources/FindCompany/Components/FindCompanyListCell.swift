@@ -49,7 +49,6 @@ struct FindCompanyListCell: View {
             .background(Color.Sub.gray10)
             .cornerRadius(15)
             .shadow(color: .black, opacity: 0.1, blur: 4)
-            .padding(.horizontal, 24)
         }
     }
 }

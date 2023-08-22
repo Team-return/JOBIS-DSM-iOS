@@ -21,7 +21,7 @@ struct ViewDidLoadModifier: ViewModifier {
 }
 
 public extension View {
-    public func onLoad(perform action: (() -> Void)? = nil) -> some View {
+    func onLoad(perform action: (() -> Void)? = nil) -> some View {
         modifier(ViewDidLoadModifier(perform: action))
     }
 }

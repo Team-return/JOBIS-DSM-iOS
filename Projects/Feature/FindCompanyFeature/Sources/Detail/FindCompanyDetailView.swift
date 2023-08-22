@@ -75,9 +75,10 @@ struct FindCompanyDetailView: View {
                         }
                     }
                 }
-                .padding([.horizontal, .top], 24)
+                .padding(.horizontal, 20)
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
         .onLoad {
             viewModel.onAppear()
         }
