@@ -1,6 +1,6 @@
 import Foundation
 
-public struct WritableReviewCompanyEntity: Equatable {
+public struct WritableReviewCompanyEntity: Equatable, Hashable {
     public let id: Int
     public let name: String
 

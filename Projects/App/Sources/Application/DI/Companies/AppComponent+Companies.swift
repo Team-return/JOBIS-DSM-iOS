@@ -26,4 +26,10 @@ public extension AppComponent {
             FetchStudentCompanyListUseCaseImpl(companiesRepository: companiesRepository)
         }
     }
+
+    var fetchWritableReviewListUseCase: any FetchWritableReviewListUseCase {
+        shared {
+            FetchWritableReviewListUseCaseImpl(companiesRepository: companiesRepository )
+        }
+    }
 }

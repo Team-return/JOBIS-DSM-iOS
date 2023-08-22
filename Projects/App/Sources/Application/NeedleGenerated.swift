@@ -136,6 +136,9 @@ private class MyPageDependency48d84b530313b3ee40feProvider: MyPageDependency {
     var changeProfileImageUseCase: any ChangeProfileImageUseCase {
         return appComponent.changeProfileImageUseCase
     }
+    var fetchWritableReviewListUseCase: any FetchWritableReviewListUseCase {
+        return appComponent.fetchWritableReviewListUseCase
+    }
     var reportFactory: any ReportFactory {
         return appComponent.reportFactory
     }
@@ -508,6 +511,7 @@ extension AppComponent: Registration {
         localTable["companiesRepository-any CompaniesRepository"] = { [unowned self] in self.companiesRepository as Any }
         localTable["fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"] = { [unowned self] in self.fetchCompanyInfoDetailUseCase as Any }
         localTable["fetchStudentCompanyListUseCase-any FetchStudentCompanyListUseCase"] = { [unowned self] in self.fetchStudentCompanyListUseCase as Any }
+        localTable["fetchWritableReviewListUseCase-any FetchWritableReviewListUseCase"] = { [unowned self] in self.fetchWritableReviewListUseCase as Any }
         localTable["remoteReviewsDataSource-any RemoteReviewsDataSource"] = { [unowned self] in self.remoteReviewsDataSource as Any }
         localTable["reviewsRepository-any ReviewsRepository"] = { [unowned self] in self.reviewsRepository as Any }
         localTable["fetchReviewDetailUseCase-any FetchReviewDetailUseCase"] = { [unowned self] in self.fetchReviewDetailUseCase as Any }
@@ -542,6 +546,7 @@ extension MyPageComponent: Registration {
         keyPathToName[\MyPageDependency.logoutUseCase] = "logoutUseCase-any LogoutUseCase"
         keyPathToName[\MyPageDependency.uploadFilesUseCase] = "uploadFilesUseCase-any UploadFilesUseCase"
         keyPathToName[\MyPageDependency.changeProfileImageUseCase] = "changeProfileImageUseCase-any ChangeProfileImageUseCase"
+        keyPathToName[\MyPageDependency.fetchWritableReviewListUseCase] = "fetchWritableReviewListUseCase-any FetchWritableReviewListUseCase"
         keyPathToName[\MyPageDependency.reportFactory] = "reportFactory-any ReportFactory"
         keyPathToName[\MyPageDependency.bugListFactory] = "bugListFactory-any BugListFactory"
         keyPathToName[\MyPageDependency.checkPasswordFactory] = "checkPasswordFactory-any CheckPasswordFactory"

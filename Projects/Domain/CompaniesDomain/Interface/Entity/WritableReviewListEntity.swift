@@ -1,6 +1,6 @@
 import Foundation
 
-public struct WritableReviewListEntity: Equatable {
+public struct WritableReviewListEntity: Equatable, Hashable {
     public let companies: [WritableReviewCompanyEntity]
 
     public init(companies: [WritableReviewCompanyEntity]) {

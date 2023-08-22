@@ -1,6 +1,7 @@
 import DesignSystem
 import BugFeatureInterface
 import MyPageFeatureInterface
+import CompaniesDomainInterface
 import SwiftUI
 import UtilityModule
 import Kingfisher
@@ -75,6 +76,15 @@ struct MyPageView: View {
                     Spacer()
                 }
                 .padding(.vertical, 40)
+
+                if let writableReviewList = viewModel.writableReviewList?.companies {
+                    VStack(spacing: 10) {
+                        ForEach(writableReviewList, id: \.self) { company in
+                            writableReviewCell(company: company)
+                        }
+                    }
+                    .padding(.bottom, 40)
+                }
 
                 VStack(alignment: .leading, spacing: 15) {
                     Divider().foregroundColor(.Sub.gray40)
@@ -172,5 +182,21 @@ struct MyPageView: View {
                 Spacer()
             }
         }
+    }
+
+    @ViewBuilder
+    func writableReviewCell(company: WritableReviewCompanyEntity) -> some View {
+        HStack(spacing: 5) {
+            Text(company.name)
+                .JOBISFont(.etc(.caption), color: .Sub.gray60)
+
+            Text("면접후기 작성하기")
+                .JOBISFont(.etc(.caption), color: .Main.lightBlue)
+        }
+        .padding(.vertical, 14)
+        .frame(maxWidth: .infinity)
+        .background(Color.Sub.gray10)
+        .cornerRadius(15)
+        .shadow(opacity: 0.1, blur: 4)
     }
 }

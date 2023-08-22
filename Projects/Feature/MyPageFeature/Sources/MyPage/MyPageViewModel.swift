@@ -4,6 +4,7 @@ import UIKit
 import StudentsDomainInterface
 import AuthDomainInterface
 import FilesDomainInterface
+import CompaniesDomainInterface
 
 final class MyPageViewModel: BaseViewModel {
     @Published var isNavigateReportView = false
@@ -15,6 +16,7 @@ final class MyPageViewModel: BaseViewModel {
     @Published var isShowImagePicker = false
     @Published var image: UIImage?
     @Published var studentInfo: StudentInfoEntity?
+    @Published var writableReviewList: WritableReviewListEntity?
     var isTabbarHidden: Bool {
         isNavigateReportView || isNavigateChangePassword || isNavigateBugListView
     }
@@ -23,21 +25,25 @@ final class MyPageViewModel: BaseViewModel {
     private let logoutUseCase: any LogoutUseCase
     private let uploadFilesUseCase: any UploadFilesUseCase
     private let changeProfileImageUseCase: any ChangeProfileImageUseCase
+    private let fetchWritableReviewListUseCase: any FetchWritableReviewListUseCase
 
     public init(
         fetchStudentInfoUseCase: any FetchStudentInfoUseCase,
         logoutUseCase: any LogoutUseCase,
         uploadFilesUseCase: any UploadFilesUseCase,
-        changeProfileImageUseCase: any ChangeProfileImageUseCase
+        changeProfileImageUseCase: any ChangeProfileImageUseCase,
+        fetchWritableReviewListUseCase: any FetchWritableReviewListUseCase
     ) {
         self.fetchStudentInfoUseCase = fetchStudentInfoUseCase
         self.logoutUseCase = logoutUseCase
         self.uploadFilesUseCase = uploadFilesUseCase
         self.changeProfileImageUseCase = changeProfileImageUseCase
+        self.fetchWritableReviewListUseCase = fetchWritableReviewListUseCase
     }
 
     func onAppear() {
         fetchStudentInfo()
+        fetchWritableReviewList()
     }
 
     private func fetchStudentInfo() {
@@ -50,6 +56,14 @@ final class MyPageViewModel: BaseViewModel {
                 department: studentInfo.department,
                 profileImageUrl: studentInfo.profileImageUrl
             )
+        }
+    }
+
+    private func fetchWritableReviewList() {
+        addCancellable(
+            fetchWritableReviewListUseCase.execute()
+        ) { [weak self] writableReviewList in
+            self?.writableReviewList = writableReviewList
         }
     }
 

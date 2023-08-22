@@ -11,6 +11,7 @@ let project = Project.makeModule(
         .Feature.BugFeatureInterface,
         .Domain.AuthDomainInterface,
         .Domain.StudentsDomainInterface,
-        .Domain.FilesDomainInterface
+        .Domain.FilesDomainInterface,
+        .Domain.CompaniesDomainInterface
     ]
 )

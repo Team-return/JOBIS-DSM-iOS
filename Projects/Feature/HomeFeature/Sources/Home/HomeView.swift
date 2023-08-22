@@ -26,44 +26,42 @@ struct HomeView: View {
             ZStack {
                 Color.Sub.gray10.ignoresSafeArea()
 
-                ZStack {
-                    VStack(alignment: .leading, spacing: 0) {
-                        ImploymentPersentView(totalPassStudent: viewModel.totalPassStudent)
-                        .padding(.bottom, 40)
+                VStack(alignment: .leading, spacing: 0) {
+                    ImploymentPersentView(totalPassStudent: viewModel.totalPassStudent)
+                    .padding(.bottom, 40)
 
-                        StudentInfoView(studentInfo: viewModel.studentInfo)
+                    StudentInfoView(studentInfo: viewModel.studentInfo)
 
-                        ApplicationStatusView(applicationList: viewModel.applicationList?.applications ?? [])
+                    ApplicationStatusView(applicationList: viewModel.applicationList?.applications)
 
-                        Spacer()
-                    }
+                    Spacer()
+                }
 
-                    VStack(alignment: .leading, spacing: 0) {
-                        Spacer()
+                VStack(alignment: .leading, spacing: 0) {
+                    Spacer()
 
-                        Divider()
-                            .foregroundColor(.Sub.gray40)
+                    Divider()
+                        .foregroundColor(.Sub.gray40)
 
-                        HStack(spacing: 12) {
-                            navigateButton(
-                                text: "모집의뢰서\n조회하기",
-                                image: .recruitmentImage
-                            ) {
-                                viewModel.isNavigateRecruitment.toggle()
-                            }
-                            .frame(width: proxy.size.width / 2)
-
-                            navigateButton(
-                                text: "기업찾기\n",
-                                image: .findCompanyImage
-                            ) {
-                                viewModel.isNavigateFindCompany.toggle()
-                            }
+                    HStack(spacing: 12) {
+                        navigateButton(
+                            text: "모집의뢰서\n조회하기",
+                            image: .recruitmentImage
+                        ) {
+                            viewModel.isNavigateRecruitment.toggle()
                         }
-                        .padding(22)
-                        .padding(.bottom, 100)
-                        .background(Color.Sub.gray20)
+                        .frame(width: proxy.size.width / 2)
+
+                        navigateButton(
+                            text: "기업찾기\n",
+                            image: .findCompanyImage
+                        ) {
+                            viewModel.isNavigateFindCompany.toggle()
+                        }
                     }
+                    .padding(22)
+                    .padding(.bottom, 100)
+                    .background(Color.Sub.gray20)
                 }
             }
         }
