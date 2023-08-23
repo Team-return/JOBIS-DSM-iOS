@@ -31,6 +31,8 @@ import MenuFeatureInterface
 import MyPageFeature
 import MyPageFeatureInterface
 import NeedleFoundation
+import PostReviewFeature
+import PostReviewFeatureInterface
 import RecruitmentFeature
 import RecruitmentFeatureInterface
 import RecruitmentsDomain
@@ -147,6 +149,9 @@ private class MyPageDependency48d84b530313b3ee40feProvider: MyPageDependency {
     }
     var checkPasswordFactory: any CheckPasswordFactory {
         return appComponent.checkPasswordFactory
+    }
+    var postReviewFactory: any PostReviewFactory {
+        return appComponent.postReviewFactory
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -439,6 +444,22 @@ private class ReportDependency6e94b8b26a4d1950e6e6Provider: ReportDependency {
 private func factoryf9f7e1c92faf5c6d60daf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return ReportDependency6e94b8b26a4d1950e6e6Provider(appComponent: parent1(component) as! AppComponent)
 }
+private class PostReviewDependencyca8f8deff503d904cf15Provider: PostReviewDependency {
+    var fetchCodesUseCase: any FetchCodesUseCase {
+        return appComponent.fetchCodesUseCase
+    }
+    var postReviewUseCase: any PostReviewUseCase {
+        return appComponent.postReviewUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->PostReviewComponent
+private func factory506b5181063a2884e01cf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return PostReviewDependencyca8f8deff503d904cf15Provider(appComponent: parent1(component) as! AppComponent)
+}
 
 #else
 extension AppComponent: Registration {
@@ -478,6 +499,7 @@ extension AppComponent: Registration {
         localTable["bugListFactory-any BugListFactory"] = { [unowned self] in self.bugListFactory as Any }
         localTable["checkPasswordFactory-any CheckPasswordFactory"] = { [unowned self] in self.checkPasswordFactory as Any }
         localTable["modifyPasswordFactory-any ModifyPasswordFactory"] = { [unowned self] in self.modifyPasswordFactory as Any }
+        localTable["postReviewFactory-any PostReviewFactory"] = { [unowned self] in self.postReviewFactory as Any }
         localTable["menuFactory-any MenuFactory"] = { [unowned self] in self.menuFactory as Any }
         localTable["remoteStudentsDataSource-any RemoteStudentsDataSource"] = { [unowned self] in self.remoteStudentsDataSource as Any }
         localTable["studentsRepository-any StudentsRepository"] = { [unowned self] in self.studentsRepository as Any }
@@ -550,6 +572,7 @@ extension MyPageComponent: Registration {
         keyPathToName[\MyPageDependency.reportFactory] = "reportFactory-any ReportFactory"
         keyPathToName[\MyPageDependency.bugListFactory] = "bugListFactory-any BugListFactory"
         keyPathToName[\MyPageDependency.checkPasswordFactory] = "checkPasswordFactory-any CheckPasswordFactory"
+        keyPathToName[\MyPageDependency.postReviewFactory] = "postReviewFactory-any PostReviewFactory"
     }
 }
 extension ModifyPasswordComponent: Registration {
@@ -656,6 +679,12 @@ extension ReportComponent: Registration {
         keyPathToName[\ReportDependency.uploadFilesUseCase] = "uploadFilesUseCase-any UploadFilesUseCase"
     }
 }
+extension PostReviewComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\PostReviewDependency.fetchCodesUseCase] = "fetchCodesUseCase-any FetchCodesUseCase"
+        keyPathToName[\PostReviewDependency.postReviewUseCase] = "postReviewUseCase-any PostReviewUseCase"
+    }
+}
 
 
 #endif
@@ -692,6 +721,7 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->BugListComponent", factory43ed38c107a618e64a10f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->ReportComponent", factoryf9f7e1c92faf5c6d60daf47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->PostReviewComponent", factory506b5181063a2884e01cf47b58f8f304c97af4d5)
 }
 #endif
 
