@@ -100,7 +100,7 @@ struct FindCompanyDetailView: View {
     @ViewBuilder
     func reviewCell(review: ReviewEntity) -> some View {
         NavigationLink {
-            ReviewDetailView(reviewDetail: viewModel.reviewDetail)
+            ReviewDetailView(reviewDetail: viewModel.reviewDetail, writer: review.writer)
                 .onAppear { viewModel.fetchReviewDetail(id: review.reviewID) }
                 .onDisappear { viewModel.reviewDetail = nil}
         } label: {

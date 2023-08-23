@@ -5,6 +5,7 @@ import DesignSystem
 struct ReviewDetailView: View {
     @Environment(\.dismiss) var dismiss
     var reviewDetail: ReviewDetailEntity?
+    let writer: String
 
     var body: some View {
         ScrollView {
@@ -16,11 +17,11 @@ struct ReviewDetailView: View {
 
                     Spacer()
                 }
-                .navigationBarTitle(reviewDetail.writer + "님의 후기")
-                .jobisBackButton { dismiss() }
             } else {
                 ProgressView().progressViewStyle(.circular)
             }
         }
+        .jobisBackButton(title: writer + "님의 후기") { dismiss() }
+        .navigationBarItems(trailing: Text(reviewDetail?.qnaResponses[0].area ?? ""))
     }
 }
