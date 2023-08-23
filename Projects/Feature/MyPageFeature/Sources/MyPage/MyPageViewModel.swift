@@ -7,6 +7,7 @@ import FilesDomainInterface
 import CompaniesDomainInterface
 
 final class MyPageViewModel: BaseViewModel {
+    @Published var isNavigatePostReview = false
     @Published var isNavigateReportView = false
     @Published var isNavigateBugListView = false
     @Published var isShowFieldOfInterest = false
@@ -18,7 +19,10 @@ final class MyPageViewModel: BaseViewModel {
     @Published var studentInfo: StudentInfoEntity?
     @Published var writableReviewList: WritableReviewListEntity?
     var isTabbarHidden: Bool {
-        isNavigateReportView || isNavigateChangePassword || isNavigateBugListView
+        isNavigateReportView ||
+        isNavigateChangePassword ||
+        isNavigateBugListView ||
+        isNavigatePostReview
     }
 
     private let fetchStudentInfoUseCase: any FetchStudentInfoUseCase

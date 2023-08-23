@@ -1,6 +1,7 @@
 import DesignSystem
 import BugFeatureInterface
 import MyPageFeatureInterface
+import PostReviewFeatureInterface
 import CompaniesDomainInterface
 import SwiftUI
 import UtilityModule
@@ -15,17 +16,20 @@ struct MyPageView: View {
     private let reportFactory: any ReportFactory
     private let bugListFactory: any BugListFactory
     private let checkPasswordFactory: any CheckPasswordFactory
+    private let postReviewFactory: any PostReviewFactory
 
     init(
         viewModel: MyPageViewModel,
         reportFactory: any ReportFactory,
         bugListFactory: any BugListFactory,
-        checkPasswordFactory: any CheckPasswordFactory
+        checkPasswordFactory: any CheckPasswordFactory,
+        postReviewFactory: any PostReviewFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.reportFactory = reportFactory
         self.bugListFactory = bugListFactory
         self.checkPasswordFactory = checkPasswordFactory
+        self.postReviewFactory = postReviewFactory
     }
 
     var body: some View {
@@ -186,17 +190,25 @@ struct MyPageView: View {
 
     @ViewBuilder
     func writableReviewCell(company: WritableReviewCompanyEntity) -> some View {
-        HStack(spacing: 5) {
-            Text(company.name)
-                .JOBISFont(.etc(.caption), color: .Sub.gray60)
+        Button {
+            viewModel.isNavigatePostReview.toggle()
+        } label: {
+            HStack(spacing: 5) {
+                Text(company.name)
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
 
-            Text("면접후기 작성하기")
-                .JOBISFont(.etc(.caption), color: .Main.lightBlue)
+                Text("면접후기 작성하기")
+                    .JOBISFont(.etc(.caption), color: .Main.lightBlue)
+            }
+            .padding(.vertical, 14)
+            .frame(maxWidth: .infinity)
+            .background(Color.Sub.gray10)
+            .cornerRadius(15)
+            .shadow(opacity: 0.1, blur: 4)
         }
-        .padding(.vertical, 14)
-        .frame(maxWidth: .infinity)
-        .background(Color.Sub.gray10)
-        .cornerRadius(15)
-        .shadow(opacity: 0.1, blur: 4)
+        .navigate(
+            to: postReviewFactory.makeView(companyID: company.id).eraseToAnyView(),
+            when: $viewModel.isNavigatePostReview
+        )
     }
 }

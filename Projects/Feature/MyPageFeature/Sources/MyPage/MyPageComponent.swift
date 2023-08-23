@@ -3,6 +3,7 @@ import BugFeatureInterface
 import FilesDomainInterface
 import NeedleFoundation
 import MyPageFeatureInterface
+import PostReviewFeatureInterface
 import StudentsDomainInterface
 import AuthDomainInterface
 import CompaniesDomainInterface
@@ -16,6 +17,7 @@ public protocol MyPageDependency: Dependency {
     var reportFactory: any ReportFactory { get }
     var bugListFactory: any BugListFactory { get }
     var checkPasswordFactory: any CheckPasswordFactory { get }
+    var postReviewFactory: any PostReviewFactory { get }
 }
 
 public final class MyPageComponent: Component<MyPageDependency>, MyPageFactory {
@@ -30,7 +32,8 @@ public final class MyPageComponent: Component<MyPageDependency>, MyPageFactory {
             ),
             reportFactory: dependency.reportFactory,
             bugListFactory: dependency.bugListFactory,
-            checkPasswordFactory: dependency.checkPasswordFactory
+            checkPasswordFactory: dependency.checkPasswordFactory,
+            postReviewFactory: dependency.postReviewFactory
         )
     }
 }
