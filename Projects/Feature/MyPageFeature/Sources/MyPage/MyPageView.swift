@@ -1,6 +1,8 @@
 import DesignSystem
 import BugFeatureInterface
 import MyPageFeatureInterface
+import PostReviewFeatureInterface
+import CompaniesDomainInterface
 import SwiftUI
 import UtilityModule
 import Kingfisher
@@ -14,22 +16,25 @@ struct MyPageView: View {
     private let reportFactory: any ReportFactory
     private let bugListFactory: any BugListFactory
     private let checkPasswordFactory: any CheckPasswordFactory
+    private let postReviewFactory: any PostReviewFactory
 
     init(
         viewModel: MyPageViewModel,
         reportFactory: any ReportFactory,
         bugListFactory: any BugListFactory,
-        checkPasswordFactory: any CheckPasswordFactory
+        checkPasswordFactory: any CheckPasswordFactory,
+        postReviewFactory: any PostReviewFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.reportFactory = reportFactory
         self.bugListFactory = bugListFactory
         self.checkPasswordFactory = checkPasswordFactory
+        self.postReviewFactory = postReviewFactory
     }
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 0) {
+            VStack(spacing: 40) {
                 HStack(spacing: 22) {
                     VStack {
                         ZStack(alignment: .bottomTrailing) {
@@ -39,10 +44,10 @@ struct MyPageView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                 } else {
-                                    KFImage(URL(string: viewModel.studentInfo?.profileImageUrl ?? ""))
-                                        .placeholder { Circle().fill(Color.Sub.gray50) }
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
+                                    URLImage(
+                                        imageURL: viewModel.studentInfo?.profileImageUrl ?? "",
+                                        size: 85
+                                    )
                                 }
                             }
                             .frame(width: 85, height: 85)
@@ -74,7 +79,17 @@ struct MyPageView: View {
 
                     Spacer()
                 }
-                .padding(.vertical, 40)
+                .padding(.top, 40)
+
+                if let writableReviewList = viewModel.writableReviewList?.companies {
+                    if !writableReviewList.isEmpty {
+                        VStack(spacing: 10) {
+                            ForEach(writableReviewList, id: \.self) { company in
+                                writableReviewCell(company: company)
+                            }
+                        }
+                    }
+                }
 
                 VStack(alignment: .leading, spacing: 15) {
                     Divider().foregroundColor(.Sub.gray40)
@@ -172,5 +187,29 @@ struct MyPageView: View {
                 Spacer()
             }
         }
+    }
+
+    @ViewBuilder
+    func writableReviewCell(company: WritableReviewCompanyEntity) -> some View {
+        Button {
+            viewModel.isNavigatePostReview.toggle()
+        } label: {
+            HStack(spacing: 5) {
+                Text(company.name)
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+
+                Text("면접후기 작성하기")
+                    .JOBISFont(.etc(.caption), color: .Main.lightBlue)
+            }
+            .padding(.vertical, 14)
+            .frame(maxWidth: .infinity)
+            .background(Color.Sub.gray10)
+            .cornerRadius(15)
+            .shadow(opacity: 0.1, blur: 4)
+        }
+        .navigate(
+            to: postReviewFactory.makeView(companyID: company.id).eraseToAnyView(),
+            when: $viewModel.isNavigatePostReview
+        )
     }
 }

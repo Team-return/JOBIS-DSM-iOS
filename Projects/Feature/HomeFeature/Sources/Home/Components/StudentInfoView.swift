@@ -8,10 +8,7 @@ struct StudentInfoView: View {
 
     var body: some View {
         HStack(spacing: 13) {
-            KFImage(URL(string: studentInfo?.profileImageUrl ?? ""))
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 45, height: 45)
+            URLImage(imageURL: studentInfo?.profileImageUrl ?? "", size: 45)
                 .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 0) {

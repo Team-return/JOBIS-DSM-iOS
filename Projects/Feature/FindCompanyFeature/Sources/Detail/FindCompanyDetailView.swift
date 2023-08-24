@@ -27,10 +27,7 @@ struct FindCompanyDetailView: View {
             if let infoDetail = viewModel.companyInfoDetail {
                 LazyVStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 12) {
-                        KFImage(URL(string: infoDetail.companyProfileURL))
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 80, height: 80)
+                        URLImage(imageURL: infoDetail.companyProfileURL, size: 80)
                             .cornerRadius(15)
 
                         Text(infoDetail.companyName)
@@ -65,10 +62,10 @@ struct FindCompanyDetailView: View {
 
                     if let reviewList = viewModel.reviewList, !reviewList.reviews.isEmpty {
                         Divider()
-                        .foregroundColor(.Sub.gray40)
+                            .foregroundColor(.Sub.gray40)
 
                         Text("면접 후기")
-                        .JOBISFont(.body(.body2), color: .Sub.gray70)
+                            .JOBISFont(.body(.body2), color: .Sub.gray70)
 
                         ForEach(reviewList.reviews, id: \.self) { review in
                             reviewCell(review: review)
@@ -100,7 +97,7 @@ struct FindCompanyDetailView: View {
     @ViewBuilder
     func reviewCell(review: ReviewEntity) -> some View {
         NavigationLink {
-            ReviewDetailView(reviewDetail: viewModel.reviewDetail)
+            ReviewDetailView(reviewDetail: viewModel.reviewDetail, writer: review.writer)
                 .onAppear { viewModel.fetchReviewDetail(id: review.reviewID) }
                 .onDisappear { viewModel.reviewDetail = nil}
         } label: {

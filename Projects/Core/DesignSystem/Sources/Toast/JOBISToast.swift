@@ -100,7 +100,7 @@ struct JOBISToast_Previews: PreviewProvider {
         NavigationView(content: {
             NavigationLink {
                 Text("nav")
-                    .jobisToast(isShowing: .constant(false), message: "안녕하세요", style: .error, title: "hello")
+                    .jobisToast(isShowing: .constant(true), message: "안녕하세요", style: .error, title: "hello")
                     .jobisBackButton {}
             } label: {
                 Text("hello")

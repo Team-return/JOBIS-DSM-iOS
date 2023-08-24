@@ -3,8 +3,6 @@ import Foundation
 public extension ReviewDetailResponseDTO {
     func toDomain() -> ReviewDetailEntity {
         ReviewDetailEntity(
-            year: year,
-            writer: writer,
             qnaResponses: qnaResponses.map { $0.toDomain() }
         )
     }
