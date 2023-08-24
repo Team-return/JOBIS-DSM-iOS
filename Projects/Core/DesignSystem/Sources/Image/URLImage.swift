@@ -14,12 +14,8 @@ public struct URLImage: View {
     public var body: some View {
         KFImage(imageURL)
             .resizable()
-            .placeholder { Circle().fill(Color.Sub.gray50) }
+            .placeholder { Color.Sub.gray50 }
             .aspectRatio(contentMode: .fit)
             .frame(width: size.width, height: size.height)
-
-            .onAppear {
-                print(imageURL ?? "i dont know")
-            }
     }
 }

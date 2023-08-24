@@ -34,7 +34,7 @@ struct MyPageView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 0) {
+            VStack(spacing: 40) {
                 HStack(spacing: 22) {
                     VStack {
                         ZStack(alignment: .bottomTrailing) {
@@ -44,10 +44,10 @@ struct MyPageView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                 } else {
-                                    KFImage(URL(string: viewModel.studentInfo?.profileImageUrl ?? ""))
-                                        .placeholder { Circle().fill(Color.Sub.gray50) }
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
+                                    URLImage(
+                                        imageURL: viewModel.studentInfo?.profileImageUrl ?? "",
+                                        size: 85
+                                    )
                                 }
                             }
                             .frame(width: 85, height: 85)
@@ -79,15 +79,16 @@ struct MyPageView: View {
 
                     Spacer()
                 }
-                .padding(.vertical, 40)
+                .padding(.top, 40)
 
                 if let writableReviewList = viewModel.writableReviewList?.companies {
-                    VStack(spacing: 10) {
-                        ForEach(writableReviewList, id: \.self) { company in
-                            writableReviewCell(company: company)
+                    if !writableReviewList.isEmpty {
+                        VStack(spacing: 10) {
+                            ForEach(writableReviewList, id: \.self) { company in
+                                writableReviewCell(company: company)
+                            }
                         }
                     }
-                    .padding(.bottom, 40)
                 }
 
                 VStack(alignment: .leading, spacing: 15) {
