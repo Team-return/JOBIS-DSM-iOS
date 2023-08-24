@@ -13,10 +13,11 @@ struct QnaListCellView: View {
     }
     var body: some View {
         HStack(alignment: .center) {
-            VStack(alignment: .leading, spacing: 20) {
+            VStack(alignment: .leading, spacing: 10) {
                 HStack(spacing: 8) {
                     Text("Q.")
                         .JOBISFont(.heading(.heading5), color: .Main.lightBlue)
+
                     Text(qna.question)
                         .JOBISFont(.body(.body2), color: .Sub.gray80)
                         .frame(height: 32)
@@ -36,10 +37,18 @@ struct QnaListCellView: View {
                             }
                         }
                 }
+
                 if isShowingDetail {
                     Text(qna.answer)
                         .multilineTextAlignment(.leading)
                         .padding(.bottom, 10)
+
+                    HStack {
+                        Spacer()
+
+                        Text(qna.area)
+                            .JOBISFont(.etc(.caption), color: .State.message)
+                    }
                 }
             }
         }
