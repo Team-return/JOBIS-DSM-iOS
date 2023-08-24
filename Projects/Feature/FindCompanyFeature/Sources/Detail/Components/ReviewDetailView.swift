@@ -22,6 +22,5 @@ struct ReviewDetailView: View {
             }
         }
         .jobisBackButton(title: writer + "님의 후기") { dismiss() }
-        .navigationBarItems(trailing: Text(reviewDetail?.qnaResponses[0].area ?? ""))
     }
 }
