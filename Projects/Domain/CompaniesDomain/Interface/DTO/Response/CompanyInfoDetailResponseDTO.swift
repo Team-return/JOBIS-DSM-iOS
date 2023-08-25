@@ -4,8 +4,9 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
     public let businessNumber: String
     public let companyName: String
     public let companyProfileURL: String
-    public let companyIntroduce, mainZipCode, mainAddress: String
-    public let subZipCode, subAddress: String?
+    public let companyIntroduce: String
+    public let mainZipCode, mainAddress, mainAddressDetail: String
+    public let subZipCode, subAddress, subAddressDetail: String?
     public let managerName, managerPhoneNo: String
     public let subManagerName, subManagerPhoneNo, fax: String?
     public let email, representativeName, foundedAt: String
@@ -22,8 +23,10 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         companyIntroduce: String,
         mainZipCode: String,
         mainAddress: String,
+        mainAddressDetail: String,
         subZipCode: String?,
         subAddress: String?,
+        subAddressDetail: String?,
         managerName: String,
         managerPhoneNo: String,
         subManagerName: String?,
@@ -44,8 +47,10 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         self.companyIntroduce = companyIntroduce
         self.mainZipCode = mainZipCode
         self.mainAddress = mainAddress
+        self.mainAddressDetail = mainAddressDetail
         self.subZipCode = subZipCode
         self.subAddress = subAddress
+        self.subAddressDetail = subAddressDetail
         self.managerName = managerName
         self.managerPhoneNo = managerPhoneNo
         self.subManagerName = subManagerName
@@ -68,8 +73,10 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         case companyIntroduce = "company_introduce"
         case mainZipCode = "main_zip_code"
         case mainAddress = "main_address"
+        case mainAddressDetail = "main_address_Address"
         case subZipCode = "sub_zip_code"
         case subAddress = "sub_address"
+        case subAddressDetail = "sub_address_detail"
         case managerName = "manager_name"
         case managerPhoneNo = "manager_phone_no"
         case subManagerName = "sub_manager_name"
