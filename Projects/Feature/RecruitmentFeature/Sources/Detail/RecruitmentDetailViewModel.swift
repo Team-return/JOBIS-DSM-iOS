@@ -41,7 +41,10 @@ final class RecruitmentDetailViewModel: BaseViewModel {
         uploadFiles(complete: complete)
     }
 
-    private func applyCompany(_ attachments: [AttachmentsRequestDTO], complete: @escaping () -> Void) {
+    private func applyCompany(
+        _ attachments: [AttachmentsRequestDTO],
+        complete: @escaping () -> Void
+    ) {
         addCancellable(
             applyCompanyUseCase.execute(
                 id: id,

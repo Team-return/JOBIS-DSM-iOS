@@ -73,7 +73,7 @@ public struct CompanyInfoDetailResponseDTO: Decodable {
         case companyIntroduce = "company_introduce"
         case mainZipCode = "main_zip_code"
         case mainAddress = "main_address"
-        case mainAddressDetail = "main_address_Address"
+        case mainAddressDetail = "main_address_detail"
         case subZipCode = "sub_zip_code"
         case subAddress = "sub_address"
         case subAddressDetail = "sub_address_detail"
