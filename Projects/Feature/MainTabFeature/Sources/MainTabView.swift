@@ -103,6 +103,8 @@ struct MainTabView: View {
     @ViewBuilder
     func tabItemView(image: Image, title: String, tag: TabFlow) -> some View {
         Button {
+            HapticManager.instance.impact(style: .medium)
+
             withAnimation {
                 selection = tag
             }
