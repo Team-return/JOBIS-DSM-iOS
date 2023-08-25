@@ -101,13 +101,10 @@ struct RecruitmentDetailView: View {
             } else {
                 ProgressView().progressViewStyle(.circular)
                     .frame(maxHeight: .infinity)
-                    .onAppear {
-                        viewModel.onAppear()
-                    }
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
+        .onLoad {
             viewModel.onAppear()
         }
         .jobisToast(
@@ -123,22 +120,6 @@ struct RecruitmentDetailView: View {
             title: "지원 성공"
         )
         .animation(.easeIn(duration: 0.1), value: viewModel.isTappedApplyButton)
-    }
-
-    @ViewBuilder
-    func recruitmentInfo(detailInfo: RecruitmentDetailEntity) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            recruitmentInfoCell(
-                title: "모집기간",
-                content: detailInfo.startDate + " ~ " + detailInfo.endDate
-            )
-
-            areaView(areas: detailInfo.areas)
-
-            ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
-                recruitmentInfoCell(title: title, content: content)
-            }
-        }
     }
 
     @ViewBuilder
