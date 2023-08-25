@@ -55,7 +55,18 @@ struct RecruitmentDetailView: View {
                         Divider()
                             .foregroundColor(.Sub.gray40)
 
-                        recruitmentInfo(detailInfo: detailInfo)
+                        VStack(alignment: .leading, spacing: 10) {
+                            recruitmentInfoCell(
+                                title: "모집기간",
+                                content: detailInfo.startDate + " ~ " + detailInfo.endDate
+                            )
+
+                            areaView(areas: detailInfo.areas)
+
+                            ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
+                                recruitmentInfoCell(title: title, content: content)
+                            }
+                        }
                     }
                     .padding(.bottom, 100)
                     .padding(.horizontal, 20)
