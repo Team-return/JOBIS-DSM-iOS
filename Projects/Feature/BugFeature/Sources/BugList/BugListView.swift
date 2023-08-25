@@ -15,27 +15,28 @@ struct BugListView: View {
     var body: some View {
         VStack {
             if let bugList = viewModel.bugList?.bugReports {
-                ScrollView {
-                    VStack(spacing: 10) {
-                        ForEach(bugList, id: \.self) { bug in
-                            bugLiseCell(bug: bug)
+                if !bugList.isEmpty {
+                    ScrollView {
+                        VStack(spacing: 10) {
+                            ForEach(bugList, id: \.self) { bug in
+                                bugLiseCell(bug: bug)
+                            }
                         }
+                        .padding(.horizontal, 20)
                     }
-                    .padding(.horizontal, 20)
+                } else {
+                    VStack {
+                        Spacer()
+
+                        Text("버그가 없어요.")
+                            .JOBISFont(.body(.body1), color: .Sub.gray90)
+
+                        Spacer()
+                    }
                 }
             } else {
-                VStack {
-                    Spacer()
-
-                    if viewModel.isLoading {
-                        ProgressView().progressViewStyle(.circular)
-                    } else {
-                        Text("버그가 없어요.")
-                        .JOBISFont(.body(.body1), color: .Sub.gray90)
-                    }
-
-                    Spacer()
-                }
+                ProgressView()
+                    .progressViewStyle(.circular)
             }
         }
         .background(Color.Sub.gray10)

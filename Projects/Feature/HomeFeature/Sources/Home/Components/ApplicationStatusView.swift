@@ -10,9 +10,9 @@ struct ApplicationStatusView: View {
             Text("지원현황")
                 .JOBISFont(.etc(.caption), color: .Sub.gray60)
                 .padding(.bottom, 4)
-            if let applicationList {
+            if !(applicationList ?? []).isEmpty {
                 ScrollView {
-                    ForEach(applicationList, id: \.self) { data in
+                    ForEach(applicationList ?? [], id: \.self) { data in
                         applicationStatusCell(
                             title: data.company,
                             applicationStatus: data.applicationStatus.localizedString()
