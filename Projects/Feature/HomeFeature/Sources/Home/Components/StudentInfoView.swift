@@ -8,7 +8,7 @@ struct StudentInfoView: View {
 
     var body: some View {
         HStack(spacing: 13) {
-            URLImage(imageURL: studentInfo?.profileImageUrl ?? "", size: 45)
+            URLImage(imageURL: studentInfo?.profileImageUrl ?? "", shape: .square(45))
                 .clipShape(Circle())
 
             VStack(alignment: .leading, spacing: 0) {

@@ -29,7 +29,7 @@ struct RecruitmentListCell: View {
             .eraseToAnyView()
         } label: {
             HStack(spacing: 12) {
-                URLImage(imageURL: recruitmentEntity.companyProfileURL, size: 80)
+                URLImage(imageURL: recruitmentEntity.companyProfileURL, shape: .square(80))
                     .cornerRadius(15)
                     .padding(8)
 

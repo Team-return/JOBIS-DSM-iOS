@@ -28,7 +28,7 @@ struct RecruitmentDetailView: View {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 10) {
                         HStack(spacing: 12) {
-                            URLImage(imageURL: detailInfo.companyProfileUrl, size: 80)
+                            URLImage(imageURL: detailInfo.companyProfileUrl, shape: .square(80))
                                 .cornerRadius(15)
 
                             Text(detailInfo.companyName)

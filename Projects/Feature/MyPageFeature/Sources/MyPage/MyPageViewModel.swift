@@ -1,5 +1,6 @@
 import BaseFeature
 import Combine
+import SwiftUI
 import UIKit
 import StudentsDomainInterface
 import AuthDomainInterface
@@ -16,6 +17,7 @@ final class MyPageViewModel: BaseViewModel {
     @Published var isSuccessLogout = false
     @Published var isShowImagePicker = false
     @Published var image: UIImage?
+    @Published var profileImage: Image?
     @Published var studentInfo: StudentInfoEntity?
     @Published var writableReviewList: WritableReviewListEntity?
     var isTabbarHidden: Bool {

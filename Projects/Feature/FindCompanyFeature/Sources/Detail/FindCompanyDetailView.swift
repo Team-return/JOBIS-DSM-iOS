@@ -27,7 +27,7 @@ struct FindCompanyDetailView: View {
             if let infoDetail = viewModel.companyInfoDetail {
                 LazyVStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 12) {
-                        URLImage(imageURL: infoDetail.companyProfileURL, size: 80)
+                        URLImage(imageURL: infoDetail.companyProfileURL, shape: .square(80))
                             .cornerRadius(15)
 
                         Text(infoDetail.companyName)

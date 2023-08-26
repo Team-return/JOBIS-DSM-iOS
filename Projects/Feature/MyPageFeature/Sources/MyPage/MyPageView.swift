@@ -39,16 +39,10 @@ struct MyPageView: View {
                     VStack {
                         ZStack(alignment: .bottomTrailing) {
                             Group {
-                                if let profileImage = viewModel.image {
-                                    Image(uiImage: profileImage)
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                } else {
-                                    URLImage(
-                                        imageURL: viewModel.studentInfo?.profileImageUrl ?? "",
-                                        size: 85
-                                    )
-                                }
+                                URLImage(
+                                    imageURL: viewModel.studentInfo?.profileImageUrl ?? "",
+                                    shape: .square(85)
+                                )
                             }
                             .frame(width: 85, height: 85)
                             .clipShape(Circle())
@@ -137,6 +131,7 @@ struct MyPageView: View {
             when: $viewModel.isNavigateChangePassword
         )
         .imagePicker(isShow: $viewModel.isShowImagePicker, uiImage: $viewModel.image)
+        .jobisToast(isShowing: $viewModel.isErrorOcuured, message: "프로필 변경에 실패했습니다.", style: .error)
         .onChange(of: viewModel.isTabbarHidden) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue

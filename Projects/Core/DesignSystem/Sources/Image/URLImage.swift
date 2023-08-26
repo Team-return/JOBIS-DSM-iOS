@@ -2,20 +2,34 @@ import SwiftUI
 import Kingfisher
 
 public struct URLImage: View {
-    let imageURL: URL?
-    let size: CGSize
+    public enum ImageShape {
+        case square(CGFloat)
+        case rectangle
+    }
 
-    public init(imageURL: String, size: CGFloat) {
+    let imageURL: URL?
+    let shape: ImageShape
+
+    public init(imageURL: String, shape: ImageShape) {
         let baseURL = "https://jobis-bucket.s3.ap-northeast-2.amazonaws.com/"
         self.imageURL = URL(string: baseURL + imageURL)
-        self.size = .init(width: size, height: size)
+        self.shape = shape
     }
 
     public var body: some View {
-        KFImage(imageURL)
-            .resizable()
-            .placeholder { Color.Sub.gray50 }
-            .aspectRatio(contentMode: .fit)
-            .frame(width: size.width, height: size.height)
+        switch shape {
+        case .square(let size):
+            KFImage(imageURL)
+                .resizable()
+                .placeholder { Color.Sub.gray50 }
+                .aspectRatio(contentMode: .fit)
+                .frame(width: size, height: size)
+
+        case .rectangle:
+            KFImage(imageURL)
+                .resizable()
+                .placeholder { Color.Sub.gray50 }
+                .aspectRatio(contentMode: .fit)
+        }
     }
 }

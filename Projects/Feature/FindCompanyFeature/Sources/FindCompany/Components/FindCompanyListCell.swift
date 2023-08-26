@@ -24,7 +24,7 @@ struct FindCompanyListCell: View {
                 .eraseToAnyView()
         } label: {
             HStack(spacing: 12) {
-                URLImage(imageURL: companyEntity.logoURL, size: 80)
+                URLImage(imageURL: companyEntity.logoURL, shape: .square(80))
                     .cornerRadius(15)
                     .padding(8)
 

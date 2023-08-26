@@ -7,8 +7,6 @@ struct BugScreenshotView: View {
     @State private var selectionIndex: Int
     let attachments: [String]
 
-    let baseURL = "https://jobis-bucket.s3.ap-northeast-2.amazonaws.com/"
-
     init(attachments: [String], index: Int) {
         self.attachments = attachments
         self._selectionIndex = State(initialValue: index)
@@ -18,9 +16,7 @@ struct BugScreenshotView: View {
         ZStack(alignment: .bottomTrailing) {
             TabView(selection: $selectionIndex) {
                 ForEach(0..<attachments.count, id: \.self) { index in
-                    KFImage(URL(string: baseURL + attachments[index]))
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                    URLImage(imageURL: attachments[index], shape: .rectangle)
                         .frame(minWidth: UIScreen.main.bounds.width, maxHeight: .infinity)
                         .tag(index)
                 }
