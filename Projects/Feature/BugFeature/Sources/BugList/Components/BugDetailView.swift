@@ -8,6 +8,8 @@ struct BugDetailView: View {
     @State private var isNaviateScreenshot = false
     let bugDetail: BugDetailEntity?
 
+    let baseURL = "https://jobis-bucket.s3.ap-northeast-2.amazonaws.com/"
+
     init(bugDetail: BugDetailEntity?) {
         self.bugDetail = bugDetail
     }
@@ -34,7 +36,7 @@ struct BugDetailView: View {
                                             Button {
                                                 self.isNaviateScreenshot.toggle()
                                             } label: {
-                                                KFImage(URL(string: bugDetail.attachments[index]))
+                                                KFImage(URL(string: baseURL +  bugDetail.attachments[index]))
                                                     .resizable()
                                                     .aspectRatio(contentMode: .fit)
                                                     .frame(height: 200)

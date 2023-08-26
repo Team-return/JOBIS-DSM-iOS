@@ -28,10 +28,7 @@ struct RecruitmentDetailView: View {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 10) {
                         HStack(spacing: 12) {
-                            KFImage(URL(string: detailInfo.companyProfileUrl))
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
+                            URLImage(imageURL: detailInfo.companyProfileUrl, size: 80)
                                 .cornerRadius(15)
 
                             Text(detailInfo.companyName)
