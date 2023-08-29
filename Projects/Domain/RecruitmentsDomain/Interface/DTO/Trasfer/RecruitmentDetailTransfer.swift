@@ -44,7 +44,7 @@ public extension AreaResponseDTO {
     func toDomain() -> AreaEntity {
         AreaEntity(
             id: String(id),
-            job: job,
+            job: job.joined(separator: ", "),
             tech: tech,
             hiring: hiring,
             majorTask: majorTask
