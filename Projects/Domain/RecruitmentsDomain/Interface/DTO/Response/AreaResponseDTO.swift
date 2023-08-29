@@ -2,14 +2,14 @@ import Foundation
 
 public struct AreaResponseDTO: Decodable {
     public let id: Int
-    public let job: String
+    public let job: [String]
     public let tech: [String]
     public let hiring: Int
     public let majorTask: String
 
     public init(
         id: Int,
-        job: String,
+        job: [String],
         tech: [String],
         hiring: Int,
         majorTask: String
