@@ -12,33 +12,35 @@ struct QnaListCellView: View {
         self.qna = qna
     }
     var body: some View {
-        HStack(alignment: .center) {
-            VStack(alignment: .leading, spacing: 10) {
-                HStack(spacing: 8) {
-                    Text("Q.")
-                        .JOBISFont(.heading(.heading5), color: .Main.lightBlue)
+        VStack(alignment: .leading, spacing: 0) {
+            HStack(spacing: 12) {
+                Text("Q.")
+                    .JOBISFont(.heading(.heading5), color: .Main.blue)
 
-                    Text(qna.question)
-                        .JOBISFont(.body(.body2), color: .Sub.gray80)
-                        .frame(height: 32)
+                Text(qna.question)
+                    .JOBISFont(.body(.body3), color: .Sub.gray80)
+                    .frame(height: 32)
 
-                    Spacer()
+                Spacer()
 
-                    JOBISIcon(.chevronDown)
-                        .frame(width: 16, height: 16)
-                        .rotationEffect(
-                            isShowingDetail
-                            ? Angle.degrees(180)
-                            : .degrees(0)
-                        )
-                        .onTapGesture {
-                            withAnimation {
-                                isShowingDetail.toggle()
-                            }
+                JOBISIcon(.chevronDown)
+                    .frame(width: 16, height: 16)
+                    .rotationEffect(
+                        isShowingDetail
+                        ? Angle.degrees(180)
+                        : .degrees(0)
+                    )
+                    .onTapGesture {
+                        withAnimation {
+                            isShowingDetail.toggle()
                         }
-                }
+                    }
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 20)
 
-                if isShowingDetail {
+            if isShowingDetail {
+                VStack(alignment: .leading, spacing: 0) {
                     Text(qna.answer)
                         .multilineTextAlignment(.leading)
                         .padding(.bottom, 10)
@@ -48,14 +50,21 @@ struct QnaListCellView: View {
 
                         Text(qna.area)
                             .JOBISFont(.etc(.caption), color: .State.message)
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 8)
+                            .background(Color.Sub.gray10)
+                            .cornerRadius(8)
+                            .padding(.bottom, 4)
                     }
                 }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 16)
+                .background(Color.Main.lightBlue.opacity(0.04))
+                .cornerRadius(8)
+            } else {
+                Divider()
+                    .foregroundColor(.Sub.gray40)
             }
         }
-        .padding(.horizontal, 15)
-        .padding(.vertical, 10)
-        .background(Color.Main.lightBlue.opacity(0.1))
-        .cornerRadius(5)
-        .padding(.horizontal, 24)
     }
 }

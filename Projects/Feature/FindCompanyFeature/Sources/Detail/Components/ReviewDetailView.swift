@@ -10,17 +10,24 @@ struct ReviewDetailView: View {
     var body: some View {
         ScrollView {
             if let reviewDetail {
-                VStack(alignment: .leading, spacing: 10) {
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(writer + "님의 후기")
+                        .JOBISFont(.heading(.heading6), color: .Main.darkBlue)
+                        .padding(.top, 16)
+                        .padding(.bottom, 20)
+
+                    Divider()
+                        .foregroundColor(.Main.lightBlue)
+
                     ForEach(reviewDetail.qnaResponses, id: \.self) { qna in
                         QnaListCellView(qna: qna)
                     }
-
-                    Spacer()
                 }
             } else {
                 ProgressView().progressViewStyle(.circular)
             }
         }
-        .jobisBackButton(title: writer + "님의 후기") { dismiss() }
+        .padding(.horizontal, 24)
+        .jobisBackButton { dismiss() }
     }
 }
