@@ -10,26 +10,36 @@ public struct URLImage: View {
     let imageURL: URL?
     let shape: ImageShape
 
-    public init(imageURL: String, shape: ImageShape) {
+    public init(imageURL urlString: String, shape: ImageShape) {
         let baseURL = "https://jobis-bucket.s3.ap-northeast-2.amazonaws.com/"
-        self.imageURL = URL(string: baseURL + imageURL)
+
+        if let encoded = (baseURL + urlString)
+            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+           let imageURL = URL(string: encoded) {
+            self.imageURL = imageURL
+        } else {
+            self.imageURL = URL(string: urlString)
+        }
+
         self.shape = shape
     }
 
     public var body: some View {
-        switch shape {
-        case .square(let size):
-            KFImage(imageURL)
-                .resizable()
-                .placeholder { Color.Sub.gray50 }
-                .aspectRatio(contentMode: .fit)
-                .frame(width: size, height: size)
+        Group {
+            switch shape {
+            case .square(let size):
+                KFImage(imageURL)
+                    .resizable()
+                    .placeholder { Color.Sub.gray50 }
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: size, height: size)
 
-        case .rectangle:
-            KFImage(imageURL)
-                .resizable()
-                .placeholder { Color.Sub.gray50 }
-                .aspectRatio(contentMode: .fit)
+            case .rectangle:
+                KFImage(imageURL)
+                    .resizable()
+                    .placeholder { Color.Sub.gray50 }
+                    .aspectRatio(contentMode: .fit)
+            }
         }
     }
 }

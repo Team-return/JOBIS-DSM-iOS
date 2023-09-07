@@ -32,7 +32,7 @@ struct FindCompanyListCell: View {
                     Text(companyEntity.name)
                         .JOBISFont(.body(.body2), color: .Sub.gray90)
 
-                    Text("연매출 " + companyEntity.take.intComma() + "억")
+                    Text("연매출 " + Int(companyEntity.take).intComma() + "억")
                         .JOBISFont(.etc(.caption), color: .Sub.gray60)
 
                     Spacer()
