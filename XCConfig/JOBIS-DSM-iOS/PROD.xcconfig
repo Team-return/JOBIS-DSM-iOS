@@ -1,4 +1,5 @@
 #include "../Shared.xcconfig"
-BASE_URL = https:/$()/api.team-return.com
-BUNDLE_VERSION = 1
-BUNDLE_VERSION_STRING = 1
+BUNDLE_DISPLAY_NAME = JOBIS
+APP_BUNDLE_ID = com.team.return.JOBIS-DSM-iOS
+
+API_BASE_URL = https:/$()/api.team-return.com

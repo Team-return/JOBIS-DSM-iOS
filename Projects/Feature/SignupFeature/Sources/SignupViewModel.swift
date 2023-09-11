@@ -10,8 +10,10 @@ final class SignupViewModel: BaseViewModel {
         case infoSetting
         case emailVerify
         case password
+        case infoAgree
     }
     @Published var isSuccessSignup = false
+    @Published var isAgreeTerms = false
     @Published var signupType: SignupType = .infoSetting {
         didSet {
             switch signupType {
@@ -20,6 +22,8 @@ final class SignupViewModel: BaseViewModel {
             case .emailVerify:
                 nextButtonTitle = "인증확인"
             case .password:
+                nextButtonTitle = "다음"
+            case .infoAgree:
                 nextButtonTitle = "회원가입"
             }
         }
@@ -72,6 +76,8 @@ final class SignupViewModel: BaseViewModel {
             return !isEmailSend
         case .password:
             return password.isEmpty && checkPassword.isEmpty
+        case .infoAgree:
+            return !isAgreeTerms
         }
     }
 
@@ -138,6 +144,9 @@ final class SignupViewModel: BaseViewModel {
 
         case .password:
             passwordNextButtonDidTap()
+
+        case .infoAgree:
+            signup()
         }
     }
 
@@ -151,6 +160,10 @@ final class SignupViewModel: BaseViewModel {
             progressValue -= 1
 
         case .password:
+            signupType = .emailVerify
+            progressValue -= 1
+
+        case .infoAgree:
             signupType = .emailVerify
             progressValue -= 1
         }
@@ -252,7 +265,5 @@ final class SignupViewModel: BaseViewModel {
             isPasswordMismatchedError = true
             return
         }
-
-        signup()
     }
 }

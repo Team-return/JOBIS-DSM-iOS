@@ -21,10 +21,14 @@ import BookmarkListFeature
 import BookmarkListFeatureInterface
 import MyPageFeature
 import MyPageFeatureInterface
+import BugFeature
+import BugFeatureInterface
 import MenuFeature
 import MenuFeatureInterface
 import SplashFeature
 import SplashFeatureInterface
+import PostReviewFeature
+import PostReviewFeatureInterface
 
 public final class AppComponent: BootstrapComponent {
     private let _keychain: any Keychain
@@ -91,11 +95,17 @@ public extension AppComponent {
     var reportFactory: any ReportFactory {
         ReportComponent(parent: self)
     }
+    var bugListFactory: any BugListFactory {
+        BugListComponent(parent: self)
+    }
     var checkPasswordFactory: any CheckPasswordFactory {
         CheckPasswordComponent(parent: self)
     }
     var modifyPasswordFactory: any ModifyPasswordFactory {
         ModifyPasswordComponent(parent: self)
+    }
+    var postReviewFactory: any PostReviewFactory {
+        PostReviewComponent(parent: self)
     }
     var menuFactory: any MenuFactory {
         MenuComponent(parent: self)

@@ -58,7 +58,6 @@ struct ImploymentPersentView: View {
             .cornerRadius(30, corners: [.bottomLeft, .bottomRight])
             .shadow(blur: 20)
         }
-        .padding(.horizontal, 14)
     }
 
     func safeAreaTopInset() -> CGFloat {

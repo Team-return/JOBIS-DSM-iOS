@@ -9,6 +9,22 @@ public extension TargetDependency {
 }
 
 public extension TargetDependency.Feature {
+    static let PostReviewFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.PostReviewFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.PostReviewFeature.rawValue)
+    )
+    static let PostReviewFeature = TargetDependency.project(
+        target: ModulePaths.Feature.PostReviewFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.PostReviewFeature.rawValue)
+    )
+    static let BugFeatureInterface = TargetDependency.project(
+        target: ModulePaths.Feature.BugFeature.targetName(type: .interface),
+        path: .relativeToFeature(ModulePaths.Feature.BugFeature.rawValue)
+    )
+    static let BugFeature = TargetDependency.project(
+        target: ModulePaths.Feature.BugFeature.targetName(type: .sources),
+        path: .relativeToFeature(ModulePaths.Feature.BugFeature.rawValue)
+    )
     static let RenewalPasswordFeatureInterface = TargetDependency.project(
         target: ModulePaths.Feature.RenewalPasswordFeature.targetName(type: .interface),
         path: .relativeToFeature(ModulePaths.Feature.RenewalPasswordFeature.rawValue)

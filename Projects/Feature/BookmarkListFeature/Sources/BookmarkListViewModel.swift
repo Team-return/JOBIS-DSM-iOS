@@ -5,8 +5,9 @@ import BookmarksDomainInterface
 
 final class BookmarkListViewModel: BaseViewModel {
     @Published var bookmarkList: [BookmarkEntity] = []
+    @Published var recruitmentID: Int = 0
     @Published var isNavigateRecruitmentView: Bool = false
-    @Published var isSheetRecruitmentDetail: Bool = false
+    @Published var isNavigateRecruitmentDetail: Bool = false
     @Published var isFetchingBookmarkList: Bool = true
 
     private let fetchBookmarkListUseCase: FetchBookmarkListUseCase
@@ -26,12 +27,11 @@ final class BookmarkListViewModel: BaseViewModel {
     }
 
     func deleteBookmark(at offsets: IndexSet) {
-        bookmarkList.remove(atOffsets: offsets)
-
         let deletedItems = offsets.map { bookmarkList[$0] }
         for item in deletedItems {
             bookmark(id: item.recruitmentID)
         }
+        bookmarkList.remove(atOffsets: offsets)
     }
 
     private func fetchBookmarkList() {

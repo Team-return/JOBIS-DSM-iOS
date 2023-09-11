@@ -1,5 +1,8 @@
 import DesignSystem
+import BugFeatureInterface
 import MyPageFeatureInterface
+import PostReviewFeatureInterface
+import CompaniesDomainInterface
 import SwiftUI
 import UtilityModule
 import Kingfisher
@@ -11,52 +14,76 @@ struct MyPageView: View {
     @StateObject var viewModel: MyPageViewModel
 
     private let reportFactory: any ReportFactory
+    private let bugListFactory: any BugListFactory
     private let checkPasswordFactory: any CheckPasswordFactory
+    private let postReviewFactory: any PostReviewFactory
 
     init(
         viewModel: MyPageViewModel,
         reportFactory: any ReportFactory,
-        checkPasswordFactory: any CheckPasswordFactory
+        bugListFactory: any BugListFactory,
+        checkPasswordFactory: any CheckPasswordFactory,
+        postReviewFactory: any PostReviewFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.reportFactory = reportFactory
+        self.bugListFactory = bugListFactory
         self.checkPasswordFactory = checkPasswordFactory
+        self.postReviewFactory = postReviewFactory
     }
 
     var body: some View {
         ScrollView {
-            VStack(spacing: 0) {
-                Divider().foregroundColor(.Sub.gray40)
-                    .padding(.bottom, 50)
+            VStack(spacing: 40) {
+                HStack(spacing: 22) {
+                    VStack {
+                        ZStack(alignment: .bottomTrailing) {
+                            Group {
+                                URLImage(
+                                    imageURL: viewModel.studentInfo?.profileImageUrl ?? "",
+                                    shape: .square(85)
+                                )
+                            }
+                            .frame(width: 85, height: 85)
+                            .clipShape(Circle())
 
-                Group {
-                    KFImage(URL(string: viewModel.studentInfo?.profileImageUrl ?? ""))
-                        .placeholder { Circle().fill(Color.Sub.gray50) }
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 62, height: 62)
-                        .clipShape(Circle())
-                        .padding(.bottom, 5)
+                            Image(systemName: "pencil.circle.fill")
+                                .resizable()
+                                .frame(width: 26, height: 26)
+                                .foregroundColor(.Main.lightBlue)
+                                .background(Color.white)
+                                .clipShape(Circle())
+                                .unredacted()
+                        }
+                    }
+                    .onTapGesture {
+                        viewModel.isShowImagePicker.toggle()
+                    }
 
-                    Text(viewModel.studentInfo?.studentName ?? "홍길동")
-                        .JOBISFont(.heading(.heading6), color: .Sub.gray90)
+                    VStack(alignment: .leading, spacing: 0) {
+                        Text(viewModel.studentInfo?.studentName ?? "Loading")
+                            .JOBISFont(.heading(.heading6), color: .Sub.gray90)
 
-                    Text((viewModel.studentInfo?.department ?? .softwareDevelop).localizedString())
-                        .JOBISFont(.body(.body2), color: .Sub.gray90)
+                        Text((viewModel.studentInfo?.department ?? .none).localizedString())
+                            .JOBISFont(.body(.body2), color: .Sub.gray90)
 
-                    Text(viewModel.studentInfo?.studentGcn ?? "2학년 2반 18번")
-                        .JOBISFont(.body(.body4), color: .Sub.gray70)
-                        .padding(.bottom, 15)
+                        Text(viewModel.studentInfo?.studentGcn ?? "")
+                            .JOBISFont(.body(.body4), color: .Sub.gray70)
+                    }
+
+                    Spacer()
                 }
-                .redacted(reason: viewModel.isLoading ? .placeholder : [])
+                .padding(.top, 40)
 
-//                Text("백엔드")
-//                    .JOBISFont(.body(.body4), color: .Sub.gray10)
-//                    .padding(.vertical, 5)
-//                    .padding(.horizontal, 15)
-//                    .background(Color.Main.lightBlue)
-//                    .cornerRadius(15)
-//                    .padding(.bottom, 35)
+                if let writableReviewList = viewModel.writableReviewList?.companies {
+                    if !writableReviewList.isEmpty {
+                        VStack(spacing: 10) {
+                            ForEach(writableReviewList, id: \.self) { company in
+                                writableReviewCell(company: company)
+                            }
+                        }
+                    }
+                }
 
                 VStack(alignment: .leading, spacing: 15) {
                     Divider().foregroundColor(.Sub.gray40)
@@ -65,13 +92,15 @@ struct MyPageView: View {
                         viewModel.isNavigateReportView.toggle()
                     }
 
-//                    Divider().foregroundColor(.Sub.gray40)
-//
-//                    myPageNavigateCell(title: "관심분야 선택하기", color: .Main.lightBlue) {
-//                        viewModel.isShowFieldOfInterest.toggle()
-//                    }
-
                     Divider().foregroundColor(.Sub.gray40)
+
+                    if appState.authority == .developer {
+                        myPageNavigateCell(title: "버그함", color: .Main.lightBlue) {
+                            viewModel.isNavigateBugListView.toggle()
+                        }
+
+                        Divider().foregroundColor(.Sub.gray40)
+                    }
 
                     myPageNavigateCell(title: "비밀번호 변경하기", color: .Main.lightBlue) {
                         viewModel.isNavigateChangePassword.toggle()
@@ -92,14 +121,17 @@ struct MyPageView: View {
             to: reportFactory.makeView().eraseToAnyView(),
             when: $viewModel.isNavigateReportView
         )
-        .sheet(isPresented: $viewModel.isShowFieldOfInterest) {
-            Text("관심분야 선택하기")
-        }
+        .navigate(
+            to: bugListFactory.makeView().eraseToAnyView(),
+            when: $viewModel.isNavigateBugListView
+        )
         .navigate(
             to: checkPasswordFactory.makeView().eraseToAnyView()
                 .environment(\.rootPresentationMode, $viewModel.isNavigateChangePassword),
             when: $viewModel.isNavigateChangePassword
         )
+        .imagePicker(isShow: $viewModel.isShowImagePicker, uiImage: $viewModel.image)
+        .jobisToast(isShowing: $viewModel.isErrorOcuured, message: "프로필 변경에 실패했습니다.", style: .error)
         .onChange(of: viewModel.isTabbarHidden) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue
@@ -111,6 +143,9 @@ struct MyPageView: View {
                     appState.sceneFlow = .auth
                 }
             }
+        }
+        .onChange(of: viewModel.image) { _ in
+            viewModel.changeProfileImageDidSelected()
         }
         .onAppear {
             viewModel.onAppear()
@@ -147,5 +182,29 @@ struct MyPageView: View {
                 Spacer()
             }
         }
+    }
+
+    @ViewBuilder
+    func writableReviewCell(company: WritableReviewCompanyEntity) -> some View {
+        Button {
+            viewModel.isNavigatePostReview.toggle()
+        } label: {
+            HStack(spacing: 5) {
+                Text(company.name)
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+
+                Text("면접후기 작성하기")
+                    .JOBISFont(.etc(.caption), color: .Main.lightBlue)
+            }
+            .padding(.vertical, 14)
+            .frame(maxWidth: .infinity)
+            .background(Color.Sub.gray10)
+            .cornerRadius(15)
+            .shadow(opacity: 0.1, blur: 4)
+        }
+        .navigate(
+            to: postReviewFactory.makeView(companyID: company.id).eraseToAnyView(),
+            when: $viewModel.isNavigatePostReview
+        )
     }
 }

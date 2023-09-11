@@ -7,6 +7,8 @@ struct SignupView: View {
     @StateObject var viewModel: SignupViewModel
     @Environment(\.dismiss) var dismiss
 
+    let infoAgreeURL: String = "https://jobis-webview.team-return.com/sign-up-policy"
+
     init(
         viewModel: SignupViewModel
     ) {
@@ -24,6 +26,9 @@ struct SignupView: View {
 
             case .password:
                 SignupPasswordView(viewModel: viewModel)
+
+            case .infoAgree:
+                infoAgreeWebView(url: infoAgreeURL)
             }
 
             Spacer()
@@ -95,6 +100,32 @@ struct SignupView: View {
                 viewModel.isButtonEnabled
             )
             .padding(.vertical, 20)
+        }
+    }
+
+    @ViewBuilder
+    func infoAgreeWebView(url: String) -> some View {
+        VStack(alignment: .leading) {
+            Text("약관 동의")
+                .JOBISFont(.heading(.heading1), color: .Sub.gray90)
+                .padding(.top, 24)
+
+            JOBISWebView(urlToLoad: url)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+
+            VStack(spacing: 16) {
+                HStack(spacing: 8) {
+                    JOBISRadioBox(isOn: $viewModel.isAgreeTerms)
+
+                    Text("전체 약관 동의")
+                        .JOBISFont(.etc(.caption), color: .Sub.gray70)
+
+                    Spacer()
+                }
+                .onTapGesture {
+                    viewModel.isAgreeTerms.toggle()
+                }
+            }
         }
     }
 }

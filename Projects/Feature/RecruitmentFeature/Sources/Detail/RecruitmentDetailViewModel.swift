@@ -8,7 +8,7 @@ import Combine
 final class RecruitmentDetailViewModel: BaseViewModel {
     @Published var recruitmentDetail: RecruitmentDetailEntity?
     @Published var isTappedApplyButton = false
-    @Published var isSheetCompanyDetail = false
+    @Published var isNavigateCompanyDetail = false
     @Published var isSuccessApply = false
     @Published var titles: [String] = []
     @Published var contents: [String] = []
@@ -41,7 +41,10 @@ final class RecruitmentDetailViewModel: BaseViewModel {
         uploadFiles(complete: complete)
     }
 
-    private func applyCompany(_ attachments: [AttachmentsRequestDTO], complete: @escaping () -> Void) {
+    private func applyCompany(
+        _ attachments: [AttachmentsRequestDTO],
+        complete: @escaping () -> Void
+    ) {
         addCancellable(
             applyCompanyUseCase.execute(
                 id: id,

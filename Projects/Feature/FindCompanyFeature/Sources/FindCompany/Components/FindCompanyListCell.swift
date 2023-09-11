@@ -6,7 +6,6 @@ import Kingfisher
 import UtilityModule
 
 struct FindCompanyListCell: View {
-    @State var isNaviagteDetail = false
     let companyEntity: CompanyEntity
 
     private let findCompanyDetailFactory: any FindCompanyDetailFactory
@@ -20,14 +19,12 @@ struct FindCompanyListCell: View {
     }
 
     var body: some View {
-        Button {
-            self.isNaviagteDetail.toggle()
+        NavigationLink {
+            findCompanyDetailFactory.makeView(id: String(companyEntity.id), isDetail: false)
+                .eraseToAnyView()
         } label: {
             HStack(spacing: 12) {
-                KFImage(URL(string: companyEntity.logoURL))
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80)
+                URLImage(imageURL: companyEntity.logoURL, shape: .square(80))
                     .cornerRadius(15)
                     .padding(8)
 
@@ -35,7 +32,7 @@ struct FindCompanyListCell: View {
                     Text(companyEntity.name)
                         .JOBISFont(.body(.body2), color: .Sub.gray90)
 
-                    Text("연매출 " + companyEntity.take.intComma() + "억")
+                    Text("연매출 " + Int(companyEntity.take).intComma() + "억")
                         .JOBISFont(.etc(.caption), color: .Sub.gray60)
 
                     Spacer()
@@ -49,12 +46,6 @@ struct FindCompanyListCell: View {
             .background(Color.Sub.gray10)
             .cornerRadius(15)
             .shadow(color: .black, opacity: 0.1, blur: 4)
-            .padding(.horizontal, 24)
-        }
-        .sheet(isPresented: $isNaviagteDetail) {
-            findCompanyDetailFactory.makeView(id: String(companyEntity.id), isDetail: false)
-                .eraseToAnyView()
-//                .presentationDragIndicator(.visible)
         }
     }
 }

@@ -13,9 +13,12 @@ public struct ProjectEnvironment {
 public let env = ProjectEnvironment (
     appName: "JOBIS-DSM-iOS",
     targetName: "JOBIS-DSM-iOS",
-    targetTestName: "DMS-AliensTests",
+    targetTestName: "DSM-JOBISTests",
     organizationName: "com.team.return",
     deploymentTarget: .iOS(targetVersion: "15.0", devices: [.iphone, .ipad]),
     platform: .iOS,
-    baseSetting: ["OTHER_LDFLAGS": "-Xlinker -interposable"]
+    baseSetting: [
+        "OTHER_LDFLAGS": "-Xlinker -interposable",
+        "ENABLE_TESTABILITY": "YES"
+    ]
 )

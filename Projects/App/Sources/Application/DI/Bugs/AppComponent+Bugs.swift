@@ -20,4 +20,16 @@ public extension AppComponent {
             ReportBugsUseCaseImpl(bugsRepository: bugsRepository)
         }
     }
+
+    var fetchBugListUseCase: any FetchBugListUseCase {
+        shared {
+            FetchBugListUseCaseImpl(bugsRepository: bugsRepository)
+        }
+    }
+
+    var fetchBugDetailUseCase: any FetchBugDetailUseCase {
+        shared {
+            FetchBugDetailUseCaseImpl(bugsRepository: bugsRepository)
+        }
+    }
 }

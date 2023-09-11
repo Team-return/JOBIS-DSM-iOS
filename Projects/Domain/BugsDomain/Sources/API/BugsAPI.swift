@@ -4,6 +4,8 @@ import BaseDomain
 
 public enum BugsAPI {
     case reportBugs(ReportBugsRequestDTO)
+    case fetchBugList(developmentType: DevelopmentType)
+    case fetchBugDetail(id: Int)
 }
 
 extension BugsAPI: JobisAPI {
@@ -15,8 +17,11 @@ extension BugsAPI: JobisAPI {
 
     public var urlPath: String {
         switch self {
-        case .reportBugs:
-            return ""
+        case .reportBugs, .fetchBugList:
+            return "/"
+
+        case let .fetchBugDetail(id):
+            return "/\(id)/"
         }
     }
 
@@ -24,6 +29,9 @@ extension BugsAPI: JobisAPI {
         switch self {
         case .reportBugs:
             return .post
+
+        case .fetchBugList, .fetchBugDetail:
+            return .get
         }
     }
 
@@ -31,6 +39,16 @@ extension BugsAPI: JobisAPI {
         switch self {
         case .reportBugs(let req):
             return .requestJSONEncodable(req)
+
+        case let .fetchBugList(developmentType):
+            return .requestParameters(
+                parameters: [
+                    "development_area": developmentType.rawValue
+                ],
+                encoding: URLEncoding.queryString)
+
+        case .fetchBugDetail:
+            return .requestPlain
         }
     }
 

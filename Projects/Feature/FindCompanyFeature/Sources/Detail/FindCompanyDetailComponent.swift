@@ -8,6 +8,7 @@ import NeedleFoundation
 public protocol FindCompanyDetailDependency: Dependency {
     var fetchCompanyInfoDetailUseCase: any FetchCompanyInfoDetailUseCase { get }
     var fetchReviewListUseCase: any FetchReviewListUseCase { get }
+    var fetchReviewDetailUseCase: any FetchReviewDetailUseCase { get }
     var recruitmentDetailFactory: any RecruitmentDetailFactory { get }
 }
 
@@ -17,6 +18,7 @@ public final class FindCompanyDetailComponent: Component<FindCompanyDetailDepend
             viewModel: .init(
                 fetchCompanyInfoDetailUseCase: dependency.fetchCompanyInfoDetailUseCase,
                 fetchReviewListUseCase: dependency.fetchReviewListUseCase,
+                fetchReviewDetailUseCase: dependency.fetchReviewDetailUseCase,
                 id: id
             ),
             recruitmentDetailFactory: dependency.recruitmentDetailFactory,

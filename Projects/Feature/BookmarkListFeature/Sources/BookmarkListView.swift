@@ -29,7 +29,7 @@ struct BookmarkListView: View {
             if !viewModel.isFetchingBookmarkList {
                 if !viewModel.bookmarkList.isEmpty {
                     List {
-                        ForEach(viewModel.bookmarkList, id: \.self) { bookmark in
+                        ForEach(viewModel.bookmarkList, id: \.recruitmentID) { bookmark in
                             bookmarkCell(bookmark: bookmark)
                         }
                         .onDelete(perform: viewModel.deleteBookmark)
@@ -64,11 +64,22 @@ struct BookmarkListView: View {
         .onAppear {
             viewModel.onAppear()
         }
+        .onChange(of: viewModel.isNavigateRecruitmentDetail) { newValue in
+            withAnimation {
+                tabbarHidden.wrappedValue = newValue
+            }
+        }
         .onChange(of: viewModel.isNavigateRecruitmentView) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue
             }
         }
+        .navigate(
+            to: recruitmentDetailFactory.makeView(
+                id: String(viewModel.recruitmentID), isDetail: false
+            ).eraseToAnyView(),
+            when: $viewModel.isNavigateRecruitmentDetail
+        )
         .navigate(
             to: recruitmentFactory.makeView().eraseToAnyView(),
             when: $viewModel.isNavigateRecruitmentView
@@ -79,7 +90,8 @@ struct BookmarkListView: View {
     @ViewBuilder
     func bookmarkCell(bookmark: BookmarkEntity) -> some View {
         Button {
-            viewModel.isSheetRecruitmentDetail.toggle()
+            viewModel.isNavigateRecruitmentDetail.toggle()
+            viewModel.recruitmentID = bookmark.recruitmentID
         } label: {
             HStack {
                 Text(bookmark.companyName)
@@ -97,13 +109,6 @@ struct BookmarkListView: View {
                     .cornerRadius(15)
                     .shadow(opacity: 0.1, blur: 4)
             )
-            .sheet(isPresented: $viewModel.isSheetRecruitmentDetail) {
-                recruitmentDetailFactory.makeView(
-                    id: "\(bookmark.recruitmentID)", isDetail: false
-                )
-                .eraseToAnyView()
-//                .presentationDragIndicator(.visible)
-            }
         }
     }
 }

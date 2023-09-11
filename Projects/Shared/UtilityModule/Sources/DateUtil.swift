@@ -8,3 +8,12 @@ public extension String {
         return formatter.date(from: self) ?? .init()
     }
 }
+
+public extension Date {
+    func toDotsString() -> String {
+        let lastFormatter = DateFormatter()
+        lastFormatter.dateFormat = "yyyy.MM.dd"
+        lastFormatter.locale = Locale(identifier: "ko_kr")
+        return lastFormatter.string(from: self)
+    }
+}

@@ -6,6 +6,7 @@ import UtilityModule
 import Kingfisher
 
 struct RecruitmentDetailView: View {
+    @Environment(\.dismiss) var dismiss
     @StateObject var viewModel: RecruitmentDetailViewModel
     private let isDetail: Bool
 
@@ -22,15 +23,12 @@ struct RecruitmentDetailView: View {
     }
 
     var body: some View {
-        if let detailInfo = viewModel.recruitmentDetail {
-            ZStack {
+        ZStack {
+            if let detailInfo = viewModel.recruitmentDetail {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 10) {
                         HStack(spacing: 12) {
-                            KFImage(URL(string: detailInfo.companyProfileUrl))
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 80, height: 80)
+                            URLImage(imageURL: detailInfo.companyProfileUrl, shape: .square(80))
                                 .cornerRadius(15)
 
                             Text(detailInfo.companyName)
@@ -40,23 +38,34 @@ struct RecruitmentDetailView: View {
 
                         if !isDetail {
                             GrayBtn(text: "기업 보기", size: .large) {
-                                viewModel.isSheetCompanyDetail.toggle()
+                                viewModel.isNavigateCompanyDetail.toggle()
                             }
-                            .sheet(isPresented: $viewModel.isSheetCompanyDetail) {
-                                findCompanyDetailFactory.makeView(
+                            .navigate(
+                                to: findCompanyDetailFactory.makeView(
                                     id: String(detailInfo.companyID),
                                     isDetail: true
-                                ).eraseToAnyView()
-                            }
+                                ).eraseToAnyView(),
+                                when: $viewModel.isNavigateCompanyDetail
+                            )
                         }
 
                         Divider()
                             .foregroundColor(.Sub.gray40)
 
-                        recruitmentInfo(detailInfo: detailInfo)
+                        VStack(alignment: .leading, spacing: 10) {
+                            recruitmentInfoCell(
+                                title: "모집기간",
+                                content: detailInfo.startDate + " ~ " + detailInfo.endDate
+                            )
+
+                            areaView(areas: detailInfo.areas)
+
+                            ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
+                                recruitmentInfoCell(title: title, content: content)
+                            }
+                        }
                     }
-                    .padding(.vertical, 24)
-                    .padding(.bottom, 50)
+                    .padding(.bottom, 100)
                     .padding(.horizontal, 20)
                 }
 
@@ -67,7 +76,6 @@ struct RecruitmentDetailView: View {
                         viewModel.isTappedApplyButton.toggle()
                     }
                 }
-                .padding(.bottom, 10)
                 .padding(.horizontal, 20)
 
                 Color.black
@@ -87,46 +95,28 @@ struct RecruitmentDetailView: View {
                     }
                 }
                 .opacity(viewModel.isTappedApplyButton ? 1 : 0)
-            }
-            .onAppear {
-                viewModel.onAppear()
-            }
-            .jobisToast(
-                isShowing: $viewModel.isErrorOcuured,
-                message: viewModel.errorMessage,
-                style: .error,
-                title: "지원 불가"
-            )
-            .jobisToast(
-                isShowing: $viewModel.isSuccessApply,
-                message: "성공적으로 지원되셨습니다.",
-                style: .success,
-                title: "지원 성공"
-            )
-            .animation(.easeIn(duration: 0.1), value: viewModel.isTappedApplyButton)
-        } else {
-            ProgressView().progressViewStyle(.circular)
-                .frame(maxHeight: .infinity)
-                .onAppear {
-                    viewModel.onAppear()
-                }
-        }
-    }
-
-    @ViewBuilder
-    func recruitmentInfo(detailInfo: RecruitmentDetailEntity) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            recruitmentInfoCell(
-                title: "모집기간",
-                content: detailInfo.startDate + " ~ " + detailInfo.endDate
-            )
-
-            areaView(areas: detailInfo.areas)
-
-            ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
-                recruitmentInfoCell(title: title, content: content)
+            } else {
+                ProgressView().progressViewStyle(.circular)
+                    .frame(maxHeight: .infinity)
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
+        .onLoad {
+            viewModel.onAppear()
+        }
+        .jobisToast(
+            isShowing: $viewModel.isErrorOcuured,
+            message: viewModel.errorMessage,
+            style: .error,
+            title: "지원 불가"
+        )
+        .jobisToast(
+            isShowing: $viewModel.isSuccessApply,
+            message: "성공적으로 지원되셨습니다.",
+            style: .success,
+            title: "지원 성공"
+        )
+        .animation(.easeIn(duration: 0.1), value: viewModel.isTappedApplyButton)
     }
 
     @ViewBuilder

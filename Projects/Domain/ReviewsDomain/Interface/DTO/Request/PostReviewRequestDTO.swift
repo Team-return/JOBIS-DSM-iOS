@@ -2,29 +2,25 @@ import Foundation
 
 public struct PostReviewRequestDTO: Encodable {
     public let companyID: Int
-    public let qnaElements: [QnaElementRequestDTO]
-    public let applicationID: Int
+    public var qnaElements: [QnaElementRequestDTO]
 
     public init(
         companyID: Int,
-        qnaElements: [QnaElementRequestDTO],
-        applicationID: Int
+        qnaElements: [QnaElementRequestDTO]
     ) {
         self.companyID = companyID
         self.qnaElements = qnaElements
-        self.applicationID = applicationID
     }
 
     enum CodingKeys: String, CodingKey {
         case companyID = "company_id"
         case qnaElements = "qna_elements"
-        case applicationID = "application_id"
     }
 }
 
 public struct QnaElementRequestDTO: Encodable {
-    public let question, answer: String
-    public let codeID: Int
+    public var question, answer: String
+    public var codeID: Int
 
     public init(question: String, answer: String, codeID: Int) {
         self.question = question

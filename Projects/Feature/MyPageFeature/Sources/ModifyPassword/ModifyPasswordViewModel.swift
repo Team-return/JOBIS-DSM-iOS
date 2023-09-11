@@ -22,7 +22,7 @@ final class ModifyPasswordViewModel: BaseViewModel {
     }
 
     let currentPassword: String
-    private let changePasswordUseCase: any ChangePasswordUseCase
+    private let changePasswordUseCase: ChangePasswordUseCase
 
     public init(
         changePasswordUseCase: any ChangePasswordUseCase,

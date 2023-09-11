@@ -62,6 +62,10 @@ struct SigninView: View {
             .jobisToast(isShowing: $viewModel.isShowToast, message: viewModel.errorMessage, style: .error)
             .jobisBackground()
             .hideKeyboardWhenTap()
+            .onChange(of: viewModel.authority) { newValue in
+                guard let newValue else { return }
+                appState.authority = newValue
+            }
             .onChange(of: viewModel.isSuccessSignin) { newValue in
                 guard newValue else { return }
                 appState.sceneFlow = .main

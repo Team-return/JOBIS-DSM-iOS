@@ -50,4 +50,10 @@ public extension AppComponent {
             ChangePasswordUseCaseImpl(studentsRepository: studentsRepository)
         }
     }
+
+    var changeProfileImageUseCase: any ChangeProfileImageUseCase {
+        shared {
+            ChangeProfileImageUseCaseImpl(studentsRepository: studentsRepository)
+        }
+    }
 }

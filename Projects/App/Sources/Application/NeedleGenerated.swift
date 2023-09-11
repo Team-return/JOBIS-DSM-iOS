@@ -8,6 +8,8 @@ import BookmarkListFeature
 import BookmarkListFeatureInterface
 import BookmarksDomain
 import BookmarksDomainInterface
+import BugFeature
+import BugFeatureInterface
 import BugsDomain
 import BugsDomainInterface
 import CodesDomain
@@ -29,6 +31,8 @@ import MenuFeatureInterface
 import MyPageFeature
 import MyPageFeatureInterface
 import NeedleFoundation
+import PostReviewFeature
+import PostReviewFeatureInterface
 import RecruitmentFeature
 import RecruitmentFeatureInterface
 import RecruitmentsDomain
@@ -128,11 +132,26 @@ private class MyPageDependency48d84b530313b3ee40feProvider: MyPageDependency {
     var logoutUseCase: any LogoutUseCase {
         return appComponent.logoutUseCase
     }
+    var uploadFilesUseCase: any UploadFilesUseCase {
+        return appComponent.uploadFilesUseCase
+    }
+    var changeProfileImageUseCase: any ChangeProfileImageUseCase {
+        return appComponent.changeProfileImageUseCase
+    }
+    var fetchWritableReviewListUseCase: any FetchWritableReviewListUseCase {
+        return appComponent.fetchWritableReviewListUseCase
+    }
     var reportFactory: any ReportFactory {
         return appComponent.reportFactory
     }
+    var bugListFactory: any BugListFactory {
+        return appComponent.bugListFactory
+    }
     var checkPasswordFactory: any CheckPasswordFactory {
         return appComponent.checkPasswordFactory
+    }
+    var postReviewFactory: any PostReviewFactory {
+        return appComponent.postReviewFactory
     }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
@@ -171,22 +190,6 @@ private class CheckPasswordDependencyd8ff624643356835c570Provider: CheckPassword
 /// ^->AppComponent->CheckPasswordComponent
 private func factorycb24ea072925f86bef40f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return CheckPasswordDependencyd8ff624643356835c570Provider(appComponent: parent1(component) as! AppComponent)
-}
-private class ReportDependency6e94b8b26a4d1950e6e6Provider: ReportDependency {
-    var reportBugsUseCase: any ReportBugsUseCase {
-        return appComponent.reportBugsUseCase
-    }
-    var uploadFilesUseCase: any UploadFilesUseCase {
-        return appComponent.uploadFilesUseCase
-    }
-    private let appComponent: AppComponent
-    init(appComponent: AppComponent) {
-        self.appComponent = appComponent
-    }
-}
-/// ^->AppComponent->ReportComponent
-private func factoryf9f7e1c92faf5c6d60daf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
-    return ReportDependency6e94b8b26a4d1950e6e6Provider(appComponent: parent1(component) as! AppComponent)
 }
 private class BookmarkListDependency51ed5641ae9b8f23fd81Provider: BookmarkListDependency {
     var fetchBookmarkListUseCase: any FetchBookmarkListUseCase {
@@ -295,6 +298,9 @@ private class FindCompanyDetailDependency4141f6f851410a3f60d3Provider: FindCompa
     }
     var fetchReviewListUseCase: any FetchReviewListUseCase {
         return appComponent.fetchReviewListUseCase
+    }
+    var fetchReviewDetailUseCase: any FetchReviewDetailUseCase {
+        return appComponent.fetchReviewDetailUseCase
     }
     var recruitmentDetailFactory: any RecruitmentDetailFactory {
         return appComponent.recruitmentDetailFactory
@@ -406,6 +412,54 @@ private class MenuDependency43a0e3ba5712a2a90856Provider: MenuDependency {
 private func factory9727a582143c5cd40ff3f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
     return MenuDependency43a0e3ba5712a2a90856Provider(appComponent: parent1(component) as! AppComponent)
 }
+private class BugListDependencyabbbea23d9af7a408456Provider: BugListDependency {
+    var fetchBugListUseCase: any FetchBugListUseCase {
+        return appComponent.fetchBugListUseCase
+    }
+    var fetchBugDetailUseCase: any FetchBugDetailUseCase {
+        return appComponent.fetchBugDetailUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->BugListComponent
+private func factory43ed38c107a618e64a10f47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return BugListDependencyabbbea23d9af7a408456Provider(appComponent: parent1(component) as! AppComponent)
+}
+private class ReportDependency6e94b8b26a4d1950e6e6Provider: ReportDependency {
+    var reportBugsUseCase: any ReportBugsUseCase {
+        return appComponent.reportBugsUseCase
+    }
+    var uploadFilesUseCase: any UploadFilesUseCase {
+        return appComponent.uploadFilesUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->ReportComponent
+private func factoryf9f7e1c92faf5c6d60daf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return ReportDependency6e94b8b26a4d1950e6e6Provider(appComponent: parent1(component) as! AppComponent)
+}
+private class PostReviewDependencyca8f8deff503d904cf15Provider: PostReviewDependency {
+    var fetchCodesUseCase: any FetchCodesUseCase {
+        return appComponent.fetchCodesUseCase
+    }
+    var postReviewUseCase: any PostReviewUseCase {
+        return appComponent.postReviewUseCase
+    }
+    private let appComponent: AppComponent
+    init(appComponent: AppComponent) {
+        self.appComponent = appComponent
+    }
+}
+/// ^->AppComponent->PostReviewComponent
+private func factory506b5181063a2884e01cf47b58f8f304c97af4d5(_ component: NeedleFoundation.Scope) -> AnyObject {
+    return PostReviewDependencyca8f8deff503d904cf15Provider(appComponent: parent1(component) as! AppComponent)
+}
 
 #else
 extension AppComponent: Registration {
@@ -426,6 +480,8 @@ extension AppComponent: Registration {
         localTable["remoteBugsDataSource-any RemoteBugsDataSource"] = { [unowned self] in self.remoteBugsDataSource as Any }
         localTable["bugsRepository-any BugsRepository"] = { [unowned self] in self.bugsRepository as Any }
         localTable["reportBugsUseCase-any ReportBugsUseCase"] = { [unowned self] in self.reportBugsUseCase as Any }
+        localTable["fetchBugListUseCase-any FetchBugListUseCase"] = { [unowned self] in self.fetchBugListUseCase as Any }
+        localTable["fetchBugDetailUseCase-any FetchBugDetailUseCase"] = { [unowned self] in self.fetchBugDetailUseCase as Any }
         localTable["signinFactory-any SigninFactory"] = { [unowned self] in self.signinFactory as Any }
         localTable["authenticationEmailFactory-any AuthenticationEmailFactory"] = { [unowned self] in self.authenticationEmailFactory as Any }
         localTable["renewalPasswordFactory-any RenewalPasswordFactory"] = { [unowned self] in self.renewalPasswordFactory as Any }
@@ -440,8 +496,10 @@ extension AppComponent: Registration {
         localTable["homeFactory-any HomeFactory"] = { [unowned self] in self.homeFactory as Any }
         localTable["myPageFactory-any MyPageFactory"] = { [unowned self] in self.myPageFactory as Any }
         localTable["reportFactory-any ReportFactory"] = { [unowned self] in self.reportFactory as Any }
+        localTable["bugListFactory-any BugListFactory"] = { [unowned self] in self.bugListFactory as Any }
         localTable["checkPasswordFactory-any CheckPasswordFactory"] = { [unowned self] in self.checkPasswordFactory as Any }
         localTable["modifyPasswordFactory-any ModifyPasswordFactory"] = { [unowned self] in self.modifyPasswordFactory as Any }
+        localTable["postReviewFactory-any PostReviewFactory"] = { [unowned self] in self.postReviewFactory as Any }
         localTable["menuFactory-any MenuFactory"] = { [unowned self] in self.menuFactory as Any }
         localTable["remoteStudentsDataSource-any RemoteStudentsDataSource"] = { [unowned self] in self.remoteStudentsDataSource as Any }
         localTable["studentsRepository-any StudentsRepository"] = { [unowned self] in self.studentsRepository as Any }
@@ -451,6 +509,7 @@ extension AppComponent: Registration {
         localTable["fetchStudentInfoUseCase-any FetchStudentInfoUseCase"] = { [unowned self] in self.fetchStudentInfoUseCase as Any }
         localTable["compareCurrentPassswordUseCase-any CompareCurrentPassswordUseCase"] = { [unowned self] in self.compareCurrentPassswordUseCase as Any }
         localTable["changePasswordUseCase-any ChangePasswordUseCase"] = { [unowned self] in self.changePasswordUseCase as Any }
+        localTable["changeProfileImageUseCase-any ChangeProfileImageUseCase"] = { [unowned self] in self.changeProfileImageUseCase as Any }
         localTable["remoteBookmarksDataSource-any RemoteBookmarksDataSource"] = { [unowned self] in self.remoteBookmarksDataSource as Any }
         localTable["bookmarksRepository-any BookmarksRepository"] = { [unowned self] in self.bookmarksRepository as Any }
         localTable["fetchBookmarkListUseCase-any FetchBookmarkListUseCase"] = { [unowned self] in self.fetchBookmarkListUseCase as Any }
@@ -474,6 +533,7 @@ extension AppComponent: Registration {
         localTable["companiesRepository-any CompaniesRepository"] = { [unowned self] in self.companiesRepository as Any }
         localTable["fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"] = { [unowned self] in self.fetchCompanyInfoDetailUseCase as Any }
         localTable["fetchStudentCompanyListUseCase-any FetchStudentCompanyListUseCase"] = { [unowned self] in self.fetchStudentCompanyListUseCase as Any }
+        localTable["fetchWritableReviewListUseCase-any FetchWritableReviewListUseCase"] = { [unowned self] in self.fetchWritableReviewListUseCase as Any }
         localTable["remoteReviewsDataSource-any RemoteReviewsDataSource"] = { [unowned self] in self.remoteReviewsDataSource as Any }
         localTable["reviewsRepository-any ReviewsRepository"] = { [unowned self] in self.reviewsRepository as Any }
         localTable["fetchReviewDetailUseCase-any FetchReviewDetailUseCase"] = { [unowned self] in self.fetchReviewDetailUseCase as Any }
@@ -506,8 +566,13 @@ extension MyPageComponent: Registration {
     public func registerItems() {
         keyPathToName[\MyPageDependency.fetchStudentInfoUseCase] = "fetchStudentInfoUseCase-any FetchStudentInfoUseCase"
         keyPathToName[\MyPageDependency.logoutUseCase] = "logoutUseCase-any LogoutUseCase"
+        keyPathToName[\MyPageDependency.uploadFilesUseCase] = "uploadFilesUseCase-any UploadFilesUseCase"
+        keyPathToName[\MyPageDependency.changeProfileImageUseCase] = "changeProfileImageUseCase-any ChangeProfileImageUseCase"
+        keyPathToName[\MyPageDependency.fetchWritableReviewListUseCase] = "fetchWritableReviewListUseCase-any FetchWritableReviewListUseCase"
         keyPathToName[\MyPageDependency.reportFactory] = "reportFactory-any ReportFactory"
+        keyPathToName[\MyPageDependency.bugListFactory] = "bugListFactory-any BugListFactory"
         keyPathToName[\MyPageDependency.checkPasswordFactory] = "checkPasswordFactory-any CheckPasswordFactory"
+        keyPathToName[\MyPageDependency.postReviewFactory] = "postReviewFactory-any PostReviewFactory"
     }
 }
 extension ModifyPasswordComponent: Registration {
@@ -519,12 +584,6 @@ extension CheckPasswordComponent: Registration {
     public func registerItems() {
         keyPathToName[\CheckPasswordDependency.compareCurrentPassswordUseCase] = "compareCurrentPassswordUseCase-any CompareCurrentPassswordUseCase"
         keyPathToName[\CheckPasswordDependency.modifyPasswordFactory] = "modifyPasswordFactory-any ModifyPasswordFactory"
-    }
-}
-extension ReportComponent: Registration {
-    public func registerItems() {
-        keyPathToName[\ReportDependency.reportBugsUseCase] = "reportBugsUseCase-any ReportBugsUseCase"
-        keyPathToName[\ReportDependency.uploadFilesUseCase] = "uploadFilesUseCase-any UploadFilesUseCase"
     }
 }
 extension BookmarkListComponent: Registration {
@@ -568,6 +627,7 @@ extension FindCompanyDetailComponent: Registration {
     public func registerItems() {
         keyPathToName[\FindCompanyDetailDependency.fetchCompanyInfoDetailUseCase] = "fetchCompanyInfoDetailUseCase-any FetchCompanyInfoDetailUseCase"
         keyPathToName[\FindCompanyDetailDependency.fetchReviewListUseCase] = "fetchReviewListUseCase-any FetchReviewListUseCase"
+        keyPathToName[\FindCompanyDetailDependency.fetchReviewDetailUseCase] = "fetchReviewDetailUseCase-any FetchReviewDetailUseCase"
         keyPathToName[\FindCompanyDetailDependency.recruitmentDetailFactory] = "recruitmentDetailFactory-any RecruitmentDetailFactory"
     }
 }
@@ -607,6 +667,24 @@ extension MenuComponent: Registration {
         keyPathToName[\MenuDependency.myPageFactory] = "myPageFactory-any MyPageFactory"
     }
 }
+extension BugListComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\BugListDependency.fetchBugListUseCase] = "fetchBugListUseCase-any FetchBugListUseCase"
+        keyPathToName[\BugListDependency.fetchBugDetailUseCase] = "fetchBugDetailUseCase-any FetchBugDetailUseCase"
+    }
+}
+extension ReportComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\ReportDependency.reportBugsUseCase] = "reportBugsUseCase-any ReportBugsUseCase"
+        keyPathToName[\ReportDependency.uploadFilesUseCase] = "uploadFilesUseCase-any UploadFilesUseCase"
+    }
+}
+extension PostReviewComponent: Registration {
+    public func registerItems() {
+        keyPathToName[\PostReviewDependency.fetchCodesUseCase] = "fetchCodesUseCase-any FetchCodesUseCase"
+        keyPathToName[\PostReviewDependency.postReviewUseCase] = "postReviewUseCase-any PostReviewUseCase"
+    }
+}
 
 
 #endif
@@ -630,7 +708,6 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->MyPageComponent", factory0f6f456ebf157d02dfb3f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->ModifyPasswordComponent", factoryf1815b12945a9aa456a2f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->CheckPasswordComponent", factorycb24ea072925f86bef40f47b58f8f304c97af4d5)
-    registerProviderFactory("^->AppComponent->ReportComponent", factoryf9f7e1c92faf5c6d60daf47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->BookmarkListComponent", factory4fe746186ebb99322754f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RootComponent", factory264bfc4d4cb6b0629b40f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->SigninComponent", factory2882a056d84a613debccf47b58f8f304c97af4d5)
@@ -642,6 +719,9 @@ private func registerProviderFactory(_ componentPath: String, _ factory: @escapi
     registerProviderFactory("^->AppComponent->RecruitmentComponent", factoryb1923ea1b010875d9389f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->RecruitmentDetailComponent", factory14d63d6fecffe94dd0e1f47b58f8f304c97af4d5)
     registerProviderFactory("^->AppComponent->MenuComponent", factory9727a582143c5cd40ff3f47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->BugListComponent", factory43ed38c107a618e64a10f47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->ReportComponent", factoryf9f7e1c92faf5c6d60daf47b58f8f304c97af4d5)
+    registerProviderFactory("^->AppComponent->PostReviewComponent", factory506b5181063a2884e01cf47b58f8f304c97af4d5)
 }
 #endif
 

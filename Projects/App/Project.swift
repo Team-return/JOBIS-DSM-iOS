@@ -4,7 +4,7 @@ import DependencyPlugin
 import EnvironmentPlugin
 import Foundation
 
-let isCI = (ProcessInfo.processInfo.environment["TUIST_CI"] ?? "0") == "1" ? true : false
+let isCI: Bool = (ProcessInfo.processInfo.environment["TUIST_CI"] ?? "0") == "1"
 
 let configurations: [Configuration] = [
     .debug(name: .dev, xcconfig: isCI ? nil : .relativeToXCConfig(type: .dev, name: env.targetName)),
@@ -24,7 +24,7 @@ let targets: [Target] = [
         name: env.targetName,
         platform: env.platform,
         product: .app,
-        bundleId: "\(env.organizationName).\(env.targetName)",
+        bundleId: "$(APP_BUNDLE_ID)",
         deploymentTarget: env.deploymentTarget,
         infoPlist: .file(path: "Support/Info.plist"),
         sources: ["Sources/**"],
@@ -46,6 +46,8 @@ let targets: [Target] = [
             .Feature.MenuFeature,
             .Feature.SplashFeature,
             .Feature.RenewalPasswordFeature,
+            .Feature.BugFeature,
+            .Feature.PostReviewFeature,
             .Domain.UsersDomain,
             .Domain.AuthDomain,
             .Domain.RecruitmentsDomain,
@@ -70,8 +72,6 @@ let targets: [Target] = [
         infoPlist: .default,
         sources: ["Tests/**"],
         dependencies: [
-            .SPM.Quick,
-            .SPM.Nimble,
             .target(name: env.targetName)
         ]
     )
@@ -79,31 +79,41 @@ let targets: [Target] = [
 
 let schemes: [Scheme] = [
     .init(
-        name: "\(env.targetName)-DEV",
-        shared: true,
-        buildAction: .buildAction(targets: ["\(env.targetName)"]),
-        runAction: .runAction(configuration: .dev),
-        archiveAction: .archiveAction(configuration: .dev),
-        profileAction: .profileAction(configuration: .dev),
-        analyzeAction: .analyzeAction(configuration: .dev)
+      name: "\(env.targetName)-DEV",
+      shared: true,
+      buildAction: .buildAction(targets: ["\(env.targetName)"]),
+      testAction: TestAction.targets(
+          ["\(env.targetTestName)"],
+          configuration: .dev,
+          options: TestActionOptions.options(
+              coverage: true,
+              codeCoverageTargets: ["\(env.targetName)"]
+          )
+      ),
+      runAction: .runAction(configuration: .dev),
+      archiveAction: .archiveAction(configuration: .dev),
+      profileAction: .profileAction(configuration: .dev),
+      analyzeAction: .analyzeAction(configuration: .dev)
     ),
     .init(
-        name: "\(env.targetName)-STAGE",
-        shared: true,
-        buildAction: .buildAction(targets: ["\(env.targetName)"]),
-        runAction: .runAction(configuration: .stage),
-        archiveAction: .archiveAction(configuration: .stage),
-        profileAction: .profileAction(configuration: .stage),
-        analyzeAction: .analyzeAction(configuration: .stage)
+      name: "\(env.targetName)-PROD",
+      shared: true,
+      buildAction: BuildAction(targets: ["\(env.targetName)"]),
+      testAction: nil,
+      runAction: .runAction(configuration: .prod),
+      archiveAction: .archiveAction(configuration: .prod),
+      profileAction: .profileAction(configuration: .prod),
+      analyzeAction: .analyzeAction(configuration: .prod)
     ),
     .init(
-        name: "\(env.targetName)-PROD",
-        shared: true,
-        buildAction: .buildAction(targets: ["\(env.targetName)"]),
-        runAction: .runAction(configuration: .prod),
-        archiveAction: .archiveAction(configuration: .prod),
-        profileAction: .profileAction(configuration: .prod),
-        analyzeAction: .analyzeAction(configuration: .prod)
+      name: "\(env.targetName)-STAGE",
+      shared: true,
+      buildAction: BuildAction(targets: ["\(env.targetName)"]),
+      testAction: nil,
+      runAction: .runAction(configuration: .stage),
+      archiveAction: .archiveAction(configuration: .stage),
+      profileAction: .profileAction(configuration: .stage),
+      analyzeAction: .analyzeAction(configuration: .stage)
     )
 ]
 

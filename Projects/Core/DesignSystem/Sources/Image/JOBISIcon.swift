@@ -39,6 +39,11 @@ public struct JOBISIcon: View {
         case bookmarkOn
         case bookmarkOff
         case filterIcon
+        case ios
+        case android
+        case dataBase
+        case webScreen
+        case jobis
     }
 
     private var image: Image
@@ -149,6 +154,21 @@ public struct JOBISIcon: View {
 
         case .filterIcon:
             return DesignSystemAsset.Icons.filterIcon.suiImage
+    
+        case .ios:
+            return DesignSystemAsset.Icons.ios.suiImage
+
+        case .android:
+            return DesignSystemAsset.Icons.android.suiImage
+
+        case .dataBase:
+            return DesignSystemAsset.Icons.dataBase.suiImage
+
+        case .webScreen:
+            return DesignSystemAsset.Icons.webScreen.suiImage
+
+        case .jobis:
+            return DesignSystemAsset.Icons.jobis.suiImage
         }
     }
 }

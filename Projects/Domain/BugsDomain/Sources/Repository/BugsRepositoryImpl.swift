@@ -13,4 +13,12 @@ public struct BugsRepositoryImpl: BugsRepository {
     public func reportBugs(req: ReportBugsRequestDTO) -> AnyPublisher<Void, Error> {
         remoteBugsDataSource.reportBugs(req: req)
     }
+
+    public func fetchBugList(developmentType: DevelopmentType) -> AnyPublisher<BugListEntity, Error> {
+        remoteBugsDataSource.fetchBugList(developmentType: developmentType)
+    }
+
+    public func fetchBugDetail(id: Int) -> AnyPublisher<BugDetailEntity, Error> {
+        remoteBugsDataSource.fetchBugDetail(id: id)
+    }
 }

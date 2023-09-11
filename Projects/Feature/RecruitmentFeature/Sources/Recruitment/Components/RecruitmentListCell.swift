@@ -3,10 +3,8 @@ import RecruitmentFeatureInterface
 import RecruitmentsDomainInterface
 import DesignSystem
 import Kingfisher
-import UtilityModule
 
 struct RecruitmentListCell: View {
-    @State var isNaviagteDetail = false
     @State private var isBookmarked: Bool = false
     let recruitmentEntity: RecruitmentEntity
     let bookmark: () -> Void
@@ -24,14 +22,14 @@ struct RecruitmentListCell: View {
     }
 
     var body: some View {
-        Button {
-            self.isNaviagteDetail.toggle()
+        NavigationLink {
+            recruitmentDetailFactory.makeView(
+                id: "\(recruitmentEntity.recruitID)", isDetail: false
+            )
+            .eraseToAnyView()
         } label: {
             HStack(spacing: 12) {
-                KFImage(URL(string: recruitmentEntity.companyProfileURL))
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80)
+                URLImage(imageURL: recruitmentEntity.companyProfileURL, shape: .square(80))
                     .cornerRadius(15)
                     .padding(8)
 
@@ -71,16 +69,9 @@ struct RecruitmentListCell: View {
             .background(Color.Sub.gray10)
             .cornerRadius(15)
             .shadow(color: .black, opacity: 0.1, blur: 4)
-            .padding(.horizontal, 24)
             .onAppear {
                 self.isBookmarked = self.recruitmentEntity.bookmarked
             }
-        }
-        .sheet(isPresented: $isNaviagteDetail) {
-            recruitmentDetailFactory.makeView(
-                id: "\(recruitmentEntity.recruitID)", isDetail: false
-            )
-            .eraseToAnyView()
         }
     }
 }

@@ -5,8 +5,9 @@ import Combine
 
 final class FindCompanyDetailViewModel: BaseViewModel {
     @Published var companyInfoDetail: CompanyInfoDetailEntity?
-    @Published var isSheetRecruitmentDetail = false
+    @Published var isNavigateRecruitmentDetail = false
     @Published var reviewList: ReviewListEntity?
+    @Published var reviewDetail: ReviewDetailEntity?
     @Published var titles: [String] = []
     @Published var contents: [String] = []
 
@@ -14,14 +15,17 @@ final class FindCompanyDetailViewModel: BaseViewModel {
 
     private let fetchCompanyInfoDetailUseCase: FetchCompanyInfoDetailUseCase
     private let fetchReviewListUseCase: FetchReviewListUseCase
+    private let fetchReviewDetailUseCase: FetchReviewDetailUseCase
 
     public init(
         fetchCompanyInfoDetailUseCase: any FetchCompanyInfoDetailUseCase,
         fetchReviewListUseCase: any FetchReviewListUseCase,
+        fetchReviewDetailUseCase: any FetchReviewDetailUseCase,
         id: String
     ) {
         self.fetchCompanyInfoDetailUseCase = fetchCompanyInfoDetailUseCase
         self.fetchReviewListUseCase = fetchReviewListUseCase
+        self.fetchReviewDetailUseCase = fetchReviewDetailUseCase
         self.id = id
     }
 
@@ -58,12 +62,12 @@ final class FindCompanyDetailViewModel: BaseViewModel {
                 companyInfoDetail.foundedAt,
                 companyInfoDetail.workerNumber,
                 companyInfoDetail.take,
-                companyInfoDetail.address1,
-                companyInfoDetail.address2,
-                companyInfoDetail.manager1,
-                companyInfoDetail.phoneNumber1,
-                companyInfoDetail.manager2,
-                companyInfoDetail.phoneNumber2,
+                companyInfoDetail.mainAddress,
+                companyInfoDetail.subAddress,
+                companyInfoDetail.managerName,
+                companyInfoDetail.managerPhoneNo,
+                companyInfoDetail.subManagerName,
+                companyInfoDetail.subManagerPhoneNo,
                 companyInfoDetail.email,
                 companyInfoDetail.fax
             ]
@@ -85,6 +89,14 @@ final class FindCompanyDetailViewModel: BaseViewModel {
             fetchReviewListUseCase.execute(id: id)
         ) { [weak self] reviewList in
             self?.reviewList = reviewList
+        }
+    }
+
+    func fetchReviewDetail(id: Int) {
+        addCancellable(
+            fetchReviewDetailUseCase.execute(id: String(id))
+        ) { [weak self] reviewDetail in
+            self?.reviewDetail = reviewDetail
         }
     }
 }

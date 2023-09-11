@@ -1,4 +1,5 @@
 import AuthDomainInterface
+import UsersDomainInterface
 import Combine
 
 public struct ReissueTokenUseCaseImpl: ReissueTokenUseCase {
@@ -8,7 +9,7 @@ public struct ReissueTokenUseCaseImpl: ReissueTokenUseCase {
         self.authRepository = authRepository
     }
 
-    public func execute() -> AnyPublisher<Void, Error> {
+    public func execute() -> AnyPublisher<Bool, Error> {
         authRepository.reissueToken()
     }
 }

@@ -33,14 +33,14 @@ open class BaseRemoteDataSource<API: JobisAPI> {
 
     public func request(_ api: API) -> AnyPublisher<Void, Error> {
         requestPublisher(api)
-            .map { _ in return }
+            .map { _ in }
             .eraseToAnyPublisher()
     }
 
     private func requestPublisher(_ api: API) -> AnyPublisher<Response, Error> {
-        return checkIsApiNeedsAuthorization(api) ?
-            authorizedRequest(api) :
-            defaultRequest(api)
+        checkIsApiNeedsAuthorization(api) ?
+        authorizedRequest(api) :
+        defaultRequest(api)
     }
 }
 
@@ -72,15 +72,18 @@ private extension BaseRemoteDataSource {
 
     func checkTokenIsExpired() -> Bool {
         let expired = keychain.load(type: .accessExpiresAt).toJOBISDate()
-        print(Date(), expired)
         return Date() > expired
     }
-
     func tokenReissue() -> AnyPublisher<Void, Error> {
         let provider = MoyaProvider<RefreshAPI>(plugins: [JwtPlugin(keychain: keychain)])
-        return provider.requestPublisher(.reissueToken)
+        let requestPublisher = provider.requestPublisher(.reissueToken)
             .map { _ in }
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
+
+        var _ = requestPublisher.sink { _ in } receiveValue: { _ in }
+
+        return requestPublisher
+
     }
 }

@@ -3,14 +3,23 @@ import DesignSystem
 import ApplicationsDomainInterface
 
 struct ApplicationStatusView: View {
-    let applicationList: [ApplicationEntity]
+    let applicationList: [ApplicationEntity]?
 
     var body: some View {
         VStack(alignment: .leading) {
             Text("지원현황")
                 .JOBISFont(.etc(.caption), color: .Sub.gray60)
                 .padding(.bottom, 4)
-            if applicationList.isEmpty {
+            if !(applicationList ?? []).isEmpty {
+                ScrollView {
+                    ForEach(applicationList ?? [], id: \.self) { data in
+                        applicationStatusCell(
+                            title: data.company,
+                            applicationStatus: data.applicationStatus.localizedString()
+                        )
+                    }
+                }
+            } else {
                 HStack {
                     Spacer()
 
@@ -25,15 +34,6 @@ struct ApplicationStatusView: View {
                 .padding(1)
                 .background(Color.Sub.gray40)
                 .cornerRadius(10)
-            } else {
-                ScrollView {
-                    ForEach(applicationList, id: \.self) { data in
-                        applicationStatusCell(
-                            title: data.company,
-                            applicationStatus: data.applicationStatus.localizedString()
-                        )
-                    }
-                }
             }
         }
         .padding(.horizontal, 30)
