@@ -7,6 +7,7 @@ struct PostReviewView: View {
         case title
         case content
     }
+
     @FocusState private var focusField: FocusField?
     @StateObject var viewModel: PostReviewViewModel
     @Environment(\.dismiss) var dismiss
