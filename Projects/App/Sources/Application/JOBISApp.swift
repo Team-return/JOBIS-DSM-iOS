@@ -3,11 +3,9 @@ import BaseFeature
 import JwtStoreInterface
 import JwtStore
 import NeedleFoundation
-import Inject
 
 @main
 struct JOBISApp: App {
-    @ObservedObject private var iOput = Inject.observer
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject var appState = AppState(sceneFlow: .splash, authority: .student)
 
@@ -24,7 +22,6 @@ struct JOBISApp: App {
             AppComponent(keychain: keychain).makeRootView()
                 .preferredColorScheme(.light)
                 .environmentObject(appState)
-                .enableInjection()
         }
     }
 }

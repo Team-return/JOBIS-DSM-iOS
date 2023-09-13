@@ -18,7 +18,6 @@ public let env = ProjectEnvironment (
     deploymentTarget: .iOS(targetVersion: "15.0", devices: [.iphone, .ipad]),
     platform: .iOS,
     baseSetting: [
-        "OTHER_LDFLAGS": "-Xlinker -interposable",
         "ENABLE_TESTABILITY": "YES"
     ]
 )
