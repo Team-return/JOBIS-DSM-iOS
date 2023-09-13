@@ -16,6 +16,6 @@ let project = Project.makeModule(
         .Shared.UtilityModule
     ],
     additionalPlistRows: [
-        "BASE_URL": .string("$(BASE_URL)")
+        "BASE_URL": .string("$(API_BASE_URL)")
     ]
 )

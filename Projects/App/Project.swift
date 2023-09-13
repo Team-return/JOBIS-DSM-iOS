@@ -24,7 +24,7 @@ let targets: [Target] = [
         name: env.targetName,
         platform: env.platform,
         product: .app,
-        bundleId: "$(APP_BUNDLE_ID)",
+        bundleId: "\(env.organizationName).\(env.targetName)",
         deploymentTarget: env.deploymentTarget,
         infoPlist: .file(path: "Support/Info.plist"),
         sources: ["Sources/**"],
