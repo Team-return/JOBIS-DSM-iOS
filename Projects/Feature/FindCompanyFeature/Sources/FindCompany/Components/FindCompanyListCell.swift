@@ -30,6 +30,7 @@ struct FindCompanyListCell: View {
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(companyEntity.name)
+                        .multilineTextAlignment(.leading)
                         .JOBISFont(.body(.body2), color: .Sub.gray90)
 
                     Text("연매출 " + Int(companyEntity.take).intComma() + "억")
