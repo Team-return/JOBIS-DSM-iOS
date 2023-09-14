@@ -144,5 +144,6 @@ struct FindCompanyDetailView: View {
                     }
             }
         }
+        .frame(maxWidth: .infinity)
     }
 }
