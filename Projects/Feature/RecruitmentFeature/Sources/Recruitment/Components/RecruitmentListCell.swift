@@ -31,10 +31,11 @@ struct RecruitmentListCell: View {
             HStack(spacing: 12) {
                 URLImage(imageURL: recruitmentEntity.companyProfileURL, shape: .square(80))
                     .cornerRadius(15)
-                    .padding(8)
+                    .padding(8)  
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(recruitmentEntity.jobCodeList)
+                        .multilineTextAlignment(.leading)
                         .JOBISFont(.body(.body2), color: .Sub.gray90)
 
                     Text(recruitmentEntity.companyName)
