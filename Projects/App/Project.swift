@@ -4,6 +4,8 @@ import DependencyPlugin
 import EnvironmentPlugin
 import Foundation
 
+let isCI: Bool = (ProcessInfo.processInfo.environment["TUIST_CI"] ?? "0") == "1"
+
 let configurations: [Configuration] = [
     .debug(name: .dev, xcconfig: .relativeToXCConfig(type: .dev, name: env.targetName)),
     .debug(name: .stage, xcconfig: .relativeToXCConfig(type: .stage, name: env.targetName)),
@@ -15,14 +17,14 @@ let settings: Settings =
               configurations: configurations,
               defaultSettings: .recommended)
 
-let scripts: [TargetScript] = [.swiftLint, .needle]
+let scripts: [TargetScript] = isCI ? [] : [.swiftLint, .needle]
 
 let targets: [Target] = [
     .init(
         name: env.targetName,
         platform: env.platform,
         product: .app,
-        bundleId: "\(env.organizationName).\(env.targetName)",
+        bundleId: "$(APP_BUNDLE_ID)",
         deploymentTarget: env.deploymentTarget,
         infoPlist: .file(path: "Support/Info.plist"),
         sources: ["Sources/**"],
