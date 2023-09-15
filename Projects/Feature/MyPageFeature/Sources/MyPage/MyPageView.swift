@@ -113,6 +113,12 @@ struct MyPageView: View {
                     }
 
                     Divider().foregroundColor(.Sub.gray40)
+
+                    myPageNavigateCell(title: "회원탈퇴", color: .State.error) {
+                        viewModel.isPresentedWithdraw.toggle()
+                    }
+
+                    Divider().foregroundColor(.Sub.gray40)
                 }
             }
             .padding(.horizontal, 25)
@@ -131,7 +137,7 @@ struct MyPageView: View {
             when: $viewModel.isNavigateChangePassword
         )
         .imagePicker(isShow: $viewModel.isShowImagePicker, uiImage: $viewModel.image)
-        .jobisToast(isShowing: $viewModel.isErrorOcuured, message: "프로필 변경에 실패했습니다.", style: .error)
+        .jobisToast(isShowing: $viewModel.isErrorOcuured, message: viewModel.errorMessage, style: .error)
         .onChange(of: viewModel.isTabbarHidden) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue
@@ -159,6 +165,20 @@ struct MyPageView: View {
                     Text("확인"),
                     action: {
                         viewModel.confirmLogoutButtonDidTap()
+                    }
+                ),
+                secondaryButton: Alert.Button.cancel(
+                    Text("취소")
+                )
+            )
+        }
+        .alert(isPresented: $viewModel.isPresentedWithdraw) {
+            Alert(
+                title: Text("회원탈퇴"),
+                message: Text("탈퇴를 한 번 진행하시면 되돌릴 수 없습니다.\n정말 탈퇴를 하시겠습니까?"),
+                primaryButton: Alert.Button.destructive(
+                    Text("확인"),
+                    action: {
                     }
                 ),
                 secondaryButton: Alert.Button.cancel(
