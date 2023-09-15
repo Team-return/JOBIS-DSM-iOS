@@ -14,6 +14,7 @@ final class MyPageViewModel: BaseViewModel {
     @Published var isShowFieldOfInterest = false
     @Published var isNavigateChangePassword = false
     @Published var isPresentedLogoutAlert = false
+    @Published var isPresentedWithdraw = false
     @Published var isSuccessLogout = false
     @Published var isShowImagePicker = false
     @Published var image: UIImage?
