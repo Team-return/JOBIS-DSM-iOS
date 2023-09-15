@@ -31,7 +31,7 @@ struct RecruitmentListCell: View {
             HStack(spacing: 12) {
                 URLImage(imageURL: recruitmentEntity.companyProfileURL, shape: .square(80))
                     .cornerRadius(15)
-                    .padding(8)  
+                    .padding(8)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(recruitmentEntity.jobCodeList)

@@ -75,23 +75,22 @@ final class RecruitmentViewModel: BaseViewModel {
     }
 
     func appendRecruitmentList(list: RecruitmentEntity) {
+        guard self.recruitmentList?.recruitments.last == list else { return }
         var jobCode: String? {
             guard let selectedJobCode = selectedJobCode?.code else { return nil }
             return String(selectedJobCode)
         }
 
-        if self.recruitmentList?.recruitments.last == list {
-            listPage += 1
-            addCancellable(
-                fetchRecruitmentListUseCase.execute(
-                    page: listPage,
-                    jobCode: jobCode,
-                    techCode: selectedTechCode.map { String($0.code) },
-                    name: companyText.isEmpty ? nil : companyText
-                )
-            ) { [weak self] recruitmentList in
-                self?.recruitmentList?.recruitments.append(contentsOf: recruitmentList.recruitments)
-            }
+        listPage += 1
+        addCancellable(
+            fetchRecruitmentListUseCase.execute(
+                page: listPage,
+                jobCode: jobCode,
+                techCode: selectedTechCode.map { String($0.code) },
+                name: companyText.isEmpty ? nil : companyText
+            )
+        ) { [weak self] recruitmentList in
+            self?.recruitmentList?.recruitments.append(contentsOf: recruitmentList.recruitments)
         }
     }
 

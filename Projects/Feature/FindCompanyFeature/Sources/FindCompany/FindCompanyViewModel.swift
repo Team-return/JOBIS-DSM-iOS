@@ -27,13 +27,12 @@ final class FindCompanyViewModel: BaseViewModel {
     }
 
     func appendFindCompanyList(list: CompanyEntity) {
-        if self.studentCompanyList?.companies.last == list {
-            listPage += 1
-            addCancellable(
-                fetchStudentCompanyListUseCase.execute(page: listPage, name: nil)
-            ) { [weak self] studentCompanyList in
-                self?.studentCompanyList?.companies.append(contentsOf: studentCompanyList.companies)
-            }
+        guard self.studentCompanyList?.companies.last == list else { return }
+        listPage += 1
+        addCancellable(
+            fetchStudentCompanyListUseCase.execute(page: listPage, name: nil)
+        ) { [weak self] studentCompanyList in
+            self?.studentCompanyList?.companies.append(contentsOf: studentCompanyList.companies)
         }
     }
 }
