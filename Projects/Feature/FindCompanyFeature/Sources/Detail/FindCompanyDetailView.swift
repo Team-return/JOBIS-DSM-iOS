@@ -122,8 +122,9 @@ struct FindCompanyDetailView: View {
 
     @ViewBuilder
     func companyIntroduce(introduce: String) -> some View {
-        VStack(spacing: 5) {
+        VStack(alignment: .leading, spacing: 5) {
             Text(introduce)
+                .multilineTextAlignment(.leading)
                 .lineLimit(
                     isShowDetail ? nil : introduce.count > 200 ? 3 : nil
                 )
@@ -142,8 +143,8 @@ struct FindCompanyDetailView: View {
                             isShowDetail.toggle()
                         }
                     }
+                    .frame(maxWidth: .infinity)
             }
         }
-        .frame(maxWidth: .infinity)
     }
 }
