@@ -109,13 +109,13 @@ struct MyPageView: View {
                     Divider().foregroundColor(.Sub.gray40)
 
                     myPageNavigateCell(title: "로그아웃", color: .State.error) {
-                        viewModel.isPresentedLogoutAlert.toggle()
+                        viewModel.showLogoutAlert()
                     }
 
                     Divider().foregroundColor(.Sub.gray40)
 
                     myPageNavigateCell(title: "회원탈퇴", color: .State.error) {
-                        viewModel.isPresentedWithdraw.toggle()
+                        viewModel.showWithdrawAlert()
                     }
 
                     Divider().foregroundColor(.Sub.gray40)
@@ -157,28 +157,14 @@ struct MyPageView: View {
             viewModel.onAppear()
         }
         .navigationTitle("마이페이지")
-        .alert(isPresented: $viewModel.isPresentedLogoutAlert) {
+        .alert(isPresented: $viewModel.isPresentedAlert) {
             Alert(
-                title: Text("로그아웃"),
-                message: Text("정말로 로그아웃 하시겠습니까?"),
+                title: Text(viewModel.alertTitle),
+                message: Text(viewModel.alertContent),
                 primaryButton: Alert.Button.destructive(
                     Text("확인"),
                     action: {
                         viewModel.confirmLogoutButtonDidTap()
-                    }
-                ),
-                secondaryButton: Alert.Button.cancel(
-                    Text("취소")
-                )
-            )
-        }
-        .alert(isPresented: $viewModel.isPresentedWithdraw) {
-            Alert(
-                title: Text("회원탈퇴"),
-                message: Text("탈퇴를 한 번 진행하시면 되돌릴 수 없습니다.\n정말 탈퇴를 하시겠습니까?"),
-                primaryButton: Alert.Button.destructive(
-                    Text("확인"),
-                    action: {
                     }
                 ),
                 secondaryButton: Alert.Button.cancel(
