@@ -13,8 +13,9 @@ final class MyPageViewModel: BaseViewModel {
     @Published var isNavigateBugListView = false
     @Published var isShowFieldOfInterest = false
     @Published var isNavigateChangePassword = false
-    @Published var isPresentedLogoutAlert = false
-    @Published var isPresentedWithdraw = false
+    @Published var isPresentedAlert = false
+    @Published var alertTitle = ""
+    @Published var alertContent = ""
     @Published var isSuccessLogout = false
     @Published var isShowImagePicker = false
     @Published var image: UIImage?
@@ -51,6 +52,18 @@ final class MyPageViewModel: BaseViewModel {
     func onAppear() {
         fetchStudentInfo()
         fetchWritableReviewList()
+    }
+
+    func showLogoutAlert() {
+        self.isPresentedAlert.toggle()
+        self.alertTitle = "로그아웃"
+        self.alertContent = "정말로 로그아웃하시겠습니까?"
+    }
+
+    func showWithdrawAlert() {
+        self.isPresentedAlert.toggle()
+        self.alertTitle = "회원탈퇴"
+        self.alertContent = "정말로 회원탈퇴를 하시겠습니까?\n계정은 복구할 수 없습니다."
     }
 
     private func fetchStudentInfo() {
@@ -91,10 +104,6 @@ final class MyPageViewModel: BaseViewModel {
         ) { [weak self] _ in
             self?.fetchStudentInfo()
         }
-    }
-
-    func logoutButtonDidTap() {
-        isPresentedLogoutAlert = true
     }
 
     func confirmLogoutButtonDidTap() {
