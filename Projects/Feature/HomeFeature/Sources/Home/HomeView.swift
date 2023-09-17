@@ -10,15 +10,18 @@ struct HomeView: View {
 
     private let recruitmentFactory: any RecruitmentFactory
     private let findCompanyFactory: any FindCompanyFactory
+    private let recruitmentDetailFactory: any RecruitmentDetailFactory
 
     init(
         viewModel: HomeViewModel,
         recruitmentFactory: any RecruitmentFactory,
-        findCompanyFactory: any FindCompanyFactory
+        findCompanyFactory: any FindCompanyFactory,
+        recruitmentDetailFactory: any RecruitmentDetailFactory
     ) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.recruitmentFactory = recruitmentFactory
         self.findCompanyFactory = findCompanyFactory
+        self.recruitmentDetailFactory = recruitmentDetailFactory
     }
 
     var body: some View {
