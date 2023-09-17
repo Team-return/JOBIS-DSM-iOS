@@ -35,10 +35,6 @@ struct HomeView: View {
                     ApplicationStatusView(applicationList: viewModel.applicationList?.applications)
 
                     Spacer()
-                }
-
-                VStack(alignment: .leading, spacing: 0) {
-                    Spacer()
 
                     Divider()
                         .foregroundColor(.Sub.gray40)
@@ -53,7 +49,7 @@ struct HomeView: View {
                         .frame(width: proxy.size.width / 2)
 
                         navigateButton(
-                            text: "기업찾기\n",
+                            text: "기업찾기\n ",
                             image: .findCompanyImage
                         ) {
                             viewModel.isNavigateFindCompany.toggle()
@@ -94,12 +90,16 @@ struct HomeView: View {
         image: JOBISImage.Image,
         action: @escaping () -> Void
     ) -> some View {
+        let texts = text.components(separatedBy: "\n")
         Button(action: action) {
             VStack {
                 HStack {
-                    Text(text)
-                        .multilineTextAlignment(.leading)
-                        .JOBISFont(.body(.body1), color: .Sub.gray80)
+                    VStack(alignment: .leading) {
+                        ForEach(texts, id: \.self) { text in
+                            Text(text)
+                                .JOBISFont(.body(.body1), color: .Sub.gray80)
+                        }
+                    }
 
                     Spacer()
                 }
