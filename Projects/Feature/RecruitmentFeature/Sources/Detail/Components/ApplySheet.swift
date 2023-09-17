@@ -1,6 +1,7 @@
 import SwiftUI
 import DesignSystem
 import UtilityModule
+import BaseFeature
 
 struct ApplySheet: View {
     enum FileType: String {
@@ -62,7 +63,10 @@ struct ApplySheet: View {
             HStack {
                 Spacer()
 
-                SolidBtn(text: "지원하기") { applyAction() }
+                SolidBtn(text: "지원하기") {
+                    applyAction()
+                    hideKeyboard()
+                }
 
                 Spacer()
             }
