@@ -81,7 +81,7 @@ private extension BaseRemoteDataSource {
             .mapError { $0 as Error }
             .eraseToAnyPublisher()
 
-        var _ = requestPublisher.sink { _ in } receiveValue: { _ in }
+        _ = requestPublisher.sink { _ in } receiveValue: { _ in }
 
         return requestPublisher
 
