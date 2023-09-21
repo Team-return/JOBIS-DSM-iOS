@@ -30,8 +30,12 @@ final class FindCompanyDetailViewModel: BaseViewModel {
     }
 
     func onAppear() {
-        fetchCompanyInfoDetail()
-        fetchReviewList()
+        if titles.isEmpty || contents.isEmpty {
+            fetchCompanyInfoDetail()
+        }
+        if reviewList?.reviews.isEmpty ?? true {
+            fetchReviewList()
+        }
     }
 
     private func fetchCompanyInfoDetail() {

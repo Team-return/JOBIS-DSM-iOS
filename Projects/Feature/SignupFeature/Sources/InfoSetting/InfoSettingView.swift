@@ -83,6 +83,7 @@ struct InfoSettingView: View {
                     size: .large
                 ) {
                     viewModel.isMan.toggle()
+                    focusField = .name
                 }
             } else {
                 ShadowBtn(
@@ -90,6 +91,7 @@ struct InfoSettingView: View {
                     size: .large
                 ) {
                     viewModel.isMan.toggle()
+                    focusField = .name
                 }
             }
 
@@ -99,6 +101,7 @@ struct InfoSettingView: View {
                     size: .large
                 ) {
                     viewModel.isWoman.toggle()
+                    focusField = .name
                 }
             } else {
                 ShadowBtn(
@@ -106,6 +109,7 @@ struct InfoSettingView: View {
                     size: .large
                 ) {
                     viewModel.isWoman.toggle()
+                    focusField = .name
                 }
             }
         }

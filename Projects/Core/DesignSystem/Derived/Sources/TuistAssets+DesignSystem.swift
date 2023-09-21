@@ -65,6 +65,7 @@ public enum DesignSystemAsset {
     public static let toastWarning = DesignSystemImages(name: "Toast-Warning")
     public static let trash = DesignSystemImages(name: "Trash")
     public static let upload = DesignSystemImages(name: "Upload")
+    public static let isRecruitment = DesignSystemImages(name: "isRecruitment")
   }
   public enum Image {
     public static let findCompanyImage = DesignSystemImages(name: "FindCompanyImage")
