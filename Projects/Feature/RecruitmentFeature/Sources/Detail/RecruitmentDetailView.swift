@@ -101,7 +101,7 @@ struct RecruitmentDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .onLoad {
+        .onAppear {
             viewModel.onAppear()
         }
         .jobisToast(
