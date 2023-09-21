@@ -34,7 +34,9 @@ final class RecruitmentDetailViewModel: BaseViewModel {
     }
 
     func onAppear() {
-        fetchRecruitmentDetail()
+        if titles.isEmpty || contents.isEmpty {
+            fetchRecruitmentDetail()
+        }
     }
 
     func apply(complete: @escaping () -> Void) {

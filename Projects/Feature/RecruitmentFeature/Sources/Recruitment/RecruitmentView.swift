@@ -20,28 +20,24 @@ struct RecruitmentView: View {
     }
 
     var body: some View {
-        ZStack {
-            ScrollView {
-                Group {
-                    searchBar()
+        ScrollView {
+            Group {
+                searchBar()
 
-                    if let list = viewModel.recruitmentList {
-                        ForEach(list.recruitments, id: \.self) { recruitmentEntity in
-                            navigateToRecruitmentDetail(recruitmentEntity: recruitmentEntity)
-                        }
+                if let list = viewModel.recruitmentList {
+                    ForEach(list.recruitments, id: \.self) { recruitmentEntity in
+                        navigateToRecruitmentDetail(recruitmentEntity: recruitmentEntity)
                     }
+                } else {
+                    ProgressView().progressViewStyle(.circular)
                 }
-                .padding(.horizontal, 24)
             }
-            .refreshable {
-                viewModel.onAppear()
-            }
-
-            if viewModel.isLoading {
-                ProgressView().progressViewStyle(.circular)
-            }
+            .padding(.horizontal, 24)
         }
-        .onAppear {
+        .refreshable {
+            viewModel.onAppear()
+        }
+        .onLoad {
             viewModel.onAppear()
         }
         .hideKeyboardWhenTap()
