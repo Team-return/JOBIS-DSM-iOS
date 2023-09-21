@@ -15,7 +15,7 @@ public let env = ProjectEnvironment (
     targetName: "JOBIS-DSM-iOS",
     targetTestName: "DSM-JOBISTests",
     organizationName: "com.team.return",
-    deploymentTarget: .iOS(targetVersion: "15.0", devices: [.iphone, .ipad]),
+    deploymentTarget: .iOS(targetVersion: "15.0", devices: [.iphone]),
     platform: .iOS,
     baseSetting: [
         "ENABLE_TESTABILITY": "YES"

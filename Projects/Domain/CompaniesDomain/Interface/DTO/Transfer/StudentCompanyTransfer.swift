@@ -12,7 +12,8 @@ public extension CompanyResponseDTO {
             id: id,
             name: name,
             logoURL: logoURL,
-            take: take
+            take: take,
+            hasRecruitment: hasRecruitment
         )
     }
 }

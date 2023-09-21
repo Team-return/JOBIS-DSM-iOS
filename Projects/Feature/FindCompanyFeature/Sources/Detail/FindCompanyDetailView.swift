@@ -75,10 +75,10 @@ struct FindCompanyDetailView: View {
                 .padding(.horizontal, 20)
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
-        .onLoad {
+        .onAppear {
             viewModel.onAppear()
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 
     @ViewBuilder
