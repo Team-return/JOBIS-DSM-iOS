@@ -42,6 +42,16 @@ struct FindCompanyListCell: View {
                 .padding(.top, 14)
 
                 Spacer()
+
+                if companyEntity.hasRecruitment {
+                    VStack {
+                        Spacer()
+
+                        JOBISIcon(.isRecruitment)
+                            .frame(width: 13, height: 16)
+                            .padding(18)
+                    }
+                }
             }
             .frame(height: 96)
             .background(Color.Sub.gray10)

@@ -44,6 +44,7 @@ public struct JOBISIcon: View {
         case dataBase
         case webScreen
         case jobis
+        case isRecruitment
     }
 
     private var image: Image
@@ -169,6 +170,9 @@ public struct JOBISIcon: View {
 
         case .jobis:
             return DesignSystemAsset.Icons.jobis.suiImage
+
+        case .isRecruitment:
+            return DesignSystemAsset.Icons.isRecruitment.suiImage
         }
     }
 }
