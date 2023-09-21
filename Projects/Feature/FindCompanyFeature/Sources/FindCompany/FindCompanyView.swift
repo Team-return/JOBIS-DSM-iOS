@@ -36,7 +36,7 @@ struct FindCompanyView: View {
             .refreshable {
                 viewModel.onAppear()
             }
-
+        .onLoad {
             if viewModel.isLoading {
                 ProgressView().progressViewStyle(.circular)
             }
