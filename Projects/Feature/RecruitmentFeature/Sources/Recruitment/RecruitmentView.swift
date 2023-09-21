@@ -21,7 +21,7 @@ struct RecruitmentView: View {
 
     var body: some View {
         ScrollView {
-            Group {
+            LazyVStack {
                 searchBar()
 
                 if let list = viewModel.recruitmentList {
