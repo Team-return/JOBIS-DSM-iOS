@@ -20,28 +20,24 @@ struct FindCompanyView: View {
     }
 
     var body: some View {
-        ZStack {
-            ScrollView {
-                Group {
-                    searchBar()
+        ScrollView {
+            Group {
+                searchBar()
 
-                    if let list = viewModel.studentCompanyList {
-                        ForEach(list.companies, id: \.self) { companyEntity in
-                            navigateToFindCompanyDetail(companyEntity: companyEntity)
-                        }
+                if let list = viewModel.studentCompanyList {
+                    ForEach(list.companies, id: \.self) { companyEntity in
+                        navigateToFindCompanyDetail(companyEntity: companyEntity)
                     }
+                } else {
+                    ProgressView().progressViewStyle(.circular)
                 }
-                .padding(.horizontal, 24)
             }
-            .refreshable {
-                viewModel.onAppear()
-            }
-        .onLoad {
-            if viewModel.isLoading {
-                ProgressView().progressViewStyle(.circular)
-            }
+            .padding(.horizontal, 24)
         }
-        .onAppear {
+        .refreshable {
+            viewModel.onAppear()
+        }
+        .onLoad {
             viewModel.onAppear()
         }
         .hideKeyboardWhenTap()
