@@ -1,6 +1,6 @@
 import SwiftUI
 
-// swiftlint:disable all
+// swiftlint: disable all
 fileprivate extension DesignSystemImages {
     var suiImage: SwiftUI.Image {
         SwiftUI.Image(uiImage: self.image)
@@ -32,7 +32,6 @@ public struct JOBISIcon: View {
         case upload
         case checkBoxIcon
         case menu
-        case recruitment
         case profile
         case house
         case militaryServiceExceptionIcon
@@ -136,13 +135,10 @@ public struct JOBISIcon: View {
             return DesignSystemAsset.Icons.checkBoxIcon.suiImage
 
         case .profile:
-            return DesignSystemAsset.Icons.profile.suiImage
+            return DesignSystemAsset.Icons.profileIcon.suiImage
 
         case .house:
             return DesignSystemAsset.Icons.house.suiImage
-
-        case .recruitment:
-            return DesignSystemAsset.Icons.recruitment.suiImage
 
         case .militaryServiceExceptionIcon:
             return DesignSystemAsset.Icons.militaryServiceExceptionIcon.suiImage
@@ -176,3 +172,4 @@ public struct JOBISIcon: View {
         }
     }
 }
+// swiftlint: enable all

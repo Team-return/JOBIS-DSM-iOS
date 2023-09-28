@@ -38,16 +38,16 @@ public struct JOBISImage: View {
             return DesignSystemAsset.Image.recruitmentImage.swiftUIImage
 
         case .bookmarkList:
-            return DesignSystemAsset.Icons.bookmarkList.swiftUIImage
+            return DesignSystemAsset.Icons.bookmarkListIcon.swiftUIImage
 
         case .fetchRecruitment:
-            return DesignSystemAsset.Icons.fetchRecruitment.swiftUIImage
+            return DesignSystemAsset.Icons.fetchRecruitmentIcon.swiftUIImage
 
         case .findCompany:
-            return DesignSystemAsset.Icons.findCompany.swiftUIImage
+            return DesignSystemAsset.Icons.findCompanyIcon.swiftUIImage
 
         case .profile:
-            return DesignSystemAsset.Icons.profile.swiftUIImage
+            return DesignSystemAsset.Icons.profileIcon.swiftUIImage
 
         case .key:
             return DesignSystemAsset.Image.keyImage.swiftUIImage
