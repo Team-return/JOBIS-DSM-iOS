@@ -1,6 +1,6 @@
 import Foundation
 
-// swiftlint:disable identifier_name
+// swiftlint: disable identifier_name
 public enum DepartmentType: String, Codable {
     case softwareDevelop = "SOFTWARE_DEVELOP"
     case embeddedSoftware = "EMBEDDED_SOFTWARE"
@@ -27,3 +27,4 @@ public enum DepartmentType: String, Codable {
         }
     }
 }
+// swiftlint: enable identifier_name

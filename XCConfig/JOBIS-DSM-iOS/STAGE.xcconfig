@@ -2,5 +2,4 @@
 BUNDLE_DISPLAY_NAME = JOBIS (stage)
 
 APP_BUNDLE_ID = com.team.return.JOBIS-DSM-iOS.stage
-API_BASE_URL = https:/$()/api.team-return.com
-
+API_BASE_URL = https:/$()/dev-server.team-return.com
