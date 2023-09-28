@@ -7,17 +7,18 @@ import BaseFeature
 import DesignSystem
 import UtilityModule
 
-// swiftlint: disable large_tuple
 struct MainTabView: View {
     @State var selection: TabFlow = .home
     @State var tabbarHidden = false
 
+    // swiftlint: disable large_tuple
     var tabItem: [(Image, String, TabFlow)] = [
         (DesignSystemAsset.Icons.house.swiftUIImage, "홈", .home),
         (DesignSystemAsset.Icons.bookmark.swiftUIImage, "북마크", .bookmark),
         (DesignSystemAsset.Icons.mypage.swiftUIImage, "마이페이지", .profile),
         (DesignSystemAsset.Icons.menu.swiftUIImage, "메뉴", .menu)
     ]
+    // swiftlint: enable large_tuple
 
     private let homeFactory: any HomeFactory
     private let bookmarkListFactory: any BookmarkListFactory

@@ -4,7 +4,6 @@ import SwiftUI
 import Combine
 import UtilityModule
 
-// swiftlint:disable function_body_length
 struct ReportView: View {
     private enum FocusField {
         case title
@@ -130,6 +129,7 @@ struct ReportView: View {
         }
     }
 
+    // swiftlint: disable function_body_length
     @ViewBuilder
     func screenShotImages() -> some View {
         VStack(alignment: .leading, spacing: 4) {
@@ -186,6 +186,7 @@ struct ReportView: View {
             )
         }
     }
+    // swiftlint: enable function_body_length
 
     @ViewBuilder
     func screenShotImageCell(image: UIImage) -> some View {

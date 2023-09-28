@@ -21,3 +21,4 @@ public extension View {
         )
     }
 }
+// swiftlint: enable identifier_name
