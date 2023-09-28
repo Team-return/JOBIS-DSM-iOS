@@ -1,6 +1,6 @@
 import Foundation
 
-// swiftlint:disable identifier_name
+// swiftlint: disable identifier_name
 public enum JobType: String, Decodable {
     case web = "WEB"
     case app = "APP"
@@ -9,3 +9,4 @@ public enum JobType: String, Decodable {
     case ai = "AI"
     case asc = "ASC"
 }
+// swiftlint: enable identifier_name
