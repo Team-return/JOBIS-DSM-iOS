@@ -7,8 +7,6 @@ struct SignupView: View {
     @StateObject var viewModel: SignupViewModel
     @Environment(\.dismiss) var dismiss
 
-    let infoAgreeURL: String = "https://jobis-webview.team-return.com/sign-up-policy"
-
     init(
         viewModel: SignupViewModel
     ) {
@@ -28,7 +26,7 @@ struct SignupView: View {
                 SignupPasswordView(viewModel: viewModel)
 
             case .infoAgree:
-                infoAgreeWebView(url: infoAgreeURL)
+                infoAgreeWebView(url: "https://jobis-webview.team-return.com/sign-up-policy")
             }
 
             Spacer()

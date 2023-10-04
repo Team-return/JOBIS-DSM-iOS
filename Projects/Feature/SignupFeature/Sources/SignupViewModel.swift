@@ -265,5 +265,7 @@ final class SignupViewModel: BaseViewModel {
             isPasswordMismatchedError = true
             return
         }
+
+        self.signupType = .infoAgree
     }
 }

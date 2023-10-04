@@ -55,7 +55,6 @@ public extension ModulePaths {
 
 public extension ModulePaths {
     enum Core: String {
-        case DesignSystem
         case JwtStore
 
         func targetName(type: MicroTargetType) -> String {
@@ -66,6 +65,7 @@ public extension ModulePaths {
 
 public extension ModulePaths {
     enum Shared: String {
+        case DesignSystem
         case UtilityModule
         case GlobalThirdPartyLibrary
 
