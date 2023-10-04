@@ -11,7 +11,7 @@ public struct URLImage: View {
     let shape: ImageShape
 
     public init(imageURL urlString: String, shape: ImageShape) {
-        let baseURL = "https://jobis-bucket.s3.ap-northeast-2.amazonaws.com/"
+        let baseURL = Bundle.main.object(forInfoDictionaryKey: "S3_BASE_URL") as? String ?? ""
 
         if let encoded = (baseURL + urlString)
             .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
