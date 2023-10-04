@@ -7,5 +7,8 @@ let project = Project.makeModule(
     product: .framework,
     targets: [.demo],
     externalDependencies: [.SPM.Kingfisher],
-    resources: ["Resources/**"]
+    resources: ["Resources/**"],
+    additionalPlistRows: [
+        "S3_BASE_URL": .string("$(S3_BASE_URL)")
+    ]
 )
