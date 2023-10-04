@@ -7,8 +7,6 @@ struct SignupView: View {
     @StateObject var viewModel: SignupViewModel
     @Environment(\.dismiss) var dismiss
 
-    let infoAgreeURL: String = "https://jobis-webview.team-return.com/sign-up-policy"
-
     init(
         viewModel: SignupViewModel
     ) {
@@ -110,7 +108,7 @@ struct SignupView: View {
                 .JOBISFont(.heading(.heading1), color: .Sub.gray90)
                 .padding(.top, 24)
 
-            JOBISWebView(urlToLoad: url)
+            JOBISWebView(urlToLoad: "https://jobis-webview.team-return.com/sign-up-policy")
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             VStack(spacing: 16) {
