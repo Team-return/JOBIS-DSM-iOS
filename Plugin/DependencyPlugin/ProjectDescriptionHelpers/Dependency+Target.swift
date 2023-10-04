@@ -267,10 +267,6 @@ public extension TargetDependency.Domain {
 }
 
 public extension TargetDependency.Core {
-    static let DesignSystem = TargetDependency.project(
-        target: ModulePaths.Core.DesignSystem.targetName(type: .sources),
-        path: .relativeToCore(ModulePaths.Core.DesignSystem.rawValue)
-    )
     static let JwtStoreTesting = TargetDependency.project(
         target: ModulePaths.Core.JwtStore.targetName(type: .testing),
         path: .relativeToCore(ModulePaths.Core.JwtStore.rawValue)
@@ -286,6 +282,10 @@ public extension TargetDependency.Core {
 }
 
 public extension TargetDependency.Shared {
+    static let DesignSystem = TargetDependency.project(
+        target: ModulePaths.Shared.DesignSystem.targetName(type: .sources),
+        path: .relativeToShared(ModulePaths.Shared.DesignSystem.rawValue)
+    )
     static let UtilityModule = TargetDependency.project(
         target: ModulePaths.Shared.UtilityModule.targetName(type: .sources),
         path: .relativeToShared(ModulePaths.Shared.UtilityModule.rawValue)
