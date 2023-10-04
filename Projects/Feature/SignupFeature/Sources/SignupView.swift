@@ -26,7 +26,7 @@ struct SignupView: View {
                 SignupPasswordView(viewModel: viewModel)
 
             case .infoAgree:
-                infoAgreeWebView(url: infoAgreeURL)
+                infoAgreeWebView(url: "https://jobis-webview.team-return.com/sign-up-policy")
             }
 
             Spacer()
@@ -108,7 +108,7 @@ struct SignupView: View {
                 .JOBISFont(.heading(.heading1), color: .Sub.gray90)
                 .padding(.top, 24)
 
-            JOBISWebView(urlToLoad: "https://jobis-webview.team-return.com/sign-up-policy")
+            JOBISWebView(urlToLoad: url)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
 
             VStack(spacing: 16) {
