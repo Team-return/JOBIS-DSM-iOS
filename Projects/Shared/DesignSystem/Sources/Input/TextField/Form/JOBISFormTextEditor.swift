@@ -19,6 +19,15 @@ public struct JOBISFormTextEditor: View {
 
     public var body: some View {
         ZStack(alignment: .topLeading) {
+            Text(placeholder)
+                .JOBISFont(
+                    .body(.body4),
+                    color: isEnabled ? .Sub.gray60 : .Sub.gray50
+                )
+                .opacity(text.isEmpty ? 1 : 0)
+                .padding(.top, 10)
+                .padding(.leading, 12)
+
             TextEditor(text: $text)
                 .JOBISFont(
                     .body(.body4),
@@ -30,15 +39,6 @@ public struct JOBISFormTextEditor: View {
                     isEnabled ?
                     Color.Sub.gray10 : .Sub.gray30
                 )
-
-            Text(placeholder)
-                .JOBISFont(
-                    .body(.body4),
-                    color: isEnabled ? .Sub.gray60 : .Sub.gray50
-                )
-                .opacity(text.isEmpty ? 1 : 0)
-                .padding(.top, 10)
-                .padding(.leading, 12)
         }
         .frame(minHeight: minHeight)
         .overlay(
@@ -52,7 +52,7 @@ public struct JOBISFormTextEditor: View {
             isEnabled ?
             Color.Sub.gray10 : .Sub.gray30
         )
-        .animation(.easeIn(duration: 0.3), value: isFocused)
+        .animation(.easeIn(duration: 0.2), value: isFocused)
     }
 }
 
