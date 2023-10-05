@@ -282,6 +282,10 @@ public extension TargetDependency.Core {
 }
 
 public extension TargetDependency.Shared {
+    static let Environment = TargetDependency.project(
+        target: ModulePaths.Shared.Environment.targetName(type: .sources),
+        path: .relativeToShared(ModulePaths.Shared.Environment.rawValue)
+    )
     static let DesignSystem = TargetDependency.project(
         target: ModulePaths.Shared.DesignSystem.targetName(type: .sources),
         path: .relativeToShared(ModulePaths.Shared.DesignSystem.rawValue)
