@@ -18,8 +18,15 @@ public enum Environment {
     }()
 
     // MARK: - Get Value
-    public static func getUrlValue(key: Environment.UrlKeys) -> URL? {
-        return URL(string: Environment.infoDictionary[key.rawValue] as? String ?? "")
+    public static func getUrlValue(key: Environment.UrlKeys) -> URL {
+        guard let urlString = Environment
+            .infoDictionary[key.rawValue] as? String else {
+            fatalError("Plist url not found")
+        }
+        guard let url = URL(string: urlString) else {
+            fatalError("\(key.rawValue) is not URL")
+        }
+        return url
     }
 
 }

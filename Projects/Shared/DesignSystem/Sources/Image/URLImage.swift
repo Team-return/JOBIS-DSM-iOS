@@ -12,9 +12,7 @@ public struct URLImage: View {
     let shape: ImageShape
 
     public init(imageURL urlString: String, shape: ImageShape) {
-        var baseURL: URL {
-            Environment.getUrlValue(key: .s3BaseUrl) ?? URL(string: "https://www.google.com")!
-        }
+        var baseURL: URL { Environment.getUrlValue(key: .s3BaseUrl) }
         self.imageURL = baseURL.appendingPathComponent(urlString)
         self.shape = shape
     }
