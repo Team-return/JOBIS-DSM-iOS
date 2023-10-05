@@ -13,9 +13,7 @@ let project = Project.makeModule(
     internalDependencies: [
         .Core.JwtStoreInterface,
         .Shared.GlobalThirdPartyLibrary,
-        .Shared.UtilityModule
-    ],
-    additionalPlistRows: [
-        "BASE_URL": .string("$(API_BASE_URL)")
+        .Shared.UtilityModule,
+        .Shared.Environment
     ]
 )

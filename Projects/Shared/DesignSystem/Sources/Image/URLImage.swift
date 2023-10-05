@@ -1,5 +1,6 @@
 import SwiftUI
 import Kingfisher
+import Environment
 
 public struct URLImage: View {
     public enum ImageShape {
@@ -11,16 +12,8 @@ public struct URLImage: View {
     let shape: ImageShape
 
     public init(imageURL urlString: String, shape: ImageShape) {
-        let baseURL = Bundle.main.object(forInfoDictionaryKey: "S3_BASE_URL") as? String ?? ""
-
-        if let encoded = (baseURL + urlString)
-            .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-           let imageURL = URL(string: encoded) {
-            self.imageURL = imageURL
-        } else {
-            self.imageURL = URL(string: urlString)
-        }
-
+        var baseURL: URL { Environment.getUrlValue(key: .s3BaseUrl) }
+        self.imageURL = baseURL.appendingPathComponent(urlString)
         self.shape = shape
     }
 
