@@ -13,7 +13,11 @@ public struct URLImage: View {
 
     public init(imageURL urlString: String, shape: ImageShape) {
         let baseURL = Environment.getUrlValue(key: .s3BaseUrl)
-        self.imageURL = baseURL.appendingPathComponent(urlString)
+        if urlString.contains(baseURL.description) {
+            imageURL = URL(string: urlString)
+        } else {
+            self.imageURL = baseURL.appendingPathComponent(urlString)
+        }
 
         self.shape = shape
     }

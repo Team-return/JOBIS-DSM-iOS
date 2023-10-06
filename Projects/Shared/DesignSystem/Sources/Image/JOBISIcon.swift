@@ -34,7 +34,8 @@ public struct JOBISIcon: View {
         case menu
         case profile
         case house
-        case militaryServiceExceptionIcon
+        case militaryExceptionOn
+        case militaryExceptionOff
         case bookmarkOn
         case bookmarkOff
         case filterIcon
@@ -140,8 +141,11 @@ public struct JOBISIcon: View {
         case .house:
             return DesignSystemAsset.Icons.house.suiImage
 
-        case .militaryServiceExceptionIcon:
-            return DesignSystemAsset.Icons.militaryServiceExceptionIcon.suiImage
+        case .militaryExceptionOn:
+            return DesignSystemAsset.Icons.militaryExceptionOn.suiImage
+
+        case .militaryExceptionOff:
+            return DesignSystemAsset.Icons.militaryExceptionOff.suiImage
 
         case .bookmarkOn:
             return DesignSystemAsset.Icons.bookmarkOn.suiImage
