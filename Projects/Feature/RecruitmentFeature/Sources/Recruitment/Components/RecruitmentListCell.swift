@@ -65,9 +65,8 @@ struct RecruitmentListCell: View {
 
                     Spacer()
 
-                    JOBISIcon(.militaryServiceExceptionIcon)
+                    JOBISIcon(recruitmentEntity.military ? .militaryExceptionOn : .militaryExceptionOff)
                         .frame(width: 20, height: 20)
-                        .opacity(recruitmentEntity.military ? 1 : 0)
                 }
                 .padding(.vertical, 14)
                 .padding(.trailing, 20)
