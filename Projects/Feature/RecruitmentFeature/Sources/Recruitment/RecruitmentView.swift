@@ -24,9 +24,22 @@ struct RecruitmentView: View {
             LazyVStack {
                 searchBar()
 
-                if let list = viewModel.recruitmentList {
-                    ForEach(list.recruitments, id: \.self) { recruitmentEntity in
-                        navigateToRecruitmentDetail(recruitmentEntity: recruitmentEntity)
+                if !viewModel.recruitmentList.recruitments.isEmpty {
+                    ForEach(0..<viewModel.recruitmentList.recruitments.count, id: \.self) { index in
+                        Button {
+                            viewModel.isNavigateRecruitmentDetail.toggle()
+                        } label: {
+                            RecruitmentListCell(
+                                recruitmentEntitys: $viewModel.recruitmentList.recruitments,
+                                index: index,
+                                recruitmentDetailFactory: recruitmentDetailFactory
+                            ) {
+                                viewModel.bookmark(id: viewModel.recruitmentList.recruitments[index].recruitID)
+                            }
+                        }
+                        .onAppear {
+                            viewModel.appendRecruitmentList(list: viewModel.recruitmentList.recruitments[index])
+                        }
                     }
                 } else {
                     ProgressView().progressViewStyle(.circular)
@@ -91,22 +104,5 @@ struct RecruitmentView: View {
         }
         .listRowSeparator(.hidden)
         .listRowBackground(Color.clear)
-    }
-
-    @ViewBuilder
-    func navigateToRecruitmentDetail(recruitmentEntity: RecruitmentEntity) -> some View {
-        Button {
-            viewModel.isNavigateRecruitmentDetail.toggle()
-        } label: {
-            RecruitmentListCell(
-                recruitmentEntity: recruitmentEntity,
-                recruitmentDetailFactory: recruitmentDetailFactory
-            ) {
-                viewModel.bookmark(id: recruitmentEntity.recruitID)
-            }
-        }
-        .onAppear {
-            viewModel.appendRecruitmentList(list: recruitmentEntity)
-        }
     }
 }

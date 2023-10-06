@@ -8,7 +8,7 @@ public struct RecruitmentEntity: Equatable, Hashable {
     public let military: Bool
     public let totalHiring: Int
     public let jobCodeList: String
-    public let bookmarked: Bool
+    public var bookmarked: Bool
 
     public init(
         recruitID: Int,
