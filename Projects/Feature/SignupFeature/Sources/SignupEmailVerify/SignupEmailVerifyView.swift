@@ -22,7 +22,7 @@ struct SignupEmailVerifyView: View {
         VStack(alignment: .leading, spacing: 0) {
             Text("이메일 인증")
                 .JOBISFont(.heading(.heading5), color: .Sub.gray90)
-                .padding(.vertical, 45)
+                .padding(.vertical, 20)
 
             JOBISFormTextField(
                 "이메일을 입력해주세요.",

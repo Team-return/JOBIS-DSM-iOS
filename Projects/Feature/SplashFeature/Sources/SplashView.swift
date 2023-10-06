@@ -26,5 +26,34 @@ struct SplashView: View {
                 appState.sceneFlow = .auth
             }
         }
+        .alert(isPresented: $viewModel.showUpdateAlert) {
+            Alert(
+                title: Text(viewModel.alertTitle),
+                message: Text(viewModel.alertMessage),
+                primaryButton: Alert.Button.destructive(
+                    Text("확인"),
+                    action: {
+                        viewModel.openAppStore()
+                        appState.sceneFlow = .auth
+                    }
+                ),
+                secondaryButton: Alert.Button.cancel(
+                    Text("취소")
+                )
+            )
+        }
+        .alert(isPresented: $viewModel.showUpdateForceAlert) {
+            Alert(
+                title: Text(viewModel.alertTitle),
+                message: Text(viewModel.alertMessage),
+                dismissButton: Alert.Button.destructive(
+                    Text("확인"),
+                    action: {
+                        viewModel.openAppStore()
+                        appState.sceneFlow = .auth
+                    }
+                )
+            )
+        }
     }
 }

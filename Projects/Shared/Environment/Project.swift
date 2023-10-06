@@ -3,15 +3,12 @@ import ProjectDescriptionHelpers
 import DependencyPlugin
 
 let project = Project.makeModule(
-    name: ModulePaths.Shared.DesignSystem.rawValue,
+    name: ModulePaths.Shared.Environment.rawValue,
     product: .framework,
-    targets: [.demo],
-    externalDependencies: [
-        .SPM.Kingfisher,
-        .Shared.Environment
-    ],
-    resources: ["Resources/**"],
+    targets: [],
+    internalDependencies: [],
     additionalPlistRows: [
+        "API_BASE_URL": .string("$(API_BASE_URL)"),
         "S3_BASE_URL": .string("$(S3_BASE_URL)")
     ]
 )

@@ -6,11 +6,11 @@ import UIKit
 import UtilityModule
 
 final class SignupViewModel: BaseViewModel {
-    enum SignupType {
-        case infoSetting
-        case emailVerify
-        case password
-        case infoAgree
+    enum SignupType: Int {
+        case infoSetting = 1
+        case emailVerify = 2
+        case password = 3
+        case infoAgree = 4
     }
     @Published var isSuccessSignup = false
     @Published var isAgreeTerms = false
@@ -25,15 +25,6 @@ final class SignupViewModel: BaseViewModel {
                 nextButtonTitle = "다음"
             case .infoAgree:
                 nextButtonTitle = "회원가입"
-            }
-        }
-    }
-    @Published var progressValue: Int = 0 {
-        didSet {
-            if progressValue > 3 {
-                progressValue -= 1
-            } else if progressValue < 0 {
-                progressValue += 1
             }
         }
     }
@@ -157,15 +148,12 @@ final class SignupViewModel: BaseViewModel {
 
         case .emailVerify:
             signupType = .infoSetting
-            progressValue -= 1
 
         case .password:
             signupType = .emailVerify
-            progressValue -= 1
 
         case .infoAgree:
             signupType = .emailVerify
-            progressValue -= 1
         }
     }
 
@@ -193,7 +181,6 @@ final class SignupViewModel: BaseViewModel {
             verifyAuthCodeUseCase.execute(email: email, authCode: authCode)
         ) { [weak self] _ in
             self?.signupType = .password
-            self?.progressValue += 1
         } onReceiveError: { [weak self] _ in
             self?.isAuthCodeError = true
         }
@@ -211,7 +198,6 @@ final class SignupViewModel: BaseViewModel {
                 studentExistsUseCase.execute(gcn: gcn, name: name)
             ) { [weak self] in
                 self?.signupType = .emailVerify
-                self?.progressValue += 1
             } onReceiveError: { [weak self] _ in
                 self?.isInfoSettingError = true
             }

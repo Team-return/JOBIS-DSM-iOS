@@ -34,7 +34,7 @@ struct SignupView: View {
             nextButton()
         }
         .padding(.horizontal, 26)
-        .animation(.default, value: viewModel.progressValue)
+        .animation(.default, value: viewModel.signupType)
         .jobisBackButton(title: "회원가입") {
             viewModel.backButtonDidTap {
                 dismiss()
@@ -74,18 +74,19 @@ struct SignupView: View {
             guard newValue else { return }
             appState.sceneFlow = .main
         }
-        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 
     @ViewBuilder
     func nextButton() -> some View {
         VStack(spacing: 0) {
             VStack(alignment: .trailing, spacing: 4) {
-                Text(String(viewModel.progressValue) + "/3")
+                Text(String(viewModel.signupType.rawValue) + "/4")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
 
-                ProgressView(value: Double(viewModel.progressValue)/3)
-                    .progressViewStyle(LinearProgressViewStyle(tint: .Main.lightBlue))
+                ProgressView(
+                    value: Double(viewModel.signupType.rawValue)/Double(SignupViewModel.SignupType.infoAgree.rawValue)
+                )
+                .progressViewStyle(LinearProgressViewStyle(tint: .Main.lightBlue))
             }
 
             SolidBtn(
@@ -106,7 +107,7 @@ struct SignupView: View {
         VStack(alignment: .leading) {
             Text("약관 동의")
                 .JOBISFont(.heading(.heading1), color: .Sub.gray90)
-                .padding(.top, 24)
+                .padding(.vertical, 20)
 
             JOBISWebView(urlToLoad: url)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
