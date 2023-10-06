@@ -25,58 +25,57 @@ struct RecruitmentDetailView: View {
     var body: some View {
         ZStack {
             if let detailInfo = viewModel.recruitmentDetail {
-                ScrollView {
-                    LazyVStack(alignment: .leading, spacing: 10) {
-                        HStack(spacing: 12) {
-                            URLImage(imageURL: detailInfo.companyProfileUrl, shape: .square(80))
-                                .cornerRadius(15)
-
-                            Text(detailInfo.companyName)
-                                .JOBISFont(.body(.body1), color: .Sub.gray90)
-                        }
-                        .padding(.bottom, 2)
-
-                        if !isDetail {
-                            GrayBtn(text: "기업 보기", size: .large) {
-                                viewModel.isNavigateCompanyDetail.toggle()
-                            }
-                            .navigate(
-                                to: findCompanyDetailFactory.makeView(
-                                    id: String(detailInfo.companyID),
-                                    isDetail: true
-                                ).eraseToAnyView(),
-                                when: $viewModel.isNavigateCompanyDetail
-                            )
-                        }
-
-                        Divider()
-                            .foregroundColor(.Sub.gray40)
-
-                        VStack(alignment: .leading, spacing: 10) {
-                            recruitmentInfoCell(
-                                title: "모집기간",
-                                content: detailInfo.startDate + " ~ " + detailInfo.endDate
-                            )
-
-                            areaView(areas: detailInfo.areas)
-
-                            ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
-                                recruitmentInfoCell(title: title, content: content)
-                            }
-                        }
-                    }
-                    .padding(.bottom, 100)
-                    .padding(.horizontal, 20)
-                }
 
                 VStack {
-                    Spacer()
+                    ScrollView {
+                        LazyVStack(alignment: .leading, spacing: 10) {
+                            HStack(spacing: 12) {
+                                URLImage(imageURL: detailInfo.companyProfileUrl, shape: .square(80))
+                                    .cornerRadius(15)
+
+                                Text(detailInfo.companyName)
+                                    .JOBISFont(.body(.body1), color: .Sub.gray90)
+                            }
+                            .padding(.bottom, 2)
+
+                            if !isDetail {
+                                GrayBtn(text: "기업 보기", size: .large) {
+                                    viewModel.isNavigateCompanyDetail.toggle()
+                                }
+                                .navigate(
+                                    to: findCompanyDetailFactory.makeView(
+                                        id: String(detailInfo.companyID),
+                                        isDetail: true
+                                    ).eraseToAnyView(),
+                                    when: $viewModel.isNavigateCompanyDetail
+                                )
+                            }
+
+                            Divider()
+                                .foregroundColor(.Sub.gray40)
+
+                            VStack(alignment: .leading, spacing: 10) {
+                                recruitmentInfoCell(
+                                    title: "모집기간",
+                                    content: detailInfo.startDate + " ~ " + detailInfo.endDate
+                                )
+
+                                areaView(areas: detailInfo.areas)
+
+                                ForEach(Array(zip(viewModel.titles, viewModel.contents)), id: \.0) { title, content in
+                                    recruitmentInfoCell(title: title, content: content)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 20)
+                    }
 
                     SolidBtn(text: "지원하기", size: .large) {
                         viewModel.isTappedApplyButton.toggle()
                     }
+                    .padding(.vertical, 10)
+                    .padding(.horizontal, 20)
                 }
-                .padding(.horizontal, 20)
 
                 Color.black
                     .opacity(viewModel.isTappedApplyButton ? 0.2 : 0)
@@ -100,6 +99,7 @@ struct RecruitmentDetailView: View {
                     .frame(maxHeight: .infinity)
             }
         }
+        .frame(maxHeight: .infinity)
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             viewModel.onAppear()

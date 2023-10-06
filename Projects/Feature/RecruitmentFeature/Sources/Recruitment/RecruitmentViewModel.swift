@@ -21,7 +21,7 @@ final class RecruitmentViewModel: BaseViewModel {
     @Published var filteringName: String = ""
     @Published var listPage: Int = 1
 
-    @Published var recruitmentList: RecruitmentListEntity?
+    @Published var recruitmentList: RecruitmentListEntity = .init(recruitments: [])
     @Published var selectedJobCode: CodeEntity? {
         didSet {
             fetchCodeList(codeType: .tech, code: selectedJobCode?.code)
@@ -75,7 +75,7 @@ final class RecruitmentViewModel: BaseViewModel {
     }
 
     func appendRecruitmentList(list: RecruitmentEntity) {
-        guard self.recruitmentList?.recruitments.last == list else { return }
+        guard self.recruitmentList.recruitments.last == list else { return }
         var jobCode: String? {
             guard let selectedJobCode = selectedJobCode?.code else { return nil }
             return String(selectedJobCode)
@@ -90,7 +90,7 @@ final class RecruitmentViewModel: BaseViewModel {
                 name: companyText.isEmpty ? nil : companyText
             )
         ) { [weak self] recruitmentList in
-            self?.recruitmentList?.recruitments.append(contentsOf: recruitmentList.recruitments)
+            self?.recruitmentList.recruitments.append(contentsOf: recruitmentList.recruitments)
         }
     }
 

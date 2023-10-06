@@ -25,6 +25,13 @@ public struct DeleteableJOBISFormTextField<T>: View {
 
     public var body: some View {
         ZStack(alignment: .leading) {
+            Text(label)
+                .JOBISFont(
+                    .body(.body4),
+                    color: isEnabled ? .Sub.gray60 : .Sub.gray50
+                )
+                .opacity(text.isEmpty ? 1 : 0)
+
             HStack {
                 TextField("", text: $text)
                     .JOBISFont(
@@ -41,16 +48,6 @@ public struct DeleteableJOBISFormTextField<T>: View {
                         .foregroundColor(.Sub.gray90)
                 }
             }
-
-            Text(label)
-                .JOBISFont(
-                    .body(.body4),
-                    color: isEnabled ? .Sub.gray60 : .Sub.gray50
-                )
-                .opacity(text.isEmpty ? 1 : 0)
-                .onTapGesture {
-                    isFocused = true
-                }
         }
         .padding(.vertical, 10)
         .padding(.horizontal, 12)
@@ -65,7 +62,7 @@ public struct DeleteableJOBISFormTextField<T>: View {
                     lineWidth: 1
                 )
         }
-        .animation(.easeIn(duration: 0.3), value: isFocused)
+        .animation(.easeIn(duration: 0.2), value: isFocused)
     }
 }
 

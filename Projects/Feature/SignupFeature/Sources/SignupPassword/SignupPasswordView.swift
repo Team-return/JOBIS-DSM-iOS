@@ -18,26 +18,26 @@ struct SignupPasswordView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
+        VStack(alignment: .leading, spacing: 12) {
             Text("비밀번호 설정")
                 .JOBISFont(.heading(.heading5), color: .Sub.gray90)
-                .padding(.top, 45)
+                .padding(.vertical, 20)
 
-            Text("8 ~ 16자, 영문자, 숫자, 특수문자 포함")
-                .JOBISFont(.body(.body4), color: .Sub.gray60)
-                .padding(.bottom, 35)
+            VStack(alignment: .leading, spacing: 1) {
+                SecureJOBISFormTextField(
+                    "비밀번호를 입력해주세요.",
+                    text: $viewModel.password,
+                    isError: viewModel.isPasswordRegexError,
+                    errorMessage: "비밀번호 형식이 올바르지 않습니다."
+                ) {
+                    focusField = .checkPassword
+                }
+                .focused($focusField, equals: .password)
+                .textContentType(.password)
 
-            SecureJOBISFormTextField(
-                "비밀번호를 입력해주세요.",
-                text: $viewModel.password,
-                isError: viewModel.isPasswordRegexError,
-                errorMessage: "비밀번호 형식이 올바르지 않습니다."
-            ) {
-                focusField = .checkPassword
+                Text("8 ~ 16자, 영문자, 숫자, 특수문자 포함")
+                    .JOBISFont(.body(.body4), color: .Sub.gray60)
             }
-            .focused($focusField, equals: .password)
-            .textContentType(.password)
-            .padding(.bottom, 25)
 
             SecureJOBISFormTextField(
                 "비밀번호를 다시 입력해주세요.",

@@ -36,25 +36,21 @@ struct MyPageView: View {
         ScrollView {
             VStack(spacing: 40) {
                 HStack(spacing: 22) {
-                    VStack {
-                        ZStack(alignment: .bottomTrailing) {
-                            Group {
-                                URLImage(
-                                    imageURL: viewModel.studentInfo?.profileImageUrl ?? "",
-                                    shape: .square(85)
-                                )
-                            }
-                            .frame(width: 85, height: 85)
-                            .clipShape(Circle())
+                    ZStack(alignment: .bottomTrailing) {
+                        URLImage(
+                            imageURL: viewModel.studentInfo?.profileImageUrl ?? "",
+                            shape: .square(85)
+                        )
+                        .frame(width: 85, height: 85)
+                        .clipShape(Circle())
 
-                            Image(systemName: "pencil.circle.fill")
-                                .resizable()
-                                .frame(width: 26, height: 26)
-                                .foregroundColor(.Main.lightBlue)
-                                .background(Color.white)
-                                .clipShape(Circle())
-                                .unredacted()
-                        }
+                        Image(systemName: "pencil.circle.fill")
+                            .resizable()
+                            .frame(width: 26, height: 26)
+                            .foregroundColor(.Main.lightBlue)
+                            .background(Color.white)
+                            .clipShape(Circle())
+                            .unredacted()
                     }
                     .onTapGesture {
                         viewModel.isShowImagePicker.toggle()

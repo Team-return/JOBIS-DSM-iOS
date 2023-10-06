@@ -20,13 +20,12 @@ struct InfoSettingView: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 12) {
             Text("개인정보 입력")
                 .JOBISFont(.heading(.heading5), color: .Sub.gray90)
-                .padding(.vertical, 32)
+                .padding(.vertical, 20)
 
             genderButton()
-                .padding(.bottom, 28)
 
             JOBISFormTextField(
                 "이름을 입력하세요.",
