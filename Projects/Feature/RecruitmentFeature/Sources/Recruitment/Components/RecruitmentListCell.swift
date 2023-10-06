@@ -5,23 +5,26 @@ import DesignSystem
 import Kingfisher
 
 struct RecruitmentListCell: View {
-    @State private var isBookmarked: Bool = false
-    let recruitmentEntity: RecruitmentEntity
+    @Binding var recruitmentEntitys: [RecruitmentEntity]
+    let index: Int
     let bookmark: () -> Void
 
     private let recruitmentDetailFactory: any RecruitmentDetailFactory
 
     init(
-        recruitmentEntity: RecruitmentEntity,
+        recruitmentEntitys: Binding<[RecruitmentEntity]>,
+        index: Int,
         recruitmentDetailFactory: any RecruitmentDetailFactory,
         bookmark: @escaping () -> Void
     ) {
-        self.recruitmentEntity = recruitmentEntity
+        _recruitmentEntitys = recruitmentEntitys
+        self.index = index
         self.bookmark = bookmark
         self.recruitmentDetailFactory = recruitmentDetailFactory
     }
 
     var body: some View {
+        let recruitmentEntity = recruitmentEntitys[index]
         NavigationLink {
             recruitmentDetailFactory.makeView(
                 id: "\(recruitmentEntity.recruitID)", isDetail: false
@@ -33,7 +36,7 @@ struct RecruitmentListCell: View {
                     .cornerRadius(15)
                     .padding(8)
 
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 0) {
                     Text(recruitmentEntity.jobCodeList)
                         .multilineTextAlignment(.leading)
                         .JOBISFont(.body(.body2), color: .Sub.gray90)
@@ -42,25 +45,28 @@ struct RecruitmentListCell: View {
                         .JOBISFont(.etc(.caption), color: .Sub.gray60)
 
                     Spacer()
+
+                    Text("실습 수당 \(recruitmentEntity.trainPay.intComma())만원")
+                        .JOBISFont(.etc(.caption), color: .Sub.gray70)
                 }
                 .padding(.leading, 8)
-                .padding(.top, 14)
+                .padding(.vertical, 14)
 
                 Spacer()
 
                 VStack {
-                    JOBISIcon(self.isBookmarked ? .bookmarkOn : .bookmarkOff)
+                    JOBISIcon(recruitmentEntity.bookmarked ? .bookmarkOn : .bookmarkOff)
                         .frame(width: 12, height: 16)
                         .padding(5)
                         .onTapGesture {
-                            isBookmarked.toggle()
+                            recruitmentEntitys[index].bookmarked.toggle()
                             bookmark()
                         }
 
                     Spacer()
 
                     JOBISIcon(.militaryServiceExceptionIcon)
-                        .frame(width: 16, height: 16)
+                        .frame(width: 20, height: 20)
                         .opacity(recruitmentEntity.military ? 1 : 0)
                 }
                 .padding(.vertical, 14)
@@ -70,9 +76,6 @@ struct RecruitmentListCell: View {
             .background(Color.Sub.gray10)
             .cornerRadius(15)
             .shadow(color: .black, opacity: 0.1, blur: 4)
-            .onAppear {
-                self.isBookmarked = self.recruitmentEntity.bookmarked
-            }
         }
     }
 }

@@ -28,14 +28,6 @@ public struct JOBISFormTextField: View {
 
     public var body: some View {
         ZStack(alignment: .leading) {
-            TextField("", text: $text)
-                .JOBISFont(
-                    .body(.body4),
-                    color: isEnabled ? .Sub.gray90 : .Sub.gray50
-                )
-                .focused($isFocused)
-                .onSubmit(onCommit)
-
             Text(label)
                 .JOBISFont(
                     .body(.body4),
@@ -45,6 +37,14 @@ public struct JOBISFormTextField: View {
                 .onTapGesture {
                     isFocused = true
                 }
+
+            TextField("", text: $text)
+                .JOBISFont(
+                    .body(.body4),
+                    color: isEnabled ? .Sub.gray90 : .Sub.gray50
+                )
+                .focused($isFocused)
+                .onSubmit(onCommit)
         }
         .padding(.vertical, 10)
         .padding(.horizontal, 12)
@@ -70,9 +70,9 @@ public struct JOBISFormTextField: View {
                     .offset(y: 20)
             }
         }
-        .animation(.easeIn(duration: 0.3), value: isErrorAndNotEmpty)
-        .animation(.easeIn(duration: 0.3), value: isError)
-        .animation(.easeIn(duration: 0.3), value: isFocused)
+        .animation(.easeIn(duration: 0.2), value: isErrorAndNotEmpty)
+        .animation(.easeIn(duration: 0.2), value: isError)
+        .animation(.easeIn(duration: 0.2), value: isFocused)
     }
 }
 
