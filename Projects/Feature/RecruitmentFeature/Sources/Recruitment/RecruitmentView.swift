@@ -42,15 +42,7 @@ struct RecruitmentView: View {
                         }
                     }
                 } else {
-                    Group {
-                        if viewModel.isLoading {
-                            ProgressView().progressViewStyle(.circular)
-                        } else {
-                            Text("모집의뢰서가 없어요. ❌")
-                                .JOBISFont(.heading(.heading6), color: .Sub.gray90)
-                        }
-                    }
-                    .padding(.vertical, 100)
+                    ProgressView().progressViewStyle(.circular)
                 }
             }
             .padding(.horizontal, 24)
