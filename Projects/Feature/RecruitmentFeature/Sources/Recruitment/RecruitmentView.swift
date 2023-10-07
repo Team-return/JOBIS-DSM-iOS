@@ -24,21 +24,22 @@ struct RecruitmentView: View {
             LazyVStack {
                 searchBar()
 
-                if !viewModel.recruitmentList.recruitments.isEmpty {
-                    ForEach(0..<viewModel.recruitmentList.recruitments.count, id: \.self) { index in
+                let recruitments = viewModel.recruitmentList.recruitments
+                if !recruitments.isEmpty {
+                    ForEach(0..<recruitments.count, id: \.self) { index in
                         Button {
                             viewModel.isNavigateRecruitmentDetail.toggle()
                         } label: {
                             RecruitmentListCell(
-                                recruitmentEntitys: $viewModel.recruitmentList.recruitments,
-                                index: index,
+                                recruitmentEntity: recruitments[index],
                                 recruitmentDetailFactory: recruitmentDetailFactory
                             ) {
-                                viewModel.bookmark(id: viewModel.recruitmentList.recruitments[index].recruitID)
+                                viewModel.recruitmentList.recruitments[index].bookmarked.toggle()
+                                viewModel.bookmark(id: recruitments[index].recruitID)
                             }
                         }
                         .onAppear {
-                            viewModel.appendRecruitmentList(list: viewModel.recruitmentList.recruitments[index])
+                            viewModel.appendRecruitmentList(list: recruitments[index])
                         }
                     }
                 } else {
@@ -104,7 +105,7 @@ struct RecruitmentView: View {
 
                 Spacer()
 
-                if !viewModel.selectedTechCode.isEmpty {
+                if !viewModel.selectedTechCode.isEmpty || viewModel.selectedJobCode != nil {
                     Text("필터 적용됨")
                         .JOBISFont(.etc(.caption), color: .Sub.gray60)
                 }
