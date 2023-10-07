@@ -99,7 +99,7 @@ struct RecruitmentFilterSheet: View {
 
             Text(
                 viewModel.selectedJobCode?.keyword ?? "" +
-                (viewModel.selectedTechCode.isEmpty ?? "": " | ") +
+                (viewModel.selectedTechCode.isEmpty ? "": " | ") +
                 viewModel.selectedTechCode.map { $0.keyword }
                     .joined(separator: " | ")
             )
