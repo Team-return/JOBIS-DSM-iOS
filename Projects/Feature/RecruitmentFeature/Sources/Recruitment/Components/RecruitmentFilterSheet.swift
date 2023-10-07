@@ -45,7 +45,31 @@ struct RecruitmentFilterSheet: View {
 
                                     selectedOption()
 
-                                    techCodeList(techCodeList: viewModel.techCodeList)
+                                    VStack(alignment: .leading, spacing: 20) {
+                                        ForEach(viewModel.techCodeList, id: \.code) { code in
+                                            TechCodeListCell(
+                                                title: code.keyword,
+                                                isChecked: viewModel.selectedTechCode.contains(code)
+                                            ) {
+                                                withAnimation(.easeIn(duration: 0.3)) {
+                                                    if viewModel.selectedTechCode.contains(code) {
+                                                        viewModel.selectedTechCode.removeAll { $0 == code }
+                                                    } else {
+                                                        viewModel.selectedTechCode.append(code)
+                                                    }
+                                                }
+                                            }
+
+                                            if code != viewModel.techCodeList.last {
+                                                Divider()
+                                                    .foregroundColor(.Sub.gray40)
+                                            }
+                                        }
+
+                                        Spacer()
+                                    }
+                                    .padding(.bottom, 70)
+                                    .frame(maxHeight: .infinity)
                                 }
                                 .background(Color.Sub.gray10)
                             }
@@ -120,34 +144,5 @@ struct RecruitmentFilterSheet: View {
                 howMove = $0 ? proxy.size.height : 0
             }
         })
-    }
-
-    @ViewBuilder
-    func techCodeList(techCodeList: [CodeEntity]) -> some View {
-        VStack(alignment: .leading, spacing: 20) {
-            ForEach(techCodeList, id: \.self) { code in
-                TechCodeListCell(
-                    title: code.keyword,
-                    isChecked: viewModel.selectedTechCode.contains(code)
-                ) {
-                    withAnimation(.easeIn(duration: 0.3)) {
-                        if viewModel.selectedTechCode.contains(code) {
-                            viewModel.selectedTechCode.removeAll { $0 == code }
-                        } else {
-                            viewModel.selectedTechCode.append(code)
-                        }
-                    }
-                }
-
-                if code != techCodeList.last {
-                    Divider()
-                        .foregroundColor(.Sub.gray40)
-                }
-            }
-
-            Spacer()
-        }
-        .padding(.bottom, 70)
-        .frame(maxHeight: .infinity)
     }
 }
