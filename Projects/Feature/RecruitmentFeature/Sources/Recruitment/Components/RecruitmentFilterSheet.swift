@@ -74,6 +74,8 @@ struct RecruitmentFilterSheet: View {
                 .JOBISFont(.body(.body4), color: .Sub.gray90)
 
             Text(
+                viewModel.selectedJobCode?.keyword ?? "" +
+                (viewModel.selectedTechCode.isEmpty ?? "": " | ") +
                 viewModel.selectedTechCode.map { $0.keyword }
                     .joined(separator: " | ")
             )
