@@ -104,14 +104,14 @@ struct RecruitmentFilterSheet: View {
             items: jobCodeList,
             itemSpacing: 4
         ) { jobCode in
-            let action = {
-                viewModel.selectedJobCode = viewModel.selectedJobCode == jobCode ? nil : jobCode
-            }
-
             if viewModel.selectedJobCode == jobCode {
-                SolidBtn(text: jobCode.keyword, size: .small) { action() }
+                SolidBtn(text: jobCode.keyword, size: .small) {
+                    viewModel.selectedJobCode = nil
+                }
             } else {
-                ShadowBtn(text: jobCode.keyword, size: .small) { action() }
+                ShadowBtn(text: jobCode.keyword, size: .small) {
+                    viewModel.selectedJobCode = jobCode
+                }
             }
         }
         .padding(.vertical, 10)
