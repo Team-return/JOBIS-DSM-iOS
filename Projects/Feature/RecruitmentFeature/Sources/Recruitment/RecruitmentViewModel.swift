@@ -24,7 +24,7 @@ final class RecruitmentViewModel: BaseViewModel {
     @Published var recruitmentList: RecruitmentListEntity = .init(recruitments: [])
     @Published var selectedJobCode: CodeEntity? {
         didSet {
-            fetchCodeList(codeType: .tech, code: selectedJobCode?.code)
+            fetchCodeList(codeType: .tech)
         }
     }
     @Published var selectedTechCode: [CodeEntity] = []
@@ -103,7 +103,7 @@ final class RecruitmentViewModel: BaseViewModel {
         fetchCodeList(codeType: .tech)
     }
 
-    private func fetchCodeList(codeType: CodeType, code: Int? = nil) {
+    private func fetchCodeList(codeType: CodeType) {
         var keyword: String? {
             switch codeType {
             case .tech:
@@ -115,7 +115,7 @@ final class RecruitmentViewModel: BaseViewModel {
         }
 
         var parentCode: String? {
-            if let code {
+            if let code = selectedJobCode?.code, codeType == .tech {
                 return String(code)
             } else {
                 return nil
