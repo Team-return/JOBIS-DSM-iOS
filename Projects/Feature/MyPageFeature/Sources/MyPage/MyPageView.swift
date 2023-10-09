@@ -60,7 +60,7 @@ struct MyPageView: View {
                         Text(viewModel.studentInfo?.studentName ?? "Loading")
                             .JOBISFont(.heading(.heading6), color: .Sub.gray90)
 
-                        Text((viewModel.studentInfo?.department ?? .none).localizedString())
+                        Text((viewModel.studentInfo?.department ?? .none)?.localizedString() ?? "")
                             .JOBISFont(.body(.body2), color: .Sub.gray90)
 
                         Text(viewModel.studentInfo?.studentGcn ?? "")

@@ -15,7 +15,7 @@ struct StudentInfoView: View {
                 Text("\(studentInfo?.studentGcn ?? "") \(studentInfo?.studentName ?? "Loading")")
                     .JOBISFont(.body(.body1), color: .Sub.gray70)
 
-                Text((studentInfo?.department ?? .none).localizedString())
+                Text((studentInfo?.department ?? .common)?.localizedString() ?? "")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
             }
         }
