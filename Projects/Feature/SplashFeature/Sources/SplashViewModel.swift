@@ -56,16 +56,21 @@ final class SplashViewModel: BaseViewModel {
             let currentProjectVersion = appVersion!
             let splitMarketingVersion = marketingVersion.split(separator: ".").map {$0}
             let splitCurrentProjectVersion = currentProjectVersion.split(separator: ".").map {$0}
+            guard Int(currentProjectVersion.filter { $0 != "."})! < Int(marketingVersion.filter { $0 != "."})! else {
+                return action()
+            }
 
             DispatchQueue.main.async {
                 self.alertTitle = "업데이트 알림"
-                self.alertMessage = "JOBIS의 새로운 버전이 있습니다.\n\(marketingVersion) 버전으로 업데이트 해주세요."
-                if splitCurrentProjectVersion[0] < splitMarketingVersion[0] {
-                    self.showUpdateAlert.toggle()
+                self.alertMessage = """
+JOBIS의 새로운 버전이 있습니다.
+\(marketingVersion) 버전으로 업데이트 해주세요.
+(현 버전: \(currentProjectVersion))
+"""
+                if splitCurrentProjectVersion[0] < splitMarketingVersion[0] ||
+                    splitCurrentProjectVersion[1] < splitMarketingVersion[1] {
                     self.forceAlert.toggle()
-                } else if splitCurrentProjectVersion[1] < splitMarketingVersion[1] {
                     self.showUpdateAlert.toggle()
-                    self.forceAlert.toggle()
                 } else if  splitCurrentProjectVersion[2] < splitMarketingVersion[2] {
                     self.showUpdateAlert.toggle()
                 } else {
