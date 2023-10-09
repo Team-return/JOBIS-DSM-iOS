@@ -15,7 +15,9 @@ open class BaseViewModel: ObservableObject {
         onReceiveValue: @escaping (T) -> Void,
         onReceiveError: ((Error) -> Void)? = nil
     ) {
-        isLoading = true
+        DispatchQueue.main.async {
+            self.isLoading = true
+        }
         publisher
             .sink(receiveCompletion: { [weak self] completion in
                 if case let .failure(error) = completion {
