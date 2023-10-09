@@ -28,7 +28,7 @@ struct SigninView: View {
 
     var body: some View {
         NavigationView {
-            ZStack {
+            ZStack(alignment: .top) {
                 designRectangle()
 
                 VStack(spacing: 0) {
@@ -92,16 +92,20 @@ struct SigninView: View {
 
     @ViewBuilder
     func designRectangle() -> some View {
-        VStack(alignment: .trailing) {
-            LinearGradient(
-                gradient: Gradient(colors: [.Main.blue, .Main.blue, .Main.lightBlue]),
-                startPoint: .trailing, endPoint: .leading
-            )
-            .frame(width: 320, height: 320)
-            .cornerRadius(10)
-            .rotationEffect(.degrees(-45))
-            .offset(x: 100, y: viewModel.isOnAppear ? -200 : -1000)
-            .shadow(blur: 20)
+        VStack {
+            HStack(alignment: .top) {
+                Spacer()
+
+                LinearGradient(
+                    gradient: Gradient(colors: [.Main.blue, .Main.blue, .Main.lightBlue]),
+                    startPoint: .trailing, endPoint: .leading
+                )
+                .frame(width: 320, height: 320)
+                .cornerRadius(10)
+                .rotationEffect(.degrees(-45))
+                .offset(x: 50, y: viewModel.isOnAppear ? -200 : -1000)
+                .shadow(blur: 20)
+            }
 
             Spacer()
         }
