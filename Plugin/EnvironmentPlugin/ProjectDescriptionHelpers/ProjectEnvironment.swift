@@ -18,6 +18,7 @@ public let env = ProjectEnvironment (
     deploymentTarget: .iOS(targetVersion: "15.0", devices: [.iphone, .ipad]),
     platform: .iOS,
     baseSetting: [
-        "ENABLE_TESTABILITY": "YES"
+        "ENABLE_TESTABILITY": "YES",
+        "CFBundleDevelopmentRegion": "ko_KR"
     ]
 )
