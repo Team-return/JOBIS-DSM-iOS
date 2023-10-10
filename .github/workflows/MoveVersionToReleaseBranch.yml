@@ -16,8 +16,8 @@ jobs:
 
       - name: git merge to release
         run: |
-          git config --global user.name 'hongsjae'
-          git config --global user.email 'gtw030488@gmail.com'
+          git config --global user.name 'Team return'
+          git config --global user.email 'team.return@gmail.com'
           git config pull.rebase false
           git checkout -t origin/release
           echo $(git merge -Xtheirs origin/develop)
