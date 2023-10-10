@@ -1,7 +1,7 @@
 import Foundation
 
 public extension ReissueTokenResponseDTO {
-    func toDomain() -> Bool {
-        return authority == .developer
+    func toDomain() -> ReissueAuthorityEntity {
+        ReissueAuthorityEntity(authority: authority)
     }
 }
