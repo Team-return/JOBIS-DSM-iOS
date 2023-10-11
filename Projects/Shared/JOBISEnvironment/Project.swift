@@ -3,7 +3,7 @@ import ProjectDescriptionHelpers
 import DependencyPlugin
 
 let project = Project.makeModule(
-    name: ModulePaths.Shared.Environment.rawValue,
+    name: ModulePaths.Shared.JOBISEnvironment.rawValue,
     product: .framework,
     targets: [],
     internalDependencies: [],
