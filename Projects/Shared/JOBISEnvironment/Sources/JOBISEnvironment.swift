@@ -3,7 +3,7 @@ import Foundation
 public enum JOBISEnvironment {
 
     // MARK: - Keys
-    public enum UrlKeys: String {
+    public enum Keys: String {
         case apiBaseUrl = "API_BASE_URL"
         case s3BaseUrl = "S3_BASE_URL"
     }
@@ -18,15 +18,12 @@ public enum JOBISEnvironment {
     }()
 
     // MARK: - Get Value
-    public static func getUrlValue(key: JOBISEnvironment.UrlKeys) -> URL {
-        guard let urlString = JOBISEnvironment
-            .infoDictionary[key.rawValue] as? String else {
-            fatalError("Plist url not found")
+    public static func getValue(key: Keys) -> String {
+        let keyValue = JOBISEnvironment.infoDictionary[key.rawValue] as? String ?? ""
+        if keyValue.isEmpty {
+            fatalError("value is empty")
         }
-        guard let url = URL(string: urlString) else {
-            fatalError("\(key.rawValue) is not URL")
-        }
-        return url
+        return keyValue
     }
 
 }

@@ -12,11 +12,11 @@ public struct URLImage: View {
     let shape: ImageShape
 
     public init(imageURL urlString: String, shape: ImageShape) {
-        let baseURL = JOBISEnvironment.getUrlValue(key: .s3BaseUrl)
-        if urlString.contains(baseURL.description) {
+        let baseURLString = JOBISEnvironment.getValue(key: .s3BaseUrl)
+        if urlString.contains(baseURLString) {
             imageURL = URL(string: urlString)
         } else {
-            self.imageURL = baseURL.appendingPathComponent(urlString)
+            self.imageURL = URL(string: baseURLString + "/" + urlString)
         }
 
         self.shape = shape
