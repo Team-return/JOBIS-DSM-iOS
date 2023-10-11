@@ -14,6 +14,5 @@ let project = Project.makeModule(
         .Core.JwtStoreInterface,
         .Shared.GlobalThirdPartyLibrary,
         .Shared.UtilityModule,
-        .Shared.JOBISEnvironment
     ]
 )

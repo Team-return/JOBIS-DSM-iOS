@@ -7,8 +7,7 @@ let project = Project.makeModule(
     product: .framework,
     targets: [.demo],
     externalDependencies: [
-        .SPM.Kingfisher,
-        .Shared.JOBISEnvironment
+        .SPM.Kingfisher
     ],
     resources: ["Resources/**"],
     additionalPlistRows: [
