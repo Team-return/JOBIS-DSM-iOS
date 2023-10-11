@@ -1,6 +1,6 @@
 import Foundation
 
-public enum Environment {
+public enum JOBISEnvironment {
 
     // MARK: - Keys
     public enum UrlKeys: String {
@@ -10,7 +10,7 @@ public enum Environment {
 
     // MARK: - Plist
     private static let infoDictionary: [String: Any] = {
-        guard let dict = Bundle(identifier: "com.team.return.Environment")?.infoDictionary else {
+        guard let dict = Bundle(identifier: "com.team.return.JOBISEnvironment")?.infoDictionary else {
             fatalError("Plist file not found")
         }
 
@@ -18,8 +18,8 @@ public enum Environment {
     }()
 
     // MARK: - Get Value
-    public static func getUrlValue(key: Environment.UrlKeys) -> URL {
-        guard let urlString = Environment
+    public static func getUrlValue(key: JOBISEnvironment.UrlKeys) -> URL {
+        guard let urlString = JOBISEnvironment
             .infoDictionary[key.rawValue] as? String else {
             fatalError("Plist url not found")
         }
