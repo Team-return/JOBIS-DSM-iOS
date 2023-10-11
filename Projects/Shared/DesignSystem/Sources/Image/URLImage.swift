@@ -1,6 +1,5 @@
 import SwiftUI
 import Kingfisher
-import JOBISEnvironment
 
 public struct URLImage: View {
     public enum ImageShape {
@@ -12,7 +11,9 @@ public struct URLImage: View {
     let shape: ImageShape
 
     public init(imageURL urlString: String, shape: ImageShape) {
-        let baseURL = JOBISEnvironment.getUrlValue(key: .s3BaseUrl)
+        let baseURL = URL(
+            string: Bundle.main.object(forInfoDictionaryKey: "S3_BASE_URL") as? String ?? ""
+        ) ?? URL(string: "https://www.google.com")!
         if urlString.contains(baseURL.description) {
             imageURL = URL(string: urlString)
         } else {
