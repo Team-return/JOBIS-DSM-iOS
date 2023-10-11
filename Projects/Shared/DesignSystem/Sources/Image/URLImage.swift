@@ -18,7 +18,7 @@ public struct URLImage: View {
         if urlString.contains(baseURL.description) {
             imageURL = URL(string: urlString)
         } else {
-            self.imageURL = URL(string: baseURLString + "/" + urlString)
+            self.imageURL = baseURL.appendingPathComponent(urlString)
         }
 
         self.shape = shape
