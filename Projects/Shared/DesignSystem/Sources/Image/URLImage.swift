@@ -12,8 +12,10 @@ public struct URLImage: View {
     let shape: ImageShape
 
     public init(imageURL urlString: String, shape: ImageShape) {
-        let baseURLString = JOBISEnvironment.getValue(key: .s3BaseUrl)
-        if urlString.contains(baseURLString) {
+        let baseURL = URL(
+            string: Bundle.main.object(forInfoDictionaryKey: "S3_BASE_URL") as? String ?? ""
+        ) ?? URL(string: "https://www.google.com")!
+        if urlString.contains(baseURL.description) {
             imageURL = URL(string: urlString)
         } else {
             self.imageURL = URL(string: baseURLString + "/" + urlString)

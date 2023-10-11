@@ -1,3 +1,5 @@
 #include "../Shared.xcconfig"
 BUNDLE_DISPLAY_NAME = JOBIS (dev)
 APP_BUNDLE_ID = com.team.return.JOBIS-DSM-iOS.dev
+API_BASE_URL = https:/$()/dev-server.team-return.com
+S3_BASE_URL = https:/$()/jobis-store.s3.ap-northeast-2.amazonaws.com
