@@ -1,6 +1,5 @@
 import SwiftUI
 import Kingfisher
-import JOBISEnvironment
 
 public struct URLImage: View {
     public enum ImageShape {

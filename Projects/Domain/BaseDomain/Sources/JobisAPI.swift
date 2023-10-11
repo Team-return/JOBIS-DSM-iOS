@@ -1,6 +1,5 @@
 import Foundation
 import Moya
-import JOBISEnvironment
 
 public protocol JobisAPI: TargetType, JwtAuthorizable {
     associatedtype ErrorType: Error
@@ -15,7 +14,6 @@ public extension JobisAPI {
             string: Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as? String ?? ""
         ) ?? URL(string: "https://www.google.com")!
     }
-
 
     var path: String {
         domain.asURLString + urlPath
