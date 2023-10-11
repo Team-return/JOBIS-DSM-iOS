@@ -10,7 +10,11 @@ public protocol JobisAPI: TargetType, JwtAuthorizable {
 }
 
 public extension JobisAPI {
-    var baseURL: URL { JOBISEnvironment.getUrlValue(key: .apiBaseUrl) }
+    var baseURL: URL {
+        URL(
+            string: JOBISEnvironment.getValue(key: .apiBaseUrl)
+        ) ?? URL(string: "https://www.google.com")!
+    }
 
     var path: String {
         domain.asURLString + urlPath
