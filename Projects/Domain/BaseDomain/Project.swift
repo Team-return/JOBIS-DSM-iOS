@@ -13,6 +13,6 @@ let project = Project.makeModule(
     internalDependencies: [
         .Core.JwtStoreInterface,
         .Shared.GlobalThirdPartyLibrary,
-        .Shared.UtilityModule,
+        .Shared.UtilityModule
     ]
 )

@@ -28,7 +28,7 @@ final class SignupViewModel: BaseViewModel {
             }
         }
     }
-    @Published var isMan: Bool = false {
+    @Published var isMan: Bool = true {
         didSet {
             if self.isMan == true {
                 self.isWoman = false
