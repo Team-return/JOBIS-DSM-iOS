@@ -38,10 +38,10 @@ struct MyPageView: View {
                 HStack(spacing: 22) {
                     ZStack(alignment: .bottomTrailing) {
                         URLImage(
-                            imageURL: viewModel.studentInfo?.profileImageUrl ?? "",
+                            imageURL: viewModel.studentInfo?.profileImageUrl ??
+                            "https://jobis-store.s3.ap-northeast-2.amazonaws.com/EXTENSION_FILE/default_profile.png",
                             shape: .square(85)
                         )
-                        .frame(width: 85, height: 85)
                         .clipShape(Circle())
 
                         Image(systemName: "pencil.circle.fill")
@@ -57,7 +57,7 @@ struct MyPageView: View {
                     }
 
                     VStack(alignment: .leading, spacing: 0) {
-                        Text(viewModel.studentInfo?.studentName ?? "Loading")
+                        Text(viewModel.studentInfo?.studentName ?? "Loading...")
                             .JOBISFont(.heading(.heading6), color: .Sub.gray90)
 
                         Text((viewModel.studentInfo?.department ?? .none)?.localizedString() ?? "")

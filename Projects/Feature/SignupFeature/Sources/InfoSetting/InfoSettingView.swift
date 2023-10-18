@@ -23,9 +23,20 @@ struct InfoSettingView: View {
         VStack(alignment: .leading, spacing: 12) {
             Text("개인정보 입력")
                 .JOBISFont(.heading(.heading5), color: .Sub.gray90)
-                .padding(.vertical, 20)
+                .padding(.top, 20)
 
-            genderButton()
+            Text("* 성별은 남성으로 고정됩니다. 추후에 마이페이지에서 수정해주세요.")
+                .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                .multilineTextAlignment(.leading)
+                .padding(.bottom, 20)
+
+//            VStack(alignment: .leading, spacing: 5) {
+//                genderButton()
+//
+//                Text("* 위 정보는 취업 통계자료에 반영될 수 있습니다.")
+//                    .JOBISFont(.etc(.caption), color: .Sub.gray70)
+//                    .multilineTextAlignment(.leading)
+//            }
 
             JOBISFormTextField(
                 "이름을 입력하세요.",

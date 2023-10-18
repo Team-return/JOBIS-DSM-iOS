@@ -26,7 +26,7 @@ final class SigninViewModel: BaseViewModel {
         }
     }
     @Published var isShowToast = false
-    @Published var isAutoSignin = false
+    @Published var isAutoSignin = true
 
     private let signinUseCase: SigninUseCase
 
