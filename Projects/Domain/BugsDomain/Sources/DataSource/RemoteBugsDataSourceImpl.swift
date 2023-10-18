@@ -8,7 +8,7 @@ public final class RemoteBugsDataSourceImpl: BaseRemoteDataSource<BugsAPI>, Remo
     }
 
     public func fetchBugList(developmentType: DevelopmentType) -> AnyPublisher<BugListEntity, Error> {
-        request(.fetchBugList(developmentType: developmentType), dto: BugListResponseDTO.self)
+        request(.fetchBugList(developmentType), dto: BugListResponseDTO.self)
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }

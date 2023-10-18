@@ -4,7 +4,7 @@ import BaseDomain
 
 public enum BugsAPI {
     case reportBugs(ReportBugsRequestDTO)
-    case fetchBugList(developmentType: DevelopmentType)
+    case fetchBugList(DevelopmentType)
     case fetchBugDetail(id: Int)
 }
 

@@ -15,6 +15,7 @@ final class ReportViewModel: BaseViewModel {
     @Published var title: String = ""
     @Published var content: String = ""
     @Published var images: [UIImage] = []
+    @Published var imageUrls: [String] = []
     @Published var showActionSheet: Bool = false
     @Published var isSuccessReport: Bool = false
 
@@ -43,36 +44,21 @@ final class ReportViewModel: BaseViewModel {
             return
         }
 
-        DispatchQueue.global().async {
-            let group = DispatchGroup()
-            let dispatchQueue = DispatchQueue(label: "imageProcessingQueue", attributes: .concurrent)
-            var imageDataArray = [Data?](repeating: nil, count: self.images.count)
+        self.reportBugs(urls: imageUrls)
+    }
 
-            for (index, image) in self.images.enumerated() {
-                group.enter()
-                dispatchQueue.async {
-                    if let imageData = image.pngData() {
-                        imageDataArray[index] = imageData
-                    }
-                    group.leave()
-                }
-            }
+    func changeImageUrl(image: UIImage) {
+        guard let data = image.pngData() else { return }
 
-            group.wait()
-
-            DispatchQueue.main.async {
-                let data = imageDataArray.compactMap { $0 }
-
-                self.addCancellable(
-                    self.uploadFilesUseCase.execute(data: data, fileName: "bugsImage.png")
-                ) { [weak self] urls in
-                    self?.reportBugs(urls: urls)
-                }
-            }
+        self.addCancellable(
+            self.uploadFilesUseCase.execute(data: [data], fileName: "bugsImage.png")
+        ) { [weak self] urls in
+            guard let url = urls.first else { return }
+            self?.imageUrls.append(url)
         }
     }
 
-    func reportBugs(urls attachmentUrls: [String]) {
+    private func reportBugs(urls attachmentUrls: [String]) {
         addCancellable(
             reportBugsUseCase.execute(
                 req: .init(
