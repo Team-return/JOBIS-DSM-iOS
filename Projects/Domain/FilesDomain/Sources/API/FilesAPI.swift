@@ -49,7 +49,8 @@ extension FilesAPI: JobisAPI {
     public var errorMap: [Int: ErrorType] {
         return [
             400: .wrongFileForm,
-            413: .fileSizeExceeded
+            413: .fileSizeExceeded,
+            500: .askDeveloper
         ]
     }
 }
