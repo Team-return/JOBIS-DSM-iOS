@@ -72,7 +72,8 @@ extension ApplicationsAPI: JobisAPI {
                 401: .noThirdGrade,
                 403: .forbidden,
                 404: .notFoundRecruitment,
-                409: .alreadyApply
+                409: .alreadyApply,
+                500: .askDeveloper
             ]
 
         case .cancelApply:
