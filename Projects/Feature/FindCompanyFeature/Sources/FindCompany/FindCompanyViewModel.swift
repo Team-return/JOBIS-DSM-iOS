@@ -30,7 +30,7 @@ final class FindCompanyViewModel: BaseViewModel {
         guard self.studentCompanyList?.companies.last == list else { return }
         listPage += 1
         addCancellable(
-            fetchStudentCompanyListUseCase.execute(page: listPage, name: nil)
+            fetchStudentCompanyListUseCase.execute(page: listPage, name: companyText)
         ) { [weak self] studentCompanyList in
             self?.studentCompanyList?.companies.append(contentsOf: studentCompanyList.companies)
         }
