@@ -91,7 +91,6 @@ final class RecruitmentDetailViewModel: BaseViewModel {
         ) { [weak self] recruitmentDetail in
             self?.recruitmentDetail = recruitmentDetail
             let insertTitles = [
-                "우대사항",
                 "자격증",
                 "필수성적",
                 "근무시간",
@@ -103,10 +102,9 @@ final class RecruitmentDetailViewModel: BaseViewModel {
                 "기타사항"
             ]
             let insertContents = [
-                recruitmentDetail.preferentialTreatment,
                 recruitmentDetail.requiredLicenses,
                 recruitmentDetail.requiredGrade,
-                recruitmentDetail.workHours + " 시간",
+                recruitmentDetail.workTime,
                 recruitmentDetail.trainPay + " 만원/월",
                 recruitmentDetail.pay,
                 recruitmentDetail.benefits,

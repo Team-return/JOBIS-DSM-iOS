@@ -27,6 +27,9 @@ struct AreaCell: View {
 
             if isShowDetail {
                 areaInfo(title: "사용기술", content: area.tech.joined(separator: ", "))
+                if let preferentialTreatment = area.preferentialTreatment {
+                    areaInfo(title: "우대사항", content: preferentialTreatment)
+                }
             }
 
             HStack {
