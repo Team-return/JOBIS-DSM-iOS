@@ -74,8 +74,14 @@ private extension BaseRemoteDataSource {
         let expired = keychain.load(type: .accessExpiresAt).toJOBISDate()
         return Date() > expired
     }
+
     func tokenReissue() -> AnyPublisher<Void, Error> {
-        let provider = MoyaProvider<RefreshAPI>(plugins: [JwtPlugin(keychain: keychain)])
+        let provider: MoyaProvider<RefreshAPI>
+        #if DEV || STAGE
+        provider = MoyaProvider(plugins: [JwtPlugin(keychain: keychain), MoyaLogginPlugin()])
+        #else
+        provider = MoyaProvider(plugins: [JwtPlugin(keychain: keychain)])
+        #endif
         let requestPublisher = provider.requestPublisher(.reissueToken)
             .map { _ in }
             .mapError { $0 as Error }

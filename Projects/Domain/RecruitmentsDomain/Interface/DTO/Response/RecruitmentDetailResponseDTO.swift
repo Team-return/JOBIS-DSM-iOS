@@ -5,13 +5,12 @@ public struct RecruitmentDetailResponseDTO: Decodable {
     public let companyProfileUrl: String
     public let companyName: String
     public let areas: [AreaResponseDTO]
-    public let preferentialTreatment: String?
     public let requiredGrade: Int?
-    public let workHours: Int
+    public let startTime, endTime: String
     public let requiredLicenses: [String]?
     public let hiringProgress: [InterviewType]
     public let trainPay: Int
-    public let pay: Int?
+    public let pay: String?
     public let benefits: String?
     public let military: Bool
     public let submitDocument: String
@@ -23,13 +22,13 @@ public struct RecruitmentDetailResponseDTO: Decodable {
         companyProfileUrl: String,
         companyName: String,
         areas: [AreaResponseDTO],
-        preferentialTreatment: String?,
         requiredGrade: Int?,
-        workHours: Int,
+        startTime: String,
+        endTime: String,
         requiredLicenses: [String]?,
         hiringProgress: [InterviewType],
         trainPay: Int,
-        pay: Int?,
+        pay: String?,
         benefits: String?,
         military: Bool,
         submitDocument: String,
@@ -41,9 +40,9 @@ public struct RecruitmentDetailResponseDTO: Decodable {
         self.companyProfileUrl = companyProfileUrl
         self.companyName = companyName
         self.areas = areas
-        self.preferentialTreatment = preferentialTreatment
         self.requiredGrade = requiredGrade
-        self.workHours = workHours
+        self.startTime = startTime
+        self.endTime = endTime
         self.requiredLicenses = requiredLicenses
         self.hiringProgress = hiringProgress
         self.trainPay = trainPay
@@ -61,9 +60,9 @@ public struct RecruitmentDetailResponseDTO: Decodable {
         case companyProfileUrl = "company_profile_url"
         case companyName = "company_name"
         case areas
-        case preferentialTreatment = "preferential_treatment"
         case requiredGrade = "required_grade"
-        case workHours = "work_hours"
+        case startTime = "start_time"
+        case endTime = "end_time"
         case requiredLicenses = "required_licenses"
         case hiringProgress = "hiring_progress"
         case trainPay = "train_pay"
