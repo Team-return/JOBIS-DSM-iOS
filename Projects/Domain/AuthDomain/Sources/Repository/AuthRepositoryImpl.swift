@@ -26,6 +26,6 @@ public struct AuthRepositoryImpl: AuthRepository {
     }
 
     public func logout() {
-        localAuthDataSource.logout()
+        localAuthDataSource.clearTokens()
     }
 }

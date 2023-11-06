@@ -12,6 +12,7 @@ public enum ApplicationsDomainError: Error {
     case alreadyApply
 
     case isSpace
+    case askDeveloper
 }
 
 extension ApplicationsDomainError: LocalizedError {
@@ -43,6 +44,9 @@ extension ApplicationsDomainError: LocalizedError {
 
         case .isSpace:
             return "공백이 있습니다."
+
+        case .askDeveloper:
+            return "개발자에게 문의해주세요."
         }
     }
 }
