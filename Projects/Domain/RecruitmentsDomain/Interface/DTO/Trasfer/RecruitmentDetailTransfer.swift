@@ -7,9 +7,9 @@ public extension RecruitmentDetailResponseDTO {
             return String(requiredGrade) + "% 이내"
         }
         var workTime: String {
-            startTime.toHoursMinutes() +
-            " ~ " +
-            endTime.toHoursMinutes()
+            [startTime, endTime].map {
+                $0.components(separatedBy: ":")[0...1].joined(separator: ":")
+            }.joined(separator: " ~ ")
         }
         return RecruitmentDetailEntity(
             companyID: companyID,
@@ -44,11 +44,5 @@ public extension AreaResponseDTO {
             majorTask: majorTask,
             preferentialTreatment: preferentialTreatment
         )
-    }
-}
-
-extension String {
-    func toHoursMinutes() -> String {
-        self.components(separatedBy: ":")[0...1].joined(separator: ":")
     }
 }
