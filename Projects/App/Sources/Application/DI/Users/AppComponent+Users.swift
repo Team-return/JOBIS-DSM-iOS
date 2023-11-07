@@ -21,4 +21,10 @@ public extension AppComponent {
             SigninUseCaseImpl(usersRepository: usersRepository)
         }
     }
+
+    var fetchMarketVersionUseCase: any FetchMarketVersionUseCase {
+        shared {
+            FetchMarketVersionUseCaseImpl(usersRepository: usersRepository)
+        }
+    }
 }
