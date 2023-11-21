@@ -35,12 +35,17 @@ extension RecruitmentsAPI: JobisAPI {
     public var task: Moya.Task {
         switch self {
         case let .fetchRecruitmentList(page, jobCode, techCode, name):
-            return .requestParameters(parameters: [
-                "page": page,
-                "job_code": jobCode ?? "",
-                "tech_code": techCode?.joined(separator: ",") ?? "",
-                "name": name ?? ""
-            ], encoding: URLEncoding.queryString)
+            var dic: [String: Any] = ["page": page]
+            if let jobCode, !jobCode.isEmpty {
+                dic.updateValue(jobCode, forKey: "job_code")
+            }
+            if let techCode, !techCode.isEmpty {
+                dic.updateValue(techCode.joined(separator: ","), forKey: "job_code")
+            }
+            if let name, !name.isEmpty {
+                dic.updateValue(name, forKey: "name")
+            }
+            return .requestParameters(parameters: dic, encoding: URLEncoding.queryString)
 
         default:
             return .requestPlain

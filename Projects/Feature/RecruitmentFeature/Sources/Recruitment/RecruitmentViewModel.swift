@@ -66,7 +66,7 @@ final class RecruitmentViewModel: BaseViewModel {
                 page: listPage,
                 jobCode: jobCode,
                 techCode: selectedTechCode.map { String($0.code) },
-                name: companyText.isEmpty ? nil : companyText
+                name: companyText
             )
         ) { [weak self] recruitmentList in
             self?.filteringName = self?.companyText ?? ""
@@ -87,7 +87,7 @@ final class RecruitmentViewModel: BaseViewModel {
                 page: listPage,
                 jobCode: jobCode,
                 techCode: selectedTechCode.map { String($0.code) },
-                name: companyText.isEmpty ? nil : companyText
+                name: companyText
             )
         ) { [weak self] recruitmentList in
             self?.recruitmentList.recruitments.append(contentsOf: recruitmentList.recruitments)
