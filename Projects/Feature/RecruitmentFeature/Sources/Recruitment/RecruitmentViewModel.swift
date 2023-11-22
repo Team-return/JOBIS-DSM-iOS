@@ -38,15 +38,18 @@ final class RecruitmentViewModel: BaseViewModel {
     private let fetchCodesUseCase: FetchCodesUseCase
     private let fetchRecruitmentListUseCase: FetchRecruitmentListUseCase
     private let bookmarkUseCase: BookmarkUseCase
+    let winterIntern: Bool
 
     public init(
         fetchCodeUseCase: any FetchCodesUseCase,
         fetchRecruitmentListUseCase: any FetchRecruitmentListUseCase,
-        bookmarkUseCase: any BookmarkUseCase
+        bookmarkUseCase: any BookmarkUseCase,
+        winterIntern: Bool
     ) {
         self.fetchCodesUseCase = fetchCodeUseCase
         self.fetchRecruitmentListUseCase = fetchRecruitmentListUseCase
         self.bookmarkUseCase = bookmarkUseCase
+        self.winterIntern = winterIntern
     }
 
     func onAppear() {
@@ -66,7 +69,8 @@ final class RecruitmentViewModel: BaseViewModel {
                 page: listPage,
                 jobCode: jobCode,
                 techCode: selectedTechCode.map { String($0.code) },
-                name: companyText
+                name: companyText,
+                winterIntern: winterIntern
             )
         ) { [weak self] recruitmentList in
             self?.filteringName = self?.companyText ?? ""
@@ -87,7 +91,8 @@ final class RecruitmentViewModel: BaseViewModel {
                 page: listPage,
                 jobCode: jobCode,
                 techCode: selectedTechCode.map { String($0.code) },
-                name: companyText
+                name: companyText,
+                winterIntern: winterIntern
             )
         ) { [weak self] recruitmentList in
             self?.recruitmentList.recruitments.append(contentsOf: recruitmentList.recruitments)
