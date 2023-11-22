@@ -109,7 +109,7 @@ final class RecruitmentDetailViewModel: BaseViewModel {
                 recruitmentDetail.requiredLicenses,
                 recruitmentDetail.requiredGrade,
                 recruitmentDetail.workTime,
-                recruitmentDetail.trainPay + "만원/월",
+                recruitmentDetail.trainPay + "원/월",
                 pay,
                 recruitmentDetail.benefits,
                 recruitmentDetail.hiringProgress,
@@ -117,8 +117,7 @@ final class RecruitmentDetailViewModel: BaseViewModel {
                 recruitmentDetail.etc
             ]
             zip(insertTitles, insertContents).forEach { (title, content) in
-                guard let content else { return }
-                guard !content.isEmpty else { return }
+                guard let content, !content.isEmpty else { return }
                 self?.titles.append(title)
                 self?.contents.append(content)
             }
