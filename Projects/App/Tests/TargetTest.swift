@@ -11,7 +11,7 @@ class TargetTests: XCTestCase {
     }
 
     func testExample() throws {
-        XCTAssertEqual("A", "A")
+        XCTAssertEqual(1, 1)
     }
 
 }
