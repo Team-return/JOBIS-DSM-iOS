@@ -8,6 +8,7 @@ final class HomeViewModel: BaseViewModel {
     @Published var totalPassStudent: TotalPassStudentEntity?
     @Published var studentInfo: StudentInfoEntity?
     @Published var isNavigateRecruitment: Bool = false
+    @Published var isNavigateWinterIntern: Bool = false
     @Published var isNavigateFindCompany: Bool = false
 
     private let fetchApplicationUseCase: FetchApplicationUseCase
