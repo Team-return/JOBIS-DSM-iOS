@@ -63,7 +63,7 @@ struct RecruitmentView: View {
             viewModel.onAppear()
         }
         .hideKeyboardWhenTap()
-        .navigationTitle("모집의뢰서 조회하기")
+        .navigationTitle((viewModel.winterIntern ? "겨울인턴": "모집의뢰서") + " 조회하기")
         .sheet(isPresented: $viewModel.isShowFilterSheet) {
             viewModel.fetchRecruitment()
         } content: {

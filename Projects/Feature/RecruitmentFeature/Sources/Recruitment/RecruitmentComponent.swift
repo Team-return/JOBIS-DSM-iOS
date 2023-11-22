@@ -13,12 +13,13 @@ public protocol RecruitmentDependency: Dependency {
 }
 
 public final class RecruitmentComponent: Component<RecruitmentDependency>, RecruitmentFactory {
-    public func makeView() -> some View {
+    public func makeView(winterIntern: Bool) -> some View {
         RecruitmentView(
             viewModel: .init(
                 fetchCodeUseCase: dependency.fetchCodesUseCase,
                 fetchRecruitmentListUseCase: dependency.fetchRecruitmentListUseCase,
-                bookmarkUseCase: dependency.bookmarkUseCase
+                bookmarkUseCase: dependency.bookmarkUseCase,
+                winterIntern: winterIntern
             ),
             recruitmentDetailFactory: dependency.recruitmentDetailFactory
         )

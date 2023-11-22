@@ -9,8 +9,14 @@ public struct FetchRecruitmentListUseCaseImpl: FetchRecruitmentListUseCase {
     }
 
     public func execute(
-        page: Int, jobCode: String?, techCode: [String]?, name: String?
+        page: Int, jobCode: String?, techCode: [String]?, name: String?, winterIntern: Bool
     ) -> AnyPublisher<RecruitmentListEntity, Error> {
-        recruitmentsRepository.fetchRecruitmentList(page: page, jobCode: jobCode, techCode: techCode, name: name)
+        recruitmentsRepository.fetchRecruitmentList(
+            page: page,
+            jobCode: jobCode,
+            techCode: techCode,
+            name: name,
+            winterIntern: winterIntern
+        )
     }
 }

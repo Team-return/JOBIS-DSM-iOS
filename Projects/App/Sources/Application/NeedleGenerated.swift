@@ -72,6 +72,9 @@ private class SplashDependencye0cb7136f2ec3edfd60aProvider: SplashDependency {
     var reissueTokenUseCase: any ReissueTokenUseCase {
         return appComponent.reissueTokenUseCase
     }
+    var fetchMarketVersionUseCase: any FetchMarketVersionUseCase {
+        return appComponent.fetchMarketVersionUseCase
+    }
     private let appComponent: AppComponent
     init(appComponent: AppComponent) {
         self.appComponent = appComponent
@@ -517,6 +520,7 @@ extension AppComponent: Registration {
         localTable["remoteUsersDataSource-any RemoteUsersDataSource"] = { [unowned self] in self.remoteUsersDataSource as Any }
         localTable["usersRepository-any UsersRepository"] = { [unowned self] in self.usersRepository as Any }
         localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
+        localTable["fetchMarketVersionUseCase-any FetchMarketVersionUseCase"] = { [unowned self] in self.fetchMarketVersionUseCase as Any }
         localTable["remoteFilesDataSource-any RemoteFilesDataSource"] = { [unowned self] in self.remoteFilesDataSource as Any }
         localTable["filesRepository-any FilesRepository"] = { [unowned self] in self.filesRepository as Any }
         localTable["uploadFilesUseCase-any UploadFilesUseCase"] = { [unowned self] in self.uploadFilesUseCase as Any }
@@ -544,6 +548,7 @@ extension AppComponent: Registration {
 extension SplashComponent: Registration {
     public func registerItems() {
         keyPathToName[\SplashDependency.reissueTokenUseCase] = "reissueTokenUseCase-any ReissueTokenUseCase"
+        keyPathToName[\SplashDependency.fetchMarketVersionUseCase] = "fetchMarketVersionUseCase-any FetchMarketVersionUseCase"
     }
 }
 extension SignupComponent: Registration {

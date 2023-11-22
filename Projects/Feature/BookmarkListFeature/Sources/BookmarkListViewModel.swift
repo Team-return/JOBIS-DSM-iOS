@@ -7,6 +7,7 @@ final class BookmarkListViewModel: BaseViewModel {
     @Published var bookmarkList: [BookmarkEntity] = []
     @Published var recruitmentID: Int = 0
     @Published var isNavigateRecruitmentView: Bool = false
+    @Published var isNavigateWinterIntern: Bool = false
     @Published var isNavigateRecruitmentDetail: Bool = false
     @Published var isFetchingBookmarkList: Bool = true
 

@@ -47,6 +47,8 @@ struct MenuView: View {
 
                     menuListCell(image: .fetchRecruitment, title: "모집의뢰서 조회하기")
 
+                    menuListCell(image: .winterInternImage, title: "겨울인턴 조회하기")
+
                     menuListCell(image: .findCompany, title: "기업 찾기")
 
                     menuListCell(image: .bookmarkList, title: "북마크한 기업 보기")
@@ -59,8 +61,12 @@ struct MenuView: View {
             when: $viewModel.isNavigateMyPage
         )
         .navigate(
-            to: recruitmentFactory.makeView().eraseToAnyView(),
+            to: recruitmentFactory.makeView(winterIntern: false).eraseToAnyView(),
             when: $viewModel.isNavigateRecruitmentView
+        )
+        .navigate(
+            to: recruitmentFactory.makeView(winterIntern: true).eraseToAnyView(),
+            when: $viewModel.isNavigateWinterInternView
         )
         .navigate(
             to: findCompanyFactory.makeView().eraseToAnyView(),
@@ -100,6 +106,9 @@ struct MenuView: View {
 
             case .profile:
                 viewModel.isNavigateMyPage.toggle()
+
+            case .winterInternImage:
+                viewModel.isNavigateWinterInternView.toggle()
 
             default: break
             }
