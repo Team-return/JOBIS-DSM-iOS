@@ -39,23 +39,32 @@ struct HomeView: View {
                     Divider()
                         .foregroundColor(.Sub.gray40)
 
-                    HStack(spacing: 12) {
-                        navigateButton(
-                            text: "모집의뢰서\n조회하기",
-                            image: .recruitmentImage
-                        ) {
-                            viewModel.isNavigateRecruitment.toggle()
-                        }
-                        .frame(width: proxy.size.width / 2)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 12) {
+                            navigateButton(
+                                text: "모집의뢰서\n조회하기",
+                                image: .recruitmentImage
+                            ) {
+                                viewModel.isNavigateRecruitment.toggle()
+                            }
+                            .frame(width: proxy.size.width / 2)
 
-                        navigateButton(
-                            text: "기업찾기\n ",
-                            image: .findCompanyImage
-                        ) {
-                            viewModel.isNavigateFindCompany.toggle()
+                            navigateButton(
+                                text: "기업찾기\n ",
+                                image: .findCompanyImage
+                            ) {
+                                viewModel.isNavigateFindCompany.toggle()
+                            }
+
+                            navigateButton(
+                                text: "겨울인턴\n ",
+                                image: .winterInternImage
+                            ) {
+                                viewModel.isNavigateWinterIntern.toggle()
+                            }
                         }
+                        .padding(22)
                     }
-                    .padding(22)
                     .padding(.bottom, 100)
                     .background(Color.Sub.gray20)
                 }
@@ -65,15 +74,22 @@ struct HomeView: View {
         .onAppear {
             viewModel.onAppear()
         }
-        .onChange(of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindCompany) { newValue in
+        .onChange(
+            of: viewModel.isNavigateRecruitment || viewModel.isNavigateFindCompany || viewModel.isNavigateWinterIntern
+        ) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue
             }
         }
         .navigate(
-            to: recruitmentFactory.makeView()
+            to: recruitmentFactory.makeView(winterIntern: false)
                 .eraseToAnyView(),
             when: $viewModel.isNavigateRecruitment
+        )
+        .navigate(
+            to: recruitmentFactory.makeView(winterIntern: true)
+                .eraseToAnyView(),
+            when: $viewModel.isNavigateWinterIntern
         )
         .navigate(
             to: findCompanyFactory.makeView()
@@ -109,12 +125,20 @@ struct HomeView: View {
                 HStack {
                     Spacer()
 
-                    JOBISImage(image)
-                        .frame(width: 96, height: 96)
+                    if image == .winterInternImage {
+                        JOBISImage(image)
+                            .frame(width: 63, height: 68)
+                            .padding(.vertical, (96 - 68)/2)
+                            .padding(.trailing, (96 - 68)/2)
+                    } else {
+                        JOBISImage(image)
+                            .frame(width: 96, height: 96)
+                    }
                 }
                 .padding(.bottom, 8)
                 .padding(.trailing, 7)
             }
+            .frame(minWidth: 122)
             .background(Color.Sub.gray10)
             .cornerRadius(10)
             .shadow(opacity: 0.1, y: 1, blur: 10)

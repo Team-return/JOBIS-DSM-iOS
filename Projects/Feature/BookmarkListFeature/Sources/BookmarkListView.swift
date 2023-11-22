@@ -42,15 +42,27 @@ struct BookmarkListView: View {
                 } else {
                     Spacer()
 
-                    Text("아직 북마크한 모집의뢰서가 없어요.")
-                        .JOBISFont(.body(.body4), color: .Sub.gray90)
+                    VStack(spacing: 16) {
+                        Text("아직 북마크한 모집의뢰서가 없어요.")
+                            .JOBISFont(.body(.body4), color: .Sub.gray90)
 
-                    Button {
-                        viewModel.isNavigateRecruitmentView.toggle()
-                    } label: {
-                        Text("모집의뢰서 보러가기 >")
-                            .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                            .underlineText(color: .Sub.gray60)
+                        VStack(spacing: 8) {
+                            Button {
+                                viewModel.isNavigateRecruitmentView.toggle()
+                            } label: {
+                                Text("모집의뢰서 보러가기 >")
+                                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                                    .underlineText(color: .Sub.gray60)
+                            }
+
+                            Button {
+                                viewModel.isNavigateWinterIntern.toggle()
+                            } label: {
+                                Text("겨울인턴 보러가기 >")
+                                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                                    .underlineText(color: .Sub.gray60)
+                            }
+                        }
                     }
                 }
             } else {
@@ -69,7 +81,7 @@ struct BookmarkListView: View {
                 tabbarHidden.wrappedValue = newValue
             }
         }
-        .onChange(of: viewModel.isNavigateRecruitmentView) { newValue in
+        .onChange(of: viewModel.isNavigateRecruitmentView || viewModel.isNavigateWinterIntern) { newValue in
             withAnimation {
                 tabbarHidden.wrappedValue = newValue
             }
@@ -81,8 +93,12 @@ struct BookmarkListView: View {
             when: $viewModel.isNavigateRecruitmentDetail
         )
         .navigate(
-            to: recruitmentFactory.makeView().eraseToAnyView(),
+            to: recruitmentFactory.makeView(winterIntern: false).eraseToAnyView(),
             when: $viewModel.isNavigateRecruitmentView
+        )
+        .navigate(
+            to: recruitmentFactory.makeView(winterIntern: true).eraseToAnyView(),
+            when: $viewModel.isNavigateWinterIntern
         )
         .navigationTitle("북마크한 모집의뢰서")
     }
