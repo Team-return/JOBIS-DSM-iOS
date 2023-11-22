@@ -4,6 +4,7 @@ public struct JOBISImage: View {
     public enum Image {
         case recruitmentImage
         case findCompanyImage
+        case winterInternImage
         case bookmarkList
         case fetchRecruitment
         case findCompany
@@ -36,6 +37,9 @@ public struct JOBISImage: View {
 
         case .recruitmentImage:
             return DesignSystemAsset.Image.recruitmentImage.swiftUIImage
+
+        case .winterInternImage:
+            return DesignSystemAsset.Image.winterInternImage.swiftUIImage
 
         case .bookmarkList:
             return DesignSystemAsset.Icons.bookmarkListIcon.swiftUIImage
