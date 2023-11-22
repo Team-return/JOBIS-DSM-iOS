@@ -10,7 +10,6 @@ let project = Project.makeModule(
         .Feature.BaseFeature,
         .Feature.FindCompanyFeatureInterface,
         .Feature.RecruitmentFeatureInterface,
-        .Feature.WinterInternFeatureInterface,
         .Domain.ApplicationsDomainInterface,
         .Domain.StudentsDomainInterface,
         .Domain.RecruitmentsDomainInterface,
