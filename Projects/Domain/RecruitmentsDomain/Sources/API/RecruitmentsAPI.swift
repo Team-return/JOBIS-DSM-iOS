@@ -5,7 +5,13 @@ import BaseDomain
 
 public enum RecruitmentsAPI {
     case fetchRecruitmentDetail(id: String)
-    case fetchRecruitmentList(page: Int, jobCode: String?, techCode: [String]?, name: String?)
+    case fetchRecruitmentList(
+        page: Int,
+        jobCode: String?,
+        techCode: [String]?,
+        name: String?,
+        winterIntern: Bool
+    )
 }
 
 extension RecruitmentsAPI: JobisAPI {
@@ -34,17 +40,19 @@ extension RecruitmentsAPI: JobisAPI {
 
     public var task: Moya.Task {
         switch self {
-        case let .fetchRecruitmentList(page, jobCode, techCode, name):
+        case let .fetchRecruitmentList(page, jobCode, techCode, name, winterIntern):
             var dic: [String: Any] = ["page": page]
             if let jobCode, !jobCode.isEmpty {
                 dic.updateValue(jobCode, forKey: "job_code")
             }
             if let techCode, !techCode.isEmpty {
-                dic.updateValue(techCode.joined(separator: ","), forKey: "job_code")
+                dic.updateValue(techCode.joined(separator: ","), forKey: "tech_code")
             }
             if let name, !name.isEmpty {
                 dic.updateValue(name, forKey: "name")
             }
+            dic.updateValue(winterIntern, forKey: "winter_intern")
+
             return .requestParameters(parameters: dic, encoding: URLEncoding.queryString)
 
         default:
