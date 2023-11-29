@@ -67,6 +67,7 @@ struct ApplySheet: View {
                     applyAction()
                     hideKeyboard()
                 }
+                .disabled(documents.isEmpty)
 
                 Spacer()
             }
