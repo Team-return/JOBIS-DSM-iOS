@@ -3,6 +3,7 @@ import DesignSystem
 import ApplicationsDomainInterface
 
 struct ApplicationStatusView: View {
+    @Binding var selectedId: String?
     let applicationList: [ApplicationEntity]?
 
     var body: some View {
@@ -10,12 +11,14 @@ struct ApplicationStatusView: View {
             Text("지원현황")
                 .JOBISFont(.etc(.caption), color: .Sub.gray60)
                 .padding(.bottom, 4)
-            if !(applicationList ?? []).isEmpty {
+            if let applicationList,
+               !applicationList.isEmpty {
                 ScrollView {
-                    ForEach(applicationList ?? [], id: \.self) { data in
+                    ForEach(applicationList, id: \.self) { data in
                         applicationStatusCell(
+                            id: String(data.applicationID),
                             title: data.company,
-                            applicationStatus: data.applicationStatus.localizedString()
+                            applicationStatus: data.applicationStatus
                         )
                     }
                 }
@@ -40,14 +43,14 @@ struct ApplicationStatusView: View {
     }
 
     @ViewBuilder
-    func applicationStatusCell(title: String, applicationStatus: String) -> some View {
+    func applicationStatusCell(id: String, title: String, applicationStatus: ApplicationStatusType) -> some View {
         HStack {
             Text(title)
                 .JOBISFont(.body(.body4), color: .Sub.gray70)
 
             Spacer()
 
-            Text(applicationStatus)
+            Text(applicationStatus.localizedString())
                 .JOBISFont(.body(.body3), color: .Main.lightBlue)
         }
         .padding(.vertical, 13)
@@ -57,5 +60,9 @@ struct ApplicationStatusView: View {
         .padding(1)
         .background(Color.Sub.gray40)
         .cornerRadius(10)
+        .onTapGesture {
+            guard applicationStatus == .rejected else { return }
+            selectedId = id
+        }
     }
 }

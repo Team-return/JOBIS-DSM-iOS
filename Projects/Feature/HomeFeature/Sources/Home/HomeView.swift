@@ -32,7 +32,10 @@ struct HomeView: View {
 
                     StudentInfoView(studentInfo: viewModel.studentInfo)
 
-                    ApplicationStatusView(applicationList: viewModel.applicationList?.applications)
+                    ApplicationStatusView(
+                        selectedId: $viewModel.selectedId,
+                        applicationList: viewModel.applicationList?.applications
+                    )
 
                     Spacer()
 
@@ -71,6 +74,16 @@ struct HomeView: View {
             }
         }
         .ignoresSafeArea()
+        .reApplySheet(
+            isPresented: $viewModel.showReApplySheet,
+            urls: $viewModel.urls,
+            documents: $viewModel.documents,
+            rejectionReason: viewModel.rejectionReason ?? ""
+        ) {
+            viewModel.apply {
+                viewModel.dismissSheet()
+            }
+        }
         .onAppear {
             viewModel.onAppear()
         }
@@ -95,6 +108,18 @@ struct HomeView: View {
             to: findCompanyFactory.makeView()
                 .eraseToAnyView(),
             when: $viewModel.isNavigateFindCompany
+        )
+        .jobisToast(
+            isShowing: $viewModel.isErrorOcuured,
+            message: viewModel.errorMessage,
+            style: .error,
+            title: "지원 불가"
+        )
+        .jobisToast(
+            isShowing: $viewModel.isSuccessApply,
+            message: "성공적으로 지원되셨습니다.",
+            style: .success,
+            title: "지원 성공"
         )
         .navigationTitle("홈")
         .navigationBarHidden(true)
