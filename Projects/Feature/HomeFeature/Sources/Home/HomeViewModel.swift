@@ -110,6 +110,7 @@ extension HomeViewModel {
             complete()
             self?.isSuccessApply = true
             self?.dismissSheet()
+            self?.fetchApplication()
         }
     }
 
