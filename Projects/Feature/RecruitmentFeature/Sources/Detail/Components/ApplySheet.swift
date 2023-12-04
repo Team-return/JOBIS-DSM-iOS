@@ -98,7 +98,7 @@ struct ApplySheet: View {
                 HStack {
                     Spacer()
 
-                    SolidBtn(text: "지원하기") {
+                    SolidBtn(text: "확인") {
                         applyAction()
                         hideKeyboard()
                     }
