@@ -101,16 +101,12 @@ final class RecruitmentDetailViewModel: BaseViewModel {
                 "제출서류",
                 "기타사항"
             ]
-            var pay: String? {
-                guard let pay = recruitmentDetail.pay else { return recruitmentDetail.pay }
-                return pay + "만원/년"
-            }
             let insertContents = [
                 recruitmentDetail.requiredLicenses,
                 recruitmentDetail.requiredGrade,
                 recruitmentDetail.workTime,
-                recruitmentDetail.trainPay + "원/월",
-                pay,
+                (recruitmentDetail.trainPay.intComma() ?? "0") + " 원/월",
+                (recruitmentDetail.pay?.intComma() ?? "0") + " 만원/년",
                 recruitmentDetail.benefits,
                 recruitmentDetail.hiringProgress,
                 recruitmentDetail.submitDocument,
