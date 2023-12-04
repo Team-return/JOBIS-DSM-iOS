@@ -1,4 +1,5 @@
 import SwiftUI
+import FilesDomainInterface
 import ApplicationsDomainInterface
 import StudentsDomainInterface
 import HomeFeatureInterface
@@ -9,6 +10,9 @@ import NeedleFoundation
 
 public protocol HomeDependency: Dependency {
     var fetchApplicationUseCase: any FetchApplicationUseCase { get }
+    var uploadFilesUseCase: any UploadFilesUseCase { get }
+    var reApplyCompanyUseCase: any ReApplyCompanyUseCase { get }
+    var fetchRejectionReasonUseCase: any FetchRejectionReasonUseCase { get }
     var fetchTotalPassStudentUseCase: any FetchTotalPassStudentUseCase { get }
     var fetchStudentInfoUseCase: any FetchStudentInfoUseCase { get }
     var recruitmentFactory: any RecruitmentFactory { get }
@@ -20,8 +24,11 @@ public final class HomeComponent: Component<HomeDependency>, HomeFactory {
         HomeView(
             viewModel: .init(
                 fetchApplicationUseCase: dependency.fetchApplicationUseCase,
+                uploadFilesUseCase: dependency.uploadFilesUseCase,
                 fetchTotalPassStudentUseCase: dependency.fetchTotalPassStudentUseCase,
-                fetchStudentInfoUseCase: dependency.fetchStudentInfoUseCase
+                fetchStudentInfoUseCase: dependency.fetchStudentInfoUseCase,
+                reApplyCompanyUseCase: dependency.reApplyCompanyUseCase,
+                fetchRejectionReasonUseCase: dependency.fetchRejectionReasonUseCase
             ),
             recruitmentFactory: dependency.recruitmentFactory,
             findCompanyFactory: dependency.findCompanyFactory
