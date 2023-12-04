@@ -34,7 +34,7 @@ struct RecruitmentListCell: View {
                     .padding(8)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(recruitmentEntity.jobCodeList)
+                    Text(recruitmentEntity.hiringJobs)
                         .multilineTextAlignment(.leading)
                         .JOBISFont(.body(.body2), color: .Sub.gray90)
 
@@ -59,7 +59,7 @@ struct RecruitmentListCell: View {
 
                     Spacer()
 
-                    JOBISIcon(recruitmentEntity.military ? .militaryExceptionOn : .militaryExceptionOff)
+                    JOBISIcon(recruitmentEntity.militarySupport ? .militaryExceptionOn : .militaryExceptionOff)
                         .frame(width: 20, height: 20)
                 }
                 .padding(.vertical, 14)
