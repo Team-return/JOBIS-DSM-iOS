@@ -8,6 +8,10 @@ public final class RemoteApplicationsDataSourceImpl: BaseRemoteDataSource<Applic
         request(.applyCompany(id: id, req))
     }
 
+    public func reApplyCompany(id: String, req: ApplyCompanyRequestDTO) -> AnyPublisher<Void, Error> {
+        request(.reApplyCompany(id: id, req))
+    }
+
     public func cancelApply(id: String) -> AnyPublisher<Void, Error> {
         request(.cancelApply(id: id))
     }

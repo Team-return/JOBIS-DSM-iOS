@@ -8,6 +8,7 @@ public enum ApplicationsAPI {
     case fetchApplication
     case fetchTotalPassStudent
     case fetchRejectionReason(id: String)
+    case reApplyCompany(id: String, ApplyCompanyRequestDTO)
 }
 
 extension ApplicationsAPI: JobisAPI {
@@ -34,6 +35,8 @@ extension ApplicationsAPI: JobisAPI {
         case let .fetchRejectionReason(id):
             return "/rejection/\(id)"
 
+        case let .reApplyCompany(id, _):
+            return "/\(id)"
         }
     }
 
@@ -47,6 +50,9 @@ extension ApplicationsAPI: JobisAPI {
 
         case .fetchApplication, .fetchTotalPassStudent, .fetchRejectionReason:
             return .get
+
+        case .reApplyCompany:
+            return .put
         }
     }
 
@@ -55,7 +61,9 @@ extension ApplicationsAPI: JobisAPI {
         case let .applyCompany(_, req):
             return .requestJSONEncodable(req)
 
-        case .cancelApply, .fetchApplication, .fetchTotalPassStudent:
+        case let .reApplyCompany(_, req):
+            return .requestJSONEncodable(req)
+
         case .cancelApply, .fetchApplication, .fetchTotalPassStudent, .fetchRejectionReason:
             return .requestPlain
         }
@@ -81,26 +89,35 @@ extension ApplicationsAPI: JobisAPI {
                 409: .alreadyApply,
                 500: .askDeveloper
             ]
-
+            
         case .cancelApply:
             return [
                 400: .badRequest,
                 401: .unauthorized,
                 409: .conflict
             ]
-
+            
         case .fetchApplication:
             return [
                 401: .unauthorized,
                 403: .forbidden
             ]
-
+            
         case .fetchTotalPassStudent:
             return [:]
 
         case .fetchRejectionReason:
             return [:]
 
+        case .reApplyCompany:
+            return [
+                400: .isSpace,
+                401: .noThirdGrade,
+                403: .forbidden,
+                404: .notFoundRecruitment,
+                409: .alreadyApply,
+                500: .askDeveloper
+            ]
         }
     }
 }

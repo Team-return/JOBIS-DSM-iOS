@@ -14,6 +14,10 @@ public struct ApplicationsRepositoryImpl: ApplicationsRepository {
         remoteApplicationsDataSource.applyCompany(id: id, req: req )
     }
 
+    public func reApplyCompany(id: String, req: ApplyCompanyRequestDTO) -> AnyPublisher<Void, Error> {
+        remoteApplicationsDataSource.reApplyCompany(id: id, req: req)
+    }
+
     public func cancelApply(id: String) -> AnyPublisher<Void, Error> {
         remoteApplicationsDataSource.cancelApply(id: id)
     }
