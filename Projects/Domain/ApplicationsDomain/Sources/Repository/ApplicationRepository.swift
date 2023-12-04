@@ -25,4 +25,8 @@ public struct ApplicationsRepositoryImpl: ApplicationsRepository {
     public func fetchTotalPassStudent() -> AnyPublisher<TotalPassStudentEntity, Error> {
         remoteApplicationsDataSource.fetchTotalPassStudent()
     }
+
+    public func fetchRejectionReason(id: String) -> AnyPublisher<String, Error> {
+        remoteApplicationsDataSource.fetchRejectionReason(id: id)
+    }
 }

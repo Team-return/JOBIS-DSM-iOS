@@ -23,4 +23,10 @@ public final class RemoteApplicationsDataSourceImpl: BaseRemoteDataSource<Applic
             .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }
+
+    public func fetchRejectionReason(id: String) -> AnyPublisher<String, Error> {
+        request(.fetchRejectionReason(id: id), dto: FetchRejectionReasonResponseDTO.self)
+            .map { $0.rejectionReason }
+            .eraseToAnyPublisher()
+    }
 }

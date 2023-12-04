@@ -6,4 +6,5 @@ public protocol RemoteApplicationsDataSource {
     func cancelApply(id: String) -> AnyPublisher<Void, Error>
     func fetchApplication() -> AnyPublisher<ApplicationListEntity, Error>
     func fetchTotalPassStudent() -> AnyPublisher<TotalPassStudentEntity, Error>
+    func fetchRejectionReason(id: String) -> AnyPublisher<String, Error>
 }
