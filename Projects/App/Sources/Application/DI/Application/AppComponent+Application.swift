@@ -21,6 +21,12 @@ public extension AppComponent {
         }
     }
 
+    var reApplyCompanyUseCase: any ReApplyCompanyUseCase {
+        shared {
+            ReApplyCompanyUseCaseImpl(applicationRepository: applicationsRepository)
+        }
+    }
+
     var cancelApplyUseCase: any CancelApplyUseCase {
         shared {
             CancelApplyUseCaseImpl(applicationRepository: applicationsRepository)
@@ -36,6 +42,12 @@ public extension AppComponent {
     var fetchTotalPassStudentUseCase: any FetchTotalPassStudentUseCase {
         shared {
             FetchTotalPassStudentUseCaseImpl(applicationRepository: applicationsRepository)
+        }
+    }
+
+    var fetchRejectionReasonUseCase: any FetchRejectionReasonUseCase {
+        shared {
+            FetchRejectionReasonUseCaseImpl(applicationRepository: applicationsRepository)
         }
     }
 }

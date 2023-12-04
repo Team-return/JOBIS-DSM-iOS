@@ -7,6 +7,8 @@ public enum ApplicationsAPI {
     case cancelApply(id: String)
     case fetchApplication
     case fetchTotalPassStudent
+    case fetchRejectionReason(id: String)
+    case reApplyCompany(id: String, ApplyCompanyRequestDTO)
 }
 
 extension ApplicationsAPI: JobisAPI {
@@ -29,6 +31,12 @@ extension ApplicationsAPI: JobisAPI {
 
         case .fetchTotalPassStudent:
             return "/employment/count"
+
+        case let .fetchRejectionReason(id):
+            return "/rejection/\(id)"
+
+        case let .reApplyCompany(id, _):
+            return "/\(id)"
         }
     }
 
@@ -40,8 +48,11 @@ extension ApplicationsAPI: JobisAPI {
         case .cancelApply:
             return .delete
 
-        case .fetchApplication, .fetchTotalPassStudent:
+        case .fetchApplication, .fetchTotalPassStudent, .fetchRejectionReason:
             return .get
+
+        case .reApplyCompany:
+            return .put
         }
     }
 
@@ -50,14 +61,17 @@ extension ApplicationsAPI: JobisAPI {
         case let .applyCompany(_, req):
             return .requestJSONEncodable(req)
 
-        case .cancelApply, .fetchApplication, .fetchTotalPassStudent:
+        case let .reApplyCompany(_, req):
+            return .requestJSONEncodable(req)
+
+        case .cancelApply, .fetchApplication, .fetchTotalPassStudent, .fetchRejectionReason:
             return .requestPlain
         }
     }
 
     public var jwtTokenType: JwtTokenType {
         switch self {
-        case .fetchApplication, .applyCompany:
+        case .fetchApplication, .applyCompany, .fetchRejectionReason, .reApplyCompany:
             return .accessToken
         default:
             return .none
@@ -75,22 +89,35 @@ extension ApplicationsAPI: JobisAPI {
                 409: .alreadyApply,
                 500: .askDeveloper
             ]
-
+            
         case .cancelApply:
             return [
                 400: .badRequest,
                 401: .unauthorized,
                 409: .conflict
             ]
-
+            
         case .fetchApplication:
             return [
                 401: .unauthorized,
                 403: .forbidden
             ]
-
+            
         case .fetchTotalPassStudent:
             return [:]
+
+        case .fetchRejectionReason:
+            return [:]
+
+        case .reApplyCompany:
+            return [
+                400: .isSpace,
+                401: .noThirdGrade,
+                403: .forbidden,
+                404: .notFoundRecruitment,
+                409: .alreadyApply,
+                500: .askDeveloper
+            ]
         }
     }
 }

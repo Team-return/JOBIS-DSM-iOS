@@ -76,15 +76,8 @@ struct RecruitmentDetailView: View {
                     .padding(.vertical, 10)
                     .padding(.horizontal, 20)
                 }
-
-                Color.black
-                    .opacity(viewModel.isTappedApplyButton ? 0.2 : 0)
-                    .ignoresSafeArea()
-                    .onTapGesture {
-                        viewModel.isTappedApplyButton.toggle()
-                    }
-
-                ApplySheet(
+                .applySheet(
+                    isPresented: $viewModel.isTappedApplyButton,
                     urls: $viewModel.urls,
                     documents: $viewModel.documents,
                     submitDoc: detailInfo.submitDocument
@@ -93,7 +86,6 @@ struct RecruitmentDetailView: View {
                         viewModel.isTappedApplyButton.toggle()
                     }
                 }
-                .opacity(viewModel.isTappedApplyButton ? 1 : 0)
             } else {
                 ProgressView().progressViewStyle(.circular)
                     .frame(maxHeight: .infinity)

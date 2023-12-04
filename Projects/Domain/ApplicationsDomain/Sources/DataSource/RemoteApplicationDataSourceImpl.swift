@@ -8,6 +8,10 @@ public final class RemoteApplicationsDataSourceImpl: BaseRemoteDataSource<Applic
         request(.applyCompany(id: id, req))
     }
 
+    public func reApplyCompany(id: String, req: ApplyCompanyRequestDTO) -> AnyPublisher<Void, Error> {
+        request(.reApplyCompany(id: id, req))
+    }
+
     public func cancelApply(id: String) -> AnyPublisher<Void, Error> {
         request(.cancelApply(id: id))
     }
@@ -21,6 +25,12 @@ public final class RemoteApplicationsDataSourceImpl: BaseRemoteDataSource<Applic
     public func fetchTotalPassStudent() -> AnyPublisher<TotalPassStudentEntity, Error> {
         request(.fetchTotalPassStudent, dto: TotalPassStudentResponseDTO.self)
             .map { $0.toDomain() }
+            .eraseToAnyPublisher()
+    }
+
+    public func fetchRejectionReason(id: String) -> AnyPublisher<String, Error> {
+        request(.fetchRejectionReason(id: id), dto: FetchRejectionReasonResponseDTO.self)
+            .map { $0.rejectionReason }
             .eraseToAnyPublisher()
     }
 }
