@@ -3,6 +3,25 @@ import DesignSystem
 import UtilityModule
 import BaseFeature
 
+extension View {
+    func applySheet(
+        isPresented: Binding<Bool>,
+        urls: Binding<[String]>,
+        documents: Binding<[URL]>,
+        submitDoc: String,
+        applyAction: @escaping () -> Void
+    ) -> some View {
+        self.fullScreenCover(isPresented: isPresented) {
+            ApplySheet(
+                urls: urls,
+                documents: documents,
+                submitDoc: submitDoc,
+                applyAction: applyAction
+            )
+        }
+    }
+}
+
 struct ApplySheet: View {
     enum FileType: String {
         case file = "눌러서 파일 추가하기"
@@ -19,11 +38,20 @@ struct ApplySheet: View {
         }
     }
 
+    @Environment(\.presentationMode) var presentationMode
+    @State private var animate = false
     @Binding var urls: [String]
     @Binding var documents: [URL]
     @State var showDocumentPicker = false
     let submitDoc: String
     let applyAction: () -> Void
+
+    private func dismissAlert() {
+        withAnimation(.easeIn(duration: 0.4)) {
+            animate = false
+            self.presentationMode.wrappedValue.dismiss()
+        }
+    }
 
     init(
         urls: Binding<[String]>,
@@ -38,47 +66,62 @@ struct ApplySheet: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text("메뉴")
-                .JOBISFont(.body(.body2), color: .Sub.gray60)
-                .padding([.bottom, .leading], 5)
-
-            Divider().foregroundColor(.Sub.gray40)
-                .padding(.bottom, 25)
-
-            Text("제출 서류 : \(submitDoc)")
-                .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                .padding(.bottom, 15)
-
-            fetchFiles()
-                .padding(.horizontal, 2)
-                .padding(.bottom, 18)
-
-            inputURLs()
-                .padding(.horizontal, 2)
-                .padding(.bottom, 30)
-
-            Spacer()
-
-            HStack {
-                Spacer()
-
-                SolidBtn(text: "지원하기") {
-                    applyAction()
-                    hideKeyboard()
+        ZStack {
+            Color.black.opacity(0.2).ignoresSafeArea()
+                .opacity(animate ? 1.0 : 0.0)
+                .onTapGesture {
+                    self.dismissAlert()
                 }
-                .disabled(documents.isEmpty)
+
+            VStack(alignment: .leading, spacing: 0) {
+                Text("지원하기")
+                    .JOBISFont(.body(.body2), color: .Sub.gray60)
+                    .padding([.bottom, .leading], 5)
+
+                Divider().foregroundColor(.Sub.gray40)
+                    .padding(.bottom, 25)
+
+                Text("제출 서류 : \(submitDoc)")
+                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                    .padding(.bottom, 15)
+
+                fetchFiles()
+                    .padding(.horizontal, 2)
+                    .padding(.bottom, 18)
+
+                inputURLs()
+                    .padding(.horizontal, 2)
+                    .padding(.bottom, 30)
 
                 Spacer()
+
+                HStack {
+                    Spacer()
+
+                    SolidBtn(text: "지원하기") {
+                        applyAction()
+                        hideKeyboard()
+                    }
+                    .disabled(documents.isEmpty)
+
+                    Spacer()
+                }
+            }
+            .padding(15)
+            .background(Color.Sub.gray10)
+            .frame(maxHeight: UIScreen.main.bounds.height * 2 / 3)
+            .cornerRadius(5)
+            .padding(10)
+            .padding(.horizontal, 18)
+            .animation(.spring(response: 0.1), value: urls)
+            .animation(.spring(response: 0.1), value: documents)
+        }
+        .onAppear {
+            withAnimation(.easeIn(duration: 0.4)) {
+                animate = true
             }
         }
-        .padding(15)
-        .background(Color.Sub.gray10)
-        .frame(maxHeight: UIScreen.main.bounds.height * 2 / 3)
-        .padding(10)
-        .padding(.horizontal, 18)
-        .animation(.spring(response: 0.1), value: urls)
-        .animation(.spring(response: 0.1), value: documents)
+        .background(Background())
     }
 
     @ViewBuilder
