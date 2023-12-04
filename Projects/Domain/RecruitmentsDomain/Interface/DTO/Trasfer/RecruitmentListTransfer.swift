@@ -13,9 +13,8 @@ public extension RecruitmentResponseDTO {
             companyName: companyName,
             companyProfileURL: companyProfileURL,
             trainPay: trainPay,
-            military: military,
-            totalHiring: totalHiring,
-            jobCodeList: jobCodeList,
+            militarySupport: militarySupport,
+            hiringJobs: hiringJobs,
             bookmarked: bookmarked
         )
     }

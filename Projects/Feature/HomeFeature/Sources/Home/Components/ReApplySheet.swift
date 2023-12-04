@@ -4,25 +4,25 @@ import UtilityModule
 import BaseFeature
 
 extension View {
-    func applySheet(
+    func reApplySheet(
         isPresented: Binding<Bool>,
         urls: Binding<[String]>,
         documents: Binding<[URL]>,
-        submitDoc: String,
+        rejectionReason: String,
         applyAction: @escaping () -> Void
     ) -> some View {
         self.fullScreenCover(isPresented: isPresented) {
-            ApplySheet(
+            ReApplySheet(
                 urls: urls,
                 documents: documents,
-                submitDoc: submitDoc,
+                rejectionReason: rejectionReason,
                 applyAction: applyAction
             )
         }
     }
 }
 
-struct ApplySheet: View {
+struct ReApplySheet: View {
     enum FileType: String {
         case file = "눌러서 파일 추가하기"
         case url = "URL 입력란 추가하기"
@@ -37,13 +37,12 @@ struct ApplySheet: View {
             }
         }
     }
-
     @Environment(\.presentationMode) var presentationMode
     @State private var animate = false
     @Binding var urls: [String]
     @Binding var documents: [URL]
     @State var showDocumentPicker = false
-    let submitDoc: String
+    let rejectionReason: String
     let applyAction: () -> Void
 
     private func dismissAlert() {
@@ -56,12 +55,12 @@ struct ApplySheet: View {
     init(
         urls: Binding<[String]>,
         documents: Binding<[URL]>,
-        submitDoc: String,
+        rejectionReason: String,
         applyAction: @escaping () -> Void
     ) {
         _urls = urls
         _documents = documents
-        self.submitDoc = submitDoc
+        self.rejectionReason = rejectionReason
         self.applyAction = applyAction
     }
 
@@ -74,16 +73,16 @@ struct ApplySheet: View {
                 }
 
             VStack(alignment: .leading, spacing: 0) {
-                Text("지원하기")
+                Text("재지원하기")
                     .JOBISFont(.body(.body2), color: .Sub.gray60)
                     .padding([.bottom, .leading], 5)
 
                 Divider().foregroundColor(.Sub.gray40)
                     .padding(.bottom, 25)
 
-                Text("제출 서류 : \(submitDoc)")
+                Text("반려사유: \(rejectionReason)")
                     .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                    .padding(.bottom, 15)
+                    .padding(.bottom, 14)
 
                 fetchFiles()
                     .padding(.horizontal, 2)
