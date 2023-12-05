@@ -9,7 +9,7 @@ public struct FilesRepositoryImpl: FilesRepository {
         self.remoteFilesDataSource = remoteFilesDataSource
     }
 
-    public func uploadFiles(data: [Data], fileName: String) -> AnyPublisher<[String], Error> {
-        remoteFilesDataSource.uploadFiles(data: data, fileName: fileName)
+    public func uploadFiles(files: [UploadFilesRequestDTO]) -> AnyPublisher<[String], Error> {
+        remoteFilesDataSource.uploadFiles(files: files)
     }
 }

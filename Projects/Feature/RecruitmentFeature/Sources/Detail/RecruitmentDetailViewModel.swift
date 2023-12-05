@@ -64,16 +64,15 @@ final class RecruitmentDetailViewModel: BaseViewModel {
         } else {
             addCancellable(
                 uploadFilesUseCase.execute(
-                    data: documents.map {
+                    files: documents.map {
                         do {
                             let data = try Data(contentsOf: $0)
-                            return data
+                            return UploadFilesRequestDTO(data: data, name: $0.lastPathComponent)
                         } catch {
                             print("URL을 Data로 변환하는 데 실패했습니다: \(error)")
-                            return Data()
+                            return UploadFilesRequestDTO(data: Data(), name: "")
                         }
-                    },
-                    fileName: documents.first?.lastPathComponent ?? "image.jpg"
+                    }
                 )
             ) { [weak self] urls in
                 var attachments: [AttachmentsRequestDTO] = []
