@@ -64,16 +64,15 @@ final class RecruitmentDetailViewModel: BaseViewModel {
         } else {
             addCancellable(
                 uploadFilesUseCase.execute(
-                    data: documents.map {
+                    files: documents.map {
                         do {
                             let data = try Data(contentsOf: $0)
-                            return data
+                            return UploadFilesRequestDTO(data: data, name: $0.lastPathComponent)
                         } catch {
                             print("URL을 Data로 변환하는 데 실패했습니다: \(error)")
-                            return Data()
+                            return UploadFilesRequestDTO(data: Data(), name: "")
                         }
-                    },
-                    fileName: documents.first?.lastPathComponent ?? "image.jpg"
+                    }
                 )
             ) { [weak self] urls in
                 var attachments: [AttachmentsRequestDTO] = []
@@ -101,16 +100,12 @@ final class RecruitmentDetailViewModel: BaseViewModel {
                 "제출서류",
                 "기타사항"
             ]
-            var pay: String? {
-                guard let pay = recruitmentDetail.pay else { return recruitmentDetail.pay }
-                return pay + "만원/년"
-            }
             let insertContents = [
                 recruitmentDetail.requiredLicenses,
                 recruitmentDetail.requiredGrade,
                 recruitmentDetail.workTime,
-                recruitmentDetail.trainPay + "원/월",
-                pay,
+                (recruitmentDetail.trainPay.intComma() ?? "0") + " 원/월",
+                (recruitmentDetail.pay?.intComma() ?? "0") + " 만원/년",
                 recruitmentDetail.benefits,
                 recruitmentDetail.hiringProgress,
                 recruitmentDetail.submitDocument,
