@@ -13,3 +13,12 @@ public extension String {
         return "\(grade)학년 \(classroom)반 \(number)번"
     }
 }
+
+public extension String {
+    func intComma() -> String? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        guard let value = Int(self) else { return nil }
+        return numberFormatter.string(from: NSNumber(value: value))
+    }
+}
