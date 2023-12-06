@@ -61,7 +61,8 @@ struct ApplicationStatusView: View {
         .background(Color.Sub.gray40)
         .cornerRadius(10)
         .onTapGesture {
-            guard applicationStatus == .rejected else { return }
+            guard applicationStatus == .rejected ||
+                    applicationStatus == .requested else { return }
             selectedId = id
         }
     }
