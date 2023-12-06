@@ -91,7 +91,7 @@ final class MyPageViewModel: BaseViewModel {
         guard let data = image?.pngData() else { return }
 
         addCancellable(
-            uploadFilesUseCase.execute(files: [.init(data: data, name: "profileImage.png")])
+            uploadFilesUseCase.execute(files: [.init(data: data, name: "ProfileImage.png")])
         ) { [weak self] urls in
             guard let url = urls.first else { return }
             self?.changeProfileImage(url: url)

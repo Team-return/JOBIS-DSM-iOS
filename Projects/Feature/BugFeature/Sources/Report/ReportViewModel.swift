@@ -51,7 +51,7 @@ final class ReportViewModel: BaseViewModel {
         guard let data = image.pngData() else { return }
 
         self.addCancellable(
-            self.uploadFilesUseCase.execute(files: [.init(data: data, name: "bugsImage.png")])
+            self.uploadFilesUseCase.execute(files: [.init(data: data, name: "BugsImage.png")])
         ) { [weak self] urls in
             guard let url = urls.first else { return }
             self?.imageUrls.append(url)
