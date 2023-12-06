@@ -13,10 +13,10 @@ public enum ApplicationStatusType: String, Codable {
     public func localizedString() -> String {
         switch self {
         case .requested:
-            return "요청됨"
+            return "승인요청"
 
         case .approved:
-            return "승인됨"
+            return "승인"
 
         case .failed:
             return "탈락"
@@ -28,7 +28,7 @@ public enum ApplicationStatusType: String, Codable {
             return "반려"
 
         case .fieldTrain:
-            return "현장 실습"
+            return "현장실습"
 
         case .send:
             return "전송"
