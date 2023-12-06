@@ -8,7 +8,7 @@ extension View {
         isPresented: Binding<Bool>,
         urls: Binding<[String]>,
         documents: Binding<[URL]>,
-        rejectionReason: String,
+        rejectionReason: String?,
         applyAction: @escaping () -> Void
     ) -> some View {
         self.fullScreenCover(isPresented: isPresented) {
@@ -42,7 +42,7 @@ struct ReApplySheet: View {
     @Binding var urls: [String]
     @Binding var documents: [URL]
     @State var showDocumentPicker = false
-    let rejectionReason: String
+    let rejectionReason: String?
     let applyAction: () -> Void
 
     private func dismissAlert() {
@@ -55,7 +55,7 @@ struct ReApplySheet: View {
     init(
         urls: Binding<[String]>,
         documents: Binding<[URL]>,
-        rejectionReason: String,
+        rejectionReason: String?,
         applyAction: @escaping () -> Void
     ) {
         _urls = urls
@@ -80,9 +80,11 @@ struct ReApplySheet: View {
                 Divider().foregroundColor(.Sub.gray40)
                     .padding(.bottom, 25)
 
-                Text("반려사유: \(rejectionReason)")
-                    .JOBISFont(.etc(.caption), color: .Sub.gray60)
-                    .padding(.bottom, 14)
+                if let rejectionReason {
+                    Text("반려사유: \(rejectionReason)")
+                        .JOBISFont(.etc(.caption), color: .Sub.gray60)
+                        .padding(.bottom, 14)
+                }
 
                 fetchFiles()
                     .padding(.horizontal, 2)
