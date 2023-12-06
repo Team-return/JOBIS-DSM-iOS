@@ -89,20 +89,20 @@ extension ApplicationsAPI: JobisAPI {
                 409: .alreadyApply,
                 500: .askDeveloper
             ]
-            
+
         case .cancelApply:
             return [
                 400: .badRequest,
                 401: .unauthorized,
                 409: .conflict
             ]
-            
+
         case .fetchApplication:
             return [
                 401: .unauthorized,
                 403: .forbidden
             ]
-            
+
         case .fetchTotalPassStudent:
             return [:]
 

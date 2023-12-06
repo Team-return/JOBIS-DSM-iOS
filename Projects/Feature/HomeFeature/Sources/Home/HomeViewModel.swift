@@ -82,8 +82,8 @@ extension HomeViewModel {
     func showReApplySheet(id: String) {
         addCancellable(fetchRejectionReasonUseCase.execute(id: id)) { [weak self] reason in
             self?.rejectionReason = reason
-            self?.showReApplySheet = true
         }
+        showReApplySheet = true
     }
 
     func dismissSheet() {

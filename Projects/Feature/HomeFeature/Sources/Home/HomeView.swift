@@ -78,7 +78,7 @@ struct HomeView: View {
             isPresented: $viewModel.showReApplySheet,
             urls: $viewModel.urls,
             documents: $viewModel.documents,
-            rejectionReason: viewModel.rejectionReason ?? ""
+            rejectionReason: viewModel.rejectionReason
         ) {
             viewModel.apply {
                 viewModel.dismissSheet()
