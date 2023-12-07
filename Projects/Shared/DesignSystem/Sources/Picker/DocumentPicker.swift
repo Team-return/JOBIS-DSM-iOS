@@ -15,6 +15,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> UIDocumentPickerViewController {
         let documentPicker = UIDocumentPickerViewController(forOpeningContentTypes: [.data])
+        documentPicker.allowsMultipleSelection = true
         documentPicker.delegate = context.coordinator
         return documentPicker
     }
@@ -33,8 +34,7 @@ struct DocumentPicker: UIViewControllerRepresentable {
         }
 
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            guard let url = urls.first else { return }
-            selectedURL.append(url)
+            selectedURL = Array((selectedURL + urls)[..<3])
         }
     }
 }
