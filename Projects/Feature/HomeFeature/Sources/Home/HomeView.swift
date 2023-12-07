@@ -110,7 +110,7 @@ struct HomeView: View {
             when: $viewModel.isNavigateFindCompany
         )
         .jobisToast(
-            isShowing: $viewModel.isErrorOcuured,
+            isShowing: $viewModel.isShowErrorToast,
             message: viewModel.errorMessage,
             style: .error,
             title: "지원 불가"
