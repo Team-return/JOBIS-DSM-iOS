@@ -7,6 +7,7 @@ import StudentsDomainInterface
 
 final class HomeViewModel: BaseViewModel {
     @Published var isSuccessApply = false
+    @Published var isShowErrorToast = false
     @Published var urls: [String] = []
     @Published var documents: [URL] = []
     @Published var applicationList: ApplicationListEntity?
@@ -111,6 +112,8 @@ extension HomeViewModel {
             self?.isSuccessApply = true
             self?.dismissSheet()
             self?.fetchApplication()
+        } onReceiveError: { [weak self] _ in
+            self?.isShowErrorToast = true
         }
     }
 
@@ -136,6 +139,8 @@ extension HomeViewModel {
                 urls.forEach { attachments.append(.init(url: $0, type: .file)) }
                 self?.urls.forEach { attachments.append(.init(url: $0, type: .url)) }
                 self?.applyCompany(attachments, complete: complete)
+            } onReceiveError: { [weak self] _ in
+                self?.isShowErrorToast = true
             }
         }
     }

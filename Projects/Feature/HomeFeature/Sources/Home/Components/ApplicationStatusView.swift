@@ -44,26 +44,26 @@ struct ApplicationStatusView: View {
 
     @ViewBuilder
     func applicationStatusCell(id: String, title: String, applicationStatus: ApplicationStatusType) -> some View {
-        HStack {
-            Text(title)
-                .JOBISFont(.body(.body4), color: .Sub.gray70)
-
-            Spacer()
-
-            Text(applicationStatus.localizedString())
-                .JOBISFont(.body(.body3), color: .Main.lightBlue)
-        }
-        .padding(.vertical, 13)
-        .padding(.horizontal, 18)
-        .background(Color.Sub.gray10)
-        .cornerRadius(10)
-        .padding(1)
-        .background(Color.Sub.gray40)
-        .cornerRadius(10)
-        .onTapGesture {
-            guard applicationStatus == .rejected ||
-                    applicationStatus == .requested else { return }
+        Button {
             selectedId = id
+        } label: {
+            HStack {
+                Text(title)
+                    .JOBISFont(.body(.body4), color: .Sub.gray70)
+
+                Spacer()
+
+                Text(applicationStatus.localizedString())
+                    .JOBISFont(.body(.body3), color: .Main.lightBlue)
+            }
+            .padding(.vertical, 13)
+            .padding(.horizontal, 18)
+            .background(Color.Sub.gray10)
+            .cornerRadius(10)
+            .padding(1)
+            .background(Color.Sub.gray40)
+            .cornerRadius(10)
         }
+        .disabled(!(applicationStatus == .rejected || applicationStatus == .requested))
     }
 }
