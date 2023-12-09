@@ -34,7 +34,15 @@ struct DocumentPicker: UIViewControllerRepresentable {
         }
 
         func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-            selectedURL = Array((selectedURL + urls)[..<3])
+            let allURL = selectedURL + urls
+            var maxIndex: Int {
+                if allURL.count < 3 {
+                    return allURL.count
+                } else {
+                    return 3
+                }
+            }
+            selectedURL = Array(allURL[..<maxIndex])
         }
     }
 }
