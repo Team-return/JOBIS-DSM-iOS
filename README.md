@@ -8,8 +8,8 @@ DSM 취업 관리 시스템
 
 ## Screen
 **iOS**
-<img width="250" alt="스크린샷 2023-06-14 오후 5 08 26" src="https://github.com/Team-return/JOBIS-DSM-iOS/assets/102791216/1a6a484d-4f00-41ad-922b-9fef22ed2331">
-<img width="250" alt="스크린샷 2023-06-14 오후 5 08 43" src="https://github.com/Team-return/JOBIS-DSM-iOS/assets/102791216/9a351cc6-ce40-4a73-b704-d3b6fc0b9694">
+![학생 앱](https://github.com/Team-return/JOBIS-DSM-iOS/assets/102791216/c9e5b4a6-a55f-4317-9651-6da600ce4eb5)
+
 
 ## Library
 - [Moya](https://github.com/Moya/Moya.git)
