@@ -89,9 +89,8 @@ final class MyPageViewModel: BaseViewModel {
 
     func changeProfileImageDidSelected() {
         guard let data = image?.pngData() else { return }
-
         addCancellable(
-            uploadFilesUseCase.execute(files: [.init(data: data, name: "ProfileImage.png")])
+            uploadFilesUseCase.execute(files: [.init(file: data, fileName: "ProfileImage.png")])
         ) { [weak self] urls in
             guard let url = urls.first else { return }
             self?.changeProfileImage(url: url)

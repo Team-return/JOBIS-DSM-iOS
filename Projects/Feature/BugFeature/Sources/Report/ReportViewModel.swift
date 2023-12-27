@@ -44,17 +44,22 @@ final class ReportViewModel: BaseViewModel {
             return
         }
 
-        self.reportBugs(urls: imageUrls)
+        changeImageUrl { [self] in
+            reportBugs(urls: imageUrls)
+        }
     }
 
-    func changeImageUrl(image: UIImage) {
-        guard let data = image.pngData() else { return }
-
+    private func changeImageUrl(action: @escaping  () -> Void) {
+        let datas: [Data] = (images.compactMap { $0.pngData() })
         self.addCancellable(
-            self.uploadFilesUseCase.execute(files: [.init(data: data, name: "BugsImage.png")])
+            self.uploadFilesUseCase.execute(
+                files: datas.map {
+                    .init(file: $0, fileName: "BugImage\($0.hashValue).png")
+                }
+            )
         ) { [weak self] urls in
-            guard let url = urls.first else { return }
-            self?.imageUrls.append(url)
+            self?.imageUrls = urls
+            action()
         }
     }
 

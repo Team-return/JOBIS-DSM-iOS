@@ -126,10 +126,10 @@ extension HomeViewModel {
                     files: documents.map {
                         do {
                             let data = try Data(contentsOf: $0)
-                            return UploadFilesRequestDTO(data: data, name: $0.lastPathComponent)
+                            return .init(file: data, fileName: $0.lastPathComponent)
                         } catch {
                             print("URL을 Data로 변환하는 데 실패했습니다: \(error)")
-                            return UploadFilesRequestDTO(data: Data(), name: "")
+                            return .init(file: Data(), fileName: "")
                         }
                     }
                 )
