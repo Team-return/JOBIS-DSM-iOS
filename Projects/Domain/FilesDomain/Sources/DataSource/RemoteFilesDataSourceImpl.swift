@@ -4,9 +4,9 @@ import BaseDomain
 import Combine
 
 public final class RemoteFilesDataSourceImpl: BaseRemoteDataSource<FilesAPI>, RemoteFilesDataSource {
-    public func uploadFiles(files: [UploadFilesRequestDTO]) -> AnyPublisher<[String], Error> {
-        request(.uploadFiles(files: files), dto: UploadFilesResponseDTO.self)
-            .map(\.urls)
+    public func fetchPresignedURL(req: UploadFilesRequestDTO) -> AnyPublisher<[PresignedURLEntity], Error> {
+        request(.fetchPresignedURL(req: req), dto: FetchPresignedURLResponseDTO.self)
+            .map { $0.toDomain() }
             .eraseToAnyPublisher()
     }
 }

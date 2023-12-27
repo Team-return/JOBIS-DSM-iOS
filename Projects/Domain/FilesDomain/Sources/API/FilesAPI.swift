@@ -4,7 +4,7 @@ import BaseDomain
 import Moya
 
 public enum FilesAPI {
-    case uploadFiles(files: [UploadFilesRequestDTO])
+    case fetchPresignedURL(req: UploadFilesRequestDTO)
 }
 
 extension FilesAPI: JobisAPI {
@@ -15,7 +15,7 @@ extension FilesAPI: JobisAPI {
     }
 
     public var urlPath: String {
-        return ""
+        return "/pre-signed"
     }
 
     public var method: Moya.Method {
@@ -24,26 +24,13 @@ extension FilesAPI: JobisAPI {
 
     public var task: Moya.Task {
         switch self {
-        case let .uploadFiles(files):
-            var multipartData: [MultipartFormData] {
-                files.map { file in
-                    MultipartFormData(
-                        provider: .data(file.data),
-                        name: "file",
-                        fileName: file.name
-                    )
-                }
-            }
-
-            return .uploadCompositeMultipart(
-                multipartData,
-                urlParameters: ["type": "EXTENSION_FILE"]
-            )
+        case let .fetchPresignedURL(req):
+            return .requestJSONEncodable(req)
         }
     }
 
     public var jwtTokenType: JwtTokenType {
-        .none
+        .accessToken
     }
 
     public var errorMap: [Int: ErrorType] {
