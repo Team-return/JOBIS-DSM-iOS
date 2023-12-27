@@ -55,14 +55,6 @@ struct ReportView: View {
         .onChange(of: viewModel.isSuccessReport) { _ in
             dismiss()
         }
-        .onChange(of: viewModel.showActionSheet) { bool in
-            if !bool {
-                viewModel.imageUrls = []
-                viewModel.images.forEach { image in
-                    viewModel.changeImageUrl(image: image)
-                }
-            }
-        }
         .jobisToast(
             isShowing: $viewModel.isErrorOcuured,
             message: viewModel.errorMessage,
