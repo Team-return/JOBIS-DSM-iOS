@@ -531,7 +531,9 @@ extension AppComponent: Registration {
         localTable["signinUseCase-any SigninUseCase"] = { [unowned self] in self.signinUseCase as Any }
         localTable["fetchMarketVersionUseCase-any FetchMarketVersionUseCase"] = { [unowned self] in self.fetchMarketVersionUseCase as Any }
         localTable["remoteFilesDataSource-any RemoteFilesDataSource"] = { [unowned self] in self.remoteFilesDataSource as Any }
+        localTable["remotePresignedURLDataSource-any RemotePresignedURLDataSource"] = { [unowned self] in self.remotePresignedURLDataSource as Any }
         localTable["filesRepository-any FilesRepository"] = { [unowned self] in self.filesRepository as Any }
+        localTable["presignedURLRepository-any PresignedURLRepository"] = { [unowned self] in self.presignedURLRepository as Any }
         localTable["uploadFilesUseCase-any UploadFilesUseCase"] = { [unowned self] in self.uploadFilesUseCase as Any }
         localTable["remoteCodesDataSource-any RemoteCodesDataSource"] = { [unowned self] in self.remoteCodesDataSource as Any }
         localTable["codesRepository-any CodesRepository"] = { [unowned self] in self.codesRepository as Any }
