@@ -3,7 +3,7 @@ import BaseDomain
 import Combine
 
 public final class RemoteStudentsDataSourceImpl: BaseRemoteDataSource<StudentsAPI>, RemoteStudentsDataSource {
-    public func signup(req: SignupRequestDto) -> AnyPublisher<Void, Error> {
+    public func signup(req: SignupRequestDTO) -> AnyPublisher<Void, Error> {
         request(.signup(req))
     }
 

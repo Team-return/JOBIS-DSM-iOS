@@ -3,7 +3,7 @@ import StudentsDomainInterface
 import BaseDomain
 
 public enum StudentsAPI {
-    case signup(SignupRequestDto)
+    case signup(SignupRequestDTO)
     case renewalPassword(RenewalPasswordRequestDTO)
     case studentExists(gcn: Int, name: String)
     case fetchStudentInfo
