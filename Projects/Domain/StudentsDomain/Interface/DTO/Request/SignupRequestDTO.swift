@@ -1,11 +1,12 @@
 import Foundation
 
-public struct SignupRequestDto: Encodable {
+public struct SignupRequestDTO: Encodable {
     public let email, password: String
     public let grade: Int
     public let name: String
     public let gender: GenderType
     public let classRoom, number: Int
+    public let platformType: String
 
     public init(
         email: String,
@@ -23,6 +24,7 @@ public struct SignupRequestDto: Encodable {
         self.gender = gender
         self.classRoom = classRoom
         self.number = number
+        self.platformType = "IOS"
     }
 
     enum CodingKeys: String, CodingKey {
@@ -30,5 +32,6 @@ public struct SignupRequestDto: Encodable {
         case password, grade, name, gender
         case classRoom = "class_room"
         case number
+        case platformType = "platform_type"
     }
 }
